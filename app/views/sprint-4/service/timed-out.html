@@ -1,0 +1,17 @@
+
+{% extends folder + "/_BASE.html" %}
+
+{% block service %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+  Sorry, you'll have to start again
+</h1>
+
+<p>You haven't entered any details for 60 minutes, so we've cleared your information to keep it secure.
+</p>
+
+{{ govukButton({
+  text: "Start again"
+}) }}
+
+{% endblock %}

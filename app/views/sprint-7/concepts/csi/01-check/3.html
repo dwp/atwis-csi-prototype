@@ -1,0 +1,44 @@
+{% set link = "../02-send/1" %}
+{% set claim = true %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: "unhappy-1" }, {id: "no", page: link}] %}
+
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Check application details</h1>
+
+
+
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+
+{{ govukRadios({
+       idPrefix: "claim",
+       name: "claim",
+       fieldset: {
+         legend: {
+           text: "Are the details complete and the cost reasonable  ?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+    text: "You can fix any small errors or mistakes in the Claim details tab."
+  },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes, approve the application"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No, I need to contact the applicant"
+
+         }
+       ]
+     }) }}
+
+{% endblock %}

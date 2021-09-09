@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+		<form id="form" method="post" action="interview_company_name">
+
+		<!--<h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+				Your job interview
+		</h1>-->
+
+		<h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+						What is the interview date?
+		</h2>
+		<span id="dob-hint" class="govuk-hint">
+
+			For example, 31 3 2019
+		</span>
+		<div class="govuk-form-group govuk-!-margin-bottom-8">
+			<div class="govuk-date-input" id="date">
+				<div class="govuk-date-input__item">
+					<div class="govuk-form-group">
+						<label class="govuk-label govuk-date-input__label" for="date-day">
+							Day
+						</label>
+						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="number" pattern="[0-9]*">
+					</div>
+				</div>
+				<div class="govuk-date-input__item">
+					<div class="govuk-form-group">
+						<label class="govuk-label govuk-date-input__label" for="date-month">
+							Month
+						</label>
+						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="number" pattern="[0-9]*">
+					</div>
+				</div>
+				<div class="govuk-date-input__item">
+					<div class="govuk-form-group">
+						<label class="govuk-label govuk-date-input__label" for="date-year">
+							Year
+						</label>
+						<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="number" pattern="[0-9]*">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- interview_date -->
+
+		</form>
+
+		<script>
+			document.getElementById('form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				var interviewDate = new Date(	document.getElementById('date-year').value,
+					document.getElementById('date-month').value,
+					document.getElementById('date-day').value);
+
+				if (interviewDate.getTime() < new Date().getTime()) {
+					window.location = '../sorry/cant_help_date';
+				} else {
+					window.location = 'paid_work';
+				}
+			})
+		</script>
+
+	<div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

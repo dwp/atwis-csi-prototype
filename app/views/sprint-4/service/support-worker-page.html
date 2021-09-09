@@ -1,0 +1,23 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+              <form id="form" method="post" action="contact">
+
+                <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                              What is the total cost of the BSL interpreter or support worker that you need at the interview?
+                            </h1>
+                          </legend>
+                              <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="support-worker-pay" type="text">
+                        </fieldset>
+                </div>
+
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+
+
+	{% endblock %}

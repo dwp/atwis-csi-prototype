@@ -1,0 +1,176 @@
+{% set link = "../" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "[screen about highlighting changes]" %}
+
+
+{% block csi %}
+
+<p>[list of information and how to contact the citizen]</p>
+
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Personal details</h2>
+
+
+<table class="table-clickable govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header multiple-choice--hod">
+        <div class="govuk-checkboxes__item">
+          <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
+          <label class="govuk-label govuk-checkboxes__label" for="radio-all">
+            &nbsp;
+          </label>
+        </div>
+      </th>
+      <th class="govuk-table__header">[Field]</th>
+        <th class="govuk-table__header">[Details]</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+{% macro selectTable(name="", section="", details="" ) %}
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell multiple-choice--hod">
+    <div class="govuk-checkboxes__item">
+      <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-{{name}}">
+      <label class="govuk-label govuk-checkboxes__label" for="radio-{{name}}">
+        &nbsp;
+      </label>
+    </div>
+  </td>
+  <td class="govuk-table__cell govuk-table__header" >{{section}}</td>
+
+    <td class="govuk-table__cell">{{details}}</td>
+</tr>
+
+{%- endmacro %}
+
+{% set addressText = "<p>" + data['csi-info'][0]['address-line-one'] +  "<br>" + data['csi-info'][0]['address-town'] + "<br>" + data['csi-info'][0]['address-county'] + "<br>" + data['csi-info'][0]['address-postcode']  + "<br></p>"
+ %}
+
+{{selectTable(name="1", section="Name", details=data['csi-info'][0]['name'] | safe)}}
+
+{{selectTable(name="2", section="Date of birth", details=(data['csi-info'][0]['dob-day']  + " " +  data['csi-info'][0]['dob-month'] | toMonth + " " +  data['csi-info'][0]['dob-year']) | safe  )}}
+
+
+{{selectTable(name="3", section="Address", details=addressText | safe )}}
+
+{{selectTable(name="4", section="Email", details=data['csi-info'][0]['contact-by-email'] )}}
+
+{{selectTable(name="5", section="Phone", details=data['csi-info'][0]['contact-by-phone'] )}}
+
+
+
+  </tbody>
+</table>
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">Company details</h2>
+
+
+    <table class="table-clickable govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header multiple-choice--hod">
+            <div class="govuk-checkboxes__item">
+              <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
+              <label class="govuk-label govuk-checkboxes__label" for="radio-all">
+                &nbsp;
+              </label>
+            </div>
+          </th>
+          <th class="govuk-table__header">[Field]</th>
+            <th class="govuk-table__header">[Details]</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+
+    {{selectTable(name="10", section="Company name", details=data['csi-info'][0]['company-name'])}}
+
+    {{selectTable(name="11", section="Company address", details=(data['csi-info'][0]['company-address-line-one'] + "<br>" + data['csi-info'][0]['company-address-town']  + "<br>" +  data['csi-info'][0]['company-address-county'] + "<br>"
+   + data['csi-info'][0]['company-address-postcode'] + "<br>") | safe  )}}
+
+    {{selectTable(name="12", section="Company contact", details=data['csi-info'][0]['interviewer-name'])}}
+
+    {{selectTable(name="13", section="Email", details=data['csi-info'][0]['company-email-address'])}}
+
+    {{selectTable(name="14", section="Phone", details=data['csi-info'][0]['company-phone'] )}}
+
+
+
+
+
+        </tbody>
+        </table>
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Job interview details</h2>
+
+
+<table class="table-clickable govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header multiple-choice--hod">
+        <div class="govuk-checkboxes__item">
+          <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
+          <label class="govuk-label govuk-checkboxes__label" for="radio-all">
+            &nbsp;
+          </label>
+        </div>
+      </th>
+      <th class="govuk-table__header">[Field]</th>
+        <th class="govuk-table__header">[Details]</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+
+{{selectTable(name="6", section="Date of interview", details=(data['csi-info'][0]['interview-date-day'] + " " +  data['csi-info'][0]['interview-date-month'] | toMonth  + " " + data['csi-info'][0]['interview-date-year']  ) | safe)}}
+
+{{selectTable(name="7", section="Condition", details="Deaf")}}
+
+{{selectTable(name="8", section="Duration", details=data['csi-info'][0]['duration'])}}
+
+{{selectTable(name="9", section="Quote", details=data['csi-info'][0]['support-worker-pay'] | toMoney | safe )}}
+
+
+
+
+
+
+    </tbody>
+    </table>
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       name: "needed",
+       fieldset: {
+         legend: {
+           text: "[have you contacted John Smith about the details?]",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+            id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

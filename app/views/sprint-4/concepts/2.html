@@ -1,0 +1,160 @@
+{% extends "./_BASE.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">[Claimant name]
+  <!-- <span><strong class="app-c-tag">[claim status]</strong></span> -->
+              </h1>
+
+              {{ govukButton({
+                text: "Reallocate",
+                classes: "govuk-button--secondary"
+              }) }}
+
+        <nav class="navigation-secondary">
+                <ul>
+                  <li>
+                    <a href="#" class="active" aria-current="section">Task list</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact details</a>
+                  </li>
+                  <li>
+                    <a href="#">Interview</a>
+                  </li>
+                  <li>
+                    <a href="#">Evidence</a>
+                  </li>
+                </ul>
+              </nav>
+
+
+              <ol class="app-task-list">
+                      <li>
+                        <h2 class="app-task-list__section">
+                          <span class="app-task-list__section-number">1. </span> Check before you start
+                        </h2>
+                        <ul class="app-task-list__items">
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#" aria-describedby="eligibility-completed">
+                                Check eligibility
+                              </a>
+                            </span>
+                            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#" aria-describedby="read-declaration-completed">
+                                Read declaration
+                              </a>
+                            </span>
+                            <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <h2 class="app-task-list__section">
+                          <span class="app-task-list__section-number">2. </span> Prepare application
+                        </h2>
+                        <ul class="app-task-list__items">
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#" aria-describedby="company-information-completed">
+                                Company information
+                              </a>
+                            </span>
+                            <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#" aria-describedby="contact-details-completed">
+                                Your contact details
+                              </a>
+                            </span>
+                            <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#">
+                                List convictions
+                              </a>
+                            </span>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#">
+                                Provide financial evidence
+                              </a>
+                            </span>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#" aria-describedby="medical-information-completed">
+                                Give medical information
+                              </a>
+                            </span>
+                            <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">Completed</strong>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <h2 class="app-task-list__section">
+                          <span class="app-task-list__section-number">3. </span> Apply
+                        </h2>
+                        <ul class="app-task-list__items">
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="#">
+                                Submit and pay
+                              </a>
+                            </span>
+                          </li>
+                        </ul>
+                      </li>
+                    </ol>
+
+
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Claim history</h2>
+        <ol class="dwp-timeline">
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Claim disallowed</h3>
+            <p class="dwp-timeline__info">
+              <span class="govuk-visually-hidden visually-hidden">Claim disallowed</span>
+              <span class="dwp-timeline__author">by John Smith</span>
+              <span class="dwp-timeline__date">1 January 2018 at 13:02</span>
+            </p>
+            <p class="dwp-timeline__body">
+              Claimant over state pension age.
+            </p>
+          </li>
+
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Marriage verified</h3>
+            <p class="dwp-timeline__info">
+              <span class="govuk-visually-hidden visually-hidden">Marriage verified</span>
+              <span class="dwp-timeline__author">by John Smith</span>
+              <span class="dwp-timeline__date">1 January 2018 at 13:21</span>
+            </p>
+            <p class="dwp-timeline__body">
+              Marriage certificate uploaded to DRS.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

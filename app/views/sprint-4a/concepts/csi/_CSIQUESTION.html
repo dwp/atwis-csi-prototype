@@ -1,0 +1,37 @@
+{% extends folder + "/" + subfolder + "/_BASE.html" %}
+
+{% if not hideBack %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: 'javascript:history.back(-1)'
+  }) }}
+{% endblock %}
+{% endif %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+{% if title %}    <h1 class="govuk-heading-xl">{{title}}</h1>{% endif %}
+
+{% if not hideForm %}<form action="{{link}}" method="post" novalidate> {% endif %}
+
+{% block csi %}
+
+
+{% endblock %}
+{% if not hideForm %}
+{{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+<P><a href="/{{folder}}/{{subfolder}}/csi/index{% if interviewLink %}-interview{% endif  %}" class="govuk-link govuk-link--no-visited-state">Return to application</a></p>
+
+</form>
+{% endif %}
+</div>
+</div>
+
+{% endblock %}

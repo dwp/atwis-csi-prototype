@@ -1,0 +1,549 @@
+#views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-exposed-widgets {
+	margin: 0px;
+}
+#views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-exposed-widgets {
+	margin: 0px;
+}
+#views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg h4 {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .app-landing-view .view-content .views-row .views-field-field-message-type-top {
+	display: none;
+}
+.app-landing-view .view-content .views-row #views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .views-field-field-message-type-top {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .pane-queries-management-panel-pane-1 > .pane-title {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .pane-ideas-management-panel-pane-1 > .pane-title {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg h4 {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .app-landing-view .view-content .views-row .views-field-field-message-type-top {
+	display: none;
+}
+.app-landing-view .view-content .views-row #views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .views-field-field-message-type-top {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .pane-queries-management-panel-pane-1 > .pane-title {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-widget-filter-invotra_fulltext_agg .pane-ideas-management-panel-pane-1 > .pane-title {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-widget-sort-by {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-my-content .views-exposed-form .views-widget-sort-order {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-widget-sort-by {
+	display: none;
+}
+#views-exposed-form-my-workspace-content-all-content .views-exposed-form .views-widget-sort-order {
+	display: none;
+}
+.page-invotra-my-workplace .pane-ilp-current-search-title {
+	margin: 5px 0px;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort {
+	margin: 0px; float: right;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort .form-item {
+	margin: 0px;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort .form-item h4 {
+	line-height: 40px; padding-right: 10px; font-size: 16px; float: left;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort .form-item .app-landing-view .view-content .views-row .views-field-field-message-type-top {
+	line-height: 40px; padding-right: 10px; font-size: 16px; float: left;
+}
+.app-landing-view .view-content .views-row .page-invotra-my-workplace .pane-my-workspace-sort .form-item .views-field-field-message-type-top {
+	line-height: 40px; padding-right: 10px; font-size: 16px; float: left;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort .form-item .pane-queries-management-panel-pane-1 > .pane-title {
+	line-height: 40px; padding-right: 10px; font-size: 16px; float: left;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort .form-item .pane-ideas-management-panel-pane-1 > .pane-title {
+	line-height: 40px; padding-right: 10px; font-size: 16px; float: left;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort .form-item div {
+	display: inline-block;
+}
+.page-invotra-my-workplace .pane-my-workspace-sort .form-submit {
+	display: none;
+}
+.page-invotra-my-workplace .pane-views-panes {
+	margin: 0px; padding-bottom: 15px; clear: both;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-collapsible-header {
+	margin-bottom: 10px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-collapsible-header i {
+	color: rgb(117, 117, 117); float: right;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-collapsible-expand {
+	font-size: 16px; display: none;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-collapsible-collapse {
+	font-size: 14px; display: inline-block;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible.invotra-my-workspace-collapsible-collapsed .invotra-my-workspace-collapsible-expand {
+	display: inline-block;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible.invotra-my-workspace-collapsible-collapsed .invotra-my-workspace-collapsible-collapse {
+	display: none;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible.invotra-my-workspace-collapsible-collapsed .invotra-my-workspace-collapsible-content {
+	display: none;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-collapsible-refine-text {
+	color: rgb(51, 51, 51); font-size: 14px; font-weight: 600; text-decoration: underline;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul {
+	margin: 0px; max-width: 550px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul {
+	margin: 0px; max-width: 550px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li {
+	width: 200px; vertical-align: top; display: inline-block;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li {
+	width: 200px; vertical-align: top; display: inline-block;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li.odd {
+	margin-right: 100px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li.odd {
+	margin-right: 100px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li h4 {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li h4 {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li .app-landing-view .view-content .views-row .views-field-field-message-type-top {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.app-landing-view .view-content .views-row .page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li .views-field-field-message-type-top {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li .app-landing-view .view-content .views-row .views-field-field-message-type-top {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.app-landing-view .view-content .views-row .page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li .views-field-field-message-type-top {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li .pane-queries-management-panel-pane-1 > .pane-title {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li .pane-queries-management-panel-pane-1 > .pane-title {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li .pane-ideas-management-panel-pane-1 > .pane-title {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li .pane-ideas-management-panel-pane-1 > .pane-title {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li input.form-autocomplete {
+	border-radius: 3px; border: 1px solid rgb(179, 175, 174); border-image: none;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li input.form-autocomplete {
+	border-radius: 3px; border: 1px solid rgb(179, 175, 174); border-image: none;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li input.form-autocomplete.focus {
+	border-color: rgb(255, 191, 71); outline: rgb(255, 191, 71) solid 1px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li input.form-autocomplete.focus {
+	border-color: rgb(255, 191, 71); outline: rgb(255, 191, 71) solid 1px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-filter-form ul li input.form-autocomplete:focus {
+	border-color: rgb(255, 191, 71); outline: rgb(255, 191, 71) solid 1px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li input.form-autocomplete:focus {
+	border-color: rgb(255, 191, 71); outline: rgb(255, 191, 71) solid 1px;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form .item-list {
+	display: inline-block;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li.odd.first {
+	float: left;
+}
+.page-invotra-my-workplace .invotra-my-workspace-collapsible .invotra-my-workspace-media-filter-form ul li.odd.last {
+	margin: 0px;
+}
+.page-invotra-my-workplace .pane-invotra-facets-date-ranges {
+	padding-top: 4px; padding-bottom: 4px; box-shadow: 0px 1px 0px 0px #b4afaf;
+}
+.page-invotra-my-workplace .pane-invotra-facets-date-ranges > h4 {
+	margin: 0px; padding: 0px 0px 15px; font-size: 14px; font-weight: 700; position: relative;
+}
+.page-invotra-my-workplace .app-landing-view .view-content .views-row .pane-invotra-facets-date-ranges > .views-field-field-message-type-top {
+	margin: 0px; padding: 0px 0px 15px; font-size: 14px; font-weight: 700; position: relative;
+}
+.app-landing-view .view-content .views-row .page-invotra-my-workplace .pane-invotra-facets-date-ranges > .views-field-field-message-type-top {
+	margin: 0px; padding: 0px 0px 15px; font-size: 14px; font-weight: 700; position: relative;
+}
+.page-invotra-my-workplace .pane-queries-management-panel-pane-1.pane-invotra-facets-date-ranges > .pane-title {
+	margin: 0px; padding: 0px 0px 15px; font-size: 14px; font-weight: 700; position: relative;
+}
+.page-invotra-my-workplace .pane-ideas-management-panel-pane-1.pane-invotra-facets-date-ranges > .pane-title {
+	margin: 0px; padding: 0px 0px 15px; font-size: 14px; font-weight: 700; position: relative;
+}
+.invotra-my-workspace-list .views-field-common-flagging-user {
+	margin: 10px 0px; padding: 10px; border-radius: 5px; border: 1px solid rgb(208, 68, 55); border-image: none; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+.invotra-my-workspace-list .views-field-common-flagging-user i {
+	color: rgb(208, 68, 55); margin-right: 5px;
+}
+.invotra-my-workspace-list .views-field-common-flagging-user p {
+	margin: 0px;
+}
+.invotra-my-workspace-list .views-field-common-flagging-user .review-reports.link {
+	padding-left: 5px;
+}
+.view-display-id-followed_people .views-row {
+	padding: 20px 0px 20px 78px; overflow: hidden; border-top-color: rgb(192, 190, 186); border-top-width: 1px; border-top-style: solid; position: relative;
+}
+.view-display-id-followed_people .views-row.views-row-last {
+	border-bottom-color: rgb(192, 190, 186); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.view-display-id-followed_people .views-row .views-field {
+	color: rgb(101, 101, 101); line-height: 18px; font-size: 14px; font-weight: 400;
+}
+.view-display-id-followed_people .views-row .views-field.views-field-user-name a {
+	color: rgb(0, 94, 165); line-height: 20px; font-weight: 700;
+}
+.view-display-id-followed_people .views-row .views-field.views-field-user-picture {
+	margin: 0px 0px 0px -78px; width: 60px; float: left;
+}
+.view-display-id-followed_people .views-row .views-field.views-field-user-picture img {
+	border-radius: 50px; width: auto; height: auto; max-width: 60px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.pane-invotra-panes-facets-display ul li {
+	list-style-type: none; list-style-image: inherit;
+}
+.page-invotra-my-workspace.page-invotra-my-workspace-my-notifications .brenham-container {
+	margin-bottom: 0px;
+}
+.page-invotra-my-workspace.page-invotra-my-workspace-my-notifications .pane-views-panes {
+	border: 0px currentColor; border-image: none;
+}
+@media all and (max-width:480px)
+{
+.view-my-workspace-my-notifications .view-content .views-row {
+	padding: 10px 15px 15px; border-radius: 0px; border: currentColor; border-image: none; margin-right: 0px; margin-left: 0px; box-shadow: none; -moz-border-radius: 0; -webkit-border-radius: 0; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+.view-my-workspace-my-notifications .view-content .views-row::before {
+	background: rgb(179, 175, 174); left: 0px; height: 1px; right: 0px; position: absolute; content: " ";
+}
+.view-my-workspace-my-notifications .view-content .views-row::after {
+	background: rgb(179, 175, 174); left: 0px; height: 1px; right: 0px; position: absolute; content: " ";
+}
+.view-my-workspace-my-notifications .view-content .views-row::before {
+	top: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row::after {
+	bottom: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-timestamp {
+	right: 30px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-attachment-count {
+	font-size: 12px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message {
+	font-size: 12px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text {
+	font-size: 12px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-attachment-count .author {
+	display: block;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message .author {
+	display: block;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text .author {
+	display: block;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields {
+	margin: 16px -14px 0px; padding: 16px 14px 20px; border-radius: 0px; -moz-border-radius: 0; -webkit-border-radius: 0;
+}
+.view-my-workspace-my-notifications .view-content .views-row .notification-horizontal-line {
+	margin: 15px 0px;
+}
+}
+.view-my-workspace-my-notifications .view-content .views-row {
+	padding: 15px 20px; border-radius: 3px; border: 1px solid rgb(221, 223, 226); border-image: none; margin-top: 20px; position: relative; cursor: pointer; min-height: 100px; background-color: white; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+.view-my-workspace-my-notifications .view-content .views-row:hover {
+	background-color: rgb(236, 236, 240);
+}
+.view-my-workspace-my-notifications .view-content .views-row .notification-horizontal-line {
+	margin: 20px 0px; border-top-color: rgb(221, 223, 226); border-top-width: 1px; border-top-style: solid; display: block;
+}
+@media all and (max-width:360px)
+{
+.view-my-workspace-my-notifications .view-content .views-row .notification-horizontal-line {
+	margin-top: 0px; margin-left: 50px;
+}
+}
+.view-my-workspace-my-notifications .view-content .views-row .notification-horizontal-line + .views-field.views-field-title {
+	padding-top: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field {
+	color: rgb(51, 51, 51); line-height: 20px; font-size: 14px;
+}
+@media all and (max-width:360px)
+{
+.view-my-workspace-my-notifications .view-content .views-row .views-field {
+	line-height: 18px; font-size: 13px;
+}
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-type-1 {
+	background: white; padding: 3px 10px; border-radius: 3px; border: 1px solid rgb(221, 223, 226); border-image: none; top: 55px; height: 12px; right: 20px; color: rgb(101, 101, 101); line-height: 12px; font-size: 10px; position: absolute; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-type-2 {
+	background: white; padding: 3px 10px; border-radius: 3px; border: 1px solid rgb(221, 223, 226); border-image: none; top: 55px; height: 12px; right: 20px; color: rgb(101, 101, 101); line-height: 12px; font-size: 10px; position: absolute; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+@media all and (min-width:480px)
+{
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-type-1 {
+	top: 44px; height: 15px; line-height: 15px; font-size: 12px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-type-2 {
+	top: 44px; height: 15px; line-height: 15px; font-size: 12px;
+}
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title {
+	padding: 15px 0px 0px; clear: both; font-weight: bold;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title-2 {
+	padding: 15px 0px 0px; clear: both; font-weight: bold;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title + .views-field-body {
+	padding: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title + .views-field-body-1 {
+	padding: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title-2 + .views-field-body {
+	padding: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title-2 + .views-field-body-1 {
+	padding: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-note-type-color {
+	color: rgb(101, 101, 101); line-height: 18px; font-weight: 400;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-timestamp {
+	top: 14px; right: 20px; font-size: 12px; font-weight: normal; position: absolute;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-image {
+	float: left;
+}
+.view-my-workspace-my-notifications .view-content .views-row [class*='views-field-profile-picture-url-large-avatar'].views-field {
+	float: left;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-profile-picture-url-standard-avatar-1 {
+	float: left;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-profile-picture-url-standard-avatar {
+	float: left;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-image img {
+	border-radius: 50px; width: 60px; height: 60px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.view-my-workspace-my-notifications .view-content .views-row [class*='views-field-profile-picture-url-large-avatar'].views-field img {
+	border-radius: 50px; width: 60px; height: 60px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-profile-picture-url-standard-avatar-1 img {
+	border-radius: 50px; width: 60px; height: 60px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-profile-picture-url-standard-avatar img {
+	border-radius: 50px; width: 60px; height: 60px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-job-role {
+	color: rgb(101, 101, 101); margin-left: 74px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-organisational-unit {
+	color: rgb(101, 101, 101); margin-left: 74px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-locations {
+	color: rgb(101, 101, 101); margin-left: 74px;
+}
+.view-my-workspace-my-notifications .view-content .views-row [class*='views-field-fullname'].views-field {
+	left: 14px; position: relative;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-timestamp-1 {
+	left: 14px; position: relative;
+}
+.view-my-workspace-my-notifications .view-content .views-row [class*='views-field-created'].views-field {
+	left: 14px; position: relative;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-timestamp-1 {
+	color: rgb(101, 101, 101); font-size: 13px;
+}
+.view-my-workspace-my-notifications .view-content .views-row [class*='views-field-created'].views-field {
+	color: rgb(101, 101, 101); font-size: 13px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-body {
+	padding: 15px 0px 10px; clear: both; -ms-word-wrap: break-word;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-body-1 {
+	padding: 15px 0px 10px; clear: both; -ms-word-wrap: break-word;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-comment-body {
+	padding: 15px 0px 10px; clear: both; -ms-word-wrap: break-word;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-comment-body-1 {
+	padding: 15px 0px 10px; clear: both; -ms-word-wrap: break-word;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-body .field-content p {
+	margin-bottom: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-body-1 .field-content p {
+	margin-bottom: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-comment-body .field-content p {
+	margin-bottom: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-comment-body-1 .field-content p {
+	margin-bottom: 0px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-note-type-color-2 {
+	color: rgb(101, 101, 101);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-note-type-color-3 {
+	color: rgb(101, 101, 101);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message {
+	vertical-align: top; display: inline-block;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text {
+	vertical-align: top; display: inline-block;
+}
+@media all and (max-width:768px)
+{
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message {
+	width: 100%; padding-right: 65px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text {
+	width: 100%; padding-right: 65px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message span {
+	color: rgb(101, 101, 101);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text span {
+	color: rgb(101, 101, 101);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message span span {
+	color: rgb(0, 94, 165);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text span span {
+	color: rgb(0, 94, 165);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message span span span {
+	color: rgb(101, 101, 101);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text span span span {
+	color: rgb(101, 101, 101);
+}
+@media all and (max-width:360px)
+{
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-message span span {
+	display: block;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-displayed-message-text span span {
+	display: block;
+}
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title {
+	font-weight: 700;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title-1 {
+	font-weight: 700;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title a {
+	color: rgb(51, 51, 51);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-title-1 a {
+	color: rgb(51, 51, 51);
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-name {
+	padding-top: 6px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-name .views-label {
+	color: rgb(101, 101, 101); line-height: 18px; font-size: 13px; font-weight: 400;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media .file-document {
+	display: none;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media-1 .file-document {
+	display: none;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media .file img {
+	width: auto; height: auto; max-height: 440px; max-width: 100%;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media-1 .file img {
+	width: auto; height: auto; max-height: 440px; max-width: 100%;
+}
+@media 
+{
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media .file img {
+	width: auto;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media-1 .file img {
+	width: auto;
+}
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media {
+	margin: 15px 0px 5px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-field-media-1 {
+	margin: 15px 0px -10px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field.views-field-attachment-count {
+	color: rgb(101, 101, 101); font-size: 14px; font-weight: 400; margin-top: 15px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field .notification-teaser-wrapper {
+	position: relative;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field .notification-teaser-wrapper .notification-teaser-arrow {
+	left: -7px; top: 14px; border-top-color: transparent; border-right-color: rgb(245, 242, 242); border-bottom-color: transparent; border-top-width: 7px; border-right-width: 7px; border-bottom-width: 7px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; display: block; position: absolute;
+}
+.view-my-workspace-my-notifications .view-content .views-row .views-field .notification-teaser-wrapper .notification-teaser {
+	background: rgb(245, 242, 242); padding: 12px 12px 2px; border-radius: 6px; line-height: 18px; font-size: 12px; -moz-border-radius: 6px; -webkit-border-radius: 6px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields {
+	background: rgb(243, 246, 248); margin: 33px -20px -15px; padding: 16px 20px 20px; border-radius: 0px 0px 3px 3px; -moz-border-radius: 0 0 3px 3px; -webkit-border-radius: 0;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields .views-field.views-field-image {
+	float: left;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields .views-field.views-field-image img {
+	border-radius: 50px; width: 40px; height: 40px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields .views-field.views-field-fullname {
+	left: 10px; position: relative;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields .views-field.views-field-timestamp-1 {
+	left: 10px; position: relative;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields .views-field.views-field-comment-body {
+	padding: 10px 0px 0px; clear: both; font-size: 13px; -ms-word-wrap: break-word;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields .views-field.views-field-field-note-type-color {
+	color: rgb(51, 51, 51); font-size: 14px;
+}
+.view-my-workspace-my-notifications .view-content .views-row .additional-fields .views-field.views-field-name {
+	color: rgb(51, 51, 51); font-size: 14px;
+}

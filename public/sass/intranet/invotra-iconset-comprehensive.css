@@ -1,0 +1,93 @@
+@font-face {
+	font-family: invotra-iconset-comprehensive;
+	src: url(../font/invotra-iconset-comprehensive.eot?364328#iefix) format("embedded-opentype"), url(../font/invotra-iconset-comprehensive.woff2?364328) format("woff2"), url(../font/invotra-iconset-comprehensive.woff?364328) format("woff"), url(../font/invotra-iconset-comprehensive.ttf?364328) format("truetype"), url(../font/invotra-iconset-comprehensive.svg?364328#invotra-iconset-comprehensive) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^='icon-']::before {
+	width: 1em; text-align: center; text-transform: none; line-height: 1em; font-family: "invotra-iconset-comprehensive"; font-style: normal; font-variant: normal; font-weight: normal; text-decoration: inherit; margin-right: 0.2em; margin-left: 0.2em; display: inline-block; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; speak: none;
+}
+[class*=' icon-']::before {
+	width: 1em; text-align: center; text-transform: none; line-height: 1em; font-family: "invotra-iconset-comprehensive"; font-style: normal; font-variant: normal; font-weight: normal; text-decoration: inherit; margin-right: 0.2em; margin-left: 0.2em; display: inline-block; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; speak: none;
+}
+.icon-webform-icon::before {
+	content: "\e800";
+}
+.icon-inv-user::before {
+	content: "\e801";
+}
+.icon-firewarden-icon::before {
+	content: "\e802";
+}
+.icon-firstaid-icon::before {
+	content: "\e803";
+}
+.icon-inappropriate-comments-icon::before {
+	content: "\e804";
+}
+.icon-unpublished-content-icon::before {
+	content: "\e805";
+}
+.icon-invotra-blog-icon::before {
+	content: "\e806";
+}
+.icon-invotra-forum-icon::before {
+	content: "\e807";
+}
+.icon-reviewed-content-icon::before {
+	content: "\e808";
+}
+.icon-inappropriate-content::before {
+	content: "\e809";
+}
+.icon-docs-folder-icon::before {
+	content: "\e80a";
+}
+.icon-your-feed-icon::before {
+	content: "\e80b";
+}
+.icon-inv-add-user::before {
+	content: "\e80c";
+}
+.icon-inv-add-doc::before {
+	content: "\e80d";
+}
+.icon-inv-team-icon::before {
+	content: "\e80e";
+}
+.icon-inv-building-icon::before {
+	content: "\e80f";
+}
+.icon-inv-floor-icon::before {
+	content: "\e810";
+}
+.icon-inv-space-icon::before {
+	content: "\e811";
+}
+.icon-profile-icon::before {
+	content: "\e812";
+}
+.icon-bookmark::before {
+	content: "\e813";
+}
+.icon-dot-3::before {
+	content: "\e814";
+}
+.icon-bell-icon::before {
+	content: "\e815";
+}
+.icon-down-dir::before {
+	content: "\e816";
+}
+.icon-down-micro::before {
+	content: "\e817";
+}
+.icon-bookmark-empty::before {
+	content: "\f097";
+}
+.icon-plus-squared::before {
+	content: "\f0fe";
+}
+.icon-plus-squared-alt::before {
+	content: "\f196";
+}

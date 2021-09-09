@@ -1,0 +1,21 @@
+.entity-tracker-exposed-form .views-exposed-widgets {
+	position: relative;
+}
+.entity-tracker-exposed-form .form-item-user {
+	width: 250px;
+}
+.entity-tracker-exposed-form .form-text {
+	width: 100%;
+}
+.entity-tracker-exposed-form #edit-date-from-wrapper {
+	clear: left;
+}
+.entity-tracker-exposed-form #edit-entity-type-wrapper {
+	clear: left;
+}
+.entity-tracker-exposed-form #edit-date-to-wrapper {
+	clear: none;
+}
+.entity-tracker-exposed-form .views-exposed-widget.views-submit-button {
+	padding-top: 14px;
+}

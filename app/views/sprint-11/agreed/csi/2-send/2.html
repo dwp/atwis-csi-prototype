@@ -1,0 +1,60 @@
+{% set link = "../index" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Print and send the claim form" %}
+
+
+{% block csi %}
+
+<!-- link to pdf from confluence to be added when available -->
+
+{{ govukButton({
+  text: "Get the claim form",
+  classes: "govuk-button--secondary",
+  attributes:{'target':'_blank', 'rel' : 'noopener' },
+  href: asset_path + "files/claim-form.pdf"
+}) }}
+
+
+<p>Print and send the form to the following address:</p>
+  <div class="govuk-inset-text">
+{% if appointee %}
+{{data['appointee-name'] | default(appointeeDetails.name) | safe }}<br>
+{{appointeeDetails.address | safe }}
+{% else %}
+
+  Thomas Brown<br>
+  14 Kings Road<br>
+  Birmingham<br>
+  B1 1EQ
+{% endif  %}
+
+</div>
+
+
+
+{{ govukRadios({
+      classes: "govuk-radios--inline",
+       idPrefix: "claim",
+       name: "claim",
+       fieldset: {
+         legend: {
+           text: "Have you printed and sent the form?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

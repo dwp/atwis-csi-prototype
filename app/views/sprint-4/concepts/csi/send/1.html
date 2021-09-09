@@ -1,0 +1,48 @@
+{% set link = "2" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+
+{% set title =  "Send a confirmation email" %}
+
+{% block csi %}
+
+
+<p>Copy and paste the following text into an email and send it to:
+  <strong>{{ data['csi-info'][0]['contact-by-email'] | safe }}</strong></p>
+
+
+  <div class="govuk-inset-text">
+  Your application for interview support<br>
+  <br>
+  Your application for Communication Support at Interview has been accepted.
+  You can now confirm and book your sign language interpreter or support worker.
+  If you need to make any changes to your personal information or interview details,
+  reply to this email or call us on 0800 121 7479.
+</div>
+
+
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+       idPrefix: "send",
+       name: "send",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

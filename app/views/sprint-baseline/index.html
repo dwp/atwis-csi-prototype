@@ -1,0 +1,239 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+          As-Is CSI journey
+        <span class="govuk-caption-xl"></span>
+
+<p>Stocktake of current processes.</p>
+
+      <ul class="govuk-list">
+<li><a class="govuk-link" href="/{{folder}}/apply">Citizen-facing journey from apply screen</a></li>
+<li><a class="govuk-link" href="/{{folder}}/service/confirmation-phone">Confirmation SMS</a> and list of all potential messages <a href="https://intranet.dwp.gov.uk/manual/access-work/28-sms-messages">(on intranet)</a></li>
+                <li><a class="govuk-link" href="/{{folder}}/atwis/your-cases">ATWIS screens</a></li>
+                <li><a class="govuk-link" href="/{{folder}}/disc/index">Selected DiSC screens</a> (and remaining screens <a class="govuk-link" href="https://confluence.service.dwpcloud.uk/display/ATW/4.+DISC">on confluence</a>)</li>
+                <li>Claim form<a class="govuk-link" href="https://confluence.service.dwpcloud.uk/display/ATW/CSI+AS+IS+Information?preview=/123827198/124098915/dwp_t394541%20(DP221%20-%20CSI%20Claim%20form)%20(2).pdf">(on confluence)</a></li>
+
+                <li>Internal instructions<a class="govuk-link" href="https://confluence.service.dwpcloud.uk/display/ATW/CSI+AS+IS+Information?preview=/123827198/124098918/How%20to%20do%20a%20CSI%20application.docx">(on confluence)</a></li>
+
+                <li>SOP payment journey (<a href="https://confluence.service.dwpcloud.uk/display/ATW/SOP+Payments">on Confluence)</a></li>
+
+                <li>Logger for MI (<a href="https://confluence.service.dwpcloud.uk/display/ATW/12+-+Allocation+Logger">on Confluence)</a></li>
+
+<li>Data mapping (<a href="https://confluence.service.dwpcloud.uk/display/ATW/3.+CSI+Phase+2">on Confluence)</a></li>
+<li>As-is journey and processes (<a href="hhttps://confluence.service.dwpcloud.uk/display/ATW/CSI+AS+IS+Information">on Confluence)</a></li>
+  <li><a class="govuk-link" href="/{{folder}}intranet/forms">Claim forms</a> and <a class="govuk-link" href="/{{folder}}intranet/letters">letters</a> from intranet</li>
+
+              </ul>
+
+
+
+
+      {{ govukDetails({
+        summaryText: "List of all screens in journey",
+        html:
+'
+<h3 class="govuk-heading-m">Citizen-facing</h3>
+
+<ul class="govuk-list">
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/apply">Guidance</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/have-total-cost">(NEW) Have total cost?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/have-total-cost-no">(NEW - kickout) Need to get total cost</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/your-name">What is your name?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/dob">Date of birth</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_age">(kickout) Cannot help - age</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/address">Address</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/deaf">Deaf</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/condition">(IF NOT DEAF) Condition</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/paid-work">Paid work</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_paid">(kickout) Cannot help - not paid work</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-date">Interview date</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_date">(kickout) Cannot help - in the past</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-company-name">What is the name of the company your job interview is with?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-address">Where will your job interview take place?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-length">How long is the interview expected to last?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interviewer-details">Who can we contact at the company?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/support-worker-page">What is the total cost of the BSL interpreter or support worker that you need at the interview?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/contact">How would you like to be contacted?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/text-message">Do you want to receive text messages with updates about your application?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/mobile-phone-number">What is your mobile phone number?</a>
+          </li>
+
+
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/check-your-answers">Check your answers</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/confirmation">Confirmation</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/timed-out">Timed out</a>
+          </li>
+        </ul>
+
+        <p>After the service</p>
+        <ul class="govuk-list">
+
+                  <li>
+                    <a class="govuk-link" href="/' + folder + '/service/confirmation-phone">SMS confirmation</a>
+                  </li>
+                  </ul>
+
+        <h3 class="govuk-heading-m">ATWIS</h3>
+        <ul class="govuk-list">
+
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/your-cases">Your cases</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/search">Search</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/unallocated">Unallocated</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/case-csi">CSI case</a> with option to update to DiSC (and <a class="govuk-link" href="/' + folder + '/atwis/case">New application</a>)</li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/your-cases-update">Updated after moving to DiSCC</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/case-csi-disc">CSI case after copied to DiSC</a></li>
+
+
+                              </ul>
+
+
+
+<p>Process example pre-ATWIS including how to write notes and checking eligibility <a href="https://confluence.service.dwpcloud.uk/display/ATW/CSI+AS+IS+Information?preview=/123827198/124098918/How%20to%20do%20a%20CSI%20application.docx">(on Confluence)</a></p>
+
+        <h3 class="govuk-heading-m">DiSC selected screens</h3>
+
+        <ul class="govuk-list">
+
+                  <li><a class="govuk-link" href="/' + folder + '/disc/index">Home</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/search">Search</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/results">Results</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/customer">Customer</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/customer-update">Customer update</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/customer-note">Customer note</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/customer-note-update">Customer note and update</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/csi-empty">CSI empty</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/csi">CSI</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/csi-update">CSI update</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/payment">Payment</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/disc/transfer">Transfer</a></li>
+
+                              </ul>
+
+
+'          }) }}
+
+
+{{ govukDetails({
+  summaryText: "Other versions",
+  html:
+' <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="gathering-info">Apply Questions Work and Condition Example 1</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="atw-example-2/difficult-tasks">Apply Questions Work and Condition Example 2</a>
+    </li>
+    <li>
+      <a class="govuk-link" <a href="support-worker/job/support-worker-page">Communication support at Interview</a>
+    </li>
+
+  <li>
+    <a class="govuk-link" href="/' + folder + '/service/alternative-contact">Alternative contact</a>
+  </li>
+</ul>
+
+<p>Screens without a home</p>
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="/' + folder + '/service/phone-number">Phone number</a>
+  </li>
+
+  <li>
+    <a class="govuk-link" href="/' + folder + '/service/talk-phone">Talk phone</a>
+  </li>
+</ul>
+'       | safe    }) }}
+
+    </div>
+</div>
+
+
+<h3 class="govuk-heading-m">Other DWP supporting materials on intranet</h3>
+
+<ul class="govuk-list">
+<li><a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/19-communication-support-interview">CSI manual with basic information</a>
+</li><li>
+<a class="govuk-link" href="https://intranet.dwp.gov.uk/page/dwp-email-policy-checklist">Email policies</a>
+</li><li>
+<a class="govuk-link" href="https://intranet.dwp.gov.uk/page/core-partnership-products-access-work-communications-toolkit-1">AtW comms toolkit</a>
+</li><li>
+Information about   <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/types-support-worker-0">types of support worker</a> <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/child-medical-instructions/communication-support">communication support</a>
+and
+  <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/child-medical-instructions/sign-supported-english-sse">Sign Supported English</a>
+</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+    <form id="form" method="post" action="paid-work-router">
+
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+    	Is the interview for a paid job?
+    </h1>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="yes" name="paid-work" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="yes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no" name="paid-work" type="radio" value="No" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="no">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- job_company_name -->
+
+    </form>
+
+
+{% endblock %}
+<!--
+REDIRECT CODE IS IN ROUTES - THIS IS FOR ILLUSTRATION ONLY
+
+<script>
+$( "#yes" ).click(function() {
+  console.log("Yes");
+ $("form").attr("action", "interview-date")
+});
+$( "#no" ).click(function() {
+  console.log("No");
+ $("form").attr("action", "sorry/cant_help_paid")
+});
+</script>
+-->

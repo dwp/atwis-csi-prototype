@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper "id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop" id="addText">
+
+          <h1 class="govuk-heading-xl">Please add anything else that makes your job more difficult</h1>
+              <form id="form" method="post" action="taking-calls">
+
+                <div class="govuk-form-group">
+                      <label class="govuk-label" for="event-name">
+
+                      </label>
+                      <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+              </form>
+
+              <button class="govuk-button" onclick="addInput();" data-module="govuk-button" id="addTextFeild">
+                  Add another
+              </button>
+        </div>
+      </div>
+    </main>
+	</div>
+  <script>
+    function addInput() {
+  var parent = document.getElementById('addText');
+  var newChild = '<br/><input class="govuk-input" name="another-option" type="text" /><br/>';
+  parent.insertAdjacentHTML('beforeend', newChild);
+  childNumber++;
+}
+  </script>
+<!--<script>
+  var room = 1;
+function addInput() {
+    room++;
+    var objTo = document.getElementById('form')
+    var divtest = document.createElement("div");
+    divtest.innerHTML = '<br/><input class="govuk-input" name="another-option" type="text" /><br/>';
+
+    objTo.appendChild(divtest)
+}
+</script>-->
+  <!--<script>
+    function create(){
+    var count=4;
+    count++;
+    document.getElementById('form').innerHTML+='<br/><input class="govuk-input" name="another-option" type="text" /><br/>';
+    e.prventDefault();
+  }
+  </script>-->
+
+
+	{% endblock %}

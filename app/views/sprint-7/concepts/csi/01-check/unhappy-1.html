@@ -1,0 +1,23 @@
+{% set link = "unhappy-2" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+<!-- {% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %} -->
+{% set title = "[Add what you need to the logger]" %}
+
+{% set claim = true %}
+{% set hideChange = true %}
+{% block csi %}
+
+
+<p>[Add details to the spreadsheet to say what information you need]</p>
+
+{% set claimDetails %}
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+{% endset -%}
+
+{{ govukDetails({
+  summaryText: "Show claim details",
+  html: claimDetails
+}) }}
+
+
+{% endblock %}

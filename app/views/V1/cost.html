@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="nino">
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-4">
+      Cost Question:
+    </h1>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        What is the total cost for the support worker you need?
+    </h2>
+
+    <details class="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Why are we asking
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+          We need to understand how much money you will need reimbursing and to be able to decide if this is a reasonable cost for communication support.
+        </div>
+      </details>
+
+    <div class="govuk-form-group">
+      <span id="national-insurance-number-hint" class="govuk-hint">
+        If the support worker charges £35 an hour, and you believe the interview lasts 2 hours, put 70.
+      </span>
+      <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="number" aria-describedby="approximate-cost-hint">
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- nino -->
+
+    </form>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

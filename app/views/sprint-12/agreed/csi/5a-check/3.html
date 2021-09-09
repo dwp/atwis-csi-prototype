@@ -1,0 +1,97 @@
+{% set paymentAdviserLink = true %}
+{% set link = "../5b-reassign/1" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set paymentLink = true %}
+{% set title =  "What is the agreed support cost?" %}
+
+{% block csi %}
+
+
+
+
+<dl class="govuk-summary-list">
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key ">
+    Condition
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p>{{ data['csi-info'][2]['condition'] }}</p>
+  </dd>
+
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Interview length
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p>{{ data['csi-info'][2]['duration'] }}
+    </p>
+  </dd>
+
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Support cost on quote
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p class="govuk-body">
+    £200
+    </p>
+  </dd>
+
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Support cost on invoice
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p class="govuk-body">
+    £240
+    </p>
+  </dd>
+
+</div>
+</dl>
+
+
+{{ govukInput({
+  label: {
+    text: "Agreed amount to pay"
+  },
+  id: "agreed-amount",
+  name: "agreed-amount",
+  value: data['agreed-amount'],
+  classes: "govuk-input--width-10"
+}) }}
+
+
+{{ govukTextarea({
+  name: "difference-reason",
+  classes: "govuk-!-width-two-thirds",
+  id: "difference-reason",
+  value: data['difference-reason'],
+  label: {
+    text: "Reason for the agreed amount"
+  }
+}) }}
+
+
+<!-- trigger to set off event if we use this screen for task completion -->
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "amended-cost",
+  name: "amended-cost",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+
+
+{% endblock %}

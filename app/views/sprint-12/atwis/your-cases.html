@@ -1,0 +1,130 @@
+
+{% extends "./_BASE.html" %}
+{% set yourCases = true %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+{% if taskUpdated %}
+<div class="container status-message">
+<div class="govuk-panel govuk-panel--confirmation">
+
+  <h2 class="govuk-!-font-size-36"><img class="icon" style="height: 1em;
+    margin: 0 15px;
+    vertical-align: top;
+}" src="{{asset_path}}images/icon-tick@2x.png" alt="">Task completed</h2>
+
+
+</div></div>
+{% endif %}
+
+
+
+    {% set allocated %}
+    <h2 class="govuk-heading-m">Your communication support at interview cases </h2>
+
+
+<p>You have no cases.</p>
+
+    <h2 class="govuk-heading-m">Your other cases </h2>
+
+<p>You have no cases.</p>
+
+
+      {% endset -%}
+
+
+      {% set disc %}
+      <h2 class="govuk-heading-m">Your priority cases </h2>
+
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Name</th>
+              <th class="govuk-table__header">Specialism</th>
+              <th class="govuk-table__header">Case type</th>
+              <th class="govuk-table__header">Date submitted</th>
+              <th class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for case in cases %}
+
+    {% if case.priority == "true" and case.disc %}
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ case.name }}</td>
+                <td class="govuk-table__cell">{{ case.specialism }}</td>
+                <td class="govuk-table__cell">{{ case.type }}</td>
+                <td class="govuk-table__cell">{{ case.date }}</td>
+                <td class="govuk-table__cell"><a href="case{% if case.type == 'CSI'%}-csi-disc{% endif %}?n={{ case.name }}&s={{case.specialism}}">View case</a></td>
+              </tr>
+    {% endif %}
+            {% endfor %}
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-m">Your cases </h2>
+
+    {% if not cases  %}
+    Test
+    {% else %}
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Name</th>
+              <th class="govuk-table__header">Specialism</th>
+              <th class="govuk-table__header">Case type</th>
+              <th class="govuk-table__header">Date submitted</th>
+              <th class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for case in cases %}
+
+    {% if not (case.priority == "true") and case.disc %}
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ case.name }}</td>
+                <td class="govuk-table__cell">{{ case.specialism }}</td>
+                <td class="govuk-table__cell">{{ case.type }}</td>
+                <td class="govuk-table__cell">{{ case.date }}</td>
+                <td class="govuk-table__cell"><a href="case{% if case.type == 'CSI'%}-csi-disc{% endif %}?n={{ case.name }}">View case</a></td>
+              </tr>
+    {% endif %}
+            {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+
+        {% endset -%}
+
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Allocated",
+          id: "allocated",
+          panel: {
+            html: allocated
+          }
+        },
+        {
+          label: "In DiSC",
+          id: "in-disc",
+          panel: {
+            html: disc
+          }
+        }
+      ]
+    }) }}
+
+
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% set link = "2" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../5-payments/1-unhappy"}] %}
+{% set title =  "Update notification spreadsheet" %}
+
+
+{% block csi %}
+
+<p>Update the spreadsheet so that a notification can be sent when the payment is successful.</p>
+
+
+<p>Enter the following details:</p>
+
+<div class="govuk-inset-text">
+  Template to send: Payment sent<br>
+  Telephone number: 07982727282
+</div>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "spreadsheet",
+  name: "spreadsheet",
+  fieldset: {
+    legend: {
+      text: "Have you updated the spreadsheet?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      id: "yes",
+      value: "yes",
+      text: "Yes",
+      checked: checked('spreadsheet', "yes")
+    },
+    {
+      id: "no",
+      value: "no",
+      text: "No",
+      checked: checked('spreadsheet', "no")
+    }
+  ]
+}) }}
+
+
+
+{% endblock %}

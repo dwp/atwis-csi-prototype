@@ -1,0 +1,18 @@
+.panel-1col {
+	
+}
+.panel-2col .panel-col-first .inside {
+	margin: 0px;
+}
+.panel-1col .panel-col {
+	width: 100%;
+}
+#panels-edit-display .panel-pane {
+	margin: 0.5em;
+}
+#panels-edit-display .helperclass {
+	margin: 0.5em;
+}
+.panel-2col .panel-separator {
+	margin: 0px 0px 1em;
+}

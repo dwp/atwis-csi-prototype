@@ -1,0 +1,37 @@
+{% set link = "../send/1" %}
+{% set interviewDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Job interview details" %}
+
+
+{% block csi %}
+
+
+{% include folder + "/" + subfolder + "/_CLAIMDETAILS.html" %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       idPrefix: "interview",
+       name: "interview",
+       fieldset: {
+         legend: {
+           text: "Are these details complete and the cost reasonable?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

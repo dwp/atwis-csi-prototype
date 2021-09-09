@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="check_your_answers">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+        How can we contact you about your application
+    </h1>
+
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                Email
+            </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                Phone
+            </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+            </div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- total_cost -->
+
+    </form>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

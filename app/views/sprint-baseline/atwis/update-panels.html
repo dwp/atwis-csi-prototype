@@ -1,0 +1,44 @@
+<div class="update-panel">
+    <h3 class="govuk-heading-m" id="update-adviser-heading">Update advisers</h3>
+    <select id="adviser-select" class="govuk-select govuk-!-margin-bottom-3" aria-labelledby="update-adviser-heading">
+    {% for adviser in advisers %}
+    <option value="{{ adviser }}">{{ adviser }}</option>
+    {% endfor %}
+    </select>
+    {{ govukButton({
+        attributes: {
+        id: "update-adviser"
+        },
+        text: "Save",
+        classes: "govuk-!-margin-bottom-0"
+    }) }}
+</div>
+
+<div class="update-panel">
+    <h3 class="govuk-heading-m" id="update-specialism-heading">Update specialism</h3>
+    <select id="specialism-select" class="govuk-select govuk-!-margin-bottom-3" aria-labelledby="update-specialism-heading">
+    {% for specialism in specialisms %}
+    <option value="{{ specialism }}" {% if specialism == 'Pan disability' %}selected="selected"{% endif %}>{{ specialism }}</option>
+    {% endfor %}
+    </select>
+    {{ govukButton({
+        attributes: {
+        id: "update-specialism"
+        },
+        text: "Save",
+        classes: "govuk-!-margin-bottom-0"
+    }) }}
+</div>
+
+<script>
+    window.addEventListener('load', function(){
+    $('#update-specialism').on('click', function(){
+        $('#banner-specialism').html($('#specialism-select').val());
+        $('#banner-specialism').parent().removeAttr('hidden');
+    })
+    $('#update-adviser').on('click', function(){
+        $('#banner-adviser').html($('#adviser-select').val());
+        $('#banner-adviser').parent().removeAttr('hidden');
+    })
+    })
+</script>

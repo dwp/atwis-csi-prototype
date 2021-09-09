@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Sorry
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+            Sorry, we can't help this time
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+        <li>
+            <a href="#reason">We do not offer Communication Support at Interview for a job interview that has already taken place.</a>
+        </li>
+        </ul>
+    </div>
+</div>
+
+<div><a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)</div>
+
+{% endblock %}

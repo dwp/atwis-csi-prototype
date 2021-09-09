@@ -1,0 +1,23 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+        <form id="form" method="post" action="paid-work">
+
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+            What disability or health condition do you need communication support for?
+        </h1>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="condition">
+
+            </label>
+            <input class="govuk-input" id="condition" name="condition" type="text" spellcheck="false">
+        </div>
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- job/paid_work -->
+
+        </form>
+
+{% endblock %}

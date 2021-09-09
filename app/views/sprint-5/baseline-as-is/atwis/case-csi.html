@@ -1,0 +1,217 @@
+{% extends "./atwis-case.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+<div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-xl" style="margin-top:0">CSI</h2>
+    <h3 class="govuk-heading-l" style="margin-top:0">Citizen details</h3>
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Application reference:</span>
+      7EVLY2
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Name:</span>
+      Automation2 Testing
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Date of birth:</span>
+      20 February 1989
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Address:</span><br>
+
+        2 street<br>
+
+
+
+        Testing City<br>
+
+        Testing County<br>
+
+      BD23 2AJ
+    </p>
+
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Contact email address:</span> testing@gmail.com
+    </p>
+
+
+
+
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Contact phone number:</span> 071234323456
+    </p>
+
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Condition:</span>
+
+
+        Deaf
+
+    </p>
+
+    <h3 class="govuk-heading-l" style="margin-top:0">Interview application details</h3>
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Interview date:</span>
+      13 October 2019
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">CSI cost:</span>
+      190.00
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Application received:</span>
+      1 August 2019
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Company:</span>
+      Lloyds
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Company contact name:</span>
+      Testing
+    </p>
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Company contact phone number:</span>
+      04309876 ext:7145
+    </p>
+
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Company contact email address:</span>
+      testing@mail.com
+    </p>
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Estimated length of interview:</span>
+      1.2
+    </p>
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-weight-bold">Interview address:</span><br>
+
+        2 street<br>
+
+
+
+        Company Test city<br>
+
+        Company Test County<br>
+
+      M4 4TJ
+    </p>
+
+{% if toDisc %}
+    {{ govukInsetText({
+      html:
+    '<span class="govuk-body govuk-!-font-weight-bold">CSI case in DiSC<span>'
+}) }}
+
+{% endif %}
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+
+    {% if not toDisc %}
+    <div class="update-panel govuk-form-group">
+      <form action="your-cases-update" method="post" autocomplete="off" data-submitonce="">
+
+
+
+
+
+
+
+
+
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+        Update case
+
+      </legend>
+
+
+      <div class="govuk-checkboxes">
+
+
+
+
+
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="completed-1" name="completed" type="checkbox" value="Yes">
+          <label class="govuk-label govuk-checkboxes__label" for="completed-1">
+            I have started this CSI case in DiSC
+          </label>
+        </div>
+
+
+      </div>
+      </fieldset>
+
+
+    </div>
+
+
+        <div id="cta-confirm">
+
+
+
+
+
+    <button type="submit" class="govuk-button">
+      Confirm
+    </button>
+
+        </div>
+      </form>
+    </div>
+{% endif %}
+
+    <div class="update-panel">
+      <h3 id="update-adviser-heading" class="govuk-heading-m">Update advisers</h3>
+      <select id="adviser-select" class="govuk-select govuk-!-margin-bottom-3" aria-labelledby="update-adviser-heading">
+        {% for adviser in data['advisers'] %}
+        <option value="{{ adviser }}" {% if advisers == 'Pan disability' %}selected="selected"{% endif %}>{{ adviser }}</option>
+        {% endfor %}
+      </select>
+      {{ govukButton({
+          attributes: {
+            id: "update-adviser"
+          },
+          text: "Save",
+          classes: "govuk-!-margin-bottom-0"
+        }) }}
+    </div>
+
+    <script>
+      window.addEventListener('load', function(){
+        $('#update-specialism').on('click', function(){
+          $('#banner-specialism').html($('#specialism-select').val());
+        })
+        $('#update-adviser').on('click', function(){
+          $('#banner-adviser').html($('#adviser-select').val());
+        })
+      })
+    </script>
+  </div>
+</div>
+</section>
+
+</div>
+{% endblock %}

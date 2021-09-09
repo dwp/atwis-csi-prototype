@@ -1,0 +1,26 @@
+{% set link = "" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "" %}
+
+
+{% block csi %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "All tasks complete",
+        html: ""
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
+
+
+{% endblock %}

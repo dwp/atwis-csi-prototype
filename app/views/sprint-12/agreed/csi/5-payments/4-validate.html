@@ -1,0 +1,42 @@
+{% set link = "5" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "4-sop7-form"}] %}
+{% set title =  "Check payee details" %}
+
+
+{% block csi %}
+
+
+
+{{ govukRadios({
+  idPrefix: "payee-details-match",
+  name: "payee-details-match",
+    classes: "govuk-radios--inline",
+  fieldset: {
+    legend: {
+      text: "Do the payee details on SOP match the invoice?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      id: "yes",
+      value: "yes",
+      checked: checked('payee-details-match', "yes"),
+      text: "Yes"
+    },
+    {
+      id: "no",
+      value: "no",
+      checked: checked('payee-details-match', "no"),
+      text: "No"
+
+    }
+  ]
+}) }}
+
+
+
+{% endblock %}

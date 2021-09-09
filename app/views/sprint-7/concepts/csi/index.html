@@ -1,0 +1,147 @@
+{% set page = "task-list" %}
+{% set title = "Your tasks" %}
+{% extends "./_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+{% macro taskListItem(title="'title'", link='#', completed='', started='', locked='' ) %}
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+  {% if not (locked or completed)  %}  <a href="{{link}}" aria-describedby="eligibility-completed"> {% endif %}
+      {{title}}
+    {% if not (locked or completed)  %}   </a> {% endif %}
+  </span>
+{% if completed %}
+<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+
+{% else %}
+{% endif %}
+
+</li>
+
+
+{% endmacro %}
+
+
+{% if not (phase == "interview") %}
+{% if phase == "waiting" or (data['form'] == "yes" and not (phase == "same-day") )%}
+<br><p>You currently have no tasks. The case will be available in <strong>Your priority cases</strong>
+  after the interview date.</p>
+
+{% endif %}
+{% endif %}
+
+
+{% if not (phase == "interview" ) and not (phase == "waiting") %}
+              <ol class="app-task-list">
+                      <li>
+                        <h2 class="app-task-list__section">
+                          Check and approve
+                        </h2>
+                        <ul class="app-task-list__items" style="padding-left: 0">
+
+                          {{taskListItem(title="Find applicant on Searchlight", link="01-check/1", completed=(data['searchlight'] == "yes" or phase == "interview" or phase == "waiting" ), started=(data['searchlight'] == "no"), locked=(phase == "interview" or phase == "waiting"))}}
+
+                          {{taskListItem(title="Check for appointee", link="01-check/2", completed=(data['appointee'] or phase == "interview" or phase == "waiting" ), locked=(phase == "interview" or phase == "waiting" or not data['searchlight'] or (data['searchlight'] == "no") ))}}
+
+{{taskListItem(title="Check application details", link="01-check/3", completed=(data['claim'] == 'no' or phase == "interview" or phase == "waiting" ), locked=(phase == "interview" or phase == "waiting" or not data['appointee'] ) )}}
+
+
+
+
+
+</ul>
+</li>
+</ol>
+
+
+
+<ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Send confirmation
+          </h2>
+          <ul class="app-task-list__items" style="padding-left:0">
+
+
+
+            {{taskListItem(title="Send a confirmation email", link="02-send/1", completed=(data['send'] == "yes" or phase == "interview" or phase == "waiting"),  locked=(not (data['claim'])) or (data['claim'] and (data['claim'] == 'yes')) ) }}
+
+            {{taskListItem(title="Print and send the form", link="02-send/2", completed=(data['form'] == "yes" or interview or waiting), locked=(not data['send']) )}}
+
+
+
+
+
+</ul>
+</li>
+</ol>
+
+{% endif %}
+
+
+
+
+{% if phase == "same-day" or phase == "interview" %}
+
+<ol class="app-task-list">
+        <li>
+                        <h2 class="app-task-list__section">
+                           After the interview
+                        </h2>
+
+
+                        <ul class="app-task-list__items" style="padding-left:0">
+
+    {{taskListItem(title="Contact employer", link="03-contact/index", completed=(data['employer'] =="yes"), locked=(not (phase == "interview") or (phase == "same-day" and not data['claim'] == "yes") ))}}
+
+    {{taskListItem(title="Confirm interview took place", link="04-confirm/1", completed=(data['confirm'] =="yes"), locked=(not (data['employer'] == "yes") ))}}
+
+
+                        </ul>
+                      </li>
+                    </ol>
+
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "index",
+          text: "Index before interview"
+        },
+        {
+          href: "index-waiting",
+          text: "Index waiting"
+        },
+        {
+          href: "index-same-day",
+          text: "Index same day"
+        },
+        {
+          href: "index-interview",
+          text: "Index after interview"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}

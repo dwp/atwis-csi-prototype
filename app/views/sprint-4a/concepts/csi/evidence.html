@@ -1,0 +1,67 @@
+{% set interview = true %}
+{% set page = "evidence" %}
+{% set title = "Evidence" %}
+
+{% extends "./_CSIBASE.html" %}
+
+{% block csi %}
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Interview with employer</h2>
+
+{% if data['employer'] %}
+{% set confirmation = "Employer confirmed" %}
+{% else %}
+{% set confirmation = "Confirmation from employer needed" %}
+{% endif %}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+        {
+          key: {
+            text: "Inteview confirmation"
+          },
+          value: {
+            text: confirmation
+          },
+          actions: {
+            items: [
+              {
+                href: "contact/index",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+<!--
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">Claim form</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Form"
+              },
+              value: {
+                text: "Claim form not received"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+-->
+
+{% endblock %}

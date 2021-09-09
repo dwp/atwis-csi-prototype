@@ -1,0 +1,29 @@
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set title =  "" %}
+{% set paymentLink = true  %}
+{% set customNext = "Search for another case" %}
+{% set hideReturn = true %}
+{% set hideForm = true %}
+
+{% block csi %}
+
+{{ govukPanel({
+       titleText: "Tasks completed",
+       html: "All tasks have been completed and information saved."
+     }) }}
+
+
+<p>     <a href="/{{folder}}/delete-and-continue-router?next=/{{folder}}/{{subfolder}}/search-payments" class="govuk-link">Search for another case</a></p>
+
+
+
+{% endblock %}
+
+  {% block pageScripts %}
+  <style>
+    .govuk-panel--confirmation {
+        color: #fff;
+        background: #00703c;
+    }
+    </style>
+  {% endblock %}

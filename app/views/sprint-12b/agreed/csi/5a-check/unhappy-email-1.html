@@ -1,0 +1,164 @@
+{% set link = "unhappy-email-2"  %}
+{% set paymentAdviserLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index"}] %}
+
+{% if appointee %}
+{% set title =  "Email the applicant’s appointee" %}
+{% else %}
+{% set title =  "Email the applicant" %}
+{% endif %}
+
+{% block csi %}
+
+{% if appointee %}
+<p>Send an email to {{data['appointee-name'] | default(appointeeDetails.name) | safe }} to ask for
+  more information about <strong>{{data['csi-info'][3]['firstname']}} {{data['csi-info'][3]['surname']}}</strong>'s support cost.
+{% else %}
+<p>Send an email to <strong>{{data['csi-info'][3]['firstname']}} {{data['csi-info'][3]['surname']}}</strong> to ask for
+  more information about their support cost.
+{% endif %}
+
+  <br>The reference number is <strong>ATW34593DE</strong>.</p>
+
+
+
+  {{ govukButton({
+    text: "Open new email",
+    classes: "govuk-button--secondary",
+    href: "mailto:" + data['csi-info'][3]['email-for-user-research']
+  }) }}
+
+
+{% if data['searchlight'] == "no" %}
+<div class="govuk-inset-text">
+  {{data['csi-info'][3]['firstname']}} {{data['csi-info'][3]['surname']}}
+  <br>
+  {{ data['csi-info'][3]['dob-day'] | safe }} {{ data['csi-info'][3]['dob-month']| toMonth |  safe }}
+  {{ data['csi-info'][3]['dob-year'] | safe }}
+  <br>B2 8FG
+</div>
+{% endif %}
+
+{% if data['personal'] == 'no' %}
+
+<h2 class="govuk-heading-m">Personal details</h2>
+
+{% if data['more-detail-3'] %}
+
+
+{{ govukErrorSummary({
+  titleText: "Information to check with the applicant",
+  classes: "not-error",
+  errorList: [
+    {
+      text: data['more-detail-3'] | safe
+    }
+  ]
+}) }}
+
+{% endif %}
+
+{% set claimDetails %}
+{% set personalDetails = true %}
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+{% endset -%}
+
+{{ govukDetails({
+  summaryText: "Show personal details",
+  html: claimDetails
+}) }}
+
+{% endif %}
+
+
+{% if data['company'] == 'no' %}
+
+<h2 class="govuk-heading-m">Company details</h2>
+
+{% if data['more-detail-4'] %}
+
+{{ govukErrorSummary({
+  titleText: "Information to check with the applicant",
+  classes: "not-error",
+  errorList: [
+    {
+      text: data['more-detail-4'] | safe
+    }
+  ]
+}) }}
+
+{% endif %}
+
+{% set claimDetails %}
+{% set personalDetails = false %}
+{% set companyDetails = true %}
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+{% endset -%}
+
+{{ govukDetails({
+  summaryText: "Show company details",
+  html: claimDetails
+}) }}
+
+{% endif %}
+
+{% if data['interview'] == 'no' %}
+
+<h2 class="govuk-heading-m">Interview details</h2>
+
+{% if data['more-detail-5'] %}
+
+{{ govukErrorSummary({
+  titleText: "Information to check with the applicant",
+  classes: "not-error",
+  errorList: [
+    {
+      text: data['more-detail-5'] | safe
+    }
+  ]
+}) }}
+
+{% endif %}
+
+{% set claimDetails %}
+{% set personalDetails = false %}
+{% set companyDetails = false %}
+{% set interviewDetails = true %}
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+{% endset -%}
+
+{{ govukDetails({
+  summaryText: "Show interview details",
+  html: claimDetails
+}) }}
+
+{% endif %}
+
+<br>
+</br>
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+     name: "difference-asked-email",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "./_BASE.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Two-thirds column</h1>
+
+        <nav class="navigation-secondary">
+                <ul>
+                  <li>
+                    <a href="#" class="active" aria-current="section">Contact details</a>
+                  </li>
+                  <li>
+                    <a href="#">Interview</a>
+                  </li>
+                  <li>
+                    <a href="#">Evidence</a>
+                  </li>
+                </ul>
+              </nav>
+
+
+
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Claim history</h2>
+        <ol class="dwp-timeline">
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Claim received</h3>
+            <p class="dwp-timeline__info">
+              <span class="govuk-visually-hidden visually-hidden">Claim received</span>
+              <span class="dwp-timeline__author">by John Smith</span>
+              <span class="dwp-timeline__date">1 January 2018 at 13:02</span>
+            </p>
+        
+
+            </p>
+          </li>
+
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Marriage verified</h3>
+            <p class="dwp-timeline__info">
+              <span class="govuk-visually-hidden visually-hidden">Marriage verified</span>
+              <span class="dwp-timeline__author">by John Smith</span>
+              <span class="dwp-timeline__date">1 January 2018 at 13:21</span>
+            </p>
+            <p class="dwp-timeline__body">
+              Marriage certificate uploaded to DRS.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+.node-unpublished {
+	background-color: rgb(255, 244, 244);
+}
+.preview .node {
+	background-color: rgb(255, 255, 234);
+}
+td.revision-current {
+	background: rgb(255, 255, 204);
+}

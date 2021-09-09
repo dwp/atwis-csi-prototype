@@ -1,0 +1,90 @@
+{% set link = "3" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "Check the invoice" %}
+
+
+{% block csi %}
+
+  <!--<div class="govuk-inset-text">
+    {{data['csi-info'][1]['firstname']}} {{data['csi-info'][1]['surname']}}
+    <br>
+    {{ data['csi-info'][1]['dob-day'] | safe }} {{ data['csi-info'][1]['dob-month']| safe }}
+    {{ data['csi-info'][1]['dob-year'] | safe }}
+    <br>B2 8FG
+  </div>-->
+    <p></p>
+
+    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+  {{ govukRadios({
+    classes: "govuk-radios",
+         idPrefix: "invoice",
+         name: "invoice",
+         fieldset: {
+           legend: {
+             text: "Is the invoice value £243.33?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+         html: ""
+    },
+         items: [
+         {
+           id: "yes",
+           value: "yes",
+           checked: checked('invoice', "yes"),
+           text: "Yes"
+         },
+           {
+             id: "no",
+             value: "no",
+             text: "No",
+             checked: checked('invoice', "no"),
+             conditional: {
+               html: conditionalText
+             }
+           }
+         ]
+       }) }}
+       <br>
+
+<!--Second radio button set
+       {{ govukRadios({
+         classes: "govuk-radios",
+              idPrefix: "interview",
+              name: "interview",
+              fieldset: {
+                legend: {
+                  text: "Does the invoice include all the following information?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+         html: ""
+         },
+              items: [
+              {
+                id: "yes",
+                value: "yes",
+                checked: checked('interview', "yes"),
+                text: "Yes"
+              },
+                {
+                  id: "no",
+                  value: "no",
+                  text: "No",
+                  checked: checked('interview', "no"),
+                  conditional: {
+                    html: conditionalText
+                  }
+                }
+              ]
+            }) }} -->
+
+
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% set link = "complete"  %}
+{% set paymentAdviserLink = true %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index"}] %}
+
+{% set title =  "Send an email to the payments team" %}
+
+{% block csi %}
+
+
+
+<p>Send an email to the payments team to tell them that they can continue processing the payment for this case.</p>
+
+
+  {{ govukTable({
+    caption: "",
+    firstCellIsHeader: true,
+    head: [
+    {
+      text: "",
+      classes: 'govuk-!-width-one-third'
+    },
+    {
+      text: "",
+      classes: 'govuk-!-width-two-thirds'
+    }
+  ],
+    rows: [
+
+appointeeText  ,
+
+      [
+        {
+          text: "Applicant name"
+        },
+        {
+          text: data['csi-info'][1]['firstname'] +  " " +  data['csi-info'][1]['surname']
+        }
+      ],
+      [
+        {
+          text: "Reference"
+        },
+        {
+          text: "ATW34593DE"
+        }
+      ],
+      [
+        {
+          text: "Support cost"
+        },
+        {
+          text: "£245.34"
+        }
+      ]
+    ]
+  }) }}
+
+
+  {{ govukButton({
+    text: "Open new email",
+    classes: "govuk-button--secondary",
+    href: "mailto:" + data['csi-info'][1]['email-for-user-research']
+  }) }}
+
+
+<br>
+</br>
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+     name: "transfer-back-payments",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

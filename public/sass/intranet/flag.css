@@ -1,0 +1,21 @@
+.flag-message {
+	left: 0px; top: 1.7em; width: 300px; text-align: left; line-height: normal; font-size: 0.8em; position: absolute;
+}
+.flag-message.flag-failure-message {
+	padding: 2px; border: 1px solid rgb(238, 221, 85); border-image: none; color: rgb(136, 68, 0); background-color: rgb(255, 252, 229);
+}
+.flag-wrapper {
+	position: relative;
+}
+ul.contextual-links li .flag-wrapper a {
+	display: inline-block;
+}
+ul.contextual-links li .flag-wrapper {
+	display: block;
+}
+.flag-waiting a {
+	opacity: 0.5;
+}
+.flag-waiting .flag-throbber {
+	background: url("flag-throbber.gif") no-repeat right; padding-right: 13px;
+}

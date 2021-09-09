@@ -1,0 +1,66 @@
+{% set link = "../../your-cases-payments-reallocated" %}
+{% set payments = true %}
+{% set paymentLink = true %}
+{% set customNext = "Allocate" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set title =  "Allocate the case to an adviser" %}
+
+{% block csi %}
+
+
+
+<ol class="dwp-timeline">
+
+
+
+              <li class="dwp-timeline__entry">
+                <h3 class="govuk-heading-s dwp-timeline__title">Application allocated <span class="dwp-timeline__date">Rich Silver</span></h3>
+                <p class="dwp-timeline__info">
+                  <span class="dwp-timeline__date">2 November 2019 at 12:22pm</span>
+                </p
+              </li>
+
+            <li class="dwp-timeline__entry">
+              <h3 class="govuk-heading-s dwp-timeline__title">Application allocated <span class="dwp-timeline__date">John Goldsmith</span></h3>
+              <p class="dwp-timeline__info">
+                <span class="dwp-timeline__date">31 October 2019 at 12:22pm</span>
+              </p
+            </li>
+
+</ol>
+
+
+
+  <h3 id="update-adviser-heading" class="govuk-heading-m">Which adviser do you want to allocate the case to?</h3>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+        Leave blank to unallocate the case
+      </label>
+  <select id="adviser-list" class="govuk-select" aria-labelledby="update-adviser-heading">
+    <option value=""></option>
+    {% for adviser in data['advisers'] %}
+    <option value="{{ adviser }}">{{ adviser }}</option>
+    {% endfor %}
+  </select>
+</div>
+
+
+{{ govukTextarea({
+  name: "more-detail-payment",
+  classes: "govuk-!-width-two-thirds",
+  id: "more-detail",
+  value: data['more-detail-payment'],
+  label: {
+    text: "Information for the adviser"
+  },
+  hint: {
+    text: "Give details which might help the adviser make a decision about
+    the support cost."
+  }
+}) }}
+
+<!-- HIDDEN FOR TRIGGER was 'sent-email-amount' -->
+<input type="hidden" name="transfer-to-adviser" value="yes">
+
+
+{% endblock %}

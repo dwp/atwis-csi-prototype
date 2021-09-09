@@ -1,0 +1,11 @@
+.update-panel {
+  position: relative;
+  overflow: auto;
+  background-color: govuk-colour("light-grey", $legacy: "grey-3");
+  padding: 20px;
+  margin-bottom: 30px;
+
+  h3 {
+    margin-top: 0
+  }
+}

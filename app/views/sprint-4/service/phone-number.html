@@ -1,0 +1,23 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+              <form id="form" method="post" action="alternative-contact">
+
+                <h1 class="govuk-heading-xl">What is your phone number?</h1>
+
+                <p>We may need to call you to ask for more information or to confirm your application. Use a phone number that you
+                can check every day, such as a personal mobile number.</p>
+
+                <div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                        Phone number
+                        </label>
+                        <input class="govuk-input" id="event-name" name="event-name" type="number" pattern="[0-9]*">
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+
+	{% endblock %}

@@ -1,0 +1,42 @@
+{% set link = "4-sop7-form" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "4-request-bank"}] %}
+{% set title =  "Check the bank details" %}
+
+
+{% block csi %}
+
+<p>Use Bank Wizard to check the bank details.</p>
+<br>
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "bank-details",
+  name: "bank-details",
+  fieldset: {
+    legend: {
+      text: "Are the bank details valid?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      id: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      id: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% set link = "5" %}
+{% set companyDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+
+
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Check company details</h1>
+
+
+
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+
+{% set conditionalText %}
+{{ govukTextarea({
+  name: "more-detail-4",
+  id: "more-detail",
+  value: data['more-detail-4'],
+  label: {
+    text: "What do you need to contact the applicant about?"
+  },
+  hint: {
+    text: "You will be able to use these notes when you contact the applicant."
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       idPrefix: "company",
+       name: "company",
+       fieldset: {
+         legend: {
+           text: "Are these details complete?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+  html: "You can fix any small errors or mistakes in the <a href='../claim#company'>Case details tab</a>."
+  },
+       items: [
+       {
+         id: "yes",
+         value: "yes",
+         checked: checked('company', "yes"),
+         text: "Yes"
+       },
+         {
+           id: "no",
+           value: "no",
+           text: "No, I need to contact the applicant",
+           checked: checked('company', "no"),
+           conditional: {
+             html: conditionalText
+           }
+
+         }
+       ]
+     }) }}
+
+{% endblock %}

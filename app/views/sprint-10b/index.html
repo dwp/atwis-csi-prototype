@@ -1,0 +1,225 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+          Sprint 10b
+        <span class="govuk-caption-xl">Payments journey usability testing</span>
+
+</h1>
+<!--        {{ govukDetails({
+                  summaryText: "Notes on this sprint",
+                  html: '
+                  <p>This sprint we:</p>
+
+                  <ul class="govuk-list  govuk-list--bullet">
+                      <li></li>
+
+                  </ul>'
+
+                          }) }} -->
+
+<p>Amends after payment testing</p>
+<p>
+                            <a class="govuk-button"  href="/{{folder}}/agreed/search-payments">Start from payment role search</a>
+  </p>
+
+<!--
+{{ govukDetails({
+          summaryText: "Searchlight prototype details",
+          html: '
+          <ul class="govuk-list">
+          <li>Prototype: <a href="https://dwp-searchlight.herokuapp.com/trace">https://dwp-searchlight.herokuapp.com/trace</a></li>
+          <li>Username and password on <a href="https://confluence.service.dwpcloud.uk/display/ATW/Useful+Links#UsefulLinks-AccesstoWorkCSI">Confluence</a></li>
+          </ul>
+          '
+
+                  }) }}
+
+-->
+
+{% set adviserScreens %}
+                      <h3 class="govuk-heading-m">New application</h3>
+
+                      <ul class="govuk-list">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/your-cases">Your cases</a> and <a class="govuk-link" href="/{{folder}}/agreed/search-payments">find a case and results</a> (on same screen) - payment person view</li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/claim">Case details</a> and change:
+
+                        <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                        <a class="govuk-link" href="/{{folder}}/agreed/csi/personal-details-change">personal details</a>
+                        </li><li>
+                        <a class="govuk-link" href="/{{folder}}/agreed/csi/appointee-details-change">appointee details</a> and <a class="govuk-link" href="/{{folder}}/agreed/csi/appointee-remove">remove appointee</a>
+                        </li><li>
+                        <a class="govuk-link" href="/{{folder}}/agreed/csi/company-details-change">company details</a>
+                        </li><li>
+                        <a class="govuk-link" href="/{{folder}}/agreed/csi/job-details-change">interview details</a>
+
+                      </li></ul></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/index">Your tasks</a>
+                      <ul class="govuk-list govuk-list--bullet">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/1">Check on searchlight</a>  - unhappy path jumps straight to unhappy path contact options</li>
+                      <li> <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/1-ni-number">add National Insurance number from Searchlight</a> </li>
+                      <li> <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/2">check for appointee</a> and <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/2-appointee">add appointee details</a></li>
+                      <li>Check <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/3">personal details</a> (unhappy annotated on screen) </li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/4">company details</a> (unhappy annotated on screen)  </li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/5">interview details</a> (unhappy annotated on screen) </li>
+
+                      <li>unhappy path:
+                      <ul class="govuk-list govuk-list--bullet">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-2">IF 2 FORMS OF CONTACT: how do you want to contact the applicant?</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-2-appointee">option for appointee</a> screen)</li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-email-1">send email</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-2-appointee">option for appointee</a> screen)</li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-email-2">email sent</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-phone-1">phone applicant</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-phone-1-appointee">option for appointee</a> screen)</li><li><a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-phone-2">phoned</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-phone-2-appointee">option for appointee</a> screen)</li>
+                      </ul>
+                      </li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/2-send/1">Send email</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/2-send/1-appointee">option for appointee</a> screen) </li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/2-send/2">copy claim details</a>
+                       (and <a class="govuk-link" href="/{{folder}}/agreed/csi/2-send/2-appointee">option for appointee</a> screen)
+                  and link to prototyped <a class="govuk-link" href="/{{folder}}/agreed/intranet/letters">intranet letters</a> with link to form <a href="https://confluence.service.dwpcloud.uk/download/attachments/152748195/Blank%20CSI%20Form%20%28generated%20from%20DISC%29.rtf?api=v2">on Confluence</a></li>
+                      <li> <a class="govuk-link" href="/{{folder}}/agreed/csi/2-send/3">print and send</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/2-send/3-appointee">option for appointee</a> screen)</li>
+
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/your-cases-waiting">Your cases (waiting)</a>, <a class="govuk-link" href="/{{folder}}/agreed/csi/index-waiting">case index (waiting)</a> and <a class="govuk-link" href="/{{folder}}/agreed/csi/claim-waiting">claim (waiting)</a></li>
+                      </ul>
+
+                      <h3 class="govuk-heading-m">Same-day application only</h3>
+
+                      <ul class="govuk-list">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/your-cases-same-day">Your cases (same day)</a></li>
+                        <li><a class="govuk-link" href="/{{folder}}/agreed/csi/index-same-day">Your tasks (same day)</a> and <a class="govuk-link" href="/{{folder}}/agreed/csi/claim-same-day">claim (same day)</a></li>
+                      </ul>
+
+                      <h3 class="govuk-heading-m">After interview</h3>
+<p>Not added yet: journey for changing details</p>
+                      <ul class="govuk-list">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/your-cases-interview">Your cases</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/index-interview">Your tasks</a>
+                      <ul class="govuk-list govuk-list--bullet">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/3-contact/index">Contact employer</a></li>
+                      <li>Email:
+                      <a class="govuk-link" href="/{{folder}}/agreed/csi/3-contact/email/1">Send email</a> and <a class="govuk-link" href="/{{folder}}/agreed/csi/3-contact/email/2">success</a>
+                      </li>
+                      <li>Telephone:
+                      <a class="govuk-link" href="/{{folder}}/agreed/csi/3-contact/phone/1">Contact employer</a>
+                      </li>
+
+                      <li>Update (goes to confirm)
+                      </li>
+
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1">Confirm interview took place</a>
+
+                       </li>
+
+                       <li>unhappy path:
+                       <ul class="govuk-list govuk-list--bullet">
+                         <li><a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy">Email applicant</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy-appointee">option for appointee</a> screen) </li>
+
+                       </ul></li>
+                       <li>unhappy path:
+                       <ul class="govuk-list govuk-list--bullet">
+                       <li><a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy">IF 2 FORMS OF CONTACT: how do you want to contact the applicant?</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy-appointee">option for appointee</a> screen)</li>
+                       <li><a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy-email">send email</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy-email-appointee">option for appointee</a> screen)</li>
+                           <li><a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy-phone">phone applicant</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/1-unhappy-phone-appointee">option for appointee</a> screen)</li><li><a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/2-unhappy-phone">phoned</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/2-unhappy-phone-appointee">option for appointee</a> screen)</li>
+                       </ul>
+                       </li>
+
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/4-confirm/complete">Tasks complete</a></li>
+                      </ul></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/your-cases-empty">Your cases (empty)</a></li>
+
+                      </ul>
+
+                      <h3 class="govuk-heading-m">Intranet screens</h3>
+
+                      <ul class="govuk-list">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/intranet/forms">Forms</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/intranet/letters">Letters</a> with link to form (<a href="https://confluence.service.dwpcloud.uk/download/attachments/152748195/Blank%20CSI%20Form%20%28generated%20from%20DISC%29.rtf?api=v2">on Confluence</a> so sign in)</li>
+
+                      </ul>
+
+{% endset -%}
+
+{{ govukDetails({
+          summaryText: "Adviser screens for application and employer check (hidden for this sprint)",
+          html: adviserScreens
+
+                  }) }}
+                      <h3 class="govuk-heading-m">Payments team journey</h3>
+
+                      <ul class="govuk-list">
+
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/search-payments">Find a case and results</a> (on same screen) - payment person view</li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/index-payment">Tasks to complete</a> and <a class="govuk-link" href="/{{folder}}/agreed/csi/index-payment-unconfirmed">option when interview hasn't happened</a>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/1">Check evidence</a> - unhappy path:
+
+                            <ul class="govuk-list govuk-list--bullet">
+                               <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/1-unhappy">ask for more evidence</a> </li>
+                             <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/1-waiting">Wait for response</li>
+                               </ul></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/2">Input invoice amount</a></li> <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/2-1">confirm amount</a>, if amount is higher than quote:
+                        <ul class="govuk-list govuk-list--bullet">
+                           <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/2-unhappy">contact adviser</a></li>
+                           <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/2-1-confirmation">email sent</a></li>
+                         </ul></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/3">Find payee</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/4">Payee results</a> and option if not on list:
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Yes: <a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/4-sop-yes-form">Fill in the form</a> and <a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/4-sop-yes-waiting">task completed</a></li>
+</ul></li>
+                        <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/5">Check payee details</a> (link for details not matching to can you change SOP details screen)</li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5-payments/5">Check payment details</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/6-confirmation/2">End page</a></li>
+</li>
+                      </ul>
+
+                      <h3 class="govuk-heading-m">Adviser journey when invoice is different from payment</h3>
+
+                      <ul class="govuk-list">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/your-cases-payment-adviser">Your cases</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/claim-payment-adviser">Case details</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/index-payment-adviser">Your tasks</a>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li><a class="govuk-link" href="/{{folder}}/agreed/csi//-check/1">check difference</a> (unhappy annotated on screen) </li>
+
+                        <li>unhappy path:
+                        <ul class="govuk-list govuk-list--bullet">
+                        <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-2">IF 2 FORMS OF CONTACT: how do you want to contact the applicant?</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-2-appointee">option for appointee</a> screen)</li>
+                        <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-email-1">send email</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/1-check/unhappy-2-appointee">option for appointee</a> screen)</li>
+                        <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-email-2">email sent</a></li>
+                        <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-phone-1">phone applicant</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-phone-1-appointee">option for appointee</a> screen)</li><li><a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-phone-2">phoned</a> (and <a class="govuk-link" href="/{{folder}}/agreed/csi/5a-check/unhappy-phone-2-appointee">option for appointee</a> screen)</li>
+                        </ul>
+                        </li>
+
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5b-reassign/1">Contact payment team</a>
+                       </li>
+                       <li><a class="govuk-link" href="/{{folder}}/agreed/csi/5b-reassign/complete">Tasks complete</a></li>
+
+                                  </ul></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/your-cases-empty">Your cases (empty)</a></li>
+
+                      </ul>
+
+<p>STILL TO ADD: journey for approver for payment change (journey TBC)</p>
+
+                      <h3 class="govuk-heading-m">Intranet screens</h3>
+
+                      <ul class="govuk-list">
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/intranet/forms">Forms</a></li>
+                      <li><a class="govuk-link" href="/{{folder}}/agreed/intranet/letters">Letters</a> with link to form (<a href="https://confluence.service.dwpcloud.uk/download/attachments/152748195/Blank%20CSI%20Form%20%28generated%20from%20DISC%29.rtf?api=v2">on Confluence</a> so sign in)</li>
+
+                      </ul>
+
+
+    </div>
+</div>
+
+
+{% endblock %}

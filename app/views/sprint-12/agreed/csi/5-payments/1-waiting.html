@@ -1,0 +1,16 @@
+{% set link = "../../search-payments" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set title =  "Evidence sent" %}
+{% set customNext = "Search for another case" %}
+{% set hideReturn = true %}
+
+
+{% block csi %}
+
+<p>You will be able to continue with this case once the applicant{% if appointee %}’s appointee{% endif %} has sent their evidence back.</p>
+
+
+
+
+{% endblock %}

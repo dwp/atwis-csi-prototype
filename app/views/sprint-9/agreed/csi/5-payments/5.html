@@ -1,0 +1,114 @@
+{% set link = "../6-confirmation/2" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title = "Check and approve payment details" %}
+{% set customNext = "Approve payment" %}
+
+{% block csi %}
+
+
+
+      <p class="govuk-body">Check the details before you approve the payment request.</p>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Applicant name"
+            },
+            value: {
+              text: "Thomas Brown"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payee name"
+            },
+            value: {
+              text: "Margaret Hedge"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payee address"
+            },
+            value: {
+              html: "11 Hill Street<br>Birmingham<br>Midlands<br>B1 2HD"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payment amount"
+            },
+            value: {
+              html: data['invoice-value'] | toMoney
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "payment",
+  name: "payment",
+  fieldset: {
+    legend: {
+      text: "Do you want to approve the payment?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      id: "yes",
+      value: "yes",
+      text: "Yes",
+      checked: checked('payment', "yes")
+    },
+    {
+      id: "no",
+      value: "no",
+      text: "No",
+      checked: checked('payment', "no")
+    }
+  ]
+}) }}
+
+
+{% endblock %}

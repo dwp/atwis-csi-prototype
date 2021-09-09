@@ -1,0 +1,19 @@
+{% set link = "find-a-case-result" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "Find a case" %}
+
+
+{% block csi %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Enter a URN or name"
+  },
+  id: "payee-search",
+  name: "payee-search"
+}) }}
+
+{% endblock %}

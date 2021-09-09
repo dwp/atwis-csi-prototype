@@ -1,0 +1,164 @@
+{% set link = "complete" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index-payments"}] %}
+{% set title = "Check and approve payment details" %}
+{% set customNext = "Approve payment" %}
+
+{% block csi %}
+
+{% if data['agreed-amount']  %}
+{% set amount = data['agreed-amount'] | toMoney %}
+
+{% else %}
+{% set amount = data['invoice-value'] | default(240) | toMoney %}
+{% endif  %}
+
+      <p class="govuk-body">Check the details before you approve the payment request.</p>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Invoice reference"
+            },
+            value: {
+              text: data['invoice-reference'] | default("123")
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Invoice date"
+            },
+            value: {
+              text: data["invoice-date-day"] | default("31") + " " +
+     data["invoice-date-month"] | default("1") | toMonth +  " " +
+    data["invoice-date-year"] | default("2020")
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payee postcode"
+            },
+            value: {
+              text: data['invoice-postcode']
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payment amount"
+            },
+            value: {
+              html: amount
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SOP supplier number"
+            },
+            value: {
+              html: data['supplier-reference'] | default("123456789")
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "app-payment",
+        classes: "govuk-radios--inline",
+        name: "app-payment",
+        fieldset: {
+          legend: {
+            text: "Do you want to approve the payment?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked('app-payment', "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked('app-payment', "no")
+          }
+        ]
+      }) }}
+
+<!--{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "payment",
+  name: "payment",
+  fieldset: {
+    legend: {
+      text: "Do you want to approve the payment?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      id: "yes",
+      value: "yes",
+      text: "Yes",
+      checked: checked('payment', "yes")
+    },
+    {
+      id: "no",
+      value: "no",
+      text: "No",
+      checked: checked('payment', "no")
+    }
+  ]
+}) }}-->
+
+
+{% endblock %}

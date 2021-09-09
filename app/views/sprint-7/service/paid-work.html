@@ -1,0 +1,51 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+    <form id="form" method="post" action="interview-date">
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Your job interview
+    </h1>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+    	Is the interview for a paid job?
+    </h2>
+    <span id="event-name-hint" class="govuk-hint">
+          The interview must be for a paid job or apprenticeship in England, Scotland or Wales, or a Department for
+          Education supported internship. You cannot apply if the interview is for a volunteer role, or if you're attending
+          a job induction or job review.
+    </span>
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- job_company_name -->
+
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function (event)  {
+          event.preventDefault();
+          if (document.getElementById('terminal-1').checked) {
+            window.location = 'interview-date';
+          } else {
+            window.location = './sorry/cant-help-paid';
+          }
+        })
+    </script>
+
+{% endblock %}

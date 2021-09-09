@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form id="form" method="post" action="customer_address">
+
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-4">
+            Customer details:
+        </h1>
+
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+            Enter your full name
+        </h2>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="full-name">
+                Full name
+            </label>
+            <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+        </div>
+        
+        <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- customer_address -->
+
+        </form>
+
+    <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}
