@@ -1,0 +1,50 @@
+{% set link = "4-validate" %}
+{% set payments = true %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set title =  "Find the payee on SOP" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "4-bank"}] %}
+
+
+{% block csi %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<p>Search SOP using the bank account number on the invoice.</p>
+<br>
+
+
+
+{{ govukRadios({
+       name: "find-payee",
+         classes: "govuk-radios--inline",
+       fieldset: {
+         legend: {
+           text: "Is the payee on SOP?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+         html: ""
+  },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           checked: checked('find-payee', "yes"),
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No",
+           checked: checked('find-payee', "no")
+
+         }
+       ]
+     }) }}
+
+
+
+{% endblock %}

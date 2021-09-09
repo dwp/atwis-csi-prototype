@@ -28,6 +28,7 @@ router.use('/', (req, res, next) => {
 });
 
 // Start folder specific routes
+router.use('/sprint-13', require('./views/sprint-13/_routes'));
 router.use('/V12', require('./views/V12/_routes'));
 router.use('/sprint-baseline', require('./views/sprint-baseline/_routes'));
 router.use('/sprint-4', require('./views/sprint-4/_routes'));
