@@ -1,0 +1,111 @@
+{% extends folder + "/" + subfolder + "/_BASE.html" %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper govuk-!-padding-top-0">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">{{ data['your-cases'][0]['name'] | safe }}</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">ZSQYR5
+  <!-- <span><strong class="app-c-tag">[claim status]</strong></span> -->
+              </h1>
+
+
+
+
+              {{ govukButton({
+                text: "Reallocate",
+                classes: "govuk-button--secondary"
+              }) }}
+
+        <nav class="navigation-secondary">
+                <ul>
+                  <li>
+                    <a href="{% if not (page == 'task-list') %}index{% if interview %}-interview{% elif waiting %}-waiting{% else %}{% endif %}{% else %}#" class="active" aria-current="section{% endif %}">Your tasks</a>
+                  </li>
+                  <li>
+                    <a href="{% if not (page == 'claim') %}claim{% if interview %}-interview{% elif waiting %}-waiting{% else %}{% endif %}{% else %}#" class="active" aria-current="section{% endif %}">Claim details</a>
+                  </li>
+<!--                  <li>
+                    <a href="#">Interview</a>
+                  </li> -->
+
+        {% if interview %}
+
+                  <li>
+                    <a href="{% if not (page == 'evidence') %}evidence{% else %}#" class="active" aria-current="section{% endif %}">Evidence</a>
+                  </li>
+
+      {% endif %}
+                </ul>
+              </nav>
+
+
+                    {% block csi %}
+
+                    {% endblock %}
+
+
+      </div>
+
+
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Claim history</h2>
+        <ol class="dwp-timeline">
+
+{% if  data['employer'] =="yes" %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Interview confirmed</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">1 November 2019</span>
+            </p>
+        <!--    <p class="dwp-timeline__body">
+              Employer contacted. Claim transferred to payments team.
+            </p>
+          </li> -->
+{% endif %}
+{% if data['sent-email']  %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Email sent to employer</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">5 November 2019</span>
+            </p
+          </li>
+{% endif %}
+
+{% if interview or (data['notifications'] =="yes") %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Confirmation sent</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">24 October 2019</span>
+            </p>
+
+          </li>
+{% endif %}
+
+{% if interview or data['interview'] %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Application checked</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">24 October 2019</span>
+            </p>
+          </li>
+{% endif %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Application allocated</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">23 October 2019</span>
+            </p>
+
+          </li>
+        </ol>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

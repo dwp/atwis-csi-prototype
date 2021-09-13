@@ -1,0 +1,56 @@
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set link = "1" %}
+{% set interviewLink = "true" %}
+
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "2-unhappy-phone" }] %}
+
+{% if appointee %}
+{% set title =  "Telephone the applicant’s appointee" %}
+{% else %}
+{% set title =  "Telephone the applicant" %}
+{% endif %}
+
+{% block csi %}
+
+{% if appointee %}
+<p>Telephone <strong>{{data['appointee-name'] | default(appointeeDetails.name) | safe }}</strong> on <strong>{{data['appointee-contact-phone'] | default(appointeeDetails.telephone) | safe }}</strong> to ask
+  for more information about <strong>{{data['csi-info'][2]['firstname']}} {{data['csi-info'][2]['surname']}}</strong>’s interview.</p>
+{% else %}
+<p>Telephone <strong>{{data['csi-info'][2]['firstname']}} {{data['csi-info'][2]['surname']}}</strong> on <strong>{{ data['csi-info'][2]['contact-by-phone'] }}</strong> to ask
+  for more information about their interview.</p>
+{% endif %}
+
+</br>
+
+{% if appointee %}
+{% set telephoneText = "Has the applicant’s appointee answered the telephone?" %}
+{% else %}
+{% set telephoneText = "Has the applicant answered the telephone?" %}
+{% endif %}
+
+{{ govukRadios({
+     name: "asked-info-phone",
+       fieldset: {
+         legend: {
+           text: telephoneText,
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes, check information"
+
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

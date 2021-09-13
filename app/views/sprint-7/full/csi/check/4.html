@@ -1,0 +1,36 @@
+{% set link = "../send/1" %}
+{% set interviewDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "4-unhappy"}] %}
+
+{% set title =  "Are these details complete and the cost reasonable?" %}
+
+
+{% block csi %}
+
+
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       idPrefix: "interview",
+       name: "interview",
+       fieldset: {
+
+       },
+       items: [
+         {
+            id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

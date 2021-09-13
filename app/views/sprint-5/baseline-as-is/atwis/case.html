@@ -1,0 +1,171 @@
+{% extends "./atwis-case.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#case">Case management</a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#application">Application</a>
+        </li>
+      </ul>
+
+      <section class="govuk-tabs__panel" id="case">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Application summary</h2>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">Application reference:</span> KDJ12</p>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">Submission date:</span> 28/06/2018</p>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">Name:</span> {{ name }}</p>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">Employer:</span> MacDonalds</p>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">Condition:</span> Deaf</p>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="update-panel">
+              <h3 id="update-specialism-heading">Update specialism</h3>
+              <select id="specialism-select" class="govuk-select govuk-!-margin-bottom-3" aria-labelledby="update-specialism-heading">
+                {% for specialism in specialisms %}
+                <option value="{{ specialism }}" {% if specialism == 'Pan disability' %}selected="selected"{% endif %}>{{ specialism }}</option>
+                {% endfor %}
+              </select>
+              {{ govukButton({
+                  attributes: {
+                    id: "update-specialism"
+                  },
+                  text: "Save",
+                  classes: "govuk-!-margin-bottom-0"
+                }) }}
+            </div>
+
+            <div class="update-panel">
+              <h3 id="update-adviser-heading">Update advisers</h3>
+              <select id="adviser-select" class="govuk-select govuk-!-margin-bottom-3" aria-labelledby="update-adviser-heading">
+                {% for adviser in advisers %}
+                <option value="{{ adviser }}" {% if advisers == 'Pan disability' %}selected="selected"{% endif %}>{{ adviser }}</option>
+                {% endfor %}
+              </select>
+              {{ govukButton({
+                  attributes: {
+                    id: "update-adviser"
+                  },
+                  text: "Save",
+                  classes: "govuk-!-margin-bottom-0"
+                }) }}
+            </div>
+
+            <script>
+              window.addEventListener('load', function(){
+                $('#update-specialism').on('click', function(){
+                  $('#banner-specialism').html($('#specialism-select').val());
+                })
+                $('#update-adviser').on('click', function(){
+                  $('#banner-adviser').html($('#adviser-select').val());
+                })
+              })
+            </script>
+          </div>
+        </div>
+      </section>
+
+      <section class="govuk-tabs__panel" id="application">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <ul class="sub-tabs">
+              <li class="active">
+                <a href="#application">Application</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-m">28 June 2018 - 12:23</span>
+            <h2 class="govuk-heading-l govuk-!-padding-top-0">Application</h2>
+            <p>
+              <span class="govuk-!-font-weight-bold">Application reference:</span> KDJ12 <br />
+              <span class="govuk-!-font-weight-bold">Submission date:</span> 28/06/2108 12:23 <br />
+              <span class="govuk-!-font-weight-bold">Version of questions:</span> 23.0
+            </p>
+
+            <h3 class="govuk-heading-m">Personal details</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">Full name:</span> {{ name }} <br />
+              <span class="govuk-!-font-weight-bold">Date of birth:</span> 27/01/1962 <br />
+              <span class="govuk-!-font-weight-bold">Address:</span> 101 The Towers, Feltham Grove, Manchester<br />
+              <span class="govuk-!-font-weight-bold">Postcode:</span> MU99 9ZZ<br />
+            </p>
+
+            <h3 class="govuk-heading-m">Contact details</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">Who do you want to be contacted about your condition, award or application:</span> Someone else
+            </p>
+
+            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Your representative</h4>
+            <p>This should be someone you trust and who can talk about your condition</p>
+            <p>
+              <span class="govuk-!-font-weight-bold">Their name:</span> Michael Winners <br />
+              <span class="govuk-!-font-weight-bold">Their phone number:</span> 07777 777777 <br />
+              <span class="govuk-!-font-weight-bold">What's your relationship to this person:</span> Employment adviser
+            </p>
+
+            <h3 class="govuk-heading-m">Employment status</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">Your employment status:</span> employed
+            </p>
+
+            <h3 class="govuk-heading-m">Employed</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">Your job title:</span> head of burgers <br />
+              <span class="govuk-!-font-weight-bold">Your employer:</span> MacDonalds <br />
+              <span class="govuk-!-font-weight-bold">Address:</span> The Burger House, 21 Main Street, Munchester <br />
+              <span class="govuk-!-font-weight-bold">Postcode:</span> MU1 1ZZ <br />
+            </p>
+
+            <h3 class="govuk-heading-m">Work contact details</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">Their name:</span> Celia Tasty <br />
+              <span class="govuk-!-font-weight-bold">Phone number:</span> 0111 1234567 <br />
+              <span class="govuk-!-font-weight-bold">Email address:</span> celia.tasty@macdonalds.com
+            </p>
+
+            <h3 class="govuk-heading-m">Working pattern</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">How long have you been in your current job or role:</span> Less thean 6 weeks <br />
+              <span class="govuk-!-font-weight-bold">Work start date:</span> 30/04/2018 <br />
+              <span class="govuk-!-font-weight-bold">How many days a week do you currently work:</span> 5 <br />
+              <span class="govuk-!-font-weight-bold">How many hours a week do you usually work:</span> 20
+            </p>
+
+            <h3 class="govuk-heading-m">Condition and help needed</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">What are your conditions or disabilities:</span> Deaf and on the Autism spectrum <br />
+              <span class="govuk-!-font-weight-bold">Do you want some help to get to work:</span> No <br />
+              <span class="govuk-!-font-weight-bold">Does your condition make it harder for you to do your job:</span> Yes
+            </p>
+
+            <h3 class="govuk-heading-m">Effect of condition on job</h3>
+            <p>
+              <span class="govuk-!-font-weight-bold">How is it harder:</span> Because I am deaf I find it hard to communicate with people. It's difficult to understand what is being said in meetings and training sessions. I get anxious and become short tempered because of the Autism and can be left out of things because it effects my behaviour. </p>
+            <p>
+              <span class="govuk-!-font-weight-bold">Do you do anything to get around these problems at the moment:</span> No <br />
+              <span class="govuk-!-font-weight-bold">Do you know what help you need:</span> Yes <br />
+            </p>
+            <p>
+              <span class="govuk-!-font-weight-bold">What would help you:</span> Having a Brittish Sign Language interpreter for certain things at work. Not being placed in stressgul situations to prevent my outbursts
+            </p>
+
+            <div class="govuk-form-group">
+              <a href="mark-as-complete?n={{ name }}" class="govuk-button govuk-!-margin-top-9">Application copied</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% set link = "3" %}
+{% set companyDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Company details</h1>
+
+
+
+{% include folder + "/" + subfolder + "/_CLAIMDETAILS.html" %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       idPrefix: "company",
+       name: "company",
+       fieldset: {
+         legend: {
+           text: "Are these details complete?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

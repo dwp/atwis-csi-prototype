@@ -1,0 +1,123 @@
+{% set page = "task-list" %}
+{% set payments = true %}
+{% if not phase %}{% set phase = "payment" %}{% endif %} <!-- for overwrite with paymrnt not confirmed -->
+{% set title = "Payments index" %}
+{% extends "./_CSIBASE.html" %}
+
+{% if data['appointee'] == 'yes' %}{% set appointeeLink = "-appointee" %}{% endif %}
+
+{% block csi %}
+
+{% macro taskListItem(title="'title'", link='#', completed='', cantStart='' ) %}
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+  {% if not (cantStart or completed)  %}  <a href="{{link}}" aria-describedby="eligibility-completed"> {% endif %}
+      {{title}}
+    {% if not (cantStart or completed)  %}   </a> {% endif %}
+  </span>
+{% if completed %}
+<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+
+{% else %}
+{% endif %}
+
+</li>
+
+
+{% endmacro %}
+
+{% if phase == "payment-interview-not-confirmed" %}
+
+{% block csiStatus %}
+{% endblock %}
+
+{% else %}
+
+<!-- Task list processing inital claim before payment -->
+
+              <ol class="app-task-list">
+                      <li>
+                        <h2 class="app-task-list__section">
+                          Check and approve payment
+                        </h2>
+                        <ul class="app-task-list__items" style="padding-left: 0">
+
+                        {{taskListItem(title="Check the evidence", link="5-payments/1", completed=(data['invoice'] == "yes"  ), cantStart=(phase == "interview" or phase == "waiting"))}}
+
+                        {{taskListItem(title="Add invoice details", link="5-payments/2", completed=((data['invoice-complete']) or data['transfer-back-payments'] == 'yes' ), cantStart=(not (data['invoice'] == "yes") ) )}}
+
+                        {{taskListItem(title="Check the invoice amount", link="5-payments/3", completed=((data['check-amount'] == "yes" and not data['sent-email-amount']) or data['transfer-back-payments'] == 'yes' ), cantStart=(not (data['invoice-complete'] == "true" ) ) )}}
+
+                        {{taskListItem(title="Find the payee on SOP", link="5-payments/4", completed=(data['payee-details-match'] == "yes" ), cantStart=( (data['sent-email-amount'] and not (data['transfer-back-payments'] == 'yes') ) or  not (data['check-amount'] == "no") )) }}
+
+                        {{taskListItem(title="Add SOP supplier number", link="5-payments/5", completed=(data['supplier-id-complete']), cantStart=( not data['payee-details-match'] or (data['payee-details-match'] == 'no') )) }}
+
+                        {{taskListItem(title="Check payment details", link="5-payments/6", completed=(data['payment'] == "yes"), cantStart=(not data['supplier-id-complete']) )}}
+
+
+
+</ul>
+</li>
+</ol>
+{% endif %}
+
+
+{% endblock %}
+
+
+
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "index",
+          text: "Index before interview"
+        },
+        {
+          href: "index-waiting",
+          text: "Index waiting"
+        },
+        {
+          href: "index-same-day",
+          text: "Index same day"
+        },
+        {
+          href: "index-interview",
+          text: "Index after interview"
+        },
+        {
+          href: "index-payment",
+          text: "Index payments"
+        },
+        {
+          href: "index-payment-adviser",
+          text: "Index payments for advisers"
+        },
+        {
+          href: "index-closed",
+          text: "Index closed"
+        },
+        {
+          href: "index-payment-complete",
+          text: "Index payment complete"
+        },
+        {
+          href: "index-payment-cancelled",
+          text: "Index payment cancelled"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}

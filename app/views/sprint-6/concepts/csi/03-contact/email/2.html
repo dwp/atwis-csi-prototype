@@ -1,0 +1,15 @@
+{% set link = "../../index-interview" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "[add email to contact log]" %}
+
+
+{% block csi %}
+
+<p>[Use the spreadsheet to note that you contacted   {{ data['csi-info'][0]['interviewer-name'] }}]</p>
+
+<p>[When you get an answer, repeat this process again]</p>
+
+
+{% endblock %}

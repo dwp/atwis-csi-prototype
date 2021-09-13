@@ -1,0 +1,87 @@
+{% set link = "claim-router" %}
+{% set personalDetails =  true  %}
+{% set hideChange = true %}
+{% set customNext = "Save" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Change job interview details</h1>
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "dob",
+  namePrefix: "interview-date-change",
+  fieldset: {
+    legend: {
+      text: "Interview date",
+      isPageHeading: true,
+      classes: "text"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      name: "day",
+      autocomplete: "bday-day",
+      value: data['csi-info'][1]['interview-date-day'],
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      autocomplete: "bday-month",
+      value: data['csi-info'][1]['interview-date-month']
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      autocomplete: "bday-year",
+      value: data['csi-info'][1]['interview-date-year']
+    }
+  ]
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Condition"
+  },
+  id: "condition",
+  name: "condition-change",
+  value: data['csi-info'][1]['condition'],
+  classes: "govuk-input--width-20"
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Interview length"
+  },
+  id: "interview-length",
+  name: "duration-change",
+  value: data['csi-info'][1]['duration'],
+  classes: "govuk-input--width-20"
+
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Support cost"
+  },
+  id: "support-cost",
+  name: "support-worker-pay-change",
+  value: data['csi-info'][1]['support-worker-pay'] | safe,
+  classes: "govuk-input--width-20"
+}) }}
+
+
+
+{% endblock %}

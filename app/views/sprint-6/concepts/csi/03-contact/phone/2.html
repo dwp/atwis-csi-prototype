@@ -1,0 +1,15 @@
+{% set link = "../index" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "[update spreadsheet]" %}
+
+
+{% block csi %}
+
+<p>[Use the spreadsheet to note that you tried to contact  {{ data['csi-info'][0]['interviewer-name'] }}]</p>
+
+<p>[Try again by going through the same process]</p>
+
+
+{% endblock %}

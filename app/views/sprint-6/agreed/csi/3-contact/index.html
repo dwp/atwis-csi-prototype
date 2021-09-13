@@ -1,0 +1,39 @@
+{% set link = "../4-confirm/1" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "email", page: "email/1" }, {id: "phone", page: "phone/1"}, {id: "yes", page: link } ] %}
+
+{% set title =  "Confirm with the employer" %}
+
+{% block csi %}
+
+{{ govukRadios({
+       idPrefix: "employer",
+       name: "employer",
+       fieldset: {
+         legend: {
+           text: "What do you want to do?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "email",
+           value: "email",
+           text: "Email the employer"
+         },
+         {
+           id: "phone",
+           value: "phone",
+           text: "Phone the employer"
+         },
+         {
+           id: "yes",
+           value: "yes",
+           text: "Record a response from the employer"
+         }
+       ]
+     }) }}
+
+{% endblock %}

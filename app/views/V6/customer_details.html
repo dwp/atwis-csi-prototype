@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form id="form" method="post" action="deaf">
+			<h1 class="govuk-heading-l govuk-!-margin-bottom-4">Personal details:</h1>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                Enter your full name
+      </h2>
+
+			<div class="govuk-form-group">
+					<label class="govuk-label" for="full-name">
+							Full name
+					</label>
+					<input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+			</div>
+
+			<fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+						Enter your date of birth
+					</h2>
+				</legend>
+
+				<span id="dob-hint" class="govuk-hint">
+					For example, 31 3 1990
+				</span>
+				<div class="govuk-date-input" id="date">
+					<div class="govuk-date-input__item">
+						<div class="govuk-form-group">
+							<label class="govuk-label govuk-date-input__label" for="date-day">
+								Day
+							</label>
+							<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="number" pattern="[0-9]*">
+						</div>
+					</div>
+					<div class="govuk-date-input__item">
+						<div class="govuk-form-group">
+							<label class="govuk-label govuk-date-input__label" for="date-month">
+									Month
+							</label>
+						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="number" pattern="[0-9]*">
+						</div>
+					</div>
+					<div class="govuk-date-input__item">
+						<div class="govuk-form-group">
+							<label class="govuk-label govuk-date-input__label" for="date-year">
+									Year
+							</label>
+							<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="number" pattern="[0-9]*">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+					Enter your address
+			</h2>
+            
+			<fieldset class="govuk-fieldset">
+			
+					<div class="govuk-form-group">
+					<label class="govuk-label" for="address-line-1">
+							Building and street
+							<span class="govuk-visually-hidden">line 1 of 2</span>
+					</label>
+					<input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+					</div>
+			
+					<div class="govuk-form-group">
+					<label class="govuk-label" for="address-line-2">
+							<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+					</label>
+					<input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+					</div>
+			
+					<div class="govuk-form-group">
+					<label class="govuk-label" for="address-town">
+							Town or city
+					</label>
+					<input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+					</div>
+			
+					<div class="govuk-form-group">
+					<label class="govuk-label" for="address-county">
+							County
+					</label>
+					<input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+					</div>
+			
+					<div class="govuk-form-group">
+					<label class="govuk-label" for="address-postcode">
+							Postcode
+					</label>
+					<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+					</div>
+			
+			</fieldset>
+
+			<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- deaf -->
+
+    </form>
+		<script>
+			const minAllowedAge = 16;
+			const maxReasonableAge = 110;
+			document.getElementById('form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				var dob = new Date(	document.getElementById('date-year').value,
+					document.getElementById('date-month').value,
+					document.getElementById('date-day').value);
+				var ageDate = new Date(Date.now() - dob.getTime());
+				const yrs = Math.abs(ageDate.getUTCFullYear() - 1970);
+				if (yrs < minAllowedAge || yrs > maxReasonableAge) {
+					window.location = 'sorry/cant_help_age';
+				} else {
+					window.location = 'deaf';
+				}
+			})
+		</script>
+
+		
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

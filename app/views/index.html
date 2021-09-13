@@ -1,0 +1,514 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Communication support at interview prototype
+{% endblock %}
+
+{% set serviceName = "Apply for commmunication support at interview (Access to Work)" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width">
+      <h1 class="govuk-heading-xl">
+        CSI and ATWIS prototype
+        <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
+      </h1>
+
+      <p>
+
+      </p>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          9 Sep 21 to present
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+
+      {{ govukTable({
+        caption: "Version history for current team",
+        captionClasses: "govuk-heading-m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Date added"
+          },
+          {
+            text: "Description"
+          },
+          {
+            text: "Link"
+          }
+        ],
+        rows: [
+        [
+        {
+          text: " "
+        },
+        {
+          text: "9 September 2021"
+        },
+        {
+          text: " "
+        },
+        {
+          html: '<a href="/current/index">Go to current </a>'
+        }
+
+
+              ]]
+
+      }) }}
+    </div>
+</div>
+
+<div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+        (Retired) 24 September 2019 to 17 March 2020
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+      {{ govukTable({
+        caption: "Version history from previous team",
+        captionClasses: "govuk-heading-m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Date added"
+          },
+          {
+            text: "Description"
+          },
+          {
+            text: "Link"
+          }
+        ],
+        rows: [
+        [
+        {
+          text: "Sprint 13"
+        },
+        {
+          text: "17 March 2020"
+        },
+        {
+          text: "Revised allocation journey"
+        },
+        {
+          html: '<a href="/sprint-13/index">Go to sprint 13 </a>'
+        }
+          ],
+          [
+          {
+            text: "Sprint 12b"
+          },
+          {
+            text: "10 March 2020"
+          },
+          {
+            text: "Harrow testing of allocation and transfer screens"
+          },
+          {
+            html: '<a href="/sprint-12b/index">Go to sprint 12b</a>'
+          }
+            ],
+            [
+            {
+              text: "Sprint 12"
+            },
+            {
+              text: "20 February 2020"
+            },
+            {
+              text: "Design freeze for MVP (including contact centre)"
+            },
+            {
+              html: '<a href="/sprint-12/index">Go to sprint 12</a>'
+            }
+              ],
+        [
+        {
+          text: "Sprint 11b"
+        },
+        {
+          text: "17 February 2020"
+        },
+        {
+          text: "Amends during Harrow sessions"
+        },
+        {
+          html: '<a href="/sprint-11b/index">Go to sprint 11b</a>'
+        }
+          ],
+
+        [
+        {
+          text: "Sprint 11"
+        },
+        {
+          text: "5 February 2020"
+        },
+        {
+          html: '<p>Tidy up for the payment journey</p>
+                  <strong>Focus</strong>
+                  <p>System usability and process stages – case handover between PO and advisor</p>
+
+                  <strong>Learning issues</strong>
+                  <p>Usability - None	</p>
+
+                  <strong>Next steps (Immediate changes)</strong>
+                   <p>Process flow: Create journey to handle complex case rejection and closure</p>
+
+                   <strong>Next steps (to monitor after moving to Private Beta)</strong>
+                   <ul class="govuk-list govuk-list--bullet">
+                      <li>Sourcing correct data from invoices:  Addition of invoice information to PO
+                        system - are advisors clear about which information they should be taking from
+                        invoices and adding to system (invoice date vs due date, citizen postcode vs
+                        supplier postcode)</li>
+                      <li>Handovers - what impact will there be if tasks become distributed across
+                        geographies? Will email be sufficient? </li>
+                      <li>Handovers (advisor) - Current assumption that payments supervisor will oversee / reallocate
+                        tasks when an advisor goes away.</li>
+                      <li>Claim forms - existing suppliers known to shortcut application form and provide
+                          incomplete details where invoice already provides them.
+                          Will this continue to be allowed by POs?</li>
+                    </ul>'
+        },
+        {
+          html: '<a href="/sprint-11/index">Go to sprint 11</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 10b"
+        },
+        {
+          text: "28 January 2020"
+        },
+        {
+          text: "Amends after Harrow"
+        },
+        {
+          html: '<a href="/sprint-10b/index">Go to sprint 10b</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 10"
+        },
+        {
+          text: "24 January 2020"
+        },
+        {
+          html: '<p>Payments prototype testing 28 January in Harrow</p>
+                  <strong>Focus</strong>
+                  <p>System usability and process stages (payments – unhappy path)</p>
+
+                  <strong>Learning issues</strong>
+                  <p>Clarity on search box use – addition of “optional” alongside superfluous boxes</p>
+                  <p>Clarity on advisor actions (PO need to see more information when an agreed payment is changed)</p>
+
+                  <strong>NEEDS RESEARCH (move into separate tickets if needed)</strong>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>payee search results - details to play back (business name? remove supplier code and replace with what?)</li>
+                    <li>payee details - invoice numbers(s) - do we need to capture something from the invoice? do we need
+                      to create one from atwis for tracking purposes?</li>
+                    <li>adviser handover - can they approve without going back to the application?</li>
+                    <li>journey after payment has been approved - what happens? what do we need to show
+                      to the payment officer? what about recalls?</li>
+                    <li>wider considerations about allocations - do we need to allow for this in the future?</li>
+                    </ul>'
+        },
+        {
+          html: '<a href="/sprint-10/index">Go to sprint 10</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 9"
+        },
+        {
+          text: "13 January 2020"
+        },
+        {
+          html: '<p>Payments prototype testing 28 January in Harrow</p>
+
+                  <strong>Focus</strong>
+                  <p><strong>*No field  UR during this sprint – design only*</strong></p>
+
+                  <strong>Usability issues</strong>
+                  <p></p>
+
+                  <strong>Next steps</strong>
+                  <p></p>'
+        },
+        {
+          html: '<a href="/sprint-9/index">Go to sprint 9</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 8"
+        },
+        {
+          text: "18 November 2019"
+        },
+        {
+          html: '<p>Adding payments journey</p>
+                    <strong>UR 6-12-2019</strong>
+
+                  <strong>Focus</strong>
+                  <p>Usability, language, process, use of Searchlight, manually populating an application form, inherited behaviours</p>
+
+                  <strong>Learning issues</strong>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Manually populating a form was a disaster – lack of pre-pop capability a major step backwards.</li>
+                    <li>Training needs identified relating to migrating to new system</li>
+                    <li>Need for further information when amounts are changed</li>
+                    <li>Advisors not picking up on typo errors in contact details</li>
+                    <li>Process was instinctive, language was appropriate, timeline was appreciated</li>
+                  </ul>
+
+                  <strong>Next steps</strong>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Spike to investigate pre-popultion. Pre-pop capability added to MVP</li>
+                      <li>Addition of free text elaboration when amounts changed by advisor</li>
+                      <li>Maintain watch on contact details</li>
+                    </ul>'
+        },
+        {
+          html: '<a href="/sprint-8/index">Go to sprint 8</a>'
+        }
+          ],
+
+        [
+        {
+          text: "Sprint 7"
+        },
+        {
+          text: "28 November 2019"
+        },
+        {
+          html: '<p>Full journey for testing</p>
+
+                  <strong>Focus</strong>
+                  <p></p>
+
+                  <strong>Learning issues</strong>
+
+                  <br>
+                  <strong>Next steps</strong>'
+        },
+        {
+          html: '<a href="/sprint-7/index">Go to sprint 7</a>'
+        }
+          ],
+          [
+          {
+            text: "Sprint 6"
+          },
+          {
+            text: "13 November 2019"
+          },
+          {
+          html: '<p>MVP unhappy path and payments</p>
+                    <strong>Focus</strong>
+                    <p></p>
+
+                    <strong>Testing of unhappy path journey – missing information from application</strong>
+                    <p></p>
+                    <strong>Process steps and usability</strong>
+                    <p></p>
+                    <strong>Learning issues</strong>
+                    <p></p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Users struggled with locating the case details tab. Later addition of a hyperlink to the "case details"
+                         page went some way to rectifying this issue and made it easier for users to know where to go when they needed
+                          to edit information</li>
+
+                      <li>When reading through the details submitted by the applicant, not all advisers picked up on a deliberate
+                        but simple typo in the email address of the employer listed as being terry.gibson@tecso.net rather than Tesco.net
+                         Since making contact with employers is seen as a major pain point for advisers, we need to prioritise improving
+                         ways to confirm that we are receiving the best possible contact details when applications are submitted.</li>
+
+                      <li>Most managed to pick it up and resolve, some did not.  Address ways to confirm that we are receiving the best
+                         possible contact details when applications are submitted.</li>
+
+                      </ul>
+
+                      <strong>Next Steps</strong>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Addition of hyperlink to case details page</li>
+                        <li>Maintain watch on addition of contact details</li>
+                      </ul>
+                      '
+        },
+          {
+            html: '<a href="/sprint-6/index">Go to sprint 6</a>'
+          }
+            ],
+        [
+        {
+          text: "Sprint 5"
+        },
+        {
+          text: "28 October 2019"
+        },
+        {
+          html: '<p>Apply and ‘happy path’ amends, ’unhappy path’ concepts</p>
+                  <strong>Focus</strong>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Obtaining an allocated case</li>
+                    <li>Following the journey to grant approval</li>
+                    <li>Following the journey to payment approval</li>
+
+                    </ul>
+
+                    <strong>Learning issues</strong>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Some language not recognised by users  (Application rather than claim form)</li>
+                      <li>Advisors wrote emails to citizens based on past behaviours rather than suggested text</li>
+                      <li>Advisors struggled with recording employer contact</li>
+
+                      </ul>
+
+                      <strong>Next steps</strong>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Language changed to reflect users’ choice</li>
+                        <li>Employer contact journey refined to become more instinctive</li>
+
+                        </ul>'
+        },
+        {
+          html: '<a href="/sprint-5/index">Go to sprint 5</a>'
+        }
+          ],[
+          {
+            text: "Sprint&nbsp;4a" | safe
+          },
+          {
+            text: "24 October 2019"
+          },
+          {
+            text: "Amends based on initial adviser"
+          },
+          {
+            html: '<a href="/sprint-4a/index">Go&nbsp;to&nbsp;sprint&nbsp;4a</a>' | safe
+          }
+        ],[
+          {
+            text: "Sprint 4"
+          },
+          {
+            text: "17 October 2019"
+          },
+          {
+            html: '<p>Adviser testing in Harrow of happy path journey. Baselining with new sprints</p>
+
+            <strong>Focus</strong>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Testing the basic design pattern – Task list, automated timeline, claim details tabs,
+                evidence shown with opportunity to verify / amend.</li>
+            </ul>
+
+              <strong>Learning issues</strong>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Uncovered varied advisor case-handling behaviours and impact of legacy thinking / processes</li>
+                <li>Need to focus advisor behaviour and prevent unnecessary citizen contact and data collection</li>
+                <li>Advisers comfortable with being given suggested email content to send</li>
+                <li>Timeline welcomed but also wanted to see time of transaction due to fast SLA’s for CSI and also to start at submission date</li>
+                <li>Advisors wanted a view of all stages, not split pre/post interview</li>
+
+                </ul>
+
+                <strong>Next steps</strong>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li></li>
+                  </ul>'
+
+          },
+          {
+            html: '<a href="/sprint-4/index">Go to sprint 4</a>'
+          }
+        ],[
+            {
+              text: "Baseline"
+            },
+            {
+              text: "4 October 2019"
+            },
+            {
+              text: "As-is CSI journey across online service, comms, ATWIS and DiSC"
+            },
+            {
+              html: '<a href="/sprint-baseline/index">Go to baseline</a>'
+            }
+          ],
+          [
+            {
+              text: "V12"
+            },
+            {
+              text: "24 September 2019"
+            },
+            {
+              text: "Testing application with Deaf participants in Manchester 3 October"
+            },
+            {
+                html: '<a href="/V12/index">Go to V12</a>'
+            }
+          ]
+        ]
+      }) }}
+    </div>
+      </div>
+      <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                (Retired) Old prototype
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+
+      <h3 class="govuk-heading-m">
+        Versions from previous team
+      </h3>
+<ul>
+      <li><a href="/V1/start">V1</a></li>
+      <li><a href="/V2/start">V2</a></li>
+      <li><a href="/V3/start">V3</a></li>
+      <li><a href="/V4/start">V4</a></li>
+      <li><a href="/V5/start">V5</a></li>
+      <li><a href="/V6/start">V6</a></li>
+      <li><a href="/V7/landing/start">V7</a></li>
+      <li><a href="/V8/landing/start">V8</a></li>
+      <li><a href="/V9/landing/start">V9</a></li>
+      <li><a href="/V10/landing/start">V10</a></li>
+      <li><a href="/V10-updated/updated-content/who-needs-support">V10 updated content</a></li>
+      <li><a href="/V11/updated-content/total_cost">V11 support worker question</a></li>
+</ul>
+
+    </div>
+</div>
+
+{% endblock %}

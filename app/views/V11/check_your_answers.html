@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+          <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+
+          <h2 class="govuk-heading-m">Personal details</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                test data
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="customer_name">
+                  Change
+                  <span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                test data
+                <br>test data
+                <br>test data
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="customer_address">
+                  Change
+                  <span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+									Date of birth
+							</dt>
+							<dd class="govuk-summary-list__value">
+									test data
+							</dd>
+							<dd class="govuk-summary-list__actions">
+									<a class="govuk-link" href="customer_dob.html">
+									Change
+									<span class="govuk-visually-hidden"> date of birth</span>
+									</a>
+							</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Condition
+							</dt>
+							<dd class="govuk-summary-list__value">
+								test data
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="customer_condition">
+									Change
+									<span class="govuk-visually-hidden"> Condition</span>
+								</a>
+							</dd>
+						</div>
+
+						<h2 class="govuk-heading-m govuk-!-margin-top-6">Job interview details</h2>
+
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Company name
+							</dt>
+							<dd class="govuk-summary-list__value">
+								test data
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="job_company_name">
+									Change
+									<span class="govuk-visually-hidden">Company name</span>
+								</a>
+							</dd>
+						</div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Interview date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">test data</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="interview_date.html">
+                  Change
+                  <span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+						</div>
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Interview length
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p class="govuk-body">test data</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="interview_date">
+									Change
+									<span class="govuk-visually-hidden"> interview date</span>
+								</a>
+							</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Interviewer details
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p class="govuk-body"> test data</p>
+								<p class="govuk-body"> test data</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="interviewer_details">
+									Change
+									<span class="govuk-visually-hidden"> interviewer details</span>
+								</a>
+							</dd>
+						</div>
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Total cost
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p class="govuk-body">test data</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="total_cost">
+									Change
+									<span class="govuk-visually-hidden"> total cost</span>
+								</a>
+							</dd>
+						</div>
+
+						<h2 class="govuk-heading-m govuk-!-margin-top-6">Contact details</h2>
+
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Your contact details
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p class="govuk-body">test data</p>
+								<p class="govuk-body">test data</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="customer_contact">
+									Change
+									<span class="govuk-visually-hidden"> customer contact</span>
+								</a>
+							</dd>
+						</div>
+
+					</dl>
+
+          <h2 class="govuk-heading-m">Declaration</h2>
+					<div class="govuk-body">
+						<p>By sending this application you are confirming that the information is correct as far as you know.</p>
+
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                It might be a criminal offence if you knowingly give false information.
+              </strong>
+            </div>
+					</div>
+          <form action="confirmation" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <button type="submit" class="govuk-button">
+              Accept and send
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+	</div>
+
+	{% endblock %}

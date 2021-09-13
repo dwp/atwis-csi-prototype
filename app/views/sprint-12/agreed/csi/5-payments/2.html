@@ -1,0 +1,50 @@
+{% set link = "3" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set paymentLink = true %}
+{% set title =  "Add invoice details" %}
+
+{% block csi %}
+
+{{ govukInput({
+  label: {
+    text: "Invoice reference number"
+  },
+  id: "invoice-reference",
+  name: "invoice-reference",
+  classes: "govuk-input--width-20"
+}) }}
+
+{{ govukDateInput({
+id: "invoice-date",
+namePrefix: "invoice-date",
+fieldset: {
+  legend: {
+    text: "Invoice date"
+  }
+}
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Postcode"
+  },
+  id: "invoice-postcode",
+  name: "invoice-postcode",
+  classes: "govuk-input--width-10"
+}) }}
+
+
+<!-- trigger to set off event if we use this screen for task completion -->
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "invoice-complete",
+  name: "invoice-complete",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+
+
+{% endblock %}

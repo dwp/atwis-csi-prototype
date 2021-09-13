@@ -1,0 +1,85 @@
+{% set page = "appointee" %}
+{% set title = "Appointee information" %}
+
+{% extends "./_CSIBASE.html" %}
+
+{% block csi %}
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Appointee details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p>{{ data['appointee-name'] | default("test") | safe }}</p>
+    </dd>
+{% if not hideChange %}
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+
+  </div>
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+<p>{{ data['address'] }}</p>
+    </dd>
+{% if not hideChange %}
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+{% endif %}
+  </div>
+
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      Email
+    </dt>
+    <dd class="govuk-summary-list__value">
+         {{ data['appointee-email'] }}
+    </dd>
+{% if not hideChange %}
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+{% endif %}
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      Phone
+    </dt>
+    <dd class="govuk-summary-list__value">
+        {{ data['appointee-contact-phone'] }}
+    </dd>
+{% if not hideChange %}
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+{% endif %}
+  </div>
+
+  </dl>
+  {% endif %}
+
+{% endblock %}

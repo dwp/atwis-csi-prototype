@@ -1,0 +1,24 @@
+.field .field-label {
+	font-weight: bold;
+}
+.field-label-inline .field-label {
+	float: left;
+}
+.field-label-inline .field-items {
+	float: left;
+}
+form .field-multiple-table {
+	margin: 0px;
+}
+form .field-multiple-table th.field-label {
+	padding-left: 0px;
+}
+form .field-multiple-table td.field-multiple-drag {
+	width: 30px; padding-right: 0px;
+}
+form .field-multiple-table td.field-multiple-drag a.tabledrag-handle {
+	padding-right: 0.5em;
+}
+form .field-add-more-submit {
+	margin: 0.5em 0px 0px;
+}

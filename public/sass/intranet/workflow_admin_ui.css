@@ -1,0 +1,12 @@
+#workflow_admin_ui_overview .state-name input {
+	margin-right: 2em;
+}
+#workflow_admin_ui_overview .state-status {
+	text-align: center;
+}
+#workflow_admin_ui_overview .state-count {
+	text-align: right;
+}
+#workflow_admin_ui_overview th.state-ops {
+	
+}

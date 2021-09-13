@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form id="form" method="post" action="../check_your_answers">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+            Getting in touch
+        </h1>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-4">
+                How can we contact you about your application?
+        </h2>
+        <span id="national-insurance-number-hint" class="govuk-hint">
+            Select at least one.
+        </span>
+
+        <!-- <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+                    Your contact details
+                </h2>
+                </legend>
+                <span id="how-contacted-conditional-hint" class="govuk-hint">
+                Select one option.
+                </span>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                    Email
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                    <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                        Email address
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                    </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                    Phone
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                    <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-phone">
+                        Phone number
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+                    </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                    Text message
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+                    <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-text">
+                        Mobile phone number
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+                    </div>
+
+                </div>
+                </div>
+            </fieldset>
+            </div> -->
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+                                <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
+                                  Email
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-1">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="contact-by-email">
+                                    Email address
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                                </div>
+                                <details class="govuk-details govuk-body govuk-!-margin-top-5">
+                                   <summary class="govuk-details__summary">
+                                     <span class="govuk-details__summary-text">
+                                       Email terms
+                                     </span>
+                                   </summary>
+                                   <div class="govuk-details__text">
+                                     <p id="email-terms-hint">
+                                       Department for Work and Pensions (DWP) cannot guarantee external emails against:</p>
+                                       <ul>
+                                       <li>loss or non-delivery</li>
+                                       <li>theft by third parties</li>
+                                       <li>manipulation of data</li>
+                                       </ul>
+                                       <p>Asking DWP to use email to get in touch with you in this application means you understand this risk. If you have any concerns then do not include your email address.</p>
+                                   </div>
+                                </details>
+                              <div class="govuk-form-group">
+                          <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                            I agree to the email terms
+                        </div>
+                        </div>
+
+
+
+                  </div>
+                  </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="citizenship-conditional-2" name="citizen" type="checkbox" value="phone" data-aria-controls="conditional-citizenship-conditional-2">
+                                <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-2">
+                                  Phone call
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="contact-by-phone">
+                                    Phone number
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-phone" name="contact-by-phone" type="tel">
+                                </div>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+
+
+<p>&nbsp;</p>
+        <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- confirmation -->
+
+        </form>
+
+    <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

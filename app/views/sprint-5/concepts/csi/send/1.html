@@ -1,0 +1,55 @@
+{% set link = "2" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index"}] %}
+
+{% set title =  "Send a confirmation email" %}
+
+{% block csi %}
+
+
+<p>Send an email to {{data['csi-info'][0]['name']}} to confirm that their application for an interview on
+  {{data['csi-info'][0]['interview-date-day']}} {{data['csi-info'][0]['interview-date-month'] | toMonth }} at {{data['csi-info'][0]['company-name']}} has been approved.
+
+  <p class="govuk-body">Include in the email that:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>they can confirm their booking for an interpreter or support worker</li>
+    <li>we will contact the employer after the interview</li>
+    <li>they should contact us if anything changes</li>
+  </ul>
+
+
+  {{ govukButton({
+    text: "Open new email",
+    classes: "govuk-button--secondary",
+    href: "mailto:" + data['csi-info'][0]['contact-by-email']
+  }) }}
+
+
+<br>
+</br>
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+     name: "send",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

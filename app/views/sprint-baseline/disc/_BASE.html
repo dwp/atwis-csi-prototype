@@ -1,0 +1,29 @@
+{% extends "layout_unbranded.html" %}
+
+{% block head %}
+    {{ super() }}
+    <!-- your stuff here -->
+    <style>
+      body, html { background-color: #e4ffca !important; }
+
+
+      </style>
+{% endblock %}
+
+{% block pageTitle %}
+  DiSC 3.1
+{% endblock %}
+
+{% block content %}
+<p><a href="../index">Back to landing page</a></p>
+
+{% if screenshot %}
+<a href="{{next}}">
+<img src="{{asset_path}}images/disc/{{screenshot}}" style="margin: 0 auto"; />
+</a>
+{% endif %}
+
+{% block notes %}
+{% endblock %}
+
+{% endblock %}

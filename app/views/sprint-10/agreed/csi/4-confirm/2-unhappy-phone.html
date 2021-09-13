@@ -1,0 +1,16 @@
+{% set interviewLink = "true" %}
+
+{% if appointee %}{% set appointeeLink = "-appointee" %}{% endif %}
+{% set link = "../index" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Telephone call made" %}
+
+{% block csi %}
+
+
+<p>This has been saved in the case history.</p>
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% set link = "../../04-confirm/1" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Phone the employer" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "2"}] %}
+
+
+{% block csi %}
+
+
+<p>Check that Thomas Brown attended the interview with an interpreter or support worker.</p>
+
+<p>Contact Terry Gibson at Tesco on 07192 838 482.</p>
+
+
+{{ govukRadios({
+
+      classes: "govuk-radios--inline",
+       idPrefix: "employer",
+       name: "employer",
+       fieldset: {
+         legend: {
+           text: "Has the employer responded?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

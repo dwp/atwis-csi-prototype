@@ -1,0 +1,108 @@
+#block-invotra-search-and-do-search-lite .form-text {
+	padding: 0px 30px 0px 10px; border: 0px transparent; color: rgb(255, 255, 255); overflow: visible; clear: none; float: none; background-color: transparent;
+}
+#block-invotra-search-and-do-search-lite .form-submit {
+	background-position: 50% 50%; margin: 0px; padding: 0px; border: 0px transparent; width: 40px; height: 40px; overflow: hidden; clear: none; float: none; background-color: transparent;
+}
+#block-invotra-search-and-do-search-lite form {
+	border: 1px solid rgb(255, 255, 255); overflow: visible; clear: none; float: none;
+}
+#block-invotra-search-and-do-search-lite .form-text:focus {
+	border-color: transparent; color: rgb(255, 255, 255); overflow: visible; clear: none; float: none; background-color: transparent;
+}
+.search-results .facets .pane-custom h2 {
+	line-height: 16px; overflow: visible; clear: none; float: none;
+}
+.region-content h1 {
+	color: rgb(0, 0, 0); overflow: visible;
+}
+h1 {
+	color: rgb(0, 0, 0); overflow: visible;
+}
+h2 {
+	color: rgb(0, 0, 0); overflow: visible;
+}
+h3 {
+	color: rgb(0, 0, 0); overflow: visible;
+}
+h4 {
+	color: rgb(0, 0, 0); overflow: visible;
+}
+h5 {
+	color: rgb(0, 0, 0); overflow: visible;
+}
+h6 {
+	color: rgb(0, 0, 0); overflow: visible;
+}
+.branding-data .logo-img {
+	width: 444px; height: 46px; overflow: visible;
+}
+.region-branding-inner > div {
+	overflow: visible; padding-top: 20px; padding-bottom: 30px;
+}
+.page-simple-search #page-title {
+	overflow: visible; margin-bottom: 34px; display: block;
+}
+.search-results #page-title {
+	overflow: visible; margin-bottom: 34px; display: block;
+}
+.block-menu-quick-links {
+	right: 1px; bottom: 1px; overflow: visible; margin-top: 0px; margin-bottom: 3px; float: none; position: absolute;
+}
+.clean-header #region-menu #block-menu-menu-quick-links .block-title {
+	color: rgb(255, 255, 255); overflow: visible;
+}
+#invotra-profile-menu > ul > li > a:hover {
+	font-weight: 300;
+}
+#invotra-profile-menu > ul > li > a.active-trail {
+	font-weight: 300;
+}
+#invotra-profile-menu > ul > li:hover > a {
+	font-weight: 300;
+}
+#mini-panel-group_header .bryant-flipped-content {
+	margin-right: 0px; margin-bottom: 50px; max-width: 70%;
+}
+#mini-panel-group_header .moscone-header-inner .pane-node-title {
+	margin-right: 0px; margin-bottom: 50px; max-width: 70%;
+}
+.node-type-group-status .moscone-header .bryant-flipped-content {
+	margin-right: 0px; margin-bottom: 50px; max-width: 70%;
+}
+.node-type-group-status .moscone-header .moscone-header-inner .pane-node-title {
+	margin-right: 0px; margin-bottom: 50px; max-width: 70%;
+}
+.node-type-advpoll .moscone-header .bryant-flipped-content {
+	margin-right: 0px; margin-bottom: 50px; max-width: 70%;
+}
+.node-type-advpoll .moscone-header .moscone-header-inner .pane-node-title {
+	margin-right: 0px; margin-bottom: 50px; max-width: 70%;
+}
+body span.arrow.subpages-arrow-processed {
+	display: none;
+}
+.marker {
+	color: rgb(169, 0, 97) !important;
+}
+.pane-messages-feed .views-field-invotra-subscriptions-message-body .field-node-media {
+	display: none;
+}
+.pane-group-home-panel-pane-1 .views-row .views-field-field-media colorbox img {
+	display: none;
+}
+.pane-group-search-panel-pane-1 .views-row .views-field-field-media .colorbox img {
+	display: none;
+}
+body[class*='page-taxonomy-term'] .zone-content {
+	background: white;
+}
+.general-styles-content .general-22 li {
+	margin: 0px 10px;
+}
+.general-styles-content .general-16 li .info-wrapper .title a {
+	color: rgb(0, 0, 0);
+}
+.general-styles-content .general-16 li .info-wrapper .date {
+	color: rgb(101, 101, 101);
+}

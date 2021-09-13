@@ -1,0 +1,73 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+    <form id="form" method="post" action="dob-router">
+
+
+		<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+                            What is your date of birth?
+                        </h1>
+				</legend>
+
+		    <span id="dob-hint" class="govuk-hint">
+
+		      For example, 31 3 1990
+		    </span>
+		    <div class="govuk-date-input" id="date">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="number" pattern="[0-9]*">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="number" pattern="[0-9]*">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="number" pattern="[0-9]*">
+		        </div>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- customer_condition -->
+
+ 	</form>
+  <!--
+	<script>
+		const minAllowedAge = 16;
+		const maxAllowedAge = 110;
+    document.getElementById('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+			var dob = new Date(	document.getElementById('date-year').value,
+				document.getElementById('date-month').value,
+				document.getElementById('date-day').value);
+			var ageDate = new Date(Date.now() - dob.getTime());
+			const yrs = Math.abs(ageDate.getUTCFullYear() - 1970);
+			maxAllowedAge
+			if (yrs < minAllowedAge || yrs > maxAllowedAge) {
+        window.location = '../sorry/cant_help_age';
+      } else {
+        window.location = 'interview_date';
+      }
+    })
+	</script>
+-->
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<form id="form" method="post" action="applying-for-someone-else/dob">
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="help-options">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What do you want help with?
+      </h1>
+    </legend>
+    <span id="help-options" class="govuk-hint">
+      Select all that apply.
+    </span>
+    <div class="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="option-1" name="options" type="checkbox" value="getting-to-work">
+        <label class="govuk-label govuk-checkboxes__label" for="option-1">
+          Getting to and from work
+        </label> </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="option-2" name="options" type="checkbox" value="travelling-at-work">
+        <label class="govuk-label govuk-checkboxes__label" for="option-2">
+          Travelling while I'm at work
+        </label> </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="option-3" name="options" type="checkbox" value="comms-at-job-interview">
+        <label class="govuk-label govuk-checkboxes__label" for="option-3">
+          Communicating in a job interview
+        </label> </div>
+    </div>
+  </fieldset>
+</div>
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+      <script>
+          document.getElementById('form').addEventListener('submit', function (event)  {
+            event.preventDefault();
+            if (document.getElementById('option-3').checked) {
+              window.location = 'dob';
+            } else {
+              window.location = 'applying-for-someone-else/dob';
+            }
+          })
+      </script>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

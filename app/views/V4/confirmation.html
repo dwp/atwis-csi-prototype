@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+
+{% block content %}
+
+	<div class="govuk-width-container">
+		<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<div class="govuk-panel govuk-panel--confirmation">
+						<h1 class="govuk-panel__title">
+							Application complete
+						</h1>
+					</div>
+					
+					<h2 class="govuk-heading-m">What happens next</h2>
+					<div class="govuk-text govuk-!-margin-bottom-2">
+						An advisor will contact you within 2 working days, to continue this process.
+					</div>
+					<a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+				</div>
+			</div>
+		</main>
+	</div>
+{% endblock %}

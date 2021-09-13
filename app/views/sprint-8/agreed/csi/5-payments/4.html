@@ -1,0 +1,31 @@
+{% set link = "5" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "Payee results" %}
+
+
+{% block csi %}
+
+<h2 class="govuk-heading-m">Address: 11 Hill Street, B1 1KJ</h2>
+
+<h2 class="govuk-heading-m">Name: Margaret Hedge</h2>
+<h2 class="govuk-heading-m">Supplier code: 4846738</h2>
+<br>
+
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: ""
+
+  },
+  id: "results-found",
+  name: "results-found",
+  type: "hidden",
+  value: "yes"
+}) }}
+
+{% endblock %}

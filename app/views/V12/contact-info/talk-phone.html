@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+              <form id="form" method="post" action="gathering-info-added-1">
+
+                <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                              Does your condition or disability affect your ability to talk on the phone?
+                            </h1>
+                          </legend>
+                          <span id="changed-name-hint" class="govuk-hint"></span>
+                          <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="changed-name">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                No
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+        </div>
+      </div>
+    </main>
+	</div>
+
+	{% endblock %}

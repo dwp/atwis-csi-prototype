@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="interview_duration">		
+
+
+		<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+						<h1 class="govuk-heading-m govuk-!-margin-bottom-4">
+								Interview Questions:
+						</h1>
+					
+						<h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+								When is the interview scheduled?
+						</h2>
+				</legend>
+				
+				<details class="govuk-details">
+					<summary class="govuk-details__summary">
+							<span class="govuk-details__summary-text">
+							Why are we asking
+							</span>
+					</summary>
+					<div class="govuk-details__text">
+							Before we release payment, we will contact the interviewer.
+					</div>
+					<div class="govuk-details__text">
+							We just want to confirm that the interview went ahead as planned, and that both yourself and a support worker were present.
+					</div>
+					<div class="govuk-details__text">
+							We contact them after the interview so that we minimise any impact of our service. To do this we need to know the date of interview.
+					</div>
+				</details>
+
+		    <span id="dob-hint" class="govuk-hint">
+
+		      For example, 31 3 2019
+		    </span>
+		    <div class="govuk-date-input" id="date">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-day">
+		            Day
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-day" name="date-day" type="number" pattern="[0-9]*">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-month">
+		            Month
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-month" name="date-month" type="number" pattern="[0-9]*">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="date-year">
+		            Year
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-year" name="date-year" type="number" pattern="[0-9]*">
+		        </div>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- interview_duration -->	
+
+ 	</form>
+
+	 <script>
+    document.getElementById('form').addEventListener('submit', e => {
+      e.preventDefault();
+			var interviewDate = new Date(	document.getElementById('date-year').value,
+				document.getElementById('date-month').value,
+				document.getElementById('date-day').value);
+		
+			if (interviewDate.getTime() < new Date().getTime()) {
+        window.location = 'cant_help_date';
+      } else {
+        window.location = 'interview_duration';
+      }
+    })
+	</script>
+ </div>
+</div> 	
+
+{% endblock %}

@@ -1,0 +1,66 @@
+.opengraph-filter {
+	background: none; padding: 0px; border: currentColor; border-image: none; margin-top: 1em; margin-bottom: 1em;
+}
+.view-messages-feed .opengraph-filter {
+	margin-bottom: 0px;
+}
+.view-my-workspace-my-notifications .opengraph-filter {
+	margin-bottom: 0px;
+}
+.opengraph-filter .opengraph-filter-inner {
+	border: 1px solid rgb(233, 230, 225); border-image: none; position: relative;
+}
+.opengraph-filter .opengraph-filter-inner .left {
+	padding: 1em; width: auto;
+}
+.opengraph-filter .opengraph-filter-inner .left img {
+	width: 193px; height: auto;
+}
+.opengraph-filter .opengraph-filter-inner .right {
+	padding: 1em; margin-left: 0px;
+}
+.opengraph-filter .opengraph-filter-inner .title {
+	color: rgb(51, 51, 51); font-size: 14px; font-weight: 700;
+}
+.opengraph-filter .opengraph-filter-inner .description {
+	color: rgb(0, 0, 0); line-height: 20px; padding-top: 6px; font-size: 13px;
+}
+.opengraph-filter .opengraph-filter-inner .description > div {
+	padding: 2px 0px;
+}
+.opengraph-filter .opengraph-filter-inner .description .link {
+	color: rgb(101, 101, 101);
+}
+.opengraph-filter .opengraph-filter-inner a[href] {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+.opengraph-filter .opengraph-filter-link {
+	left: 0px; top: 0px; right: 0px; bottom: 0px; display: block; position: absolute !important;
+}
+.opengraph-filter span.ext {
+	display: none;
+}
+.pane-group-search-panel-pane-1 .opengraph.without-attachments {
+	outline: white solid 5px;
+}
+.pane-group-search-panel-pane-1 .opengraph.without-attachments > div {
+	margin-bottom: -13px;
+}
+.pane-group-search-panel-pane-1 .opengraph.without-attachments .ajax-progress-throbber {
+	margin-bottom: -8px;
+}
+.pane-group-search-panel-pane-1 .views-row:hover .opengraph.without-attachments {
+	outline: rgb(236, 236, 240) solid 5px;
+}
+@media all and (max-width:375px)
+{
+.opengraph-filter {
+	padding: 0px;
+}
+.page-node .opengraph-filter .opengraph-filter-inner .left {
+	margin: 0px 0px 1em; padding: 0px;
+}
+.opengraph-filter .opengraph-filter-inner .left a img {
+	width: 100%;
+}
+}

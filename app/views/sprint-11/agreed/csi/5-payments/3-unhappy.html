@@ -1,0 +1,45 @@
+{% set link = "3-waiting" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index-payments"}] %}
+{% set title =  "Contact the adviser to check the support cost" %}
+
+{% block csi %}
+<p>Give the case to adviser <strong>John Goldsmith</strong> to check the
+   the correct cost of support <br>for <strong>Thomas Brown</strong>. The reference
+   number is <strong>ATW34593DE</strong>.</p><br>
+<br>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+         idPrefix: "sent-email-amount",
+         name: "sent-email-amount",
+         fieldset: {
+           legend: {
+             text: "Have you contacted the adviser?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+         html: ""
+    },
+         items: [
+         {
+           id: "yes",
+           value: "yes",
+           checked: checked('sent-email-amount', "yes"),
+           text: "Yes"
+         },
+           {
+             id: "no",
+             value: "no",
+             text: "No",
+             checked: checked('sent-email-amount', "no")
+           }
+         ]
+       }) }}
+
+{% endblock %}

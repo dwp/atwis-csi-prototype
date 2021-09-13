@@ -1,0 +1,30 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set link = "close-send-letter" %}
+{% set title = "Reject the case" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% block csi %}
+
+{{ govukTextarea({
+  name: "close-reason",
+  classes: "govuk-!-width-one-half",
+  id: "close-reason",
+  label: {
+    text: "Reason for rejecting the case"
+  }
+}) }}
+
+<!-- hidden field to close case -->
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "closed-case",
+  name: "closed-case",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+{% endblock %}

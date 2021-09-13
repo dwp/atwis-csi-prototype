@@ -1,0 +1,12 @@
+@media print
+{
+.section-header {
+	display: none !important;
+}
+.region-menu {
+	display: none !important;
+}
+.region-page-top {
+	display: none !important;
+}
+}

@@ -1,0 +1,27 @@
+.ui-accordion {
+	width: 100%;
+}
+.ui-accordion .ui-accordion-header {
+	margin-top: 1px; position: relative; cursor: pointer; -ms-zoom: 1;
+}
+.ui-accordion .ui-accordion-li-fix {
+	display: inline;
+}
+.ui-accordion .ui-accordion-header-active {
+	border-bottom-color: currentColor !important; border-bottom-width: 0px !important; border-bottom-style: none !important;
+}
+.ui-accordion .ui-accordion-header a {
+	padding: 0.5em 0.5em 0.5em 0.7em; font-size: 1em; display: block;
+}
+.ui-accordion-icons .ui-accordion-header a {
+	padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-header .ui-icon {
+	left: 0.5em; top: 50%; margin-top: -8px; position: absolute;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 1em 2.2em; top: 1px; overflow: auto; margin-top: -2px; margin-bottom: 2px; border-top-color: currentColor; border-top-width: 0px; border-top-style: none; display: none; position: relative; -ms-zoom: 1;
+}
+.ui-accordion .ui-accordion-content-active {
+	display: block;
+}

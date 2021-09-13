@@ -1,0 +1,43 @@
+{% set link = "../../confirm/1" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: "../claim" }, {id: "no", page: "../index" }] %}
+
+
+{% set title =  "Phone the applicant" %}
+
+
+{% block csi %}
+
+
+<p>Contact {{data['csi-info'][0]['name']}} on   {{ data['csi-info'][0]['contact-by-phone'] }}.</p>
+
+
+
+{{ govukRadios({
+
+      classes: "govuk-radios--inline",
+       idPrefix: "employer",
+       name: "employer",
+       fieldset: {
+         legend: {
+           text: "Has the applicant responded?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

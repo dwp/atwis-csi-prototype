@@ -1,0 +1,147 @@
+{% set page = "task-list" %}
+{% set title = "Your tasks" %}
+{% extends "./_CSIBASE.html" %}
+
+{% block csi %}
+
+{% if not interview %}
+              <ol class="app-task-list">
+                      <li>
+                        <h2 class="app-task-list__section">
+                          <span class="app-task-list__section-number">1. </span> Review and decide
+                        </h2>
+                        <ul class="app-task-list__items">
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="appointee/1" aria-describedby="eligibility-completed">
+                                Check for appointee
+                              </a>
+                            </span>
+                {% if data['appointee'] %}
+                <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>{% endif %}
+                          </li>
+
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="check/3" aria-describedby="eligibility-completed">
+                                Check interview details
+                              </a>
+                            </span>
+  {% if data['interview'] %}
+  <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>{% endif %}
+                          </li>
+</ul>
+</li>
+</ol>
+
+<ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Send confirmation
+          </h2>
+          <ul class="app-task-list__items">
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="send/1" aria-describedby="read-declaration-completed">
+                  Send a confirmation email
+                </a>
+              </span>
+{% if data['send'] =="yes" %}
+<strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>{% endif %}
+</li>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="send/2" aria-describedby="read-declaration-completed">
+      Send a confirmation text message
+    </a>
+  </span>
+{% if  data['notifications'] == "yes" %}
+<strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> {% endif %}
+</li>
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    <a href="send/3" aria-describedby="read-declaration-completed">
+      Print and send the form and cover note
+    </a>
+  </span>
+{% if data['claim'] == "yes" %}
+<strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>{% endif %}
+</li>
+
+</ul>
+</li>
+</ol>
+
+{% else %}  <!-- scenario if interview is true -->
+<ol class="app-task-list">
+        <li>
+                        <h2 class="app-task-list__section">
+                          <span class="app-task-list__section-number">3. </span> After the interview
+                        </h2>
+
+
+                        <ul class="app-task-list__items">
+
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="contact/index">
+                                Contact employer
+                              </a>
+                            </span>
+                            {% if data['employer'] =="yes" %}<strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> {% elif data['sent-email'] %}<!--<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>-->{% endif %}
+
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                              <a href="confirm/1" aria-describedby="company-information-completed">
+                                Confirm interview took place
+
+
+                              </a>
+                            </span>
+                            {% if data['confirm'] =="yes" %}<strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong> {% endif %}
+
+                                              </li>
+
+                        </ul>
+                      </li>
+                    </ol>
+
+{% endif %}
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "index",
+          text: "Index before interview"
+        },
+        {
+          href: "index-waiting",
+          text: "Index waiting"
+        },
+        {
+          href: "index-interview",
+          text: "Index after interview"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}

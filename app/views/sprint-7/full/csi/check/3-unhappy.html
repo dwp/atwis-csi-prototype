@@ -1,0 +1,49 @@
+{% set link = "4" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+<!-- {% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %} -->
+{% set title = "[Select details that are not complete]" %}
+{% block csi %}
+
+
+
+<table class="table-clickable govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th class="govuk-table__header">[Field]</th>
+        <th class="govuk-table__header">[Details]</th>
+
+
+    <th class="govuk-table__header" style="padding: 0 10px;">
+      <div class="govuk-checkboxes__item govuk-checkboxes--small">
+        <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
+        <label class="govuk-label govuk-checkboxes__label" for="radio-all">
+          &nbsp;
+        </label>
+      </div>
+    </th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+
+
+{{selectTable(name="company-name", section="Company name", group="company", details=data['csi-info'][0]['company-name']) }}
+
+{{selectTable(name="company-address-line-one", section="Company address",  group="company",details=(data['csi-info'][0]['company-address-line-one'] + "<br>" + data['csi-info'][0]['company-address-town']  + "<br>" +  data['csi-info'][0]['company-address-county'] + "<br>"
++ data['csi-info'][0]['company-address-postcode'] + "<br>") | safe  )}}
+
+{{selectTable(name="interviewer-name", section="Company contact",  group="company",details=data['csi-info'][0]['interviewer-name'])}}
+
+{{selectTable(name="company-email-address", section="Email",  group="company", details=data['csi-info'][0]['company-email-address'])}}
+
+{{selectTable(name="company-phone", section="Phone", group="company", details=data['csi-info'][0]['company-phone'] )}}
+
+
+
+  </tbody>
+</table>
+
+<p>[you will get a chance to review all these details later]</p>
+
+{% endblock %}

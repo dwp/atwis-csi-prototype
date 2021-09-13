@@ -1,0 +1,32 @@
+{% set paymentAdviserLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% if appointee %}{% set appointeeLink  = "2-appointee" %}{% else %}{% set appointeeLink  = "" %}{% endif %}
+{% set link = "unhappy-2" + appointeeLink  %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "3" }] %}
+
+{% set title =  "Do you need to contact the applicant for more details?" %}
+
+{% block csi %}
+
+
+{{ govukRadios({
+       idPrefix: "differenceContact",
+       name: "differenceContact",
+       classes: "govuk-radios--inline",
+       items: [
+       {
+         id: "yes",
+         value: "yes",
+         checked: checked('differenceContact', "yes"),
+         text: "Yes"
+       },
+         {
+           id: "no",
+           value: "no",
+           text: "No",
+           checked: checked('differenceContact', "no")
+         }
+       ]
+     }) }}
+
+{% endblock %}

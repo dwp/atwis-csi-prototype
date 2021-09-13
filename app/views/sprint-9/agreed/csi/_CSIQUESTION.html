@@ -1,0 +1,90 @@
+{% extends folder + "/" + subfolder + "/_BASE.html" %}
+
+<!-- double set of appointee details as some weird inheritance issues  -->
+{% set appointeeDetails = {
+  name: "Mavis Brown",
+  address: "28 Cathedral Drive<br>Coventry<br>CV3 6JH",
+  telephone: "02475 554 223"
+
+} %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+{% if title %}    <h1 class="govuk-heading-xl">{{title}}</h1>{% endif %}
+
+{% if not hideForm %}<form action="{{link}}" method="post" novalidate> {% endif %}
+
+
+  {% set noHtml %}<p>[you will add information about what isn't working later]</p>
+  {% endset -%}
+
+
+
+
+  {% macro selectTable(name="", section="", details="", group="" ) %}
+
+  <tr class="govuk-table__row">
+
+    <td class="govuk-table__cell govuk-table__header" >{{section}}</td>
+
+      <td class="govuk-table__cell">{{details}}</td>
+      <td class="govuk-table__cell multiple-choice--hod" style="padding: 0 10px;">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+
+
+          <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-{{name}}" name="error[{{group}}]" value="{{name}}">
+          <label class="govuk-label govuk-checkboxes__label" for="radio-{{name}}">
+            &nbsp;
+          </label>
+        </div>
+      </td>
+  </tr>
+
+  {%- endmacro %}
+
+
+{% block csi %}
+
+
+
+
+
+{% endblock %}
+{% if not hideForm %}
+
+<!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+{{ govukButton({
+          text: customNext | default("Continue") | safe
+        }) }}
+
+</form>
+{% endif %}
+{% if not hideReturn %}
+<P><a href="/{{folder}}/{{subfolder}}/csi/{% if return == "claim" %}claim{% elif paymentLink %}payments-index{% else %}index{% if interviewLink %}-interview{% elif paymentAdviserLink %}-payment-adviser{% else %}{% endif  %}{% endif %}" class="govuk-link govuk-link--no-visited-state">Return to {% if return == "claim" %}case{% else %}tasks{% endif %}</a></p>
+{% endif %}
+</div>
+</div>
+
+{% endblock %}
+
+
+{% if redirect %}
+
+{% block pageScripts %}
+
+ <script>
+{% for i in redirect %}
+ $( "#{{i.id}}" ).click(function() {
+  $("form").attr("action", "{{i.page}}")
+ });
+ {%- endfor  %}
+
+ </script>
+
+ {% endblock %}
+ {% endif %}

@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+    <form id="form" method="post" action="difficult-tasks-yes">
+          <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
+                      Which tasks are more difficult for you in work becasue of your condition
+                    </h1>
+                  </legend>
+                <span id="waste-hint" class="govuk-hint">
+                  Select all that apply.
+                </span>
+                <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="phone-calls" name="phone" type="checkbox" value="phone">
+                    <label class="govuk-label govuk-checkboxes__label" for="phone-calls">
+                      Taking phone calls
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="using-computer" name="computer" type="checkbox" value="computer">
+                    <label class="govuk-label govuk-checkboxes__label" for="computer">
+                      Using a computer
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Heavy lifting
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Sitting for a long time
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Climbing stairs
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      Going to meetings
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h4 class="govuk-fieldset__heading">
+                        Anything else?
+                      </h4>
+                    </legend>
+                          <p>Is there anything else you cannot do</p>
+                        <span id="changed-name-hint" class="govuk-hint">
+                        </span>
+                        <div class="govuk-radios govuk-radios--inline">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="anything-else" name="anything-else" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="anything-else">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="anything-else-2" name="anything-else" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="anything-else-2">
+                              No
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                  <button class="govuk-button" data-module="govuk-button">
+                      Continue
+                  </button>
+                  </form>
+
+                  <script>
+                    document.getElementById('form').addEventListener('submit', function(event) {
+                      event.preventDefault();
+                      if (document.getElementById('anything-else').checked) {
+                        window.location = '../atw-example-2/difficult-tasks-yes';
+                      } else {
+                        window.location = '../atw-example-2/taking-calls';
+                      }
+                    })
+                  </script>
+        </div>
+      </div>
+    </main>
+	</div>
+
+	{% endblock %}

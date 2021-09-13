@@ -1,0 +1,6 @@
+body .widget-branding-font > .pane-title {
+	color: rgb(0, 0, 0); font-weight: 700;
+}
+body.panelized-page .panel-pane > .pane-title {
+	color: rgb(0, 0, 0); font-weight: 700;
+}

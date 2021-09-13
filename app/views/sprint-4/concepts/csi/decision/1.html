@@ -1,0 +1,40 @@
+{% set link = "../send/1" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Application decision</h1>
+
+<p>Based on the information provided, is this application eligible
+  for communication support at interview?</p>
+
+{% include folder + "/" + subfolder + "/_CLAIMDETAILS.html" %}
+
+{{ govukRadios({
+       idPrefix: "decision",
+       name: "decision",
+       fieldset: {
+         legend: {
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "accept",
+           text: "Accept"
+         },
+         {
+           value: "reject",
+           text: "Reject"
+         },
+         {
+           value: "more",
+           text: "Ask for more information"
+         }
+       ]
+     }) }}
+
+{% endblock %}

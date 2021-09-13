@@ -1,0 +1,29 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+              <form id="form" method="post" action="check-your-answers">
+
+                <h1 class="govuk-heading-xl">How else can we contact you?</h1>
+
+                <p>Include a mobile number if you would like to receive text message updates about your application.</p>
+
+                <div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                        Email
+                        </label>
+                        <input class="govuk-input" id="event-name" name="event-name" type="email">
+                </div>
+
+                <div class="govuk-form-group">
+                        <label class="govuk-label" for="event-name">
+                        Alternative phone number
+                        </label>
+                        <input class="govuk-input" id="event-name" name="event-name" type="number">
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+
+	{% endblock %}
