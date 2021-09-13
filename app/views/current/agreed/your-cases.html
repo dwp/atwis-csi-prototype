@@ -10,6 +10,20 @@
 
 {% block content %}
 
+<!-- <div class="govuk-panel govuk-panel--confirmation" style="background-color: #ec580d;">
+
+
+  <h2 class="govuk-!-font-size-36">
+      <span class="status-message-warning__icon" aria-hidden="true">!</span>There are no new documents available to request right now.</h2>
+
+
+</div> -->
+
+
+<h1 class="govuk-heading-l top-section">
+      <span>Adviser: </span>
+      <span class="normal">Payment Team Lead</span>
+    </h1>
 {% macro statusTable(payment="") %}
     <table class="govuk-table">
       <thead class="govuk-table__head">
@@ -63,55 +77,103 @@
     {% endif %}
 
 
-    {% set allocated %}
-    <h2 class="govuk-heading-m">Your Communication Support at Interview cases</h2>
+    {% set csi %}
+    <h2 class="govuk-heading-m">CSI Cases </h2>
 
 
 {% if (phase == "empty" or phase == "allocator")  %}
-<p>You have no cases.</P>
+<p>There are currently no CSI Cases.</P>
 
 {% else %}
 {{statusTable(phase="")}}
 
 {% endif %}
 
-
-
-    <h2 class="govuk-heading-m">Your DiSC cases </h2>
-
-{% if phase == "allocator" %}
-<p>You have no cases.</P>
-{% else %}
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header">Name</th>
-            <th class="govuk-table__header">Specialism</th>
-            <th class="govuk-table__header">Case type</th>
-            <th class="govuk-table__header">Date submitted</th>
-            <th class="govuk-table__header">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for case in cases %}
-
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">{{ case.name }}</td>
-              <td class="govuk-table__cell">{{ case.specialism }}</td>
-              <td class="govuk-table__cell">{{ case.type }}</td>
-              <td class="govuk-table__cell">{{ case.date }}</td>
-              <td class="govuk-table__cell"><a href="#">View case</a></td>
-            </tr>
-          {% endfor %}
-
-
-
-      </tbody>
-    </table>
-
-{% endif %}
       {% endset -%}
+
+
+{% set priority %}
+
+  <h2 class="govuk-heading-m">Your priority cases </h2>
+
+    <p>You have no cases.</P>
+    {% endset -%}
+
+
+
+      {% set other %}
+
+
+
+      <h2 class="govuk-heading-m">Your other cases </h2>
+
+      {% if phase == "allocator" %}
+      <p>You have no cases.</P>
+      {% else %}
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Name</th>
+              <th class="govuk-table__header">Specialism</th>
+              <th class="govuk-table__header">Case type</th>
+              <th class="govuk-table__header">Date submitted</th>
+              <th class="govuk-table__header">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for case in cases %}
+
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ case.name }}</td>
+                <td class="govuk-table__cell">{{ case.specialism }}</td>
+                <td class="govuk-table__cell">{{ case.type }}</td>
+                <td class="govuk-table__cell">{{ case.date }}</td>
+                <td class="govuk-table__cell"><a href="#">View case</a></td>
+              </tr>
+            {% endfor %}
+
+
+
+        </tbody>
+      </table>
+
+      {% endif %}
+        {% endset -%}
+
+
+
+
+  {% set doc %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Your documents</h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <form class="form-group" method="post" action="" data-submitonce="">
+        <label class="govuk-label" for="request-envelope-type">
+          Type of payment
+        </label>
+        <select class="select-inline govuk-select" id="request-envelope-type" name="envelopeType">
+
+            <option value="PAYMENT_CLAIM_FORM">Generic</option>
+
+
+            <option value="COMPLEX_PAYMENT_CLAIM_FORM">Complex</option>
+
+
+           <option value="TESG_PAYMENT_CLAIM_FORM">TESG</option>
+
+        </select>
+        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a new document">
+      </form>
+    </div>
+  </div>
+
+<p>There are no documents allocated to you</p>
+{% endset -%}
 
 
       {% set disc %}
@@ -145,18 +207,33 @@
 {% else %}
     {{ govukTabs({
       items: [
+      {
+        label: "Your priority cases (0)",
+        id: "priority",
+        panel: {
+          html: priority
+        }
+      },
         {
-          label: "Allocated",
-          id: "allocated",
+          label: "Your other cases (0)",
+          id: "other",
           panel: {
-            html: allocated
+            html: other
           }
         },
         {
-          label: "In DiSC",
+          label: "Your CSI cases (0)",
+          id: "csi",
+          panel: {
+            html: csi
+          }
+        },
+        {
+
+          label: "Your documents (0)",
           id: "in-disc",
           panel: {
-            html: disc
+            html: doc
           }
         }
       ]

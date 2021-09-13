@@ -142,7 +142,10 @@
 
       {% if not (phase == "closed") and not ( phase == "payment-closed") and not (phase == "payment-cancelled") and not payments %}
 
-       <p><a  href="close-case">Reject the case</a></p>{% endif %}
+       <p><a  href="close-case">Reject the case</a></p>
+<p><a  href="">Print and send claim form again</a></p>
+
+       {% endif %}
 
         {% if (phase == "interview") or (phase == "waiting")  or (data['claim'] =="yes") or (phase == "payment-adviser") %}
                  <p><a  href="resend">Print and send claim form again</a></p>
@@ -154,6 +157,30 @@
 {% endif %} <!-- end never shown for contact centre -->
 
 
+<div class="update-panel">
+    <h3 id="update-adviser-heading" class="govuk-heading-m">Update adviser</h3>
+    <form action="" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+      <div class="govuk-form-group form-group-compound">
+        <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
+          <option value="" data-name=""></option>
+
+                <option value="4" data-name="Aaron">Aaron</option>
+                <option value="36" data-name="Adviser">Adviser</option>
+                <option value="37" data-name="Case Team Lead">Case Team Lead</option>
+                <option value="35" data-name="FRM">FRM</option>
+                <option value="38" data-name="Payment Officer">Payment Officer</option>
+                <option value="39" data-name="Payment Team Lead">Payment Team Lead</option>
+                <option value="40" data-name="Quality">Quality</option>
+                <option value="42" data-name="Quality1">Quality1</option>
+                <option value="5" data-name="Shannon White">Shannon White</option>
+                <option value="34" data-name="Telephony Agent">Telephony Agent</option>
+        </select>
+      </div>
+      <div>
+        <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+      </div>
+    </form>
+  </div>
 
 
 
