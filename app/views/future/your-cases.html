@@ -1,6 +1,6 @@
 {% set hideBanner = true %}
 {% set yourCases = true %}
-{% extends "./_BASE.html" %}
+{% extends "./claim/_BASE.html" %}
 
 
 
@@ -19,18 +19,21 @@
 
 </div> -->
 
-
+<!-------------- header -->
 <h1 class="govuk-heading-l top-section">
       <strong><span>Adviser: </span></strong>
   {% if phase == "allocator"  %}
-  <span class="normal">Payment Team Lead</span>
+  <span class="normal">Payment Team Lead</span>{% else %}
+  John Goldsmith
   {% endif %}
     </h1>
+
+<!-------------- csi tables -->
 {% macro statusTable(payment="") %}
     <table class="govuk-table">
       <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header">Name</th>
+            <th class="govuk-table__header">Namess</th>
 
             <th class="govuk-table__header">Date submitted</th>
             <th class="govuk-table__header">Interview date</th>
@@ -72,11 +75,7 @@
 </div></div>
 {% endif %}
 
-    {% if showNotice %}
-      {{ govukInsetText({
-        text: "There are no cases to allocate at the moment. Please try again later."
-      }) }}
-    {% endif %}
+
 
 
     {% set csi %}
@@ -94,19 +93,57 @@
       {% endset -%}
 
 
+
+
+<!-------------- Your priority cases -->
+
 {% set priority %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Your priority cases </h2>
+  </div>
 
-  <h2 class="govuk-heading-m">Your priority cases </h2>
+  <div class="govuk-grid-column-one-third">
+    <form class="form-group" method="post" action="" data-submitonce="">
 
-    <p>You have no cases.</P>
+
+      <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a new document">
+    </form>
+  </div>
+  </div>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">Specialism</th>
+          <th class="govuk-table__header">Case type</th>
+          <th class="govuk-table__header">Date submitted</th>
+          <th class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for case in cases %}
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ case.name }}</td>
+            <td class="govuk-table__cell">{{ case.specialism }}</td>
+            <td class="govuk-table__cell">{{ case.type }}</td>
+            <td class="govuk-table__cell">{{ case.date }}</td>
+            <td class="govuk-table__cell"><a href="claim">View case</a></td>
+          </tr>
+        {% endfor %}
+
+
+
+    </tbody>
+  </table>
     {% endset -%}
 
 
-
+<!-------------- Your other cases -->
       {% set other %}
-
-
-
       <h2 class="govuk-heading-m">Your other cases </h2>
 
       {% if phase == "allocator" %}
@@ -145,10 +182,8 @@
 
 
 
-
+<!-------------- Your documents -->
   {% set doc %}
-
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-m">Your documents</h2>
@@ -178,53 +213,27 @@
 {% endset -%}
 
 
-      {% set disc %}
-      <h2 class="govuk-heading-m">Your priority cases </h2>
 
-<p>You have no priority cases.</P>
+<!-------------- tabs -->
 
-
-      <h2 class="govuk-heading-m">Your cases </h2>
-
-<p>You have no cases.</P>
-        {% endset -%}
-
-{% if phase == "payments" %}
-
-<h2 class="govuk-heading-m">Your cases </h2>
-
-{% if (allocatedCase == "true" ) or (data['payment-allocated'] and not data['transfer-to-adviser']) or ( data['transfer-to-adviser'] and data['transfer-to-payments'] ) %}
-
-{{statusTable(payment="true")}}
-
-
-{% else %}
-
-
-<p>You have no cases.</P>
-
-
-{% endif %}
-
-{% else %}
     {{ govukTabs({
       items: [
       {
-        label: "Your priority cases (000)",
+        label: "Your priority cases (4)",
         id: "priority",
         panel: {
           html: priority
         }
       },
         {
-          label: "Your other cases (000)",
+          label: "Your other cases (4)",
           id: "other",
           panel: {
             html: other
           }
         },
         {
-          label: "Your CSI cases (000)",
+          label: "Your CSI cases (1)",
           id: "csi",
           panel: {
             html: csi
@@ -232,7 +241,7 @@
         },
         {
 
-          label: "Your documents (000)",
+          label: "Your documents (0)",
           id: "in-disc",
           panel: {
             html: doc
@@ -240,13 +249,16 @@
         }
       ]
     }) }}
-{% endif %}
+
 
 
   </div>
 </div>
 {% endblock %}
 
+
+
+<!-------------- footer -->
 {% block footer %}
 
 
