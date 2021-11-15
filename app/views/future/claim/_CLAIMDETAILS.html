@@ -297,21 +297,21 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                {% include "../content/name.html" %}
+              Full name
               </dt>
               <dd class="govuk-summary-list__value">
                 Dereck Smith
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="details/name">
-                  Change<span class="govuk-visually-hidden">   {% include "../content/name.html" %}   </span>
+                  Change<span class="govuk-visually-hidden">  Full name </span>
                 </a>
               </dd>
             </div>
         {% if data['national-insurance-number']%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                {% include "../content/national-insurance-number.html" %}
+              National insurance number
               </dt>
               <dd class="govuk-summary-list__value">
               {{data['national-insurance-number']| upper }}
@@ -319,21 +319,21 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="nino-searchlight/add-national-insurance-number">
-                  Change<span class="govuk-visually-hidden">   {% include "../content/national-insurance-number.html" %}</span>
+                  Change<span class="govuk-visually-hidden">  National insurance number  </span>
                 </a>
               </dd>
             </div>
         {% endif %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                {% include "../content/national-insurance-number.html" %}
+              Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
                 1 October 1978
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> {% include "../content/national-insurance-number.html" %}</span>
+                  Change<span class="govuk-visually-hidden"> Date of birth</span>
                 </a>
               </dd>
             </div>
