@@ -1,4 +1,4 @@
-{% extends folder + "/" + subfolder + "/_BASE.html" %}
+{% extends folder + "/claim/_BASE.html" %}
 {% block content %}
 
 
@@ -24,6 +24,11 @@
 {% endfor %}
 
 {% endif  %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.go(-1)"
+}) }}
 
 <div class="govuk-width-container">
 
