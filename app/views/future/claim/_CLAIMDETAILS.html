@@ -8,47 +8,83 @@
   </h2>
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#past-day">
-        Case Management
+      <a class="govuk-tabs__tab" href="#application-summary">
+        Application Summary
       </a>
     </li>
     <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#past-week">
+      <a class="govuk-tabs__tab" href="#citizen-details">
       Citizen Details
       </a>
     </li>
-    <!-- <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#past-month">
-        Past month
+            {% if data['national-insurance-number']%}
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#your-tasks">
+        Your Tasks
       </a>
-    </li> -->
-
+    </li>
+{% endif%}
   </ul>
-  <div class="govuk-tabs__panel" id="past-day">
+  <div class="govuk-tabs__panel" id="application-summary">
 
 
  <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-l">Application Summary</h2>
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
 
-      <strong class="govuk-tag govuk-tag--red">
-Priority
-</strong>
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Dereck Smith
+        </dd>
+      </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Unique Reference Number (URN)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        123456789
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Application refrence
+      </dt>
+      <dd class="govuk-summary-list__value">
+        5 January 1978
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+    Date Submitted
+      </dt>
+      <dd class="govuk-summary-list__value">
+        2 November 2021, 10:09am
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Prioity type(s)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        CEV
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Condition
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">
+        Condition text </p>
+      </dd>
+    </div>
+  </dl>
 
-
-
-  <p></p>
-
-    <h2 class="govuk-heading-s">Application Summary</h2>
-
-
-<p> Application refrence: dsadsda
-<br> Date Submitted: dsadsda</p>
-
-<p><strong>Name:</strong> dsadsadsa</p>
-
-<p><strong>Prioity type(s):</strong> <br>dsadsadsa</p>
-
-<p><strong>Condition:</strong> dsadsadsa</p>
 
 
 </div>
@@ -58,7 +94,7 @@ Priority
 
  <div class="govuk-grid-column-one-third">
    <div class="update-panel">
-       <h3 id="update-adviser-heading" class="govuk-heading-m">Update adviser</h3>
+       <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
        <form action="/cases/apply/RMPX30/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
          <div class="govuk-form-group form-group-compound">
            <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
@@ -202,14 +238,30 @@ Priority
 
 
 
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
  <h2 class="govuk-heading-l">Citizen Details</h2>
 
+  {% if data['national-insurance-number']%}{% else %}
+ <h3 class="govuk-heading-m">You need to:</h3>
+ <ul class="govuk-list">
+   <li>
+     <!-- <a class="govuk-link" href="#"> Find applicant on Searchlight </a> -->
+   </li>
+   <li>
+     <a class="govuk-link" href="./nino-searchlight/check-searchlight">Add National Insurance number from Searchlight</a>
+   </li>
+
+ </ul>
+ <!-- if does not work https://design-system.service.gov.uk/components/notification-banner/ -->
+<div class="govuk-!-padding-bottom-8"></div>{% endif %}
+
+
+
     <h3 class="govuk-heading-m">Application details</h3>
-        <dl class="govuk-summary-list">
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date submitted
@@ -228,7 +280,7 @@ Priority
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Version of questions:
+              Version of questions
             </dt>
             <dd class="govuk-summary-list__value">
             25.25.0-rc
@@ -245,27 +297,43 @@ Priority
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Name
+                {% include "../content/name.html" %}
               </dt>
               <dd class="govuk-summary-list__value">
                 Dereck Smith
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="claim/name">
-                  Change<span class="govuk-visually-hidden"> name</span>
+                <a class="govuk-link" href="details/name">
+                  Change<span class="govuk-visually-hidden">   {% include "../content/name.html" %}   </span>
                 </a>
               </dd>
             </div>
+        {% if data['national-insurance-number']%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Date of birth
+                {% include "../content/national-insurance-number.html" %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{data['national-insurance-number']| upper }}
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nino-searchlight/add-national-insurance-number">
+                  Change<span class="govuk-visually-hidden">   {% include "../content/national-insurance-number.html" %}</span>
+                </a>
+              </dd>
+            </div>
+        {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {% include "../content/national-insurance-number.html" %}
               </dt>
               <dd class="govuk-summary-list__value">
                 1 October 1978
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                  Change<span class="govuk-visually-hidden"> {% include "../content/national-insurance-number.html" %}</span>
                 </a>
               </dd>
             </div>
@@ -438,7 +506,7 @@ N11 4LQ
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-              Email address
+              Telephone
               </dt>
               <dd class="govuk-summary-list__value">
                 <ul class="govuk-list govuk-list--bullet">
@@ -511,6 +579,22 @@ N11 4LQ
                     <h3 class="govuk-heading-m">Condition and Help Needed</h3>
                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                    Primary medical condition
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list govuk-list--bullet">
+                    Condition text
+                    </ul>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> Primary medical condition</span>
+                        </a>
+                      </dd>
+                    </div>
+
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                   What are your conditions or disabilities?
@@ -532,7 +616,7 @@ N11 4LQ
                         </dt>
                         <dd class="govuk-summary-list__value">
                           <ul class="govuk-list govuk-list--bullet">
-                            YES
+                            Yes
                           </ul>
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -547,7 +631,7 @@ N11 4LQ
                         </dt>
                         <dd class="govuk-summary-list__value">
                           <ul class="govuk-list govuk-list--bullet">
-                    YES
+                    Yes
 
                       </ul>
                         </dd>
@@ -583,7 +667,7 @@ N11 4LQ
                         </dt>
                         <dd class="govuk-summary-list__value">
                           <ul class="govuk-list govuk-list--bullet">
-                            YES
+                            Yes
                           </ul>
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -615,7 +699,7 @@ N11 4LQ
                         </dt>
                         <dd class="govuk-summary-list__value">
                           <ul class="govuk-list govuk-list--bullet">
-                            YES
+                            Yes
                           </ul>
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -667,7 +751,7 @@ N11 4LQ
                         </dt>
                         <dd class="govuk-summary-list__value">
                           <ul class="govuk-list govuk-list--bullet">
-                            YES
+                            Yes
                           </ul>
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -682,7 +766,7 @@ N11 4LQ
                         </dt>
                         <dd class="govuk-summary-list__value">
                           <ul class="govuk-list govuk-list--bullet">
-                    YES
+                    Yes
 
                       </ul>
                         </dd>
@@ -780,8 +864,8 @@ N11 4LQ
 
 
 
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
-    <h2 class="govuk-heading-l">Past month</h2>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
+    <h2 class="govuk-heading-l">Your Tasks</h2>
 
 
   </div>
