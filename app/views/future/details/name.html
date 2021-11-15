@@ -2,7 +2,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/" + subfolder + "/_CSIBASE.html" %}
+{% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
 <br>
@@ -10,16 +10,16 @@
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="../claim#past-week" method="post" novalidate>
+        <form action="../claim#citizen-details" method="post" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Name
+                Full name
                 </h1>
               </legend>
               <div id="dob-hint" class="govuk-hint">
-                text
+
               </div>
             <div class="govuk-form-group">
               <label class="govuk-label" for="full-name">
