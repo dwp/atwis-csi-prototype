@@ -34,6 +34,14 @@
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <dl class="govuk-summary-list govuk-summary-list--no-border">
 
+      <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Prioity
+            </dd>
+          </div>
   <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Full Name
@@ -52,30 +60,6 @@
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Application refrence
-      </dt>
-      <dd class="govuk-summary-list__value">
-        5 January 1978
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-    Date Submitted
-      </dt>
-      <dd class="govuk-summary-list__value">
-        2 November 2021, 10:09am
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Prioity type(s)
-      </dt>
-      <dd class="govuk-summary-list__value">
-        CEV
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
         Condition
       </dt>
       <dd class="govuk-summary-list__value">
@@ -83,13 +67,67 @@
         Condition text </p>
       </dd>
     </div>
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Application refrence
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+      </dd>
+    </div> -->
+
   </dl>
 
 
 
-</div>
+<h3 class="govuk-heading-m">Application details</h3>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Date Submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 November 2021, 10:09am
+        </dd>
+      </div> -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Prioity type(s)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          CEV
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 November 2021, 10:09am
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          RMPX30
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version of questions
+        </dt>
+        <dd class="govuk-summary-list__value">
+        25.25.0-rc
+        </dd>
+      </div>
+
+    </dl>
 
 
+    </div>
 
 
  <div class="govuk-grid-column-one-third">
@@ -260,34 +298,6 @@
 
 
 
-    <h3 class="govuk-heading-m">Application details</h3>
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date submitted
-            </dt>
-            <dd class="govuk-summary-list__value">
-              2 November 2021, 10:09am
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Reference number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              RMPX30
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Version of questions
-            </dt>
-            <dd class="govuk-summary-list__value">
-            25.25.0-rc
-            </dd>
-          </div>
-
-        </dl>
 
 
 
@@ -865,9 +875,106 @@ N11 4LQ
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
-    <h2 class="govuk-heading-l">Your Tasks</h2>
 
 
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Your Tasks</h2>
+
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Task incomplete</h2>
+          <p class="govuk-body govuk-!-margin-bottom-7">You have 8 sections to complete.</p>
+
+          <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">1. </span> Check application
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="eligibility-status">
+                      Check eligibility
+                    </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="read-declaration-status">
+                      Check for appointee
+                    </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Check for personal details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Check for employer details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+          </ul>
+          </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">2. </span> Prepare application
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="company-information-status">
+                      Elements
+                    </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="contact-details-status">
+                      Options
+                    </a>
+                  </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="list-convictions-status">
+                      Business case
+                    </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li>
+
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">3. </span> Decisions
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    Submit decision
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
   </div>
 
 

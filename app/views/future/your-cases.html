@@ -116,7 +116,7 @@
     <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header">Name</th>
-          <th class="govuk-table__header">Specialism</th>
+          <!-- <th class="govuk-table__header">Specialism</th> -->
           <th class="govuk-table__header">Case type</th>
           <th class="govuk-table__header">Date submitted</th>
           <th class="govuk-table__header"></th>
@@ -128,10 +128,10 @@
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">{{ case.name }}</td>
-            <td class="govuk-table__cell"> 	Pan disability</td>
+            <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
             <td class="govuk-table__cell">New application</td>
             <td class="govuk-table__cell">{{ case.date }}</td>
-            <td class="govuk-table__cell"><a href="claim">View case</a></td>
+            <td class="govuk-table__cell"><a href="claim">Go to case</a></td>
           </tr>
         {% endfor %}
 
@@ -153,7 +153,7 @@
         <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th class="govuk-table__header">Name</th>
-              <th class="govuk-table__header">Specialism</th>
+              <!-- <th class="govuk-table__header">Specialism</th> -->
               <th class="govuk-table__header">Case type</th>
               <th class="govuk-table__header">Date submitted</th>
               <th class="govuk-table__header"></th>
@@ -165,10 +165,10 @@
 
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">{{ case.name }}</td>
-                <td class="govuk-table__cell">{{ case.specialism }}</td>
+                <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
                 <td class="govuk-table__cell">{{ case.type }}</td>
                 <td class="govuk-table__cell">{{ case.date }}</td>
-                <td class="govuk-table__cell"><a href="#">View case</a></td>
+                <td class="govuk-table__cell"><a href="#">Go to case</a></td>
               </tr>
             {% endfor %}
 
