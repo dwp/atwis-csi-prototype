@@ -9,18 +9,18 @@
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#application-summary">
-        Application Summary
+        Application summary
       </a>
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#citizen-details">
-      Citizen Details
+      Application details
       </a>
     </li>
             {% if data['national-insurance-number']%}
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#your-tasks">
-        Your Tasks
+        Your tasks
       </a>
     </li>
 {% endif%}
@@ -30,7 +30,7 @@
 
  <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
-<h2 class="govuk-heading-l">Application Summary</h2>
+<h2 class="govuk-heading-l">Application summary</h2>
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <dl class="govuk-summary-list govuk-summary-list--no-border">
 
@@ -44,7 +44,7 @@
           </div>
   <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Full Name
+          Full name
         </dt>
         <dd class="govuk-summary-list__value">
           Dereck Smith
@@ -52,7 +52,7 @@
       </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        Unique Reference Number (URN)
+        Unique reference number (URN)
       </dt>
       <dd class="govuk-summary-list__value">
         123456789
@@ -80,7 +80,7 @@
 
 
 
-<h3 class="govuk-heading-m">Application details</h3>
+<!-- <h3 class="govuk-heading-m">Application details</h3> -->
     <dl class="govuk-summary-list govuk-summary-list--no-border">
       <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -92,10 +92,10 @@
       </div> -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Prioity type(s)
+          Prioity type
         </dt>
         <dd class="govuk-summary-list__value">
-          CEV
+          Clinically extremely vulnerable  (CEV)
         </dd>
       </div>
 
@@ -109,20 +109,20 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Reference number
+          Application reference number
         </dt>
         <dd class="govuk-summary-list__value">
           RMPX30
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
+      <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Version of questions
         </dt>
         <dd class="govuk-summary-list__value">
         25.25.0-rc
         </dd>
-      </div>
+      </div> -->
 
     </dl>
 
@@ -280,7 +280,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
- <h2 class="govuk-heading-l">Citizen Details</h2>
+ <h2 class="govuk-heading-l">Application details</h2>
 
   {% if data['national-insurance-number']%}{% else %}
  <h3 class="govuk-heading-m">You need to:</h3>
@@ -297,12 +297,24 @@
 <div class="govuk-!-padding-bottom-8"></div>{% endif %}
 
 
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Version of questions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      25.25.0-rc
+    </dd>
+  </div>
+</dl>
 
 
 
 
 
-             <h3 class="govuk-heading-m">Personal Details</h3>
+
+             <h3 class="govuk-heading-m">Personal details</h3>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -430,13 +442,13 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">     Your job title</span>
+                  Change<span class="govuk-visually-hidden"> Your job title</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-              Your employer:
+              Your employer
               </dt>
               <dd class="govuk-summary-list__value">
                 <ul class="govuk-list govuk-list--bullet">
@@ -446,7 +458,7 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">     Your job title</span>
+                  Change<span class="govuk-visually-hidden"> Your employer</span>
                 </a>
               </dd>
             </div>
@@ -879,7 +891,7 @@ N11 4LQ
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Your Tasks</h2>
+            <h2 class="govuk-heading-l">Your tasks</h2>
 
           <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Task incomplete</h2>
           <p class="govuk-body govuk-!-margin-bottom-7">You have 8 sections to complete.</p>
@@ -939,13 +951,21 @@ N11 4LQ
                   </span>
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
                 </li>
-                <li class="app-task-list__item">
+                <!-- <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
                     <a href="#" aria-describedby="contact-details-status">
                       Options
                     </a>
                   </span>
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li> -->
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="list-convictions-status">
+                      Workplace assesment
+                    </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
@@ -955,14 +975,7 @@ N11 4LQ
                   </span>
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
                 </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="list-convictions-status">
-                      Workplace assesment
-                    </a>
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-                </li>
+
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
                     <a href="#" aria-describedby="list-convictions-status">
