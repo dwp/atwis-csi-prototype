@@ -42,6 +42,14 @@
               Prioity
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Prioity type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Clinically extremely vulnerable  (CEV)
+            </dd>
+          </div>
   <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Full name
@@ -58,15 +66,7 @@
         123456789
       </dd>
     </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Condition
-      </dt>
-      <dd class="govuk-summary-list__value">
-        <p class="govuk-body">
-        Condition text </p>
-      </dd>
-    </div>
+
     <!-- <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Application refrence
@@ -90,26 +90,19 @@
           2 November 2021, 10:09am
         </dd>
       </div> -->
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Prioity type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Clinically extremely vulnerable  (CEV)
-        </dd>
-      </div>
+
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date submitted
         </dt>
         <dd class="govuk-summary-list__value">
-          2 November 2021, 10:09am
+          3 November 2021 11:57
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Application reference number
+          Application reference
         </dt>
         <dd class="govuk-summary-list__value">
           RMPX30
@@ -283,7 +276,7 @@
  <h2 class="govuk-heading-l">Application details</h2>
 
   {% if data['national-insurance-number']%}{% else %}
- <h3 class="govuk-heading-m">You need to:</h3>
+ <h3 class="govuk-heading-m">To do:</h3>
  <ul class="govuk-list">
    <li>
      <!-- <a class="govuk-link" href="#"> Find applicant on Searchlight </a> -->
@@ -482,7 +475,7 @@ N11 4LQ
 </ul>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
+                <a class="govuk-link" href="details/employment-address">
                   Change<span class="govuk-visually-hidden"> Address</span>
                 </a>
               </dd>
@@ -507,7 +500,7 @@ N11 4LQ
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> YTheir name</span>
+              Change<span class="govuk-visually-hidden"> Their name</span>
             </a>
           </dd>
         </div>
@@ -922,7 +915,7 @@ N11 4LQ
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="#" aria-describedby="read-declaration-status">
-                  Check for personal details
+                  Check personal details
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
@@ -930,7 +923,7 @@ N11 4LQ
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="#" aria-describedby="read-declaration-status">
-                  Check for employer details
+                  Check employer details
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
