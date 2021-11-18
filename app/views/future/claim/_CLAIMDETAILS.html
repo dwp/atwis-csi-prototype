@@ -55,7 +55,7 @@
           Full name
         </dt>
         <dd class="govuk-summary-list__value">
-          Dereck Smith
+        {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}
         </dd>
       </div>
     <div class="govuk-summary-list__row">
@@ -276,7 +276,7 @@
  <h2 class="govuk-heading-l">Application details</h2>
 
   {% if data['national-insurance-number']%}{% else %}
- <h3 class="govuk-heading-m">To do:</h3>
+ <h3 class="govuk-heading-m">To do</h3>
  <ul class="govuk-list">
    <li>
      <!-- <a class="govuk-link" href="#"> Find applicant on Searchlight </a> -->
@@ -315,7 +315,7 @@
               Full name
               </dt>
               <dd class="govuk-summary-list__value">
-                Dereck Smith
+              {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="details/name">
@@ -984,7 +984,7 @@ N11 4LQ
 
             <li>
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">3. </span> Decisions
+                <span class="app-task-list__section-number">3. </span> Grant decision
               </h2>
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
