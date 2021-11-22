@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
 
 // Add your routes here - above the module.exports line
 
@@ -28,6 +30,7 @@ router.use('/', (req, res, next) => {
 });
 
 // Start folder specific routes
+router.use('/live-1', require('./views/live-1/_routes'));
 router.use('/sprint-13', require('./views/sprint-13/_routes'));
 router.use('/V12', require('./views/V12/_routes'));
 router.use('/sprint-baseline', require('./views/sprint-baseline/_routes'));
