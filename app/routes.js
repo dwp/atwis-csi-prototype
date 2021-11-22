@@ -30,6 +30,7 @@ router.use('/', (req, res, next) => {
 });
 
 // Start folder specific routes
+router.use('/live-1', require('./views/live-1/_routes'));
 router.use('/sprint-13', require('./views/sprint-13/_routes'));
 router.use('/V12', require('./views/V12/_routes'));
 router.use('/sprint-baseline', require('./views/sprint-baseline/_routes'));
