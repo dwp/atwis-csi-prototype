@@ -13,17 +13,18 @@
       </a>
     </li>
     <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#citizen-details">
-      Application details
-      </a>
-    </li>
-            {% if data['national-insurance-number']%}
-    <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#your-tasks">
         Your tasks
       </a>
     </li>
-{% endif%}
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#citizen-details">
+      Application details
+      </a>
+    </li>
+
+
+
   </ul>
   <div class="govuk-tabs__panel" id="application-summary">
 
@@ -124,7 +125,7 @@
 
 
  <div class="govuk-grid-column-one-third">
-   <div class="update-panel">
+   <!-- <div class="update-panel">
        <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
        <form action="/cases/apply/RMPX30/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
          <div class="govuk-form-group form-group-compound">
@@ -201,7 +202,7 @@
            <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
          </div>
        </form>
-     </div>
+     </div> -->
      <div class="update-panel govuk-form-group">
         <h3 id="update-specialism-heading" class="govuk-heading-m">Update specialism</h3>
         <form action="/cases/apply/RMPX30/update-specialism" method="post" class="form" id="form-update-specialism" autocomplete="off" data-submitonce="">
@@ -275,19 +276,7 @@
 
  <h2 class="govuk-heading-l">Application details</h2>
 
-  {% if data['national-insurance-number']%}{% else %}
- <h3 class="govuk-heading-m">To do</h3>
- <ul class="govuk-list">
-   <li>
-     <!-- <a class="govuk-link" href="#"> Find applicant on Searchlight </a> -->
-   </li>
-   <li>
-     <a class="govuk-link" href="./nino-searchlight/check-searchlight">Add National Insurance number from Searchlight</a>
-   </li>
 
- </ul>
- <!-- if does not work https://design-system.service.gov.uk/components/notification-banner/ -->
-<div class="govuk-!-padding-bottom-8"></div>{% endif %}
 
 
 <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -886,71 +875,93 @@ N11 4LQ
         <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Your tasks</h2>
 
-          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Task incomplete</h2>
-          <p class="govuk-body govuk-!-margin-bottom-7">You have 8 sections to complete.</p>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+
+{% if data['national-insurance-number']%} <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 9 sections.</p>{% else %}
+          <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p>{% endif %}
 
           <ol class="app-task-list">
             <li>
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">1. </span> Check application
+                <span class="app-task-list__section-number">1. </span> To do
               </h2>
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="eligibility-status">
-                      Check eligibility
+                    <a href="  {% if data['national-insurance-number']%}./nino-searchlight/add-national-insurance-number{% else %}./nino-searchlight/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                      Add national insurance number from searchlight
                     </a>
+                  </span>
+                  {% if data['national-insurance-number']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                  <a href="#" aria-describedby="Check-for-appointee">
+                      Check for appointee
+                     </a>
                   </span>
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="read-declaration-status">
-                      Check for appointee
+                    <a href="#" aria-describedby="eligibility-status">
+                    Check eligibility
                     </a>
                   </span>
                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
                 </li>
+          </ul>
+          </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">2. </span> Check application
+              </h2>
+              <ul class="app-task-list__items">
+
+
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="read-declaration-status">
+              {% if data['appointee']%}    <a href="#" aria-describedby="read-declaration-status">{% endif %}
                   Check personal details
-                </a>
+            {% if data['appointee']%}      </a>{% endif %}
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="read-declaration-status">
+              {% if data['appointee']%}    <a href="#" aria-describedby="read-declaration-status">{% endif %}
                   Check employer details
-                </a>
+              {% if data['appointee']%}    </a>{% endif %}
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
             </li>
           </ul>
           </li>
 
             <li>
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">2. </span> Prepare
+                <span class="app-task-list__section-number">3. </span> Prepare
               </h2>
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="company-information-status">
+                {% if data['appointee']%}      <a href="#" aria-describedby="company-information-status">{% endif %}
                       Elements
-                    </a>
+                  {% if data['appointee']%}    </a>{% endif %}
                   </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="list-convictions-status">
+                {% if data['appointee']%}      <a href="#" aria-describedby="list-convictions-status">{% endif %}
                       Job details
-                    </a>
+                  {% if data['appointee']%}    </a>{% endif %}
                   </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
                 </li>
                 <!-- <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
@@ -962,19 +973,19 @@ N11 4LQ
                 </li> -->
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="list-convictions-status">
+                  {% if data['appointee']%}  <a href="#" aria-describedby="list-convictions-status">{% endif %}
                       Workplace assesment
-                    </a>
+                  {% if data['appointee']%}    </a>{% endif %}
                   </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
                 </li>
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="list-convictions-status">
+                    {% if data['appointee']%}  <a href="#" aria-describedby="list-convictions-status">{% endif %}
                       Business case
-                    </a>
+                  {% if data['appointee']%}    </a>{% endif %}
                   </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
                 </li>
 
 
@@ -984,7 +995,7 @@ N11 4LQ
 
             <li>
               <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">3. </span> Grant decision
+                <span class="app-task-list__section-number">4. </span> Grant decision
               </h2>
               <ul class="app-task-list__items">
                 <li class="app-task-list__item">
