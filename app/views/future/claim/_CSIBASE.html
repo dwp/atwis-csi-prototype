@@ -25,10 +25,12 @@
 
 {% endif  %}
 
+{% if not hideback %}
 {{ govukBackLink({
 text: "Back",
 href: "javascript:history.go(-1)"
 }) }}
+{% endif %}
 
 <div class="govuk-width-container">
 
