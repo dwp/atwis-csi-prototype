@@ -77,10 +77,10 @@
           <li{% if yourCases %} class="active"{% endif %}>
 
 {% if (not contactCentre)  %}
-          <a href="/current/your-cases{% if phase == "allocator"%}-allocator{% endif %}" class="active" aria-current="page">Your cases</a>
+          <a href="/future/your-cases" class="active" aria-current="page">Your cases</a>
 
         </li>
-{% if phase == "allocator" or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
+{% if phase == "allocator" or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/{{subfolder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
 
 
 {% endif %}

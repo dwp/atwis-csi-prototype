@@ -1,0 +1,101 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   Is Dereck Smith in Searchlight?
+                 </h1>
+               </legend>
+
+               <p>Use Searchlight to find:</p>
+
+               <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Full Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+     Dereck Smith
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+        1 October 1978
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Postcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+    SE23 6FH
+    </dd>
+  </div>
+
+</dl>
+
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="Searchligh" name="Searchligh" type="radio" value="Yes~./find-national-insurance-number">
+                   <label class="govuk-label govuk-radios__label" for="Searchligh">
+                     Yes
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="Exception process~./find-national-insurance-number">
+                   <label class="govuk-label govuk-radios__label" for="Searchligh-3">
+                     Exception process
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="Searchligh-2" name="Searchligh" type="radio" value="No">
+                   <label class="govuk-label govuk-radios__label" for="Searchligh-2">
+                     No
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
