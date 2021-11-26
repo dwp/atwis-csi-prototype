@@ -2,13 +2,15 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 {% set hideback = "true" %}
-{% extends folder + "/" + subfolder + "/_CSIBASE.html" %}
+{% set phase = "allocator" %}
+
+{% extends   "../claim/_CSIBASE.html" %}
 
 {% block csi %}
 <br>
 
 
 
-{% include folder + "/" + subfolder + "/_CLAIMDETAILS.html" %}
+{% include  "../claim/_CLAIMDETAILS.html" %}
 
 {% endblock %}
