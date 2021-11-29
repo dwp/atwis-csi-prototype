@@ -10,7 +10,7 @@
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> To do
+            <span class="app-task-list__section-number">1. </span> Searchlight
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -37,19 +37,31 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-             <a href="#" aria-describedby="read-declaration-status">
+             <a href="./searchlight/personal/check-personal-details" aria-describedby="read-declaration-status">
                   Check personal details
             </a>
               </span>
+              {% if data['personal']%}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="eligibility-status">
+                <a href="./searchlight/benefits/sever-disability-allowance" aria-describedby="eligibility-status">
                 Check benifits
                 </a>
               </span>
+              {% if data['sda'] and not data['incapacity']%}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}
+              {% if data['sda' and 'income' and 'incapacity']%}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% endif %}
+                {% if not data['sda'] and not data['incapacity']%}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+
             </li>
       </ul>
       </li>
