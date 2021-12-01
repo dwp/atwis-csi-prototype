@@ -18,7 +18,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="  {% if data['national-insurance-number']%}./searchlight/national-insurance/add-national-insurance-number{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
-                  Add national insurance number from searchlight
+                  Add National Insurance number from Searchlight
                 </a>
               </span>
               {% if data['national-insurance-number']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
@@ -53,7 +53,7 @@
               <span class="app-task-list__task-name">
                 <a href="{% if data['exceptions'] and not 'None of the above' in data['benefits']%}./searchlight/benefits/answers{% else %}
                 ./searchlight/benefits/check{% endif %}" aria-describedby="benefits-status">
-                Check benifits
+                Check benefits
                 </a>
               </span>
 
@@ -128,7 +128,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-                  Workplace assesment
+                  Workplace assessment
 
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
@@ -157,7 +157,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
 
-                    Contact Dereck Smith about the business cases details
+                    Contact Dereck Smith about business case
 
                 </span>
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
@@ -174,7 +174,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Submit decision
+                Send decision
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
