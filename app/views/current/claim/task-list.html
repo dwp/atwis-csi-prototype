@@ -62,8 +62,8 @@
                       <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
                       {% else %}
 
-        {% if data['exceptions']=='No'%}  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-        {% if data['exceptions']=='Yes' %}  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+        {% if data['exceptions']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+        {% if data['exceptions']=='Yes' %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
         {% if data['exceptions']=='I will need to contact Dereck Smith'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
 
 {% if not data['exceptions']%}
@@ -78,7 +78,6 @@
                        data ['appointee'] and
                        data ['personal'] and
                       data ['benefits']
-
                        %}
         {% include  "../claim/_task-list-open.html" %}
         {% else %}

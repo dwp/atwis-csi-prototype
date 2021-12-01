@@ -3,7 +3,11 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="{% if data['exceptions']=='I will need to contact Dereck Smith' or %}/current/cases/contact/how-do-you-want-to-contact{% else %}/current/cases/contact/do-not-need-to-contact{% endif %}" aria-describedby="contact-status">
+  <a href="
+  {% if data['exceptions']=='I will need to contact Dereck Smith' %}
+  /current/cases/contact/how-do-you-want-to-contact{% else %}
+  /current/cases/contact/do-not-need-to-contact{% endif %}
+  " aria-describedby="contact-status">
 
               Contact Dereck Smith about Searchlight details
 </a>
