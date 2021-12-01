@@ -26,15 +26,17 @@
               Is Dereck Smith reciving any of the following benefits?
             </dt>
             <dd class="govuk-summary-list__value">
+
+
               {% for feature in data['benefits'] %}
                 <li>{{ feature }}</li>
               {% else %}
-                <li>No features selected</li>
+                <li>None of the above </li>
               {% endfor %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="check">
-                Change<span class="govuk-visually-hidden"> address</span>
+                Change<span class="govuk-visually-hidden"> Is Dereck Smith reciving any of the following benefits?</span>
               </a>
             </dd>
           </div>
@@ -49,8 +51,8 @@ Does Dereck Smith have an exceptions?
               {{data['exceptions']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="check">
-                Change<span class="govuk-visually-hidden"> address</span>
+              <a class="govuk-link" href="exceptions">
+                Change<span class="govuk-visually-hidden"> Does Dereck Smith have an exceptions?</span>
               </a>
             </dd>
           </div>
@@ -79,7 +81,7 @@ Does Dereck Smith have an exceptions?
 
           <input type="hidden" name="answers-checked" value="true">
 
-          <button class="govuk-button" data-module="govuk-button" name="benefits-complete">
+          <button class="govuk-button" data-module="govuk-button" name="" value="">
             Return to your task
           </button>
 

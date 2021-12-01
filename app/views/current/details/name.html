@@ -10,7 +10,7 @@
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="../claim#citizen-details" method="post" novalidate>
+        <form action="../cases/claim#citizen-details" method="post" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -25,11 +25,11 @@
               <label class="govuk-label" for="full-name">
                 First name
               </label>
-              <input class="govuk-input govuk-input--width-20" id="full-name" name="full-name" type="text" spellcheck="false" autocomplete="name" Value="Dereck"></div>          </div>
+              <input class="govuk-input govuk-input--width-20" id="first-name" name="first-name" type="text" spellcheck="false" autocomplete="name" Value="{% if not data['first-name'] %}Dereck{% else %}{{data['first-name']}}{% endif %}"></div>          </div>
               <label class="govuk-label" for="full-name">
                 Last name
               </label>
-              <input class="govuk-input govuk-input--width-20" id="full-name" name="full-name" type="text" spellcheck="false" autocomplete="name" Value="Smith"></div>          </div>
+              <input class="govuk-input govuk-input--width-20" id="last-name" name="last-name" type="text" spellcheck="false" autocomplete="name" Value="Smith"></div>          </div>
 </br>
 <!-- <div class="govuk-inset-text">
 text</div> -->

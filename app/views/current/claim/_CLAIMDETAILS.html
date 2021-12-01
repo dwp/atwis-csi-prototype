@@ -280,10 +280,11 @@
               Full name
               </dt>
               <dd class="govuk-summary-list__value">
-              {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}
+              {% if not data['first-name']%}Dereck{% else %}{{data['first-name']}}{% endif %}
+              {% if not data['last-name']%}Smith{% else %}{{data['last-name']}}{% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="details/name">
+                <a class="govuk-link" href="/current/details/name">
                   Change<span class="govuk-visually-hidden">  Full name </span>
                 </a>
               </dd>
@@ -298,7 +299,7 @@
 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="searchlight/add-national-insurance-number">
+                <a class="govuk-link" href="/current/searchlight/add-national-insurance-number">
                   Change<span class="govuk-visually-hidden">  National insurance number  </span>
                 </a>
               </dd>
@@ -309,10 +310,28 @@
               Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                1 October 1978
+              {% if not data['citizen-dob-']%}  1 October 1978{% else %}
+
+                {{ data['citizen-dob--day'] }}
+            {% if (data['citizen-dob--month'] =='01') or (data['citizen-dob--month'] =='1') %} January {% endif%}
+            {% if (data['citizen-dob--month'] =='02') or (data['citizen-dob--month'] =='2') %} February  {% endif%}
+            {% if (data['citizen-dob--month'] =='03') or (data['citizen-dob--month'] =='3') %} March {% endif%}
+            {% if (data['citizen-dob--month'] =='04') or (data['citizen-dob--month'] =='4') %} April {% endif%}
+            {% if (data['citizen-dob--month'] =='05') or (data['citizen-dob--month'] =='5') %} May {% endif%}
+            {% if (data['citizen-dob--month'] =='06') or (data['citizen-dob--month'] =='6') %} June {% endif%}
+            {% if (data['citizen-dob--month'] =='07') or (data['citizen-dob--month'] =='7') %} July {% endif%}
+            {% if (data['citizen-dob--month'] =='08') or (data['citizen-dob--month'] =='8') %} August {% endif%}
+            {% if (data['citizen-dob--month'] =='09') or (data['citizen-dob--month'] =='9') %} September {% endif%}
+            {% if data['citizen-dob--month'] =='10' %} October {% endif%}
+            {% if data['citizen-dob--month'] =='11'%} November {% endif%}
+            {% if data['citizen-dob--month'] =='12' %} December {% endif%}
+  {{ data['citizen-dob--year' ] }}
+
+{% endif %}
+
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="details/date-of-birth">
+                <a class="govuk-link" href="/current/details/date-of-birth">
                   Change<span class="govuk-visually-hidden"> Date of birth</span>
                 </a>
               </dd>
@@ -325,7 +344,7 @@
                 72 Guild Street<br>London<br>SE23 6FH
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="details/personal-address">
+                <a class="govuk-link" href="/current/details/personal-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -357,11 +376,13 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <ul class="govuk-list govuk-list--bullet">
-          I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.
+        {% if not data['condition']%}I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.{% else %}
+        {{data['condition']}}
+        {% endif %}
           </ul>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="/current/details/what-are-your-conditions-disabilities">
               Change<span class="govuk-visually-hidden"> What are your conditions or disabilities?</span>
             </a>
           </dd>
@@ -434,6 +455,35 @@
               </dd>
             </div>
 
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+            <p>dereck@gmail.com</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">   How do you want to be contacted?</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+            <p>01234567890</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">   How do you want to be contacted?</span>
+                </a>
+              </dd>
+            </div>
           </dl>
         <p></p>
           <h3 class="govuk-heading-m">Employment status</h3>

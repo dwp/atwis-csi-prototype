@@ -51,16 +51,26 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="./searchlight/benefits/check" aria-describedby="benefits-status">
+                <a href="{% if data['exceptions'] and not 'None of the above' in data['benefits']%}./searchlight/benefits/answers{% else %}
+                ./searchlight/benefits/check{% endif %}" aria-describedby="benefits-status">
                 Check benifits
                 </a>
               </span>
 
-              {% if 'None of the above' in data['benefits']%}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
+
+        {% if 'None of the above' in data['benefits']%}
+                      <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                      {% else %}
+
+        {% if data['exceptions']=='No'%}  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+        {% if data['exceptions']=='Yes' %}  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+        {% if data['exceptions']=='I will need to contact Dereck Smith'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+
+{% if not data['exceptions']%}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+
+      {% endif %}
+
             </li>
 
             {% if data [
