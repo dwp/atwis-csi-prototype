@@ -2,7 +2,9 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 {% set hideback = "true" %}
-{% set phase = "" %}
+
+{% if data['exceptions']=='No'%}
+{% set phase = "notEligible" %}{% endif %}
 
 {% extends   "../claim/_CSIBASE.html" %}
 

@@ -12,9 +12,11 @@
               Contact Dereck Smith about Searchlight details
 </a>
               </span>
-              {% if data['contact-searchlight']%}
+              {% if data['contact']%}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+              {% if data['contact']=='complete'%}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
             </li>
 
       </ul>

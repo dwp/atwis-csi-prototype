@@ -30,19 +30,7 @@
   <div class="govuk-tabs__panel" id="application-summary">
 
   {% if phase == "notEligible"  %}
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          Application is possible not eligible.
-          <a class="govuk-notification-banner__link" href="#">Your actions</a>.
-        </p>
-      </div>
-    </div>
+{% include  "../claim/notification.html" %}
 {% endif %}
 
  <div class="govuk-grid-row">
@@ -848,19 +836,8 @@ N11 4LQ
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
 
     {% if phase == "notEligible"  %}
-      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Important
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <p class="govuk-notification-banner__heading">
-            Application is possible not eligible.
-            <a class="govuk-notification-banner__link" href="#">Your actions</a>.
-          </p>
-        </div>
-      </div>{% else %}
+    {% include  "./notification.html" %}
+      {% else %}
     {% endif %}
     {% include  "./task-list.html" %}
 

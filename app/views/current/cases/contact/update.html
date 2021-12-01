@@ -25,25 +25,50 @@
             <h1 class="govuk-heading-xl">Updating Dereck Smiths case</h1>
 
 
-
-                <p> Dereck Smith is in receipt of certain benefits that are not normally able to get access to work.  </p>
-
-            <p>  Exceptions are:</P>
-            <ul class="govuk-list govuk-list--bullet">
-            <li>  is going for an interview, or</li>
-            <li>  starting a Work Trial, or</li>
-            <li>  has a job to start, and will stop claiming when employment begins or</li>
-            <li>  is on Permitted Work Higher Level, Permitted Work PCA Exempt or Supported Permitted Work. </li>
-            </ul>
-
-<p>You will need to update:</p>
-<p>Check benefits</p>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Is Dereck Smith reciving any of the following benefits?
+                </dt>
+                <dd class="govuk-summary-list__value">
 
 
+                  {% for feature in data['benefits'] %}
+                    <li>{{ feature }}</li>
+                  {% else %}
+                    <li>None of the above </li>
+                  {% endfor %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="check">
+                    Change<span class="govuk-visually-hidden"> Is Dereck Smith reciving any of the following benefits?</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+
+          Does Dereck Smith have an exceptions?
+
+
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['exceptions']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="exceptions">
+                    Change<span class="govuk-visually-hidden"> Does Dereck Smith have an exceptions?</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
 
 
 
-          <button class="govuk-button" data-module="govuk-button" name="contact-searchlight" value="complete">
+
+
+
+          <button class="govuk-button" data-module="govuk-button" name="contact" value="complete">
              Return to your task
           </button>
 
