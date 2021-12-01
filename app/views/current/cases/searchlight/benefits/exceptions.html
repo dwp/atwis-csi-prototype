@@ -1,0 +1,82 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/current/cases/searchlight/benefits/answers" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                  Does Dereck Smith have an exceptions?
+
+                 </h1>
+               </legend>
+
+
+               <div class="govuk-inset-text">
+                       <p> Dereck Smith is in receipt of certain benefits that are not normally able to get access to work.  </p>
+
+                     Exceptions are:
+               <ul class="govuk-list govuk-list--bullet">
+                 <li>  is going for an interview, or</li>
+                 <li>  starting a Work Trial, or</li>
+                 <li>  has a job to start, and will stop claiming when employment begins or</li>
+                 <li>  is on Permitted Work Higher Level, Permitted Work PCA Exempt or Supported Permitted Work. </li>
+                   </ul>
+
+                       </div>
+
+
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="exceptions" name="exceptions" type="radio" value="Yes" {{ checked("exceptions", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="exceptions">
+                     Yes
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="exceptions-2" name="exceptions" type="radio" value="No, I will need to contact Dereck Smith" {{ checked("exceptions", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="exceptions-2">
+                     No, I will need to contact Dereck Smith
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

@@ -64,31 +64,26 @@
         </dl>
 
 
+{% if data ['incapacity']=='Yes' or data ['income']=='Yes' or data ['sda']=='Yes'%}
+        <div class="govuk-inset-text">
+        <p> Dereck Smith is in receipt of certain benefits that are not normally able to get access to work.  </p>
+
+        Exceptions are:
+  <ul class="govuk-list govuk-list--bullet">
+    <li>  is going for an interview, or</li>
+    <li>   starting a Work Trial, or</li>
+    <li>   has a job to start, and will stop claiming when employment begins or</li>
+    <li>   is on Permitted Work Higher Level, Permitted Work PCA Exempt or Supported Permitted Work. </li>
+      </ul>
 
 
-        <!-- <h2 class="govuk-heading-m">Do these details match Searchlight?</h2>
-
-
-        <div class="govuk-radios govuk-radios--inline">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="income" name="income" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="income">
-              Yes
-            </label>
+      You will need to contact the Dereck Smith to see if they have an exception.
           </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="income-2" name="income" type="radio" value="No">
-            <label class="govuk-label govuk-radios__label" for="income-2">
-              No
-            </label>
-          </div>
-        <form action="/form-handler" method="post" novalidate>
-</div><br> -->
+{% endif %}
           <input type="hidden" name="answers-checked" value="true">
 
           <button class="govuk-button" data-module="govuk-button" name="benefits-complete">
-            Confirm and return to your task
+            Return to your task
           </button>
 
         </form>

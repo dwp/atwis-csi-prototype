@@ -10,7 +10,7 @@
 
 
 
-<form action="incapacity-benefit" method="post" novalidate>
+<form action="check-your-answers" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -25,22 +25,22 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h1 class="govuk-fieldset__heading">
-                   Is Dereck Smith receiving Income Support (IS) as a result of a disability?
+                   Is Dereck Smith currently receipt of Employment Support Allowance (ESA)?
 
                  </h1>
                </legend>
 
                <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="income" name="income" type="radio" value="Yes" {{ checked("income", "Yes") }}>
-                   <label class="govuk-label govuk-radios__label" for="income">
+                   <input class="govuk-radios__input" id="incapacity" name="incapacity" type="radio" value="Yes" {{ checked("incapacity", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="incapacity">
                      Yes
                    </label>
                  </div>
 
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="income-2" name="income" type="radio" value="No" {{ checked("income", "No") }}>
-                   <label class="govuk-label govuk-radios__label" for="income-2">
+                   <input class="govuk-radios__input" id="incapacity-2" name="incapacity" type="radio" value="No" {{ checked("incapacity", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="incapacity-2">
                      No
                    </label>
                  </div>
