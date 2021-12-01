@@ -18,7 +18,7 @@ Example usage:
 */
 
 module.exports = {
-
+'benefits' : "",
   // Insert values here
 
   'unallocated-cases': [{
