@@ -12,11 +12,13 @@
               Contact Dereck Smith about Searchlight details
 </a>
               </span>
+
+              {% if data['asked-info-phone']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
               {% if data['contact']%}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
               {% if data['contact']=='complete'%}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}{% endif %}
             </li>
 
       </ul>
@@ -33,7 +35,7 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="" aria-describedby="job-status">
+  <a href="claim#your-tasks" aria-describedby="job-status">
                   Job details
 </a>
               </span>
@@ -42,21 +44,21 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="" aria-describedby="job-status">
+  <a href="claim#your-tasks" aria-describedby="job-status">
                   Workplace assesment
 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="" aria-describedby="job-status">
+  <a href="claim#your-tasks" aria-describedby="job-status">
                   Evidence
 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="" aria-describedby="job-status">
+  <a href="claim#your-tasks" aria-describedby="job-status">
                   Quotes
 </a>
               </span>
@@ -64,14 +66,14 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="" aria-describedby="job-status">
+  <a href="claim#your-tasks" aria-describedby="job-status">
                   Elements
 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-            <a href="" aria-describedby="job-status">
+            <a href="claim#your-tasks" aria-describedby="job-status">
                     Contact Dereck Smith about the business cases details
             </a>
                 </span>
