@@ -23,36 +23,41 @@
             <fieldset class="govuk-fieldset" aria-describedby="benefits-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Is Dereck Smith reciving any benefits?
+                  Does Searchlight show benefits that could affect Dereck Smith’s eligibility?
                 </h1>
               </legend>
+              
+              <p class="govuk-body">
+                <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+              </p>
+              
               <div id="benefits-hint" class="govuk-hint">
                 Select all that apply.
               </div>
-                 <p>Use Searchlight to check if Dereck Smith has an benefits.</p>
+      
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Incapacity Benefit (IB), including the award of National Insurance credits only" {{ checked("benefits", "Incapacity Benefit (IB), including the award of National Insurance credits only") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits">
-                    Incapacity Benefit (IB), including the award of National Insurance credits only
+                    Incapacity Benefit, including National Insurance credits only
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="benefits-2" name="benefits" type="checkbox" value="Employment Support Allowance (ESA) including the award of National Insurance credits only" {{ checked("benefits", "Employment Support Allowance (ESA) including the award of National Insurance credits only") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-2">
-                    Employment Support Allowance (ESA) including the award of National Insurance credits only
+                    Employment Support Allowance, including National Insurance credits only
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="benefits-3" name="benefits" type="checkbox" value="Severe Disability Allowance (SDA)" {{ checked("benefits", "Severe Disability Allowance (SDA)") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-3">
-                    Severe Disability Allowance (SDA)
+                    Severe Disablement Allowance
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="benefits-4" name="benefits" type="checkbox" value="Income Support (IS) paid as a result of illness" {{ checked("benefits", "Income Support (IS) paid as a result of illness") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-4">
-                    Income Support (IS) paid as a result of illness
+                    Income Support paid for illness
                   </label>
                 </div>
 <div class="govuk-checkboxes__divider">or</div>
@@ -60,7 +65,7 @@
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="benefits-5" name="benefits" type="checkbox" value="None of the above" data-behaviour="exclusive" {{ checked("benefits", "None of the above") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-5">
-                    None of the above
+                    None
                   </label>
                 </div>
               </div>
