@@ -52,7 +52,7 @@ Can Dereck Smith still get Access to Work?
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exceptions">
-                Change<span class="govuk-visually-hidden"> Does Dereck Smith have an exceptions?</span>
+                Change<span class="govuk-visually-hidden"> Does Dereck Smith have any exceptions?</span>
               </a>
             </dd>
           </div>
@@ -65,24 +65,24 @@ Can Dereck Smith still get Access to Work?
 
 {% if "None of the above" in data['benefits'] or data['exceptions']=='Yes'%}{% else %}
         <div class="govuk-inset-text">
-        <p> Dereck Smith is in receipt of certain benefits that are not normally able to get access to work.  </p>
+        <p> Dereck Smith’s benefits affect Access to Work eligibility.  </p>
 
       Exceptions are:
 <ul class="govuk-list govuk-list--bullet">
-  <li>  is going for an interview, or</li>
-  <li>  starting a Work Trial, or</li>
-  <li>  has a job to start, and will stop claiming when employment begins or</li>
-  <li>  is on Permitted Work Higher Level, Permitted Work PCA Exempt or Supported Permitted Work. </li>
+  <li>  going for an interview</li>
+  <li>  starting a Work Trial</li>
+  <li>  a job that has not started yet, if the benefit claim will end when the job begins </li>
+  <li>  a permitted work decision from Access to Work</li>
     </ul>
 <p>
-    This will be added "Contact Dereck Smith" task. </p>
+    This will be added to the 'Contact Dereck Smith' task. </p>
         </div>
 {% endif %}
 
           <input type="hidden" name="answers-checked" value="true">
 
           <button class="govuk-button" data-module="govuk-button" name="" value="">
-            Return to your task
+            Return to your tasks
           </button>
 
         </form>

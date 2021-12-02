@@ -36,7 +36,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-               Is Dereck Smith receiving Income Support as a result of a disability?
+               Does Dereck Smith get Income Support for an illness or disability?
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['income']}}
@@ -49,7 +49,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-               Is Dereck Smith currently receipt of Incapacity Benefit?
+               Does Dereck Smith get Incapacity Benefit?
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['incapacity']}}
@@ -66,18 +66,18 @@
 
 {% if data ['incapacity']=='Yes' or data ['income']=='Yes' or data ['sda']=='Yes'%}
         <div class="govuk-inset-text">
-        <p> Dereck Smith is in receipt of certain benefits that are not normally able to get access to work.  </p>
+        <p> Dereck Smith gets benefits that affect Access to Work elegibility.  </p>
 
         Exceptions are:
   <ul class="govuk-list govuk-list--bullet">
-    <li>  is going for an interview, or</li>
-    <li>   starting a Work Trial, or</li>
-    <li>   has a job to start, and will stop claiming when employment begins or</li>
-    <li>   is on Permitted Work Higher Level, Permitted Work PCA Exempt or Supported Permitted Work. </li>
+    <li> going for an interview???CSI only???</li>
+  <li>starting a work trial</li>
+  <li> has not started their job yet, but will stop claiming benefits when their job begins </li>
+  <li> a permitted work decision from Access to Work</li>
       </ul>
 
 
-      You will need to contact the Dereck Smith to see if they have an exception.
+      You will need to contact Dereck Smith to check if there are any exceptions.
           </div>
 {% endif %}
           <input type="hidden" name="answers-checked" value="true">
