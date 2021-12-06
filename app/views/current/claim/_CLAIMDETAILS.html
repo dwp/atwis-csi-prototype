@@ -12,6 +12,7 @@
         Application summary
       </a>
     </li>
+
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#your-tasks">
         Your tasks
@@ -28,6 +29,9 @@
   </ul>
   <div class="govuk-tabs__panel" id="application-summary">
 
+  {% if phase == "notEligible"  %}
+{% include  "../claim/notification.html" %}
+{% endif %}
 
  <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
@@ -162,58 +166,13 @@
          </div>
        </form>
      </div> {% endif %}
-     
-     <div class="update-panel govuk-form-group">
-        <h3 id="update-specialism-heading" class="govuk-heading-m">Update specialism</h3>
-        <form action="/cases/apply/RMPX30/update-specialism" method="post" class="form" id="form-update-specialism" autocomplete="off" data-submitonce="">
-            <div class="govuk-form-group form-group-compound">
-            <select class="govuk-select" id="specialismId" name="specialism" aria-labelledby="update-specialism-heading">
-
-
-                    <option value="self_employed" data-name="Self-employed">
-                Self-employed
-                </option>
-
-                    <option value="director" data-name="Director">
-                Director
-                </option>
-
-                    <option value="hidden" data-name="Hidden impairments">
-                Hidden impairments
-                </option>
-
-                    <option value="large_employer" data-name="Large employer">
-                Large employer
-                </option>
-
-                    <option value="deaf" data-name="Deaf">
-                Deaf
-                </option>
-
-                    <option value="visual" data-name="Visually impaired">
-                Visually impaired
-                </option>
-
-                    <option value="unknown" data-name="Pan disability" selected="">
-                Pan disability
-                </option>
-
-            </select>
-            </div>
-            <div>
-            <input type="submit" class="govuk-button" id="submitButtonSpecialism" value="Save">
-            </div>
-        </form>
-    </div>
-   </div>
-</div>
 
 
 
 
+</div></div></div>
 
 
-  </div>
 
 
 
@@ -264,10 +223,11 @@
               Full name
               </dt>
               <dd class="govuk-summary-list__value">
-              {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}
+              {% if not data['first-name']%}Dereck{% else %}{{data['first-name']}}{% endif %}
+              {% if not data['last-name']%}Smith{% else %}{{data['last-name']}}{% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="details/name">
+                <a class="govuk-link" href="/current/details/name">
                   Change<span class="govuk-visually-hidden">  Full name </span>
                 </a>
               </dd>
@@ -282,7 +242,7 @@
 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="nino-searchlight/add-national-insurance-number">
+                <a class="govuk-link" href="/current/searchlight/add-national-insurance-number">
                   Change<span class="govuk-visually-hidden">  National insurance number  </span>
                 </a>
               </dd>
@@ -293,10 +253,28 @@
               Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                1 October 1978
+              {% if not data['citizen-dob-']%}  1 October 1978{% else %}
+
+                {{ data['citizen-dob--day'] }}
+            {% if (data['citizen-dob--month'] =='01') or (data['citizen-dob--month'] =='1') %} January {% endif%}
+            {% if (data['citizen-dob--month'] =='02') or (data['citizen-dob--month'] =='2') %} February  {% endif%}
+            {% if (data['citizen-dob--month'] =='03') or (data['citizen-dob--month'] =='3') %} March {% endif%}
+            {% if (data['citizen-dob--month'] =='04') or (data['citizen-dob--month'] =='4') %} April {% endif%}
+            {% if (data['citizen-dob--month'] =='05') or (data['citizen-dob--month'] =='5') %} May {% endif%}
+            {% if (data['citizen-dob--month'] =='06') or (data['citizen-dob--month'] =='6') %} June {% endif%}
+            {% if (data['citizen-dob--month'] =='07') or (data['citizen-dob--month'] =='7') %} July {% endif%}
+            {% if (data['citizen-dob--month'] =='08') or (data['citizen-dob--month'] =='8') %} August {% endif%}
+            {% if (data['citizen-dob--month'] =='09') or (data['citizen-dob--month'] =='9') %} September {% endif%}
+            {% if data['citizen-dob--month'] =='10' %} October {% endif%}
+            {% if data['citizen-dob--month'] =='11'%} November {% endif%}
+            {% if data['citizen-dob--month'] =='12' %} December {% endif%}
+  {{ data['citizen-dob--year' ] }}
+
+{% endif %}
+
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="details/date-of-birth">
+                <a class="govuk-link" href="/current/details/date-of-birth">
                   Change<span class="govuk-visually-hidden"> Date of birth</span>
                 </a>
               </dd>
@@ -309,14 +287,81 @@
                 72 Guild Street<br>London<br>SE23 6FH
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="details/personal-address">
+                <a class="govuk-link" href="/current/details/personal-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div>
 
           </dl>
+          <h3 class="govuk-heading-m">Condition and Help Needed</h3>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+          Primary medical condition
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+          Visual impairments
+          </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> Primary medical condition</span>
+              </a>
+            </dd>
+          </div> -->
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          What are your conditions or disabilities?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+        {% if not data['condition']%}I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.{% else %}
+        {{data['condition']}}
+        {% endif %}
+          </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/current/details/what-are-your-conditions-disabilities">
+              Change<span class="govuk-visually-hidden"> What are your conditions or disabilities?</span>
+            </a>
+          </dd>
+          </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Do you want some help to get to work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+                  Yes
+                </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Do you want some help to get to work?</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Does your condition make it harder for you to do your job?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+          Yes
+
+            </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Does your condition make it harder for you to do your job?</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
 
           <h3 class="govuk-heading-m">Contact details</h3>
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -353,6 +398,35 @@
               </dd>
             </div>
 
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+            <p>dereck@gmail.com</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">   How do you want to be contacted?</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+            <p>01234567890</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">   How do you want to be contacted?</span>
+                </a>
+              </dd>
+            </div>
           </dl>
         <p></p>
           <h3 class="govuk-heading-m">Employment status</h3>
@@ -540,72 +614,7 @@ N11 4LQ
           </dl>
 
 
-                    <h3 class="govuk-heading-m">Condition and Help Needed</h3>
-                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                    Primary medical condition
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        <ul class="govuk-list govuk-list--bullet">
-                    Visual impairments
-                    </ul>
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> Primary medical condition</span>
-                        </a>
-                      </dd>
-                    </div>
-
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                  What are your conditions or disabilities?
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <ul class="govuk-list govuk-list--bullet">
-                  I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.
-                  </ul>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden"> What are your conditions or disabilities?</span>
-                      </a>
-                    </dd>
-                  </div>
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                        Do you want some help to get to work?
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          <ul class="govuk-list govuk-list--bullet">
-                            Yes
-                          </ul>
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> Do you want some help to get to work?</span>
-                          </a>
-                        </dd>
-                      </div>
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                        Does your condition make it harder for you to do your job?
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          <ul class="govuk-list govuk-list--bullet">
-                    Yes
-
-                      </ul>
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> Does your condition make it harder for you to do your job?</span>
-                          </a>
-                        </dd>
-                      </div>
-                    </dl>
 
                     <h3 class="govuk-heading-m">Effect of condition on Job</h3>
                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -691,56 +700,7 @@ N11 4LQ
                     </dl>
 
 
-                    <h3 class="govuk-heading-m">Condition and Help Needed</h3>
-                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                  What are your conditions or disabilities?
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <ul class="govuk-list govuk-list--bullet">
-                  I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.
-                  </ul>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="#">
-                        Change<span class="govuk-visually-hidden"> What are your conditions or disabilities?</span>
-                      </a>
-                    </dd>
-                  </div>
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                        Do you want some help to get to work?
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          <ul class="govuk-list govuk-list--bullet">
-                            Yes
-                          </ul>
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> Do you want some help to get to work?</span>
-                          </a>
-                        </dd>
-                      </div>
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                        Does your condition make it harder for you to do your job?
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          <ul class="govuk-list govuk-list--bullet">
-                    Yes
-
-                      </ul>
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="#">
-                            Change<span class="govuk-visually-hidden"> Does your condition make it harder for you to do your job?</span>
-                          </a>
-                        </dd>
-                      </div>
-                    </dl>
 
                     <h3 class="govuk-heading-m">Effect of condition on Travel to and from work</h3>
                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -830,145 +790,12 @@ N11 4LQ
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
 
+    {% if phase == "notEligible"  %}
+    {% include  "./notification.html" %}
+      {% else %}
+    {% endif %}
+    {% include  "./task-list.html" %}
 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-l">Your tasks</h2>
-
-          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
-
-{% if data['national-insurance-number']%} <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 9 sections.</p>{% else %}
-          <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p>{% endif %}
-
-          <ol class="app-task-list">
-            <li>
-              <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">1. </span> To do
-              </h2>
-              <ul class="app-task-list__items">
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    <a href="  {% if data['national-insurance-number']%}./nino-searchlight/add-national-insurance-number{% else %}./nino-searchlight/check-searchlight{% endif %}" aria-describedby="eligibility-status">
-                      Add national insurance number from searchlight
-                    </a>
-                  </span>
-                  {% if data['national-insurance-number']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-                </li>
-
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                  <a href="#" aria-describedby="Check-for-appointee">
-                      Check for appointee
-                     </a>
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="eligibility-status">
-                    Check eligibility
-                    </a>
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-                </li>
-          </ul>
-          </li>
-
-            <li>
-              <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">2. </span> Check application
-              </h2>
-              <ul class="app-task-list__items">
-
-
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-              {% if data['appointee']%}    <a href="#" aria-describedby="read-declaration-status">{% endif %}
-                  Check personal details
-            {% if data['appointee']%}      </a>{% endif %}
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-              {% if data['appointee']%}    <a href="#" aria-describedby="read-declaration-status">{% endif %}
-                  Check employer details
-              {% if data['appointee']%}    </a>{% endif %}
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
-            </li>
-          </ul>
-          </li>
-
-            <li>
-              <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">3. </span> Prepare
-              </h2>
-              <ul class="app-task-list__items">
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                {% if data['appointee']%}      <a href="#" aria-describedby="company-information-status">{% endif %}
-                      Elements
-                  {% if data['appointee']%}    </a>{% endif %}
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                {% if data['appointee']%}      <a href="#" aria-describedby="list-convictions-status">{% endif %}
-                      Job details
-                  {% if data['appointee']%}    </a>{% endif %}
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
-                </li>
-                <!-- <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    <a href="#" aria-describedby="contact-details-status">
-                      Options
-                    </a>
-                  </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-                </li> -->
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                  {% if data['appointee']%}  <a href="#" aria-describedby="list-convictions-status">{% endif %}
-                      Workplace assesment
-                  {% if data['appointee']%}    </a>{% endif %}
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
-                </li>
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    {% if data['appointee']%}  <a href="#" aria-describedby="list-convictions-status">{% endif %}
-                      Business case
-                  {% if data['appointee']%}    </a>{% endif %}
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
-                </li>
-
-
-
-              </ul>
-            </li>
-
-            <li>
-              <h2 class="app-task-list__section">
-                <span class="app-task-list__section-number">4. </span> Grant decision
-              </h2>
-              <ul class="app-task-list__items">
-                <li class="app-task-list__item">
-                  <span class="app-task-list__task-name">
-                    Submit decision
-                  </span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-                </li>
-              </ul>
-            </li>
-          </ol>
-        </div>
-      </div>
   </div>
 
 

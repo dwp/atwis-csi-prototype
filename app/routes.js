@@ -29,7 +29,10 @@ router.use('/', (req, res, next) => {
   next();
 });
 
+
+
 // Start folder specific routes
+router.use('/current', require('./views/current/_routes.js'));
 router.use('/live-1', require('./views/live-1/_routes'));
 router.use('/sprint-13', require('./views/sprint-13/_routes'));
 router.use('/V12', require('./views/V12/_routes'));
@@ -49,6 +52,125 @@ router.use('/sprint-12', require('./views/sprint-12/_routes'));
 router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
 // current sprint, remember to add older sprint when adding a new folder!
 // router.use('/current', require('./views/current/_routes'));
+
+
+
+
+  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+
+     case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+     case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+     case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("/current/cases/claim#your-tasks"); next();
+  })
+
+  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+
+     case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+     case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("/current/cases/claim#your-tasks"); next();
+  })
+
+  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+
+     case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("/current/cases/claim#your-tasks"); next();
+  })
+
+  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+
+     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("/current/cases/claim#your-tasks"); next();
+  })
+
+  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+
+     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("/current/cases/claim#your-tasks"); next();
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   router.post('/test', function(req, res, next){ 
 
