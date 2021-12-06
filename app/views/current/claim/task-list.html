@@ -21,8 +21,10 @@
                   Add National Insurance number from Searchlight
                 </a>
               </span>
-              {% if data['national-insurance-number']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+              {% if data['national-insurance-number']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                {% if data['Searchligh']=='No' or data['Searchligh']=='Yes, but some or all of the details do not matching'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if not data['national-insurance-number'] and
+            not data['Searchligh']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 
             <li class="app-task-list__item">
@@ -36,18 +38,8 @@
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
               {% endif %}
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-             <a href="./searchlight/personal/check-personal-details" aria-describedby="read-declaration-status">
-                  Check personal details
-            </a>
-              </span>
-              {% if data['personal']%}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
+
+
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -73,21 +65,21 @@
 
             </li>
 
-            {% if data ['national-insurance-number'] and
-                       data ['appointee'] and
-                       data ['personal'] and
+            {% if (data ['national-insurance-number'] or data['Searchligh']=='Yes, but some or all of the details do not matching') and
+                       data ['appointee']
+                        and
                       data ['benefits']
                        %}
         {% include  "../claim/_task-list-open.html" %}
         {% else %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-
-              Contact Dereck Smith about Searchlight details
+{% if data ['Searchligh']=='No'%}  <a href="/current/cases/contact/how-do-you-want-to-contact">{% endif %}
+              Contact Dereck Smith about Searchlight details</a>
 
               </span>
 
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data ['Searchligh']=='No'%}Not started{% else %} Cannot start yet{% endif %}</strong>
             </li>
 
       </ul>
