@@ -46,7 +46,7 @@
               {{data['found-nino']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="exceptions">
+              <a class="govuk-link" href="find-national-insurance-number">
                 Change<span class="govuk-visually-hidden"> Is Dereck Smith’s National Insurance number in Searchlight?</span>
               </a>
             </dd>
@@ -61,7 +61,7 @@
               {{data['national-insurance-number']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="exceptions">
+              <a class="govuk-link" href="add-national-insurance-number">
                 Change<span class="govuk-visually-hidden">   Add Dereck Smith’s National Insurance number from Searchlight</span>
               </a>
             </dd>
@@ -77,9 +77,9 @@
 
 
 
-{% if data['Searchligh']=='Yes and all the details match'%}{% else %}
+{% if data['Searchligh']=='Yes and all the details match' and data['found-nino']=='Yes'%}{% else %}
         <div class="govuk-inset-text">
-        <p> You need to contact Dereck Smith to check whether ... {Jane to add content} This will be added to your 'Contact Dereck Smith' task.  </p>
+        <p>  This will be added to your 'Contact Dereck Smith' task.  </p>
 
         </div>
 {% endif %}

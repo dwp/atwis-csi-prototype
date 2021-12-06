@@ -7,7 +7,7 @@
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
 
 
-      <p class="govuk-body govuk-!-margin-bottom-7">You have 11 sections to complete.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have 10 sections to complete.</p>
 
       <ol class="app-task-list">
         <li>
@@ -17,12 +17,14 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="  {% if data['national-insurance-number']%}./searchlight/national-insurance/add-national-insurance-number{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                <a href="  {% if data['national-insurance-number']%}./searchlight/national-insurance/answers{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
                   Add National Insurance number from Searchlight
                 </a>
               </span>
-              {% if data['national-insurance-number']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-                {% if data['Searchligh']=='No' or data['Searchligh']=='Yes, but some or all of the details do not matching'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if data['national-insurance-number'] and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+            {% if data['Searchligh']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if data['Searchligh']=='Yes, but some or all of the details do not matching'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if data['found-nino']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
             {% if not data['national-insurance-number'] and
             not data['Searchligh']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>

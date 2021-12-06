@@ -31,13 +31,13 @@
 
                <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number">
+                   <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}>
                    <label class="govuk-label govuk-radios__label" for="found-nino">
                      Yes
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino-2" name="found-nino" type="radio" value="No~./answers">
+                   <input class="govuk-radios__input" id="found-nino-2" name="found-nino" type="radio" value="No~./answers" {{ checked("found-nino", "No") }}>
                    <label class="govuk-label govuk-radios__label" for="found-nino-2">
                      No
                    </label>
