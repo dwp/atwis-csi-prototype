@@ -21,7 +21,7 @@
                   Add National Insurance number from Searchlight
                 </a>
               </span>
-            {% if data['national-insurance-number'] and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+            {% if data['Searchligh']=='Yes and all the details match' and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
             {% if data['Searchligh']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
             {% if data['Searchligh']=='Yes, but some or all of the details do not matching'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
             {% if data['found-nino']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
@@ -35,7 +35,7 @@
                   Check for appointee
                  </a>
               </span>
-              {% if data['appointee']=='No'%}
+              {% if data['appointee']%}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
