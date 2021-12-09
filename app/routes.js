@@ -55,8 +55,102 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
 
 
 
+router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+ if (req.session.data['benefits']){
+  for (i = 0; i<req.session.data['benefits'].length; i++){
+  switch (req.session.data['benefits'][i]){
+
+   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+   case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
+   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/claim#your-tasks"); next();
+})
+
+router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+ if (req.session.data['benefits']){
+  for (i = 0; i<req.session.data['benefits'].length; i++){
+  switch (req.session.data['benefits'][i]){
+
+   case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
+   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/claim#your-tasks"); next();
+})
+
+router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+ if (req.session.data['benefits']){
+  for (i = 0; i<req.session.data['benefits'].length; i++){
+  switch (req.session.data['benefits'][i]){
+
+   case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
+   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/claim#your-tasks"); next();
+})
+
+router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+ if (req.session.data['benefits']){
+  for (i = 0; i<req.session.data['benefits'].length; i++){
+  switch (req.session.data['benefits'][i]){
+
+   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/claim#your-tasks"); next();
+})
+
+router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+ if (req.session.data['benefits']){
+  for (i = 0; i<req.session.data['benefits'].length; i++){
+  switch (req.session.data['benefits'][i]){
+
+   case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/claim#your-tasks"); next();
+})
+
+  router.post('/live-3-v2/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -66,7 +160,7 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
      case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
      case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
-     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -74,10 +168,10 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
    } else {
 
    }
-  return res.redirect("/current/cases/claim#your-tasks"); next();
+  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next();
   })
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-3-v2/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -86,7 +180,7 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
      case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
      case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
-     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -94,10 +188,10 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
    } else {
 
    }
-  return res.redirect("/current/cases/claim#your-tasks"); next();
+  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next();
   })
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-3-v2/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -105,7 +199,7 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
 
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
      case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
-     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -113,17 +207,17 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
    } else {
 
    }
-  return res.redirect("/current/cases/claim#your-tasks"); next();
+  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next();
   })
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-3-v2/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
      case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
-     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -131,16 +225,16 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
    } else {
 
    }
-  return res.redirect("/current/cases/claim#your-tasks"); next();
+  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next();
   })
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-3-v2/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
-     case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -148,7 +242,7 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
    } else {
 
    }
-  return res.redirect("/current/cases/claim#your-tasks"); next();
+  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next();
   })
 
 
