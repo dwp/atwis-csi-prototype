@@ -8,7 +8,7 @@
 <br>
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/live-3/cases/claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -16,7 +16,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">Check Derek Smith’s benefits</h1>
+        <h1 class="govuk-heading-l">Check Derek Smiths benefits</h1>
 
 
 
@@ -26,7 +26,7 @@
               Is Dereck Smith receiving Severe Disablement Allowance?
             </dt>
             <dd class="govuk-summary-list__value">
-              No
+              {{data['sda']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -36,10 +36,10 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-               Is Dereck Smith receiving Income Support for illness?
+               Does Dereck Smith get Income Support for an illness or disability?
             </dt>
             <dd class="govuk-summary-list__value">
-              No
+              {{data['income']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -49,10 +49,10 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-               Is Dereck Smith receiving Incapacity Benefit?
+               Does Dereck Smith get Incapacity Benefit?
             </dt>
             <dd class="govuk-summary-list__value">
-              No
+              {{data['incapacity']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -64,31 +64,25 @@
         </dl>
 
 
+{% if data ['incapacity']=='Yes' or data ['income']=='Yes' or data ['sda']=='Yes'%}
+        <div class="govuk-inset-text">
+        <p> Dereck Smith gets benefits that affect Access to Work elegibility.  </p>
+
+  Exceptions are:
+  <ul class="govuk-list govuk-list--bullet">
+  <li>starting a work trial</li>
+  <li> has not started their job yet, but will stop claiming benefits when their job begins </li>
+  <li> a permitted work decision from Access to Work</li>
+      </ul>
 
 
-        <h2 class="govuk-heading-m">Do these details match Searchlight?</h2>
-
-
-        <div class="govuk-radios govuk-radios--inline">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="income" name="income" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="income">
-              Yes
-            </label>
+      You will need to contact Dereck Smith to check if there are any exceptions.
           </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="income-2" name="income" type="radio" value="No">
-            <label class="govuk-label govuk-radios__label" for="income-2">
-              No
-            </label>
-          </div>
-        <form action="/form-handler" method="post" novalidate>
-</div><br>
+{% endif %}
           <input type="hidden" name="answers-checked" value="true">
 
-          <button class="govuk-button" data-module="govuk-button">
-            Send and return to your tasks
+          <button class="govuk-button" data-module="govuk-button" name="benefits-complete">
+            Return to your task
           </button>
 
         </form>

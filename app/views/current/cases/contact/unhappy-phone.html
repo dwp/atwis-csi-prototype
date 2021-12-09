@@ -20,8 +20,7 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
+ 
 
               <h1 class="govuk-heading-xl">Telephone call made</h1>
 
@@ -36,20 +35,7 @@
 
 
 <p>If Dereck Smith calls you back, you can update your answers in the <strong>your tasks</strong> tab for:</p>
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-  Information to check with the applicant
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      Application is not eligible.
-
-    </p>
-    <p>Summary of what make the case not eligible...</P>
-  </div>
-</div>
+{% include  "current/claim/notification-contact.html" %}
      <br>
   <p>Then you can then complete the rest of the tasks.</p>
 
