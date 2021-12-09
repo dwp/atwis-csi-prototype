@@ -24,18 +24,19 @@
   <div class="govuk-form-group">
 
     <h2 class="govuk-heading-l">
-          Check if the benefits affect this application
+          Check if the benefits in Searchlight affect eligibility
         </h2>
 
         <p class="govuk-body">
-        <a href="https://intranet.dwp.gov.uk/manual/access-work/customers-receipt-benefit" class="govuk-link">Check elegibility guidance on the intranet (opens in a new tab)</a>
+        <a href="https://intranet.dwp.gov.uk/manual/access-work/customers-receipt-benefit" class="govuk-link">Check eligibility guidance on the intranet (opens in a new tab)</a>
         </p>
 
-    <p> Benefits will not affect this application if Dereck Smith:</P>
+    <p> Incapacity Benefit, Employment Support Allowance, Severe Disablement Allowance or Income Support will not affect Access to Work 
+    eligibility if Dereck Smith:</P>
   <ul class="govuk-list govuk-list--bullet">
   <li> is starting a work trial</li>
   <li> has not started their job yet, but will stop claiming benefits when their job begins </li>
-  <li> has a permitted work decision from Access to Work</li>
+  <li> has a permitted work decision from DWP</li>
     </ul>
 
         <form action="/form-handler" method="post" novalidate>
@@ -68,7 +69,7 @@
                  <div class="govuk-radios__item">
                    <input class="govuk-radios__input" id="exceptions-3" name="exceptions" type="radio" value="I will need to contact Dereck Smith" {{ checked("exceptions", "I will need to contact Dereck Smith") }}>
                    <label class="govuk-label govuk-radios__label" for="exceptions-3">
-                     I will need to contact Dereck Smith
+                     I need to contact Dereck Smith about their benefits
                    </label>
                  </div>
 
