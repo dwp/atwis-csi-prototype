@@ -77,7 +77,7 @@
 
 
 
-{% if data['Searchligh']=='Yes – name, date of birth or address do not match' and data['found-nino']=='Yes'%}
+{% if data['Searchligh']=='Yes, but name, date of birth or address do not match' and data['found-nino']=='Yes'%}
         <div class="govuk-inset-text">
         <p>  You need to contact Dereck Smith to check their name, date of birth or address in Searchlight. This will be added to your 'Contact Dereck Smith' task. </p>
 
@@ -85,14 +85,14 @@
 {% endif %}
 
 
-{% if data['Searchligh']=='Yes – name, date of birth or address do not match' and data['found-nino']=='No'%}
+{% if data['Searchligh']=='Yes, but name, date of birth or address do not match' and data['found-nino']=='No'%}
         <div class="govuk-inset-text">
         <p>  You need to contact Dereck Smith to get their National Insurance number and check their personal details in Searchlight. This will be added to your 'Contact Dereck Smith' task. </p>
 
         </div>
 {% endif %}
 
-{% if data['Searchligh']=='Yes and all the details match' and data['found-nino']=='No'%}
+{% if data['Searchligh']=='Yes and application details match' and data['found-nino']=='No'%}
         <div class="govuk-inset-text">
         <p>  You need to contact Dereck Smith to get their National Insurance number. This will be added to your 'Contact Dereck Smith' task.</p>
 
