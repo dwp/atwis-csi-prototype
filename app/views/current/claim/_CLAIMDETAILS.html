@@ -123,8 +123,12 @@
       </div> -->
 
     </dl>
+        <!-- </div>
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
 
-
+      {% include  "../claim/timeline.html" %}
+    </div> -->
     </div>
 
 
@@ -168,7 +172,11 @@
      </div> {% endif %}
 
 
-
+     <script>
+     window.onload = function() {
+       document.getElementById("timeline-date").innerHTML=moment().format("DD MM YYYY");
+     }
+   </script>
 
 </div></div></div>
 
@@ -284,7 +292,12 @@
                 Address
               </dt>
               <dd class="govuk-summary-list__value">
-                72 Guild Street<br>London<br>SE23 6FH
+                {% if not data['citizen-address-line-1'] %}72 Guild Street{% else %}{{data['citizen-address-line-1']}}{% endif %}
+              {% if data['citizen-address-line-2'] %}<br>{{data['citizen-address-line-2']}}{% endif %}
+                <br>{% if not data['citizen-address-town'] %}London{% else %}{{data['citizen-address-town']}}{% endif %}
+              {% if data['citizen-address-county'] %}<br>{{data['citizen-address-county']}}{% endif %}
+                <br>{% if not data['citizen-address-postcode'] %}SE23 6FH{% else %}{{data['citizen-address-postcode']}}{% endif %}
+
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/current/details/personal-address">

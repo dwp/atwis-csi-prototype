@@ -23,7 +23,7 @@
               </span>
             {% if data['Searchligh']=='Yes and all the details match' and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
             {% if data['Searchligh']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
-            {% if data['Searchligh']=='Yes, but some or all of the details do not matching'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if data['Searchligh']=='Yes – name, date of birth or address do not match'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
             {% if data['found-nino']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
             {% if not data['national-insurance-number'] and
             not data['Searchligh']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
@@ -70,7 +70,7 @@
 
             </li>
 
-            {% if (data ['national-insurance-number'] or data['Searchligh']=='Yes, but some or all of the details do not matching') and
+            {% if (data ['national-insurance-number'] or data['Searchligh']=='Yes – name, date of birth or address do not match') and
                        data ['appointee']
                         and
                       data ['benefits']
