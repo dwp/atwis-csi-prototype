@@ -61,12 +61,11 @@
                           Address
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            <p>72 Guild Street
-                               <br>
-                              London <br>
-
-                              SE23 6FH  <br>
-                              </p>
+                            {% if not data['citizen-address-line-1'] %}72 Guild Street{% else %}{{data['citizen-address-line-1']}}{% endif %}
+                          {% if data['citizen-address-line-2'] %}<br>{{data['citizen-address-line-2']}}{% endif %}
+                            <br>{% if not data['citizen-address-town'] %}London{% else %}{{data['citizen-address-town']}}{% endif %}
+                          {% if data['citizen-address-county'] %}<br>{{data['citizen-address-county']}}{% endif %}
+                            <br>{% if not data['citizen-address-postcode'] %}SE23 6FH{% else %}{{data['citizen-address-postcode']}}{% endif %}
                           </dd>
                           </div>
 
@@ -96,7 +95,11 @@
                    </label>
                  </div>
                  <div class="govuk-radios__item">
+<<<<<<< HEAD
                    <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="Yes, but name, date of birth or address do not match~./find-national-insurance-number" {{ checked("Searchligh", "Yes, but name, date of birth or address do not match") }}>
+=======
+                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="Yes – name, date of birth or address do not match~./find-national-insurance-number" {{ checked("Searchligh", "Yes – name, date of birth or address do not match") }}>
+>>>>>>> a753d8b438c413e5e266febfa5ffd5f3c2288157
                    <label class="govuk-label govuk-radios__label" for="Searchligh-3">
                        Yes, but name, date of birth or address do not match
                    </label>
