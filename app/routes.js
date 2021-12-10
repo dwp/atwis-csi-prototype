@@ -64,7 +64,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
    case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
    case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
    case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Suppor for an illness or disability" :  return res.redirect("exceptions"); next(); break;
    case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
@@ -85,7 +85,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
 
    case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
    case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Suppor for an illness or disability" :  return res.redirect("exceptions"); next(); break;
       case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
@@ -105,7 +105,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
   switch (req.session.data['benefits'][i]){
 
    case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Suppor for an illness or disability" :  return res.redirect("exceptions"); next(); break;
       case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
@@ -124,7 +124,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Suppor for an illness or disability" :  return res.redirect("exceptions"); next(); break;
       case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
