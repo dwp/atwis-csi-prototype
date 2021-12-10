@@ -52,8 +52,11 @@
               </span>
 
 
-        {% if 'None of the above' in data['benefits']%}
+
+        {% if 'None of the above' in data['benefits'] or 'Personal Independence Payment' in data['benefits']
+        and not data['exceptions']%}
                       <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
                       {% else %}
 
         {% if data['exceptions']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -176,4 +179,5 @@
         </li>
       </ol>
     </div>
+
   </div>
