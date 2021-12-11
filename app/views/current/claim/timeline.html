@@ -1,0 +1,58 @@
+
+
+    <div class="govuk-width-container">
+<div class="grid-row app-content">
+<div class="column-one-third">
+    <h2 class="govuk-heading-m">Case history</h2>
+
+<ol class="dwp-timeline">
+
+  {% if data['hjek']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Heading </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">Tasks</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <a>  Link to note</a>
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  10 December 2021
+      </p>
+  </li>
+  {% endif %}
+
+{% if data['hjek']%}
+<li class="dwp-timeline__entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Heading </h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">Tasks</p>
+
+    <p class="govuk-caption-m" id="timeline-date">
+10 December 2021
+    </p>
+</li>
+{% endif %}
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application allocated </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Al O'Cator to John Goldsmith</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+10 December 2021
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application received </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"></p>
+
+      <p class="govuk-caption-m">
+
+  3 November 2021 11:57
+      </p>
+  </li>
+
+</ol>
+
+</div>
+</div>
+
+</div>
