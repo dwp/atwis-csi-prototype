@@ -1,9 +1,39 @@
+{% set monthAndYear = "November 2021" %}
 
+  {% set cases = [
+    {
+      name: "Dereck Smith",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "3  "  + monthAndYear +  " - 11:57"
+    },
+    {
+
+      name: "Maximillia Erdman",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "3  "  + monthAndYear +  " - 10:22"
+    },
+    {
+      name: "Sonya Corkery",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "2  "  + monthAndYear +  " - 09:23"
+    },
+    {
+      name: "Adaline Mann",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "2  "  + monthAndYear +  " - 16:23"
+    }
+
+    ]
+    %}
 
     <div class="govuk-width-container">
 <div class="grid-row app-content">
 <div class="column-one-third">
-    <h2 class="govuk-heading-m">Case history</h2>
+    <h2 class="govuk-heading-l">Case history</h2>
 
 <ol class="dwp-timeline">
 
@@ -56,3 +86,16 @@
 </div>
 
 </div>
+
+
+<ol class="dwp-timeline">
+{% macro timeline(title="", allocation="", stage="", date="1 "  + monthAndYear +  " at 4:30pm" ) %}
+        <li class="dwp-timeline__entry">
+          <h3  style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">{{title}}  </h3>
+
+          <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">{% if stage == "payment" %}Rich Silver{% elif stage == "allocator" %}Al O'Cator{% elif stage == "unallocated"%}{% else %}John Goldsmith{%endif %} {% if allocation %}to {{allocation}}{% endif %}</span>
+<span class="dwp-timeline__date">{{date}}</span>
+          </p>
+</li>
+{% endmacro %}
