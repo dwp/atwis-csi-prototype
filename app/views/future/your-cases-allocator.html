@@ -1,7 +1,7 @@
 {% set hideBanner = true %}
 {% set yourCases = true %}
 {% extends "./claim/_BASE.html" %}
-
+{% set phase = "allocator" %}
 
 
 
@@ -9,15 +9,6 @@
 
 
 {% block content %}
-
-<!-- <div class="govuk-panel govuk-panel--confirmation" style="background-color: #ec580d;">
-
-
-  <h2 class="govuk-!-font-size-36">
-      <span class="status-message-warning__icon" aria-hidden="true">!</span>There are no new documents available to request right now.</h2>
-
-
-</div> -->
 {% include "./cases.html" %}
 
 {% endblock %}
