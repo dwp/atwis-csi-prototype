@@ -44,9 +44,34 @@
             <div id="passport-number-hint" class="govuk-hint">
 Number of employees
             </div>
-            <input class="govuk-input govuk-input--width-3" id="passport-number" name="passport-number" type="number" aria-describedby="passport-number-hint" value="300">
+            <input class="govuk-input govuk-input--width-3" id="passport-number" name="passport-number" type="number" aria-describedby="passport-number-hint" value="">
           </div>
 
+
+
+
+          <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          Do you need to contact Dereck Smith about their employment details?
+                        </legend>
+                        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item govuk-radios--inline">
+                            <input class="govuk-radios__input" id="interview-needs" name="interview-needs" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="interview-needs">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="interview-needs-2" name="interview-needs" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="interview-needs-2">
+                              No
+                            </label>
+                          </div>
+                        </div>
+
+                      </fieldset>
+  </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>

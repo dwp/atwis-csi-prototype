@@ -1,0 +1,321 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Job details</h1>
+
+        <form action="/form-handler" method="post" novalidate>
+
+
+
+
+
+
+
+
+        <h2 class="govuk-heading-m">Employment details</h2>
+
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Employment status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Employed
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-status">
+                Change
+                <span class="govuk-visually-hidden"> what is your employment status</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Job title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              job title here
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-job-title">
+                Change
+                <span class="govuk-visually-hidden"> what is your job title</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Employer name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Employer name here
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-job-title">
+                Change
+                <span class="govuk-visually-hidden"> what is your job title</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Job description
+            </dt>
+            <dd class="govuk-summary-list__value">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-job-description">
+                Change
+                <span class="govuk-visually-hidden"> what is your job title</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have you had this job for more than 6 weeks?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-6-weeks">
+                Change
+                <span class="govuk-visually-hidden"> Have you had this job for more than 6 weeks?</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How many hours do you work per week?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              37
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-6-weeks">
+                Change
+                <span class="govuk-visually-hidden"> how many hours do you work per week</span>
+
+            </a></dd>
+          </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Which days of the week do you work?
+          </dt>
+          <dd class="govuk-summary-list__value">
+   <ul class="govuk-list govuk-list--bullet">
+     <li>Monday</li>
+    <li>Tuesday</li>
+    <li>Wednesday</li>
+    <li>Thursday</li>
+    <li>Friday</li>
+    </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-days-of-week">
+                Change
+                <span class="govuk-visually-hidden"> Which days of the week do you work?</span>
+              </a>
+          </dd>
+        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Company or organisation name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Name here
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-employer-name">
+                Change
+                <span class="govuk-visually-hidden"> what is your companies or organisations name</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Workplace address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            123 fake street<br>
+  another line<br>
+  AB1 1AB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/alpha-apply-1f/1f-employment-workplace-address">
+              Change
+              <span class="govuk-visually-hidden"> what is your workplace address</span>
+            </a>
+          </dd>
+        </div>
+
+
+
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How many people work at your company or organisation?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              50 to 249
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/alpha-apply-1f/1f-employment-employer-size">
+                Change
+                <span class="govuk-visually-hidden"> how many people work at your company or organisation</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+    <h2 class="govuk-heading-m">Workplace contact</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          hgf
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/alpha-apply-1f/1f-employment-workplace-contact">
+            Change
+            <span class="govuk-visually-hidden"> what is your workplace contacts name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          hgf
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/alpha-apply-1f/1f-employment-workplace-contact">
+            Change
+            <span class="govuk-visually-hidden"> what is your workplace contacts role</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          hgf@fd.co
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/alpha-apply-1f/1f-employment-workplace-contact">
+            Change
+            <span class="govuk-visually-hidden"> what is your workplace contacts email address</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          hgf
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/alpha-apply-1f/1f-employment-workplace-contact">
+            Change
+            <span class="govuk-visually-hidden"> what is your workplace contacts phone number</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Additional employment</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you have another job?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/alpha-apply-1fb-employment-do-you-have-another-job">
+            Change
+            <span class="govuk-visually-hidden"> Do you have another job?</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+            <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Do you need to contact Dereck Smith about their employment details?
+                          </legend>
+                          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                            <div class="govuk-radios__item govuk-radios--inline">
+                              <input class="govuk-radios__input" id="interview-needs" name="interview-needs" type="radio" value="yes">
+                              <label class="govuk-label govuk-radios__label" for="interview-needs">
+                                Yes
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="interview-needs-2" name="interview-needs" type="radio" value="no">
+                              <label class="govuk-label govuk-radios__label" for="interview-needs-2">
+                                No
+                              </label>
+                            </div>
+                          </div>
+
+                        </fieldset>
+    </div>
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}
