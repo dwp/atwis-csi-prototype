@@ -1,0 +1,61 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+        <form action="/form-handler" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="employment-status-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Employment status
+                </h1>
+              </legend>
+              <div id="employment-status-hint" class="govuk-hint">
+                Hint
+              </div>
+              <div class="govuk-radios ">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employment-status" name="employment-status" type="radio" value="Employed~/future/cases/job-details/employed">
+                  <label class="govuk-label govuk-radios__label" for="employment-status">
+                    Employed
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employment-status-2" name="employment-status" type="radio" value="Self employed~/future/cases/job-details//self-employed">
+                  <label class="govuk-label govuk-radios__label" for="employment-status-2">
+                    Self employed
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employment-status-3" name="employment-status" type="radio" value="Mix of both~/future/cases/job-details//mix-both">
+                  <label class="govuk-label govuk-radios__label" for="employment-status-3">
+                    Mix of both
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

@@ -15,24 +15,37 @@
             <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                Full name
+                Do you want some help to get to work?
                 </h1>
               </legend>
               <div id="dob-hint" class="govuk-hint">
 
               </div>
             <div class="govuk-form-group">
-              <label class="govuk-label" for="full-name">
-                First name
-              </label>
-              <input class="govuk-input govuk-input--width-20" id="first-name" name="first-name" type="text" spellcheck="false" autocomplete="name" Value="{% if not data['first-name'] %}Dereck{% else %}{{data['first-name']}}{% endif %}"></div>          </div>
-              <label class="govuk-label" for="full-name">
-                Last name
-              </label>
-              <input class="govuk-input govuk-input--width-20" id="last-name" name="last-name" type="text" spellcheck="false" autocomplete="name" Value="Smith"></div>          </div>
-</br>
-<!-- <div class="govuk-inset-text">
-text</div> -->
+              <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="help-to-work" name="help-to-work" type="radio" value="Yes">
+                      <label class="govuk-label govuk-radios__label" for="help-to-work">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="help-to-work-2" name="help-to-work" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="help-to-work-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+
+                </fieldset>
+
+
+
+
+              </br>
+
+
+
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>

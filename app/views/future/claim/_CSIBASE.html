@@ -52,26 +52,7 @@ href: "javascript:history.go(-1)"
 
       <div class="govuk-grid-column-one-third">
 
-        {% if phase == "allocator" %}
-        <div class="">
-          <h3 id="update-adviser-heading" class="govuk-heading-m">Change adviser</h3>
-          <select id="adviser-select" class="govuk-select govuk-!-margin-bottom-3" aria-labelledby="update-adviser-heading">
-<option value="" selected="selected"></option>
-            {% for adviser in data['advisers'] %}
-            <option value="{{ adviser }}">{{ adviser }}</option>
-            {% endfor %}
-          </select>
-          {{ govukButton({
-              attributes: {
-                id: "update-adviser"
-              },
-              text: "Confirm",
-              classes: "govuk-button--secondary"
-            }) }}
-        </div>
-
-        {% endif %}
-
+  
 
 
 {% if not contactCentre %} <!-- never shown for contact centre -->
