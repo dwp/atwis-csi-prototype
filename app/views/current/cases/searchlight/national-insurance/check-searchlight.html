@@ -61,12 +61,11 @@
                           Address
                           </dt>
                           <dd class="govuk-summary-list__value">
-                            <p>72 Guild Street
-                               <br>
-                              London <br>
-
-                              SE23 6FH  <br>
-                              </p>
+                          {% if not data['citizen-address-line-1'] %}72 Guild Street{% else %}{{data['citizen-address-line-1']}}{% endif %}
+                          {% if data['citizen-address-line-2'] %}<br>{{data['citizen-address-line-2']}}{% endif %}
+                          <br>{% if not data['citizen-address-town'] %}London{% else %}{{data['citizen-address-town']}}{% endif %}
+                          {% if data['citizen-address-county'] %}<br>{{data['citizen-address-county']}}{% endif %}
+                          <br>{% if not data['citizen-address-postcode'] %}SE23 6FH{% else %}{{data['citizen-address-postcode']}}{% endif %}
                           </dd>
                           </div>
 
@@ -89,16 +88,16 @@
 
                <div class="govuk-radios">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="Searchligh" name="Searchligh" type="radio" value="Yes and all the details match~./find-national-insurance-number" {{ checked("Searchligh", "Yes and all the details match") }}>
+                   <input class="govuk-radios__input" id="Searchligh" name="Searchligh" type="radio" value="Yes and application details match~./find-national-insurance-number" {{ checked("Searchligh", "Yes and application details match") }}>
                    <label class="govuk-label govuk-radios__label" for="Searchligh">
-                      Yes and all the details match
+                      Yes and application details match
 
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="Yes, but some or all of the details do not matching~./find-national-insurance-number" {{ checked("Searchligh", "Yes, but some or all of the details do not matching") }}>
+                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="Yes, but name, date of birth or address do not match~./find-national-insurance-number" {{ checked("Searchligh", "Yes, but name, date of birth or address do not match") }}>
                    <label class="govuk-label govuk-radios__label" for="Searchligh-3">
-                       Yes, but some or all of the details do not matching
+                       Yes, but name, date of birth or address do not match
                    </label>
                  </div>
                  <div class="govuk-radios__item">

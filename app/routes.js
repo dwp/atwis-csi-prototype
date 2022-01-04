@@ -62,9 +62,10 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
   switch (req.session.data['benefits'][i]){
 
    case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
-   case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
    case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
    }
@@ -82,9 +83,10 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
    case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
    }
@@ -103,7 +105,8 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
   switch (req.session.data['benefits'][i]){
 
    case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
    }
@@ -121,7 +124,8 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
    default: continue;
    }
@@ -133,6 +137,23 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
 return res.redirect("/current/cases/claim#your-tasks"); next();
 })
 
+router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+
+ if (req.session.data['benefits']){
+  for (i = 0; i<req.session.data['benefits'].length; i++){
+  switch (req.session.data['benefits'][i]){
+
+   case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+   case "none" :  return res.redirect("/current/cases/claim#your-tasks"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/claim#your-tasks"); next();
+})
 router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
 
  if (req.session.data['benefits']){
@@ -157,9 +178,9 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     switch (req.session.data['benefits'][i]){
 
      case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
-     case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+     case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -177,9 +198,9 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
-     case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+     case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -198,7 +219,7 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     switch (req.session.data['benefits'][i]){
 
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -216,7 +237,7 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3-v2/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -254,9 +275,9 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     switch (req.session.data['benefits'][i]){
 
      case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
-     case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+     case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -274,9 +295,9 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
-     case "Employment Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
+     case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("exceptions"); next(); break;
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -295,7 +316,7 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     switch (req.session.data['benefits'][i]){
 
      case "Severe Disablement Allowance" :  return res.redirect("exceptions"); next(); break;
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -313,7 +334,7 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
-     case "Income Support paid for illness" :  return res.redirect("exceptions"); next(); break;
+     case "Income Support for illness or disability" :  return res.redirect("exceptions"); next(); break;
      case "none" :  return res.redirect("/live-3/cases/claim#your-tasks"); next(); break;
      default: continue;
      }
@@ -444,7 +465,7 @@ return res.redirect("/current/cases/claim#your-tasks"); next();
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
-     case "Employment Support Allowance" :  return res.redirect("/alpha-apply-1d/1d-esa"); next(); break;
+     case "Employment and Support Allowance" :  return res.redirect("/alpha-apply-1d/1d-esa"); next(); break;
      case "Incapacity Benefit" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
      case "Income Support" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
      case "Severe Disability Allowance" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;

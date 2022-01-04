@@ -18,11 +18,11 @@
 {% endif %}
       {% if data ['Searchligh']=='No'%}
       <p>Not in Searchlight.</P>{% endif %}
-        {% if data ['Searchligh']=='Yes, but some or all of the details do not matching'%}
-      <p>Information is not matching Searchlight.</P>{% endif %}
+        {% if data ['Searchligh']=='Yes, but name, date of birth or address do not match'%}
+      <p>Information does not match Searchlight.</P>{% endif %}
         {% if data ['found-nino']=='No'%}
       <p>Missing National Insurance number in Searchlight.</P>{% endif %}
-        {% if data['exceptions']=='I will need to contact Dereck Smith'%}
+        {% if data['exceptions']=='I need to contact Dereck Smith about their benefits'%}
       <p>Has benefits that could affect eligibility:</P>
         <ul class="govuk-list govuk-list--bullet">
           {% for feature in data['benefits'] %}
