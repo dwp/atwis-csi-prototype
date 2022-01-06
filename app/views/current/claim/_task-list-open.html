@@ -14,7 +14,7 @@
               </span>
 
               {% if data['asked-info-phone']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-              {% if data['contact']%}
+              {% if data['contact'] or data['contact-email']%}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
               {% if data['contact']=='complete'%}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
