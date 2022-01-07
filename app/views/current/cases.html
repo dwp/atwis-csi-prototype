@@ -66,15 +66,16 @@
         <h2 class="govuk-heading-m">CSI cases </h2>
       </div>
 
-
+<form action="/current/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
 
       <div class="govuk-grid-column-one-third" >
     <p class="govuk-body govuk-!-margin-bottom-6"></p>
-          <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a new CSI case">
+          <input type="submit" class="govuk-button" id="submitButtonRequestcsi" name="csi-button" value="Request a new CSI case"></form>
 
       </div>
       </div>
 
+{% include "./claim/_notification-csi-type-case.html" %}
 
 {% if (phase == "empty" or phase == "allocator")  %}
 <p>There are currently no CSI Cases.</P>
@@ -233,9 +234,12 @@
               Type of case
             </label>
             <select class="govuk-select" id="other" name="other">
-              <option value="any"selected>Any</option>
-              <option value="new" >New application</option>
-              <option value="renewal">Renewal</option>
+              <option value="any"
+                {% if 'any' in data['other']%}selected{% endif %}>Any</option>
+              <option value="new"
+              {% if 'new' in data['other']%}selected{% endif %} >New application</option>
+              <option value="renewal"
+              {% if 'renewal' in data['other']%}selected{% endif %}>Renewal</option>
 
             </select>
         </div>
@@ -247,6 +251,7 @@
 
         </div>
         </div>
+
 {% include "./claim/_notification-other-type-case.html" %}
 
       {% if phase == "allocator" %}

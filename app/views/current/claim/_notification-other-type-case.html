@@ -1,0 +1,17 @@
+{% if 'any' in data['other']%}
+  <div class="govuk-inset-text">
+There are no new application or renewal cases to request right now.
+  </div>
+{% endif %}
+
+{% if 'new' in data['other']%}
+  <div class="govuk-inset-text">
+There are no new application cases to request right now.
+  </div>
+{% endif %}
+
+{% if 'renewal' in data['other']%}
+  <div class="govuk-inset-text">
+There are no renewal cases to request right now.
+  </div>
+{% endif %}
