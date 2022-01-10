@@ -1,0 +1,37 @@
+
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Check with the applicant
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      You need to contact Dereck Smith
+    </p>
+
+    <ul class="govuk-list">
+
+{% if data ['contact']=='Yes'%}
+<p>{{data['more-detail-3']}}</P>
+{% endif %}
+      {% if data ['Searchligh']=='No'%}
+      <p>Not in Searchlight.</P>{% endif %}
+        {% if data ['Searchligh']=='Yes, but name, date of birth or address do not match'%}
+      <p>Information does not match Searchlight.</P>{% endif %}
+        {% if data ['found-nino']=='No'%}
+      <p>Missing National Insurance number in Searchlight.</P>{% endif %}
+        {% if data['exceptions']=='I need to contact Dereck Smith about their benefits'%}
+      <p>Has benefits that could affect eligibility:</P>
+        <ul class="govuk-list govuk-list--bullet">
+          {% for feature in data['benefits'] %}
+            <li>{{ feature }}</li>
+          {% endfor %}
+
+  </ul>
+        {% endif %}
+
+
+  </div>
+</div>

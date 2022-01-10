@@ -1,0 +1,70 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   Does Dereck Smith have an appointee?
+                 </h2>
+               </legend>
+
+                <div class="govuk-hint">
+                Use Searchlight to check for an appointee.</div>
+
+
+               <div class="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="appointee" name="appointee" type="radio" value="Yes~/current/cases/searchlight/appointee-details.html">
+                   <label class="govuk-label govuk-radios__label" for="appointee">
+                     Yes, I need to add an appointee 
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="appointee-2" name="appointee" type="radio" value="No~/current/cases/claim#your-tasks">
+                   <label class="govuk-label govuk-radios__label" for="appointee-2">
+                     No
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
