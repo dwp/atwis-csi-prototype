@@ -3,6 +3,8 @@ const router = express.Router()
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
+const faker = require('faker')
+const moment = require('moment')
 // Add your routes here - above the module.exports line
 
 function create(){
@@ -32,6 +34,8 @@ router.use('/', (req, res, next) => {
 
 
 // Start folder specific routes
+router.use('/future', require('./views/live-1/_routes'));
+router.use('/live-4', require('./views/live-1/_routes'));
 router.use('/current', require('./views/current/_routes.js'));
 router.use('/live-1', require('./views/live-1/_routes'));
 router.use('/sprint-13', require('./views/sprint-13/_routes'));
