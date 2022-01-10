@@ -1,0 +1,98 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+    <h2 class="govuk-fieldset__heading">
+      How do you want to contact the Dereck Smith?
+    </h2>
+
+  </legend>
+  <!-- {% if  data['contact']=='Yes'%}{% else %}
+<p>Based on your answers you need to contact Dereck Smith about:</p>
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+  Information to check with the applicant
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Application is not eligible.
+
+    </p>
+    <p>Summary of what make the case not eligible...</P>
+  </div>
+</div>{% endif %} -->
+
+  <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="email" name="_do" type="radio" value="email~/current/cases/contact/email">
+          <label class="govuk-label govuk-radios__label" for="email">
+        Email
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="phone" name="_do" type="radio" value="phone~/current/cases/contact/phone">
+          <label class="govuk-label govuk-radios__label" for="phone">
+        Telephone
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

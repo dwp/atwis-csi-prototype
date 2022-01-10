@@ -1,0 +1,169 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+              <h2 class="govuk-heading-xl">Email the applicant</h2>
+
+          <form action="unhappy-email" method="post" novalidate="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include  "current/claim/notification-contact.html" %}
+
+
+            <p>Send an email to <strong>Dereck Smith</strong> to ask for
+              more information about their application.</p>
+
+
+
+
+            <a href="mailto:quarryhouse.atwresearch@dwp.gov.uk" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Open new email
+            </a>
+
+
+
+
+           <!--  end appointee details -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <br>
+          <br>
+
+
+
+
+
+
+
+
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+              Have you sent the email?
+
+            </legend>
+
+
+            <div class="govuk-radios govuk-radios--inline">
+
+
+
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="yes" name="asked-info-email" type="radio" value="yes~/current/cases/contact/unhappy-email">
+                    <label class="govuk-label govuk-radios__label" for="yes">
+                  Yes
+                </label>
+
+                  </div>
+
+
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="no" name="asked-info-email" type="radio" value="no~/current/cases/claim#your-tasks">
+                    <label class="govuk-label govuk-radios__label" for="no">
+                  No
+                </label>
+
+                  </div>
+
+
+
+
+            </div>
+
+
+          </fieldset>
+
+
+          </div>
+
+
+
+
+
+          <!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+
+
+
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+          </button>
+
+
+          </form>
+
+
+          <!-- <p><a href="/live-1/agreed/csi/index" class="govuk-link govuk-link--no-visited-state">Return to tasks</a></p> -->
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

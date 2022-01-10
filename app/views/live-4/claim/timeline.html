@@ -1,0 +1,213 @@
+{% set monthAndYear = "November 2021" %}
+
+  {% set cases = [
+    {
+      name: "Dereck Smith",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "3  "  + monthAndYear +  " - 11:57"
+    },
+    {
+
+      name: "Maximillia Erdman",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "3  "  + monthAndYear +  " - 10:22"
+    },
+    {
+      name: "Sonya Corkery",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "2  "  + monthAndYear +  " - 09:23"
+    },
+    {
+      name: "Adaline Mann",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "2  "  + monthAndYear +  " - 16:23"
+    }
+
+    ]
+    %}
+
+
+    <h2 class="govuk-heading-l">Case history</h2>
+
+<ol class="dwp-timeline">
+  {% if data['contact']=='Yes'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">  Contact Dereck Smith about Searchlight details completed</p>
+      <p class="govuk-caption-m" id="timeline-date"> You did need to contact Dereck Smith at this time.
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 December 2021, 10:30 am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['contact']=='No'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">  Contact Dereck Smith about Searchlight details completed</p>
+      <p class="govuk-caption-m" id="timeline-date"> You did not need to contact Dereck Smith at this time.
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 December 2021, 10:30 am
+      </p>
+  </li>
+  {% endif %}
+{% if data['contact']%}
+<li class="dwp-timeline__entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">  Contact Dereck Smith about Searchlight details started</p>
+    <p class="govuk-caption-m" id="timeline-date"> Based on your answers, you do not need to contact Dereck Smith about details in Searchlight.
+  <!-- <a>  Link to note</a> -->
+    </p>
+    <p class="govuk-caption-m" id="timeline-date">
+14 December 2021, 10:30 am
+    </p>
+</li>
+{% endif %}
+
+  {% if 'No' in data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">   Check benefits task completed</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 December 2021, 10:30 am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">   Check benefits task started</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 December 2021, 10:30 am
+      </p>
+  </li>
+  {% endif %}
+
+   {% if data['appointee']=='No'%}
+   <li class="dwp-timeline__entry">
+       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+       <p class="govuk-caption-m govuk-!-margin-bottom-1">  Check for appointee task completed</p>
+       <p class="govuk-caption-m" id="timeline-date">
+     <!-- <a>  Link to note</a> -->
+       </p>
+       <p class="govuk-caption-m" id="timeline-date">
+   14 December 2021, 10:30 am
+       </p>
+   </li>
+   {% endif %}
+
+
+ {% if data['appointee']%}
+ <li class="dwp-timeline__entry">
+     <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+     <p class="govuk-caption-m govuk-!-margin-bottom-1">  Check for appointee task started</p>
+     <p class="govuk-caption-m" id="timeline-date">
+   <!-- <a>  Link to note</a> -->
+     </p>
+     <p class="govuk-caption-m" id="timeline-date">
+ 14 December 2021, 10:30 am
+     </p>
+ </li>
+ {% endif %}
+
+
+  {% if data['national-insurance-number']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Add National Insurance number from Searchlight task completed</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 December 2021, 10:30 am
+      </p>
+  </li>
+  {% endif %}
+
+  <!-- {% if data['national-insurance-number'] and data['Searchligh'] %}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Add National Insurance number from Searchlight task in progress</p>
+      <p class="govuk-caption-m" id="timeline-date">
+
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 December 2021
+      </p>
+  </li>
+  {% endif %} -->
+
+  {% if data['Searchligh']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Searchlight </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Add National Insurance number from Searchlight task started</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 December 2021, 09:45 am
+      </p>
+  </li>
+  {% endif %}
+
+{% if data['hjek']%}
+<li class="dwp-timeline__entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Heading </h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">Tasks</p>
+
+    <p class="govuk-caption-m" id="timeline-date">
+10 December 2021
+    </p>
+</li>
+{% endif %}
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application allocated </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Al O'Cator to John Goldsmith</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+10 December 2021, 13:51 pm
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application received </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"></p>
+
+      <p class="govuk-caption-m">
+
+  3 November 2021, 11:57 am
+      </p>
+  </li>
+
+</ol>
+
+
+
+
+<!-- <ol class="dwp-timeline">
+{% macro timeline(title="", allocation="", stage="", date="1 "  + monthAndYear +  " at 4:30pm" ) %}
+        <li class="dwp-timeline__entry">
+          <h3  style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">{{title}}  </h3>
+
+          <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">{% if stage == "payment" %}Rich Silver{% elif stage == "allocator" %}Al O'Cator{% elif stage == "unallocated"%}{% else %}John Goldsmith{%endif %} {% if allocation %}to {{allocation}}{% endif %}</span>
+<span class="dwp-timeline__date">{{date}}</span>
+          </p>
+</li>
+{% endmacro %} -->
