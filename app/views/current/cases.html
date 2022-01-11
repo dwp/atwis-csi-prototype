@@ -11,6 +11,8 @@
   {% endif %}
     </h1>
 
+
+
 <!-------------- csi tables -->
 {% macro statusTable(payment="") %}
     <table class="govuk-table">
@@ -28,7 +30,7 @@
 
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</td>
+              <th scope="row" class="govuk-table__header">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</th>
 
               <td class="govuk-table__cell">{{data['csi-info'][3]['submission-date']}}</td>
               <td class="govuk-table__cell">{{ data['csi-info'][3]['interview-date-day'] }} {{ data['csi-info'][3]['interview-date-month'] | toMonth }} {{ data['csi-info'][3]['interview-date-year'] }}</td>
@@ -66,15 +68,17 @@
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">CSI cases </h2>
       </div>
+    </div>
 
 <form action="/current/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
+
 
       <div class="govuk-grid-column-one-third" >
     <p class="govuk-body govuk-!-margin-bottom-6"></p>
           <input type="submit" class="govuk-button" id="submitButtonRequestcsi" name="csi-button" value="Request a new CSI case"></form>
 
       </div>
-      </div>
+
 
 {% include "./claim/_notification-csi-type-case.html" %}
 
@@ -99,36 +103,8 @@
     <h2 class="govuk-heading-m">Priority cases </h2>
   </div>
 
-<form action="/current/your-cases#priority" method="post" novalidate for="submitButtonRequestpriority">
-  <div class="govuk-grid-column-one-third">
-
-    <div class="govuk-form-group" style="float: right">
-      <label class="govuk-label" for="sort">
-        Type of case
-      </label>
-      <select class="govuk-select" id="priority" name="priority">
-        <option value="Job"
-      {% if 'Job' in data['priority']%}selected{% endif %}>Job start</option>
-        <option value="cev"
-      {% if 'cev' in data['priority']%}selected{% endif %}> Clinically extremely vulnerable (CEV)</option>
-        <option value="Kickstart"
-      {% if 'Kickstart' in data['priority']%}selected{% endif %}>Kickstart</option>
-        <option value="YPGS"
-        {% if 'YPGS' in data['priority']%}selected{% endif %}>Young Person Guarantee Scotland (YPGS)</option>
-      </select>
-  </div>
   </div>
 
-  <div class="govuk-grid-column-one-third" >
-
-
-<p class="govuk-body govuk-!-margin-bottom-6"></p>
-      <input type="submit" class="govuk-button" id="submitButtonRequestpriority" value="Request a new priority case"></form>
-
-
-  </div>
-  </div>
-<!--
   <div class="govuk-grid-column-one-third">
 
     <div class="govuk-form-group" style="float: right">
@@ -153,7 +129,7 @@
 <p class="govuk-body govuk-!-margin-bottom-6"></p>
       <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a new priority case">
 
-  </div> -->
+  </div>
 
 
 {% include "./claim/_notification-priority-type-case.html" %}
@@ -227,10 +203,11 @@
         <div class="govuk-grid-column-one-third">
           <h2 class="govuk-heading-m">Other cases </h2>
         </div>
+        </div>
 <form action="/current/your-cases#other" method="post" novalidate for="submitButtonRequestother">
-        <div class="govuk-grid-column-one-third">
+        <div class="govuk-grid-column-one-quaters">
 
-          <div class="govuk-form-group" style="float: right">
+          <div class="govuk-form-group" style="float: left">
             <label class="govuk-label" for="sort">
               Type of case
             </label>
@@ -251,7 +228,7 @@
             <input type="submit" class="govuk-button" id="submitButtonRequestother" value="Request a new other case"></form>
 
         </div>
-        </div>
+
 
 {% include "./claim/_notification-other-type-case.html" %}
 
@@ -273,7 +250,7 @@
 
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">{{ case.name }}</td>
+                <th scope="row" class="govuk-table__header">{{ case.name }}</th>
                 <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
                 <td class="govuk-table__cell">{{ case.type }}</td>
                 <td class="govuk-table__cell">{{ case.date }}</td>
@@ -297,10 +274,10 @@
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">Your documents </h2>
     </div>
+  </div>
+    <div class="govuk-grid-column-one-quaters">
 
-    <div class="govuk-grid-column-one-third">
-
-      <div class="govuk-form-group" style="float: right">
+      <div class="govuk-form-group" style="float: left">
         <label class="govuk-label" for="sort">
           Type of document
         </label>
@@ -315,11 +292,10 @@
 
     <div class="govuk-grid-column-one-third" >
   <p class="govuk-body govuk-!-margin-bottom-6"></p>
-        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a document">
+        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a document" style="float: left">
 
     </div>
-    </div>
-
+<br></br></br></br></br></br>
 <p>There are no documents allocated to you</p>
 {% endset -%}
 
