@@ -9,7 +9,7 @@
   /current/cases/contact/do-not-need-to-contact{% endif %}
   " aria-describedby="contact-status">
 
-              Contact Dereck Smith about Searchlight details
+              Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details
 </a>
               </span>
 
@@ -74,7 +74,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
             <a href="claim#your-tasks" aria-describedby="job-status">
-                    Contact Dereck Smith about the business cases details
+                    Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about the business cases details
             </a>
                 </span>
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>

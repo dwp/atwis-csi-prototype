@@ -8,7 +8,7 @@
   </div>
   <div class="govuk-notification-banner__content">
     <p class="govuk-notification-banner__heading">
-      You need to contact Dereck Smith
+      You need to contact Dereck Smith {% if data['appointee']=='Yes'%}appointee {{data['appointee-name']}}{% endif %}
     </p>
 
     <ul class="govuk-list">

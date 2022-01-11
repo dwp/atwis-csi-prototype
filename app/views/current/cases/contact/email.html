@@ -44,8 +44,8 @@
 {% include  "current/claim/notification-contact.html" %}
 
 
-            <p>Send an email to <strong>Dereck Smith</strong> to ask for
-              more information about their application.</p>
+            <p>Send an email to <strong>Dereck Smith</strong> {% if data['appointee']=='Yes'%}appointee <strong>{{data['appointee-name']}}</strong> {% endif %}to ask for
+              more information about {% if data['appointee']=='Yes'%}Dereck Smith{% else %}their{% endif %} application.</p>
 
 
 
