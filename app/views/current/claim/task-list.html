@@ -41,7 +41,7 @@
 <!-- appointee task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="searchlight/appointee" aria-describedby="Check-for-appointee">
+              <a href="  {% if data['appointee']=='Yes'%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
                   Check for appointee
                  </a>
               </span>
