@@ -13,12 +13,13 @@
 </a>
               </span>
 
-              {% if data['asked-info-phone']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-              {% if data['contact'] or data['contact-email']%}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-              {% if data['contact']=='complete'%}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}{% endif %}
+              {% if data['asked-info-phone']=='yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+              {% if data['asked-info-phone']=='no'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+
+          {% if data['contact']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+              {% if not data['asked-info-phone'] and not data['contact']%}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 
       </ul>
