@@ -35,7 +35,7 @@
        Appointee’s full name
      </label>
 
-   <input class="govuk-input govuk-input--width-20" id="appointee-name" name="appointee-name" type="text">
+   <input class="govuk-input govuk-input--width-20" id="appointee-name" name="appointee-name" type="text" value="{{data['appointee-name']}}">
    </div>
 
    </div>
@@ -57,31 +57,31 @@
        <label class="govuk-label" for="appointee-address-line-1">
          Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
        </label>
-       <input class="govuk-input" id="appointee-address-line-1" name="appointee-address-line-1" type="text" autocomplete="appointee-address-line1"></div>
+       <input class="govuk-input" id="appointee-address-line-1" name="appointee-address-line-1" type="text" autocomplete="appointee-address-line1" value="{{data['appointee-address-line-1']}}"></div>
 
      <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-line-2">
          <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
        </label>
-       <input class="govuk-input" id="appointee-address-line-2" name="appointee-address-line-2" type="text" autocomplete="appointee-address-line2"></div>
+       <input class="govuk-input" id="appointee-address-line-2" name="appointee-address-line-2" type="text" autocomplete="appointee-address-line2" value="{{data['appointee-address-line-2']}}"></div>
 
      <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-town">
          Town or city
        </label>
-       <input class="govuk-input govuk-!-width-two-thirds" id="appointee-address-town" name="appointee-address-town" type="text" autocomplete="appointee-address-level2"></div>
+       <input class="govuk-input govuk-!-width-two-thirds" id="appointee-address-town" name="appointee-address-town" type="text" autocomplete="appointee-address-level2" value="{{data['appointee-address-town']}}"></div>
 
      <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-county">
          County
        </label>
-       <input class="govuk-input govuk-!-width-two-thirds" id="appointee-address-county" name="appointee-address-county" type="text"></div>
+       <input class="govuk-input govuk-!-width-two-thirds" id="appointee-address-county" name="appointee-address-county" type="text" value="{{data['appointee-address-county']}}"></div>
 
      <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-postcode">
          Postcode
        </label>
-       <input class="govuk-input govuk-input--width-10" id="appointee-address-postcode" name="appointee-address-postcode" type="text" autocomplete="postal-code"></div>
+       <input class="govuk-input govuk-input--width-10" id="appointee-address-postcode" name="appointee-address-postcode" type="text" autocomplete="postal-code" value="{{data['appointee-address-postcode']}}"></div>
 
    </fieldset>
 
@@ -99,13 +99,13 @@
        </div>
        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
          <div class="govuk-checkboxes__item">
-           <input class="govuk-checkboxes__input" id="appointee-contact" name="appointee-contact" type="checkbox" value="email">
+           <input class="govuk-checkboxes__input" id="appointee-contact" name="appointee-contact" type="checkbox" value="email" {{ checked("appointee-contact", "email") }}>
            <label class="govuk-label govuk-checkboxes__label" for="appointee-contact">
              Email
            </label>
          </div>
          <div class="govuk-checkboxes__item">
-           <input class="govuk-checkboxes__input" id="appointee-contact-2" name="appointee-contact" type="checkbox" value="telephone">
+           <input class="govuk-checkboxes__input" id="appointee-contact-2" name="appointee-contact" type="checkbox" value="telephone" {{ checked("appointee-contact", "telephone") }}>
            <label class="govuk-label govuk-checkboxes__label" for="appointee-contact-2">
              Telephone
            </label>
