@@ -19,7 +19,8 @@ Example usage:
 
 module.exports = {
 'benefits' : "",
-
+'priority' : "",
+'other' : "",
   // Insert values here
 
   'unallocated-cases': [{
