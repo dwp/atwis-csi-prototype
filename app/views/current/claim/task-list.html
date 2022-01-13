@@ -173,7 +173,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
 
-                    Contact Dereck Smith about business case
+                    Contact {% if data['appointee']=='Yes'%} {{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about the business case
 
                 </span>
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
