@@ -35,6 +35,8 @@
 
 <ol class="dwp-timeline">
 
+
+
   {% if data['contact']=='No'%}
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact Dereck Smith about Searchlight details: completed </h2>
@@ -49,20 +51,80 @@
   </li>
   {% endif %}
 
-  {% if data['contact']%}
+
+
+
+  {% if data['asked-info-phone']=='yes'%}
+{% if data['contact']=='complete'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Personal details: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  15 January 2022, 11:40 am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Personal details: in progress </h2>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">Personal address updated </p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  15 January 2022, 11:39 am
+      </p>
+  </li>
+{% endif %}
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {{data['appointee-name']}} about Searchlight details: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  15 January 2022, 10:49 am
+      </p>
+  </li>
+  {% endif %}
+
+{% if data['_do']%}
+<li class="dwp-timeline__entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {{data['appointee-name']}} about Searchlight details: in progress </h2>
+
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">How do you want to contact the John Smith? Telephone </p>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">Has the applicant answered the telephone? No </p>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Telephone call made, no answer </p>
+        {% if data['asked-info-phone']=='yes'%}
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">How do you want to contact the John Smith? Telephone </p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Has the applicant answered the telephone? Yes, check information </p>
+          {% endif %}
+    <p class="govuk-caption-m" id="timeline-date">
+  <!-- <a>  Link to note</a> -->
+    </p>
+    <p class="govuk-caption-m" id="timeline-date">
+14 January 2022, 09:49 am
+    </p>
+</li>
+{% endif %}
+
+  <!-- {% if data['contact']%}
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact Dereck Smith about Searchlight details: in progress </h2>
 
     <p class="govuk-caption-m govuk-!-margin-bottom-1"> Based on your answers, you do not need to contact Dereck Smith about details in Searchlight</p>
       <p class="govuk-caption-m govuk-!-margin-bottom-1"> Do you need to contact Dereck Smith at this time? {{data['contact']}}</p>
-      <p class="govuk-caption-m" id="timeline-date">
+      <p class="govuk-caption-m" id="timeline-date"> -->
     <!-- <a>  Link to note</a> -->
-      </p>
+      <!-- </p>
       <p class="govuk-caption-m" id="timeline-date">
   14 January 2022, 09:51 am
       </p>
   </li>
-  {% endif %}
+  {% endif %} -->
 
   {% if 'Personal Independence Payment' in data['benefits']%}
   <li class="dwp-timeline__entry">
@@ -106,7 +168,19 @@
   </li>
   {% endif %}
 
+  {% if data['appointee-cya']=='finished'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: completed </h2>
 
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  14 January 2022, 09:48 am
+      </p>
+  </li>
+  {% endif %}
   {% if data['appointee']=='No'%}
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: completed </h2>
@@ -126,7 +200,21 @@
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: in progress </h2>
 
       <p class="govuk-caption-m govuk-!-margin-bottom-1"> Does Dereck Smith have an appointee? {{data['appointee']}}</p>
+      {% if data['appointee']=='Yes'%}
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s full name:  {{data['appointee-name']}}</p>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s address:
+          <br>{{data['appointee-address-line-1']}}<br>
+        {{data['appointee-address-line-2']}}{% if data['appointee-address-line-2']%}<br>{% endif %}
+        {{data['appointee-address-town']}}{% if data['appointee-address-town']%}<br>{% endif %}
+        {{data['appointee-address-county']}}{% if data['appointee-address-county']%}<br>{% endif %}
+        {{data['appointee-address-postcode']}}</p>
 
+         <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s contact details:
+           {% for feature in data['appointee-contact'] %}
+             {{ feature }},
+           {% endfor %}  </p>
+
+      {% endif %}
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
       </p>
@@ -138,10 +226,9 @@
 
 
 
-  {% if data['Searchligh'] and data['found-nino'] and data['national-insurance-number'] and data['personal-details-cya']%}
+  {% if data['Searchligh']=='Yes and application details match' and data['found-nino'] and data['national-insurance-number'] and data['personal-details-cya']%}
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Add National Insurance number from Searchlight: completed </h2>
-
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: completed </h2>
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
       </p>
@@ -153,11 +240,12 @@
 
   {% if data['Searchligh']%}
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Add National Insurance number from Searchlight: in progress </h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: in progress </h2>
 
       <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is there a record for Dereck Smith in Searchlight? {{data['Searchligh']}}</p>
       <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is Dereck Smith’s National Insurance number in Searchlight? {{data['found-nino']}}</p>
       <p class="govuk-caption-m govuk-!-margin-bottom-1"> Add Dereck Smith’s National Insurance number from Searchlight: {{data['national-insurance-number']}}</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">You need to contact Dereck Smith to check their name, date of birth or address in Searchlight. This will be added to your 'Contact Dereck Smith' task.</p>
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
       </p>

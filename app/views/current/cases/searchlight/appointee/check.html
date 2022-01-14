@@ -16,7 +16,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h2 class="govuk-heading-l">Check Derek Smith’s appointee details</h2>
+        <h2 class="govuk-heading-l">Appointee details</h2>
 
 
 
@@ -36,7 +36,7 @@ Yes, I need to add an appointee
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
-                Change<span class="govuk-visually-hidden"> Does Dereck Smith have an appointee?</span>
+              Change<span class="govuk-visually-hidden"> Does Dereck Smith have an appointee?</span>
               </a>
             </dd>
           </div>
@@ -65,10 +65,10 @@ Appointee’s address
 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['appointee-address-line-2']}}<br>
-              {{data['appointee-address-line-2']}}<br>
-              {{data['appointee-address-town']}}<br>
-              {{data['appointee-address-county']}}<br>
+              {{data['appointee-address-line-1']}}<br>
+              {{data['appointee-address-line-2']}}{% if data['appointee-address-line-2']%}<br>{% endif %}
+              {{data['appointee-address-town']}}{% if data['appointee-address-town']%}<br>{% endif %}
+              {{data['appointee-address-county']}}{% if data['appointee-address-county']%}<br>{% endif %}
               {{data['appointee-address-postcode']}}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -119,7 +119,7 @@ Appointee’s address
           </div>
 {% endif %}
 
-{% if 'email' in data['appointee-contact']%}
+{% if 'telephone' in data['appointee-contact']%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     Appointee’s telephone
@@ -143,7 +143,7 @@ Appointee’s address
 
 
 
-<!-- 
+<!--
         <div class="govuk-inset-text">
         <p> You need to contact Dereck Smith to check whether their benefits mean they are not eligible for Access to Work. This will be added to your 'Contact Dereck Smith' task.  </p>
 
@@ -152,7 +152,7 @@ Appointee’s address
 
           <input type="hidden" name="appointee-checked" value="true">
 
-          <button class="govuk-button" data-module="govuk-button" name="" value="">
+          <button class="govuk-button" data-module="govuk-button" name="appointee-cya" value="finished">
             Return to your tasks
           </button>
 

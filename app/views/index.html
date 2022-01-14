@@ -78,10 +78,30 @@
 
         {
           html: '
-          <ul class="govuk-list govuk-list--bullet">
-             <li></li>
 
-           </ul>
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>User were confused as to why some tasks were still in progress as they had completed the journey.
+                The scenario we used was some details in searchlight are not matching.
+                The design approach was that the task would remain in progress as the details need updating.
+                Users pointed out they had completed the task (by answering the questions) and did not know what was missing.
+                Most users went to the application details tab to update them. We hypophysis is that with causes a disconnect that the application details tab and task list (on the your task tab) and are not in sync.  </li>
+              <li>User indicated that having the disability on the application summary would be helpful </li>
+            </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Added notification (using the details component) for the drop down on the “your cases” screen. If there are no cases this will be triggered. Removes the old design of the red or green banner. Applied to priority, other and csi tab. </li>
+              <li>Created completed case and allocated notification box on the your case screen</li>
+              <li>Aligned the type of case dropdown and button to the left</li>
+              <li>Updated table component to have the first column as header (as per the design system) </li>
+              <li>Readded the priority column </li>
+              <li>Case history refined and logic created </li>
+              <li>PiP added to the benefits list</li>
+              <li>When adding an appointee content changes in the contact journey to reference the appointee</li>
+              <li>Check your answers added to the appointee journey </li>
+
+               <li></li>
+             </ul>
 
          '
         },

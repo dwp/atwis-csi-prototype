@@ -29,20 +29,21 @@
                  </h2>
                </legend>
 
-                <div class="govuk-hint">
-                Use Searchlight to check for an appointee.</div>
+                   <p class="govuk-body">
+                     <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                   </p>
 
 
                <div class="govuk-radios">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="appointee" name="appointee" type="radio" value="Yes~/current/cases/searchlight/appointee/appointee-details.html">
+                   <input class="govuk-radios__input" id="appointee" name="appointee" type="radio" value="Yes~/current/cases/searchlight/appointee/appointee-details.html" {{ checked("appointee", "Yes") }}>
                    <label class="govuk-label govuk-radios__label" for="appointee">
                      Yes, I need to add an appointee
                    </label>
                  </div>
 
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="appointee-2" name="appointee" type="radio" value="No~/current/cases/claim#your-tasks">
+                   <input class="govuk-radios__input" id="appointee-2" name="appointee" type="radio" value="No~/current/cases/claim#your-tasks" {{ checked("appointee", "No") }}>
                    <label class="govuk-label govuk-radios__label" for="appointee-2">
                      No
                    </label>

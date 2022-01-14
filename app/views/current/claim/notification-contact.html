@@ -3,12 +3,12 @@
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Check with the applicant
+      Check application details
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
     <p class="govuk-notification-banner__heading">
-      You need to contact Dereck Smith {% if data['appointee']=='Yes'%}appointee {{data['appointee-name']}}{% endif %}
+    Contact Dereck Smith{% if data['appointee']=='Yes'%}’s appointee: <br> {{data['appointee-name']}}{% endif %}
     </p>
 
     <ul class="govuk-list">

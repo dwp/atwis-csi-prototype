@@ -20,7 +20,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="  {% if data['personal-details-cya']=='finished'%}./searchlight/national-insurance/answers{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
-                  Add National Insurance number from Searchlight
+                  Check personal details and add National Insurance number
                 </a>
               </span>
               <!-- Status - start -->
@@ -41,7 +41,7 @@
 <!-- appointee task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="searchlight/appointee" aria-describedby="Check-for-appointee">
+              <a href="  {% if data['appointee']=='Yes'%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
                   Check for appointee
                  </a>
               </span>
@@ -173,7 +173,7 @@
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
 
-                    Contact Dereck Smith about business case
+                    Contact {% if data['appointee']=='Yes'%} {{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about the business case
 
                 </span>
                 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
