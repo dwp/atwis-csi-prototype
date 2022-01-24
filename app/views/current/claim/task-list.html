@@ -27,7 +27,7 @@
                     <!-- in progress -->
             <!-- {% if data['Searchligh']=='Yes and application details match' and not data['national-insurance-number'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">3In Progress</strong>{% endif %} -->
             {% if data['Searchligh']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
-            {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
             {% if data['found-nino']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
                     <!-- Completed -->
             {% if data['Searchligh']=='Yes and application details match' and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -89,6 +89,8 @@
 
 
 
+
+
             {% if data ['personal-details-cya'] and
                        data ['appointee']
                         and
@@ -98,13 +100,29 @@
           {% else %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-          {% if data ['Searchligh']=='No' or data ['found-nino']=='No' %}  <a href="/current/cases/contact/how-do-you-want-to-contact">{% endif %}
+          {% if data ['Searchligh']=='No' or data ['found-nino']=='No' %}
+          <a href="/current/cases/contact/how-do-you-want-to-contact">{% endif %}
               Contact {% if data['appointee']=='Yes'%} {{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details</a>
 
               </span>
 
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data ['Searchligh']=='No' or data ['Searchligh']=='Yes and application details match' %}Not started{% else %} Cannot start yet{% endif %}</strong>
             </li>
+
+
+
+
+            {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+          CIS500 form/update details
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+            </li>
+          {% endif %}
+
+
 
       </ul>
       </li>
