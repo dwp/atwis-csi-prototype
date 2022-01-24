@@ -70,7 +70,7 @@
       </div>
     </div>
 
-<form action="/current/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
+<form action="/live-5/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
 
 
       <div class="govuk-grid-column-one-third" >
@@ -83,7 +83,7 @@
 {% include "./claim/_notification-csi-type-case.html" %}
 
 {% if (phase == "empty" or phase == "allocator")  %}
-<p>There are currently no CSI Cases.</P>
+<p>There are live-5ly no CSI Cases.</P>
 
 {% else %}
 {{statusTable(phase="")}}
@@ -104,7 +104,7 @@
   </div>
 
   </div>
-<form action="/current/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
+<form action="/live-5/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
   <div class="govuk-grid-column-one-third">
 
     <div class="govuk-form-group" style="float: right">
@@ -204,7 +204,7 @@
           <h2 class="govuk-heading-m">Other cases </h2>
         </div>
         </div>
-<form action="/current/your-cases#other" method="post" novalidate for="submitButtonRequestother">
+<form action="/live-5/your-cases#other" method="post" novalidate for="submitButtonRequestother">
         <div class="govuk-grid-column-one-quaters">
 
           <div class="govuk-form-group" style="float: left">
