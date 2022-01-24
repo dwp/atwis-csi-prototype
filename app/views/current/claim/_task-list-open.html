@@ -23,16 +23,16 @@
             </li>
 
 
-
+  {% if data['contact']%}
             {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}
 
             <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-                <a href="">    CIS500 form/update details</a>
+                <a href="">    Update personal details</a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
             </li>
-            {% endif %}
+            {% endif %}  {% endif %}
       </ul>
       </li>
 
