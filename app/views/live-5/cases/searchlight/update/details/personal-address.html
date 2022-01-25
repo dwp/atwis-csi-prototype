@@ -1,0 +1,63 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/live-5/cases/contact/update" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                Address
+                </h1>
+              </legend>
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="citizen-address-line-1">
+                    Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+                  </label>
+                  <input class="govuk-input" id="citizen-address-line-1" name="citizen-address-line-1" type="text" autocomplete="citizen-address-line1" value="{% if not data['citizen-address-line-1'] %}72 Guild Street{% else %}{{data['citizen-address-line-1']}}{% endif %}"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="citizen-address-line-2">
+                    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                  </label>
+                  <input class="govuk-input" id="citizen-address-line-2" name="citizen-address-line-2" type="text" autocomplete="citizen-address-line2"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="citizen-address-town">
+                    Town or city
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="citizen-address-town" name="citizen-address-town" type="text" autocomplete="citizen-address-level2" value="{% if not data['citizen-address-town'] %}London{% else %}{{data['citizen-address-town']}}{% endif %}"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="citizen-address-county">
+                    County
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="citizen-address-county" name="citizen-address-county" type="text"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="citizen-address-postcode">
+                    Postcode
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="citizen-address-postcode" name="citizen-address-postcode" type="text" autocomplete="postal-code" value="{% if not data['citizen-address-postcode'] %}SE23 6FH{% else %}{{data['citizen-address-postcode']}}{% endif %}"></div>
+
+              </fieldset>
+</div>
+<!-- <div class="govuk-inset-text">
+text</div> -->
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+      </div>
+    </div>
+</main>
+
+{% endblock %}

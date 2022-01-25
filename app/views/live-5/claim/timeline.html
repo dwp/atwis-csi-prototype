@@ -35,34 +35,7 @@
 
 <ol class="dwp-timeline">
 
-  {% if data['job-deatils-contact']%}
-  <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Job details: completed </h2>
 
-
-      <p class="govuk-caption-m" id="timeline-date">
-    <!-- <a>  Link to note</a> -->
-      </p>
-      <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 11:46 am
-      </p>
-  </li>
-
-  <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Job details: in progress </h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">Do you need to contact Dereck Smith about their employment details? {{data['job-deatils-contact']}}</p>
-{% if data['job-deatils-contact']=='Yes'%}
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">Job details: contact notes </p>
-    <p class="govuk-caption-m govuk-!-margin-bottom-1">{{data['job-detail-note1']}}</p>
-{% endif %}
-      <p class="govuk-caption-m" id="timeline-date">
-    <!-- <a>  Link to note</a> -->
-      </p>
-      <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 11:45 am
-      </p>
-  </li>
-  {% endif %}
 
   {% if data['contact']=='No'%}
   <li class="dwp-timeline__entry">
@@ -73,7 +46,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 09:52 am
+  14 January 2022, 09:52 am
       </p>
   </li>
   {% endif %}
@@ -83,11 +56,20 @@
 
   {% if data['asked-info-phone']=='yes'%}
 {% if data['contact']=='complete'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Personal details: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  15 January 2022, 11:40 am
+      </p>
+  </li>
 
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Personal details</h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Personal details: in progress </h2>
   <p class="govuk-caption-m govuk-!-margin-bottom-1">Personal address updated </p>
-
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
       </p>

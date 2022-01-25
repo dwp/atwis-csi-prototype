@@ -5,8 +5,8 @@
               <span class="app-task-list__task-name">
   <a href="
   {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' %}
-  /current/cases/contact/how-do-you-want-to-contact{% else %}
-  /current/cases/contact/do-not-need-to-contact{% endif %}
+  /live-5/cases/contact/how-do-you-want-to-contact{% else %}
+  /live-5/cases/contact/do-not-need-to-contact{% endif %}
   " aria-describedby="contact-status">
 
               Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details
@@ -36,12 +36,11 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="/current/cases/job-details" aria-describedby="job-status">
+  <a href="claim#your-tasks" aria-describedby="job-status">
                   Job details
 </a>
               </span>
-              {% if data['job-deatils-contact']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-            {% if not data['job-deatils-contact']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
             </li>
 
             <li class="app-task-list__item">

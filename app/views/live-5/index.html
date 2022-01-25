@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+
+      <span class="govuk-caption-xl"></span>
+
+</h1>
+
+<p>Jump to page:</p>
+  <ul class="govuk-list">
+    <p class="govuk-body-l">Case manager view</p>
+    <li>
+      <a class="govuk-link" href="your-cases.html">Your cases - User type: Case manager</a>
+    </li>
+    <br>
+
+    <li>
+      <a class="govuk-link" href="your-cases-allocator.html">Your cases - User type: Leads/Allocator </a>
+    </li>
+    <br>
+
+
+    <p class="govuk-body-l"> Screens</p>
+    <p>If you do not select as user type view from the above two links, the following page will default to the last type you had or Case manager. <p>
+
+    <li>
+      <a class="govuk-link" href="search.html">Search</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="all-advisers.html">All advisers (Lead/allocator view only)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim.html">Claim</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim-not-eligible.html">Claim not eligible (automated)</a>
+    </li>
+    <br>
+    <p>  Add National Insurance number from Searchligh</p>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/check-searchlight.html">Is Dereck Smith in Searchlight?</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/find-national-insurance-number.html">Have you found Dereck Smith’s National Insurance number in Searchlight?</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/add-national-insurance-number.html">Add Dereck Smith’s National Insurance number from Searchlight?</a>
+    </li>
+
+    <br>
+    <p>  Check for appointee </p>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/appointee.html">Does Dereck Smith have an appointee?</a>
+    </li>
+    <li>
+      If user answers 'Yes, add an appointee' <a class="govuk-link" href="cases/searchlight/appointee-details.html">Add appointee details for Dereck Smith</a>
+    </li>
+
+        <br>
+        <p>   Check personal details </p>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/personal/check-personal-details.html">Do the personal details from the application match Searchlight?</a>
+        </li>
+        <br>
+        <p>    Check benefits </p>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/check.html">Does Searchlight show benefits that could affect Dereck Smith’s eligibility?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/exceptions.html">Can Dereck Smith still get Access to Work?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/answers.html">Check Derek Smith’s benefits</a>
+        </li>
+        <br>
+        <p>    Contact (Searchlight) </p>
+        <li>
+         User answers in searchlight section incidcate they do not need to contact:  <a class="govuk-link" href="cases/contact/do-not-need-to-contact.html">Do you need to contact Dereck Smith at this time?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/contact/need-to-contact.html">What do you need to contact Dereck Smith about</a>
+        </li>
+        <br>
+        <li>
+        <p> User answers in searchlight section incidcate they do need to contact: </p> <a class="govuk-link" href="cases/contact/how-do-you-want-to-contact.html">How do you want to contact the Dereck Smith? </a>
+        </li>
+        <li>
+         Email:  <a class="govuk-link" href="cases/contact/email.html">Do you need to contact Dereck Smith at this time?</a>
+        </li>
+        <li>
+         Email sent:  <a class="govuk-link" href="cases/contact/email.html">Email sent</a>
+        </li>
+        <li>
+         Telephone:  <a class="govuk-link" href="cases/contact/phone.html">Has Dereck Smith answered the telephone?</a>
+        </li>
+        <li>
+         Telephone (Yes, check information):  <a class="govuk-link" href="cases/contact/update.html">Updating Dereck Smiths case</a>
+        </li>
+        <li>
+         Telephone (No):  <a class="govuk-link" href="cases/contact/unhappy-phone.html">Telephone call made</a>
+        </li>
+  </ul>
+</div>
+
+{% endblock %}
