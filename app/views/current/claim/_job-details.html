@@ -1,3 +1,6 @@
+
+
+
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -7,10 +10,10 @@
         Employed
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="#">
+      {% if  changeHide %}  <a href="#">
           Change
           <span class="govuk-visually-hidden"> what is your employment status</span>
-        </a>
+        </a>{% endif %}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -21,10 +24,10 @@
         QA Engineer
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="#">
+      {% if  changeHide %}  <a href="#">
           Change
           <span class="govuk-visually-hidden"> what is your job title</span>
-        </a>
+        </a>{% endif %}
       </dd>
     </div>
 
@@ -44,10 +47,10 @@ Bug Reporting
 Improving Quality Assurance Practices
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="#">
+      {% if  changeHide %}  <a href="#">
           Change
           <span class="govuk-visually-hidden"> what is your job title</span>
-        </a>
+        </a>{% endif %}
       </dd>
     </div>
 
@@ -59,10 +62,10 @@ Improving Quality Assurance Practices
         1 November 2000
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="#">
+    {% if  changeHide %}    <a href="#">
           Change
           <span class="govuk-visually-hidden"> When did you start this job?</span>
-        </a>
+        </a>{% endif %}
       </dd>
     </div>
 
@@ -74,10 +77,10 @@ Improving Quality Assurance Practices
         37
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="#">
+    {% if  changeHide %}    <a href="#">
           Change
           <span class="govuk-visually-hidden"> how many hours do you work per week</span>
-          </a>
+          </a>{% endif %}
       </dd>
     </div>
   <div class="govuk-summary-list__row">
@@ -94,10 +97,10 @@ Improving Quality Assurance Practices
          </ul>
     </dd>
     <dd class="govuk-summary-list__actions">
-        <a href="#">
+      {% if  changeHide %}  <a href="#">
           Change
           <span class="govuk-visually-hidden"> Which days of the week do you work?</span>
-        </a>
+        </a>{% endif %}
     </dd>
   </div>
     <div class="govuk-summary-list__row">
@@ -108,10 +111,10 @@ Improving Quality Assurance Practices
         DWP Digital
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="#">
+    {% if  changeHide %}    <a href="#">
           Change
           <span class="govuk-visually-hidden"> what is your companies or organisations name</span>
-        </a>
+        </a>{% endif %}
       </dd>
     </div>
 
@@ -131,10 +134,10 @@ Improving Quality Assurance Practices
 
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+    {% if  changeHide %}  <a href="#">
         Change
         <span class="govuk-visually-hidden"> what is your workplace address</span>
-      </a>
+      </a>{% endif %}
     </dd>
   </div>
 
@@ -151,10 +154,10 @@ Improving Quality Assurance Practices
         50 to 249
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a href="#">
+    {% if  changeHide %}    <a href="#">
           Change
           <span class="govuk-visually-hidden"> how many people work at your company or organisation</span>
-        </a>
+        </a>{% endif %}
       </dd>
     </div>
   </dl>
@@ -170,10 +173,10 @@ Improving Quality Assurance Practices
     Jane Doe
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+  {% if  changeHide %}  <a href="#">
       Change
       <span class="govuk-visually-hidden"> what is your workplace contacts name</span>
-    </a>
+    </a>{% endif %}
   </dd>
 </div>
 <div class="govuk-summary-list__row">
@@ -184,10 +187,10 @@ Improving Quality Assurance Practices
    Line Manager
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+  {% if  changeHide %}  <a href="#">
       Change
       <span class="govuk-visually-hidden"> what is your workplace contacts role</span>
-    </a>
+    </a>{% endif %}
   </dd>
 </div>
 <div class="govuk-summary-list__row">
@@ -198,10 +201,10 @@ Improving Quality Assurance Practices
     Jane@dwpdigital.co
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+  {% if  changeHide %}  <a href="#">
       Change
       <span class="govuk-visually-hidden"> what is your workplace contacts email address</span>
-    </a>
+    </a>{% endif %}
   </dd>
 </div>
 <div class="govuk-summary-list__row">
@@ -212,10 +215,10 @@ Improving Quality Assurance Practices
     123456789
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+{% if  changeHide %}    <a href="#">
       Change
       <span class="govuk-visually-hidden"> what is your workplace contacts phone number</span>
-    </a>
+    </a>{% endif %}
   </dd>
 </div>
 </dl>
@@ -231,10 +234,10 @@ Improving Quality Assurance Practices
     No
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    {% if  changeHide %}<a href="#">
       Change
       <span class="govuk-visually-hidden"> Do you have another job?</span>
-    </a>
+    </a>{% endif %}
   </dd>
 </div>
 
