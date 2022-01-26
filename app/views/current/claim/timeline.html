@@ -44,7 +44,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 11:46am
+  25 January 2022, 11:49am
       </p>
   </li>
 
@@ -59,26 +59,94 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 11:45am
+  25 January 2022, 11:47am
       </p>
   </li>
   {% endif %}
 
-  {% if data['contact']=='No'%}
+  <!-- {% if data['contact']=='No'%}
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact Dereck Smith about Searchlight details: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 January 2022, 09:52 am
+      </p>
+  </li>
+  {% endif %} -->
+  {% if data ['citizen-address-line-1']=='73 Guild Street'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Address updated </h2>
+      <p class="govuk-caption-m" id="timeline-date">72 Guild Street to {{data['citizen-address-line-1']}}</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 January 2022, 11:46am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['searchlight-correct']=='No' and data['cis500']%}
+    {% if data['cis500']=='Yes'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> CIS500: completed </h2>
 
 
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 09:52am
+  25 January 2022, 11:45am
+      </p>
+  </li>{% endif %}
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> CIS500: in progress </h2>
+
+    <p class="govuk-caption-m" id="timeline-date">Have you submited a CIS500 to update Searchlight? {{data['cis500']}}</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 January 2022, 11:39am
       </p>
   </li>
   {% endif %}
 
+  {% if data['searchlight-correct']%}
 
+
+      <li class="dwp-timeline__entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Update personal details: completed </h2>
+
+
+          <p class="govuk-caption-m" id="timeline-date">
+        <!-- <a>  Link to note</a> -->
+          </p>
+          <p class="govuk-caption-m" id="timeline-date">
+      25 January 2022, 11:36am
+          </p>
+      </li>
+
+
+
+      <li class="dwp-timeline__entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Update personal details: in progress </h2>
+    <p class="govuk-caption-m" id="timeline-date">Is Searchlight correct? {{data['searchlight-correct']}}  </p>
+    <p class="govuk-caption-m" id="timeline-date">Have you sent a CIS500 to update Searchlight? {{data['searchlight-cis500']}} </p>
+          <p class="govuk-caption-m" id="timeline-date">
+        <!-- <a>  Link to note</a> -->
+          </p>
+          <p class="govuk-caption-m" id="timeline-date">
+      25 January 2022, 11:35am
+          </p>
+      </li>
+{% endif %}
 
 
   {% if data['asked-info-phone']=='yes'%}
@@ -92,42 +160,46 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 11:39am
+  25 January 2022, 11:30am
       </p>
   </li>
 {% endif %}
 
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {{data['appointee-name']}} about Searchlight details: completed </h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details: completed </h2>
 
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  15 January 2022, 10:49am
+  25 January 2022, 10:49am
       </p>
   </li>
   {% endif %}
 
 {% if data['_do']%}
 <li class="dwp-timeline__entry">
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {{data['appointee-name']}} about Searchlight details: in progress </h2>
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  about Searchlight details: in progress </h2>
 
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">How do you want to contact the John Smith? Telephone </p>
-    <p class="govuk-caption-m govuk-!-margin-bottom-1">Has the applicant answered the telephone? No </p>
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">Telephone call made, no answer </p>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">How do you want to contact the {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} ? Telephone </p>
+
         {% if data['asked-info-phone']=='yes'%}
-        <p class="govuk-caption-m govuk-!-margin-bottom-1">How do you want to contact the John Smith? Telephone </p>
+
           <p class="govuk-caption-m govuk-!-margin-bottom-1">Has the applicant answered the telephone? Yes, check information </p>
-          {% endif %}
+          {% else %}
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Has the applicant answered the telephone? No </p>
+              <p class="govuk-caption-m govuk-!-margin-bottom-1">Telephone call made, no answer </p>
+              {% endif %}
     <p class="govuk-caption-m" id="timeline-date">
   <!-- <a>  Link to note</a> -->
     </p>
     <p class="govuk-caption-m" id="timeline-date">
-14 January 2022, 9:49am
+25 January 2022, 9:49am
     </p>
 </li>
 {% endif %}
+
+
 
   <!-- {% if data['contact']%}
   <li class="dwp-timeline__entry">
@@ -139,7 +211,7 @@
     <!-- <a>  Link to note</a> -->
       <!-- </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:51am
+  25 January 2022, 9:51am
       </p>
   </li>
   {% endif %} -->
@@ -153,7 +225,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:50am
+  25 January 2022, 9:50am
       </p>
   </li>
   {% endif %}
@@ -167,7 +239,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:50am
+  25 January 2022, 9:50am
       </p>
   </li>
   {% endif %}
@@ -181,7 +253,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:49am
+  25 January 2022, 9:49am
       </p>
   </li>
   {% endif %}
@@ -195,7 +267,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:48am
+  25 January 2022, 9:48am
       </p>
   </li>
   {% endif %}
@@ -208,7 +280,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:48am
+  25 January 2022, 9:48am
       </p>
   </li>
   {% endif %}
@@ -237,21 +309,21 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:47am
+  25 January 2022, 9:47am
       </p>
   </li>
   {% endif %}
 
 
 
-  {% if data['Searchligh']=='Yes and application details match' and data['found-nino'] and data['national-insurance-number'] and data['personal-details-cya']%}
+  {% if data['personal-details-cya']%}
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: completed </h2>
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:46am
+  25 January 2022, 9:46am
       </p>
   </li>
   {% endif %}
@@ -268,7 +340,7 @@
     <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
-  14 January 2022, 9:45am
+  25 January 2022, 9:45am
       </p>
   </li>
   {% endif %}
@@ -289,7 +361,7 @@
       <p class="govuk-caption-m govuk-!-margin-bottom-1">by Al O'Cator to John Goldsmith</p>
 
       <p class="govuk-caption-m" id="timeline-date">
-10 January 2022, 1:51pm
+20 January 2022, 1:51pm
       </p>
   </li>
 
@@ -299,7 +371,7 @@
 
       <p class="govuk-caption-m">
 
-  3 January 2022, 11:57am
+  20 January 2022, 11:57am
       </p>
   </li>
 
