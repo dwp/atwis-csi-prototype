@@ -33,7 +33,7 @@
               {% if data['searchlight-correct']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
               {% if not data['searchlight-correct']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
-
+  {% if data['searchlight-correct']=='No'%}
 {% if data['searchlight-cis500']=='No'%}
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -44,7 +44,7 @@
             {% if not data['cis500']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 {% endif %}
-
+{% endif %}
             {% endif %}  {% endif %}
       </ul>
       </li>
