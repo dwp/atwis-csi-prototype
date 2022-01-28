@@ -1,0 +1,93 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-6/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <h2 class="govuk-heading-xl">Updating Dereck Smiths case</h2>
+
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Is Dereck Smith reciving any of the following benefits?
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+
+                  {% for feature in data['benefits'] %}
+                    <li>{{ feature }}</li>
+                  {% else %}
+                    <li>None of the above </li>
+                  {% endfor %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/live-6/cases/searchlight/benefits/check">
+                    Update<span class="govuk-visually-hidden"> Is Dereck Smith reciving any of the following benefits?</span>
+                  </a>
+                </dd>
+              </div>
+                {% if 'None of the above' in data['benefits']%}{% else %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+
+          Does Dereck Smith have an exceptions?
+
+
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['exceptions']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="../searchlight/benefits/exceptions">
+                  Update<span class="govuk-visually-hidden"> Does Dereck Smith have an exceptions?</span>
+                  </a>
+                </dd>
+              </div>{% endif %}
+            </dl>
+
+
+
+
+
+
+          <button class="govuk-button" data-module="govuk-button" name="contact" value="complete">
+             Return to your task
+          </button>
+
+
+          </form>
+
+
+          <!-- <p><a href="/live-1/agreed/csi/index" class="govuk-link govuk-link--no-visited-state">Return to tasks</a></p> -->
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

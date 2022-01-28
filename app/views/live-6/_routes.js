@@ -7,7 +7,7 @@ const router = express.Router()
 
 /* CHECK ROUTER TO MAKE THE JOURNEY WITH NOTES MORE ROBUST */
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-6/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -16,7 +16,7 @@ const router = express.Router()
      case "ib" :  return res.redirect("check-answers"); next(); break;
      case "esa" :  return res.redirect("check-answers"); next(); break;
      case "sda" :  return res.redirect("check-answers"); next(); break;
-     case "none" :  return res.redirect("/current/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-6/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -24,10 +24,10 @@ const router = express.Router()
    } else {
 
    }
-  return res.redirect("/current/claim#your-tasks"); next();
+  return res.redirect("/live-6/claim#your-tasks"); next();
   })
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-6/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -35,7 +35,7 @@ const router = express.Router()
 
      case "esa" :  return res.redirect("check-answers"); next(); break;
      case "sda" :  return res.redirect("check-answers"); next(); break;
-     case "none" :  return res.redirect("/current/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-6/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -43,17 +43,17 @@ const router = express.Router()
    } else {
 
    }
-  return res.redirect("/current/claim#your-tasks"); next();
+  return res.redirect("/live-6/claim#your-tasks"); next();
   })
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-6/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
      case "sda" :  return res.redirect("check-answers"); next(); break;
-     case "none" :  return res.redirect("/current/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-6/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -61,16 +61,16 @@ const router = express.Router()
    } else {
 
    }
-  return res.redirect("/current/claim#your-tasks"); next();
+  return res.redirect("/live-6/claim#your-tasks"); next();
   })
 
-  router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+  router.post('/live-6/cases/searchlight/benefits/check', function(req, res, next){ 
 
    if (req.session.data['benefits']){
     for (i = 0; i<req.session.data['benefits'].length; i++){
     switch (req.session.data['benefits'][i]){
 
-     case "none" :  return res.redirect("/current/claim#your-tasks"); next(); break;
+     case "none" :  return res.redirect("/live-6/claim#your-tasks"); next(); break;
      default: continue;
      }
      break;
@@ -78,7 +78,7 @@ const router = express.Router()
    } else {
 
    }
-  return res.redirect("/current/claim#your-tasks"); next();
+  return res.redirect("/live-6/claim#your-tasks"); next();
   })
 
 
