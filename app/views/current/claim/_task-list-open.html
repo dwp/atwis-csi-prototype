@@ -68,6 +68,18 @@
             {% if not data['job-deatils-contact']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 
+
+
+{% if data['job-deatils-contact']=='No, I have not spoken to them' or data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+          <a href="claim#your-tasks" aria-describedby="cost-share-agreement">
+                  Cost share agreement
+          </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+{% endif %}
+
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="claim#your-tasks" aria-describedby="job-status">

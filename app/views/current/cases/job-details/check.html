@@ -16,14 +16,14 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h2 class="govuk-heading-l">Job details</h2>
+        <h2 class="govuk-heading-l">Check job details</h2>
 
 
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Have you contacted Dereck Smith about contacting their employer?
+                          Have you spoken to Dereck Smith about whether Access to Work can contact their employer?
 
             </dt>
             <dd class="govuk-summary-list__value">
@@ -31,29 +31,15 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
-              Change<span class="govuk-visually-hidden"> Have you contacted Dereck Smith about contacting their employer?</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-
-              Have you contacted the employer?
-
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['contact-employer']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
-                Change<span class="govuk-visually-hidden">  Have you contacted the employer?</span>
+              Change<span class="govuk-visually-hidden">                   Have you spoken to Dereck Smith about whether Access to Work can contact their employer?</span>
               </a>
             </dd>
           </div>
 
+{% if data['job-deatils-contact']=='No, I have not spoken to them'%}{% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-Has the employer agreed in principle to a cost share agreement?
+ Have you spoken to the employer about a cost share?
 
             </dt>
             <dd class="govuk-summary-list__value">
@@ -61,10 +47,10 @@ Has the employer agreed in principle to a cost share agreement?
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="">
-                Change<span class="govuk-visually-hidden"> Has the employer agreed in principle to a cost share agreement?</span>
+                Change<span class="govuk-visually-hidden">  Have you spoken to the employer about a cost share?</span>
               </a>
             </dd>
-</div>
+</div>{% endif %}
 
 
 
@@ -75,14 +61,19 @@ Has the employer agreed in principle to a cost share agreement?
 
 
 
+{% if data['job-deatils-contact']=='No, I have not spoken to them' or data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
+       <div class="govuk-inset-text">
+       <p> You need to contact Dereck Smith employer.  </p>
 
+       </div>
+{% endif %}
 
-<!--
+<!-- {% if data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
         <div class="govuk-inset-text">
-        <p> You need to contact Dereck Smith to check whether their benefits mean they are not eligible for Access to Work. This will be added to your 'Contact Dereck Smith' task.  </p>
+        <p> You need to contact Dereck Smith to employer.  </p>
 
-        </div> -->
-
+        </div>
+{% endif %} -->
 
           <input type="hidden" name="appointee-checked" value="true">
 
