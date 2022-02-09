@@ -50,7 +50,9 @@
 
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Job details: in progress </h2>
-  <p class="govuk-caption-m govuk-!-margin-bottom-1">Do you need to contact Dereck Smith about their employment details? {{data['job-deatils-contact']}}</p>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">Have you spoken to Dereck Smith about whether Access to Work can contact their employer? {{data['job-deatils-contact']}}</p>
+  <p class="govuk-caption-m govuk-!-margin-bottom-1">Have you spoken to the employer about a cost share? {{data['employer-cost-share']}}</p>
+{% if data['employer-cost-share']=='Yes but no cost share was agreed'%} <p class="govuk-caption-m govuk-!-margin-bottom-1">This case will be closed because no cost share has been agreed </p>{% endif %}
 {% if data['job-deatils-contact']=='Yes'%}
   <p class="govuk-caption-m govuk-!-margin-bottom-1">Job details: contact notes </p>
     <p class="govuk-caption-m govuk-!-margin-bottom-1">{{data['job-detail-note1']}}</p>
