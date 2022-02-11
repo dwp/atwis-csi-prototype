@@ -22,7 +22,7 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h2 class="govuk-heading-xl">Email the applicant</h2>
+              <h2 class="govuk-heading-xl">Email the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %}</h2>
 
           <form action="unhappy-email" method="post" novalidate="">
 
@@ -44,8 +44,7 @@
 {% include  "future/claim/notification-contact.html" %}
 
 
-            <p>Send an email to <strong>Dereck Smith</strong> to ask for
-              more information about their application.</p>
+            <p>Send an email to {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} about {% if data['appointee']=='Yes'%}Dereck Smith’s{% else %}their{% endif %} application.</p>
 
 
 

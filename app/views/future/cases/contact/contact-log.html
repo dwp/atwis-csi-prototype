@@ -1,0 +1,100 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+<h1 class="govuk-heading-xl">You have added 1 contact log</h1>
+<div class="govuk-form-group">
+  <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+    <div class="hmrc-list-with-actions__item">
+      <dt class="hmrc-list-with-actions__name">
+      Telephone
+      </dt>
+      <div class="hmrc-list-with-actions__actions">
+        <dd class="hmrc-list-with-actions__action">
+          <a class="govuk-link" href="#">
+            <span aria-hidden="true">View details</span>
+            <span class="govuk-visually-hidden">Change Sydney Russell</span>
+          </a>
+        </dd>
+
+
+
+
+      </div>
+    </div>
+  </dl>
+
+</div>
+<form method="post" novalidate action="">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
+        Do you need to log another contact now?
+      </legend>
+      <div id="add-another-hint" class="govuk-hint">
+
+      </div>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="add-another">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No~/future/cases/claim#your-tasks">
+          <label class="govuk-label govuk-radios__label" for="add-another-2">
+            No
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+</form>
+
+
+
+
+
+          <!-- <p><a href="/live-1/agreed/csi/index" class="govuk-link govuk-link--no-visited-state">Return to tasks</a></p> -->
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

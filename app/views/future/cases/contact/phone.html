@@ -22,7 +22,7 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-            <h2 class="govuk-heading-xl">Telephone the applicant</h2>
+            <h2 class="govuk-heading-xl">Telephone the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %}</h2>
 
             <form action="../claim" method="post" novalidate="">
 
@@ -48,7 +48,7 @@
                 </div>
               </div>{% endif %} -->
 
-<p>Telephone <strong>Dereck Smith</strong> on <strong>07192 838 482</strong>.</p>
+<p>Telephone {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} on {% if data['appointee']=='Yes'%} <strong>{{data['appointee-telephone']}}</strong>{% else %} <strong> 07192 838 482</strong>{% endif %}.</p>
 
 
 
@@ -74,7 +74,7 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-    Has the applicant answered the telephone?
+    Has the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %} answered the telephone?
 
   </legend>
 
@@ -85,7 +85,7 @@
 
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="yes" name="asked-info-phone" type="radio" value="yes">
+          <input class="govuk-radios__input" id="yes" name="asked-info-phone" type="radio" value="yes~/future/cases/contact/happy-phone">
           <label class="govuk-label govuk-radios__label" for="yes">
         Yes, check information
       </label>

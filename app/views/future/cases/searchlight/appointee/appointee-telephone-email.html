@@ -10,7 +10,7 @@
 
 
 
-<form action="/future/cases/claim#your-tasks" method="post" novalidate>
+<form action="check" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -35,7 +35,7 @@
        Appointee’s email address
      </label>
 
-   <input class="govuk-input govuk-input--width-20" id="appointee-email" name="appointee-email" type="text">
+   <input class="govuk-input govuk-input--width-20" id="appointee-email" name="appointee-email" type="text" value="{{data['appointee-email']}}">
    </div>
 {% endif %}
 {% if 'telephone' in data['appointee-contact']%}
@@ -44,7 +44,7 @@
        Appointee’s telephone
      </label>
 
-   <input class="govuk-input govuk-input--width-20" id="appointee-telephone" name="appointee-telephone" type="text">
+   <input class="govuk-input govuk-input--width-20" id="appointee-telephone" name="appointee-telephone" type="numbers" value="{{data['appointee-telephone']}}">
    </div>
 {% endif %}
 
@@ -58,7 +58,7 @@
 
 
    <button class="govuk-button" data-module="govuk-button">
-     Return to your tasks
+     Save and continue
    </button>
 
 
