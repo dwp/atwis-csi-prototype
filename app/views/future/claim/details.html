@@ -32,6 +32,17 @@
    <!-- Sparrow apply journey for Condition and Help Needed -->
 
 
+
+   <!-- Appointee -->
+   {% if data['appointee']%}
+  <h3 class="govuk-heading-m">Appointee</h3>
+
+               {% include "../claim/_appointee.html"%}
+     <!--  Appointee -->
+{% endif %}
+
+
+
           <!-- Sparrow apply journey for How to contact -->
          <h3 class="govuk-heading-m">How to contact</h3>
 
@@ -44,6 +55,13 @@
 
 
        <p></p>
+       <!-- Appointee -->
+       {% if data['benefits']%}
+      <h3 class="govuk-heading-m">Benefits</h3>
+
+                   {% include "../claim/_benefits.html"%}
+         <!--  Appointee -->
+    {% endif %}
 
        <!-- Sparrow apply journey for Job details -->
          <h3 class="govuk-heading-m">Employment details</h3>
