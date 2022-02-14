@@ -25,17 +25,14 @@
 
 
 
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-<h2>What do you need to contact Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %} about?</h2>
-
-  </legend>
+                <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+                  <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+                    What do you need to contact Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %} about?
 
 
-  <div class="govuk-form-group">
+                    </label>
+                    </h1>
 
 
 
@@ -45,8 +42,16 @@
   </div>
 
 
-  <textarea class="govuk-textarea" id="more-detail" name="more-detail-3" rows="5" aria-describedby="more-detail-hint"></textarea>
+  <textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-note1" rows="3" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 80 characters remaining</div>
 </div>
+
+
+
+</div>
+
+
+
+<div class="govuk-!-padding-bottom-0"></div>
 
 
 

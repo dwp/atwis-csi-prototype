@@ -160,6 +160,21 @@ Improving Quality Assurance Practices
         </a>{% endif %}
       </dd>
     </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Are you a company director?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}    <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> Director</span>
+        </a>{% endif %}
+      </dd>
+    </div>
+
   </dl>
 
 <h2 class="govuk-heading-m">Workplace contact</h2>
@@ -221,6 +236,26 @@ Improving Quality Assurance Practices
     </a>{% endif %}
   </dd>
 </div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Permission to speak to workplace contact
+  </dt>
+  <dd class="govuk-summary-list__value">
+    No
+  </dd>
+  <dd class="govuk-summary-list__actions">
+{% if  changeHide %}    <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> contact</span>
+    </a>{% endif %}
+  </dd>
+</div>
+
+
+
+
+
 </dl>
 
 <h2 class="govuk-heading-m">Additional employment</h2>
