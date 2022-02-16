@@ -7,7 +7,7 @@
 {% block csi %}
 <br>
 
-<form action="" method="post" novalidate>
+<form action="check" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -22,23 +22,21 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
-                Is Dereck Smith’s National Insurance number in Searchlight?
+                Have you sent a CIS500 to update Searchlight?
                  </h2>
                </legend>
-               <div id="national-insurance-number-hint" class="govuk-hint">
-                For example, ‘QQ 12 34 56 C’.
-                </div>
+
 
                <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}>
-                   <label class="govuk-label govuk-radios__label" for="found-nino">
+                   <input class="govuk-radios__input" id="searchlight-cis500" name="searchlight-cis500" type="radio" value="Yes" {{ checked("searchlight-cis500", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="searchlight-cis500">
                      Yes
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino-2" name="found-nino" type="radio" value="No~./check" {{ checked("found-nino", "No") }}>
-                   <label class="govuk-label govuk-radios__label" for="found-nino-2">
+                   <input class="govuk-radios__input" id="searchlight-cis500-2" name="searchlight-cis500" type="radio" value="No" {{ checked("searchlight-cis500", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="searchlight-cis500-2">
                      No
                    </label>
                  </div>

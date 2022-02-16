@@ -7,7 +7,10 @@
 {% block csi %}
 <br>
 
-<form action="" method="post" novalidate>
+
+
+
+<form action="income-support" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -22,26 +25,25 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
-                Is Dereck Smith’s National Insurance number in Searchlight?
+Does Dereck Smith get Severe Disablement Allowance?
                  </h2>
                </legend>
-               <div id="national-insurance-number-hint" class="govuk-hint">
-                For example, ‘QQ 12 34 56 C’.
-                </div>
 
                <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}>
-                   <label class="govuk-label govuk-radios__label" for="found-nino">
+                   <input class="govuk-radios__input" id="sda" name="sda" type="radio" value="Yes" {{ checked("sda", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="sda">
                      Yes
                    </label>
                  </div>
+
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino-2" name="found-nino" type="radio" value="No~./check" {{ checked("found-nino", "No") }}>
-                   <label class="govuk-label govuk-radios__label" for="found-nino-2">
+                   <input class="govuk-radios__input" id="sda-2" name="sda" type="radio" value="No" {{ checked("sda", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="sda-2">
                      No
                    </label>
                  </div>
+
 
                </div>
 
@@ -56,8 +58,8 @@
      </div>
 
 
-   </main>
-   </div>
+        </main>
+        </div>
 
 
 

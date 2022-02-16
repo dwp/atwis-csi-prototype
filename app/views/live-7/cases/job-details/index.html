@@ -1,0 +1,56 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">
+
+                    Job details</h2>
+
+        <form action="" method="post" novalidate>
+
+
+
+
+
+
+
+
+        <h3 class="govuk-heading-m">Employment details</h3>
+
+
+
+  {% include "live-7/claim/_job-details.html"%}
+
+         <h3 class="govuk-heading-m">Condition and Help Needed</h3>
+
+    {% include "live-7/claim/_condtion-help-needed.html"%}
+    <div class="govuk-inset-text">
+  <p> The company or organisation is classed as a medium-sized employer. This means a cost share applies.</p>
+
+    <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Check cost share guidance (opens in a new tab)</a>.
+    </div>
+            {% include "live-7/cases/job-details/_job-details-question.html"%}
+    </div>
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

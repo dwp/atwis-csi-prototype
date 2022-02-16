@@ -8,7 +8,7 @@
 <br>
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/live-7/cases/claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -16,7 +16,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h2 class="govuk-heading-l">Task summary: check enefits and effect on eligibility</h2>
+        <h2 class="govuk-heading-l">Check Derek Smith’s benefits</h2>
 
 
 
@@ -40,6 +40,8 @@
               </a>
             </dd>
           </div>
+
+          {% if 'None of the above' in data['benefits']%}{% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
@@ -52,10 +54,10 @@ Can Dereck Smith still get Access to Work?
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="exceptions">
-                Update<span class="govuk-visually-hidden"> Does Dereck Smith have any exceptions?</span>
+                Update<span class="govuk-visually-hidden"> Does Dereck Smith have an exceptions?</span>
               </a>
             </dd>
-          </div>
+          </div>{% endif %}
         </dl>
 
 
@@ -65,15 +67,24 @@ Can Dereck Smith still get Access to Work?
 
 {% if "None of the above" in data['benefits'] or data['exceptions']=='Yes'%}{% else %}
         <div class="govuk-inset-text">
-        <p> You need to contact Dereck Smith to check whether their benefits mean they are not eligible for Access to Work. This will be added to your 'Contact Dereck Smith' task.  </p>
+        <p> Dereck Smith is in receipt of certain benefits that are not normally able to get access to work.  </p>
 
+      Exceptions are:
+<ul class="govuk-list govuk-list--bullet">
+  <li>  is going for an interview, or</li>
+  <li>  starting a Work Trial, or</li>
+  <li>  has a job to start, and will stop claiming when employment begins or</li>
+  <li>  is on Permitted Work Higher Level, Permitted Work PCA Exempt or Supported Permitted Work. </li>
+    </ul>
+<p>
+    This will be added "Contact Dereck Smith" task. </p>
         </div>
 {% endif %}
 
           <input type="hidden" name="answers-checked" value="true">
 
           <button class="govuk-button" data-module="govuk-button" name="" value="">
-            Return to your tasks
+            Return to your task
           </button>
 
         </form>
