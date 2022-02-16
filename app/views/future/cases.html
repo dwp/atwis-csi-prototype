@@ -1,4 +1,8 @@
-<!-------------- header -->
+
+
+
+    <!-------------- header -->
+        <!-- <div class="govuk-grid-column-two-thirds" > -->
 <h1 class="govuk-heading-l top-section">
       <strong><span>Adviser: </span></strong>
   {% if phase == "allocator"  %}
@@ -6,6 +10,8 @@
   John Goldsmith
   {% endif %}
     </h1>
+
+
 
 <!-------------- csi tables -->
 {% macro statusTable(payment="") %}
@@ -24,7 +30,7 @@
 
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</td>
+              <th scope="row" class="govuk-table__header">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</th>
 
               <td class="govuk-table__cell">{{data['csi-info'][3]['submission-date']}}</td>
               <td class="govuk-table__cell">{{ data['csi-info'][3]['interview-date-day'] }} {{ data['csi-info'][3]['interview-date-month'] | toMonth }} {{ data['csi-info'][3]['interview-date-year'] }}</td>
@@ -62,19 +68,22 @@
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">CSI cases </h2>
       </div>
+    </div>
 
+<form action="/future/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
 
 
       <div class="govuk-grid-column-one-third" >
     <p class="govuk-body govuk-!-margin-bottom-6"></p>
-          <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a new CSI case">
+          <input type="submit" class="govuk-button" id="submitButtonRequestcsi" name="csi-button" value="Request a new CSI case"></form>
 
       </div>
-      </div>
 
+
+{% include "./claim/_notification-csi-type-case.html" %}
 
 {% if (phase == "empty" or phase == "allocator")  %}
-<p>There are futurely no CSI Cases.</P>
+<p>There are currently no CSI Cases.</P>
 
 {% else %}
 {{statusTable(phase="")}}
@@ -94,36 +103,47 @@
     <h2 class="govuk-heading-m">Priority cases </h2>
   </div>
 
+  </div>
+<form action="/future/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
   <div class="govuk-grid-column-one-third">
 
     <div class="govuk-form-group" style="float: right">
       <label class="govuk-label" for="sort">
         Type of case
       </label>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="published"selected>Job start</option>
-        <option value="updated" > Clinically extremely vulnerable (CEV)</option>
-        <option value="views">Kickstart</option>
-        <option value="comments">Young Person Guarantee Scotland (YPGS)</option>
+      <select class="govuk-select" id="priority" name="priority">
+        <option value="Job"
+      {% if 'Job' in data['priority']%}selected{% endif %}>Job start</option>
+        <option value="cev"
+      {% if 'cev' in data['priority']%}selected{% endif %}> Clinically extremely vulnerable (CEV)</option>
+        <option value="Kickstart"
+      {% if 'Kickstart' in data['priority']%}selected{% endif %}>Kickstart</option>
+        <option value="YPGS"
+        {% if 'YPGS' in data['priority']%}selected{% endif %}>Young Person Guarantee Scotland (YPGS)</option>
       </select>
   </div>
   </div>
 
   <div class="govuk-grid-column-one-third" >
+
 <p class="govuk-body govuk-!-margin-bottom-6"></p>
-      <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a new priority case">
+      <input type="submit" class="govuk-button" id="submitButtonRequestPriority" value="Request a new priority case">
 
   </div>
-  </div>
+</form>
+
+{% include "./claim/_notification-priority-type-case.html" %}
+
 
   <table class="govuk-table">
       <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Name</th>
             <!-- <th class="govuk-table__header">Specialism</th> -->
-            <th class="govuk-table__header">Case type</th>
-            <th class="govuk-table__header">Date submitted</th>
-            <th class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">Case type</th>
+            <th scope="col" class="govuk-table__header">Priority type</th>
+            <th scope="col" class="govuk-table__header">Date submitted</th>
+            <th scope="col" class="govuk-table__header"></th>
           </tr>
         </thead>
         <tbody>
@@ -131,36 +151,40 @@
 
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Dereck Smith</td>
+              <th scope="row" class="govuk-table__header">Dereck Smith</th>
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
               <td class="govuk-table__cell">New application</td>
+              <td class="govuk-table__cell">Clinically extremely vulnerable </td>
               <td class="govuk-table__cell">3  November 2021  11:57</td>
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}">Go to case</a></td>
             </tr>
 
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Maximillia Erdman</td>
+              <th scope="row" class="govuk-table__header">Maximillia Erdman</th>
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
               <td class="govuk-table__cell">New application</td>
+              <td class="govuk-table__cell">Young Person Guarantee Scotland</td>
               <td class="govuk-table__cell">3  November 2021  10:22</td>
               <td class="govuk-table__cell"><a href="">Go to case</a></td>
             </tr>
 
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Sonya Corkery</td>
+              <th scope="row" class="govuk-table__header">Sonya Corkery</th>
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
               <td class="govuk-table__cell">New application</td>
+              <td class="govuk-table__cell">Clinically extremely vulnerable</td>
               <td class="govuk-table__cell">2  November 2021  09:23</td>
               <td class="govuk-table__cell"><a href="">Go to case</a></td>
             </tr>
 
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Adaline Mann</td>
+              <th scope="row" class="govuk-table__header">Adaline Mann</th>
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
               <td class="govuk-table__cell">New application</td>
+              <td class="govuk-table__cell">Clinically extremely vulnerable </td>
               <td class="govuk-table__cell">2  November 2021  16:23</td>
               <td class="govuk-table__cell"><a href="">Go to case</a></td>
             </tr>
@@ -179,17 +203,21 @@
         <div class="govuk-grid-column-one-third">
           <h2 class="govuk-heading-m">Other cases </h2>
         </div>
+        </div>
+<form action="/future/your-cases#other" method="post" novalidate for="submitButtonRequestother">
+        <div class="govuk-grid-column-one-quaters">
 
-        <div class="govuk-grid-column-one-third">
-
-          <div class="govuk-form-group" style="float: right">
+          <div class="govuk-form-group" style="float: left">
             <label class="govuk-label" for="sort">
               Type of case
             </label>
-            <select class="govuk-select" id="sort" name="sort">
-              <option value="published"selected>Any</option>
-              <option value="updated" >New application</option>
-              <option value="views">Renewal</option>
+            <select class="govuk-select" id="other" name="other">
+              <option value="any"
+                {% if 'any' in data['other']%}selected{% endif %}>Any</option>
+              <option value="new"
+              {% if 'new' in data['other']%}selected{% endif %} >New application</option>
+              <option value="renewal"
+              {% if 'renewal' in data['other']%}selected{% endif %}>Renewal</option>
 
             </select>
         </div>
@@ -197,10 +225,12 @@
 
         <div class="govuk-grid-column-one-third" >
       <p class="govuk-body govuk-!-margin-bottom-6"></p>
-            <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a new other case">
+            <input type="submit" class="govuk-button" id="submitButtonRequestother" value="Request a new other case"></form>
 
         </div>
-        </div>
+
+
+{% include "./claim/_notification-other-type-case.html" %}
 
       {% if phase == "allocator" %}
       <p>You have no cases.</P>
@@ -220,7 +250,7 @@
 
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">{{ case.name }}</td>
+                <th scope="row" class="govuk-table__header">{{ case.name }}</th>
                 <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
                 <td class="govuk-table__cell">{{ case.type }}</td>
                 <td class="govuk-table__cell">{{ case.date }}</td>
@@ -244,10 +274,10 @@
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">Your documents </h2>
     </div>
+  </div>
+    <div class="govuk-grid-column-one-quaters">
 
-    <div class="govuk-grid-column-one-third">
-
-      <div class="govuk-form-group" style="float: right">
+      <div class="govuk-form-group" style="float: left">
         <label class="govuk-label" for="sort">
           Type of document
         </label>
@@ -262,11 +292,10 @@
 
     <div class="govuk-grid-column-one-third" >
   <p class="govuk-body govuk-!-margin-bottom-6"></p>
-        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a document">
+        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a document" style="float: left">
 
     </div>
-    </div>
-
+<br></br></br></br></br></br>
 <p>There are no documents allocated to you</p>
 {% endset -%}
 

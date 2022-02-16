@@ -7,50 +7,45 @@
 {% block csi %}
 <br>
 
-
+<div class="govuk-width-container">
 
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">
+
+                    Job details</h2>
+
+        <form action="" method="post" novalidate>
 
 
-        <form action="/form-handler" method="post" novalidate>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="employment-status-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Employment status
-                </h1>
-              </legend>
-              <div id="employment-status-hint" class="govuk-hint">
-                Hint
-              </div>
-              <div class="govuk-radios ">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="employment-status" name="employment-status" type="radio" value="Employed~/future/cases/job-details/employed">
-                  <label class="govuk-label govuk-radios__label" for="employment-status">
-                    Employed
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="employment-status-2" name="employment-status" type="radio" value="Self employed~/future/cases/job-details//self-employed">
-                  <label class="govuk-label govuk-radios__label" for="employment-status-2">
-                    Self employed
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="employment-status-3" name="employment-status" type="radio" value="Mix of both~/future/cases/job-details//mix-both">
-                  <label class="govuk-label govuk-radios__label" for="employment-status-3">
-                    Mix of both
-                  </label>
-                </div>
-              </div>
 
-            </fieldset>
-          </div>
 
-          <button class="govuk-button" data-module="govuk-button">
-  Save and continue
-</button>
+
+
+
+
+        <h3 class="govuk-heading-m">Employment details</h3>
+
+
+
+  {% include "future/claim/_job-details.html"%}
+
+         <h3 class="govuk-heading-m">Condition and Help Needed</h3>
+
+    {% include "future/claim/_condtion-help-needed.html"%}
+    <div class="govuk-inset-text">
+  <p> The company or organisation is classed as a medium-sized employer. This means a cost share applies.</p>
+
+    <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Check cost share guidance (opens in a new tab)</a>.
+    </div>
+            {% include "future/cases/job-details/_job-details-question.html"%}
+    </div>
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+
           </form>
         </div>
       </div>

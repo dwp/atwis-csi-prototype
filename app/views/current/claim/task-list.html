@@ -62,8 +62,8 @@
 <!-- benefits task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="{% if data['exceptions'] and not 'None of the above' in data['benefits']%}./searchlight/benefits/answers{% else %}
-                ./searchlight/benefits/check{% endif %}" aria-describedby="benefits-status">
+                <a href="{% if data['exceptions'] and not 'None of the above' in data['benefits']%}./searchlight/benefits/check{% else %}
+                ./searchlight/benefits{% endif %}" aria-describedby="benefits-status">
                 Check benefits
                 </a>
               </span>

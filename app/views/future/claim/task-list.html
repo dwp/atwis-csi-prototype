@@ -19,15 +19,15 @@
 <!-- Add National Insurance number from Searchlight task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="  {% if data['national-insurance-number']%}./searchlight/national-insurance/answers{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
-                  Add National Insurance number from Searchlight
+                <a href="  {% if data['personal-details-cya']=='finished'%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                  Check personal details and add National Insurance number
                 </a>
               </span>
               <!-- Status - start -->
                     <!-- in progress -->
-            {% if data['Searchligh']=='Yes and application details match' and not data['national-insurance-number'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            <!-- {% if data['Searchligh']=='Yes and application details match' and not data['national-insurance-number'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">3In Progress</strong>{% endif %} -->
             {% if data['Searchligh']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
-            {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
             {% if data['found-nino']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
                     <!-- Completed -->
             {% if data['Searchligh']=='Yes and application details match' and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -41,7 +41,7 @@
 <!-- appointee task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="searchlight/appointee" aria-describedby="Check-for-appointee">
+              <a href="  {% if data['appointee']=='Yes'%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
                   Check for appointee
                  </a>
               </span>
@@ -89,25 +89,33 @@
 
 
 
-            {% if (data ['national-insurance-number'] or data['Searchligh']=='Yes – name, date of birth or address do not match') and
+
+
+            {% if data ['personal-details-cya'] and
                        data ['appointee']
                         and
-                      data ['benefits'] %}
+                      data ['benefits']
+                       %}
                {% include  "../claim/_task-list-open.html" %}
           {% else %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-          {% if data ['Searchligh']=='No'%}  <a href="/future/cases/contact/how-do-you-want-to-contact">{% endif %}
-              Contact Dereck Smith about Searchlight details</a>
 
-              </span>
 
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data ['Searchligh']=='No'%}Not started{% else %} Cannot start yet{% endif %}</strong>
-            </li>
+
+
+
+
+
+
 
       </ul>
       </li>
+      <p >
 
+
+  Cannot contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} yet
+
+      </p>
+<br>
         <li>
           <!-- <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Check application
@@ -168,14 +176,7 @@
                   Elements
 
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-
-                    Contact Dereck Smith about business case
-
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
 
 {% endif %}
 

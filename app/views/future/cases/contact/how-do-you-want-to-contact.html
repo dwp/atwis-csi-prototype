@@ -28,7 +28,7 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
 
     <h2 class="govuk-fieldset__heading">
-      How do you want to contact the Dereck Smith?
+      How do you want to contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}?
     </h2>
 
   </legend>
@@ -71,7 +71,13 @@
       </label>
 
         </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="phone" name="_do" type="radio" value="phone~/future/cases/contact/phone">
+          <label class="govuk-label govuk-radios__label" for="phone">
+        SMS
+      </label>
 
+        </div>
 
 
 

@@ -1,4 +1,6 @@
-
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
 
 {% extends folder + "/claim/_CSIBASE.html" %}
 
@@ -6,90 +8,80 @@
 <br>
 
 
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
 
 
-<form action="" method="post" novalidate>
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Task summary: check enefits and effect on eligibility</h2>
 
 
-  <div class="govuk-width-container">
-    <!-- <a href="#" class="govuk-back-link">Back</a> -->
 
-    <main class="govuk-main-wrapper">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Benefits in Searchlight that could affect Dereck Smith’s eligibility
+            </dt>
+            <dd class="govuk-summary-list__value">
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="benefits-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h2 class="govuk-fieldset__heading">
-                  Does Searchlight show benefits that could affect this application?
-                </h2>
-              </legend>
-
-              <p class="govuk-body">
-                <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
-              </p>
-
-              <div id="benefits-hint" class="govuk-hint">
-                Select all that apply.
-              </div>
-
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Incapacity Benefit, including National Insurance credits only" {{ checked("benefits", "Incapacity Benefit, including National Insurance credits only") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="benefits">
-                    Incapacity Benefit, including National Insurance credits only
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-2" name="benefits" type="checkbox" value="Employment and Support Allowance, including National Insurance credits only" {{ checked("benefits", "Employment and Support Allowance, including National Insurance credits only") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="benefits-2">
-                    Employment and Support Allowance, including National Insurance credits only
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-3" name="benefits" type="checkbox" value="Severe Disablement Allowance" {{ checked("benefits", "Severe Disablement Allowance") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="benefits-3">
-                    Severe Disablement Allowance
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-4" name="benefits" type="checkbox" value="Income Support for illness or disability" {{ checked("benefits", "Income Support for illness or disability") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="benefits-4">
-                     Income Support for illness or disability
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-5" name="benefits" type="checkbox" value="Personal Independence Payment" {{ checked("benefits", "Personal Independence Payment") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="benefits-5">
-                    Personal Independence Payment
-                  </label>
-                </div>
-<div class="govuk-checkboxes__divider">or</div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-6" name="benefits" type="checkbox" value="No" data-behaviour="exclusive" {{ checked("benefits", "No") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="benefits-6">
-                    No
-                  </label>
-                </div>
-              </div>
-
-            </fieldset>
+              {% for feature in data['benefits'] %}
+                <li>{{ feature }}</li>
+              {% else %}
+                <li>None </li>
+              {% endfor %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="check">
+                Update<span class="govuk-visually-hidden"> Benefits that could affect Dereck Smith’s eligibility</span>
+              </a>
+            </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
 
-           <button class="govuk-button" data-module="govuk-button">
-             Save and continue
-           </button>
-         </form>
-       </div>
-     </div>
+Can Dereck Smith still get Access to Work?
 
 
-        </main>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['exceptions']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="exceptions">
+                Update<span class="govuk-visually-hidden"> Does Dereck Smith have any exceptions?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+
+
+
+{% if "None of the above" in data['benefits'] or data['exceptions']=='Yes'%}{% else %}
+        <div class="govuk-inset-text">
+        <p> You need to contact Dereck Smith to check whether their benefits mean they are not eligible for Access to Work. This will be added to your 'Contact Dereck Smith' task.  </p>
+
         </div>
+{% endif %}
 
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="" value="">
+            Return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
 
 
 {% endblock %}
