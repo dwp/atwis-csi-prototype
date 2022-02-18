@@ -32,7 +32,7 @@
 
    <div class="govuk-form-group">
      <label class="govuk-label" for="appointee-name">
-       Appointee’s full name
+      {% include  "./content/appointee-full-name.html" %}
      </label>
 
    <input class="govuk-input govuk-input--width-20" id="appointee-name" name="appointee-name" type="text" value="{{data['appointee-name']}}">
