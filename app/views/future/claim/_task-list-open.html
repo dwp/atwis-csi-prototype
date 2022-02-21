@@ -36,12 +36,13 @@
 
           <p >
     <a href="
-    {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' %}
-    /future/cases/contact/how-do-you-want-to-contact{% else %}
-    /future/cases/contact/do-not-need-to-contact{% endif %}
+  {% if not data['_do_1']%}  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' or data ['job-deatils-contact']=='No, I have not spoken to them' %}
+    /future/cases/contact/1/how-do-you-want-to-contact{% else %}
+    /future/cases/contact/1/do-not-need-to-contact{% endif %}{% else %}/future/cases/contact/contact-log{% endif %}
     " aria-describedby="contact-status">
 
-        Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+        Add contact
+         <!-- log for {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} -->
     </a>
           </p>
 <br>

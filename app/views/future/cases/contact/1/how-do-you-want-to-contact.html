@@ -2,6 +2,10 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -51,7 +55,7 @@
 
   <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="email" name="_do" type="radio" value="email~/future/cases/contact/email">
+          <input class="govuk-radios__input" id="email" name="_do_{{number}}" type="radio" value="email~/future/cases/contact/email">
           <label class="govuk-label govuk-radios__label" for="email">
         Email
       </label>
@@ -65,15 +69,15 @@
 
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="phone" name="_do" type="radio" value="phone~/future/cases/contact/phone">
+          <input class="govuk-radios__input" id="phone" name="_do_{{number}}" type="radio" value="Telephone~/future/cases/contact/{{number}}/phone">
           <label class="govuk-label govuk-radios__label" for="phone">
         Telephone
       </label>
 
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="phone" name="_do" type="radio" value="phone~/future/cases/contact/phone">
-          <label class="govuk-label govuk-radios__label" for="phone">
+          <input class="govuk-radios__input" id="sms" name="_do_{{number}}" type="radio" value="SMS">
+          <label class="govuk-label govuk-radios__label" for="sms">
         SMS
       </label>
 

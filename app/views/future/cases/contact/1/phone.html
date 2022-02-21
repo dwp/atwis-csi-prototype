@@ -3,7 +3,9 @@
 {% set title = "Case details" %}
 
 {% extends folder + "/claim/_CSIBASE.html" %}
-
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
 {% block csi %}
 <br>
 
@@ -85,7 +87,7 @@
 
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="yes" name="asked-info-phone" type="radio" value="yes~/future/cases/contact/happy-phone">
+          <input class="govuk-radios__input" id="yes" name="asked-info-phone" type="radio" value="yes~/future/cases/contact/{{number}}/happy-phone">
           <label class="govuk-label govuk-radios__label" for="yes">
         Yes, check information
       </label>
@@ -99,7 +101,7 @@
 
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="no" name="asked-info-phone" type="radio" value="no~/future/cases/contact/unhappy-phone">
+          <input class="govuk-radios__input" id="no" name="asked-info-phone" type="radio" value="no~/future/cases/contact/{{number}}/unhappy-phone">
           <label class="govuk-label govuk-radios__label" for="no">
         No
       </label>

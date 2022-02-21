@@ -4,13 +4,17 @@
 
 {% extends folder + "/claim/_CSIBASE.html" %}
 
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
 {% block csi %}
 <br>
 
 
 
 
-<form action="/future/cases/contact/how-do-you-want-to-contact" method="post" novalidate>
+<form action="/future/cases/contact/{{number}}/how-do-you-want-to-contact" method="post" novalidate>
 
 
   <div class="govuk-width-container">

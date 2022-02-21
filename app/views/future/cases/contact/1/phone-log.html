@@ -1,0 +1,72 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="/future/cases/contact/contact-log" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="job-detail-note1">
+Telephone call made on 1st of January 2022
+
+
+    </label>
+    </h1>
+
+<p>
+{{data['job-detail-note'+ number]}}
+</p>
+
+</div>
+
+<!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
+<!-- {% include  "future/claim/notification-contact.html" %} -->
+     <br>
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+             Return
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

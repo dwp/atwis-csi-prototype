@@ -4,6 +4,10 @@
 
 {% extends folder + "/claim/_CSIBASE.html" %}
 
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
 {% block csi %}
 <br>
 
@@ -33,7 +37,7 @@
 
   </legend>
 
-<p>Based on your answers, you do not need to contact Dereck Smith about details in Searchlight.</p>
+<p>Based on your answers, you do not need to contact Dereck Smith at this time.</p>
 
 
 
@@ -58,7 +62,7 @@
 
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="yes" name="contact" type="radio" value="Yes~/future/cases/contact/need-to-contact">
+          <input class="govuk-radios__input" id="yes" name="contact" type="radio" value="Yes~/future/cases/contact/{{number}}/need-to-contact">
           <label class="govuk-label govuk-radios__label" for="yes">
         Yes
       </label>

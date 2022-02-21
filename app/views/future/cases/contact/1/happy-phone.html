@@ -3,7 +3,9 @@
 {% set title = "Case details" %}
 
 {% extends folder + "/claim/_CSIBASE.html" %}
-
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
 {% block csi %}
 <br>
 
