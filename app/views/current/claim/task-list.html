@@ -5,9 +5,31 @@
         <h2 class="govuk-heading-l">Your tasks</h2>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
-
-
       <p class="govuk-body govuk-!-margin-bottom-7">You have 10 sections to complete.</p>
+
+
+
+
+
+      {% if data ['personal-details-cya'] and
+                 data ['appointee']
+                  and
+                data ['benefits']
+                 %}
+                <!-- <p >
+          <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+              Add contact
+          </a>
+                </p> -->
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+        {% endif %}
+
+
+
+
 
       <ol class="app-task-list">
         <li>
@@ -63,7 +85,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="{% if data['exceptions'] and not 'None of the above' in data['benefits']%}./searchlight/benefits/answers{% else %}
-                ./searchlight/benefits/check{% endif %}" aria-describedby="benefits-status">
+                ./searchlight/benefits/{% endif %}" aria-describedby="benefits-status">
                 Check benefits
                 </a>
               </span>
@@ -101,21 +123,9 @@
 
 
 
-
-
-
-
-
-
       </ul>
       </li>
-      <p >
 
-
-  <div class="govuk-inset-text">Cannot contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} yet</div>
-
-      </p>
-<br>
         <li>
           <!-- <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Check application

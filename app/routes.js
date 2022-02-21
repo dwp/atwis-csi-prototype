@@ -178,7 +178,7 @@ return res.redirect("/future/cases/claim#your-tasks"); next();
 })
 
 //current
-router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+router.post('/current/cases/searchlight/benefits/', function(req, res, next){ 
 
  if (req.session.data['benefits']){
   for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -200,7 +200,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
 return res.redirect("/current/cases/claim#your-tasks"); next();
 })
 
-router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+router.post('/current/cases/searchlight/benefits/', function(req, res, next){ 
 
  if (req.session.data['benefits']){
   for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -221,7 +221,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
 return res.redirect("/current/cases/claim#your-tasks"); next();
 })
 
-router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+router.post('/current/cases/searchlight/benefits/', function(req, res, next){ 
 
  if (req.session.data['benefits']){
   for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -241,7 +241,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
 return res.redirect("/current/cases/claim#your-tasks"); next();
 })
 
-router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+router.post('/current/cases/searchlight/benefits/', function(req, res, next){ 
 
  if (req.session.data['benefits']){
   for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -260,7 +260,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
 return res.redirect("/current/cases/claim#your-tasks"); next();
 })
 
-router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+router.post('/current/cases/searchlight/benefits/', function(req, res, next){ 
 
  if (req.session.data['benefits']){
   for (i = 0; i<req.session.data['benefits'].length; i++){
@@ -277,7 +277,7 @@ router.post('/current/cases/searchlight/benefits/check', function(req, res, next
  }
 return res.redirect("/current/cases/claim#your-tasks"); next();
 })
-router.post('/current/cases/searchlight/benefits/check', function(req, res, next){ 
+router.post('/current/cases/searchlight/benefits/', function(req, res, next){ 
 
  if (req.session.data['benefits']){
   for (i = 0; i<req.session.data['benefits'].length; i++){

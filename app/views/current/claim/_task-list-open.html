@@ -6,7 +6,7 @@
 
 
 
-  {% if data['_do']%}
+  {% if data['_do_1']%}
             {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}
 
             <li class="app-task-list__item">
@@ -33,19 +33,14 @@
       </li>
 
 
-
-          <p >
-    <a href="
-  {% if not data['_do_1']%}  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' or data ['job-deatils-contact']=='No, I have not spoken to them' %}
-    /current/cases/contact/1/how-do-you-want-to-contact{% else %}
-    /current/cases/contact/1/do-not-need-to-contact{% endif %}{% else %}/current/cases/contact/contact-log{% endif %}
-    " aria-describedby="contact-status">
-
-        Add contact
-         <!-- log for {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} -->
-    </a>
-          </p>
+      <p >
+      <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+      Add contact
+      </a>
+      </p>
 <br>
+
+
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Prepare business case

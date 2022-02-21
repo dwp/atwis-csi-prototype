@@ -30,7 +30,8 @@
 
 
 
-{% include  "current/claim/notification-contact.html" %}
+              {% if data['clear']=='Yes' %}{% else %}
+                {% include  "current/claim/notification-contact.html" %}{% endif %}
 <!--
   {% if  data['contact']=='Yes'%}{% else %}
               <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">

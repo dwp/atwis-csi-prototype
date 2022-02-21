@@ -30,18 +30,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-{% include  "current/claim/notification-contact.html" %}
+            {% if data['clear']=='Yes' %}{% else %}
+              {% include  "current/claim/notification-contact.html" %}{% endif %}
 
 
             <p>Send an email to {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} about {% if data['appointee']=='Yes'%}Dereck Smith’s{% else %}their{% endif %} application.</p>

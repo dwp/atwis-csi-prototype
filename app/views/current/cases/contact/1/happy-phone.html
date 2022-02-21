@@ -36,28 +36,72 @@
   Case history updated to show call made.
 </div>
 
+
+
+     {% if data['clear']=='Yes' %}{% else %}
+       {% include  "current/claim/notification-contact.html" %}{% endif %}
+     <div class="govuk-form-group">
+
+       <fieldset class="govuk-fieldset">
+
+       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+         Clear notification?
+
+       </legend>
+
+
+       <div class="govuk-radios govuk-radios--inline">
+
+
+
+
+             <div class="govuk-radios__item">
+               <input class="govuk-radios__input" id="yes" name="clear" type="radio" value="Yes">
+               <label class="govuk-label govuk-radios__label" for="yes">
+             Yes
+           </label>
+
+             </div>
+
+
+
+
+             <div class="govuk-radios__item">
+               <input class="govuk-radios__input" id="no" name="clear" type="radio" value="No">
+               <label class="govuk-label govuk-radios__label" for="no">
+             No
+           </label>
+
+             </div>
+
+
+
+
+       </div>
+
+
+     </fieldset>
+<br>
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
-    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+    <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="job-detail-note1">
     What was discussed with Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %}?
 
 
     </label>
-    </h1>
+    </h2>
 
 
 
 
 
-<textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-note1" rows="3" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 80 characters remaining</div>
+<textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-discussion-{{number}}" rows="3" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 80 characters remaining</div>
 </div>
 
-<!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
-<!-- {% include  "current/claim/notification-contact.html" %} -->
+
+
      <br>
-
-
-
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Save and continue

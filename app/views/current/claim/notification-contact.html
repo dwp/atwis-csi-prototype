@@ -1,9 +1,14 @@
 
+{% if data ['Searchligh']=='No' or
+data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
+data ['found-nino']=='No' or
+data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
+data ['job-deatils-contact']=='No, I have not spoken to them' %}
 
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Check application details
+      Contact notification
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
@@ -37,3 +42,4 @@
 You have not spoken to Dereck Smith about whether Access to Work can contact their employer yet{% endif %}
   </div>
 </div>
+{% endif %}

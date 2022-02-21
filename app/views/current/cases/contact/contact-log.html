@@ -44,10 +44,8 @@
           </fieldset>
 
 
-
-
-
-
+          {% if data['clear']=='Yes' %}{% else %}
+            {% include  "current/claim/notification-contact.html" %}{% endif %}
 
 
 
