@@ -3,14 +3,16 @@
 {% set title = "Case details" %}
 
 {% extends folder + "/claim/_CSIBASE.html" %}
-
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
 {% block csi %}
 <br>
 
 
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/contact/contact-log" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -22,19 +24,26 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h2 class="govuk-heading-xl">Telephone call made</h2>
 
 
 
 
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="job-detail-note1">
+Telephone call made on 1st of January 2022
 
 
+    </label>
+    </h1>
 
-<div class="govuk-inset-text">
-  Case history updated to show call made.
+<p>
+{{data['job-detail-note'+ number]}}
+</p>
+
 </div>
 
-<p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p>
+<!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
 <!-- {% include  "current/claim/notification-contact.html" %} -->
      <br>
 
@@ -42,7 +51,7 @@
 
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
-             Return to your tasks
+             Return
           </button>
 
 

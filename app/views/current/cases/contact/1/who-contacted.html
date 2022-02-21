@@ -28,32 +28,17 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
 
     <h2 class="govuk-fieldset__heading">
-      How do you want to contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}?
+    Are you contacting {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} or has {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} you?
     </h2>
 
   </legend>
-  <!-- {% if  data['contact']=='Yes'%}{% else %}
-<p>Based on your answers you need to contact Dereck Smith about:</p>
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-<div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-  Information to check with the applicant
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      Application is not eligible.
 
-    </p>
-    <p>Summary of what make the case not eligible...</P>
-  </div>
-</div>{% endif %} -->
 
   <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="email" name="_do" type="radio" value="email~/current/cases/contact/email">
+          <input class="govuk-radios__input" id="email" name="who-contacted" type="radio" value="casemanager~/current/cases/contact/how-do-you-want-to-contact">
           <label class="govuk-label govuk-radios__label" for="email">
-        Email
+        I need to contact
       </label>
 
         </div>
@@ -65,9 +50,9 @@
 
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="phone" name="_do" type="radio" value="phone~/current/cases/contact/phone">
+          <input class="govuk-radios__input" id="phone" name="who-contacted" type="radio" value="citizen~/current/cases/contact/how-do-you-want-to-contact">
           <label class="govuk-label govuk-radios__label" for="phone">
-        Telephone
+        {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} contacted Access to work
       </label>
 
         </div>

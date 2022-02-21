@@ -1,26 +1,9 @@
 
 
 
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-  <a href="
-  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' %}
-  /current/cases/contact/how-do-you-want-to-contact{% else %}
-  /current/cases/contact/do-not-need-to-contact{% endif %}
-  " aria-describedby="contact-status">
 
-              Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details
-</a>
-              </span>
 
-              {% if data['asked-info-phone']=='yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-              {% if data['asked-info-phone']=='no'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
 
-          {% if data['contact']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-
-              {% if not data['asked-info-phone'] and not data['contact']%}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-            </li>
 
 
   {% if data['_do']%}
@@ -51,7 +34,18 @@
 
 
 
+          <p >
+    <a href="
+  {% if not data['_do_1']%}  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' or data ['job-deatils-contact']=='No, I have not spoken to them' %}
+    /current/cases/contact/1/how-do-you-want-to-contact{% else %}
+    /current/cases/contact/1/do-not-need-to-contact{% endif %}{% else %}/current/cases/contact/contact-log{% endif %}
+    " aria-describedby="contact-status">
 
+        Add contact
+         <!-- log for {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} -->
+    </a>
+          </p>
+<br>
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Prepare business case
@@ -109,10 +103,3 @@
 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-            <a href="claim#your-tasks" aria-describedby="job-status">
-                    Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about the business cases details
-            </a>
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>

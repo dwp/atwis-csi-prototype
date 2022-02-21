@@ -1,0 +1,81 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="/current/cases/contact/contact-log" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+              <h2 class="govuk-heading-xl">Telephone call made</h2>
+
+
+
+
+
+
+
+<div class="govuk-inset-text">
+  Case history updated to show call made.
+</div>
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+    What was discussed with Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %}?
+
+
+    </label>
+    </h1>
+
+
+
+
+
+<textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-note1" rows="3" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 80 characters remaining</div>
+</div>
+
+<!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
+<!-- {% include  "current/claim/notification-contact.html" %} -->
+     <br>
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+             Save and continue
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

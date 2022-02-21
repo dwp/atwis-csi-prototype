@@ -291,7 +291,7 @@
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: in progress </h2>
 
-      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Does Dereck Smith have an appointee? {{data['appointee']}}</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> {% include  "current/cases/searchlight/appointee/content/does-name-here-have-an-appointee.html" %} {{data['appointee']}}</p>
       {% if data['appointee']=='Yes'%}
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s full name:  {{data['appointee-name']}}</p>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s address:

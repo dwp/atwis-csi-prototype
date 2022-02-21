@@ -28,10 +28,12 @@
           {% for feature in data['benefits'] %}
             <li>{{ feature }}</li>
           {% endfor %}
-{{data['job-detail-note1']}}
+
   </ul>
         {% endif %}
-
-
+        {% if not data['add-another']%}
+{{data['job-detail-note1']}}{% endif %}
+{% if data ['job-deatils-contact']=='No, I have not spoken to them' %}
+You have not spoken to Dereck Smith about whether Access to Work can contact their employer yet{% endif %}
   </div>
 </div>
