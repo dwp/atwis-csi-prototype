@@ -32,11 +32,11 @@
 
 
 <p>Note saved in the case history.</p>
-
-
-<p>If Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %} calls you back, you can add this contact in the <strong>log contact with Dereck Smith</strong> task.</p>
 {% if data['clear']=='No' %}{% else %}
   {% include  "current/claim/notification-contact.html" %}{% endif %}
+
+<p>If Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %} calls you back, you can add this contact in the <strong>log contact with Dereck Smith</strong> task.</p>
+
      <br>
 
 
