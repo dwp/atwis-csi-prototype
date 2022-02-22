@@ -12,7 +12,7 @@
 
 
 
-<form action="/current/cases/contact/contact-log" method="post" novalidate>
+<form action="/current/cases/contact/{{number}}/notification-need" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -30,58 +30,14 @@
 
 
 
-
-
-<div class="govuk-inset-text">
+<p>
   Case history updated to show call made.
-</div>
+</p>
 
 
+              {% if data['clear']=='Yes' %}{% else %}
+                {% include  "current/claim/notification-contact.html" %}{% endif %}
 
-     {% if data['clear']=='Yes' %}{% else %}
-       {% include  "current/claim/notification-contact.html" %}{% endif %}
-     <div class="govuk-form-group">
-
-       <fieldset class="govuk-fieldset">
-
-       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-
-         Clear notification?
-
-       </legend>
-
-
-       <div class="govuk-radios govuk-radios--inline">
-
-
-
-
-             <div class="govuk-radios__item">
-               <input class="govuk-radios__input" id="yes" name="clear" type="radio" value="Yes">
-               <label class="govuk-label govuk-radios__label" for="yes">
-             Yes
-           </label>
-
-             </div>
-
-
-
-
-             <div class="govuk-radios__item">
-               <input class="govuk-radios__input" id="no" name="clear" type="radio" value="No">
-               <label class="govuk-label govuk-radios__label" for="no">
-             No
-           </label>
-
-             </div>
-
-
-
-
-       </div>
-
-
-     </fieldset>
 <br>
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">

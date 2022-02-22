@@ -23,61 +23,179 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                          Have you spoken to Dereck Smith about whether Access to Work can contact their employer?
+                            {% include  "./content/have-confirmed-job-details.html" %}
 
             </dt>
             <dd class="govuk-summary-list__value">
-{{ data['job-deatils-contact']}}
+{{ data['employer-confirmed']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
-              Update<span class="govuk-visually-hidden">                   Have you spoken to Dereck Smith about whether Access to Work can contact their employer?</span>
+              Update<span class="govuk-visually-hidden">            {% include  "./content/have-confirmed-job-details.html" %}</span>
               </a>
             </dd>
           </div>
 
-{% if data['job-deatils-contact']=='No, I have not spoken to them'%}{% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
- Have you spoken to the employer about a cost share?
+                            {% include  "./content/how-many-people-work.html" %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{ data['employer-size']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">
+              Update<span class="govuk-visually-hidden">      {% include  "./content/how-many-people-work.html" %}</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+{% if data['employer-confirmed']=='Yes'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                            {% include  "./content/agree-to-cost-share.html" %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+        {{ data['employer-cost-share']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">
+              Update<span class="govuk-visually-hidden">      {% include  "./content/agree-to-cost-share.html" %}</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+{% if data['employer-cost-share']=='No'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                            {% include  "./content/third-party-agreed.html" %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+        {{ data['employer-cost-share']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">
+              Update<span class="govuk-visually-hidden">      {% include  "./content/agree-to-cost-share.html" %}</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+
+third party’s full name
+
 
             </dt>
             <dd class="govuk-summary-list__value">
-{{data['employer-cost-share']}}
+              {{data['third-party-name']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
-                Update<span class="govuk-visually-hidden">  Have you spoken to the employer about a cost share?</span>
+              <a class="govuk-link" href="third-party-details#third-party-name">
+                Update<span class="govuk-visually-hidden"> third party’s full name</span>
               </a>
             </dd>
-</div>{% endif %}
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+
+third party’s address
+
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['third-party-address-line-1']}}<br>
+              {{data['third-party-address-line-2']}}{% if data['third-party-address-line-2']%}<br>{% endif %}
+              {{data['third-party-address-town']}}{% if data['third-party-address-town']%}<br>{% endif %}
+              {{data['third-party-address-county']}}{% if data['third-party-address-county']%}<br>{% endif %}
+              {{data['third-party-address-postcode']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="third-party-details#third-party-address-line-1">
+                Update<span class="govuk-visually-hidden"> third party’s address</span>
+              </a>
+            </dd>
+</div>
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+
+
+                third party’s contact details
 
 
 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% for feature in data['third-party-contact'] %}
+                  <li>{{ feature }}</li>
+                {% else %}
+                  <li>None </li>
+                {% endfor %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="third-party-details#third-party-name">
+                  Update<span class="govuk-visually-hidden"> third party’s contact details</span>
+                </a>
+              </dd>
+            </div>
 
+{% if 'email' in data['third-party-contact']%}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    third party’s email
 
-        </dl>
-
-
-
-
-{% if data['job-deatils-contact']=='No, I have not spoken to them' or data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
-       <div class="govuk-inset-text">
-       <p> You need to contact Dereck Smith employer.  </p>
-
-       </div>
+  </dt>
+            <dd class="govuk-summary-list__value">
+            {{data['third-party-email']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="third-party-telephone-email#third-party-email">
+                Update<span class="govuk-visually-hidden"> third party’s contact details</span>
+              </a>
+            </dd>
+          </div>
 {% endif %}
 
-<!-- {% if data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
-        <div class="govuk-inset-text">
-        <p> You need to contact Dereck Smith to employer.  </p>
+{% if 'telephone' in data['third-party-contact']%}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    third party’s telephone
 
-        </div>
-{% endif %} -->
+  </dt>
+            <dd class="govuk-summary-list__value">
+            {{data['third-party-telephone']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="third-party-telephone-email#third-party-telephone">
+                Update<span class="govuk-visually-hidden"> third party’s contact details</span>
+              </a>
+            </dd>
+          </div>
+{% endif %}
+{% endif %}
 
-          <input type="hidden" name="appointee-checked" value="true">
 
-          <button class="govuk-button" data-module="govuk-button" name="appointee-cya" value="finished">
+
+
+
+
+
+
+
+{% endif %}
+<br>
+
+          <input type="hidden" name="third-party-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="third-party-cya" value="finished">
             Return to your tasks
           </button>
 

@@ -25,12 +25,12 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
-                  Have you contacted the employer?
+    {% include  "./content/have-you-contacted-employer.html" %}
                  </h2>
                </legend>
 
 
-
+<!-- <p>To clarify employment and company size. Company size will determine cost share.</p> -->
                <h3 class="govuk-heading-m">  Workplace contact</h3>
                                  <dl class="govuk-summary-list">
                                    <div class="govuk-summary-list__row">
@@ -69,18 +69,18 @@
                                  </dl>
 
 
-               <div class="govuk-radios">
+               <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="employer-cost-share" name="employer-contact" type="radio" value="Yes~/current/cases/job-details/company-size.html" {{ checked("employer-contact", "Yes") }}>
-                   <label class="govuk-label govuk-radios__label" for="employer-cost-share">
+                   <input class="govuk-radios__input" id="contact-employer" name="contact-employer" type="radio" value="Yes~/current/cases/contact-employer/check.html" {{ checked("contact-employer", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="contact-employer">
                      Yes
                    </label>
                  </div>
 
 
                                   <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="employer-cost-share-4" name="employer-cost-share" type="radio" value="No, I have not spoken to the employer yet~/current/cases/job-details/check" {{ checked("employer-cost-share", "No") }}>
-                                    <label class="govuk-label govuk-radios__label" for="employer-cost-share-4">
+                                    <input class="govuk-radios__input" id="contact-employer-2" name="contact-employer" type="radio" value="No~/current/cases/contact-employer/check" {{ checked("contact-employer", "No") }}>
+                                    <label class="govuk-label govuk-radios__label" for="contact-employer-2">
                                       No
                                     </label>
                                   </div>
