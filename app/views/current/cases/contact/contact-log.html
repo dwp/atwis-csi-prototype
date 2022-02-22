@@ -68,7 +68,7 @@
       </dt>
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">
-          <a class="govuk-link" href="/current/cases/contact/{{contactindex}}/phone-log">
+          <a class="govuk-link" href="{% if data['_do_'+ contactindex]=='Email'%}/current/cases/contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone'%}/current/cases/contact/{{contactindex}}/phone-log{% endif %}">
             <span aria-hidden="true">View </span>
             <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
           </a>
@@ -95,7 +95,7 @@
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="
-          Yes~/{% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' or data ['job-deatils-contact']=='No, I have not spoken to them' %}current/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact{% else %}current/cases/contact/{{totalcontact + 1}}/do-not-need-to-contact{% endif %}">
+          Yes~/current/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact">
           <label class="govuk-label govuk-radios__label" for="add-another">
             Yes
           </label>

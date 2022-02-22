@@ -3,7 +3,10 @@
 {% set title = "Case details" %}
 
 {% extends folder + "/claim/_CSIBASE.html" %}
-
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
 {% block csi %}
 <br>
 
@@ -95,7 +98,7 @@
 
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="yes" name="asked-info-email" type="radio" value="yes~/current/cases/contact/unhappy-email">
+                    <input class="govuk-radios__input" id="yes" name="asked-info-email" type="radio" value="yes~/current/cases/contact/{{number}}/happy-email">
                     <label class="govuk-label govuk-radios__label" for="yes">
                   Yes
                 </label>
@@ -105,7 +108,7 @@
 
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="no" name="asked-info-email" type="radio" value="no~/current/cases/contact/unhappy-email">
+                    <input class="govuk-radios__input" id="no" name="asked-info-email" type="radio" value="no~/current/cases/contact/{{number}}/unhappy-email">
                     <label class="govuk-label govuk-radios__label" for="no">
                   No
                 </label>

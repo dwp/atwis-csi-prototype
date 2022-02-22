@@ -29,7 +29,7 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/current/cases/c
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h2 class="govuk-heading-xl">Telephone call made</h2>
+              <h2 class="govuk-heading-xl">Email sent</h2>
 
 
 
@@ -47,7 +47,7 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/current/cases/c
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="job-detail-note1">
-    What was discussed with Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %}?
+    What was included in the email to Dereck Smith{% if data['appointee']=='Yes'%}’s appointee {{data['appointee-name']}}{% endif %}?
 
 
     </label>
@@ -57,14 +57,14 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/current/cases/c
 
 
 
-<textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-discussion-{{number}}" rows="5" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 100 characters remaining</div>
+<textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-discussion-email-{{number}}" rows="5" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 100 characters remaining</div>
 </div>
 
 
 
      <br>
 
-           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+           <button class="govuk-button" data-module="govuk-button" name="contact-email" value="completed">
              Save and continue
           </button>
 

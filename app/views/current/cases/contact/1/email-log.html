@@ -31,14 +31,14 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="job-detail-note1">
-Telephone call made on 23 Febuary 2022 at 1:00pm
+Email sent on 23 Febuary 2022 at 1:00pm
 
 
     </label>
     </h2>
 <p>By John Goldsmith to {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %}</p>
 <p>
-{{data['job-detail-discussion-'+ number]}}
+{{data['job-detail-discussion-email-'+ number]}}
 </p>
 
 </div>
