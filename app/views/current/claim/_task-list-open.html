@@ -49,8 +49,8 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="/current/cases/contact-employer" aria-describedby="job-status">
-                  Contacting employer
+  <a href="{% if data ['employment-contact']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer{% endif %}" aria-describedby="job-status">
+                  Employment
 </a>
               </span>
               {% if data['job-deatils-contact']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
@@ -62,11 +62,11 @@
 {% if data ['contact-employer']%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="/current/cases/job-details" aria-describedby="job-status">
+  <a href="  {% if data['job-details-checked']=='true'%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
                   Job details
 </a>
               </span>
-              {% if data['']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+              {% if data['job-details-checked']=='true'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
             {% if not data['employer-confirmed']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 {% endif %}
