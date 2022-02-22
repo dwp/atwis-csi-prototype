@@ -23,7 +23,7 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                        Has Dereck Smith confirmed whether Access to Work can contact their employer?
+                      {% include  "./content/has-confirmed-whether-contact-employer.html" %}
 
             </dt>
             <dd class="govuk-summary-list__value">
@@ -31,13 +31,13 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
-              Update<span class="govuk-visually-hidden">     Has Dereck Smith confirmed whether Access to Work can contact their employer?</span>
+              Update<span class="govuk-visually-hidden">     {% include  "./content/has-confirmed-whether-contact-employer.html" %}</span>
               </a>
             </dd>
           </div>
 
 
-
+{% if data['job-deatils-contact']=='They gave permission'%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                             {% include  "./content/have-you-contacted-employer.html" %}
@@ -52,7 +52,7 @@
                 </a>
               </dd>
             </div>
-
+{% endif %}
 
 
         </dl>
