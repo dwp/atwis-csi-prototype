@@ -28,22 +28,28 @@
                          </h2>
                        </legend>
 
-                       <div class="govuk-radios govuk-radios--inline">
+                       <div class="govuk-radios">
                          <div class="govuk-radios__item">
-                           <input class="govuk-radios__input" id="employer-confirmed" name="employer-confirmed" type="radio" value="Yes" {{ checked("employer-confirmed", "Yes") }}>
+                           <input class="govuk-radios__input" id="employer-confirmed" name="employer-confirmed" type="radio" value="  Yes and all of the details match" {{ checked("employer-confirmed", "Yes and all of the details match") }}>
                            <label class="govuk-label govuk-radios__label" for="employer-confirmed">
-                            Yes
+                            Yes and all of the details match
                            </label>
                          </div>
 
 
                                           <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="No" {{ checked("employer-confirmed", "No") }}>
+                                            <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="No" {{ checked("employer-confirmed", "Yes, but some details do not match") }}>
                                             <label class="govuk-label govuk-radios__label" for="employer-confirmed-2">
-                                              No
+                                              Yes, but some details do not match
                                             </label>
                                           </div>
 
+                                                                                    <div class="govuk-radios__item">
+                                                                                      <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="  No, DWP Digital has not confirmed job details yet" {{ checked("employer-confirmed", "  No, DWP Digital has not confirmed job details yet") }}>
+                                                                                      <label class="govuk-label govuk-radios__label" for="employer-confirmed-2">
+                                                                                        No, DWP Digital has not confirmed job details yet
+                                                                                      </label>
+                                                                                    </div>
 
 
                        </div>

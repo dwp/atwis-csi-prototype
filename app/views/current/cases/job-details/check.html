@@ -52,7 +52,7 @@
 
 
 
-{% if data['employer-confirmed']=='Yes'%}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                             {% include  "./content/agree-to-cost-share.html" %}
@@ -75,7 +75,7 @@
                             {% include  "./content/third-party-agreed.html" %}
             </dt>
             <dd class="govuk-summary-list__value">
-        {{ data['employer-cost-share']}}
+        {{ data['third-party']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
@@ -190,7 +190,6 @@ Third party’s address
 
 
 
-{% endif %}
 <br>
 
           <input type="hidden" name="job-details-checked" value="true">
