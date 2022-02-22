@@ -36,7 +36,15 @@ Telephone call made on 23 Febuary 2022 at 1:00pm
 
     </label>
     </h2>
+
+
 <p>By John Goldsmith to {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %}</p>
+
+{% if data['asked-info-phone-'+number]=='yes'%}
+<p>Dereck Smith answered the phone.</p>{% endif %}
+{% if data['asked-info-phone-'+number]=='no'%}
+<p>Dereck Smith did not answer the phone.</p>{% endif %}
+
 <p>
 {{data['job-detail-discussion-'+ number]}}
 </p>

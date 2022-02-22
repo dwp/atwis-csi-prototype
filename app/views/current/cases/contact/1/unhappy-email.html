@@ -42,7 +42,8 @@
   </ul>
      <br> -->
 
-
+     {% if data['clear']=='No' %}{% else %}
+       {% include  "current/claim/notification-contact.html" %}{% endif %}
 
 
           <button class="govuk-button" data-module="govuk-button" name="contact-email" value="completed">
