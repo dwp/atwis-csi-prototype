@@ -88,7 +88,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
-third party’s full name
+{% include  "./content/third-party-full-name.html" %}
 
 
             </dt>
@@ -105,7 +105,7 @@ third party’s full name
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
-third party’s address
+Third party’s address
 
 
             </dt>
@@ -128,7 +128,7 @@ third party’s address
               <dt class="govuk-summary-list__key">
 
 
-                third party’s contact details
+                Third party’s contact details
 
 
 
@@ -150,7 +150,7 @@ third party’s address
 {% if 'email' in data['third-party-contact']%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    third party’s email
+    Third party’s email
 
   </dt>
             <dd class="govuk-summary-list__value">
@@ -167,7 +167,7 @@ third party’s address
 {% if 'telephone' in data['third-party-contact']%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    third party’s telephone
+  Third party’s telephone
 
   </dt>
             <dd class="govuk-summary-list__value">
@@ -193,7 +193,7 @@ third party’s address
 {% endif %}
 <br>
 
-          <input type="hidden" name="third-party-checked" value="true">
+          <input type="hidden" name="job-details-checked" value="true">
 
           <button class="govuk-button" data-module="govuk-button" name="third-party-cya" value="finished">
             Return to your tasks
