@@ -48,14 +48,15 @@
             {% include  "current/claim/notification-contact.html" %}{% endif %}
 
 
-
+            <!-- <p>Best times to contact Dereck Smith:</p>
+                <p>Between 8:30 am and 6pm Monday to Saturday. </p> -->
 
 <div class="govuk-form-group">
   <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
 
 
 
-{% for i in [1,2,3] -%}
+{% for i in [1,2,3,4,5] -%}
 {% set contactindex = i  %}
 {% if data['_do_'+ contactindex] %}
 
@@ -64,7 +65,7 @@
       {{data['_do_'+ contactindex]}}
       </dt>
       <dt class="hmrc-list-with-actions__name">
-       23 Febuary 22 1:00pm
+       23 Febuary 2022 9:49am
       </dt>
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">
