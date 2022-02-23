@@ -52,7 +52,7 @@
 
 
 
-
+{% if data['employer-size']=='50 to 249 (medium)' or data['employer-size']=='250 or more (large)'%}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                             {% include  "./content/agree-to-cost-share.html" %}
@@ -61,7 +61,7 @@
         {{ data['employer-cost-share']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="index">
+              <a class="govuk-link" href="contact-cost-share-agreement">
               Update<span class="govuk-visually-hidden">      {% include  "./content/agree-to-cost-share.html" %}</span>
               </a>
             </dd>
@@ -78,8 +78,8 @@
         {{ data['third-party']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="index">
-              Update<span class="govuk-visually-hidden">      {% include  "./content/agree-to-cost-share.html" %}</span>
+              <a class="govuk-link" href="third-party">
+              Update<span class="govuk-visually-hidden">      {% include  "./content/third-party.html" %}</span>
               </a>
             </dd>
           </div>
@@ -181,8 +181,7 @@ Third party’s address
           </div>
 {% endif %}
 {% endif %}
-
-
+{% endif %}
 
 
 
