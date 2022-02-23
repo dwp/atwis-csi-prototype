@@ -24,7 +24,7 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-            <h2 class="govuk-heading-xl">Telephone the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %}</h2>
+            <h2 class="govuk-heading-xl">Telephone the {% if data['appointee']=='Yes, I need to add an appointee'%}appointee {% else %}applicant{% endif %}</h2>
 
             <form action="../claim" method="post" novalidate="">
 
@@ -51,7 +51,7 @@
                 </div>
               </div>{% endif %} -->
 
-<p>Telephone {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} on {% if data['appointee']=='Yes'%} <strong>{{data['appointee-telephone']}}</strong>{% else %} <strong> 07192 838 482</strong>{% endif %}.</p>
+<p>Telephone {% if data['appointee']=='Yes, I need to add an appointee'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} on {% if data['appointee']=='Yes, I need to add an appointee'%} <strong>{{data['appointee-telephone']}}</strong>{% else %} <strong> 07192 838 482</strong>{% endif %}.</p>
 
 
 <p>Best times to contact Dereck Smith:<br>
@@ -78,7 +78,7 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-    Has the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %} answered the telephone?
+    Has the {% if data['appointee']=='Yes, I need to add an appointee'%}appointee {% else %}applicant{% endif %} answered the telephone?
 
   </legend>
 

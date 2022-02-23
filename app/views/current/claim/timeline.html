@@ -197,7 +197,7 @@
 {% endif %}
 
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details: completed </h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details: completed </h2>
 
       <p class="govuk-caption-m" id="timeline-date">
     <!-- <a>  Link to note</a> -->
@@ -209,7 +209,7 @@
   {% endif %}
   {% if data['_do_4']%}
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
 
     <p class="govuk-caption-m govuk-!-margin-bottom-1">{{data['_do_4']}}</p>
     <!-- <p class="govuk-caption-m govuk-!-margin-bottom-1"><a href="">View details</a></p> -->
@@ -226,7 +226,7 @@
 
   {% if data['_do_3']%}
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
 
     <p class="govuk-caption-m govuk-!-margin-bottom-1">{{data['_do_3']}}</p>
     <!-- <p class="govuk-caption-m govuk-!-margin-bottom-1"><a href="">View details</a></p> -->
@@ -242,7 +242,7 @@
   {% endif %}
   {% if data['_do_2']%}
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
 
     <p class="govuk-caption-m govuk-!-margin-bottom-1">{{data['_do_2']}}</p>
     <!-- <p class="govuk-caption-m govuk-!-margin-bottom-1"><a href="">View details</a></p> -->
@@ -258,7 +258,7 @@
   {% endif %}
   {% if data['_do_1']%}
   <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Logged contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}  </h2>
 
     <p class="govuk-caption-m govuk-!-margin-bottom-1">{{data['_do_1']}}</p>
     <!-- <p class="govuk-caption-m govuk-!-margin-bottom-1"><a href="">View details</a></p> -->
@@ -362,7 +362,7 @@
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: in progress </h2>
 
       <p class="govuk-caption-m govuk-!-margin-bottom-1"> {% include  "current/cases/searchlight/appointee/content/does-name-here-have-an-appointee.html" %} {{data['appointee']}}</p>
-      {% if data['appointee']=='Yes'%}
+      {% if data['appointee']=='Yes, I need to add an appointee'%}
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s full name:  {{data['appointee-name']}}</p>
         <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s address:
           <br>{{data['appointee-address-line-1']}}<br>

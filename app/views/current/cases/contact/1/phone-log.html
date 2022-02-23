@@ -38,7 +38,7 @@ Telephone call made on 23 Febuary 2022 at 9:49am
     </h2>
 
 
-<p>By John Goldsmith to {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %}</p>
+<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %}</p>
 
 {% if data['asked-info-phone-'+number]=='yes'%}
 <p>Dereck Smith answered the phone.</p>{% endif %}
