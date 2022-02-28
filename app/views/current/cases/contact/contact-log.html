@@ -65,7 +65,23 @@
       {{data['_do_'+ contactindex]}}
       </dt>
       <dt class="hmrc-list-with-actions__name">
-       28 Febuary 2022 9:49am
+
+         {{ data['contact-date-day-'+ contactindex] }}
+     {% if (data['contact-date-month-'+ contactindex] =='01') or (data['contact-date-month-'+ contactindex] =='1') %} January {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='02') or (data['contact-date-month-'+ contactindex] =='2') %} February  {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='03') or (data['contact-date-month-'+ contactindex] =='3') %} March {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='04') or (data['contact-date-month-'+ contactindex] =='4') %} April {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='05') or (data['contact-date-month-'+ contactindex] =='5') %} May {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='06') or (data['contact-date-month-'+ contactindex] =='6') %} June {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='07') or (data['contact-date-month-'+ contactindex] =='7') %} July {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='08') or (data['contact-date-month-'+ contactindex] =='8') %} August {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='09') or (data['contact-date-month-'+ contactindex] =='9') %} September {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='10' %} October {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='11'%} November {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
+{{ data['contact-date-year-'+ contactindex] }}
+
+{{data['contact-time-'+ contactindex]}}
       </dt>
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">
