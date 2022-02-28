@@ -3,7 +3,8 @@
 data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
 data ['found-nino']=='No' or
 data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
-data ['job-deatils-contact']=='No, I have not spoken to them' %}
+data ['job-deatils-contact']=='No, I have not spoken to them' or
+data['job-deatils-contact']=='I have not spoken to them' %}
 
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -38,8 +39,11 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}
         {% endif %}
         {% if not data['add-another']%}
 {{data['job-detail-note1']}}{% endif %}
-{% if data ['job-deatils-contact']=='No, I have not spoken to them' %}
+{% if data['job-deatils-contact']=='I have not spoken to them'%}
 You have not spoken to Dereck Smith about whether Access to Work can contact their employer yet{% endif %}
+
+
+
   </div>
 </div>
 {% endif %}
