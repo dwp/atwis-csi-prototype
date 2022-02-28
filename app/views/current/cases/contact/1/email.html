@@ -42,7 +42,7 @@
 
 
 
-            <a href="mailto:quarryhouse.atwresearch@dwp.gov.uk" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <a href="mailto:{% if data['email']%}{{data['email']}}{% else %}dereck@gmail.com{% endif %}" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Open new email
             </a>
 
