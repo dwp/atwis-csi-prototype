@@ -12,47 +12,40 @@
 
 <form action="" method="post" novalidate>
 
-
-  <div class="govuk-width-container">
-
-
-    <main class="govuk-main-wrapper">
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
   <div class="govuk-form-group">
-             <fieldset class="govuk-fieldset">
-               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                 <h2 class="govuk-fieldset__heading">
-                Did the employer agree to a cost share?
-                 </h2>
-               </legend>
+    <h2 class="govuk-heading-l">
+    Cost share agreement
+  </h2>
+<!-- review the 'in principle' content-->
 
 
-               <div class="govuk-inset-text">
-             <p> The company or organisation is classed as a medium-sized employer. This means a cost share applies.</p>
-             <p>Sometimes a third party can share the cost of support. This will be arranged by the employer.</p>
+             <p class="govuk-body"> DWP Digital is classed as a {% if data['employer-size']=='50 to 249 (medium)'%}medium{% endif %}{% if data['employer-size']=='250 or more (large)'%}large{% endif %} employer. This means that a cost share applies.</p>
+             <p>At this stage, Access to Work need to know whether DWP Digital is willing to share costs. You will confirm exact costs with DWP Digital later in the process.</p>
+             <p class="govuk-body">Sometimes a third party such as a provider will, contribute some or all of the cost.</p>
 
-               <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Read cost share guidance (opens in a new tab)</a>.
-               </div>
+            <p class="govuk-body">   <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Check cost share guidance (opens in a new tab)</a>.</p>
 
 
 
-               <div class="govuk-radios">
-                 <div class="govuk-radios__item">
+               <div class="govuk-form-group">
+                           <fieldset class="govuk-fieldset">
+                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+{% include  "./content/agree-to-cost-share.html" %}
+ </legend>
+ <div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
                    <input class="govuk-radios__input" id="employer-cost-share" name="employer-cost-share" type="radio" value="Yes~/current/cases/job-details/check.html" {{ checked("employer-cost-share", "Yes") }}>
                    <label class="govuk-label govuk-radios__label" for="employer-cost-share">
                      Yes
                    </label>
                  </div>
-<!--
-                 <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="employer-cost-share-2" name="employer-cost-share" type="radio" value="  Yes and a third party agreed to a cost share~/current/cases/job-details/check.html" {{ checked("employer-cost-share", "No but a third party agreed to the cost share") }}>
-                   <label class="govuk-label govuk-radios__label" for="employer-cost-share-2">
-                      Yes and a third party agreed to a cost share
-                   </label>
-                 </div> -->
+
 
                  <div class="govuk-radios__item">
                    <input class="govuk-radios__input" id="employer-cost-share-3" name="employer-cost-share" type="radio" value="No~/current/cases/job-details/third-party" {{ checked("employer-cost-share", "No") }}>
@@ -63,29 +56,29 @@
 
 
                                   <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="employer-cost-share-4" name="employer-cost-share" type="radio" value="No, I have not spoken to the employer yet~/current/cases/job-details/check" {{ checked("employer-cost-share", "No") }}>
+                                    <input class="govuk-radios__input" id="employer-cost-share-4" name="employer-cost-share" type="radio" value="I have not discussed a cost share with the employer~/current/cases/job-details/check" {{ checked("employer-cost-share", "I have not discussed a cost share with the employer") }}>
                                     <label class="govuk-label govuk-radios__label" for="employer-cost-share-4">
-                                    I have not discussed a cost share with the employer
-                                    </label>
-                                  </div>
+                                    I have not discussed a cost share with DWP Digital
+                                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="employer-cost-share-5" name="employer-cost-share" type="radio" value="I’m waiting for an answer from the employer~/current/cases/job-details/check" {{ checked("employer-cost-share", "I’m waiting for an answer from the employer") }}>
+                  <label class="govuk-label govuk-radios__label" for="employer-cost-share-5">
+                  I’m waiting for an answer from DWP Digital
+                </label>
+</div>
+              </div>
 
-
-               </div>
-
-             </fieldset>
-           </div>
-
+            </fieldset>
+          </div>   </form>     </div>
            <button class="govuk-button" data-module="govuk-button">
              Save and continue
            </button>
-         </form>
+
+         </div>
        </div>
-     </div>
-
-
-        </main>
-        </div>
-
+     </main>
+   </div>
 
 
 {% endblock %}

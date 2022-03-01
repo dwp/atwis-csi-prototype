@@ -16,7 +16,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h2 class="govuk-heading-l">Task summary: check enefits and effect on eligibility</h2>
+        <h2 class="govuk-heading-l">Task summary: check benefits and effect on eligibility</h2>
 
 
 
@@ -35,7 +35,7 @@
               {% endfor %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="check">
+              <a class="govuk-link" href="/current/cases/searchlight/benefits/">
                 Update<span class="govuk-visually-hidden"> Benefits that could affect Dereck Smith’s eligibility</span>
               </a>
             </dd>
@@ -63,9 +63,9 @@ Can Dereck Smith still get Access to Work?
 
 
 
-{% if "None of the above" in data['benefits'] or data['exceptions']=='Yes'%}{% else %}
+{% if "None of the above" in data['benefits'] or data['exceptions']=='Yes' or data['exceptions']=='No'%}{% else %}
         <div class="govuk-inset-text">
-        <p> You need to contact Dereck Smith to check whether their benefits mean they are not eligible for Access to Work. This will be added to your 'Contact Dereck Smith' task.  </p>
+        <p> You need to contact Dereck Smith to check whether their benefits mean they are not eligible for Access to Work. This will be added to your <strong>log contact with Dereck Smith</strong>.  </p>
 
         </div>
 {% endif %}

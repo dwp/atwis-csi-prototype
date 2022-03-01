@@ -5,9 +5,45 @@
         <h2 class="govuk-heading-l">Your tasks</h2>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p>
 
 
-      <p class="govuk-body govuk-!-margin-bottom-7">You have 10 sections to complete.</p>
+{% if data['Searchligh']=='No'%}
+<p >
+<a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+</a>
+</p>
+
+<!-- <div class="govuk-inset-text">
+<p>  You need to contact Dereck Smith.  </p>
+
+</div> -->
+
+<br>
+{% else %}
+
+
+      {% if data ['personal-details-cya'] and
+                 data ['appointee']
+                  and
+                data ['benefits']
+                 %}
+                <p >
+          <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+            Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+          </a>
+                </p><br>
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+        {% endif %}
+        {% endif %}
+
+
+
 
       <ol class="app-task-list">
         <li>
@@ -41,7 +77,7 @@
 <!-- appointee task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="  {% if data['appointee']=='Yes'%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
+              <a href="  {% if data['appointee']=='Yes, I need to add an appointee'%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
                   Check for appointee
                  </a>
               </span>
@@ -63,7 +99,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="{% if data['exceptions'] and not 'None of the above' in data['benefits']%}./searchlight/benefits/check{% else %}
-                ./searchlight/benefits{% endif %}" aria-describedby="benefits-status">
+                ./searchlight/benefits/{% endif %}" aria-describedby="benefits-status">
                 Check benefits
                 </a>
               </span>
@@ -98,21 +134,6 @@
                        %}
                {% include  "../claim/_task-list-open.html" %}
           {% else %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-          {% if data ['Searchligh']=='No' or data ['found-nino']=='No' %}
-          <a href="/current/cases/contact/how-do-you-want-to-contact">{% endif %}
-              Contact {% if data['appointee']=='Yes'%} {{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details</a>
-
-              </span>
-
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data ['Searchligh']=='No' or data ['Searchligh']=='Yes and application details match' %}Not started{% else %} Cannot start yet{% endif %}</strong>
-            </li>
-
-
-
-
-
 
 
 
@@ -145,7 +166,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-                  Job details
+                  Employment
 
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
@@ -179,14 +200,7 @@
                   Elements
 
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-
-                    Contact {% if data['appointee']=='Yes'%} {{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about the business case
-
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
 
 {% endif %}
 

@@ -1,29 +1,12 @@
 
 
 
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-  <a href="
-  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' %}
-  /current/cases/contact/how-do-you-want-to-contact{% else %}
-  /current/cases/contact/do-not-need-to-contact{% endif %}
-  " aria-describedby="contact-status">
-
-              Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about Searchlight details
-</a>
-              </span>
-
-              {% if data['asked-info-phone']=='yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-              {% if data['asked-info-phone']=='no'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-
-          {% if data['contact']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-
-              {% if not data['asked-info-phone'] and not data['contact']%}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-            </li>
 
 
-  {% if data['_do']%}
+
+
+
+  {% if data['_do_1']%}
             {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}
 
             <li class="app-task-list__item">
@@ -50,6 +33,12 @@
       </li>
 
 
+      <!-- <p >
+      <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+      Add contact
+      </a>
+      </p> -->
+<!-- <br> -->
 
 
         <li>
@@ -60,20 +49,42 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="/current/cases/job-details" aria-describedby="job-status">
-                  Job details
+  <a href="{% if data ['employment-contact']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer{% endif %}" aria-describedby="job-status">
+                  Employment
 </a>
               </span>
-              {% if data['job-deatils-contact']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+                {% if  data['job-deatils-contact']=='They gave permission'%}
+
+                <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+
+
+              {% if data['job-deatils-contact']=='I have not spoken to them'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}
             {% if not data['job-deatils-contact']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 
 
-
-{% if data['job-deatils-contact']=='No, I have not spoken to them' or data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
+{% if data ['contact-employer']%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-          <a href="claim#your-tasks" aria-describedby="cost-share-agreement">
+  <a href="  {% if data['job-details-checked']=='true'%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
+                  Job details
+</a>
+              </span>
+              {% if data['employer-cost-share']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+              {% if data['employer-cost-share']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+              {% if data['employer-cost-share']=='I have not discussed a cost share with the employer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+              {% if data['employer-cost-share']=='I’m waiting for an answer from the employer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+
+            {% if not data['employer-confirmed']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+            </li>
+{% endif %}
+
+
+{% if data['employer-cost-share']=='I have not discussed a cost share with the employer'%}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+          <a href="/current/cases/job-details/contact-cost-share-agreement" aria-describedby="cost-share-agreement">
                   Cost share agreement
           </a>
               </span>
@@ -109,10 +120,3 @@
 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-            <a href="claim#your-tasks" aria-describedby="job-status">
-                    Contact {% if data['appointee']=='Yes'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} about the business cases details
-            </a>
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
