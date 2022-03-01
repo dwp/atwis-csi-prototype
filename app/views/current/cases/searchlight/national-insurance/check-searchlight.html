@@ -21,7 +21,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l">
-                    Find record in Searchlight
+                    Use Searchlight to check if these details match
                   </h2>
 
                   <p class="govuk-body">
@@ -76,7 +76,7 @@
                               <fieldset class="govuk-fieldset">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-  Is there a record for Dereck Smith in Searchlight?
+  {% include  "current/cases/searchlight/national-insurance/content/are-these-details-in-searchlight.html" %}
 
 
                                 </legend>
@@ -95,14 +95,14 @@
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="Yes, but name, date of birth or address do not match~./find-national-insurance-number" {{ checked("Searchligh", "Yes, but name, date of birth or address do not match") }}>
-                   <label class="govuk-label govuk-radios__label" for="Searchligh-3">
+                   <input class="govuk-radios__input" id="Searchligh-2" name="Searchligh" type="radio" value="Yes, but name, date of birth or address do not match~./find-national-insurance-number" {{ checked("Searchligh", "Yes, but name, date of birth or address do not match") }}>
+                   <label class="govuk-label govuk-radios__label" for="Searchligh-2">
                        Yes, but name, date of birth or address do not match
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="Searchligh-2" name="Searchligh" type="radio" value="No~./check" {{ checked("Searchligh", "No") }}>
-                   <label class="govuk-label govuk-radios__label" for="Searchligh-2">
+                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="No~./check" {{ checked("Searchligh", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="Searchligh-3">
                      No
                    </label>
                  </div>
