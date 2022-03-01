@@ -50,7 +50,7 @@
                  </div> -->
 
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="third-party-3" name="third-party" type="radio" value="No~/current/cases/job-details/unhappy-cost-share" {{ checked("third-party", "No") }}>
+                   <input class="govuk-radios__input" id="third-party-3" name="third-party" type="radio" value="No~/current/cases/job-details/{% if (data['employer-size']=='10 to 49 (small)') or (data['employer-size']=='1 to 9 (micro)') %}check{% else %}unhappy-cost-share{% endif %}" {{ checked("third-party", "No") }}>
                    <label class="govuk-label govuk-radios__label" for="third-party-3">
                      No
                    </label>

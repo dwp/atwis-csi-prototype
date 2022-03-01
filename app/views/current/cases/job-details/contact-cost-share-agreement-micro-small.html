@@ -24,10 +24,10 @@
 <!-- review the 'in principle' content-->
 
 
-             <p class="govuk-body"> The company or organisation is classed as a {% if data['employer-size']=='50 to 249 (medium)'%}medium{% endif %}{% if data['employer-size']=='250 or more (large)'%}large{% endif %}-sized employer. This means a cost share applies.</p>
+             <p class="govuk-body"> The company or organisation is classed as a {% if data['employer-size']=='10 to 49 (small)'%}small{% endif %}{% if data['employer-size']=='1 to 9 (micro)'%}small{% endif %}-sized employer. They can agree to a voluntary cost share, but a mandatory cost share does not apply.</p>
              <p class="govuk-body">Sometimes a third party such as a provider will, contribute some or all of the cost.</p>
 
-            <p class="govuk-body">   <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Read cost share guidance (opens in a new tab)</a>.</p>
+            <p class="govuk-body">   <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Check cost share guidance (opens in a new tab)</a>.</p>
 
 
 
@@ -60,6 +60,7 @@
                                     I have not discussed a cost share with DWP Digital
                                   </label>
                 </div>
+
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="employer-cost-share-5" name="employer-cost-share" type="radio" value="I’m waiting for an answer from the employer~/current/cases/job-details/check" {{ checked("employer-cost-share", "No") }}>
                   <label class="govuk-label govuk-radios__label" for="employer-cost-share-5">
