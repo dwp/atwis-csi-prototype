@@ -18,7 +18,7 @@
     <table class="govuk-table">
       <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header">Namess</th>
+            <th class="govuk-table__header">Name</th>
 
             <th class="govuk-table__header">Date submitted</th>
             <th class="govuk-table__header">Interview date</th>
@@ -221,16 +221,16 @@
             </tr>
           </thead>
           <tbody>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sonya Corkery</th>
+                        <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
+                        <td class="govuk-table__cell">New application</td>
+                        <td class="govuk-table__cell">2 February 2022 11:57</td>
+                        <td class="govuk-table__cell"><a href="#">Go to case</a></td>
+                      </tr>
             {% for case in cases %}
 
 
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">{{ case.name }}</th>
-                <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
-                <td class="govuk-table__cell">{{ case.type }}</td>
-                <td class="govuk-table__cell">{{ case.date }}</td>
-                <td class="govuk-table__cell"><a href="#">Go to case</a></td>
-              </tr>
             {% endfor %}
 
 
@@ -280,18 +280,19 @@
 
     {{ govukTabs({
       items: [
-      {
-        label: "Your priority cases (1)",
-        id: "priority",
-        panel: {
-          html: priority
-        }
-      },
+
         {
-          label: "Your other cases (0)",
+          label: "Your other cases (1)",
           id: "other",
           panel: {
             html: other
+          }
+        },
+        {
+          label: "Your priority cases (1)",
+          id: "priority",
+          panel: {
+            html: priority
           }
         },
         {
