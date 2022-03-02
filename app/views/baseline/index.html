@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+
+      <span class="govuk-caption-xl"></span>
+
+</h1>
+
+<p>Jump to page:</p>
+  <ul class="govuk-list">
+    <p class="govuk-body-l">Case manager view</p>
+    <li>
+      <a class="govuk-link" href="your-cases.html">Your cases - User type: Case manager</a>
+    </li>
+    <br>
+
+    <li>
+      <a class="govuk-link" href="your-cases-allocator.html">Your cases - User type: Leads/Allocator </a>
+    </li>
+    <br>
+
+
+    <p class="govuk-body-l"> Screens</p>
+    <p>If you do not select as user type view from the above two links, the following page will default to the last type you had or Case manager. <p>
+
+    <li>
+      <a class="govuk-link" href="search.html">Search</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="all-advisers.html">All advisers (Lead/allocator view only)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim.html">Claim (Summary tab)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim#your-tasks.html">Claim (Your tasks tab)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim#citizen-details.html">Claim (Application details tab)</a>
+    </li>
+
+    <br>
+    <p>Eligible<p>
+
+    <li>
+      <a class="govuk-link" href="cases/claim-not-eligible.html">Claim not eligible (automated)</a>
+    </li>
+
+<br>
+    <p class="govuk-body-l"> Task list </p>
+
+    <p class="govuk-body-l"> 1. Searchlight </p>
+
+    <p>  Add National Insurance number from Searchligh</p>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/check-searchlight.html">Is Dereck Smith in Searchlight?</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/find-national-insurance-number.html">Have you found Dereck Smith’s National Insurance number in Searchlight?</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/add-national-insurance-number.html">Add Dereck Smith’s National Insurance number from Searchlight?</a>
+    </li>
+
+    <br>
+    <p>  Check for appointee </p>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/appointee.html">Does Dereck Smith have an appointee?</a>
+    </li>
+    <li>
+      If user answers 'Yes, add an appointee' <a class="govuk-link" href="cases/searchlight/appointee-details.html">Add appointee details for Dereck Smith</a>
+    </li>
+
+
+        <br>
+        <p>    Check benefits </p>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/check.html">Does Searchlight show benefits that could affect Dereck Smith’s eligibility?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/exceptions.html">Can Dereck Smith still get Access to Work?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/answers.html">Check Derek Smith’s benefits</a>
+        </li>
+        <br>
+    
+
+
+  </ul>
+</div>
+
+{% endblock %}

@@ -22,13 +22,74 @@
       <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
 
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+            Dev Baseline
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+                  {{ govukTable({
+                    caption: "",
+                    captionClasses: "govuk-heading-m",
+                    firstCellIsHeader: true,
+                    head: [
+                      {
+                        text: "Version"
+                      },
+                      {
+                        text: "Date added"
+                      },
+                      {
+                        text: ""
+                      },
+                      {
+                        text: "Link"
+                      }
+                    ],
+                    rows: [
+                    [
+                    {
+                      text: " 0.1"
+                    },
+                    {
+                      text: "1 March 2022"
+                    },
+                    {
+                      html: '
+
+                         <p><strong>Dev baseline: </strong></p>
+                       <ul class="govuk-list govuk-list--bullet">
+
+                           <li>Application summary</li>
+                          <li>Searchlight checks in task list</li>
+                        </ul>
+
+                        <p><strong>Error messages: </strong></p>
+                    <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132711318839/ATWIS+Error+messages">https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132711318839/ATWIS+Error+messages</>
+
+
+                     '
+                    },
+
+                    {
+                      html: '<a href="/baseline/index">Go to baseline </a>'
+                    }
+      ]
+    ]
+  }) }}
+          </div>
+          </div>
 
 
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          9 Sep 21 to present
+          Usability prototype
         </span>
       </h2>
     </div>
@@ -59,7 +120,7 @@
           text: " 0.4"
         },
         {
-          text: "9 September 2021"
+          text: ""
         },
         {
           text: "Play area for testing ideas before sprint"
@@ -73,7 +134,7 @@
           text: "0.1"
         },
         {
-          text: "5 January 2022"
+          text: "00 Month 2022"
         },
 
         {
@@ -368,7 +429,7 @@
           text: " 0.2"
         },
         {
-          text: "9 September 2021"
+          text: "9 September 2021 0"
         },
         {
           text: "V3 design added"
