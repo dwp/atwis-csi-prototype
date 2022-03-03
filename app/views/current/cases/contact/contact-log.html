@@ -81,7 +81,7 @@
      {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
 {{ data['contact-date-year-'+ contactindex] }}
 
-{{data['contact-time-'+ contactindex]}}
+{{data['contact-time-'+ contactindex ] | lower}}
       </dt>
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">

@@ -49,7 +49,7 @@ Email sent on  {{ data['contact-date-day-'+ number] }}
 
     </label>
     </h2>
-<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %}</p>
+<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}Dereck Smith{% endif %}</p>
 <p>
 {{data['job-detail-discussion-'+ number]}}
 </p>

@@ -44,14 +44,14 @@ Telephone call made on    {{ data['contact-date-day-'+ number] }}
 {% if data['contact-date-month-'+ number] =='10' %} October {% endif%}
 {% if data['contact-date-month-'+ number] =='11'%} November {% endif%}
 {% if data['contact-date-month-'+ number] =='12' %} December {% endif%}
-{{ data['contact-date-year-'+ number] }} at {{data['contact-time-'+ number]}}
+{{ data['contact-date-year-'+ number] }} at {{data['contact-time-'+ number]| lower}}
 
 
     </label>
     </h2>
 
 
-<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %}</p>
+<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}Dereck Smith{% endif %}</p>
 
 {% if data['asked-info-phone-'+number]=='yes'%}
 <p>Dereck Smith answered the phone.</p>{% endif %}
