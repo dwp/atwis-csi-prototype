@@ -1,5 +1,7 @@
 {% extends folder + "/claim/_BASE.html" %}
+
 {% block content %}
+
 
 
 {% set appointeeDetails = {
@@ -25,16 +27,11 @@
 
 {% endif  %}
 
-{% if not hideback %}
-{{ govukBackLink({
-text: "Back",
-href: "javascript:history.go(-1)"
-}) }}
-{% endif %}
+
 
 <div class="govuk-width-container">
 
-  <main class="govuk-main-wrapper govuk-!-padding-top-0">
+
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
@@ -52,7 +49,7 @@ href: "javascript:history.go(-1)"
 
       <div class="govuk-grid-column-one-third">
 
-  
+
 
 
 {% if not contactCentre %} <!-- never shown for contact centre -->
