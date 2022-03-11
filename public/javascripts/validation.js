@@ -278,7 +278,7 @@ function dataValidation (reqFields) {
       var trimNino = validationValue.replace(/\s/g,'').toUpperCase();
       if (!isNino(trimNino)) {
         invalidFields.push($formGroup)
-        validationInput.attr('data-validation-error','Enter a National Insurance number in the correct format')
+        validationInput.attr('data-validation-error','Enter a National Insurance number that is 2 letters, 6 numbers, then A, B, C or D, like QQ123456C')
       } else {
         validationInput.val(trimNino);
       }

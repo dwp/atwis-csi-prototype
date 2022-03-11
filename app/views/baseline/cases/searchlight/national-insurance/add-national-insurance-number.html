@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <!-- <a href="#" class="govuk-back-link">Back</a> -->
 
-    <main class="govuk-main-wrapper">
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -30,14 +30,14 @@
                 </div> -->
 
 
-<div class="govuk-form-group">
+<div class="govuk-form-group" data-module="radios" data-required="Enter a National Insurance number">
   <label class="govuk-label" for="national-insurance-number">
     National Insurance number
   </label>
   <div id="national-insurance-number-hint" class="govuk-hint">
 
   </div>
-  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value="{{data['national-insurance-number']| upper }}">
+  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value="{{data['national-insurance-number']| upper }}" data-validation="nino">
 </div>
 </fieldset>
 </div>
