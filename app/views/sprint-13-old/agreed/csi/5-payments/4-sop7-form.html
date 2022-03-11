@@ -1,0 +1,45 @@
+{% set link = "4-sop7-waiting" %}
+{% set payments = true %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index-payment"}] %}
+{% set title =  "Request change on SOP" %}
+
+
+{% block csi %}
+
+<p>Complete and send a <strong>SOP7</strong> form.</p>
+<br>
+
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+         idPrefix: "completed-sop",
+         name: "completed-sop",
+         fieldset: {
+           legend: {
+             text: "Have you sent the form?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+         html: ""
+    },
+         items: [
+         {
+           id: "yes",
+           value: "yes",
+           checked: checked('completed-sop', "yes"),
+           text: "Yes"
+         },
+           {
+             id: "no",
+             value: "no",
+             text: "No",
+             checked: checked('completed-sop', "no")
+           }
+         ]
+       }) }}
+
+
+{% endblock %}

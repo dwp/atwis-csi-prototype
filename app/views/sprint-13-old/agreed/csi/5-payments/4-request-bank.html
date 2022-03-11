@@ -1,0 +1,58 @@
+{% set link = "4-requested-bank" %}
+{% set payments = true %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index-payment"}] %}
+{% set title =  "Request bank details" %}
+
+
+{% block csi %}
+
+<p>Return all the evidence to the applicant{% if appointee %}’s appointee{% endif %} and request valid bank details.
+  Ask them <br>to return all the evidence by post.</p>
+
+<p>Send a cover note with the evidence to:
+
+
+  <div class="govuk-inset-text">
+{% if appointee %}
+{{data['appointee-name'] | default(appointeeDetails.name) | safe }}<br>
+{{appointeeDetails.address | safe }}
+{% else %}
+
+  Thomas Brown<br>
+  14 Kings Road<br>
+  Birmingham<br>
+  B1 1EQ
+{% endif  %}
+
+</div>
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       name: "request-evidence",
+       fieldset: {
+         legend: {
+           text: "Have you sent the evidence back?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+
+{% endblock %}

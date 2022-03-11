@@ -1,0 +1,19 @@
+{% set phase = "payment-interview-unallocated" %}
+{% extends "./index-payment.html" %}
+
+{% block csiStatus %}
+<br>
+<p>Allocate the case to complete the tasks.</p>
+
+
+<form action="index-payment" method="post">
+  <!-- HIDDEN FOR TRIGGER  -->
+  <input type="hidden" name="payment-allocated" value="yes">
+
+  {{ govukButton({
+            text: "Allocate to me"
+          }) }}
+
+</form>
+
+{% endblock %}
