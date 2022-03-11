@@ -16,7 +16,6 @@
   <div class="govuk-width-container">
 
 
-    <main class="govuk-main-wrapper">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -30,21 +29,21 @@
 
 
 {% if 'email' in data['appointee-contact']%}
-   <div class="govuk-form-group">
+   <div class="govuk-form-group" data-module="radios" data-required="Enter an email address ">
      <label class="govuk-label" for="appointee-email">
        Appointee’s email address
      </label>
 
-   <input class="govuk-input govuk-input--width-20" id="appointee-email" name="appointee-email" type="text" value="{{data['appointee-email']}}">
+   <input class="govuk-input govuk-input--width-20" id="appointee-email" name="appointee-email" type="text" value="{{data['appointee-email']}}" data-validation="email">
    </div>
 {% endif %}
 {% if 'telephone' in data['appointee-contact']%}
-   <div class="govuk-form-group">
+   <div class="govuk-form-group" data-module="radios" data-required="Enter a UK telephone number ">
      <label class="govuk-label" for="appointee-telephone">
        Appointee’s telephone
      </label>
 
-   <input class="govuk-input govuk-input--width-20" id="appointee-telephone" name="appointee-telephone" type="numbers" value="{{data['appointee-telephone']}}">
+   <input class="govuk-input govuk-input--width-20" id="appointee-telephone" name="appointee-telephone" type="numbers" value="{{data['appointee-telephone']}}" data-validation="telephone_number">
    </div>
 {% endif %}
 

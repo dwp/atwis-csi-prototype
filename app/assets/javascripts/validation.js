@@ -167,7 +167,17 @@ function dataValidation (reqFields) {
     }
 
 
-
+    if (validationType == "full-name" && validationValue != '') {
+      if (!isValidCharacters(validationValue)) {
+        invalidFields.push($formGroup)
+        validationInput.attr('data-validation-error',"Their full name must only include letters a to z, hyphens, spaces and apostrophes")
+      } else {
+        if (isCharLimitReached(validationValue,35)) {
+            invalidFields.push($formGroup)
+            validationInput.attr('data-validation-error','Your last name must be 35 characters or less')
+        }
+      }
+    }
 
 
     // description
@@ -332,7 +342,7 @@ function dataValidation (reqFields) {
     if (validationType == "telephone_number" && validationValue != '') {
       if (!isValidTelephoneNumber(validationValue)) {
         invalidFields.push($formGroup)
-        validationInput.attr('data-validation-error','Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 0808 157 0192')
+        validationInput.attr('data-validation-error','Enter a real UK telephone number')
       }
     }
 
@@ -410,7 +420,7 @@ function dataValidation (reqFields) {
       var postCodeValue = trimPostCode.replace(regex, subst).toUpperCase();
       if (!isPostCode(postCodeValue)) {
         invalidFields.push($formGroup)
-        validationInput.attr('data-validation-error',"Enter a real postcode")
+        validationInput.attr('data-validation-error',"Enter a real UK postcode")
       } else  {
         validationInput.val(postCodeValue);
       }
@@ -422,7 +432,7 @@ function dataValidation (reqFields) {
     if (validationType == "email" && validationValue != '') {
       if (!isValidEmail(validationValue)) {
         invalidFields.push($formGroup)
-        validationInput.attr('data-validation-error',"Enter a valid email address with no spaces, like name@example.com")
+        validationInput.attr('data-validation-error',"Enter an email address in the correct format, like name@example.com")
       }
     }
   }
