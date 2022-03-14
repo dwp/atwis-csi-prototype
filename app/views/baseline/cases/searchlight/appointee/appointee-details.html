@@ -16,7 +16,7 @@
   <div class="govuk-width-container">
 
 
-
+    <main class="govuk-main-wrapper">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -25,17 +25,18 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
-                   <h2 class="govuk-heading-xl">Add appointee details</h2>
+                   <h2 class="govuk-heading-xl">{% include  "./content/add-appointee-details.html" %}
+                     </h2>
 
 
 
 
-   <div class="govuk-form-group" data-module="radios" data-required="Enter the appointee's full name">
+   <div class="govuk-form-group">
      <label class="govuk-label" for="appointee-name">
       {% include  "./content/appointee-full-name.html" %}
      </label>
 
-   <input class="govuk-input govuk-input--width-20" id="appointee-name" name="appointee-name" type="text" value="{{data['appointee-name']}}" data-validation="full-name">
+   <input class="govuk-input govuk-input--width-20" id="appointee-name" name="appointee-name" type="text" value="{{data['appointee-name']}}">
    </div>
 
    </div>
@@ -46,14 +47,14 @@
 
      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
        <h2 class="govuk-fieldset__heading">
-         Appointee’s address
+        {% include  "./content/appointee-address.html" %}
        </h2>
      </legend>
 
 
 
 
-     <div class="govuk-form-group" data-module="radios" data-required="Enter a building and street">
+     <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-line-1">
          Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
        </label>
@@ -65,33 +66,33 @@
        </label>
        <input class="govuk-input" id="appointee-address-line-2" name="appointee-address-line-2" type="text" autocomplete="appointee-address-line2" value="{{data['appointee-address-line-2']}}"></div>
 
-     <div class="govuk-form-group" data-module="radios" data-required="Enter a town and city">
+     <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-town">
          Town or city
        </label>
        <input class="govuk-input govuk-!-width-two-thirds" id="appointee-address-town" name="appointee-address-town" type="text" autocomplete="appointee-address-level2" value="{{data['appointee-address-town']}}"></div>
 
-     <div class="govuk-form-group"  data-module="radios" data-required="Enter a county">
+     <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-county">
          County
        </label>
        <input class="govuk-input govuk-!-width-two-thirds" id="appointee-address-county" name="appointee-address-county" type="text" value="{{data['appointee-address-county']}}"></div>
 
-     <div class="govuk-form-group" data-module="radios" data-required="Enter a postcode">
+     <div class="govuk-form-group">
        <label class="govuk-label" for="appointee-address-postcode">
          Postcode
        </label>
-       <input class="govuk-input govuk-input--width-10" id="appointee-address-postcode" name="appointee-address-postcode" type="text" autocomplete="postal-code" value="{{data['appointee-address-postcode']}}" data-validation="postcode"></div>
+       <input class="govuk-input govuk-input--width-10" id="appointee-address-postcode" name="appointee-address-postcode" type="text" autocomplete="postal-code" value="{{data['appointee-address-postcode']}}"></div>
 
    </fieldset>
 
 
 
-   <div class="govuk-form-group" data-module="radios" data-required="Select if you’ll add email, telephone or both">
+   <div class="govuk-form-group">
      <fieldset class="govuk-fieldset" aria-describedby="appointee-contact-hint">
        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
          <h2 class="govuk-fieldset__heading">
-           Appointee’s contact details
+            {% include  "./content/appointee-contact.html" %} 
          </h2>
        </legend>
        <div id="appointee-contact-hint" class="govuk-hint">
