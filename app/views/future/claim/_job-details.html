@@ -146,7 +146,7 @@ Improving Quality Assurance Practices
 
 
 
-    <div class="govuk-summary-list__row">
+    <!-- <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         How many people work at your company or organisation?
       </dt>
@@ -159,8 +159,8 @@ Improving Quality Assurance Practices
           <span class="govuk-visually-hidden"> how many people work at your company or organisation</span>
         </a>{% endif %}
       </dd>
-    </div>
-    <div class="govuk-summary-list__row">
+    </div> -->
+    <!-- <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Are you a company director?
       </dt>
@@ -173,20 +173,36 @@ Improving Quality Assurance Practices
           <span class="govuk-visually-hidden"> Director</span>
         </a>{% endif %}
       </dd>
-    </div>
+    </div> -->
 
   </dl>
 
 <h2 class="govuk-heading-m">Workplace contact</h2>
+{% if  data['job-deatils-contact']=='They gave permission'%}{% else %}
 <div class="govuk-warning-text">
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 <strong class="govuk-warning-text__text">
 <span class="govuk-warning-text__assistive">Warning</span>
-Do not contact
+Do not contact without permission
 </strong>
 </div>
-
+{% endif %}
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Permission to speak to workplace contact
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Permission not given in online application to contact the workplace contact before peaking to the citizen 
+{% if data['job-deatils-contact']=='They gave permission'%}<br><br>Dereck Smith gave permission durring contact with John Goldsmith{% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+  {% if  changeHide %}    <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> contact</span>
+      </a>{% endif %}
+    </dd>
+  </div>
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     Their name
@@ -244,21 +260,8 @@ Do not contact
   </dd>
 </div>
 
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Permission to speak to workplace contact
-  </dt>
-  <dd class="govuk-summary-list__value">
-    No
 
-  </dd>
-  <dd class="govuk-summary-list__actions">
-{% if  changeHide %}    <a href="#">
-      Change
-      <span class="govuk-visually-hidden"> contact</span>
-    </a>{% endif %}
-  </dd>
-</div>
+
 
 
 

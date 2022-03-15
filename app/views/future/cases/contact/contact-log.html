@@ -44,20 +44,19 @@
           </fieldset>
 
 
+          {% if data['clear']=='No' %}{% else %}
+            {% include  "future/claim/notification-contact.html" %}{% endif %}
 
 
-
-
-
-
-
+            <!-- <p>Best times to contact Dereck Smith:</p>
+                <p>Between 8:30 am and 6pm Monday to Saturday. </p> -->
 
 <div class="govuk-form-group">
   <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
 
 
 
-{% for i in [1,2,3] -%}
+{% for i in [1,2,3,4,5] -%}
 {% set contactindex = i  %}
 {% if data['_do_'+ contactindex] %}
 
@@ -66,11 +65,27 @@
       {{data['_do_'+ contactindex]}}
       </dt>
       <dt class="hmrc-list-with-actions__name">
-       14 Febuary 22 13:00pm
+
+         {{ data['contact-date-day-'+ contactindex] }}
+     {% if (data['contact-date-month-'+ contactindex] =='01') or (data['contact-date-month-'+ contactindex] =='1') %} January {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='02') or (data['contact-date-month-'+ contactindex] =='2') %} February  {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='03') or (data['contact-date-month-'+ contactindex] =='3') %} March {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='04') or (data['contact-date-month-'+ contactindex] =='4') %} April {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='05') or (data['contact-date-month-'+ contactindex] =='5') %} May {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='06') or (data['contact-date-month-'+ contactindex] =='6') %} June {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='07') or (data['contact-date-month-'+ contactindex] =='7') %} July {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='08') or (data['contact-date-month-'+ contactindex] =='8') %} August {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='09') or (data['contact-date-month-'+ contactindex] =='9') %} September {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='10' %} October {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='11'%} November {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
+{{ data['contact-date-year-'+ contactindex] }}
+
+{{data['contact-time-'+ contactindex ] | lower}}
       </dt>
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">
-          <a class="govuk-link" href="/future/cases/contact/{{contactindex}}/phone-log">
+          <a class="govuk-link" href="{% if data['_do_'+ contactindex]=='Email'%}/future/cases/contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone'%}/future/cases/contact/{{contactindex}}/phone-log{% endif %}">
             <span aria-hidden="true">View </span>
             <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
           </a>
@@ -97,7 +112,7 @@
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="
-          Yes~/{% if data['exceptions']=='I need to contact Dereck Smith about their benefits' or data['Searchligh']=='Yes, but name, date of birth or address do not match' or data ['job-deatils-contact']=='No, I have not spoken to them' %}future/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact{% else %}future/cases/contact/{{totalcontact + 1}}/do-not-need-to-contact{% endif %}">
+          Yes~/future/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact">
           <label class="govuk-label govuk-radios__label" for="add-another">
             Yes
           </label>

@@ -18,7 +18,7 @@
     <table class="govuk-table">
       <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th class="govuk-table__header">Namess</th>
+            <th class="govuk-table__header">Name</th>
 
             <th class="govuk-table__header">Date submitted</th>
             <th class="govuk-table__header">Interview date</th>
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-<form action="/future/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
+<form action="/baseline/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
 
 
       <div class="govuk-grid-column-one-third" >
@@ -83,10 +83,36 @@
 {% include "./claim/_notification-csi-type-case.html" %}
 
 {% if (phase == "empty" or phase == "allocator")  %}
+<br></br></br></br></br></br>
 <p>There are currently no CSI Cases.</P>
 
 {% else %}
-{{statusTable(phase="")}}
+
+<table class="govuk-table">
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+
+            <th class="govuk-table__header">Date submitted</th>
+            <th class="govuk-table__header">Interview date</th>
+            <th class="govuk-table__header">Status</th>
+            <th class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Thomas Brown</th>
+
+              <td class="govuk-table__cell">2 November 2021 13:23</td>
+              <td class="govuk-table__cell">9 March 2021</td>
+              <td class="govuk-table__cell">New
+              </td><td class="govuk-table__cell"><a href="/sprint-13/agreed/csi/index">Go to case</a></td>
+            </tr>
+      </tbody>
+    </table>
+
 
 {% endif %}
 
@@ -104,7 +130,7 @@
   </div>
 
   </div>
-<form action="/future/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
+<form action="/baseline/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
   <div class="govuk-grid-column-one-third">
 
     <div class="govuk-form-group" style="float: right">
@@ -155,39 +181,12 @@
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
               <td class="govuk-table__cell">New application</td>
               <td class="govuk-table__cell">Clinically extremely vulnerable </td>
-              <td class="govuk-table__cell">3  November 2021  11:57</td>
+              <td class="govuk-table__cell">2 February 2022  11:57</td>
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}">Go to case</a></td>
             </tr>
 
 
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Maximillia Erdman</th>
-              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
-              <td class="govuk-table__cell">New application</td>
-              <td class="govuk-table__cell">Young Person Guarantee Scotland</td>
-              <td class="govuk-table__cell">3  November 2021  10:22</td>
-              <td class="govuk-table__cell"><a href="">Go to case</a></td>
-            </tr>
 
-
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Sonya Corkery</th>
-              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
-              <td class="govuk-table__cell">New application</td>
-              <td class="govuk-table__cell">Clinically extremely vulnerable</td>
-              <td class="govuk-table__cell">2  November 2021  09:23</td>
-              <td class="govuk-table__cell"><a href="">Go to case</a></td>
-            </tr>
-
-
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Adaline Mann</th>
-              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
-              <td class="govuk-table__cell">New application</td>
-              <td class="govuk-table__cell">Clinically extremely vulnerable </td>
-              <td class="govuk-table__cell">2  November 2021  16:23</td>
-              <td class="govuk-table__cell"><a href="">Go to case</a></td>
-            </tr>
 
       </tbody>
     </table>
@@ -204,7 +203,7 @@
           <h2 class="govuk-heading-m">Other cases </h2>
         </div>
         </div>
-<form action="/future/your-cases#other" method="post" novalidate for="submitButtonRequestother">
+<form action="/baseline/your-cases#other" method="post" novalidate for="submitButtonRequestother">
         <div class="govuk-grid-column-one-quaters">
 
           <div class="govuk-form-group" style="float: left">
@@ -233,6 +232,7 @@
 {% include "./claim/_notification-other-type-case.html" %}
 
       {% if phase == "allocator" %}
+      <br></br></br></br></br></br>
       <p>You have no cases.</P>
       {% else %}
       <table class="govuk-table">
@@ -246,16 +246,17 @@
             </tr>
           </thead>
           <tbody>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sonya Corkery</th>
+                        <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
+                        <td class="govuk-table__cell">New application</td>
+                        <td class="govuk-table__cell">2 February 2022 11:57</td>
+                        <td class="govuk-table__cell"><a href="#">Go to case</a></td>
+                          <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
+                      </tr>
             {% for case in cases %}
 
 
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">{{ case.name }}</th>
-                <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
-                <td class="govuk-table__cell">{{ case.type }}</td>
-                <td class="govuk-table__cell">{{ case.date }}</td>
-                <td class="govuk-table__cell"><a href="#">Go to case</a></td>
-              </tr>
             {% endfor %}
 
 
@@ -305,18 +306,19 @@
 
     {{ govukTabs({
       items: [
-      {
-        label: "Your priority cases (4)",
-        id: "priority",
-        panel: {
-          html: priority
-        }
-      },
+
         {
-          label: "Your other cases (4)",
+          label: "Your other cases (1)",
           id: "other",
           panel: {
             html: other
+          }
+        },
+        {
+          label: "Your priority cases (1)",
+          id: "priority",
+          panel: {
+            html: priority
           }
         },
         {

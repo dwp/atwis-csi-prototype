@@ -3,7 +3,10 @@
 {% set title = "Case details" %}
 
 {% extends folder + "/claim/_CSIBASE.html" %}
-
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
 {% block csi %}
 <br>
 
@@ -22,7 +25,7 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h2 class="govuk-heading-xl">Email the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %}</h2>
+              <h2 class="govuk-heading-xl">Email the {% if data['appointee']=='Yes, I need to add an appointee'%}appointee {% else %}applicant{% endif %}</h2>
 
           <form action="unhappy-email" method="post" novalidate="">
 
@@ -30,26 +33,19 @@
 
 
 
+            {% if data['clear']=='No' %}{% else %}
+              {% include  "future/claim/notification-contact.html" %}{% endif %}
+
+
+
+            <p>Send an email to
+              {% if data['appointee']=='Yes, I need to add an appointee'%} {{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+              about {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s{% else %}their{% endif %} application.</p>
 
 
 
 
-
-
-
-
-
-
-
-{% include  "future/claim/notification-contact.html" %}
-
-
-            <p>Send an email to {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} about {% if data['appointee']=='Yes'%}Dereck Smith’s{% else %}their{% endif %} application.</p>
-
-
-
-
-            <a href="mailto:quarryhouse.atwresearch@dwp.gov.uk" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <a href="mailto:  {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-email']}}{% else %}{% if data['email']%}{{data['email']}}{% else %}dereck@gmail.com{% endif %}{% endif %}" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Open new email
             </a>
 
@@ -105,7 +101,7 @@
 
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="yes" name="asked-info-email" type="radio" value="yes~/future/cases/contact/unhappy-email">
+                    <input class="govuk-radios__input" id="yes" name="asked-info-email" type="radio" value="yes~/future/cases/contact/{{number}}/happy-email">
                     <label class="govuk-label govuk-radios__label" for="yes">
                   Yes
                 </label>
@@ -115,7 +111,7 @@
 
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="no" name="asked-info-email" type="radio" value="no~/future/cases/contact/unhappy-email">
+                    <input class="govuk-radios__input" id="no" name="asked-info-email" type="radio" value="no~/future/cases/contact/{{number}}/unhappy-email">
                     <label class="govuk-label govuk-radios__label" for="no">
                   No
                 </label>

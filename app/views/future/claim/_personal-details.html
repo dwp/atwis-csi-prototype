@@ -79,7 +79,7 @@
          Telephone number
        </dt>
        <dd class="govuk-summary-list__value">
-         01234567890
+        07192 838 482
        </dd>
        <dd class="govuk-summary-list__actions">
          <a class="govuk-link" href="/future/details/telephone">
@@ -95,10 +95,10 @@
          Email address
        </dt>
        <dd class="govuk-summary-list__value">
-         dereck@gmail.com
+        {% if data['email']%}{{data['email']}}{% else %}dereck@gmail.com{% endif %}
        </dd>
        <dd class="govuk-summary-list__actions">
-         <a href="/alpha-1h/your-details/what-is-your-email">
+         <a href="/future/details/email">
            Change
            <span class="govuk-visually-hidden"> Email address</span>
          </a>
