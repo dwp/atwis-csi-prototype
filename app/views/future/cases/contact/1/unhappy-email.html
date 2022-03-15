@@ -10,7 +10,7 @@
 
 
 
-<form action="/future/cases/claim#your-tasks" method="post" novalidate>
+<form action="/future/cases/contact/contact-log" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -20,10 +20,9 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
+      
 
-              <h2 class="govuk-heading-xl">Email sent</h2>
+              <h2 class="govuk-heading-xl">Email not sent</h2>
 
           <form action="unhappy-email-2" method="post" novalidate="">
 
@@ -35,18 +34,19 @@
 <p>This has been saved in the case history.</p>
 
 
-<p>When you get a reply, you can update your answers in the <strong>your tasks</strong> tab.</p>
+<!-- <p>When you get a reply, you can update your answers in the <strong>add contact</strong>.</p> -->
 <!-- <uL class="govuk-list">
   <li>Check personal details</li>
   <li>Check benefits</li>
   </ul>
      <br> -->
-  <p>Then you can then complete the rest of the tasks.</p>
 
+     {% if data['clear']=='No' %}{% else %}
+       {% include  "future/claim/notification-contact.html" %}{% endif %}
 
 
           <button class="govuk-button" data-module="govuk-button" name="contact-email" value="completed">
-             Return to your tasks
+             Save and continue
           </button>
 
 
