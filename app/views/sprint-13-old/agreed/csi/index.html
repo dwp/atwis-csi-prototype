@@ -1,0 +1,221 @@
+{% set page = "task-list" %}
+{% set title = "Your tasks" %}
+{% extends "./_CSIBASE.html" %}
+
+{% if data['appointee'] == 'yes' %}{% set appointeeLink = "-appointee" %}{% else %}{% set appointeeLink = "" %}{% endif %}
+
+{% block csi %}
+
+{% macro taskListItem(title="'title'", link='#', completed='', cantStart='' ) %}
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+  {% if not (cantStart or completed) and not (phase == "allocator") %}  <a href="{{link}}" aria-describedby="eligibility-completed"> {% endif %}
+      {{title}}
+    {% if not (cantStart or completed) and not (phase == "allocator")   %}   </a> {% endif %}
+  </span>
+{% if completed %}
+<strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+
+{% else %}
+{% endif %}
+
+</li>
+
+
+{% endmacro %}
+
+{% if phase == "closed" or phase == "payment-closed" or phase == "payment-cancelled"  %}
+<br>
+<p>You currently have no tasks.</p>
+{% elif not (phase == "interview") %}
+{% if phase == "waiting" or (data['claim'] == "yes" and not (phase == "same-day") )%}
+<br><p>You currently have no tasks. The case will be available in <strong>Your priority cases</strong>
+  after the interview date.</p>
+
+{% endif %}
+{% endif %}
+
+
+
+{% if (phase == "interview") %}
+{% if not (data['confirm']) and ((data['employer'] == 'no') or (data['sent-email'] == "yes")) %}
+<!--
+<br>
+
+{{ govukWarningText({
+  html: "Information needed from the employer.",
+  iconFallbackText: "Warning"
+}) }}
+
+-->
+{% endif %}{% endif %}
+
+
+
+
+<!-- Task list processing inital claim before payment -->
+{% if not (phase == "payment-cancelled") and not (phase == "payment-closed") and not (phase == "interview" ) and not (phase == "waiting") and not (phase == "payment-adviser" ) and not (phase == "closed")  %}
+              <ol class="app-task-list">
+                      <li>
+                        <h2 class="app-task-list__section">
+                          Check and approve
+                        </h2>
+                        <ul class="app-task-list__items" style="padding-left: 0">
+<!-- in theory if a person goes into a case and adds appointee details they're done -->
+                          {{taskListItem(title="Find applicant on Searchlight", link="1-check/1", completed=(data['searchlight'] == "yes" or data['ni-number'] ), cantStart="")}}
+
+                          {{taskListItem(title="Add National Insurance number", link="1-check/1-ni-number", completed=(data['ni-number'] ), cantStart=(not (data['searchlight'] == "yes") ))}}
+
+
+                          {{taskListItem(title="Check for appointee", link="1-check/2", completed=(data['appointee'] ), cantStart=(not data['ni-number'] ) )}}
+
+
+{{taskListItem(title="Check application", link="1-check/3", completed=((data['interview'] == 'yes' and data['company'] == 'yes' and data['personal'] == 'yes' ) ), cantStart=(not data['appointee'] ) )}}
+
+
+
+</ul>
+</li>
+</ol>
+
+
+
+<ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Send confirmation
+          </h2>
+          <ul class="app-task-list__items" style="padding-left:0">
+
+{% if data['appointee-contact-phone'] and not data['appointee-email'] %}
+<!-- scenario where appointee has a telephone number but not an email -->
+
+{{taskListItem(title="Print and send the form", link="2-send/2" + appointeeLink, completed=(data['claim'] == "yes"),  cantStart=(not data['interview'] or (data['interview'] == 'no' or data['personal'] == 'no' or data['company'] == 'no'))
+) }}
+
+
+{% else %}
+            {{taskListItem(title="Send a confirmation email", link="2-send/1" + appointeeLink, completed=(data['send'] == "yes"),  cantStart=(not (data['interview'] == 'yes' and data['company'] == 'yes' and data['personal'] == 'yes' ))
+            ) }}
+
+
+            {{taskListItem(title="Print and send the form", link="2-send/2" + appointeeLink, completed=(data['claim'] == "yes"), cantStart=(not data['send']) )}}
+{% endif %}
+
+
+
+
+</ul>
+</li>
+</ol>
+
+{% endif %}
+
+
+
+
+{% if phase == "same-day" or phase == "interview" %}
+
+<ol class="app-task-list">
+        <li>
+                        <h2 class="app-task-list__section">
+                           After the interview
+                        </h2>
+
+
+                        <ul class="app-task-list__items" style="padding-left:0">
+
+    {{taskListItem(title="Confirm with the employer", link="3-contact/index", completed=(data['employer-phone'] =="yes" or data['employer'] =="yes" ), cantStart=(not (phase == "interview") or (phase == "same-day" and not data['claim'] == "yes") ))}}
+
+    {{taskListItem(title="Record interview took place", link="4-confirm/1", completed=(data['confirm'] =="yes"), cantStart=(not (data['employer'] == "yes" or data['employer-phone'] =="yes" ) ))}}
+
+
+                        </ul>
+                      </li>
+                    </ol>
+
+{% endif %}
+
+
+{% if phase == "payment-adviser"  %}
+
+<ol class="app-task-list">
+        <li>
+                        <h2 class="app-task-list__section">
+                           Check support cost
+                        </h2>
+
+
+                        <ul class="app-task-list__items" style="padding-left:0">
+
+    {{taskListItem(title="Check invoice support cost", link="5a-check/1", completed=(data['difference'] =="yes" ), cantStart=""
+
+    )}}
+
+    {{taskListItem(title="Contact the payments team", link="5b-reassign/1", completed=(data['transfer-to-payments'] =="yes"), cantStart=(not (data['difference'] =="yes"  ) ))}}
+
+
+                        </ul>
+                      </li>
+                    </ol>
+
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "index",
+          text: "Index before interview"
+        },
+        {
+          href: "index-waiting",
+          text: "Index waiting"
+        },
+        {
+          href: "index-same-day",
+          text: "Index same day"
+        },
+        {
+          href: "index-interview",
+          text: "Index after interview"
+        },
+        {
+          href: "index-payment",
+          text: "Index payments"
+        },
+        {
+          href: "index-payment-adviser",
+          text: "Index payments for advisers"
+        },
+        {
+          href: "index-closed",
+          text: "Index closed"
+        },
+        {
+          href: "index-payment-complete",
+          text: "Index payment complete"
+        },
+        {
+          href: "index-payment-cancelled",
+          text: "Index payment cancelled"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}

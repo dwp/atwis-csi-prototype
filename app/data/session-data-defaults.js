@@ -85,6 +85,26 @@ module.exports = {
     'date': '24 October 2021 22:23'
   }],
 
+
+
+  'priority-cases': [{
+    'name': 'Dereck Smith',
+
+    'type': 'New Application',
+    'priority' : "true",
+    'date': '4 October 2021 13:23'
+  }],
+
+  'other-cases': [{
+    'name': 'Sonya Corkery',
+
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
+  }],
+
+
   'csi-info': [{
     'firstname': 'Thomas',
     'surname': 'Brown',
