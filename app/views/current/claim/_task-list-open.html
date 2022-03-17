@@ -49,7 +49,7 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="{% if data ['employment-contact']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer{% endif %}" aria-describedby="job-status">
+  <a href="{% if data ['job-deatils-contact']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer{% endif %}" aria-describedby="job-status">
                   Employment
 </a>
               </span>
@@ -73,15 +73,16 @@
 {% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="  {% if data['job-details-checked']=='true'%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
+  <a href="{% if data['employer-confirmed']%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
                   Job details
 </a>
               </span>
+              {% if data['employer-confirmed']=='No, DWP Digital has not confirmed job details'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% else %}
               {% if data['employer-cost-share']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
               {% if data['employer-cost-share']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
               {% if data['employer-cost-share']=='I have not discussed a cost share with the employer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
               {% if data['employer-cost-share']=='I’m waiting for an answer from the employer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-
+{% endif %}
             {% if not data['employer-confirmed']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 {% endif %}
