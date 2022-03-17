@@ -1,0 +1,104 @@
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Your tasks</h2>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 9 sections.</p>
+
+
+
+                <p >
+          <a href="{% if not data['_do_1']%}/live-9/cases/contact/1/how-do-you-want-to-contact{% else %}/live-9/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+            Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+          </a>
+                </p><br>
+
+
+
+
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Searchlight
+          </h2>
+          <ul class="app-task-list__items">
+
+<!-- Add National Insurance number from Searchlight task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="  ./searchlight/national-insurance/check" aria-describedby="eligibility-status">
+                  Check personal details and add National Insurance number
+                </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+          <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
+          <!-- Status - end -->
+            </li>
+
+
+<!-- appointee task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              <a href=" searchlight/appointee" aria-describedby="Check-for-appointee">
+                  Check for appointee
+                 </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+                    <!-- complete -->
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </li>
+
+
+
+<!-- benefits task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="
+                ./searchlight/benefits/" aria-describedby="benefits-status">
+                Check benefits
+                </a>
+              </span>
+
+              <!-- Status - start -->
+                    <!-- in progress -->
+    <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+               <!-- Status - end -->
+            </li>
+
+
+
+
+
+
+
+
+               {% include  "../claim/_task-list-open.html" %}
+
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Grant decision
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Send decision
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+  </div>

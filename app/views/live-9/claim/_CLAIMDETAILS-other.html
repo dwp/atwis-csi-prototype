@@ -1,0 +1,262 @@
+
+{% set changeHide = 'true '%}
+
+{% if claim %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#application-summary">
+        Application summary
+      </a>
+    </li>
+
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#your-tasks">
+        Your tasks
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#citizen-details">
+      Application details
+      </a>
+    </li>
+
+
+
+  </ul>
+  <div class="govuk-tabs__panel" id="application-summary">
+
+  {% if phase == "notEligible"  %}
+{% include  "../claim/notification.html" %}
+{% endif %}
+
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-l">Application summary</h2>
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Other
+            </dd>
+          </div>
+
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+        Sonya Corkery
+        </dd>
+      </div>
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Unique reference number (URN)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        123456789
+      </dd>
+    </div> -->
+
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Application refrence
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+      </dd>
+    </div> -->
+
+  </dl>
+
+
+
+<!-- <h3 class="govuk-heading-m">Application details</h3> -->
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Date Submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 November 2021, 10:09am
+        </dd>
+      </div> -->
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 February 2022, 11:57am
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          RMPX30
+        </dd>
+      </div>
+
+
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version of questions
+        </dt>
+        <dd class="govuk-summary-list__value">
+        25.25.0-rc
+        </dd>
+      </div> -->
+
+    </dl>
+
+    </div>
+
+
+ <div class="govuk-grid-column-one-third">
+  {% if phase == "allocator"  %}
+  <div class="update-panel">
+       <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
+       <form action="/cases/apply/RMPX30/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+         <div class="govuk-form-group form-group-compound">
+           <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
+             <option value="" data-name=""></option>
+
+                   <option value="4" data-name="Aaron">Aaron</option>
+
+                   <option value="36" data-name="Adviser">Adviser</option>
+
+                   <option value="37" data-name="Case Team Lead">Case Team Lead</option>
+
+                   <option value="35" data-name="FRM">FRM</option>
+
+                   <option value="38" data-name="Payment Officer">Payment Officer</option>
+
+                   <option value="39" data-name="Payment Team Lead" selected="selected">Payment Team Lead</option>
+
+                   <option value="40" data-name="Quality">Quality</option>
+
+                   <option value="42" data-name="Quality1">Quality1</option>
+
+                   <option value="5" data-name="Shannon White">Shannon White</option>
+
+                   <option value="34" data-name="Telephony Agent">Telephony Agent</option>
+
+
+
+           </select>
+         </div>
+         <div>
+           <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+         </div>
+       </form>
+     </div> {% endif %}
+
+
+     <script>
+     window.onload = function() {
+       document.getElementById("timeline-date").innerHTML=moment().format("DD MM YYYY");
+     }
+   </script>
+
+</div></div>
+{% include  "../claim/timeline.html" %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+ {% include "./details.html"%}
+
+
+  </div>    </div>    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
+
+    {% if phase == "notEligible"  %}
+    {% include  "./notification.html" %}
+      {% else %}
+    {% endif %}
+    {% include  "./task-list-searchlight-completed.html" %}
+
+  </div>
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Past year</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+{% endif %}
