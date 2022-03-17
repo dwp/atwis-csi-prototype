@@ -25,7 +25,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 {% else %}
 
 
-      {% if data ['personal-details-cya'] and
+      {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
                  data ['appointee']
                   and
                 data ['benefits']
@@ -55,13 +55,13 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 <!-- Add National Insurance number from Searchlight task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="  {% if data['personal-details-cya']=='finished'%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                <a href="  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
                   Check personal details and add National Insurance number
                 </a>
               </span>
               <!-- Status - start -->
                     <!-- in progress -->
-            <!-- {% if data['Searchligh']=='Yes and application details match' and not data['national-insurance-number'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">3In Progress</strong>{% endif %} -->
+            <!-- {% if data['Searchligh']=='Yes and application details match' and not (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">3In Progress</strong>{% endif %} -->
             {% if data['Searchligh']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
             {% if data['Searchligh']=='Yes, but name, date of birth or address do not match'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
                     <!-- Completed -->
@@ -69,7 +69,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
             {% if data['Searchligh']=='Yes and application details match' and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
 
                     <!-- Not started -->
-            {% if not data['national-insurance-number'] and
+            {% if not (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
             not data['Searchligh']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             <!-- Status - end -->
             </li>
@@ -78,7 +78,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 <!-- appointee task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="  {% if data['appointee']=='Yes, I need to add an appointee'%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
+              <a href="  {% if data['appointee']%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
                   Check for appointee
                  </a>
               </span>
@@ -99,7 +99,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 <!-- benefits task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="{% if data['exceptions'] and not 'None of the above' in data['benefits']%}./searchlight/benefits/check{% else %}
+                <a href="{% if data['benefits']%}./searchlight/benefits/check{% else %}
                 ./searchlight/benefits/{% endif %}" aria-describedby="benefits-status">
                 Check benefits
                 </a>
@@ -128,7 +128,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 
 
 
-            {% if data ['personal-details-cya'] and
+            {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
                        data ['appointee']
                         and
                       data ['benefits']

@@ -26,7 +26,7 @@
 {% else %}
 
 
-      {% if data ['personal-details-cya'] and
+      {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
                  data ['appointee']
                   and
                 data ['benefits']
@@ -54,7 +54,7 @@
 <!-- Add National Insurance number from Searchlight task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="  {% if data['personal-details-cya']=='finished'%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                <a href="  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
                   Check personal details and add National Insurance number
                 </a>
               </span>
@@ -77,7 +77,7 @@
 <!-- appointee task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="  {% if data['appointee']=='Yes, I need to add an appointee'%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
+              <a href="  {% if data['appointee']%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
                   Check for appointee
                  </a>
               </span>
