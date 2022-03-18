@@ -11,7 +11,7 @@
 
             <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-                <a href="{% if data['searchlight-correct']=='No'%}/baseline/cases/update/check{% else %}/baseline/cases/update{% endif %}">    Update personal details</a>
+                <a href="{% if data['searchlight-correct']%}/baseline/cases/update/check{% else %}/baseline/cases/update{% endif %}">    Update personal details</a>
               </span>
               {% if data['searchlight-correct']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
               {% if not data['searchlight-correct']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
