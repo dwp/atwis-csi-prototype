@@ -27,12 +27,8 @@
             </dt>
             <dd class="govuk-summary-list__value">
 
-Yes, I need to add an appointee
-              <!-- {% for feature in data['benefits'] %}
-                <li>{{ feature }}</li>
-              {% else %}
-                <li>None </li>
-              {% endfor %} -->
+{{data['appointee']}}
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
@@ -40,6 +36,9 @@ Yes, I need to add an appointee
               </a>
             </dd>
           </div>
+
+
+          {% if data['appointee']=='Yes, I need to add an appointee'%}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 {% include  "./content/appointee-full-name.html" %}
@@ -130,7 +129,7 @@ Yes, I need to add an appointee
             </dd>
           </div>
 {% endif %}
-
+{% endif %}
         </dl>
 
 

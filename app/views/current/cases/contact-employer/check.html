@@ -8,7 +8,7 @@
 <br>
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="{% if data['job-deatils-contact']=='They did not give permission'%}/current/cases/claim-not-eligible#your-tasks{% else %}/current/cases/claim#your-tasks{% endif %}" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -60,12 +60,12 @@
 
 
 
-{% if data['job-deatils-contact']=='I have not spoken to them' %}
+<!-- {% if data['job-deatils-contact']=='I have not spoken to them' %}
        <div class="govuk-inset-text">
        <p> You need to contact Dereck Smith. This will be added to your <strong>log contact with Dereck Smith</strong> task.  </p>
 
        </div>
-{% endif %}
+{% endif %} -->
 
 <!-- {% if data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
         <div class="govuk-inset-text">

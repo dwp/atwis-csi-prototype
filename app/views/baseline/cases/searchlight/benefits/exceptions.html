@@ -10,7 +10,7 @@
 
 
 
-<form action="/baseline/cases/searchlight/benefits/check" method="post" novalidate>
+<form action="{% if data['benefits'] and data['exceptions']%}check{% else %}/baseline/cases/claim#your-tasks{% endif %}" method="post" novalidate>
 
 
   <div class="govuk-width-container">

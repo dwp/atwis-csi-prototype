@@ -7,18 +7,18 @@
 {% block csi %}
 <br>
 
-<form action="check" method="post" novalidate>
+<form action="{% if data['searchlight-cis500']%}check{% else %}/current/cases/claim#your-tasks{% endif %}" method="post" novalidate>
 
 
   <div class="govuk-width-container">
     <!-- <a href="#" class="govuk-back-link">Back</a> -->
 
-    <main class="govuk-main-wrapper">
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-  <div class="govuk-form-group">
+  <div class="govuk-form-group" data-module="radios" data-required="">
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
