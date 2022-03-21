@@ -190,11 +190,11 @@ Do not contact without permission
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Permission to speak to workplace contact
+      Permission to communicate with workplace contact
     </dt>
     <dd class="govuk-summary-list__value">
-      No permission given in online application
-{% if data['job-deatils-contact']=='They gave permission'%}<br><br>Dereck Smith gave permission durring contact with John Goldsmith{% endif %}
+
+{% if data['job-deatils-contact']=='They gave permission'%}Dereck Smith gave permission durring contact with John Goldsmith{% else %}  Permission not given yet{% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
   {% if  changeHide %}    <a href="#">
