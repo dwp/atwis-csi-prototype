@@ -29,10 +29,10 @@
 
   <fieldset class="govuk-fieldset">
 
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-      How do you want to contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}?
+      How do you want to contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}{% if not data['_do_1']%} first{% endif %}?
     </h2>
 
   </legend>
