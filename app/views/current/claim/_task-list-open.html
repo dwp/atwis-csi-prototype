@@ -39,7 +39,8 @@
 
   {% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='No'%}
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-
+{% if  data['contact-employer']=='Yes, but I’m waiting for an answer' %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
 {% if  data['job-deatils-contact']=='I have not spoken to them' %}
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
 
