@@ -24,7 +24,7 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-            <h2 class="govuk-heading-xl">Telephone the {% if data['appointee']=='Yes, I need to add an appointee'%}appointee {% else %}applicant{% endif %}</h2>
+            <h1 class="govuk-heading-xl">Telephone the {% if data['appointee']=='Yes, I need to add an appointee'%}appointee {% else %}applicant{% endif %}</h1>
 
             <form action="../claim" method="post" novalidate="">
 
@@ -54,9 +54,11 @@
 <p>Telephone {% if data['appointee']=='Yes, I need to add an appointee'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} on {% if data['appointee']=='Yes, I need to add an appointee'%} <strong>{{data['appointee-telephone']}}</strong>{% else %} <strong> 07192 838 482</strong>{% endif %}.</p>
 
 
-<p>Best times to contact Dereck Smith:<br>
-  Between 8:30 am and 6pm Monday to Saturday. </p>
+   <div class="govuk-inset-text">
+     <h2 class="govuk-heading-m">
+     Best times to contact Dereck Smith</h2>
 
+  Between 8:30 am and 6pm Monday to Saturday.  </div>
 
 
 
@@ -83,7 +85,7 @@
   </legend>
 
 
-  <div class="govuk-radios">
+  <div class="govuk-radios govuk-radios--inline">
 
 
 
@@ -91,7 +93,7 @@
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="yes" name="asked-info-phone-{{number}}" type="radio" value="yes~/current/cases/contact/{{number}}/happy-phone">
           <label class="govuk-label govuk-radios__label" for="yes">
-        Yes, check information
+        Yes
       </label>
 
         </div>
