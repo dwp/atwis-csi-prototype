@@ -4,8 +4,15 @@
          Name
        </dt>
        <dd class="govuk-summary-list__value">
+         {% if case %}
+                       {% for case in data['other-cases'] %}
+                           {{ case.name }}
+                       {% endfor %}
+         {% else %}
+
+
          {% if not data['first-name']%}Dereck{% else %}{{data['first-name']}}{% endif %}
-         {% if not data['last-name']%}Smith{% else %}{{data['last-name']}}{% endif %}
+         {% if not data['last-name']%}Smith{% else %}{{data['last-name']}}{% endif %} {% endif %}
        </dd>
        <dd class="govuk-summary-list__actions">
          <a class="govuk-link" href="/future/details/name">

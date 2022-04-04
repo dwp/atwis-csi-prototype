@@ -6,7 +6,7 @@
 <h1 class="govuk-heading-l top-section">
       <strong><span>Adviser: </span></strong>
   {% if phase == "allocator"  %}
-  <span class="normal">Payment Team Lead</span>{% else %}
+  <span class="normal"> Al Ó Catháin  </span>{% else %}
   John Goldsmith
   {% endif %}
     </h1>
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-<form action="/baseline/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
+<form action="/future/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
 
 
       <div class="govuk-grid-column-one-third" >
@@ -130,7 +130,7 @@
   </div>
 
   </div>
-<form action="/baseline/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
+<form action="/future/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
   <div class="govuk-grid-column-one-third">
 
     <div class="govuk-form-group" style="float: right">
@@ -160,7 +160,11 @@
 
 {% include "./claim/_notification-priority-type-case.html" %}
 
+{% if phase == "allocator"  %}
+<br></br></br></br></br></br>
+<p>You have no cases.</P>
 
+{% else %}
   <table class="govuk-table">
       <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -182,7 +186,7 @@
               <td class="govuk-table__cell">New application</td>
               <td class="govuk-table__cell">Clinically extremely vulnerable </td>
               <td class="govuk-table__cell">2 February 2022  11:57</td>
-              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}">Go to case</a></td>
+              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to case</a></td>
             </tr>
 
 
@@ -191,7 +195,7 @@
       </tbody>
     </table>
 
-
+{% endif %}
 
     {% endset -%}
 
@@ -203,7 +207,7 @@
           <h2 class="govuk-heading-m">Other cases </h2>
         </div>
         </div>
-<form action="/baseline/your-cases#other" method="post" novalidate for="submitButtonRequestother">
+<form action="/future/your-cases#other" method="post" novalidate for="submitButtonRequestother">
         <div class="govuk-grid-column-one-quaters">
 
           <div class="govuk-form-group" style="float: left">
@@ -303,6 +307,42 @@
 
 
 <!-------------- tabs -->
+{% if phase == "allocator" %}
+{{ govukTabs({
+  items: [
+
+    {
+      label: "Your other cases (0)",
+      id: "other",
+      panel: {
+        html: other
+      }
+    },
+    {
+      label: "Your priority cases (0)",
+      id: "priority",
+      panel: {
+        html: priority
+      }
+    },
+    {
+      label: "Your CSI cases (0)",
+      id: "csi",
+      panel: {
+        html: csi
+      }
+    },
+    {
+
+      label: "Your documents (0)",
+      id: "in-disc",
+      panel: {
+        html: doc
+      }
+    }
+  ]
+}) }}
+{% else %}
 
     {{ govukTabs({
       items: [
@@ -338,7 +378,7 @@
         }
       ]
     }) }}
-
+{% endif %}
 
 
   </div>

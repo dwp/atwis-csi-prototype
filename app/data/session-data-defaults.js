@@ -21,6 +21,7 @@ module.exports = {
 'benefits' : "",
 'priority' : "",
 'other' : "",
+'remove' : "",
   // Insert values here
 
   'unallocated-cases': [{

@@ -1,10 +1,39 @@
+{% if not totalnotification %}
+  {% set totalnotification = 0 %}
+  {% endif %}
 
-{% if data ['Searchligh']=='No' or
-data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
-data ['found-nino']=='No' or
-data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
-data ['job-deatils-contact']=='No, I have not spoken to them' or
-data['job-deatils-contact']=='I have not spoken to them' %}
+
+
+  {% if (
+    data ['Searchligh']=='Yes, but name, date of birth or address do not match')
+    and (not 'true' in data['remove'])%}
+    {% set totalnotification = totalnotification + 1 %}
+  {% endif %}
+
+  {% if (
+    data ['exceptions']=='I need to contact Dereck Smith about their benefits')
+    and (not 'true-2' in data['remove'])%}
+    {% set totalnotification = totalnotification + 1 %}
+  {% endif %}
+
+  {% if (
+     data['job-deatils-contact']=='I have not spoken to them')
+    and (not 'true-3' in data['remove'])%}
+    {% set totalnotification = totalnotification + 1 %}
+  {% endif %}
+
+<!-- {% if (data['Searchligh']=='No' or
+  data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
+  data ['found-nino']=='No' or
+  data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
+  data ['job-deatils-contact']=='No, I have not spoken to them' or
+  data['job-deatils-contact']=='I have not spoken to them')
+  and (not 'true' in data['remove'])%}
+  {% set totalnotification = totalnotification + 1 %}
+{% endif %} -->
+
+
+{% if totalnotification != 0 %}
 
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -24,11 +53,11 @@ data['job-deatils-contact']=='I have not spoken to them' %}
 {% endif %}
       {% if data ['Searchligh']=='No'%}
       <p>Not in Searchlight.</P>{% endif %}
-        {% if data ['Searchligh']=='Yes, but name, date of birth or address do not match'%}
+        {% if data ['Searchligh']=='Yes, but name, date of birth or address do not match' and not 'true' in data['remove']%}
       <p>Personal details do not match Searchlight.</P>{% endif %}
         {% if data ['found-nino']=='No'%}
       <p>Missing National Insurance number in Searchlight.</P>{% endif %}
-        {% if data['exceptions']=='I need to contact Dereck Smith about their benefits'%}
+        {% if data['exceptions']=='I need to contact Dereck Smith about their benefits' and not 'true-2' in data['remove']%}
       <p>Has benefits that could affect eligibility:</P>
         <ul class="govuk-list govuk-list--bullet">
           {% for feature in data['benefits'] %}
@@ -39,11 +68,23 @@ data['job-deatils-contact']=='I have not spoken to them' %}
         {% endif %}
         {% if not data['add-another']%}
 {{data['job-detail-note1']}}{% endif %}
-{% if data['job-deatils-contact']=='I have not spoken to them'%}
+{% if data['job-deatils-contact']=='I have not spoken to them' and not 'true-3' in data['remove']%}
 You have not spoken to Dereck Smith about whether Access to Work can contact their employer yet{% endif %}
 
 
 
   </div>
 </div>
+{% endif %}
+
+
+
+{% if data ['Searchligh']=='No' or
+data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
+data ['found-nino']=='No' or
+data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
+data ['job-deatils-contact']=='No, I have not spoken to them' or
+data['job-deatils-contact']=='I have not spoken to them' %}
+
+
 {% endif %}

@@ -13,12 +13,7 @@
 
 
 <form action="
-{% if data['clear']=='No' %}/future/cases/contact/contact-log{% else %}
-{% if data ['Searchligh']=='No' or
-data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
-data ['found-nino']=='No' or
-data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
-data ['job-deatils-contact']=='No, I have not spoken to them' %}/future/cases/contact/{{number}}/notification-need{% else %}/future/cases/contact/contact-log{% endif %}{% endif %}" method="post" novalidate>
+/future/cases/contact/contact-log" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -123,15 +118,42 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/future/cases/co
 
 <br>
 
+<h2 class="govuk-heading-m">Did you get an answer?</h2>
 
 
+  <div id="remove-hint" class="govuk-hint">
+        You can provide more informattion in the your tasks. Select all that apply.
+      </div>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="remove" name="remove" type="checkbox" value="true">
+          <label class="govuk-label govuk-checkboxes__label" for="remove">
+          Personal details not matching Searchlight
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="remove-2" name="remove" type="checkbox" value="true-2">
+          <label class="govuk-label govuk-checkboxes__label" for="remove-2">
+          Benefits they are on
+          </label>
+        </div>
+      
+        <div class="govuk-checkboxes__divider">or</div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="remove-5" name="remove" type="checkbox" value="none" data-behaviour="exclusive">
+          <label class="govuk-label govuk-checkboxes__label" for="remove-5">
+            Not yet
+          </label>
+        </div>
+      </div>
+<br>
 
   <div class="govuk-form-group">
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="300">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="job-detail-note1">
-    What was discussed with Dereck Smith{% if data['appointee']=='Yes, I need to add an appointee'%}’s appointee {{data['appointee-name']}}{% endif %}?
 
+Contact notes
 
     </label>
     </h2>

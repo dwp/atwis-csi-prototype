@@ -29,14 +29,17 @@
 
   <fieldset class="govuk-fieldset">
 
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-      How do you want to contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}?
+      <!-- How do you want to contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}{% if not data['_do_1']%} first{% endif %}? -->
+Type of contact
     </h2>
 
   </legend>
-
+  <div id="contact-hint" class="govuk-hint">
+              You need to add each type of contact separately. You will be able to add another after this one.
+                </div>
 {% if data['clear']=='No' %}{% else %}
   {% include  "future/claim/notification-contact.html" %}{% endif %}
 
@@ -65,7 +68,7 @@
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="sms" name="_do_{{number}}" type="radio" value="SMS~/future/cases/contact/1/how-do-you-want-to-contact#">
           <label class="govuk-label govuk-radios__label" for="sms">
-        SMS
+        Text message (SMS)
       </label>
 
         </div>

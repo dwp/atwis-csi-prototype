@@ -39,7 +39,54 @@
 
      <br>
 
+     <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="contact-time">
+                  Time of call
+                </label>
+                <div id="contact-time-hint" class="govuk-hint">
+                  For example, 9am or 2:30pm - enter 12pm for midday
+                </div>
+                <input class="govuk-input govuk-input--width-5" id="contact-time" name="contact-time-{{number}}" type="text" aria-describedby="contact-time-hint">
 
+
+              </div>
+
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="contact-date-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                   Date of call
+                  </legend>
+                  <div id="contact-date-hint" class="govuk-hint">
+                    For example, 31 1 2022
+                  </div>
+                  <div class="govuk-date-input" id="contact-date-">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="contact-date-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-day" name="contact-date-day-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="contact-date-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-month" name="contact-date-month-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="contact-date-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contact-date-year" name="contact-date-year-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                       </div>
 
 
           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">

@@ -22,7 +22,7 @@
 
 
 
-<form action="" method="post" novalidate>
+  <form action="/future/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -38,14 +38,15 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-            You have added {{totalcontact}} contact log
+            You have added {{totalcontact}} contact
               </h1>
             </legend>
           </fieldset>
 
 
-          {% if data['clear']=='No' %}{% else %}
-            {% include  "future/claim/notification-contact.html" %}{% endif %}
+
+            {% include  "future/claim/notification-contact.html" %}
+
 
 
             <!-- <p>Best times to contact Dereck Smith:</p>
@@ -99,9 +100,10 @@
 
   </dl>
 
+
 </div>
 <form method="post" novalidate action="">
-  <div class="govuk-form-group">
+  <!-- <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
         Do you need to log another contact now?
@@ -126,10 +128,10 @@
       </div>
 
     </fieldset>
-  </div>
+  </div> -->
 
   <button class="govuk-button" data-module="govuk-button">
-    Continue
+    Add another contact
   </button>
 </form>
 
@@ -137,7 +139,7 @@
 
 
 
-          <!-- <p><a href="/live-1/agreed/csi/index" class="govuk-link govuk-link--no-visited-state">Return to tasks</a></p> -->
+          <p><a href="/future/cases/claim#your-tasks" class="govuk-link govuk-link--no-visited-state">Return to your tasks tab</a></p>
 
           </div>
           </div>
