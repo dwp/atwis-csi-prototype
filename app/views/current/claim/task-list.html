@@ -212,7 +212,8 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
                   Quotes
 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+              {% if data['quotes-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+              {% if not data['quotes-check'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}          </li>
           </ul>
           </li>
 
@@ -224,6 +225,8 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
     data ['condition-check']
     and
     data ['job-deatils-check']
+    and
+    data ['quotes-check']
     and
     data ['appointee']
     and
@@ -251,7 +254,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
             </li>
-          
+
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
