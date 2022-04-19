@@ -110,7 +110,7 @@
             <dt class="govuk-visually-hidden">Name:</dt>
             <dd class="dwp-key-details-bar__primary">
 
-{% if case %}
+{% if phase == "sonya" %}
               {% for case in data['other-cases'] %}
                   {{ case.name }}
               {% endfor %}
@@ -130,7 +130,7 @@
 
             <dt class="govuk-visually-hidden">Decisions status:</dt>
        <dd class="dwp-key-details-bar__status">
-
+{% if phase == "sonya" %} In progress{% else %}
               {% if data ['Searchligh'] or
                          data ['appointee']
                           or
@@ -139,6 +139,7 @@
  In progress
 {% else %}
         Not started
+        {% endif %}
         {% endif %}
 
             </dd>
@@ -155,7 +156,7 @@
 
 
             <dt>Application reference:</dt>
-            <dd>RMPX30</dd>
+            <dd>RMPX3{% if phase == "sonya" %}1{% endif %}{% if not phase %}1{% endif %}</dd>
   {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
             <dt>Appointee:</dt>
             <dd>John Smith</dd>{% endif %}

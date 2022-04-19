@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% if phase == 'sonya' %}{% set case = "-sonya" %}{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -38,7 +38,7 @@
   <div id="national-insurance-number-hint" class="govuk-hint">
 
   </div>
-  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value="{{data['national-insurance-number']| upper }}">
+  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number{{case}}" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value="{% if phase == 'sonya' %}{{data['national-insurance-number-sonya']}}{% else %}{{data['national-insurance-number']| upper }}{% endif %}">
 </div>
 </fieldset>
 </div>

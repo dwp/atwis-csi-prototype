@@ -1,0 +1,17 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+{% set phase = "sonya" %}
+
+{% if data['exceptions']=='No'%}
+{% set phase = "notEligible" %}{% endif %}
+
+{% extends   "current/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+{% set phase = "sonya" %}
+{% include  "current/claim/_CLAIMDETAILS-sonya.html" %}
+
+{% endblock %}

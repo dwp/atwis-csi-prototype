@@ -22,6 +22,13 @@ module.exports = {
 'priority' : "",
 'other' : "",
 'remove' : "",
+//sonya data set
+'appointee-sonya' : "No",
+'Searchligh-sonya' : 'Yes and application details match',
+'found-nino-sonya' : 'Yes',
+'national-insurance-number-sonya' : 'AB 12 34 56 C',
+'benefits-sonya' : 'No',
+
   // Insert values here
 
   'unallocated-cases': [{

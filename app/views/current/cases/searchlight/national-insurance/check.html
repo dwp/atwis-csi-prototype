@@ -8,7 +8,7 @@
 <br>
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase == 'sonya' %}/sonya-corkery/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -27,7 +27,7 @@
 {% include  "current/cases/searchlight/national-insurance/content/are-these-details-in-searchlight.html" %}
             </dt>
             <dd class="govuk-summary-list__value">
-
+{% if phase == 'sonya' %}{{data['Searchligh-sonya']}}{% endif %}
 {{data['Searchligh']}}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -45,6 +45,7 @@
 
             </dt>
             <dd class="govuk-summary-list__value">
+              {% if phase == 'sonya' %}{{data['found-nino-sonya']}}{% endif %}
               {{data['found-nino']}}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -61,6 +62,7 @@
 
             </dt>
             <dd class="govuk-summary-list__value">
+              {% if phase == 'sonya' %}{{data['national-insurance-number-sonya']}}{% endif %}
               {{data['national-insurance-number']| upper }}
             </dd>
             <dd class="govuk-summary-list__actions">

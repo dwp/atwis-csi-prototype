@@ -50,10 +50,18 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 <!-- Add National Insurance number from Searchlight task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                <a href="
+                {% if phase == 'sonya' %}
+                {% if (data['national-insurance-number-sonya'] or data['found-nino-sonya']=='No' or data['Searchligh-sonya']=='No')%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}
+                {% else %}
+                {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}
+                {% endif %}" aria-describedby="eligibility-status">
                   Check personal details and add National Insurance number
                 </a>
               </span>
+            {% if phase == 'sonya' %}
+          <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+{% else %}
               <!-- Status - start -->
                     <!-- in progress -->
             <!-- {% if data['Searchligh']=='Yes and application details match' and not (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">3In Progress</strong>{% endif %} -->
@@ -65,7 +73,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 
                     <!-- Not started -->
             {% if not (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
-            not data['Searchligh']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+            not data['Searchligh']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
             <!-- Status - end -->
             </li>
 
@@ -73,19 +81,36 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 <!-- appointee task -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="  {% if data['appointee']%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
+              <a href="
+                {% if phase == 'sonya' %}
+                {% if data['appointee-sonya']%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}
+                {% else %}
+              {% if data['appointee']%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}
+              {% endif %}
+              " aria-describedby="Check-for-appointee">
                   Check for appointee
                  </a>
               </span>
               <!-- Status - start -->
                     <!-- in progress -->
                     <!-- complete -->
-              {% if data['appointee']%}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
-                   <!-- not started -->
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% endif %}
+            {% if phase == 'sonya' %}
+                  {% if data['appointee-sonya']%}    <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                  {% else %}
+                  <!-- not started -->
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                  {% endif %}
+
+            {% else %}
+
+                  {% if data['appointee']%}
+                  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+                  {% else %}
+                  <!-- not started -->
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                  {% endif %}
+            {% endif %}
+
               <!-- Status - end -->
             </li>
 
@@ -152,7 +177,8 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 
           {% endif %}
 
-
+        </ul>
+        </li>
 
 
 
@@ -168,8 +194,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 
 
 
-      </ul>
-      </li>
+
 
         <li>
           <!-- <h2 class="app-task-list__section">

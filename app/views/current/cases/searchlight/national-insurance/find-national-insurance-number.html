@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% if phase == 'sonya' %}{% set case = "-sonya" %}{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -31,13 +31,15 @@
 
                <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}>
+                   <input class="govuk-radios__input" id="found-nino" name="found-nino{{case}}" type="radio" value="Yes~./add-national-insurance-number"
+                   {% if phase == 'sonya' %}{{ checked("found-nino-sonya", "Yes") }}{% else %}{{ checked("found-nino", "Yes") }}{% endif %}>
                    <label class="govuk-label govuk-radios__label" for="found-nino">
                      Yes
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="found-nino-2" name="found-nino" type="radio" value="No~/current/cases/claim#your-tasks" {{ checked("found-nino", "No") }}>
+                   <input class="govuk-radios__input" id="found-nino-2" name="found-nino{{case}}" type="radio" value="No~/current/cases/claim#your-tasks"
+                   {% if phase == 'sonya' %}{{ checked("found-nino-sonya", "No") }}{% else %}{{ checked("found-nino", "No") }}{% endif %}>
                    <label class="govuk-label govuk-radios__label" for="found-nino-2">
                      No
                    </label>

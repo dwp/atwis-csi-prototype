@@ -26,8 +26,9 @@
              {% include  "./content/does-name-here-have-an-appointee.html" %}
             </dt>
             <dd class="govuk-summary-list__value">
-
-{{data['appointee']}}
+              {% if phase == 'sonya' %}
+                  {{data['appointee-sonya']}}{% else %}
+{{data['appointee']}}{% endif %}
 
             </dd>
             <dd class="govuk-summary-list__actions">

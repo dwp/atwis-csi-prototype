@@ -1,4 +1,4 @@
-
+{% if phase == 'sonya' %}{% set case = "-sonya" %}{% endif %}
 
 {% extends folder + "/claim/_CSIBASE.html" %}
 
@@ -23,7 +23,7 @@
             <fieldset class="govuk-fieldset" aria-describedby="benefits-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h2 class="govuk-fieldset__heading">
-                
+
                   {% include  "./content/benefits-affect-application.html" %}
                 </h2>
               </legend>
@@ -38,31 +38,31 @@
 
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Incapacity Benefit, including National Insurance credits only" {{ checked("benefits", "Incapacity Benefit, including National Insurance credits only") }}>
+                  <input class="govuk-checkboxes__input" id="benefits" name="benefits{{case}}" type="checkbox" value="Incapacity Benefit, including National Insurance credits only" {{ checked("benefits"+case+"", "Incapacity Benefit, including National Insurance credits only") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits">
                     Incapacity Benefit, including National Insurance credits only
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-2" name="benefits" type="checkbox" value="Employment and Support Allowance, including National Insurance credits only" {{ checked("benefits", "Employment and Support Allowance, including National Insurance credits only") }}>
+                  <input class="govuk-checkboxes__input" id="benefits-2" name="benefits{{case}}" type="checkbox" value="Employment and Support Allowance, including National Insurance credits only" {{ checked("benefits"+case+"", "Employment and Support Allowance, including National Insurance credits only") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-2">
                     Employment and Support Allowance, including National Insurance credits only
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-3" name="benefits" type="checkbox" value="Severe Disablement Allowance" {{ checked("benefits", "Severe Disablement Allowance") }}>
+                  <input class="govuk-checkboxes__input" id="benefits-3" name="benefits{{case}}" type="checkbox" value="Severe Disablement Allowance" {{ checked("benefits"+case+"", "Severe Disablement Allowance") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-3">
                     Severe Disablement Allowance
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-4" name="benefits" type="checkbox" value="Income Support for illness or disability" {{ checked("benefits", "Income Support for illness or disability") }}>
+                  <input class="govuk-checkboxes__input" id="benefits-4" name="benefits{{case}}" type="checkbox" value="Income Support for illness or disability" {{ checked("benefits"+case+"", "Income Support for illness or disability") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-4">
                      Income Support for illness or disability
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-5" name="benefits" type="checkbox" value="Personal Independence Payment" {{ checked("benefits", "Personal Independence Payment") }}>
+                  <input class="govuk-checkboxes__input" id="benefits-5" name="benefits{{case}}" type="checkbox" value="Personal Independence Payment" {{ checked("benefits"+case+"", "Personal Independence Payment") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-5">
                     Personal Independence Payment
                   </label>
@@ -70,7 +70,7 @@
 <div class="govuk-checkboxes__divider">or</div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="benefits-6" name="benefits" type="checkbox" value="No" data-behaviour="exclusive" {{ checked("benefits", "No") }}>
+                  <input class="govuk-checkboxes__input" id="benefits-6" name="benefits{{case}}" type="checkbox" value="No" data-behaviour="exclusive" {{ checked("benefits"+case+"", "No") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="benefits-6">
                     No
                   </label>
