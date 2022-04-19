@@ -206,6 +206,13 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
               {% if data['job-deatils-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
             {% if not data['job-deatils-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="./check-application/quotes" aria-describedby="job-status">
+                  Quotes
+</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
           </ul>
           </li>
 
@@ -244,13 +251,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
             </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-
-                  Quotes
-
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
+          
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 

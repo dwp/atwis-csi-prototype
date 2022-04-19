@@ -1,0 +1,95 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">   Quotes</h1>
+
+<h2 class="govuk-heading-m">   Quote 1</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Brand or supplier
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jaws screen reader Professional License
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {% if  changeHide %}  <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> </span>
+        </a>{% endif %}
+        </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Total cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £499
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {% if  changeHide %}  <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> </span>
+        </a>{% endif %}
+        </dd>
+        </div>
+
+
+
+</dl>
+<p>The total cost is below £500, as such 3 quotes are not needed</p>
+
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    {% include  "./content/more-information.html" %}
+
+              </legend>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item govuk-radios--inline">
+                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="quotes-check">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="quotes-check-2">
+                    No
+                  </label>
+                </div>
+
+              </div>
+
+            </fieldset>
+    </div>
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
