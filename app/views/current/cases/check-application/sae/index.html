@@ -13,42 +13,34 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-l">
+      <h1 class="govuk-heading-l">
 
-                    Employment</h2>
-
-        <form action="" method="post" novalidate>
+                     Support details</h1>
 
 
-
+        <h2 class="govuk-heading-m">Special aids and equipment</h2>
 
 
 
-
-
-        <h3 class="govuk-heading-m">Employment details</h3>
-
-
-
-  {% include "current/claim/_job-details.html"%}
+  {% include "current/claim/_sae.html"%}
 
 
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                      {% include  "./content/more-information.html" %}   
+                      {% include  "./content/more-information.html" %}
 
                 </legend>
                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                   <div class="govuk-radios__item govuk-radios--inline">
-                    <input class="govuk-radios__input" id="job-deatils-check" name="job-deatils-check" type="radio" value="Yes">
-                    <label class="govuk-label govuk-radios__label" for="job-deatils-check">
+                    <input class="govuk-radios__input" id="sae-check" name="sae-check" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="sae-check">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="job-deatils-check-2" name="job-deatils-check" type="radio" value="No">
-                    <label class="govuk-label govuk-radios__label" for="job-deatils-check-2">
+                    <input class="govuk-radios__input" id="sae-check-2" name="sae-check" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="sae-check-2">
                       No
                     </label>
                   </div>

@@ -1,0 +1,145 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+
+                     Special aids and equipment</h1>
+
+
+        <!-- <h2 class="govuk-heading-m">Special aids and equipment</h2> -->
+
+
+
+  {% include "current/claim/_sae.html"%}
+
+<p>If tempory support is required add a seperate element, by updating Support requested task.</p>
+
+<p> No mandatory cost share, as the company is a small company and the quote is below £500.</p>
+
+
+
+
+  <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      {% include  "./content/linked.html" %}
+
+                </legend>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item govuk-radios--inline">
+                    <input class="govuk-radios__input" id="linked" name="linked" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="linked">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="linked-2" name="linked" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="linked-2">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
+      </div>
+      <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          {% include  "./content/medical-aid.html" %}
+
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                      <div class="govuk-radios__item govuk-radios--inline">
+                        <input class="govuk-radios__input" id="medical" name="medical" type="radio" value="Yes">
+                        <label class="govuk-label govuk-radios__label" for="medical">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="medical-2" name="medical" type="radio" value="No">
+                        <label class="govuk-label govuk-radios__label" for="medical-2">
+                          No
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </fieldset>
+                  </div>
+
+                  <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                      {% include  "./content/social-domestic.html" %}
+
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                  <div class="govuk-radios__item govuk-radios--inline">
+                                    <input class="govuk-radios__input" id="social-domestic" name="social-domestic" type="radio" value="Yes">
+                                    <label class="govuk-label govuk-radios__label" for="social-domestic">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="social-domestic-2" name="social-domestic" type="radio" value="No">
+                                    <label class="govuk-label govuk-radios__label" for="social-domestic-2">
+                                      No
+                                    </label>
+                                  </div>
+
+                                </div>
+
+                              </fieldset>
+                              </div>
+
+                              <div class="govuk-form-group">
+                                          <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                                  {% include  "./content/accept-element.html" %}
+
+                                            </legend>
+                                            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                              <div class="govuk-radios__item govuk-radios--inline">
+                                                <input class="govuk-radios__input" id="element-decision" name="element-decision" type="radio" value="Yes">
+                                                <label class="govuk-label govuk-radios__label" for="element-decision">
+                                                  Yes
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="element-decision-2" name="element-decision" type="radio" value="No">
+                                                <label class="govuk-label govuk-radios__label" for="element-decision-2">
+                                                  No
+                                                </label>
+                                              </div>
+
+                                            </div>
+
+                                          </fieldset>
+                                          </div>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}
