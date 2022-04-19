@@ -25,11 +25,17 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 {% else %}
 
 
-      {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
-                 data ['appointee']
-                  and
-                data ['benefits']
-                 %}
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+  data ['elements']
+  and
+  data ['condition-check']
+  and
+  data ['job-deatils-check']
+  and
+  data ['appointee']
+  and
+  data ['benefits']
+%}
 
 
                 {% else %}
@@ -161,7 +167,15 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
               </h2>
               <ul class="app-task-list__items">
 
-
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                 <a href="./check-application/condition-help-needed" aria-describedby="read-declaration-status">
+                       Condition and Help Needed
+                   </a>
+                  </span>
+                  {% if data['condition-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                {% if not data['condition-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+                </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
              <a href="./check-application/element" aria-describedby="read-declaration-status">
@@ -171,33 +185,36 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
               {% if data['elements']=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
-            <!-- <li class="app-task-list__item">
+            <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-             <a href="#" aria-describedby="read-declaration-status">
-                  Check Specialist aid and equipment details
+             <a href="./check-application/employment-details" aria-describedby="read-declaration-status">
+                   Employment details
                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-            </li> -->
+              {% if data['job-deatils-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+            {% if not data['job-deatils-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+            </li>
           </ul>
           </li>
 
 
 
-            {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
-             data ['elements']
-             and
-                       data ['appointee']
-                        and
-                      data ['benefits']
-                       %}
-               {% include  "../claim/_task-list-open.html" %}
-          {% else %}
+  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+    data ['elements']
+    and
+    data ['condition-check']
+    and
+    data ['job-deatils-check']
+    and
+    data ['appointee']
+    and
+    data ['benefits']
+  %}
+    {% include  "../claim/_task-list-open.html" %}
+  {% else %}
 
 
 
-      </ul>
-      </li>
 
 
 
