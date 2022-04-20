@@ -170,7 +170,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
                  <a href="./check-application/condition-help-needed" aria-describedby="read-declaration-status">
-                       Condition and Help Needed
+                       Health conditions and disabilities
                    </a>
                   </span>
                   {% if data['condition-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -189,7 +189,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
              <a href="./check-application/sae" aria-describedby="read-declaration-status">
-                   Support details SAE
+                   Special aids and equipment
                </a>
               </span>
               {% if data['sae-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -209,7 +209,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="./check-application/quotes" aria-describedby="job-status">
-                  Quotes
+                  Quote for the cost of support
 </a>
               </span>
               {% if data['quotes-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
