@@ -1,6 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+
 {% if phase == 'sonya' %}{% set case = "-sonya" %}{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
@@ -30,9 +31,10 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!-- <a class="govuk-link" href="#">
-    Update<span class="govuk-visually-hidden">   </span>
-    </a> -->
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden">   {% include  "./content/specialist-equipment.html" %}</span>
+        </a>{% endif %}
     </dd>
   </div>
 
@@ -47,9 +49,10 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!-- <a class="govuk-link" href="#">
-    Update<span class="govuk-visually-hidden">   </span>
-    </a> -->
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden">   {% include  "./content/mental-health.html" %}</span>
+        </a>{% endif %}
     </dd>
   </div>
 
@@ -63,9 +66,10 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!-- <a class="govuk-link" href="#">
-    Update<span class="govuk-visually-hidden">   </span>
-    </a> -->
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden">  {% include  "./content/support-worker.html" %} </span>
+        </a>{% endif %}
     </dd>
   </div>
 
@@ -78,9 +82,10 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!-- <a class="govuk-link" href="#">
-    Update<span class="govuk-visually-hidden">   </span>
-    </a> -->
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden">{% include  "./content/travelling-to-from-work.html" %} </span>
+        </a>{% endif %}
     </dd>
   </div>
 
@@ -93,9 +98,10 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!-- <a class="govuk-link" href="#">
-    Update<span class="govuk-visually-hidden">   </span>
-    </a> -->
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden">  {% include  "./content/travelling-during-work.html" %} </span>
+        </a>{% endif %}
     </dd>
   </div>
 
@@ -108,9 +114,10 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!-- <a class="govuk-link" href="#">
-    Update<span class="govuk-visually-hidden">   </span>
-    </a> -->
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden">{% include  "./content/changes-to-your-workplace.html" %} </span>
+        </a>{% endif %}
     </dd>
   </div>
 
@@ -123,9 +130,10 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-    <!-- <a class="govuk-link" href="#">
-    Update<span class="govuk-visually-hidden">   </span>
-    </a> -->
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden">  {% include  "./content/changes-to-your-vehicle.html" %} </span>
+        </a>{% endif %}
     </dd>
   </div>
 
