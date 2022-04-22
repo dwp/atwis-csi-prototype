@@ -170,7 +170,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
                  <a href="./check-application/condition-help-needed" aria-describedby="read-declaration-status">
-                       Health conditions and disabilities
+                       Health condition or disability
                    </a>
                   </span>
                 {% if data['condition-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -180,7 +180,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
              <a href="./check-application/element" aria-describedby="read-declaration-status">
-                  Support requested
+                  Summary of support requested
                </a>
               </span>
               {% if data['elements']=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
@@ -190,7 +190,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
              <a href="./check-application/sae" aria-describedby="read-declaration-status">
-                   Special aids and equipment
+                   Support details
                </a>
               </span>
               {% if data['sae-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -288,7 +288,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
     <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 
-        Special aids and equipment
+        Special aids and equipment details
 
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
@@ -298,7 +298,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
 
-          Evidence
+          Evidence for approval decision
 
       </span>
       <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
