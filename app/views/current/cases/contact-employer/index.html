@@ -19,22 +19,16 @@
 
         <form action="" method="post" novalidate>
 
+          {% if  data['job-deatils-contact']=='They gave permission'%}{% else %}
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-warning-text__assistive">Warning</span>
+          You must contact Dereck Smith for permission for Access to Work to communicate with their employer.
+          </strong>
+          </div>
+          {% endif %}
 
-
-
-
-
-
-
-        <h3 class="govuk-heading-m">Employment details</h3>
-
-
-
-  {% include "current/claim/_job-details.html"%}
-
-         <h2 class="govuk-heading-m">Condition and Help Needed</h2>
-
-    {% include "current/claim/_condtion-help-needed.html"%}
 
 <h2 class="govuk-heading-m">Dereck Smith contact details</h2>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -78,15 +72,7 @@
         </div>
   </dl>
 
-{% if  data['job-deatils-contact']=='They gave permission'%}{% else %}
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-You must contact Dereck Smith for permission for Access to Work to communicate with their employer.
-</strong>
-</div>
-{% endif %}
+
 
 
 
@@ -95,6 +81,12 @@ You must contact Dereck Smith for permission for Access to Work to communicate w
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     {% include  "./content/has-confirmed-whether-contact-employer.html" %}
               </legend>
+
+
+
+
+
+
               <div class="govuk-radios " data-module="govuk-radios">
                 <div class="govuk-radios__item govuk-radios--inline">
                   <input class="govuk-radios__input" id="job-deatils-contact" name="job-deatils-contact" type="radio" value="They gave permission~/current/cases/contact-employer/contact-employment" {{ checked("job-deatils-contact", "They gave permission") }}>
