@@ -37,8 +37,7 @@ and
 data ['sae-check']
 and
 data ['contact-check']
-and
-data['wpa']
+
 and
 data ['appointee']
 and
@@ -257,8 +256,7 @@ data ['benefits']
     data ['sae-check']
     and
     data ['contact-check']
-    and
-    data['wpa']
+
     and
     data ['appointee']
     and
@@ -306,7 +304,8 @@ data ['benefits']
           <span class="app-task-list__section-number">4. </span> Element
         </h2>
 
-{% if data['employer-size']%}
+{% if data['employer-size'] and 
+data['wpa']%}
     {% include  "../claim/_task-list-element.html" %}{% else %}
 
     <ul class="app-task-list__items">
