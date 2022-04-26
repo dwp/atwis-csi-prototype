@@ -67,13 +67,13 @@
               </legend>
               <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                 <div class="govuk-radios__item govuk-radios--inline">
-                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check" type="radio" value="Yes">
+                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check" type="radio" value="Yes" {{ checked("quotes-check", "Yes") }}>
                   <label class="govuk-label govuk-radios__label" for="quotes-check">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check" type="radio" value="No">
+                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check" type="radio" value="No" {{ checked("quotes-check", "No") }}>
                   <label class="govuk-label govuk-radios__label" for="quotes-check-2">
                     No
                   </label>

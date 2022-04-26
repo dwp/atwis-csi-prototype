@@ -34,13 +34,13 @@
                 </legend>
                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                   <div class="govuk-radios__item govuk-radios--inline">
-                    <input class="govuk-radios__input" id="sae-check" name="sae-check" type="radio" value="Yes">
+                    <input class="govuk-radios__input" id="sae-check" name="sae-check" type="radio" value="Yes" {{ checked("sae-check", "Yes") }}>
                     <label class="govuk-label govuk-radios__label" for="sae-check">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="sae-check-2" name="sae-check" type="radio" value="No">
+                    <input class="govuk-radios__input" id="sae-check-2" name="sae-check" type="radio" value="No" {{ checked("sae-check", "No") }}>
                     <label class="govuk-label govuk-radios__label" for="sae-check-2">
                       No
                     </label>
