@@ -72,7 +72,7 @@
 {% endif %}
 
 
-{% if data['employer-cost-share']=='I have not discussed a cost share with the employer'%}
+<!-- {% if data['employer-cost-share']=='I have not discussed a cost share with the employer'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
           <a href="/current/cases/job-details/contact-cost-share-agreement" aria-describedby="cost-share-agreement">
@@ -80,15 +80,17 @@
           </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
-{% endif %}
+{% endif %} -->
 
 
-          
+
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-              <a href="claim#your-tasks" aria-describedby="job-status">
+              <a href="/current/cases/workplace-assesment" aria-describedby="job-status">
                     Workplace assesment
               </a>
                 </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+                {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+                  {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}          </li>
 </ul>
