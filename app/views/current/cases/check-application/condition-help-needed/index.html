@@ -27,25 +27,25 @@
 
 
 
-    
+
 
     {% include "current/claim/_condtion-help-needed.html"%}
 
     <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        {% include  "./content/more-information.html" %}   
+                        {% include  "./content/more-information.html" %}
 
                   </legend>
                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                     <div class="govuk-radios__item govuk-radios--inline">
-                      <input class="govuk-radios__input" id="condition-check" name="condition-check" type="radio" value="Yes">
+                      <input class="govuk-radios__input" id="condition-check" name="condition-check" type="radio" value="Yes" {{ checked("condition-check", "Yes") }}>
                       <label class="govuk-label govuk-radios__label" for="condition-check">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check" type="radio" value="No">
+                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check" type="radio" value="No" {{ checked("condition-check", "No") }}>
                       <label class="govuk-label govuk-radios__label" for="condition-check-2">
                         No
                       </label>
