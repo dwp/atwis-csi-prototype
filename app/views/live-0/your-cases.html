@@ -50,7 +50,7 @@
               <td class="govuk-table__cell">{{data['csi-info'][3]['submission-date']}}</td>
               <td class="govuk-table__cell">{{ data['csi-info'][3]['interview-date-day'] }} {{ data['csi-info'][3]['interview-date-month'] | toMonth }} {{ data['csi-info'][3]['interview-date-year'] }}</td>
               <td class="govuk-table__cell">{% if phase == 'waiting' %}No action needed{% elif not phase and not data['searchlight'] %}New{% else %}Action needed{% endif %}
-              <td class="govuk-table__cell"><a href="csi/index{% if payment %}-payment{% else %}{% if phase == "interview" %}-interview{% elif phase == "waiting" %}-waiting{% elif phase == "same-day" %}-same-day{% elif phase == "payment-adviser" %}-payment-adviser{% endif %}{% endif %}">Go to case</a></td>
+              <td class="govuk-table__cell"><a href="/sprint-12/agreed/csi/index{% if payment %}-payment{% else %}{% if phase == "interview" %}-interview{% elif phase == "waiting" %}-waiting{% elif phase == "same-day" %}-same-day{% elif phase == "payment-adviser" %}-payment-adviser{% endif %}{% endif %}">Go to case</a></td>
             </tr>
       </tbody>
     </table>
@@ -134,32 +134,6 @@
               <td class="govuk-table__cell"><a href="claim">Go to case</a></td>
             </tr>
 
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Maximillia Erdman</td>
-              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
-              <td class="govuk-table__cell">New application</td>
-              <td class="govuk-table__cell">3  November 2021  10:22</td>
-              <td class="govuk-table__cell"><a href="">Go to case</a></td>
-            </tr>
-
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Sonya Corkery</td>
-              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
-              <td class="govuk-table__cell">New application</td>
-              <td class="govuk-table__cell">2  November 2021  09:23</td>
-              <td class="govuk-table__cell"><a href="">Go to case</a></td>
-            </tr>
-
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Adaline Mann</td>
-              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
-              <td class="govuk-table__cell">New application</td>
-              <td class="govuk-table__cell">2  November 2021  16:23</td>
-              <td class="govuk-table__cell"><a href="">Go to case</a></td>
-            </tr>
 
       </tbody>
     </table>
@@ -246,7 +220,7 @@
     {{ govukTabs({
       items: [
       {
-        label: "Your priority cases (4)",
+        label: "Your priority cases (1)",
         id: "priority",
         panel: {
           html: priority
