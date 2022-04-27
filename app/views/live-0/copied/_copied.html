@@ -1,0 +1,288 @@
+
+
+
+{% if claim %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Case Management
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Application
+      </a>
+    </li>
+    <!-- <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Past month
+      </a>
+    </li> -->
+
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+
+
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+      <strong class="govuk-tag govuk-tag--red">
+Priority
+</strong>
+
+
+
+  <p></p>
+
+    <h2 class="govuk-heading-s">Application Summary</h2>
+
+
+<p> Application refrence: dsadsda
+<br> Date Submitted: dsadsda</p>
+
+<p><strong>Name:</strong> dsadsadsa</p>
+
+<p><strong>Prioity type(s):</strong> <br>dsadsadsa</p>
+
+<p><strong>Condition:</strong> dsadsadsa</p>
+
+
+</div>
+
+
+
+
+ <div class="govuk-grid-column-one-third">
+   <div class="update-panel">
+       <h3 id="update-adviser-heading" class="govuk-heading-m">Update adviser</h3>
+       <form action="/cases/apply/RMPX30/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+         <div class="govuk-form-group form-group-compound">
+           <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
+             <option value="" data-name=""></option>
+
+
+
+
+
+
+
+                   <option value="4" data-name="Aaron">Aaron</option>
+
+
+
+
+
+                   <option value="36" data-name="Adviser">Adviser</option>
+
+
+
+
+
+                   <option value="37" data-name="Case Team Lead">Case Team Lead</option>
+
+
+
+
+
+                   <option value="35" data-name="FRM">FRM</option>
+
+
+
+
+
+                   <option value="38" data-name="Payment Officer">Payment Officer</option>
+
+
+
+
+
+                   <option value="39" data-name="Payment Team Lead" selected="selected">Payment Team Lead</option>
+
+
+
+
+
+                   <option value="40" data-name="Quality">Quality</option>
+
+
+
+
+
+                   <option value="42" data-name="Quality1">Quality1</option>
+
+
+
+
+
+                   <option value="5" data-name="Shannon White">Shannon White</option>
+
+
+
+
+
+                   <option value="34" data-name="Telephony Agent">Telephony Agent</option>
+
+
+
+           </select>
+         </div>
+         <div>
+           <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+         </div>
+       </form>
+     </div>
+     <div class="update-panel govuk-form-group">
+        <h3 id="update-specialism-heading" class="govuk-heading-m">Update specialism</h3>
+        <form action="/cases/apply/RMPX30/update-specialism" method="post" class="form" id="form-update-specialism" autocomplete="off" data-submitonce="">
+            <div class="govuk-form-group form-group-compound">
+            <select class="govuk-select" id="specialismId" name="specialism" aria-labelledby="update-specialism-heading">
+
+
+                    <option value="self_employed" data-name="Self-employed">
+                Self-employed
+                </option>
+
+                    <option value="director" data-name="Director">
+                Director
+                </option>
+
+                    <option value="hidden" data-name="Hidden impairments">
+                Hidden impairments
+                </option>
+
+                    <option value="large_employer" data-name="Large employer">
+                Large employer
+                </option>
+
+                    <option value="deaf" data-name="Deaf">
+                Deaf
+                </option>
+
+                    <option value="visual" data-name="Visually impaired">
+                Visually impaired
+                </option>
+
+                    <option value="unknown" data-name="Pan disability" selected="">
+                Pan disability
+                </option>
+
+            </select>
+            </div>
+            <div>
+            <input type="submit" class="govuk-button" id="submitButtonSpecialism" value="Save">
+            </div>
+        </form>
+    </div>
+   </div>
+</div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <div class="govuk-form-group">
+
+      <form action="/live-0/claim#past-week" method="post" novalidate>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-fieldset__heading">Are you sure you have completely copied this application?</h2>
+<br></legend>
+<div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="copied-disc" name="copied-disc" type="radio" value="Yes~/live-0/complete#past-week.html" data-aria-controls="conditional-contact">
+      <label class="govuk-label govuk-radios__label" for="contact">
+        Yes
+      </label>
+    </div>
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="copied-disc">
+          Enter the URN for this application
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="copied-disc" name="copied-disc" type="email" spellcheck="false" autocomplete="email">
+      </div>  </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="copied-disc-2" name="copied-disc" type="radio" value="No~/live-0/complete#past-week.html">
+        <label class="govuk-label govuk-radios__label" for="copied-disc-2">
+          No
+        </label>
+      </div>      </div>  </fieldset>
+</div>
+
+
+
+         <button class="govuk-button" data-module="govuk-button">
+           Continue
+         </button>
+
+  </div>    </div>    </div>
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Past month</h2>
+
+
+  </div>
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Past year</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+{% endif %}

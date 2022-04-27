@@ -1,0 +1,550 @@
+
+
+
+{% if claim %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Case Management
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Application
+      </a>
+    </li>
+    <!-- <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Past month
+      </a>
+    </li> -->
+
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+
+
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+      <strong class="govuk-tag govuk-tag--red">
+Priority
+</strong>
+
+
+
+  <p></p>
+
+    <h2 class="govuk-heading-s">Application Summary</h2>
+
+
+<p> Application refrence: dsadsda
+<br> Date Submitted: dsadsda</p>
+
+<p><strong>Name:</strong> dsadsadsa</p>
+
+<p><strong>Prioity type(s):</strong> <br>dsadsadsa</p>
+
+<p><strong>Condition:</strong> dsadsadsa</p>
+
+
+</div>
+
+
+
+
+ <div class="govuk-grid-column-one-third">
+   <div class="update-panel">
+       <h3 id="update-adviser-heading" class="govuk-heading-m">Update adviser</h3>
+       <form action="/cases/apply/RMPX30/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+         <div class="govuk-form-group form-group-compound">
+           <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
+             <option value="" data-name=""></option>
+
+
+
+
+
+
+
+                   <option value="4" data-name="Aaron">Aaron</option>
+
+
+
+
+
+                   <option value="36" data-name="Adviser">Adviser</option>
+
+
+
+
+
+                   <option value="37" data-name="Case Team Lead">Case Team Lead</option>
+
+
+
+
+
+                   <option value="35" data-name="FRM">FRM</option>
+
+
+
+
+
+                   <option value="38" data-name="Payment Officer">Payment Officer</option>
+
+
+
+
+
+                   <option value="39" data-name="Payment Team Lead" selected="selected">Payment Team Lead</option>
+
+
+
+
+
+                   <option value="40" data-name="Quality">Quality</option>
+
+
+
+
+
+                   <option value="42" data-name="Quality1">Quality1</option>
+
+
+
+
+
+                   <option value="5" data-name="Shannon White">Shannon White</option>
+
+
+
+
+
+                   <option value="34" data-name="Telephony Agent">Telephony Agent</option>
+
+
+
+           </select>
+         </div>
+         <div>
+           <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+         </div>
+       </form>
+     </div>
+     <div class="update-panel govuk-form-group">
+        <h3 id="update-specialism-heading" class="govuk-heading-m">Update specialism</h3>
+        <form action="/cases/apply/RMPX30/update-specialism" method="post" class="form" id="form-update-specialism" autocomplete="off" data-submitonce="">
+            <div class="govuk-form-group form-group-compound">
+            <select class="govuk-select" id="specialismId" name="specialism" aria-labelledby="update-specialism-heading">
+
+
+                    <option value="self_employed" data-name="Self-employed">
+                Self-employed
+                </option>
+
+                    <option value="director" data-name="Director">
+                Director
+                </option>
+
+                    <option value="hidden" data-name="Hidden impairments">
+                Hidden impairments
+                </option>
+
+                    <option value="large_employer" data-name="Large employer">
+                Large employer
+                </option>
+
+                    <option value="deaf" data-name="Deaf">
+                Deaf
+                </option>
+
+                    <option value="visual" data-name="Visually impaired">
+                Visually impaired
+                </option>
+
+                    <option value="unknown" data-name="Pan disability" selected="">
+                Pan disability
+                </option>
+
+            </select>
+            </div>
+            <div>
+            <input type="submit" class="govuk-button" id="submitButtonSpecialism" value="Save">
+            </div>
+        </form>
+    </div>
+   </div>
+</div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+
+<a href="" >Application</a>
+
+
+
+      </div>
+
+   <div class="govuk-grid-column-one-half">
+    <p class="govuk-body">2 November 2021, 10:09am</p>
+         <h2 class="govuk-heading-l">Application</h2>
+         <p class="govuk-body">
+           <strong>Reference number:</strong> <span id="reference-number">RMPX30</span><br>
+           <strong>Date submitted:</strong> <span id="date-created">2 November 2021, 10:09am</span><br>
+           <strong>Version of questions:</strong>
+
+               25.25.0-rc
+             <br>
+         </p>
+
+         <h3 class="govuk-heading-m">Personal Details</h3>
+         <p class="govuk-body">
+           <strong>Full name:</strong> <span id="applicant-name">Dereck Smith</span><br>
+           <strong>Date of birth:</strong><span id="applicant-dob">1 October 1978</span><br>
+           <strong>Address:</strong><br> <span id="applicant-address">
+           17 Manor House<br>
+
+             High Street<br>
+
+           Newcastle<br>
+
+             Tyneside<br>
+
+           </span>
+           <strong>Postcode:</strong><span id="applicant-postcode">N11 4LQ</span>
+         </p>
+
+         <h3 class="govuk-heading-m">Contact Details</h3>
+         <p class="govuk-body">
+           <strong>Who do you want to be contacted about your condition, award or application?:</strong>Yourself<br>
+
+
+             </p><p class="govuk-body">
+               <strong>How do you want to be contacted?</strong><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <strong>Phone call:</strong><span id="ticked-tel">TICKED</span><br>
+               <strong>Email:</strong><span id="ticked-email">TICKED</span><br>
+
+
+
+               <strong>Email address:</strong><span id="contact-email">hwateamorange@engineering.digital.dwp.gov.uk</span><br>
+
+
+
+               <strong>Phone number:</strong><span id="contact-phone">01234567890</span><br>
+
+
+             </p>
+
+         <p></p>
+
+         <h3 class="govuk-heading-m">Employment Status</h3>
+         <p class="govuk-body">
+           <strong>Your employment status:</strong><span id="employment-type">Employee</span>
+         </p>
+
+
+         <h3 class="govuk-heading-m">Employed</h3>
+         <p class="govuk-body">
+           <strong>Your job title:</strong><span id="employment-title">QA Engineer</span><br>
+           <strong>Your employer:</strong><span id="employment-employer">DWP Digital</span><br>
+           <strong>Address:</strong><br><span id="employment-address-employed">
+
+             DWP Digital<br>
+
+
+             High Street<br>
+
+
+             Newcastle<br>
+
+
+             Tyneside<br>
+           </span>
+           <strong>Postcode:</strong><span id="employment-postcode-employed">N11 4LQ</span>
+         </p>
+
+         <h3 class="govuk-heading-m">Work Contact Details</h3>
+         <p class="govuk-body">
+           <strong>Their name:</strong><span id="employment-manager-name">Nadia Nsqjfymv Johnson</span><br>
+
+
+           <strong>Email address:</strong><span id="employment-manager-email">nadia.nsqjfymv.johnson@mail.co.uk</span><br>
+
+
+
+           <strong>Email address:</strong><span id="employment-manager-email">07168073520</span><br>
+
+
+         </p>
+
+
+
+
+
+
+         <h3 class="govuk-heading-m">Working Pattern</h3>
+         <p class="govuk-body">
+
+
+
+
+           <strong>How long have you been in your current job or role?:</strong><span id="working-pattern-duration">More than 6 weeks</span><br>
+
+
+           <strong>Work start date:</strong><span id="working-pattern-start-date">11/1978</span><br>
+
+           <strong>How many days a week do you usually work?:</strong><span id="working-pattern-days">5</span><br>
+           <strong>How many hours a week do you usually work?:</strong><span id="working-pattern-hours">35</span>
+         </p>
+
+         <h3 class="govuk-heading-m">Condition and Help Needed</h3>
+         <p class="govuk-body">
+           <strong>What are your conditions or disabilities?:</strong><span id="conditionDetails-description">Condition text</span><br>
+           <strong>Do you want some help to get to work?:</strong><span id="employmentDetails-affectsOnTravel">YES</span><br>
+           <strong>Does your condition make it harder for you to do your job?:</strong><span id="employmentDetails-affectsOnWork">YES</span><br>
+         </p>
+
+
+         <h3 class="govuk-heading-m">Effect of condition on Job</h3>
+         <p class="govuk-body">
+           <strong>How is it harder?:</strong><span id="conditionDetails-affectsOnWorkDetails-issue">Can't do my job</span><br>
+           <strong>Do you do anything to get around these problems at the moment?:</strong>YES<br>
+
+           <strong>What do you do?:</strong><span id="conditionDetails-affectsOnWorkDetails-currentArrangement">This is my current workaround</span><br>
+
+           <strong>Do you know what you need to help you with this?:</strong>YES<br>
+
+           <strong>What would help you?:</strong><span id="conditionDetails-affectsOnWorkDetails-helpNeeded">This is the help I need</span>
+
+         </p>
+
+
+
+         <h3 class="govuk-heading-m">Effect of condition on Travel to and from work</h3>
+         <p class="govuk-body">
+           <strong>How do you get to work at the moment?</strong><br>
+           <strong>Car, lift or taxi:</strong>
+
+           <span id="travelMethod-car-ticked">TICKED</span><br>
+
+
+
+
+
+
+
+
+           <strong>Bus or tram:</strong>
+
+
+
+           <span id="travelMethod-bus-ticked">NOT TICKED</span><br>
+
+
+
+
+
+
+           <strong>Walking or cycling:</strong>
+
+
+
+
+
+           <span id="travelMethod-walking-ticked">NOT TICKED</span><br>
+
+
+
+
+           <strong>Train or tube:</strong>
+
+
+
+
+
+
+
+           <span id="travelMethod-train-ticked">NOT TICKED</span><br>
+
+
+           <strong>Something else:</strong>
+
+
+
+
+
+
+
+
+         </p>
+
+         <p class="govuk-body">
+
+
+           <strong>Why can't you carry on using your car, getting a lift or a taxi?:</strong><span id="travelMethod-continue-car-issue">Can't continue travelling by car, lift or taxi</span><br>
+           <strong>How often does your work travel include using your car, getting a lift or a taxi?:</strong><span id="travelMethod-car-frequency">5 times a week</span><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         </p>
+         <p class="govuk-body">
+           <strong>Is it impossible for you to get to and from work using any of these?</strong><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+           <strong>Bus or tram:</strong><span id="bus-impossibleToUse-ticked">NOT TICKED</span><br>
+
+
+
+
+
+
+
+
+
+
+
+
+           <strong>Walking or cycling:</strong><span id="walking-impossibleToUse-ticked">NOT TICKED</span><br>
+
+
+
+
+
+
+
+
+
+
+
+
+           <strong>Train or tube:</strong><span id="train-impossibleToUse-ticked">NOT TICKED</span><br>
+
+
+
+           <strong>No, you could use all of these:</strong><span id="use-all-ticked">TICKED</span><br>
+         </p>
+<br>
+         <button class="govuk-button" data-module="govuk-button">
+           Application copied
+         </button>
+
+  </div>    </div>    </div>
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Past month</h2>
+
+
+  </div>
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Past year</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+{% endif %}
