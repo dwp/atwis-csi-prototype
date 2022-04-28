@@ -22,6 +22,15 @@ module.exports = {
 'priority' : "",
 'other' : "",
 'remove' : "",
+
+
+'Searchligh' : "Yes and application details match",
+'found-nino' : "Yes",
+'national-insurance-number' : "AB 123456 C",
+'appointee' : "No",
+'benefits' : "No",
+
+
   // Insert values here
 
   'unallocated-cases': [{
