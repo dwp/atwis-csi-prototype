@@ -22,10 +22,10 @@
             01234567890
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+              {% if  changeHide %}    <a href="#">
               Change
               <span class="govuk-visually-hidden"> what is your telephone number</span>
-            </a>
+            </a>{% endif %}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -36,10 +36,10 @@
             Between 8:30 am and 6pm Monday to Saturday.
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+          {% if  changeHide %}    <a href="#">    <a href="#">
               Change
               <span class="govuk-visually-hidden"> When are the best times to contact you?</span>
-            </a>
+            </a>{% endif %}
           </dd>
         </div>
 
