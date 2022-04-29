@@ -1,0 +1,101 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+                    Notification
+                  </h1>
+
+                  <p class="govuk-body">
+Details about the customer portal and what to do                  </p>
+<p class="govuk-body">Link to <a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">customer portal (opens in new tab)</a>  </p>
+
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                 <h2 class="govuk-fieldset__heading">
+                   {% include  "./content/notification.html" %}
+                 </h2>
+               </legend>
+
+
+                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                     <div class="govuk-radios__item">
+                       <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                       <label class="govuk-label govuk-radios__label" for="changed-name">
+                         Yes
+                       </label>
+                     </div>
+                     <div class="govuk-radios__item">
+                       <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                       <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                         No
+                       </label>
+                     </div>
+                   </div>
+
+                 </fieldset>
+               </div>
+
+               <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              <h2 class="govuk-fieldset__heading">
+                                {% include  "./content/notification-2.html" %}
+                              </h2>
+                            </legend>
+
+
+                                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                      No
+                                    </label>
+                                  </div>
+                                </div>
+
+                              </fieldset>
+                            </div>
+
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Sumbit and complete
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
