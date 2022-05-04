@@ -30,13 +30,37 @@
                </legend>
 
 <p>{% include  "./content/par-1.html" %}</p>
+<p>{% include  "./content/par-2.html" %}</p>
+<p>{% include  "./content/par-3.html" %}</p>
 
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+<h1 class="govuk-fieldset__heading">
+        Do you approve this award?
+      </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item govuk-radios--inline">
+                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check" type="radio" value="Yes" >
+                  <label class="govuk-label govuk-radios__label" for="quotes-check">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check" type="radio" value="No" }>
+                  <label class="govuk-label govuk-radios__label" for="quotes-check-2">
+                    No
+                  </label>
+                </div>
 
+              </div>
 
-
-
+            </fieldset>
+    </div>
+    </div>
            <button class="govuk-button" data-module="govuk-button">
-             Accept and continue
+             Save and continue
            </button>
          </form>
        </div>
