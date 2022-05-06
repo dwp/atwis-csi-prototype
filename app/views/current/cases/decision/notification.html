@@ -10,7 +10,7 @@
 
 
 
-<form action="" method="post" novalidate>
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -21,12 +21,14 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l">
-                    Notification
+                    Award decision
                   </h1>
 
-                  <p class="govuk-body">
-Details about the customer portal and what to do                  </p>
-<p class="govuk-body">Link to <a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">customer portal (opens in new tab)</a>  </p>
+                  <p class="govuk-body"> Link to <a href="https://intranet.dwp.gov.uk/manual/access-work/40-customer-content-portal-ccp">Customer Content Portal (CCP) guidance (opens in new tab)</a>             </p>
+
+                  <p><a href="/current/cases/claim#your-tasks">View application details</a></p>
+
+<p class="govuk-body">Link to <a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">Sharepoint folder (opens in new tab)</a>  </p>
 
 
   <div class="govuk-form-group">
@@ -38,55 +40,45 @@ Details about the customer portal and what to do                  </p>
                </legend>
 
 
-                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                     <div class="govuk-radios__item">
-                       <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-                       <label class="govuk-label govuk-radios__label" for="changed-name">
-                         Yes
-                       </label>
-                     </div>
-                     <div class="govuk-radios__item">
-                       <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-                       <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                         No
-                       </label>
-                     </div>
-                   </div>
+               <div id="notification-hint" class="govuk-hint">
+   Select all that apply.
+ </div>
+ <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification" name="notification" type="checkbox" value="Complete and sent ATW01CL" {{ checked("notification", "Complete and sent ATW01CL") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification">
+       Complete and sent ATW01CL
+     </label>
+   </div>
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification-2" name="notification" type="checkbox" value="Complete and sent ATW02EL" {{ checked("notification", "Complete and sent ATW02EL") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification-2">
+     Complete and sent ATW02EL
+     </label>
+   </div>
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification-3" name="notification" type="checkbox" value="Sent any attachments" {{ checked("notification", "Sent any attachments") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification-3">
+       Sent any attachments
+     </label>
+   </div>
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification-3" name="notification" type="checkbox" value="Saved copy of letters and any attachments to Sharepoint" {{ checked("notification", "Saved copy of letters and any attachments to Sharepoint") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification-3">
+      Saved copy of letters and any attachments to Sharepoint
+     </label>
+   </div>
+ </div>
 
                  </fieldset>
                </div>
 
-               <div class="govuk-form-group">
-                          <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                              <h2 class="govuk-fieldset__heading">
-                                {% include  "./content/notification-2.html" %}
-                              </h2>
-                            </legend>
-
-
-                                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                                  <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-                                    <label class="govuk-label govuk-radios__label" for="changed-name">
-                                      Yes
-                                    </label>
-                                  </div>
-                                  <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                                      No
-                                    </label>
-                                  </div>
-                                </div>
-
-                              </fieldset>
-                            </div>
 
 
 
-           <button class="govuk-button" data-module="govuk-button">
-             Sumbit and complete
+
+           <button class="govuk-button" data-module="govuk-button" >
+             Save and continue
            </button>
          </form>
        </div>
