@@ -3,7 +3,7 @@
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 <a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
-  Send decision
+Award decision
 </a>
 </span>
 {% if not data['notification']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
