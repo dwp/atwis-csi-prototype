@@ -2,12 +2,12 @@
 <ul class="app-task-list__items">
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-<a href="decision/notification.html" aria-describedby="job-status">
+<a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
   Send decision
 </a>
 </span>
-{% if not data['']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-{% if data['']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>   {% endif %}
+{% if not data['notification']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['notification']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>   {% endif %}
 
  </li>
 
