@@ -8,6 +8,10 @@ Decision letters
 </span>
 
 
+
+
+
+
 {% if 'Completed and sent letter ATW01CL' and
 'Completed and sent letter ATW02EL' and
 'Saved copy of letters and any attachments to Sharepoint'
@@ -15,7 +19,7 @@ in data['notification']%}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
 {% else  %}
 
-{% if 
+{% if
 'Sent any attachments'
 in data['notification']%}
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>
