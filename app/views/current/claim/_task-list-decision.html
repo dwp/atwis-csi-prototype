@@ -1,4 +1,17 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <ul class="app-task-list__items">
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
@@ -7,18 +20,12 @@ Decision letters
 </a>
 </span>
 
-
-
-
-
-
 {% if 'Completed and sent letter ATW01CL' and
 'Completed and sent letter ATW02EL' and
 'Saved copy of letters and any attachments to Sharepoint'
 in data['notification']%}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
 {% else  %}
-
 {% if
 'Sent any attachments'
 in data['notification']%}
@@ -28,8 +35,4 @@ in data['notification']%}
 {% endif %}
 {% endif %}
  </li>
-
-
-
-
 </ul>
