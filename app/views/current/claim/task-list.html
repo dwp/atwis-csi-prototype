@@ -304,7 +304,7 @@ data ['benefits']
           <span class="app-task-list__section-number">4. </span> Element
         </h2>
 
-{% if data['employer-size'] and 
+{% if data['employer-size'] and
 data['wpa']%}
     {% include  "../claim/_task-list-element.html" %}{% else %}
 
@@ -336,16 +336,22 @@ data['wpa']%}
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Grant decision
+            <span class="app-task-list__section-number">5. </span> Award decision
           </h2>
+          {% if data['element-decision']%}
+            {% include  "../claim/_task-list-decision.html" %}
+          {% else %}
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Send decision
+                Award summary
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
-          </ul>
+
+
+
+          {% endif %}
         </li>
       </ol>
     </div>
