@@ -22,7 +22,7 @@ module.exports = {
 'priority' : "",
 'other' : "",
 'remove' : "",
-
+'notification' : "",
 
 'Searchligh' : "Yes and application details match",
 'found-nino' : "Yes",
