@@ -12,25 +12,7 @@
  </li>
 
 
- {% if data['award']%}
- <li class="app-task-list__item">
- <span class="app-task-list__task-name">
- <a href="" aria-describedby="job-status">
-   Send decision
- </a>
- </span>
- {% if not data['']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
- {% if data['']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>   {% endif %}
 
-  </li>
- {% else %}
-
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-      Send decision
-    </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-  </li>{% endif %}
 
 
 </ul>
