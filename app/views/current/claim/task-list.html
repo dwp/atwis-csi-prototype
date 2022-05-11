@@ -360,6 +360,13 @@ data['wpa']%}
           {% endif %}
         </li>
       </ol>
+      {% if data['notification'] and
+      data['award']%}
+<form action="/current/cases/complete/ons" method="post" novalidate>
+         <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+{% endif %}
     </div>
 
   </div>
