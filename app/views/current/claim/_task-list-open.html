@@ -70,7 +70,7 @@
 </li>
 
 
-{% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='Yes'%}
+{% if data ['contact-employer']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="{% if data['employer-confirmed']%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
