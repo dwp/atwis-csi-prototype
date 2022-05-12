@@ -178,7 +178,7 @@ Improving Quality Assurance Practices
   </dl>
 
 <h2 class="govuk-heading-m">Workplace contact</h2>
-{% if  data['job-deatils-contact']=='They gave permission'%}{% else %}
+{% if  data['job-deatils-contact']=='They gave permission' or data['job-deatils-contact']=='They gave permission (apply)'%}{% else %}
 <div class="govuk-warning-text">
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 <strong class="govuk-warning-text__text">
@@ -193,9 +193,9 @@ Do not contact without permission
       Permission to communicate with workplace contact
     </dt>
     <dd class="govuk-summary-list__value">
-
+{% if data['job-deatils-contact']=='They gave permission (apply)'%}Permission given{% else %}
 {% if data['job-deatils-contact']=='They gave permission'%}Dereck Smith gave permission durring contact with John Goldsmith{% else %}  Permission not given yet{% endif %}
-    </dd>
+  {% endif %}  </dd>
     <dd class="govuk-summary-list__actions">
   {% if  changeHide %}    <a href="#">
         Change
@@ -236,7 +236,7 @@ Do not contact without permission
     Their email address
   </dt>
   <dd class="govuk-summary-list__value">
-    Jane@smithdigital.co 
+    Jane@smithdigital.co
   </dd>
   <dd class="govuk-summary-list__actions">
   {% if  changeHide %}  <a href="#">

@@ -29,7 +29,7 @@ module.exports = {
 'national-insurance-number' : "AB 123456 C",
 'appointee' : "No",
 'benefits' : "No",
-
+'job-deatils-contact' : "They gave permission (apply)",
 
   // Insert values here
 
@@ -99,7 +99,7 @@ module.exports = {
 
   'priority-cases': [{
     'name': 'Dereck Smith',
-
+'job-deatils-contact' : "They gave permission (apply)",
     'type': 'New Application',
     'priority' : "true",
     'date': '4 October 2021 13:23'

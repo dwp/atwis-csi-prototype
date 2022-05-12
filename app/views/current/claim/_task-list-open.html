@@ -32,26 +32,42 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="{% if data ['job-deatils-contact']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer{% endif %}" aria-describedby="job-status">
+  <a href="
+{% if data ['job-deatils-contact']=='They gave permission (apply)'%}
+{% if data ['contact-employer']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer/contact-employment{% endif %}
+{% else %}
+{% if data ['job-deatils-contact']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer{% endif %}
+{% endif %}
+" aria-describedby="job-status">
+
                   Employment
 </a>
               </span>
-                {% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='Yes'%}
-  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-  {% if  data['job-deatils-contact']=='They did not give permission'%}
+
+{% if data['job-deatils-contact']=='They gave permission (apply)'%}
+{% if data ['contact-employer']=='Yes'%}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-
-
-  {% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='No'%}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
 {% if  data['contact-employer']=='Yes, but I’m waiting for an answer' %}
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-{% if  data['job-deatils-contact']=='I have not spoken to them' %}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% if not data['contact-employer']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+{% if data ['contact-employer']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}
 
+{% else %}
 
-            {% if not data['job-deatils-contact']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-            </li>
+{% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+{% if  data['job-deatils-contact']=='They did not give permission'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+{% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% if  data['contact-employer']=='Yes, but I’m waiting for an answer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% if  data['job-deatils-contact']=='I have not spoken to them' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+
+{% if data ['job-deatils-contact']=='They gave permission (apply)'%}
+{% if not data['contact-employer']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+
+{% else %}
+{% if not data['job-deatils-contact']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+{% endif %}
+{% endif %}
+</li>
 
 
 {% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='Yes'%}
