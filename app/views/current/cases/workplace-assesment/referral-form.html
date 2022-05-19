@@ -1,0 +1,88 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+    <h1 class="govuk-heading-l">
+              Referral form
+            </h1>
+
+
+              <p class="govuk-body"> <a href="https://intranet.dwp.gov.uk/manual/access-work/40-customer-content-portal-ccp" class="govuk-link govuk-link--no-visited-state" target="_blank">Check guidance on using the Customer Content Portal (CCP) (opens in a new tab)</a> for the latest referral form.
+            </p>
+<!-- <p><a href="referral-form-details" class="govuk-link govuk-link--no-visited-state" target="_blank">View details (opens in a new tab)</a> to complete Referral form.</p> -->
+            <p class="govuk-body">
+              Use DWP Place to send encripted email to [provided auto generate here based on NINO].
+            </p>
+            <p class="govuk-body"><a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">Save a copy of decision letters in Sharepoint (opens in a new tab)</a>  </p>
+
+
+            <form action="/form-handler" method="post" novalidate>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+Which tasks have you completed?
+
+                  </legend>
+                  <div id="referral-form-hint" class="govuk-hint">
+       Select all that apply.
+     </div>
+     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form" name="referral-form" type="checkbox" value="carcasses">
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form">
+           Completed and sent referral form
+         </label>
+       </div>
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-2" name="referral-form" type="checkbox" value="mines">
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-2">
+           Saved copies to Sharepoint
+         </label>
+       </div>
+       {% if 'No' in data['benefits'] %}
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-3" name="referral-form" type="checkbox" value="farm">
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-3">
+           Set up on Labour Market System (LMS)
+         </label>
+       </div>
+       {% endif %}
+     </div>
+
+                </fieldset>
+              </div>
+  </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

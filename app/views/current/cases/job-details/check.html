@@ -49,8 +49,26 @@
               </a>
             </dd>
           </div>
+{% if data['wpa']=='Yes'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                            {% include  "./content/wpa.html" %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+        {{ data['employer-wpa-answer']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">
+              Update<span class="govuk-visually-hidden">      {% include  "./content/wpa.html" %}</span>
+              </a>
+            </dd>
+          </div>
 
 
+
+
+          {% endif %}
 {% if data['employer-confirmed']=='No, Smith Digital Limited has not confirmed job details' %}{% else %}
           <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">

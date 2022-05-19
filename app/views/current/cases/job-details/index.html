@@ -10,7 +10,7 @@
 
 
 
-<form action="/current/cases/job-details/contact-cost-share-agreement" method="post" novalidate>
+<form action="/current/cases/job-details/details" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -56,52 +56,7 @@
 
                      </fieldset>
                    </div>
-  <div class="govuk-form-group">
-             <fieldset class="govuk-fieldset">
-               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                 <h2 class="govuk-fieldset__heading">
-                   {% include  "./content/how-many-people-work.html" %}
-                 </h2>
-               </legend>
 
-
-
-
-
-               <div class="govuk-radios">
-                 <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="employer-size" name="employer-size" type="radio" value="1 to 9 (micro)~/current/cases/job-details/contact-cost-share-agreement-micro-small" {{ checked("employer-size", "1 to 9 (micro)") }}>
-                   <label class="govuk-label govuk-radios__label" for="employer-size">
-                    1 to 9 (micro)
-                   </label>
-                 </div>
-
-
-                                  <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="employer-size-2" name="employer-size" type="radio" value="10 to 49 (small)~/current/cases/job-details/contact-cost-share-agreement-micro-small" {{ checked("employer-size", "10 to 49 (small)") }}>
-                                    <label class="govuk-label govuk-radios__label" for="employer-size-2">
-                                      10 to 49 (small)
-                                    </label>
-                                  </div>
-
-                                  <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="employer-size-3" name="employer-size" type="radio" value="50 to 249 (medium)~/current/cases/job-details/contact-cost-share-agreement" {{ checked("employer-size", "50 to 249 (medium)") }}>
-                                    <label class="govuk-label govuk-radios__label" for="employer-size-3">
-                                      50 to 249 (medium)
-                                    </label>
-                                  </div>
-
-                                  <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="employer-size-4" name="employer-size" type="radio" value="250 or more (large)~/current/cases/job-details/contact-cost-share-agreement" {{ checked("employer-size", "250 or more (large)") }}>
-                                    <label class="govuk-label govuk-radios__label" for="employer-size-4">
-                                      250 or more (large)
-                                    </label>
-                                  </div>
-
-               </div>
-
-             </fieldset>
-           </div>
 
            <button class="govuk-button" data-module="govuk-button">
              Save and continue

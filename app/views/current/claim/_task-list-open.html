@@ -22,6 +22,24 @@
       </a>
       </p> -->
 <!-- <br> -->
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">3. </span> Prepare business case
+  </h2>
+  <ul class="app-task-list__items">
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+<a href="/current/cases/workplace-assesment" aria-describedby="job-status">
+      Workplace assesment
+</a>
+  </span>
+  {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+    {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}          </li>
+
+</ul>
+
+
 
 
         <li>
@@ -88,25 +106,16 @@
 {% endif %}
 
 
-<!-- {% if data['employer-cost-share']=='I have not discussed a cost share with the employer'%}
+{% if data['wpa']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-          <a href="/current/cases/job-details/contact-cost-share-agreement" aria-describedby="cost-share-agreement">
-                  Cost share agreement
+          <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
+                  WPA referral form
           </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
-{% endif %} -->
+
+{% endif %}
 
 
-
-              <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-              <a href="/current/cases/workplace-assesment" aria-describedby="job-status">
-                    Workplace assesment
-              </a>
-                </span>
-                {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-
-                  {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}          </li>
-</ul>
+          </ul>
