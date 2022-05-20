@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set changeHide = "True" %}
+
 {% if phase == 'sonya' %}{% set case = "-sonya" %}{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
@@ -19,7 +19,10 @@
 
         <h1 class="govuk-heading-l">   {% include  "./content/check.html" %}</h1>
 
+        <div class="govuk-inset-text">
+        <p> Dereck Smith needs specialist equipment. They do not need any other types of support.   </p>
 
+        </div>
         <p>If Dereck Smith needs temporary support, you will need to add this as a separate element.</p>
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -28,7 +31,7 @@
     {% include  "./content/specialist-equipment.html" %}
     </dt>
     <dd class="govuk-summary-list__value">
-    I don't know
+  Yes
 
     </dd>
     <dd class="govuk-summary-list__actions">

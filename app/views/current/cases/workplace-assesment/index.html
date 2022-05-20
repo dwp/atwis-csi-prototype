@@ -7,7 +7,7 @@
 {% block csi %}
 
 
-<form action="" method="post" novalidate>
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -43,13 +43,13 @@ Based on Dereck Smith’s answers, they may need a workplace assessment.        
 
                <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa" name="wpa" type="radio" value="Yes~workplace-assesment/citizen-wpa" {{ checked("wpa", "Yes") }}>
+                   <input class="govuk-radios__input" id="wpa" name="wpa" type="radio" value="Yes" {{ checked("wpa", "Yes") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa">
                      Yes
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-2" name="wpa" type="radio" value="No~/current/cases/claim#your-tasks" {{ checked("wpa", "No") }}>
+                   <input class="govuk-radios__input" id="wpa-2" name="wpa" type="radio" value="No" {{ checked("wpa", "No") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-2">
                      No
                    </label>

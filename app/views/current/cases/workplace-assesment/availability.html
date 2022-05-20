@@ -7,7 +7,7 @@
 {% block csi %}
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -27,7 +27,7 @@
                </legend>
                <div class="govuk-radios ">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="Yes" {{ checked("wpa-availability", "Yes") }}>
+                   <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="Yes~others" {{ checked("wpa-availability", "Yes") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-availability">
                     Yes
                    </label>
@@ -41,7 +41,7 @@
 
 
                <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="No" {{ checked("wpa-availability", "No") }}>
+              <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="I’m waiting for an answer~/current/cases/claim#your-tasks" {{ checked("wpa-availability", "I’m waiting for an answer") }}>
               <label class="govuk-label govuk-radios__label" for="wpa-availability">
             I’m waiting for an answer
               </label>

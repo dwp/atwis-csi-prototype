@@ -23,6 +23,12 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/key-details";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.dwp-image {
+  display: block;
+  margin-left: auto;
+  margin-right: 100;
+  width: 10%;
+}
 #ad-helpline {
     border-top: 3px solid #2ba197;
     padding-top: 15px;

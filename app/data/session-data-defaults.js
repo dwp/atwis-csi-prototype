@@ -34,7 +34,7 @@ module.exports = {
 
 'condition-check' : "No",
 'contact-check' : "No",
-'elements' : "complete",
+'elements' : "I do not know",
 'sae-check' : "No",
 'job-deatils-check' : "No",
 'quotes-check' : "No",

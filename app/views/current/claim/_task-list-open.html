@@ -24,7 +24,7 @@
 <!-- <br> -->
 <li>
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">3. </span> Prepare business case
+    <span class="app-task-list__section-number">3. </span> Workplace assessment
   </h2>
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
@@ -33,14 +33,47 @@
       Workplace assesment
 </a>
   </span>
-  {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
 
-    {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}          </li>
+    {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% else %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+    {% endif %}
+  </li>
 
+  {% if data['wpa']=='Yes'%}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+  <a href="/current/cases/workplace-assesment/citizen-wpa" aria-describedby="job-status">
+        Workplace assesment
+  </a>
+    </span>
+    {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+  {% if data['wpa-type']=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+  {% if data['wpa-availability']=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+  {% if data['wpa-availability']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+      {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+    </li>{% endif %}
 </ul>
 
 
+{% if not data['wpa']%}
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">3. </span> Prepare business case
+  </h2>
+<ul class="app-task-list__items">
+    <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
 
+          Employment
+
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+
+
+
+
+      </ul>
+{% else %}
 
         <li>
           <h2 class="app-task-list__section">
@@ -106,16 +139,36 @@
 {% endif %}
 
 
-{% if data['wpa']=='Yes'%}
+{% if data['employer-cost-share'] and data['wpa']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
           <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
                   WPA referral form
           </a>
               </span>
+              {% if not data['referral-form']%}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
-
+{% else %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+{% endif %}
 {% endif %}
 
 
-          </ul>
+
+
+  {% if data['referral-form']%}
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+<a href="#" aria-describedby="cost-share-agreement">
+        Add WPA report
+</a>
+    </span>
+
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+
+{% endif %}
+
+    </ul>
+
+          {% endif %}

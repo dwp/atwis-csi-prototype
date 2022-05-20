@@ -206,10 +206,11 @@ data ['benefits']
                   Summary of support requested
                </a>
               </span>
-              {% if data['elements']=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+              {% if data['elements']=='I do not know'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 
+    {% if  data['elements']=='I do not know'%}{% else %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
              <a href="./check-application/sae" aria-describedby="read-declaration-status">
@@ -220,7 +221,7 @@ data ['benefits']
               {% if data['sae-check']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
               {% if not data['sae-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
-
+{% endif %}
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -232,6 +233,8 @@ data ['benefits']
               {% if data['job-deatils-check']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
               {% if not data['job-deatils-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
+
+            {% if  data['elements']=='I do not know'%}{% else %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="./check-application/quotes" aria-describedby="job-status">
@@ -243,7 +246,7 @@ data ['benefits']
               {% if not data['quotes-check'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
             </li>
           </ul>
-          </li>
+          </li>{% endif %}
 
 
 
@@ -308,7 +311,7 @@ data ['benefits']
 
           </ul>
         </li>
-
+    {% if  data['elements']=='I do not know'%}{% else %}
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">4. </span> Element
         </h2>
@@ -328,8 +331,8 @@ data['wpa']%}
 
 
 
-  
-      </ul>{% endif %}
+
+      </ul>{% endif %}{% endif %}
 
 
 

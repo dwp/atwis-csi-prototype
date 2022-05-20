@@ -7,7 +7,7 @@
 {% block csi %}
 
 
-<form action="" method="post" novalidate>
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -26,9 +26,9 @@
 
               <p class="govuk-body"> <a href="https://intranet.dwp.gov.uk/manual/access-work/40-customer-content-portal-ccp" class="govuk-link govuk-link--no-visited-state" target="_blank">Check guidance on using the Customer Content Portal (CCP) (opens in a new tab)</a> for the latest referral form.
             </p>
-<!-- <p><a href="referral-form-details" class="govuk-link govuk-link--no-visited-state" target="_blank">View details (opens in a new tab)</a> to complete Referral form.</p> -->
-            <p class="govuk-body">
-              Use DWP Place to send encripted email to [provided auto generate here based on NINO].
+          <p><a href="referral-form-details" class="govuk-link govuk-link--no-visited-state" target="_blank">View details (opens in a new tab)</a> to complete Referral form.</p>
+           <p class="govuk-body">
+              Use DWP Place to send encripted email to {% if data['national-insurance-number']=='AB 123456 C'%}RBLI{% else %}People Plus{% endif %}.
             </p>
             <p class="govuk-body"><a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">Save a copy of decision letters in Sharepoint (opens in a new tab)</a>  </p>
 
@@ -58,14 +58,14 @@ Which tasks have you completed?
            Saved copies to Sharepoint
          </label>
        </div>
-       {% if 'No' in data['benefits'] %}
+
        <div class="govuk-checkboxes__item">
          <input class="govuk-checkboxes__input" id="referral-form-3" name="referral-form" type="checkbox" value="farm">
          <label class="govuk-label govuk-checkboxes__label" for="referral-form-3">
            Set up on Labour Market System (LMS)
          </label>
        </div>
-       {% endif %}
+
      </div>
 
                 </fieldset>
