@@ -32,12 +32,9 @@ module.exports = {
 'job-deatils-contact' : "They gave permission (apply)",
 
 
-'condition-check' : "No",
-'contact-check' : "No",
-'elements' : "I do not know",
 'sae-check' : "No",
-'job-deatils-check' : "No",
 'quotes-check' : "No",
+'elements' : "I do not know",
 
   // Insert values here
 
