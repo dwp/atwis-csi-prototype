@@ -1,0 +1,121 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-12/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+    <h2 class="govuk-fieldset__heading">
+      Contact Dereck Smith
+    </h2>
+
+  </legend>
+
+<p>Based on your answers, you do not need to contact Dereck Smith at this time.</p>
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+    Do you need to contact Dereck Smith at this time?
+
+  </legend>
+
+
+  <div class="govuk-radios govuk-radios--inline">
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="yes" name="contact" type="radio" value="Yes~/live-12/cases/contact/{{number}}/need-to-contact">
+          <label class="govuk-label govuk-radios__label" for="yes">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no" name="contact" type="radio" value="No~/live-12/cases/claim#your-tasks">
+          <label class="govuk-label govuk-radios__label" for="no">
+        No
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+</div>
+
+
+
+
+<!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+   Save and continue
+</button>
+
+
+</form>
+
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

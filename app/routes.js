@@ -37,6 +37,7 @@ router.use('/', (req, res, next) => {
 router.use('/baseline', require('./views/current/_routes'));
 router.use('/future', require('./views/future/_routes'));
 router.use('/current', require('./views/current/_routes'));
+router.use('/live-12', require('./views/live-11/_routes'));
 router.use('/live-11', require('./views/live-11/_routes'));
 router.use('/live-10', require('./views/live-10/_routes'));
 router.use('/live-9', require('./views/live-9/_routes'));
