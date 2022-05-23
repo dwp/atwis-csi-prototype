@@ -30,7 +30,7 @@
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
 <a href="/current/cases/workplace-assesment" aria-describedby="job-status">
-      Workplace assesment
+    Recommendation
 </a>
   </span>
 
@@ -43,14 +43,14 @@
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
   <a href="/current/cases/workplace-assesment/citizen-wpa" aria-describedby="job-status">
-        Workplace assesment
+        Workplace assessment referral
   </a>
     </span>
     {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
   {% if data['wpa-type']=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
   {% if data['wpa-availability']=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
   {% if data['wpa-availability']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-      {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+      {% if not data['wpa-type']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
     </li>{% endif %}
 </ul>
 
@@ -143,7 +143,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
           <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
-                  WPA referral form
+                  Workplace referral form
           </a>
               </span>
               {% if not data['referral-form']%}
@@ -161,7 +161,7 @@
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 <a href="#" aria-describedby="cost-share-agreement">
-        Add WPA report
+        Add workplace report
 </a>
     </span>
 

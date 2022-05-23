@@ -28,7 +28,7 @@
     {% include  "./content/specialist-equipment.html" %}
     </dt>
     <dd class="govuk-summary-list__value">
-    I don't know
+    I do not know
 
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -150,7 +150,7 @@
 
           <input type="hidden" name="appointee-checked" value="true">
 
-          <button class="govuk-button" data-module="govuk-button" name="elements" value="complete">
+          <button class="govuk-button" data-module="govuk-button" name="elements" value="{% if data['elements']=='I do not know'%}I do not know{% else %}complete{% endif %}">
           Accept and return to your tasks
           </button>
 
