@@ -1,0 +1,62 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+<div class="govuk-width-container">
+        <form action="/usability/cases/claim#your-tasks" method="post" novalidate>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/alpha-1h/your-job-and-employer/employment/start-date" method="post">
+
+
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+          What do you need to contact Dereck Smith{% if data['appointee']=='Yes, I need to add an appointee'%}’s appointee {{data['appointee-name']}}{% endif %} about?
+
+
+          </label>
+          </h1>
+
+
+          <p class="govuk-body">This will be added to your:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>case history</li>
+            <li>contact Dereck Smith{% if data['appointee']=='Yes, I need to add an appointee'%}’s appointee {{data['appointee-name']}}{% endif %} task</li>
+
+          </ul>
+          <textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-note1" rows="3" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 80 characters remaining</div>
+        </div>
+
+
+
+      </div>
+
+
+
+      <div class="govuk-!-padding-bottom-0"></div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and return to your tasks</button>
+      </form>
+
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+</div>
+
+  </div>
+    </main>
+  </div>
+
+
+{% endblock %}
