@@ -36,6 +36,7 @@ router.use('/', (req, res, next) => {
 // Start folder specific routes
 router.use('/baseline', require('./views/current/_routes'));
 router.use('/future', require('./views/future/_routes'));
+router.use('/usability', require('./views/usability/_routes'));
 router.use('/current', require('./views/current/_routes'));
 router.use('/live-12', require('./views/live-11/_routes'));
 router.use('/live-11', require('./views/live-11/_routes'));

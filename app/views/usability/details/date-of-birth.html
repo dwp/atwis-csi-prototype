@@ -1,0 +1,60 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="../cases/claim#citizen-details" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                Date of birth
+                </h1>
+              </legend>
+              <div id="citizen-dob--hint" class="govuk-hint">
+     For example, 27 3 2007
+   </div>
+   <div class="govuk-date-input" id="citizen-dob-">
+     <div class="govuk-date-input__item">
+       <div class="govuk-form-group">
+         <label class="govuk-label govuk-date-input__label" for="citizen-dob--day">
+           Day
+         </label>
+         <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-dob--day" name="citizen-dob--day" type="text" pattern="[0-9]*" inputmode="numeric" value="1"></div>
+     </div>
+     <div class="govuk-date-input__item">
+       <div class="govuk-form-group">
+         <label class="govuk-label govuk-date-input__label" for="citizen-dob--month">
+           Month
+         </label>
+         <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-dob--month" name="citizen-dob--month" type="text" pattern="[0-9]*" inputmode="numeric" value="10"></div>
+     </div>
+     <div class="govuk-date-input__item">
+       <div class="govuk-form-group">
+         <label class="govuk-label govuk-date-input__label" for="citizen-dob--year">
+           Year
+         </label>
+         <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="citizen-dob--year" name="citizen-dob--year" type="text" pattern="[0-9]*" inputmode="numeric" value="1978"></div>
+     </div>
+   </div>
+
+ </fieldset>
+</div>
+<!-- <div class="govuk-inset-text">
+text</div> -->
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="/usability/cases/contact/notification-need" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+              <h2 class="govuk-heading-xl">Do you want to keep these reminders for future contact with Dereck Smith?</h2>
+
+
+
+
+
+
+                {% include  "usability/claim/notification-contact.html" %}
+
+<div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="yes" name="clear" type="radio" value="Yes~/usability/cases/contact/contact-log">
+                  <label class="govuk-label govuk-radios__label" for="yes">
+                Yes
+              </label>
+
+                </div>
+
+
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="no" name="clear" type="radio" value="No~/usability/cases/contact/contact-log">
+                  <label class="govuk-label govuk-radios__label" for="no">
+                No
+              </label>
+
+                </div>
+
+</div>
+
+     <br>
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+             Save and continue
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
