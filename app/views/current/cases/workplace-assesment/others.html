@@ -31,13 +31,13 @@
                    </div>
                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                      <div class="govuk-checkboxes__item">
-                       <input class="govuk-checkboxes__input" id="others-wpa" name="others-wpa" type="checkbox" value="france">
+                       <input class="govuk-checkboxes__input" id="others-wpa" name="others-wpa" type="checkbox" value="france" {{ checked("others-wpa", "france") }}>
                        <label class="govuk-label govuk-checkboxes__label" for="others-wpa">
                          Yes, someone from Smith Digital Limited
                        </label>
                      </div>
                      <div class="govuk-checkboxes__item">
-                       <input class="govuk-checkboxes__input" id="others-wpa-2" name="others-wpa" type="checkbox" value="portugal">
+                       <input class="govuk-checkboxes__input" id="others-wpa-2" name="others-wpa" type="checkbox" value="portugal" {{ checked("others-wpa", "portugal") }}>
                        <label class="govuk-label govuk-checkboxes__label" for="others-wpa-2">
                         Yes, a third party
                        </label>
@@ -45,7 +45,7 @@
 
                      <div class="govuk-checkboxes__divider">or</div>
                      <div class="govuk-checkboxes__item">
-                       <input class="govuk-checkboxes__input" id="others-wpa-5" name="others-wpa" type="checkbox" value="none" data-behaviour="exclusive">
+                       <input class="govuk-checkboxes__input" id="others-wpa-5" name="others-wpa" type="checkbox" value="none" data-behaviour="exclusive" {{ checked("others-wpa", "No") }}>
                        <label class="govuk-label govuk-checkboxes__label" for="others-wpa-5">
                          No
                        </label>

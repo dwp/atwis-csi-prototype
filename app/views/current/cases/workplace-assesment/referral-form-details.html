@@ -275,7 +275,7 @@ Phone number
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-      Addtional ID is required?
+      Addtional ID
       </h2>
     </legend>
 
@@ -312,8 +312,48 @@ appropriate.
   </div>
   <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
 </div>
-<p>Dereck Smith has requested no one else at the WPA.</p>
+{% if 'No' in data['others-wpa']%}
+<p>Dereck Smith has requested no one else at the WPA.</p>{% endif %}
 
+{% if 'portugal' in data['others-wpa']%}
+<p>Dereck Smith has requested a third party at the WPA.</p>
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+      Avability of third party over the next 8 working days
+    </label>
+  </h2>
+  <div id="more-detail-hint" class="govuk-hint">
+    Include names and availability on non-working days/out of working hours if
+appropriate.
+  </div>
+
+  <div class="govuk-form-group">
+</div>
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+{% endif %}
+
+{% if 'france' in data['others-wpa']%}
+<p>Dereck Smith has requested someone from Smith Digital Limited at the WPA.</p>
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+      Avability of someone from Smith Digital Limited over the next 8 working days
+    </label>
+  </h2>
+  <div id="more-detail-hint" class="govuk-hint">
+    Include names and availability on non-working days/out of working hours if
+appropriate.
+  </div>
+
+  <div class="govuk-form-group">
+</div>
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+{% endif %}
             <form action="/form-handler" method="post" novalidate>
 
   </div>
