@@ -31,6 +31,10 @@ module.exports = {
 'benefits' : "No",
 'job-deatils-contact' : "They gave permission (apply)",
 
+
+
+'elements' : "I do not know",
+
   // Insert values here
 
   'unallocated-cases': [{
