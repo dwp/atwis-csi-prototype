@@ -1,6 +1,39 @@
 
 {% for case in data['priority-cases'] %}
 
+{% if not totalcomplete %}
+  {% set totalcomplete = 0 %}
+  {% endif %}
+
+
+{% for i in [1] -%}
+ {% set contactindex = i %}
+  {% if 'Completed and sent letter ATW01CL' in data['notification']
+  %}
+  {% set totalcomplete = totalcomplete + 1 %}
+{% endif %}
+  {%- endfor %}
+
+  {% for i in [1] -%}
+   {% set contactindex = i %}
+    {% if  'Completed and sent letter ATW02EL' in data['notification']
+    %}
+    {% set totalcomplete = totalcomplete + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+  {% for i in [1] -%}
+   {% set contactindex = i %}
+    {% if
+    'Saved copy of letters and any attachments to Sharepoint' in data['notification']
+    %}
+    {% set totalcomplete = totalcomplete + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+
+
+
 
 
 <div class="govuk-grid-row">
@@ -9,6 +42,7 @@
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
+
 
 
 {% if data['Searchligh']=='No'%}
@@ -363,7 +397,11 @@ data['wpa']%}
           {% endif %}
         </li>
       </ol>
-      {% if data['notification'] and
+
+
+
+
+      {% if totalcomplete == 3 and
       data['award']%}
 <form action="/usability/cases/complete/ons" method="post" novalidate>
          <button class="govuk-button" data-module="govuk-button">
