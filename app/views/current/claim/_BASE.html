@@ -109,17 +109,11 @@
 
             <dt class="govuk-visually-hidden">Name:</dt>
             <dd class="dwp-key-details-bar__primary">
-
-{% if case %}
-              {% for case in data['other-cases'] %}
-                  {{ case.name }}
-              {% endfor %}
-{% else %}
-              {% for case in data['priority-cases'] %}
-                  {{ case.name }}
-              {% endfor %}
-
-{% endif %}</dd>
+              {% if sc1 %}
+              {{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
+              {% if sc2 %}
+              {{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %}
+</dd>
 
 
 
@@ -156,7 +150,10 @@
 
 
             <dt>Application reference:</dt>
-            <dd>RMPX30</dd>
+            <dd>  {% if sc1 %}
+              RMPX31{% endif %}
+              {% if sc2 %}
+              RMPX32{% endif %}</dd>
   {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
             <dt>Appointee:</dt>
             <dd>John Smith</dd>{% endif %}

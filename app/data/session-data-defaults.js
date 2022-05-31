@@ -102,6 +102,8 @@ module.exports = {
 
 
   'priority-cases': [{
+    'firstname': 'Dereck',
+    'surname': 'Smith',
     'name': 'Dereck Smith',
 'job-deatils-contact' : "They gave permission (apply)",
     'type': 'New Application',
@@ -110,6 +112,8 @@ module.exports = {
   }],
 
   'other-cases': [{
+    'firstname': 'Sonya',
+    'surname': 'Corkery',
     'name': 'Sonya Corkery',
 
     'type': 'New Application',
