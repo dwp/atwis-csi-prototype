@@ -25,7 +25,7 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
-                   <h2 class="govuk-heading-xl">{% include  "./content/add-appointee-details.html" %}
+                   <h2 class="govuk-heading-xl">{% include  "current/cases/searchlight/appointee/content/add-appointee-details.html" %}
                      </h2>
 
 
@@ -33,7 +33,7 @@
 
    <div class="govuk-form-group">
      <label class="govuk-label" for="appointee-name">
-      {% include  "./content/appointee-full-name.html" %}
+      {% include  "current/cases/searchlight/appointee/content/appointee-full-name.html" %}
      </label>
 
    <input class="govuk-input govuk-input--width-20" id="appointee-name" name="appointee-name" type="text" value="{{data['appointee-name']}}">
@@ -47,7 +47,7 @@
 
      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
        <h2 class="govuk-fieldset__heading">
-        {% include  "./content/appointee-address.html" %}
+        {% include  "current/cases/searchlight/appointee/content/appointee-address.html" %}
        </h2>
      </legend>
 
@@ -92,7 +92,7 @@
      <fieldset class="govuk-fieldset" aria-describedby="appointee-contact-hint">
        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
          <h2 class="govuk-fieldset__heading">
-            {% include  "./content/appointee-contact.html" %} 
+            {% include  "current/cases/searchlight/appointee/content/appointee-contact.html" %} 
          </h2>
        </legend>
        <div id="appointee-contact-hint" class="govuk-hint">

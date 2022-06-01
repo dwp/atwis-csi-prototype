@@ -16,14 +16,14 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h2 class="govuk-heading-l">{% include  "./content/check.html" %}</h2>
+        <h2 class="govuk-heading-l">{% include  "current/cases/searchlight/appointee/content/check.html" %}</h2>
 
 
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             {% include  "./content/does-name-here-have-an-appointee.html" %}
+             {% include  "current/cases/searchlight/appointee/content/does-name-here-have-an-appointee.html" %}
             </dt>
             <dd class="govuk-summary-list__value">
 
@@ -32,7 +32,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
-              Update<span class="govuk-visually-hidden">   {% include  "./content/does-name-here-have-an-appointee.html" %}</span>
+              Update<span class="govuk-visually-hidden">   {% include  "current/cases/searchlight/appointee/content/does-name-here-have-an-appointee.html" %}</span>
               </a>
             </dd>
           </div>
@@ -41,7 +41,7 @@
           {% if data['appointee']=='Yes, I need to add an appointee'%}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-{% include  "./content/appointee-full-name.html" %}
+{% include  "current/cases/searchlight/appointee/content/appointee-full-name.html" %}
 
 
             </dt>
@@ -50,7 +50,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="appointee-details#appointee-name">
-                Update<span class="govuk-visually-hidden"> {% include  "./content/appointee-full-name.html" %}</span>
+                Update<span class="govuk-visually-hidden"> {% include  "current/cases/searchlight/appointee/content/appointee-full-name.html" %}</span>
               </a>
             </dd>
           </div>
@@ -58,7 +58,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
-{% include  "./content/appointee-address.html" %}
+{% include  "current/cases/searchlight/appointee/content/appointee-address.html" %}
 
 
             </dt>
@@ -71,7 +71,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="appointee-details#appointee-address-line-1">
-                Update<span class="govuk-visually-hidden"> {% include  "./content/appointee-address.html" %}</span>
+                Update<span class="govuk-visually-hidden"> {% include  "current/cases/searchlight/appointee/content/appointee-address.html" %}</span>
               </a>
             </dd>
 </div>
@@ -79,7 +79,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-{% include  "./content/appointee-contact-details.html" %}
+{% include  "current/cases/searchlight/appointee/content/appointee-contact-details.html" %}
 
               </dt>
               <dd class="govuk-summary-list__value">
@@ -91,7 +91,7 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="appointee-details#appointee-name">
-                  Update<span class="govuk-visually-hidden"> {% include  "./content/appointee-contact-details.html" %}</span>
+                  Update<span class="govuk-visually-hidden"> {% include  "current/cases/searchlight/appointee/content/appointee-contact-details.html" %}</span>
                 </a>
               </dd>
             </div>
@@ -99,7 +99,7 @@
 {% if 'email' in data['appointee-contact']%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-   {% include  "./content/appointee-email.html" %}
+   {% include  "current/cases/searchlight/appointee/content/appointee-email.html" %}
 
   </dt>
             <dd class="govuk-summary-list__value">
@@ -107,7 +107,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="appointee-telephone-email#appointee-email">
-                Update<span class="govuk-visually-hidden">    {% include  "./content/appointee-email.html" %}</span>
+                Update<span class="govuk-visually-hidden">    {% include  "current/cases/searchlight/appointee/content/appointee-email.html" %}</span>
               </a>
             </dd>
           </div>
@@ -116,7 +116,7 @@
 {% if 'telephone' in data['appointee-contact']%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    {% include  "./content/appointee-telephone.html" %}
+    {% include  "current/cases/searchlight/appointee/content/appointee-telephone.html" %}
 
   </dt>
             <dd class="govuk-summary-list__value">
@@ -124,7 +124,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="appointee-telephone-email#appointee-telephone">
-                Update<span class="govuk-visually-hidden">     {% include  "./content/appointee-telephone.html" %}</span>
+                Update<span class="govuk-visually-hidden">     {% include  "current/cases/searchlight/appointee/content/appointee-telephone.html" %}</span>
               </a>
             </dd>
           </div>
