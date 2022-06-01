@@ -1,0 +1,39 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+         <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+              Case not appropriate for ATWIS
+
+                 </h1>
+               </legend>
+
+<p>Based on your answer this case is not suitable  to be continued in AtWIS *note: this line maybe beter as the H1?</p>
+
+<h2>sub heading 1</h2>
+<p>If you did not mean to you can change your answer</p>
+Possible show what they answered here as a cya??
+<h2>sub heading 2</h2>
+<p>If you did mean to you will have to transfer the data to DiSC and rebuild the buiness case. </p>
+<p>Retrun to the your task to access the data already entered to copy to DiSC.</p>
+                  </div>
+                </div>
+              </main>
+            </div>
+
+{% endblock %}
