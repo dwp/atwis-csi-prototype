@@ -9,7 +9,7 @@
 
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if sc1 %}sc-1/{% endif %}{% if sc2 %}sc-2/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
