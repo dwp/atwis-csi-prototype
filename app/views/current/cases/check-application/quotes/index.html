@@ -19,8 +19,11 @@
 
 
         {% include "current/claim/_quote-sae-1.html"%}
-        
-<p>Only 1 quote is needed from Dereck Smith because the total cost is below £500.</p>
+
+<p>Only 1 quote is needed from
+  {% if sc1 %}{{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
+  {% if sc2 %}{{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %}
+   because the total cost is below £500.</p>
 
 <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">

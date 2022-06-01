@@ -44,7 +44,11 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}
+{% if sc1 %}
+{{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
+{% if sc2 %}
+{{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %}{% endif %}
 </a>
 </p>
 
@@ -75,7 +79,12 @@ data ['benefits']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}
+                  {% if sc1 %}
+                  {{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
+                  {% if sc2 %}
+                  {{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %}
+                  {% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 
@@ -411,7 +420,7 @@ data['wpa']%}
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Award decision
+            <span class="app-task-list__section-number"> {% if sc1 %}6{% endif %}{% if sc2 %}5{% endif %}. </span> Award decision
           </h2>
           {% if data['element-decision']%}
             {% include  "../claim/_task-list-decision.html" %}
