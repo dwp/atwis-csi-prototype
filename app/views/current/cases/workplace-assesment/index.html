@@ -22,8 +22,10 @@
                   </h1>
 
                   <p class="govuk-body">
-Based on Dereck Smith’s answers, they may need a workplace assessment.              </p>
-<p>This is because Dereck Smith doesn’t know if they need specialist equipment.</p>
+Based on {% if sc1 %}{{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
+{% if sc2 %}{{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %}’s answers, they may need a workplace assessment.              </p>
+<p>This is because {% if sc1 %}{{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
+{% if sc2 %}{{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %} doesn’t know if they need specialist equipment.</p>
 
 
                   <p class="govuk-body">   <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/30-workplace-assessment" target="_blank">Check Workplace assesment guidance (opens in a new tab)</a></p>

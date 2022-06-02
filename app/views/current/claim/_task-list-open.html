@@ -12,7 +12,8 @@
       <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-  Record contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}{% if sc1 %}
+  Record contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}
+  {% if sc1 %}
   {{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
   {% if sc2 %}
   {{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %}{% endif %}
@@ -32,7 +33,7 @@
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-<a href="/current/cases/workplace-assesment" aria-describedby="job-status">
+<a href="/current/cases/{% if sc2 %}sc-2/{% endif %}{% if sc1 %}sc-1/{% endif %}workplace-assesment" aria-describedby="job-status">
     Recommendation
 </a>
   </span>
