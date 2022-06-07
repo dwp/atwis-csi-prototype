@@ -130,18 +130,23 @@
 
             <dt class="govuk-visually-hidden">Decisions status:</dt>
        <dd class="dwp-key-details-bar__status">
-  {% if phase == "complete" %}
-  completed{% else %}
-              {% if data ['Searchligh'] or
-                         data ['appointee']
-                          or
-                        data ['benefits']
-                         %}
- In progress
-{% else %}
-        Not started
-        {% endif %}
-{% endif %}
+
+         {% if data['linked']=='Yes'%}
+         Copy to DiSC
+         {% else %}
+           {% if phase == "complete" %}
+           completed{% else %}
+                       {% if data ['Searchligh'] or
+                                  data ['appointee']
+                                   or
+                                 data ['benefits']
+                                  %}
+          In progress
+         {% else %}
+                 Not started
+                 {% endif %}
+         {% endif %}
+         {% endif %}
             </dd>
 
         </div>
