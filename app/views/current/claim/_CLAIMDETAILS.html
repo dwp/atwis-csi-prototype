@@ -28,6 +28,9 @@
 
   </ul>
   <div class="govuk-tabs__panel" id="application-summary">
+    {% if data['copy-to-disc']=='true'%}
+    {% include  "../claim/notification-disc.html" %}
+    {% endif %}
 
   {% if phase == "notEligible"  %}
 {% include  "../claim/notification.html" %}
@@ -218,11 +221,15 @@
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
+    {% if data['copy-to-disc']=='true'%}
+    {% include  "../claim/notification-disc.html" %}
+    {% endif %}
 
     {% if phase == "notEligible"  %}
     {% include  "./notification.html" %}
       {% else %}
     {% endif %}
+    
     {% include  "./task-list.html" %}
 
   </div>

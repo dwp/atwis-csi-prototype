@@ -130,6 +130,10 @@
 
             <dt class="govuk-visually-hidden">Decisions status:</dt>
        <dd class="dwp-key-details-bar__status">
+
+{% if data['copy-to-disc']=='true'%}
+Copy to DiSC
+{% else %}
   {% if phase == "complete" %}
   completed{% else %}
               {% if data ['Searchligh'] or
@@ -141,6 +145,7 @@
 {% else %}
         Not started
         {% endif %}
+{% endif %}
 {% endif %}
             </dd>
 
