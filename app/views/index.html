@@ -95,6 +95,7 @@
     </div>
     <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
 
+      <p>  <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132548690256">Design decision confluence page</a></p>
 
       {{ govukTable({
         caption: "Version history for current team",
@@ -165,17 +166,55 @@
            <ul class="govuk-list govuk-list--bullet">
               <li></li>
             </ul>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
             <ul class="govuk-list govuk-list--bullet">
               <li></li>
 
              </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li></li>
+
+            </ul>
 
          '
         },
 
         {
           html: '<a href="/current/index">Go to current </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "00 Month 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Usability done in sprint but analysis not completed. Follow up in next sprint. </li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Created a "case not appropirate for ATWIS" screen. Created a <a href="/live-13/cases/case-not-appropriate-for-atwis/task-list#your-tasks">separate folder</a> to show the screen triggers different status and notification box.   </li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3078</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-13/index">Go to live 13 </a>'
         }
         ],
         [
@@ -193,7 +232,7 @@
            <ul class="govuk-list govuk-list--bullet">
               <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132810113033/Sprint+2+11+05-24+05+-+Scenario+1+v2">Full UR overview from sprint live 12</a></li>
             </ul>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
             <ul class="govuk-list govuk-list--bullet">
               <li>Full <strong>scenario 1</strong> journey</li>
               <li>Created award summary section, that playback element and quote details. It also will auto determine if a referral for approval is needed based on the amount. As this is under £500 no referral for approval is needed. </li>
@@ -201,6 +240,13 @@
                 <li>ONS data capture added. Primary and secondary condition renamed as health condition and Other health condition. </li>
                 <li>Place holder screen for completed screen after ONS screen. Will review after analysis and usability.</li>
 
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+            <ul class="govuk-list ">
+              <li>HTO-3049</li>
+             <li>HTO-3044</li>
+             <li>HTO-3372</li>
+             <li>HTO-3047</li>
              </ul>
 
          '
@@ -225,7 +271,7 @@
            <ul class="govuk-list govuk-list--bullet">
               <li>No UR ths sprint</li>
             </ul>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
               <p>Story mapping approach to design work is implement this sprint. The focus is scenario 1. </P>
             <ul class="govuk-list govuk-list--bullet">
               <li>We temporary removed the incomplete task content at the top of the task list till we know how many tasks we will have </li>
@@ -235,7 +281,12 @@
       <li>Created element section for special aids and equipment (SAE) to review for the business case needs </li>
         <li>Added a way to record workplace assessment not needed. </li>
              </ul>
-
+             <p><strong>Jira tickets: </strong></p>
+            <ul class="govuk-list ">
+              <li>HTO-3043</li>
+             <li>HTO-3274</li>
+   <li>HTO-3040</li>
+             </ul>
          '
         },
 
@@ -261,9 +312,9 @@
                 <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132759356381/Sprint+1222+-+Iterated+Contact+Log+Iterated+Job+Details" target="blank">Full UR overview from sprint 1222</a>
 
             </ul>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
             <ul class="govuk-list govuk-list--bullet">
-              <li>Removed Check Your Answers (CYA) from the end of question journey. CYA Now only appear if a user returns to a task. Previous usability session showed case managers stuck in a loop, after several iteration of content changes to try address this, we where still seeing the same issue. We have added to the design backlog to explore at a later date   </li>
+              <li>Removed Check Your Answers (CYA) from the end of question journey. CYA Now only appear if a user returns to a task. Previous usability session showed case managers stuck in a loop, after several iteration of content Changes for UR to try address this, we where still seeing the same issue. We have added to the design backlog to explore at a later date   </li>
               <li>Changed content on <strong>Is Searchlight correct?</strong> (users where confused by the content as there was no refrence to what Searchlight was correct or not) to <strong>Are Dereck Smiths perosnal details correct in Searchlight?</strong></li>
              <li>Contact journey content updated: <br>-Changed <strong>What did you {contact method} {name here} about?</strong> to <strong>Contact note</strong><br>
 <strong>-How do you want to contact {name here}?</strong> to <strong>Type if contact</strong> and introduced hint text <br>
@@ -273,7 +324,12 @@
 -Added third radio <strong>I need to contact {name here} to confirm</strong> on /cases/update/index.html<br>
 -(Bug fix) wrong status tag and missed CYA in the journy.<br>
 </li></ul>
-
+<p><strong>Jira tickets: </strong></p>
+<ul class="govuk-list ">
+ <li>HTO-3056</li>
+<li>HTO-3057</li>
+<li>HTO-3058</li>
+</ul>
          '
         },
 
@@ -298,7 +354,7 @@
                             <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132717838340/Sprints+0822+1022+-+Contact+Log+and+Iterated+Job+Details" target="blank">Full UR overview from sprint 0822+1</a>
 
             </ul>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
             <ul class="govuk-list govuk-list--bullet">
               <li>JS validation error messages added to the dev baseline</li>
 <li>Added lives version of the Docuemtn tab to the allocator your case</li>
@@ -331,7 +387,7 @@
 
              <p><strong>Findings: </strong></p>
         <p>Usability only had 2 sessions, dues to no shows and cancelations. Will be retested next sprint.</p>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
             <ul class="govuk-list govuk-list--bullet">
               <li></li>
               <li>Removed the contact task from the task list as a task and had it above the task list. Content appears in an inset explain they cannot contact yet. </li>
@@ -369,12 +425,12 @@
               <li>All CMs noticed the addition of the permission question and reacted positively to it.</li>
               <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132685758528" target="blank">Full UR overview from sprint 0622</a>
             </ul>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
             <ul class="govuk-list govuk-list--bullet">
               <li>Changed all the content on the check your answer (CYA) pages (named /check.html) links from “change” to “update”. Also changed all titles content to include “Task summary:…”. This is due to the continues feedback that about 50% of case managers were confused about the purpose of the CYA.</li>
               <li>Job details expanded to capture cost share agreement tasks in employment</li>
               <li>Timeline expanded </li>
-                <Li>Timeline updated to aligne with changes</li>
+                <Li>Timeline updated to aligne with Changes for UR</li>
              </ul>
 
          '
@@ -399,7 +455,7 @@
                    <ul class="govuk-list govuk-list--bullet">
                       <li></li>
                     </ul>
-                      <p><strong>Changes: </strong></p>
+                      <p><strong>Changes for UR: </strong></p>
                     <ul class="govuk-list govuk-list--bullet">
                       <li>Upper case filter added to the NiNO data</li>
                       <li>Job details section added to the task list and data from the Sparrow new apply design to the application details tab</li>
@@ -436,7 +492,7 @@
                 Most users went to the application details tab to update them. We hypophysis is that with causes a disconnect that the application details tab and task list (on the your task tab) and are not in sync.  </li>
               <li>User indicated that having the disability on the application summary would be helpful </li>
             </ul>
-              <p><strong>Changes: </strong></p>
+              <p><strong>Changes for UR: </strong></p>
             <ul class="govuk-list govuk-list--bullet">
               <li>Added notification (using the details component) for the drop down on the “your cases” screen. If there are no cases this will be triggered. Removes the old design of the red or green banner. Applied to priority, other and csi tab. </li>
               <li>Created completed case and allocated notification box on the your case screen</li>
@@ -445,7 +501,7 @@
               <li>Readded the priority column </li>
               <li>Case history refined and logic created </li>
               <li>PiP added to the benefits list</li>
-              <li>When adding an appointee content changes in the contact journey to reference the appointee</li>
+              <li>When adding an appointee content Changes for UR in the contact journey to reference the appointee</li>
               <li>Check your answers added to the appointee journey </li>
 
                <li></li>
@@ -708,7 +764,7 @@
                   <strong>Learning issues</strong>
                   <p>Usability - None	</p>
 
-                  <strong>Next steps (Immediate changes)</strong>
+                  <strong>Next steps (Immediate Changes for UR)</strong>
                    <p>Process flow: Create journey to handle complex case rejection and closure</p>
 
                    <strong>Next steps (to monitor after moving to Private Beta)</strong>

@@ -1,0 +1,23 @@
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Benefits in Searchlight that could affect Dereck Smith’s eligibility
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+
+      {% for feature in data['benefits'] %}
+        <li>{{ feature }}</li>
+      {% else %}
+        <li>None </li>
+      {% endfor %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="check">
+        Change<span class="govuk-visually-hidden"> Benefits that could affect Dereck Smith’s eligibility</span>
+      </a>
+    </dd>
+  </div>
+
+  
+</dl>
