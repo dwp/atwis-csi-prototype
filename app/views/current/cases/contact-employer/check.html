@@ -8,7 +8,7 @@
 <br>
 
 
-<form action="{% if data['job-deatils-contact']=='They did not give permission'%}/current/cases/claim-not-eligible#your-tasks{% else %}/current/cases/claim#your-tasks{% endif %}" method="post" novalidate>
+<form action="{% if data['job-deatils-contact']=='They did not give permission'%}/current/cases/{{caseurl}}claim-not-eligible#your-tasks{% else %}/current/cases/{{caseurl}}claim#your-tasks{% endif %}" method="post" novalidate>
 <div class="govuk-width-container">
 
 
