@@ -2,12 +2,14 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
+
+
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{{caseurl}}claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -22,7 +24,7 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
-                  Does Dereck Smith want anyone else to be at the workplace assessment?
+                  Does {{citizenname}} want anyone else to be at the workplace assessment?
                  </h2>
                </legend>
 

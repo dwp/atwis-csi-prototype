@@ -1,3 +1,5 @@
+
+
 {% extends folder + "/claim/_BASE.html" %}
 
 {% block content %}
@@ -27,7 +29,8 @@
 
 {% endif  %}
 
-
+{% if sc1 %}{% set caseurl = "sc-1/" %}{% set citizenname = "Dereck Smith" %}{% endif %}
+{% if sc2 %}{% set caseurl = "sc-2/" %}{% set citizenname = "Sonya Corkery" %}{% endif %}
 
 <div class="govuk-width-container">
 

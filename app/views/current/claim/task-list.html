@@ -241,8 +241,9 @@ data ['benefits']
                   Summary of support requested
                </a>
               </span>
-              {% if data['elements-task']=='in progress'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+                {% if data['elements']=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif  %}
+              {% if data['elements-task']=='in progress'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+                {% if not data['elements'] or not data['elements-task'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 {% if sc1 %}
 <li class="app-task-list__item">

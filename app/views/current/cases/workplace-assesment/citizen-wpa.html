@@ -2,6 +2,8 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
+
+
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -22,7 +24,7 @@
                   </h1>
 
                   <p class="govuk-body">
-You must contact Dereck Smith and recommend a workplace assessment. You should ask:  </p>
+You must contact {{citizenname}} and recommend a workplace assessment. You should ask:  </p>
 
 
 
@@ -34,7 +36,7 @@ You must contact Dereck Smith and recommend a workplace assessment. You should a
 </ul>
 
 
-<h2 class="govuk-heading-m">Dereck Smith contact details</h2>
+<h2 class="govuk-heading-m">{{citizenname}} contact details</h2>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -55,7 +57,7 @@ You must contact Dereck Smith and recommend a workplace assessment. You should a
         Email address
       </dt>
       <dd class="govuk-summary-list__value">
-        dereck@gmail.com
+      {% if sc1 %}dereck{% endif %}{% if sc2 %}sonya{% endif %}@gmail.com
       </dd>
       <dd class="govuk-summary-list__actions">
 
@@ -81,7 +83,7 @@ You must contact Dereck Smith and recommend a workplace assessment. You should a
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                  <h2 class="govuk-fieldset__heading">
-                  What type of workplace assessment does Dereck Smith want?
+                  What type of workplace assessment does {{citizenname}} want?
                  </h2>
                </legend>
                <!-- <div id="national-insurance-number-hint" class="govuk-hint">
@@ -103,13 +105,13 @@ You must contact Dereck Smith and recommend a workplace assessment. You should a
                </div>
 
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="They do not want a workplace assessment~/current/cases/claim#your-tasks" {{ checked("wpa-type", "They do not want a workplace assessment") }}>
+                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="They do not want a workplace assessment~/current/cases/{{caseurl}}claim#your-tasks" {{ checked("wpa-type", "They do not want a workplace assessment") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-type-2">
                      They do not want a workplace assessment
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="I have not discussed it with them yet~/current/cases/claim#your-tasks" {{ checked("wpa-type", "I have not discussed it with them yet") }}>
+                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="I have not discussed it with them yet~/current/cases/{{caseurl}}claim#your-tasks" {{ checked("wpa-type", "I have not discussed it with them yet") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-type-2">
                      I have not discussed it with them yet
                    </label>

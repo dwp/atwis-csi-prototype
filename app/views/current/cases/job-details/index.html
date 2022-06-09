@@ -2,6 +2,8 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
+
+
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -10,7 +12,7 @@
 
 
 
-<form action="/current/cases/job-details/details" method="post" novalidate>
+<form action="/current/cases/{{caseurl}}job-details/details" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -45,7 +47,7 @@
                                           </div>
 
                                                                                     <div class="govuk-radios__item">
-                                                                                      <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="No, Smith Digital Limited has not confirmed job details~/current/cases/job-details/unhappy-employment-details" {{ checked("employer-confirmed", "  No, Smith Digital Limited has not confirmed job details yet") }}>
+                                                                                      <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="No, Smith Digital Limited has not confirmed job details~/current/cases/{{caseurl}}job-details/unhappy-employment-details" {{ checked("employer-confirmed", "  No, Smith Digital Limited has not confirmed job details yet") }}>
                                                                                       <label class="govuk-label govuk-radios__label" for="employer-confirmed-2">
                                                                                         No, Smith Digital Limited has not confirmed job details
                                                                                       </label>

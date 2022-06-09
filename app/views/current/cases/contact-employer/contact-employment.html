@@ -2,6 +2,10 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
+
+
+
+
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -10,7 +14,7 @@
 
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{{caseurl}}claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -71,7 +75,7 @@
                                     Permission
                                      </dt>
                                      <dd class="govuk-summary-list__value">
-                                       Dereck Smith has given permission for you to contact this person at Smith Digital Ltd.
+                                       {{citizenname}} has given permission for you to contact this person at Smith Digital Ltd.
                                      </dd>
                                    </div>
                                  </dl>

@@ -1,2 +1,7 @@
 
-  Add {% if not data['first-name']%}Dereck{% else %}{{data['first-name']}}{% endif %} {% if not data['last-name']%}Smith{% else %}{{data['last-name']}}{% endif %}’s National Insurance number from Searchlight
+  Add
+  {% if sc1 %}
+  {{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}’s{% endif %}
+  {% if sc2 %}
+  {{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}’s{% endif %}
+  National Insurance number from Searchlight

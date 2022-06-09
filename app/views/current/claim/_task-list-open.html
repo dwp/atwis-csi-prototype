@@ -13,10 +13,7 @@
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
   Record contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}
-  {% if sc1 %}
-  {{ data['priority-cases'][0]['firstname'] | safe }} {{ data['priority-cases'][0]['surname'] | safe }}{% endif %}
-  {% if sc2 %}
-  {{ data['other-cases'][0]['firstname'] | safe }} {{ data['other-cases'][0]['surname'] | safe }}{% endif %}{% endif %}
+  {{citizenname}}{% endif %}
 </a>
       </p><br>
 
@@ -33,7 +30,7 @@
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-<a href="/current/cases/{% if sc2 %}sc-2/{% endif %}{% if sc1 %}sc-1/{% endif %}workplace-assesment" aria-describedby="job-status">
+<a href="/current/cases/{{caseurl}}workplace-assesment{% if sc1%}//wpa-not-needed{% endif %}" aria-describedby="job-status">
     Recommendation
 </a>
   </span>
@@ -46,7 +43,7 @@
   {% if data['wpa']=='Yes'%}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-  <a href="/current/cases/workplace-assesment/citizen-wpa" aria-describedby="job-status">
+  <a href="/current/cases/{{caseurl}}workplace-assesment/citizen-wpa" aria-describedby="job-status">
       Type of workplace assessment
   </a>
     </span>
@@ -59,7 +56,7 @@
 </ul>
 
 
-{% if not data['others-wpa']%}
+{% if not (data['others-wpa'] or  data['wpa']=='No')%}
 <li>
   <h2 class="app-task-list__section">
     <span class="app-task-list__section-number">4. </span> Prepare business case
@@ -89,9 +86,9 @@
               <span class="app-task-list__task-name">
   <a href="
 {% if data ['job-deatils-contact']=='They gave permission (apply)'%}
-{% if data ['contact-employer']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer/contact-employment{% endif %}
+{% if data ['contact-employer']%}/current/cases/{{caseurl}}contact-employer/check{% else %}/current/cases/{{caseurl}}contact-employer/contact-employment{% endif %}
 {% else %}
-{% if data ['job-deatils-contact']%}/current/cases/contact-employer/check{% else %}/current/cases/contact-employer{% endif %}
+{% if data ['job-deatils-contact']%}/current/cases/{{caseurl}}contact-employer/check{% else %}/current/cases/{{caseurl}}contact-employer{% endif %}
 {% endif %}
 " aria-describedby="job-status">
 
@@ -128,7 +125,7 @@
 {% if data ['contact-employer']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-  <a href="{% if data['employer-confirmed']%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
+  <a href="{% if data['employer-confirmed']%}/current/cases/{{caseurl}}job-details/check{% else %}/current/cases/{{caseurl}}job-details{% endif %}" aria-describedby="job-status">
                   Job details
 </a>
               </span>
@@ -146,7 +143,7 @@
 {% if data['employer-cost-share'] and data['wpa']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-          <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
+          <a href="/current/cases/{{caseurl}}workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
                   Workplace assessment referral form
           </a>
               </span>
