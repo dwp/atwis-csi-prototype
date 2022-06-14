@@ -1,0 +1,80 @@
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+
+
+
+
+    <div class="govuk-width-container">
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+                       WPA report
+                    </h1>
+
+<form action="wpa-report/wpa-update" method="post" novalidate>
+
+  <p class="govuk-body"><a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">Save a copy of the WPA report in Sharepoint (opens in a new tab)</a>  </p>
+
+
+    <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                   <h2 class="govuk-fieldset__heading">
+Question
+                   </h2>
+                 </legend>
+
+
+                 <div id="report-hint" class="govuk-hint">
+     Select all that apply.
+   </div>
+   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+     <div class="govuk-checkboxes__item">
+       <input class="govuk-checkboxes__input" id="report" name="report" type="checkbox" value="Completed and sent letter ATW01CL" {{ checked("report", "Completed and sent letter ATW01CL") }}>
+       <label class="govuk-label govuk-checkboxes__label" for="report">
+        Reviewed report
+       </label>
+     </div>
+
+     <div class="govuk-checkboxes__item">
+       <input class="govuk-checkboxes__input" id="report-3" name="report" type="checkbox" value="Sent any attachments" {{ checked("report", "Sent any attachments") }}>
+       <label class="govuk-label govuk-checkboxes__label" for="report-3">
+         Saved copies of email to Sharepoint
+       </label>
+     </div>
+     <div class="govuk-checkboxes__item">
+       <input class="govuk-checkboxes__input" id="report-3" name="report" type="checkbox" value="Saved copy of letters and any attachments to Sharepoint" {{ checked("report", "Saved copy of letters and any attachments to Sharepoint") }}>
+       <label class="govuk-label govuk-checkboxes__label" for="report-3">
+        Saved copies of Report to Sharepoint
+       </label>
+     </div>
+   </div>
+
+                   </fieldset>
+                 </div>
+
+
+
+
+
+             <button class="govuk-button" data-module="govuk-button" >
+               Save and continue
+             </button>
+           </form>
+         </div>
+       </div>
+
+
+          </main>
+          </div>
+
+
+
+{% endblock %}

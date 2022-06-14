@@ -1,0 +1,65 @@
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<div class="govuk-width-container">
+  <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+
+<div class="govuk-form-group">
+           <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+               <h1 class="govuk-fieldset__heading">
+                except from quotes and elements do you need to update anything elese
+               </h1>
+             </legend>
+             <p>
+             <div id="waste-hint" class="govuk-hint">
+      Select all that apply.
+    </div>
+
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="wpa-report" name="wpa-report" type="checkbox" value="Disability or health conditions" {{ checked("wpa-report", "Disability or health conditions") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="wpa-report">
+        Disability or health conditions
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="wpa-report-2" name="wpa-report" type="checkbox" value="Job details" {{ checked("wpa-report", "Job details") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="wpa-report-2">
+        Job details
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="wpa-report-3" name="wpa-report" type="checkbox" value="No" data-behaviour="exclusive" {{ checked("wpa-report", "No") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="wpa-report-3">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+         <button class="govuk-button" data-module="govuk-button">
+           Save and continue
+         </button>
+       </form>
+     </div>
+   </div>
+ </main>
+</div>
+
+
+{% endblock %}

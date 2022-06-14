@@ -24,7 +24,7 @@
 <!-- <br> -->
 <li>
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">3. </span> Workplace assessment
+    <span class="app-task-list__section-number">3. </span> Prepare Workplace assessment
   </h2>
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
@@ -139,36 +139,102 @@
 {% endif %}
 
 
-{% if data['employer-cost-share'] and data['wpa']=='Yes'%}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-          <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
-                  Workplace assessment referral form
-          </a>
-              </span>
-              {% if not data['referral-form']%}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
-{% else %}
-<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-{% endif %}
-{% endif %}
+    </ul>
+
+
+
+        {% if data['employer-cost-share'] and data['wpa']=='Yes'%}
+
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">5. </span> Workplace assessment
+      </h2>
+      <ul class="app-task-list__items">
+
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+              <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
+                      Workplace assessment referral form
+              </a>
+                  </span>
+                  {% if not data['referral-form']%}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+    {% else %}
+    <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+    {% endif %}
+    {% endif %}
 
 
 
 
-  {% if data['referral-form']%}
+      {% if data['referral-form']%}
 
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+    <a href="/current/cases/workplace-assesment/wpa-report" aria-describedby="cost-share-agreement">
+            Add workplace assessment report
+    </a>
+        </span>
+
+        {% if not data['wpa-report']%}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+    {% else %}
+    <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+    {% endif %}          </li>
+
+    {% endif %}
+</li>
+
+  {% if not data['wpa-report']%}{% else %}
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-<a href="#" aria-describedby="cost-share-agreement">
-        Add workplace assessment report
-</a>
+  <a href="/current/cases/workplace-assesment/wpa-report/wpa-element" aria-describedby="cost-share-agreement">
+        WPA Element
+  </a>
     </span>
+
 
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
 
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+<a href="/current/cases/workplace-assesment/wpa-report/wpa-quotes" aria-describedby="cost-share-agreement">
+      WPA quote
+</a>
+  </span>
+
+
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+
+
+{% if 'Job details' in data['wpa-report']%}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+  <a href="/current/cases/workplace-assesment/wpa-report" aria-describedby="cost-share-agreement">
+        WPA Job details
+  </a>
+    </span>
+
+
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
 {% endif %}
 
-    </ul>
+{% if 'Disability or health conditions' in data['wpa-report']%}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+  <a href="/current/cases/workplace-assesment/wpa-report" aria-describedby="cost-share-agreement">
+        WPA Disability or health conditions
+  </a>
+    </span>
 
+
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+{% endif %}
+{% endif %}
+
+
+
+        </ul>
           {% endif %}

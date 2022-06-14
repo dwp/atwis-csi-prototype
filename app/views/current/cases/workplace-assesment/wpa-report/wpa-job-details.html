@@ -1,0 +1,54 @@
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<div class="govuk-width-container">
+  <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+
+<div class="govuk-form-group">
+           <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+               <h1 class="govuk-fieldset__heading">
+              Title (Job details)
+               </h1>
+             </legend>
+
+
+
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="wpa-job" name="wpa-job" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="wpa-job">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="wpa-job-2" name="wpa-job" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="wpa-job-2">
+              No
+            </label>
+          </div>
+        </div>
+  </fieldset>
+</div>
+
+         <button class="govuk-button" data-module="govuk-button">
+           Save and continue
+         </button>
+       </form>
+     </div>
+   </div>
+ </main>
+</div>
+
+
+{% endblock %}
