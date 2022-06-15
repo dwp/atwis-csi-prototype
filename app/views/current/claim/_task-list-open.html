@@ -197,6 +197,17 @@
 
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
 
+{% if not data['elements-wpa']%}  {% else %}
+<li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+  <a href="/current/cases/workplace-assesment/wpa-report/wpa-element" aria-describedby="cost-share-agreement">
+        WPA Specialist equipment
+  </a>
+    </span>
+
+
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+{% endif %}
 
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
