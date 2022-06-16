@@ -6,7 +6,7 @@
 
 {% block csi %}
 <br>
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/check-application/sae/details/index" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -24,8 +24,11 @@
 
 
   {% include "current/claim/_sae.html"%}
-  <p><a href="">  Add new details</a></p>
-
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add new details
+  </button>
+  </form>
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

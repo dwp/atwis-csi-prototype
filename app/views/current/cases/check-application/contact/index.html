@@ -5,8 +5,8 @@
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
-<br>
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+
+<form action="/current/cases/check-application/contact/details" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -22,7 +22,53 @@
 
   {% include "current/claim/_how-to-contact.html"%}
 
-  <p><a href="">  Add new details</a></p>
+  {% if data['contact-check-update']%}
+  <h2 class="govuk-heading-m">
+
+                    Updates </h2>
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        From
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{data['condition-check-update']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Can you provide more detail?
+      </dt>
+      <dd class="govuk-summary-list__value">
+      {{data['more-detail']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> date of birth</span>
+        </a>
+      </dd>
+
+
+    </div>
+  </dl>
+
+
+  {% endif %}
+  <!-- <p><a href="/current/cases/check-application/condition-help-needed/details">  Add new details</a></p> -->
+
+
+
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add new details
+  </button>
+  </form>
+
+  <form action="/current/cases/claim#your-tasks" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
