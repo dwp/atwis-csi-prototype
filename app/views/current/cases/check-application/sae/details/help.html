@@ -1,0 +1,58 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/current/cases/check-application/sae/index" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            <fieldset class="govuk-fieldset">
+      <h1 class="govuk-heading-l">
+
+              How will this equipment help Dereck Smith at work? </h1>
+
+
+
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Item</th>
+                    <th scope="col" class="govuk-table__header">Amount</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">  1</th>
+                    <td class="govuk-table__cell">{{data['sae-item-type']}}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+
+
+                   </fieldset>
+  <textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-note1" rows="8" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea>
+  <div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 500 characters remaining</div>
+<br>
+                             <button class="govuk-button" data-module="govuk-button">
+                               Save and continue
+                             </button>
+
+                           </form>
+
+
+                   </main>
+                 </div>
+
+
+               {% endblock %}
