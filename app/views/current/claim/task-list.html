@@ -421,24 +421,23 @@ data['wpa']%}
         </li>
       </ol>
       {% if data['wpa']=='No'%}
-
-      {% if totalcomplete == 3 and
-      data['award']%}
+    {% if totalcomplete > 2 and
+    data['award']%}
 <form action="/current/cases/complete/ons" method="post" novalidate>
-         <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>{% endif %}
+       <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>{% endif %}
 {% endif %}
-{% if data['wpa']=='Yes'%}
 
+{% if data['wpa']=='Yes'%}
 {% if totalcomplete == 4 and
 data['award']%}
 <form action="/current/cases/complete/ons" method="post" novalidate>
-   <button class="govuk-button" data-module="govuk-button">
-    Continue
-  </button>{% endif %}
+ <button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>{% endif %}
 {% endif %}
-    </div>
-
   </div>
+
+</div>
 {% endfor %}
