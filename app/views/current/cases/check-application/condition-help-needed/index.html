@@ -5,11 +5,23 @@
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
-<br>
+
+{% if not detailshealthindex %}
+  {% set totalhealthdetails = 0 %}
+  {% endif %}
+
+
+
+  {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+   {% set detailshealthindex = i %}
+    {% if data['condition-check-update'+ detailshealthindex]%}
+    {% set totalhealthdetails = totalhealthdetails + 1 %}
+  {% endif %}
+    {%- endfor %}
 
 <div class="govuk-width-container">
 
-  <form action="/current/cases/check-application/condition-help-needed/details" method="post" novalidate>
+  <form action="/current/cases/check-application/condition-help-needed/details/{{totalhealthdetails + 1}}" method="post" novalidate>
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -19,54 +31,50 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
     {% include "current/claim/_condtion-help-needed.html"%}
-    {% if data['condition-check-update']%}
+
+
+
+
+{% if totalhealthdetails == 0 %}{% else %}
     <h2 class="govuk-heading-m">
 
-                    Updates </h2>
-    <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+                    Updated details</h2>
+                    <div class="govuk-form-group">
+                      <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">{% endif %}
+
+    {% for i in [1,2,3,4,5] -%}
+    {% set detailshealthindex = i  %}
+    {% if data['condition-check-update'+ detailshealthindex] %}
+
+
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-          <strong>  {{data['condition-check-update']}}</strong>
+          <strong>  {{data['condition-check-update'+ detailshealthindex]}}</strong>
         </dt>
 
         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-        {{data['more-detail']}}
+        {{data['more-detail'+ detailshealthindex]}}
         </dt>
 
 
         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+              <a class="govuk-link" href="details/{{detailshealthindex}}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> </span></a>
             </li>
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+              <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden"> </span></a>
             </li>
           </ul>
         </dd>
       </div>
 
 
-    </dl>
-
-
-
-
-
-
 
     {% endif %}
+    {%- endfor %}  {% if totalhealthdetails == 0 %}{% else %}  </dl></div>{% endif %}
     <!-- <p><a href="/current/cases/check-application/condition-help-needed/details">  Add new details</a></p> -->
 
 
