@@ -25,13 +25,21 @@ Decision letters
 
 {% if data['wpa']=='Yes'%}
 {% if totalcomplete == 4  %}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}{% endif %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if totalcomplete == 3  %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+
+
+
+
+{% endif %}
 {% if data['wpa']=='No'%}
 {% if totalcomplete == 4  %}
-<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-{% endif %}{% endif %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
 {% if totalcomplete == 3  %}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% endif %}
+
 {% if totalcomplete == 2  %}
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
 {% if totalcomplete == 1  %}
