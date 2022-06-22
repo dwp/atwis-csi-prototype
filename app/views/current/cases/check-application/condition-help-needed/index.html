@@ -51,10 +51,10 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-          <strong>  {{data['condition-check-update'+ detailshealthindex]}}</strong>
+          <strong> Details from {{data['condition-check-update'+ detailshealthindex]}}</strong>
         </dt>
 
-        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+        <dt class="govuk-summary-list__value govuk-!-font-weight-regular hmrc-summary_value">
         {{data['more-detail'+ detailshealthindex]}}
         </dt>
 
@@ -62,7 +62,7 @@
         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="details/{{detailshealthindex}}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> </span></a>
+              <a class="govuk-link" href="condition-help-needed/details/{{detailshealthindex}}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> </span></a>
             </li>
             <li class="govuk-summary-list__actions-list-item">
               <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden"> </span></a>
@@ -95,13 +95,15 @@
                   </legend>
                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                     <div class="govuk-radios__item govuk-radios--inline">
-                      <input class="govuk-radios__input" id="condition-check" name="condition-check" type="radio" value="Yes" {{ checked("condition-check", "Yes") }}>
+                      <input class="govuk-radios__input" id="condition-check" name="condition-check" type="radio" value="Yes"
+                      {% if not data['more-detail1']%}{{ checked("condition-check", "Yes") }}{% endif %}>
                       <label class="govuk-label govuk-radios__label" for="condition-check">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check" type="radio" value="No" {{ checked("condition-check", "No") }}>
+                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check" type="radio" value="No"
+                      {% if not data['more-detail1']%}{{ checked("condition-check", "No") }}{% endif %}>
                       <label class="govuk-label govuk-radios__label" for="condition-check-2">
                         No
                       </label>

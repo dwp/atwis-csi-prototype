@@ -19,7 +19,7 @@
       <div class="govuk-grid-column-two-thirds">
 
 
-    
+
 
 
 
@@ -28,20 +28,20 @@
     <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                      From?
+                      Where are these details from?
 
                   </legend>
                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                     <div class="govuk-radios__item govuk-radios--inline">
-                      <input class="govuk-radios__input" id="condition-check-update" name="condition-check-update{{number}}" type="radio" value="WPA Report" {{ checked("condition-check-update" + number, "WPA Report") }}>
+                      <input class="govuk-radios__input" id="condition-check-update" name="condition-check-update{{number}}" type="radio" value="Workplace assessment report" {{ checked("condition-check-update" + number, "Workplace assessment report") }}>
                       <label class="govuk-label govuk-radios__label" for="condition-check-update">
-                        WPA Report
+                        Workplace assessment report
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="condition-check-update-2" name="condition-check-update{{number}}" type="radio" value="Citizen" {{ checked("condition-check-update" + number, "Citizen") }}>
+                      <input class="govuk-radios__input" id="condition-check-update-2" name="condition-check-update{{number}}" type="radio" value="Dereck Smith" {{ checked("condition-check-update" + number, "Dereck Smith") }}>
                       <label class="govuk-label govuk-radios__label" for="condition-check-update-2">
-                        Citizen
+                        Dereck Smith
                       </label>
                     </div>
 
@@ -50,15 +50,26 @@
                 </fieldset>
         </div>
 
-        <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-      Can you provide more detail?
-    </label>
-  </h1>
-  <div id="more-detail-hint" class="govuk-hint">
-    <!-- Do not include personal or financial information, like your National Insurance number or credit card details. -->
+
+
+
+
+
+
+  <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="with-hint">
+      More details about Dereck Smith’s health condition or disability
+      </label>
+    </h1>
+
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="more-detail{{number}}" rows="5" aria-describedby="with-hint-info with-hint-hint">{{data['more-detail' + number]}}</textarea>
   </div>
-  <textarea class="govuk-textarea" id="more-detail" name="more-detail{{number}}" rows="8" aria-describedby="more-detail-hint">{{data['more-detail' + number]}}</textarea>
+
+  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 500 characters
+  </div>
+
 </div>
             <button class="govuk-button" data-module="govuk-button">
               Save and continue

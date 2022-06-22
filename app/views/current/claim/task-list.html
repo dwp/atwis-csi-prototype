@@ -368,7 +368,7 @@ data ['benefits']
         </li>
     {% if  data['elements']=='I do not know'%}{% else %}
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span> Element
+          <span class="app-task-list__section-number">{% if data['elements']=='Yes'%}5{% else %}4{% endif %}. </span> Element
         </h2>
 
 {% if data['employer-size'] and
@@ -396,7 +396,7 @@ data['wpa']%}
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Award decision
+            <span class="app-task-list__section-number">{% if data['elements']=='Yes'%}6{% else %}5{% endif %}. </span> Award decision
           </h2>
           {% if data['element-decision']%}
             {% include  "../claim/_task-list-decision.html" %}
