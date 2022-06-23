@@ -142,7 +142,7 @@
 {% if data['employer-cost-share'] and data['wpa']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-          <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
+          <a href="{% if data['referral-form']%}/current/cases/workplace-assesment/check-referral-form{% else %}/current/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
                   Workplace assessment referral form
           </a>
               </span>
