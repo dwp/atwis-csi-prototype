@@ -28,11 +28,12 @@
     {% include  "./content/specialist-equipment.html" %}
     </dt>
     <dd class="govuk-summary-list__value">
-    I do not know
+
+    {{data['elements']}}
 
     </dd>
     <dd class="govuk-summary-list__actions">
-      {% if  changeHide %}  <a href="#">
+      {% if  changeHide %}  <a href="/current/cases/check-application/element/sae">
           Change
           <span class="govuk-visually-hidden">   {% include  "./content/specialist-equipment.html" %}</span>
         </a>{% endif %}

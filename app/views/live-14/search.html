@@ -1,0 +1,394 @@
+{% set link = "search-router" %}
+
+{% set Search = true %}
+{% if search == "complete" %}
+{% set title =  "Search results for" %}
+{% else %}
+{% set title =  "Find a case" %}
+{% endif %}
+
+{% set bodyClasses = "search" %}
+
+{% set hideBanner = true %}
+{% extends "./claim/_BASE.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+
+  <form action="" method="get" novalidate>
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">{{title}}</h1>
+
+
+    {{ govukInput({
+      label: {
+        text: "Enter customer name, URN or application reference"
+      },
+      classes: 'govuk-!-width-one-half',
+      id: "caseID",
+      name: "caseID",
+      value: caseID
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+
+    {{ govukSelect({
+      id: "adviser",
+      name: "adviser",
+
+      label: {
+        text: "Select caseworker (optional)"
+      },
+      items: [
+      {
+        value: "",
+        text: ""
+      },
+
+        {
+          value: "1",
+          text: "John Goldsmith"
+        },
+        {
+          value: "2",
+          text: "Rick Gater"
+          },
+        {
+          value: "3",
+          text: "Sandra Stewart"
+        },
+        {
+          value: "4",
+          text: "Sarah Andrews"
+        },
+        {
+          value: "4",
+          text: "Martin Armitage"
+        },
+        {
+          value: "5",
+          text: "Clémence Fabre"
+        },
+        {
+          value: "6",
+          text: "Elisse Farcens"
+        },
+        {
+          value: "7",
+          text: "Christoph Fernandez"
+        },
+        {
+          value: "8",
+          text: "Julie Guichard"
+        },
+        {
+          value: "9",
+          text: "Colin Julien"
+        },
+        {
+          value: "10",
+          text: "Théo Langlois"
+        },
+        {
+          value: "11",
+          text: "Capucine Michel"
+        },
+        {
+          value: "12",
+          text: "Sarah Micheals"
+        },
+        {
+          value: "13",
+          text: "Celise Mutton"
+        },
+        {
+          value: "14",
+          text: "Richard Oulton"
+        },
+        {
+          value: "15",
+          text: "Ed Oxley"
+        },
+        {
+          value: "16",
+          text: "Colin Partinigton"
+        },
+        {
+          value: "17",
+          text: "Brigit Pardeux"
+        },
+        {
+          value: "18",
+          text: "Lionel Phelps"
+        },
+        {
+          value: "19",
+          text: "Anne Pinkton"
+        },
+        {
+          value: "20",
+          text: "Lisa Punchton"
+        },
+        {
+          value: "21",
+          text: "Paul Rice"
+        },
+        {
+          value: "22",
+          text: "Keith Anderson"
+        },
+        {
+          value: "23",
+          text: "Jakie Fern"
+        },
+        {
+          value: "24",
+          text: "Ben Bright"
+        },
+        {
+          value: "25",
+          text: "Carole King"
+        },
+        {
+          value: "26",
+          text: "Elton Wisdom"
+        },
+        {
+          value: "26",
+          text: "Barry McCann"
+        },
+        {
+          value: "26",
+          text: "Lisa Thurlong"
+        },
+        {
+          value: "27",
+          text: "Sue Johnson"
+        },
+        {
+          value: "28",
+          text: "Phil Wise"
+        },
+        {
+          value: "29",
+          text: "Judy Larry"
+        },
+        {
+          value: "30",
+          text: "Chis Jones"
+        },
+        {
+          value: "31",
+          text: "Fiona Beech"
+        },
+        {
+          value: "32",
+          text: "Lionel Rich"
+        },
+        {
+          value: "33",
+          text: "Andrew Lines"
+        },
+        {
+          value: "34",
+          text: "Olivia Barge"
+        },
+        {
+          value: "35",
+          text: "Ollie Mojos"
+        },
+        {
+          value: "36",
+          text: "Brenda Low"
+        },
+        {
+          value: "37",
+          text: "Fred Lostock"
+        },
+        {
+          value: "38",
+          text: "Maggie Bridge"
+        },
+        {
+          value: "39",
+          text: "Bryan Kong"
+        },
+        {
+          value: "40",
+          text: "Debrah Needham"
+        },
+        {
+          value: "41",
+          text: "Sajid Khan"
+        },
+        {
+          value: "42",
+          text: "Marie Holebas"
+        },
+        {
+          value: "43",
+          text: "Simon Kean"
+        }
+      ]
+    }) }}
+</div>
+  <div class="govuk-grid-column-one-quarter">
+
+
+    {{ govukSelect({
+      id: "status",
+      name: "status",
+      label: {
+        text: "Select allocation (optional)"
+      },
+      items: [
+      {
+        value: "",
+        text: ""
+      },
+        {
+          value: "unallocated",
+          text: "Unallocated"
+        },
+        {
+          value: "allocated",
+          text: "Allocated"
+        },
+        {
+          value: "disc",
+          text: "In DiSC"
+        }
+      ]
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+
+    {{ govukSelect({
+      id: "type",
+      name: "type",
+      label: {
+        text: "Select case type (optional)"
+      },
+      items: [
+      {
+        value: "",
+        text: ""
+      },
+        {
+          value: "new",
+          text: "New application"
+        },
+        {
+          value: "renewal",
+          text: "Renewal"
+        },
+        {
+          value: "CSI",
+          text: "CSI"
+        }
+      ]
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-full">
+
+    {{ govukButton({
+      id: 'search',
+      name: 'search',
+      value: 'complete',
+      text: "Search"
+    }) }}
+    </form>
+
+{% if adviser or type or caseID or status %}
+
+  <h2 class="govuk-heading-m">Communication Support at Interview cases</h2>
+
+<p>1 case found</p>
+<!-- <p>Showing 1 to 1 of 1 case.</P> -->
+
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Name</th>
+              <th class="govuk-table__header">Specialism</th>
+              <th class="govuk-table__header">Case type</th>
+              <th class="govuk-table__header">Allocation</th>
+              <th class="govuk-table__header">Date submitted</th>
+              <th class="govuk-table__header">Allocated to</th>
+              <th class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</td>
+                <td class="govuk-table__cell">CSI</td>
+                <td class="govuk-table__cell">CSI</td>
+                <td class="govuk-table__cell">Allocated</td>
+                <td class="govuk-table__cell">{{data['csi-info'][3]['submission-date']}}</td>
+                <td class="govuk-table__cell">John Goldsmith</td>
+                <td class="govuk-table__cell"><a href="csi/{% if contactCentre %}claim-contact{% else %}index{% if payments %}-payment-unconfirmed{% endif %}{% endif %}">View case</a></td>
+              </tr>
+
+        </tbody>
+      </table>
+
+
+
+      <h2 class="govuk-heading-m">Other cases</h2>
+
+
+      <p>1 case found</p>
+      <!-- <p>Showing 1 to 1 of 1 case.</P> -->
+
+
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header">Name</th>
+                    <th class="govuk-table__header">Specialism</th>
+                    <th class="govuk-table__header">Case type</th>
+                    <th class="govuk-table__header">Allocation</th>
+                    <th class="govuk-table__header">Date submitted</th>
+                    <th class="govuk-table__header">Allocated to</th>
+                    <th class="govuk-table__header"></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</td>
+                      <td class="govuk-table__cell">CSI</td>
+                      <td class="govuk-table__cell">CSI</td>
+                      <td class="govuk-table__cell">In DiSC</td>
+                      <td class="govuk-table__cell">10 September 2019 - 09:57</td>
+                      <td class="govuk-table__cell">John Goldsmith</td>
+                      <td class="govuk-table__cell"><a href="csi-disc/index{% if phase == "allocator" %}-allocator{% endif %}">View case</a></td>
+                    </tr>
+              </tbody>
+            </table>
+
+
+{% elif (search == 'complete') %}
+<h2 class="govuk-heading-m">Communication Support at Interview cases</h2>
+
+      <p>There are no cases that match your search</p>
+
+      <h2 class="govuk-heading-m">Other cases</h2>
+      <p>There are no cases that match your search</p>
+
+
+{% else %}
+{% endif %}
+  </div>
+</div>
+{% endblock %}

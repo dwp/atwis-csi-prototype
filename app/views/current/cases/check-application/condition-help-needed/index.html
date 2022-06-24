@@ -5,11 +5,23 @@
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
-<br>
+
+{% if not detailshealthindex %}
+  {% set totalhealthdetails = 0 %}
+  {% endif %}
+
+
+
+  {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+   {% set detailshealthindex = i %}
+    {% if data['condition-check-update'+ detailshealthindex]%}
+    {% set totalhealthdetails = totalhealthdetails + 1 %}
+  {% endif %}
+    {%- endfor %}
 
 <div class="govuk-width-container">
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
 
+  <form action="/current/cases/check-application/condition-help-needed/details/{{totalhealthdetails + 1}}" method="post" novalidate>
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -17,19 +29,63 @@
 
                          Health condition or disability</h1>
 
-        <form action="" method="post" novalidate>
-
-
-
-
-
-
-
-
-
 
 
     {% include "current/claim/_condtion-help-needed.html"%}
+
+
+
+
+{% if totalhealthdetails == 0 %}{% else %}
+    <h2 class="govuk-heading-m">
+
+                    Updated details</h2>
+                    <div class="govuk-form-group">
+                      <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">{% endif %}
+
+    {% for i in [1,2,3,4,5] -%}
+    {% set detailshealthindex = i  %}
+    {% if data['condition-check-update'+ detailshealthindex] %}
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+          <strong> Details from {{data['condition-check-update'+ detailshealthindex]}}</strong>
+        </dt>
+
+        <dt class="govuk-summary-list__value govuk-!-font-weight-regular hmrc-summary_value">
+        {{data['more-detail'+ detailshealthindex]}}
+        </dt>
+
+
+        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="condition-help-needed/details/{{detailshealthindex}}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> </span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden"> </span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+
+
+
+    {% endif %}
+    {%- endfor %}  {% if totalhealthdetails == 0 %}{% else %}  </dl></div>{% endif %}
+    <!-- <p><a href="/current/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
+
+
+
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add more details <span class="govuk-visually-hidden"> about the health condition or disability</span>
+    </button>
+    </form>
+
+
+  <form action="/current/cases/claim#your-tasks" method="post" novalidate>
 
     <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -39,13 +95,15 @@
                   </legend>
                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                     <div class="govuk-radios__item govuk-radios--inline">
-                      <input class="govuk-radios__input" id="condition-check" name="condition-check" type="radio" value="Yes" {{ checked("condition-check", "Yes") }}>
+                      <input class="govuk-radios__input" id="condition-check" name="condition-check" type="radio" value="Yes"
+                      {% if not data['more-detail1']%}{{ checked("condition-check", "Yes") }}{% endif %}>
                       <label class="govuk-label govuk-radios__label" for="condition-check">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check" type="radio" value="No" {{ checked("condition-check", "No") }}>
+                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check" type="radio" value="No"
+                      {% if not data['more-detail1']%}{{ checked("condition-check", "No") }}{% endif %}>
                       <label class="govuk-label govuk-radios__label" for="condition-check-2">
                         No
                       </label>

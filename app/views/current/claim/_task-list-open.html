@@ -29,7 +29,7 @@
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-<a href="/current/cases/workplace-assesment" aria-describedby="job-status">
+<a href="{% if data['elements']=='I do not know'%}/current/cases/workplace-assesment{% else %}/current/cases/workplace-assesment/wpa-not-needed{% endif %}" aria-describedby="job-status">
     Recommendation
 </a>
   </span>
@@ -55,7 +55,7 @@
 </ul>
 
 
-{% if not data['others-wpa']%}
+{% if not totaljob == 1  %}
 <li>
   <h2 class="app-task-list__section">
     <span class="app-task-list__section-number">4. </span> Prepare business case
@@ -142,7 +142,7 @@
 {% if data['employer-cost-share'] and data['wpa']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-          <a href="/current/cases/workplace-assesment/referral-form" aria-describedby="cost-share-agreement">
+          <a href="{% if data['referral-form']%}/current/cases/workplace-assesment/check-referral-form{% else %}/current/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
                   Workplace assessment referral form
           </a>
               </span>
@@ -160,12 +160,12 @@
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-<a href="#" aria-describedby="cost-share-agreement">
-        Add workplace assessment report
+<a href="/current/cases/workplace-assesment/wpa-report" aria-describedby="cost-share-agreement">
+      Review workplace assessment report
 </a>
     </span>
-
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+{% if data['wpa-report']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}         </li>
 
 {% endif %}
 
