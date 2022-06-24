@@ -35,7 +35,7 @@
   {% include "current/claim/_how-to-contact.html"%}
 
 
-  {% if totalhealthdetails == 0 %}{% else %}
+  {% if totalcontactdetails == 0 %}{% else %}
       <h2 class="govuk-heading-m">
 
                       Updated details</h2>
@@ -71,11 +71,12 @@
         </div>
 
 
-
+</div>
       {% endif %}
       {%- endfor %}  {% if totalhealthdetails == 0 %}{% else %}  </dl></div>{% endif %}
   <!-- <p><a href="/current/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
 
+</div>
 
 
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">

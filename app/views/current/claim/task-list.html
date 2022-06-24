@@ -269,7 +269,7 @@ data ['benefits']
     {% if  data['elements']=='I do not know'%}{% else %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-             <a href="./check-application/sae/details" aria-describedby="read-declaration-status">
+             <a href="{% if data['sae-check']%}./check-application/sae/index{% else %}./check-application/sae/details{% endif %}" aria-describedby="read-declaration-status">
                    Support details
                </a>
               </span>

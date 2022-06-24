@@ -42,7 +42,7 @@
 
 
   {% include "current/claim/_job-details.html"%}
-  {% if totalhealthdetails == 0 %}{% else %}
+  {% if totalemploymentdetails == 0 %}{% else %}
       <h2 class="govuk-heading-m">
 
                       Updated details</h2>
@@ -77,10 +77,10 @@
 
 
         {% endif %}
-        {%- endfor %}  {% if totalhealthdetails == 0 %}{% else %}  </dl></div>{% endif %}
+        {%- endfor %}  {% if totalhealthdetails == 0 %}{% else %}  </dl></div></div>{% endif %}
   <!-- <p><a href="/current/cases/check-application/employment-help-needed/details">  Add more details</a></p> -->
 
-
+      </div>
 
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Add more details

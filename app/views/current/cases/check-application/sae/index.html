@@ -1,12 +1,12 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% set changeHide = "true" %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
 <br>
-<form action="/current/cases/check-application/sae/details/index" method="post" novalidate>
+<form action="/current/cases/check-application/sae/details/1" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -36,7 +36,10 @@ Is this item a wheelchair or a hearing aid?
 Other
 </dd>
 <dd class="govuk-summary-list__actions">
-
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you know what specialist equipment you need?</span>
+</a>{% endif %}
 </dd>
 </div>
 
@@ -53,11 +56,29 @@ Jaws
 <br>
 </dd>
 <dd class="govuk-summary-list__actions">
-
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you know what specialist equipment you need?</span>
+</a>{% endif %}
 
 </dd>
 </div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you need to add another item?
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['sae-add']}}
 
+</dd>
+<dd class="govuk-summary-list__actions">
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you know what specialist equipment you need?</span>
+</a>{% endif %}
+
+</dd>
+</div>
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
 How will this equipment help you at work?
@@ -69,7 +90,10 @@ dsa
 </dd>
 
 <dd class="govuk-summary-list__actions">
-
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you know what specialist equipment you need?</span>
+</a>{% endif %}
 
 
 </dd>
@@ -77,6 +101,7 @@ dsa
 </dl>
 {% else %}
   {% include "current/claim/_sae.html"%}{% endif %}
+
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Add more details
   </button>
