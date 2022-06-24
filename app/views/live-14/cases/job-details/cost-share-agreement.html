@@ -1,0 +1,80 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   Has the employer agreed in principle to a cost share agreement?
+                 </h2>
+               </legend>
+
+
+                 <p>  Employer is a medium size employer</p>
+
+                  <p> <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Check cost share guidance on the intranet (opens in a new tab)</a>.
+                   </p>
+
+
+               <div class="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-cost-share" name="employer-cost-share" type="radio" value="Yes~/live-14/cases/claim#your-tasks.html" {{ checked("employer-cost-share", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-cost-share">
+                     Yes
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-cost-share-2" name="employer-cost-share" type="radio" value="No, but a third party agreed to the cost share~/live-14/cases/claim#your-tasks.html" {{ checked("employer-cost-share", "No but a third party agreed to the cost share") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-cost-share-2">
+                     No, but a third party agreed to the cost share
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-cost-share-2" name="employer-cost-share" type="radio" value="No~/live-14/cases/job-details/unhappy-cost-share" {{ checked("employer-cost-share", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-cost-share-2">
+                     No
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
