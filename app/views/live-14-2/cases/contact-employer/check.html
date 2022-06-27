@@ -1,0 +1,92 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="{% if data['job-deatils-contact']=='They did not give permission'%}/live-14-2/cases/claim-not-eligible#your-tasks{% else %}/live-14-2/cases/claim#your-tasks{% endif %}" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Task summary: Employment</h2>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if not data['job-deatils-contact']=='They gave permission (apply)'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                      {% include  "./content/has-confirmed-whether-contact-employer.html" %}
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{ data['job-deatils-contact']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">
+              Update<span class="govuk-visually-hidden">     {% include  "./content/has-confirmed-whether-contact-employer.html" %}</span>
+              </a>
+            </dd>
+          </div>
+{% endif %}
+
+{% if data['job-deatils-contact']=='They gave permission' or data['job-deatils-contact']=='They gave permission (apply)'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                            {% include  "./content/have-you-contacted-employer.html" %}
+
+              </dt>
+              <dd class="govuk-summary-list__value">
+        {{ data['contact-employer']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-employment">
+                Update<span class="govuk-visually-hidden">    {% include  "./content/have-you-contacted-employer.html" %}</span>
+                </a>
+              </dd>
+            </div>
+{% endif %}
+
+
+        </dl>
+
+
+
+
+<!-- {% if data['job-deatils-contact']=='I have not spoken to them' %}
+       <div class="govuk-inset-text">
+       <p> You need to contact Dereck Smith. This will be added to your <strong>log contact with Dereck Smith</strong> task.  </p>
+
+       </div>
+{% endif %} -->
+
+<!-- {% if data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
+        <div class="govuk-inset-text">
+        <p> You need to contact Dereck Smith to employer.  </p>
+
+        </div>
+{% endif %} -->
+
+          <input type="hidden" name="employment-contact" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="" value="">
+            Return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

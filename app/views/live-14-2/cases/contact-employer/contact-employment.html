@@ -1,0 +1,129 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-14-2/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+    {% include  "./content/have-you-contacted-employer.html" %}
+                 </h2>
+               </legend>
+
+
+<!-- <p>To clarify employment and company size. Company size will determine cost share.</p> -->
+               <h3 class="govuk-heading-m">  Workplace contact</h3>
+                                 <dl class="govuk-summary-list">
+                                   <div class="govuk-summary-list__row">
+                                     <dt class="govuk-summary-list__key">
+                                      Their name
+                                     </dt>
+                                     <dd class="govuk-summary-list__value">
+
+                  Jane Doe
+                                     </dd>
+                                   </div>
+                                   <div class="govuk-summary-list__row">
+                                     <dt class="govuk-summary-list__key">
+                                       Their job title
+                                     </dt>
+                                     <dd class="govuk-summary-list__value">
+                                       Line Manager
+                                     </dd>
+                                   </div>
+                                   <div class="govuk-summary-list__row">
+                                     <dt class="govuk-summary-list__key">
+                                       Their email address
+                                     </dt>
+                                     <dd class="govuk-summary-list__value">
+                                       Jane@smithdigital.co
+                                     </dd>
+                                   </div>
+                                   <div class="govuk-summary-list__row">
+                                     <dt class="govuk-summary-list__key">
+                                       Their phone number
+                                     </dt>
+                                     <dd class="govuk-summary-list__value">
+                                       123456789
+                                     </dd>
+                                   </div>
+                                   <div class="govuk-summary-list__row">
+                                     <dt class="govuk-summary-list__key">
+                                    Permission
+                                     </dt>
+                                     <dd class="govuk-summary-list__value">
+                                       Dereck Smith has given permission for you to contact this person at Smith Digital Ltd. 
+                                     </dd>
+                                   </div>
+                                 </dl>
+
+
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="contact-employer" name="contact-employer" type="radio" value="Yes" {{ checked("contact-employer", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="contact-employer">
+                     Yes
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="contact-employer-3" name="contact-employer" type="radio" value="Yes, but I’m waiting for an answer" {{ checked("contact-employer", "Yes, but I’m waiting for an answer") }}>
+                   <label class="govuk-label govuk-radios__label" for="contact-employer-3">
+                     Yes, but I’m waiting for an answer
+                   </label>
+                 </div>
+
+                 <!-- <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="contact-employer-3" name="contact-employer" type="radio" value="I have not discussed a cost share with Smith Digital Limited" {{ checked("contact-employer", "I have not discussed a cost share with Smith Digital Limited") }}>
+                   <label class="govuk-label govuk-radios__label" for="contact-employer-3">
+                    Yes, but I have not discussed a Dereck Smith application with Smith Digital Limited
+                   </label>
+                 </div> -->
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="contact-employer-2" name="contact-employer" type="radio" value="No" {{ checked("contact-employer", "No") }}>
+                                    <label class="govuk-label govuk-radios__label" for="contact-employer-2">
+                                      No
+                                    </label>
+                                  </div>
+
+
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
