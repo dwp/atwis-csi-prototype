@@ -9,7 +9,7 @@
 
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase == "sonya"%}sonya/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -19,8 +19,13 @@
 
         <h1 class="govuk-heading-l">   {% include  "./content/check.html" %}</h1>
 
+        {% if phase == "sonya"%}
+        <div class="govuk-inset-text">
+                <p> Sonya Corkery needs specialist equipment. They do not need any other types of support.   </p>
 
-        <p>If Dereck Smith needs temporary support, you will need to add this as a separate element.</p>
+                </div>{% endif %}
+
+        <p>If {% if phase == "sonya"%}Sonya Corkery{% else %}Dereck Smith{% endif %} needs temporary support, you will need to add this as a separate element.</p>
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
@@ -28,8 +33,8 @@
     {% include  "./content/specialist-equipment.html" %}
     </dt>
     <dd class="govuk-summary-list__value">
-
-    {{data['elements']}}
+{% if phase == "sonya" %}Yes{% else %}
+    {{data['elements']}}{% endif %}
 
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -151,7 +156,7 @@
 
           <input type="hidden" name="appointee-checked" value="true">
 
-          <button class="govuk-button" data-module="govuk-button" name="elements-task" value="{% if data['elements']=='I do not know'%}in progress{% else %}complete{% endif %}">
+          <button class="govuk-button" data-module="govuk-button" name="elements-task{{phase}}" value="{% if phase == "sonya"%}complete{% else %}{% if data['elements']=='I do not know'%}in progress{% else %}complete{% endif %}{% endif %}">
           Accept and return to your tasks
           </button>
 

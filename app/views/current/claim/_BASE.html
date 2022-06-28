@@ -156,7 +156,7 @@
 
 
             <dt>Application reference:</dt>
-            <dd>RMPX30</dd>
+            <dd>RMPX3{% if phase == "sonya"  %}0{% else %}1{% endif %}</dd>
   {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
             <dt>Appointee:</dt>
             <dd>John Smith</dd>{% endif %}

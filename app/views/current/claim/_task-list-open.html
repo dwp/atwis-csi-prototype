@@ -29,8 +29,8 @@
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-<a href="{% if data['elements']=='I do not know'%}/current/cases/workplace-assesment{% else %}/current/cases/workplace-assesment/wpa-not-needed{% endif %}" aria-describedby="job-status">
-  Confirm whether workplace assessment is needed 
+<a href="{% if phase =="sonya"%}/current/cases/workplace-assesment/wpa-not-needed{% else %}{% if data['elements']=='I do not know'%}/current/cases/workplace-assesment{% else %}/current/cases/workplace-assesment/wpa-not-needed{% endif %}{% endif %}" aria-describedby="job-status">
+  Confirm whether workplace assessment is needed
 </a>
   </span>
 

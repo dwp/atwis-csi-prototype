@@ -17,7 +17,7 @@
     {% set totalemploymentdetails = totalemploymentdetails + 1 %}
   {% endif %}
     {%- endfor %}
-<form action="/current/cases/check-application/employment-details/details/{{totalemploymentdetails + 1}}" method="post" novalidate>
+<form action="/current/cases/{% if phase == "sonya"%}sonya/cases/{% endif %}check-application/employment-details/details/{{totalemploymentdetails + 1}}" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -88,7 +88,7 @@
   </form>
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase == "sonya"%}sonya/cases/{% endif %}claim#your-tasks" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -97,13 +97,13 @@
                 </legend>
                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                   <div class="govuk-radios__item govuk-radios--inline">
-                    <input class="govuk-radios__input" id="job-deatils-check" name="job-deatils-check" type="radio" value="Yes" {{ checked("job-deatils-check", "Yes") }}>
+                    <input class="govuk-radios__input" id="job-deatils-check" name="job-deatils-check{{phase}}" type="radio" value="Yes" {{ checked("job-deatils-check"+ phase, "Yes") }}>
                     <label class="govuk-label govuk-radios__label" for="job-deatils-check">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="job-deatils-check-2" name="job-deatils-check" type="radio" value="No" {{ checked("job-deatils-check", "No") }}>
+                    <input class="govuk-radios__input" id="job-deatils-check-2" name="job-deatils-check{{phase}}" type="radio" value="No" {{ checked("job-deatils-check"+ phase, "No") }}>
                     <label class="govuk-label govuk-radios__label" for="job-deatils-check-2">
                       No
                     </label>
