@@ -17,7 +17,7 @@
     {% set totalemploymentdetails = totalemploymentdetails + 1 %}
   {% endif %}
     {%- endfor %}
-<form action="/current/cases/{% if phase == "sonya"%}sonya/cases/{% endif %}check-application/employment-details/details/{{totalemploymentdetails + 1}}" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/employment-details/details/{{totalemploymentdetails + 1}}" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -88,7 +88,7 @@
   </form>
 
 
-<form action="/current/cases/{% if phase == "sonya"%}sonya/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

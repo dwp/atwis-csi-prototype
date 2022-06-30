@@ -14,12 +14,15 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">   Quote for the cost of support for Another Software</h1>
+        <h1 class="govuk-heading-l">   Quote for the cost of support for Jaws</h1>
 
 
 
+        {% include "current/claim/_quote-sae-1.html"%}
 
-{% include "current/claim/_quote-sae-2.html"%}
+<p>Only 1 quote is needed from {% if phase == "sonya" %}Sonay Corkery{% else %}Dereck Smith{% endif %} because the total cost is below £500.</p>
+
+
 
 
 <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -28,7 +31,7 @@
 </form>
 
 
-<form action="/current/cases/{% if phase%}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
