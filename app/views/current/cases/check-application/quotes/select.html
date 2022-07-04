@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -14,7 +14,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l"> Choose quote</h1>
+        <h1 class="govuk-heading-l">  Choose quote: specialist equipment 2</h1>
 
 
 
@@ -23,34 +23,43 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-            Quotes
+            Which quote do you want to use for the grant award?
               </h1>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                  £501
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                  £502
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                  £503
-                </label>
-              </div>
-              <!-- <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-                  Other
-                </label>
-              </div> -->
+                <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="502" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "502") }}>
+         <label class="govuk-label govuk-radios__label" for="sign-in">
+          £501
+         </label>
+         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          ZoomText Professional License from ZoomText Supplier
+         </div>
+       </div>
+
+       <div class="govuk-radios" data-module="govuk-radios">
+         <div class="govuk-radios__item">
+           <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="502" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "502") }}>
+    <label class="govuk-label govuk-radios__label" for="sign-in">
+     £502
+    </label>
+    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+     ZoomText Professional License from Real Fake Software Supplier
+    </div>
+  </div>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="502" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "502") }}>
+<label class="govuk-label govuk-radios__label" for="sign-in">
+£503
+</label>
+<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+ZoomText Professional License from Software R Us
+</div>
+</div>
+
+
             </div>
 
           </fieldset>
@@ -67,21 +76,21 @@
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-              It was the most cost-effective
+            <input class="govuk-radios__input" id="chosen-quote-sae-justification" name="chosen-quote-sae-justification" type="radio" value="It was the most cost-effective" {{ checked("chosen-quote-sae-justification", "It was the most cost-effective") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification">
+              Most cost-effective
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-              It was the most suitable support for Sonya Corkery
+            <input class="govuk-radios__input" id="chosen-quote-sae-justification-2" name="chosen-quote-sae-justification" type="radio" value="It was the most suitable support for Sonya Corkery" {{ checked("chosen-quote-sae-justification", "It was the most suitable support for Sonya Corkery") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification-2">
+            Best support for Sonya Corkery
             </label>
           </div>
 
           <!-- <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
-            <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+            <input class="govuk-radios__input" id="chosen-quote-sae-justification-4" name="chosen-quote-sae-justification" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification-4">
               Other
             </label>
           </div> -->

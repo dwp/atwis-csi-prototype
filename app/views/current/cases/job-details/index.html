@@ -10,7 +10,7 @@
 
 
 
-<form action="/current/cases/job-details/details" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/details" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -30,7 +30,7 @@
 
                        <div class="govuk-radios">
                          <div class="govuk-radios__item">
-                           <input class="govuk-radios__input" id="employer-confirmed" name="employer-confirmed" type="radio" value="Yes and all of the details match" {{ checked("employer-confirmed", "Yes and all of the details match") }}>
+                           <input class="govuk-radios__input" id="employer-confirmed{{phase}}" name="employer-confirmed{{phase}}" type="radio" value="Yes and all of the details match" {{ checked("employer-confirmed"+ phase, "Yes and all of the details match") }}>
                            <label class="govuk-label govuk-radios__label" for="employer-confirmed">
                             Yes and all of the details match
                            </label>
@@ -38,14 +38,14 @@
 
 
                                           <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="Yes, but some details do not match" {{ checked("employer-confirmed", "Yes, but some details do not match") }}>
+                                            <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed{{phase}}" type="radio" value="Yes, but some details do not match" {{ checked("employer-confirmed"+ phase, "Yes, but some details do not match") }}>
                                             <label class="govuk-label govuk-radios__label" for="employer-confirmed-2">
                                               Yes, but some details do not match
                                             </label>
                                           </div>
 
                                                                                     <div class="govuk-radios__item">
-                                                                                      <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="No, Smith Digital Limited has not confirmed job details~/current/cases/job-details/unhappy-employment-details" {{ checked("employer-confirmed", "  No, Smith Digital Limited has not confirmed job details yet") }}>
+                                                                                      <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed{{phase}}" type="radio" value="No, Smith Digital Limited has not confirmed job details~/current/cases/job-details/unhappy-employment-details" {{ checked("employer-confirmed"+ phase, "No, Smith Digital Limited has not confirmed job details yet") }}>
                                                                                       <label class="govuk-label govuk-radios__label" for="employer-confirmed-2">
                                                                                         No, Smith Digital Limited has not confirmed job details
                                                                                       </label>

@@ -13,14 +13,14 @@
 
     {% for i in [1] -%}
      {% set contactindex = i %}
-      {% if data['wpa']=='No'  %}
+      {% if data['wpa'+ phase]=='No'  %}
       {% set totaljob = totaljob + 1 %}
     {% endif %}
       {%- endfor %}
 
     {% for i in [1] -%}
      {% set contactindex = i %}
-      {% if data['wpa']=='Yes' and data['others-wpa']  %}
+      {% if data['wpa'+ phase]=='Yes' and data['others-wpa'+ phase]  %}
       {% set totaljob = totaljob + 1 %}
     {% endif %}
       {%- endfor %}
@@ -178,8 +178,8 @@ data ['benefits']
           <span class="app-task-list__section-number">5. </span> Element
         </h2>
 
-{% if data['employer-size'] and
-data['wpa']%}
+{% if data['employer-size'+ phase] and
+data['wpa'+ phase]  %}
     {% include  "../claim/_task-list-element.html" %}{% else %}
 
     <ul class="app-task-list__items">
@@ -191,7 +191,13 @@ data['wpa']%}
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
+    <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
 
+         Choose quote: Specialist equipment 2
+
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
 
       </ul>{% endif %}
