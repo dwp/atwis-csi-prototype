@@ -41,7 +41,7 @@
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="contact-check-update-2" name="contact-check-update{{number}}" type="radio" value="Dereck Smith" {{ checked("contact-check-update" + number, "Dereck Smith") }}>
                       <label class="govuk-label govuk-radios__label" for="contact-check-update-2">
-                        Dereck Smith
+                      {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}
                       </label>
                     </div>
 
@@ -60,7 +60,7 @@
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper">
       <label class="govuk-label govuk-label--m" for="with-hint">
-      More details about Dereck Smith’s contact details
+      More details about {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}’s contact details
       </label>
     </h2>
 
