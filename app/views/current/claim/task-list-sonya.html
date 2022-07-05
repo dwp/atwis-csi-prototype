@@ -27,7 +27,7 @@
 
 {% for i in [1] -%}
  {% set contactindex = i %}
-  {% if 'Completed and sent letter ATW01CL' in data['notification']
+  {% if 'Completed and sent letter ATW01CL' in data['notification'+ phase]
   %}
   {% set totalcomplete = totalcomplete + 1 %}
 {% endif %}
@@ -35,7 +35,7 @@
 
   {% for i in [1] -%}
    {% set contactindex = i %}
-    {% if  'Completed and sent letter ATW02EL' in data['notification']
+    {% if  'Completed and sent letter ATW02EL' in data['notification'+ phase]
     %}
     {% set totalcomplete = totalcomplete + 1 %}
   {% endif %}
@@ -43,7 +43,7 @@
 
     {% for i in [1] -%}
      {% set contactindex = i %}
-      {% if  'Sent any attachments' in data['notification']
+      {% if  'Sent any attachments' in data['notification'+ phase]
       %}
       {% set totalcomplete = totalcomplete + 1 %}
     {% endif %}
@@ -52,7 +52,7 @@
   {% for i in [1] -%}
    {% set contactindex = i %}
     {% if
-    'Saved copy of letters and any attachments to Sharepoint' in data['notification']
+    'Saved copy of letters and any attachments to Sharepoint' in data['notification'+ phase]
     %}
     {% set totalcomplete = totalcomplete + 1 %}
   {% endif %}

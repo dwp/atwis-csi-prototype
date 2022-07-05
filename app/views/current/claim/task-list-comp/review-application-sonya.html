@@ -40,7 +40,7 @@
                     {% if data['job-deatils-check'+ phase]=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
                     {% if not data['job-deatils-check'+ phase]%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
                   </li>
-                  
+
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
    <a href="./check-application/element" aria-describedby="read-declaration-status">
@@ -89,9 +89,9 @@
   </a>
     </span>
 
-    {% if data['quotes-check'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-    {% if data['quotes-check'+ phase]=='Yes'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>  {% endif %}
-    {% if not data['quotes-check'+ phase] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+    {% if data['quotes-check-2'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+    {% if data['quotes-check-2'+ phase]=='Yes'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>  {% endif %}
+    {% if not data['quotes-check-2'+ phase] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
   </li>
 
 
