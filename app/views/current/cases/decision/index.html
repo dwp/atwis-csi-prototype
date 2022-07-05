@@ -10,7 +10,7 @@
 
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -25,7 +25,7 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h1 class="govuk-fieldset__heading">
-                   {% include  "./content/under-25.html" %}
+                   {% include  "current/cases/decision/content/under-25.html" %}
                  </h1>
                </legend>
 
@@ -53,7 +53,10 @@
 What type of specialist equipment do you need?
 </dt>
 <dd class="govuk-summary-list__value">
-jaws screen reader
+  <ul>
+    <li>Jaws screen reader</li>
+  <li>ZoomText</li>
+  </ul>
 <br>
 
 <br>
@@ -68,11 +71,11 @@ jaws screen reader
 
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
-Quote
+Quote 1
 </dt>
 <dd class="govuk-summary-list__value">
 
-£499
+£499, Jaws screen reader
 <br>
 </dd>
 
@@ -82,10 +85,25 @@ Quote
 
 </dd>
 </div>
-
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
-Do you approve this support for Dereck Smith?
+Quote 2
+</dt>
+<dd class="govuk-summary-list__value">
+
+£{{data['chosen-quote-sae']}}, Zoomtext
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+
+
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you approve this support for {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}?
 </dt>
 <dd class="govuk-summary-list__value">
 
@@ -99,7 +117,7 @@ Yes
 </div>
 </dl>
 
-<p>You have reviewed and approved these details. When you have confirmed the award summary, you will be able to send the award decision to Dereck Smith.</p>
+<p>You have reviewed and approved these details. When you have confirmed the award summary, you will be able to send the award decision to {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}.</p>
 <p>If you have to make any changes to these details, you will need to return to the relevant task.</p>
 
 
@@ -114,7 +132,7 @@ Yes
            <button class="govuk-button" data-module="govuk-button" name="award" value="complete">
 Confirm award summary
            </button>
-<p><a href="/current/cases/claim#your-tasks">I need to change some application details</a></p>
+<p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks">I need to change some application details</a></p>
 
          </form>
        </div>

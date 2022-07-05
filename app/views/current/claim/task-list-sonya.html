@@ -70,7 +70,7 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %}
 </a>
 </p>
 
@@ -101,7 +101,7 @@ data ['benefits']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 
@@ -233,19 +233,19 @@ data['wpa'+ phase]  %}
           {% endif %}
         </li>
       </ol>
-      {% if data['wpa']=='No'%}
+      {% if data['wpa'+ phase]=='No'%}
     {% if totalcomplete > 2 and
     data['award']%}
-<form action="/current/cases/complete/ons" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
        <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>{% endif %}
 {% endif %}
 
-{% if data['wpa']=='Yes'%}
+{% if data['wpa'+ phase]=='Yes'%}
 {% if totalcomplete == 4 and
 data['award']%}
-<form action="/current/cases/complete/ons" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
   Continue
 </button>{% endif %}
