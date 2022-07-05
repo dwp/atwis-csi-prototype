@@ -130,7 +130,7 @@ data ['benefits']
     and
     data ['benefits']
   %}
-    {% include  "../claim/_task-list-open.html" %}
+    {% include  "../claim/task-list-comp/_task-list-open-sonya.html" %}
   {% else %}
 
 
@@ -211,8 +211,8 @@ data['wpa'+ phase]  %}
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">6. </span> Award decision
           </h2>
-          {% if data['element-decision']%}
-            {% include  "../claim/_task-list-decision.html" %}
+          {% if data['element-decision'+ phase]%}
+            {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
           {% else %}
           <ul class="app-task-list__items">
             <li class="app-task-list__item">

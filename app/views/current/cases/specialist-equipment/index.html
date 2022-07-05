@@ -191,13 +191,13 @@
                                             </legend>
                                             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                               <div class="govuk-radios__item govuk-radios--inline">
-                                                <input class="govuk-radios__input" id="element-decision" name="element-decision" type="radio" value="Yes" {{ checked("element-decision", "Yes") }}>
+                                                <input class="govuk-radios__input" id="element-decision" name="element-decision{{phase}}" type="radio" value="Yes" {{ checked("element-decision"+ phase, "Yes") }}>
                                                 <label class="govuk-label govuk-radios__label" for="element-decision">
                                                   Yes
                                                 </label>
                                               </div>
                                               <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="element-decision-2" name="element-decision" type="radio" value="No" {{ checked("element-decision", "No") }}>
+                                                <input class="govuk-radios__input" id="element-decision-2" name="element-decision{{phase}}" type="radio" value="No" {{ checked("element-decision"+ phase, "No") }}>
                                                 <label class="govuk-label govuk-radios__label" for="element-decision-2">
                                                   No
                                                 </label>

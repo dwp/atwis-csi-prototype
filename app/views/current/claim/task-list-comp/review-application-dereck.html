@@ -76,8 +76,8 @@
 </a>
     </span>
 
-    {% if data['quotes-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-    {% if data['quotes-check']=='Yes' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>  {% endif %}
+    {% if data['quotes-choose']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+  
     {% if not data['quotes-check'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
   </li>
 {% endif %}

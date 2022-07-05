@@ -115,7 +115,7 @@ data ['benefits']
 
 
   {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
-    data ['elements']
+    data ['elements-task']
     and
     data ['condition-check']
     and
@@ -129,7 +129,7 @@ data ['benefits']
     and
     data ['benefits']
   %}
-    {% include  "../claim/_task-list-open.html" %}
+    {% include  "../claim/task-list-comp/_task-list-open-dereck.html" %}
   {% else %}
 
 
@@ -205,7 +205,7 @@ data['wpa'] and (data['quotes-choose'] or data['quotes-checksonya'])%}
             <span class="app-task-list__section-number">{% if data['elements']=='Yes'%}6{% else %}5{% endif %}. </span> Award decision
           </h2>
           {% if data['element-decision']%}
-            {% include  "../claim/_task-list-decision.html" %}
+            {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}
           {% else %}
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
