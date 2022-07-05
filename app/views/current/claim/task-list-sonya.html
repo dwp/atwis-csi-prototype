@@ -126,6 +126,8 @@ data ['benefits']
     and
     data ['quotes-check'+ phase]
     and
+    data ['quotes-check-2'+ phase]
+    and
     data ['appointee']
     and
     data ['benefits']
@@ -235,7 +237,7 @@ data['wpa'+ phase]  %}
       </ol>
       {% if data['wpa'+ phase]=='No'%}
     {% if totalcomplete > 2 and
-    data['award']%}
+    data['award'+ phase]%}
 <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
        <button class="govuk-button" data-module="govuk-button">
         Continue
@@ -244,7 +246,7 @@ data['wpa'+ phase]  %}
 
 {% if data['wpa'+ phase]=='Yes'%}
 {% if totalcomplete == 4 and
-data['award']%}
+data['award'+ phase]%}
 <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
   Continue
