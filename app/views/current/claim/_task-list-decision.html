@@ -23,7 +23,7 @@ Decision letters
 </a>
 </span>
 
-{% if data['wpa']=='Yes'%}
+{% if data['wpa'+ phase]=='Yes'%}
 {% if totalcomplete == 4  %}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
 {% if totalcomplete == 3  %}
@@ -33,7 +33,7 @@ Decision letters
 
 
 {% endif %}
-{% if data['wpa']=='No'%}
+{% if data['wpa'+ phase]=='No'%}
 {% if totalcomplete == 4  %}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
 {% if totalcomplete == 3  %}
