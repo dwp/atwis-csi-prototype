@@ -21,9 +21,9 @@
       <h2 class="govuk-heading-m">
 
                      Specialist equipment</h2>
-
-  {% include "current/claim/_sae-sonya.html"%}
-
+{% if phase == 'sonya'%}
+  {% include "current/claim/_sae-sonya.html"%}{% else %}{% set changeHide = "true"%}
+  {% include "current/claim/_sae-dereck.html"%}{% endif %}
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Add more details
   </button>
