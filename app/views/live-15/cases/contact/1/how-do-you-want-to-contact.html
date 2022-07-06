@@ -1,0 +1,98 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-15/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+      <!-- How do you want to contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}{% if not data['_do_1']%} first{% endif %}? -->
+Type of contact
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              You need to add each type of contact separately. You will be able to add another after this one.
+                </div>
+{% if data['clear']=='No' %}{% else %}
+  {% include  "live-15/claim/notification-contact.html" %}{% endif %}
+
+  <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="email" name="_do_{{number}}" type="radio" value="Email~/live-15/cases/contact/{{number}}/email">
+          <label class="govuk-label govuk-radios__label" for="email">
+        Email
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="phone" name="_do_{{number}}" type="radio" value="Telephone~/live-15/cases/contact/{{number}}/phone">
+          <label class="govuk-label govuk-radios__label" for="phone">
+        Telephone
+      </label>
+
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sms" name="_do_{{number}}" type="radio" value="SMS~/live-15/cases/contact/1/how-do-you-want-to-contact#">
+          <label class="govuk-label govuk-radios__label" for="sms">
+        Text message (SMS)
+      </label>
+
+        </div>
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
