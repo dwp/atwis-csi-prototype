@@ -10,7 +10,7 @@
 
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -71,7 +71,7 @@
                                     Permission
                                      </dt>
                                      <dd class="govuk-summary-list__value">
-                                       Dereck Smith has given permission for you to contact this person at Smith Digital Ltd.
+                                       {% if phase =="sonya"%}Sonya Corkery{% else %}Dereck Smith{% endif %} has given permission for you to contact this person at Smith Digital Ltd.
                                      </dd>
                                    </div>
                                  </dl>
@@ -79,14 +79,14 @@
 
                <div class="govuk-radios ">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="contact-employer" name="contact-employer" type="radio" value="Yes" {{ checked("contact-employer", "Yes") }}>
+                   <input class="govuk-radios__input" id="contact-employer" name="contact-employer{{phase}}" type="radio" value="Yes" {{ checked("contact-employer"+ phase, "Yes") }}>
                    <label class="govuk-label govuk-radios__label" for="contact-employer">
                      Yes
                    </label>
                  </div>
 
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="contact-employer-3" name="contact-employer" type="radio" value="Yes, but I’m waiting for an answer" {{ checked("contact-employer", "Yes, but I’m waiting for an answer") }}>
+                   <input class="govuk-radios__input" id="contact-employer-3" name="contact-employer{{phase}}" type="radio" value="Yes, but I’m waiting for an answer" {{ checked("contact-employer"+ phase, "Yes, but I’m waiting for an answer") }}>
                    <label class="govuk-label govuk-radios__label" for="contact-employer-3">
                      Yes, but I’m waiting for an answer
                    </label>

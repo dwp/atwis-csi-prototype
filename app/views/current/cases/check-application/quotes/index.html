@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -14,14 +14,21 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">   Quote for the cost of support</h1>
+        <h1 class="govuk-heading-l">   Quote for the cost of support for ZoomText </h1>
 
 
 
-        {% include "current/claim/_quote-sae-1.html"%}
 
-<p>Only 1 quote is needed from Dereck Smith because the total cost is below £500.</p>
-  <p><a href="">  Add more details</a></p>
+{% include "current/claim/_quote-sae-2.html"%}
+
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Add more details
+</button>
+</form>
+
+
+<form action="/current/cases/{% if phase%}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -30,13 +37,13 @@
               </legend>
               <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                 <div class="govuk-radios__item govuk-radios--inline">
-                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check" type="radio" value="Yes" {{ checked("quotes-check", "Yes") }}>
+                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check-2{{phase}}" type="radio" value="Yes" {{ checked("quotes-check-2"+ phase, "Yes") }}>
                   <label class="govuk-label govuk-radios__label" for="quotes-check">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check" type="radio" value="No" {{ checked("quotes-check", "No") }}>
+                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check-2{{phase}}" type="radio" value="No" {{ checked("quotes-check-2"+ phase, "No") }}>
                   <label class="govuk-label govuk-radios__label" for="quotes-check-2">
                     No
                   </label>

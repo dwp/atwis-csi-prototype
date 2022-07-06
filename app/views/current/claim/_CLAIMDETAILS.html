@@ -44,9 +44,10 @@
               Case type
             </dt>
             <dd class="govuk-summary-list__value">
-              Priority
+            {% if phase == "sonya"  %}Other{% else %}
+            Priority{% endif %}
             </dd>
-          </div>
+          </div>{% if not phase == "sonya"  %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Priority type
@@ -54,13 +55,13 @@
             <dd class="govuk-summary-list__value">
               Clinically extremely vulnerable  (CEV)
             </dd>
-          </div>
+          </div>{% endif %}
   <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Full name
         </dt>
         <dd class="govuk-summary-list__value">
-        {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}
+      {% if phase == "sonya"  %}Sonya Corkery{% else %}  {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}{% endif %}
         </dd>
       </div>
     <!-- <div class="govuk-summary-list__row">
@@ -102,7 +103,7 @@
           Date submitted
         </dt>
         <dd class="govuk-summary-list__value">
-          2 April 2022, 11:57am
+          2 June 2022, 11:57am
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -110,7 +111,7 @@
           Application reference
         </dt>
         <dd class="govuk-summary-list__value">
-          RMPX30
+          RMPX3{% if phase == "sonya"  %}0{% else %}1{% endif %}
         </dd>
       </div>
 
@@ -223,7 +224,10 @@
     {% include  "./notification.html" %}
       {% else %}
     {% endif %}
-    {% include  "./task-list.html" %}
+
+      {% if phase == "sonya"  %}
+    {% include  "./task-list-sonya.html" %}{% else %}
+  {% include  "./task-list-dereck.html" %}{% endif %}
 
   </div>
 

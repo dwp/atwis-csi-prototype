@@ -7,7 +7,7 @@
 {% block csi %}
 
 
-<form action="" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -22,8 +22,8 @@
                   </h1>
 
                   <p class="govuk-body">
-Based on the application, Dereck Smith does not need a workplace assessment.     </p>
-<p>This is because Dereck Smith knows what support they need.</p>
+Based on the application, {% if phase =="sonya"%}Sonya Corkery{% else %}Dereck Smith{% endif %} does not need a workplace assessment.     </p>
+<p>This is because {% if phase =="sonya"%}Sonya Corkery{% else %}Dereck Smith{% endif %} knows what support they need.</p>
 
 
                   <p class="govuk-body">   <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/30-workplace-assessment" target="_blank">Check Workplace assesment guidance (opens in a new tab)</a></p>
@@ -43,14 +43,14 @@ Based on the application, Dereck Smith does not need a workplace assessment.    
 
                <div class="govuk-radios govuk-radios--inline">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa" name="wpa" type="radio" value="Yes~workplace-assesment/citizen-wpa" {{ checked("wpa", "Yes") }}>
-                   <label class="govuk-label govuk-radios__label" for="wpa">
+                   <input class="govuk-radios__input" id="wpa{{phase}}" name="wpa{{phase}}" type="radio" value="Yes" {{ checked("wpa"+ phase, "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa{{phase}}">
                      Yes
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-2" name="wpa" type="radio" value="No~/current/cases/claim#your-tasks" {{ checked("wpa", "No") }}>
-                   <label class="govuk-label govuk-radios__label" for="wpa-2">
+                   <input class="govuk-radios__input" id="wpa{{phase}}-2" name="wpa{{phase}}" type="radio" value="No" {{ checked("wpa"+ phase, "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa{{phase}}-2">
                      No
                    </label>
                  </div>

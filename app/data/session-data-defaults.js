@@ -23,6 +23,7 @@ module.exports = {
 'other' : "",
 'remove' : "",
 'notification' : "",
+'notificationsonya' : "",
 'wpa-report' : "",
 
 'Searchligh' : "Yes and application details match",

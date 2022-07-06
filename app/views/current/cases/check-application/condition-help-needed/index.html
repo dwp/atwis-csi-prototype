@@ -14,14 +14,14 @@
 
   {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
    {% set detailshealthindex = i %}
-    {% if data['condition-check-update'+ detailshealthindex]%}
+   {% if data['condition-check-update'+ phase + detailshealthindex]%}
     {% set totalhealthdetails = totalhealthdetails + 1 %}
   {% endif %}
     {%- endfor %}
 
 <div class="govuk-width-container">
 
-  <form action="/current/cases/check-application/condition-help-needed/details/{{totalhealthdetails + 1}}" method="post" novalidate>
+  <form action="/current/cases/{% if phase == "sonya" %}sonya/cases/{% else %}{% endif %}check-application/condition-help-needed/details/{{totalhealthdetails + 1}}" method="post" novalidate>
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -45,17 +45,17 @@
 
     {% for i in [1,2,3,4,5] -%}
     {% set detailshealthindex = i  %}
-    {% if data['condition-check-update'+ detailshealthindex] %}
+    {% if data['condition-check-update'+ phase + detailshealthindex] %}
 
 
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-          <strong> Details from {{data['condition-check-update'+ detailshealthindex]}}</strong>
+          <strong> Details from {{data['condition-check-update'+ phase + detailshealthindex]}}</strong>
         </dt>
 
         <dt class="govuk-summary-list__value govuk-!-font-weight-regular hmrc-summary_value">
-        {{data['more-detail'+ detailshealthindex]}}
+      {{data['more-detail'+ phase + detailshealthindex]}}
         </dt>
 
 
@@ -85,7 +85,7 @@
     </form>
 
 
-  <form action="/current/cases/claim#your-tasks" method="post" novalidate>
+  <form action="/current/cases/{% if phase == "sonya" %}sonya/cases/{% else %}{% endif %}claim#your-tasks" method="post" novalidate>
 
     <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -95,15 +95,15 @@
                   </legend>
                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                     <div class="govuk-radios__item govuk-radios--inline">
-                      <input class="govuk-radios__input" id="condition-check" name="condition-check" type="radio" value="Yes"
-                      {% if not data['more-detail1']%}{{ checked("condition-check", "Yes") }}{% endif %}>
+                      <input class="govuk-radios__input" id="condition-check" name="condition-check{{phase}}" type="radio" value="Yes"
+                      {% if not data['more-detail{{pahse}}1']%}{{ checked("condition-check"+ phase, "Yes") }}{% endif %}>
                       <label class="govuk-label govuk-radios__label" for="condition-check">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check" type="radio" value="No"
-                      {% if not data['more-detail1']%}{{ checked("condition-check", "No") }}{% endif %}>
+                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check{{phase}}" type="radio" value="No"
+                      {% if not data['more-detail{{phase}}1']%}{{ checked("condition-check"+ phase, "No") }}{% endif %}>
                       <label class="govuk-label govuk-radios__label" for="condition-check-2">
                         No
                       </label>
