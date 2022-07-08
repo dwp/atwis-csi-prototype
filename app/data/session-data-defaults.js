@@ -18,6 +18,7 @@ Example usage:
 */
 
 module.exports = {
+  'claims' : "",
 'benefits' : "",
 'priority' : "",
 'other' : "",

@@ -144,13 +144,13 @@
                       </label>
                       <select class="govuk-select" id="claims" name="claims">
                         <option value="No specialist equipment"
-                        {% if 'No specialist equipment' in data['priority']%}selected{% endif %}>No specialist equipment</option>
+                        {% if 'No specialist equipment' in data['claims']%}selected{% endif %}>No specialist equipment</option>
                         <option value="Specialist equipment"
-                        {% if 'Specialist equipment' in data['priority']%}selected{% endif %}>Specialist equipment</option>
+                        {% if 'Specialist equipment' in data['claims']%}selected{% endif %}>Specialist equipment</option>
                         <option value="TESG">TESG</option>
-                        {% if 'TESG' in data['priority']%}selected{% endif %}>TESG</option>
+                        {% if 'TESG' in data['claims']%}selected{% endif %}>TESG</option>
                         <option value="CSI">CSI</option>
-                        {% if 'CSI' in data['priority']%}selected{% endif %}>CSI</option>
+                        {% if 'CSI' in data['claims']%}selected{% endif %}>CSI</option>
                       </select>
                   </div>
                   </div>
@@ -167,7 +167,83 @@
 
                   {% if phase == "allocator"  %}
                   <br></br></br></br></br></br>
-                  <p>You have no cases.</P>
+                  {% if 'No specialist equipment' in data['claims']%}
+                  <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Name</th>
+                            <!-- <th class="govuk-table__header">Specialism</th> -->
+                            <th scope="col" class="govuk-table__header">Document type</th>
+                            <th scope="col" class="govuk-table__header">Form referance</th>
+                            <th scope="col" class="govuk-table__header">Date received </th>
+                            <th scope="col" class="govuk-table__header">Status</th>
+                            <th scope="col" class="govuk-table__header">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                            <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Susan Poole</th>
+                              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
+                              <td class="govuk-table__cell">One off costs (SAE)</td>
+                              <td class="govuk-table__cell">DP224JP</td>
+                              <td class="govuk-table__cell">12 June 2022</td>
+                              <td class="govuk-table__cell">Not started</td>
+                              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                            </tr>
+
+
+
+
+                      </tbody>
+                    </table>
+
+
+
+
+  {% endif %}
+
+  {% if 'Specialist equipment' in data['claims']%}
+  <table class="govuk-table">
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <!-- <th class="govuk-table__header">Specialism</th> -->
+            <th scope="col" class="govuk-table__header">Document type</th>
+            <th scope="col" class="govuk-table__header">Form referance</th>
+            <th scope="col" class="govuk-table__header">Date received </th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Jane Doe</th>
+              <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
+              <td class="govuk-table__cell">One off costs (SAE)</td>
+              <td class="govuk-table__cell">DP224JP</td>
+              <td class="govuk-table__cell">12 June 2022</td>
+              <td class="govuk-table__cell">Not started</td>
+              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+            </tr>
+
+
+
+
+      </tbody>
+    </table>
+
+{% endif %}
+
+
+
+{% if not data['claims'] %}
+<p>You have no cases.</P>{% endif %}
 
                   {% else %}
                     <table class="govuk-table">
