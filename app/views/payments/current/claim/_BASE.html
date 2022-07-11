@@ -81,7 +81,7 @@
 
         </li>
 {% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
-{% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if advisers %} class="active"{% endif %}><a href="/{{folder}}/all-advisers{% if payments %}-payments{% endif %}">All advisers</a></li> {% endif %}
+<!-- {% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if advisers %} class="active"{% endif %}><a href="/{{folder}}/all-advisers{% if payments %}-payments{% endif %}">All advisers</a></li> {% endif %} -->
 
 
 {% endif %}

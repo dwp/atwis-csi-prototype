@@ -22,9 +22,6 @@
       <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
 
-      
-
-
   <div class="govuk-accordion__section ">
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
@@ -37,7 +34,78 @@
 
       <p>  <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132548690256">Design decision confluence page</a></p>
 
+      {{ govukTable({
+        caption: "Version history for current team",
+        captionClasses: "govuk-heading-m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Date added"
+          },
+          {
+            text: "Change log"
+          },
+          {
+            text: "Link"
+          }
+        ],
+        rows: [
+        [
+        {
+          text: " 0.5"
+        },
+        {
+          text: ""
+        },
+        {
+          text: "Play area for testing ideas before sprint"
+        },
+        {
+          html: '<a href="">Go to future </a>'
+        }
+        ],
 
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "00 Month 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3701</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/current/indexmenu">Go to current </a>'
+        }
+        ]
+
+
+
+        ]
+      }) }}
     </div>
 </div>
 
