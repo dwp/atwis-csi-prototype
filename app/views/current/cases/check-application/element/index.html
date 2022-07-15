@@ -34,7 +34,7 @@
     </dt>
     <dd class="govuk-summary-list__value">
 {% if phase == "sonya" %}Yes{% else %}
-  Dereck Smith needs this support but has not given details{% endif %}
+  {% if data['elements']=='Yes'%}Yes{% else %}Dereck Smith needs this support but has not given details{% endif %}{% endif %}
 
     </dd>
     <dd class="govuk-summary-list__actions">
@@ -149,13 +149,13 @@
         </dl>
 
 
-
+  {% if data['elements']=='Yes'%}{% else %}
     {% if phase == "sonya"%}{% else %}
 <p>This task will stay ‘in progress’ until you update whether Dereck Smith needs:
 <ul class="govuk-list govuk-list--bullet">
   <li>specialist equipment</li>
 
-</ul></p>{% endif %}
+</ul></p>{% endif %}{% endif %}
 
 
           <input type="hidden" name="appointee-checked" value="true">
