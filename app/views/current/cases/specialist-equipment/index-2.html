@@ -15,12 +15,12 @@
       <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
 
-                     Confirm details for specialist equipment 1</h1>
+                     Confirm details for specialist equipment 2</h1>
 
 
         <!-- <h2 class="govuk-heading-m">Special aids and equipment</h2> -->
 {% if phase =='sonya'%}
-  <h2 class="govuk-heading-m">Jaws screen reader</h2>{% else %}{{data['sae-item-type']}}{% endif %}
+  <h2 class="govuk-heading-m">ZoomText</h2>{% else %}{{data['sae-item-type']}}{% endif %}
 
       {% if data['wpa']=='Yes'%}
         {% include "current/claim/_sae-dereck.html"%}
@@ -30,7 +30,7 @@
 
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
-How will this equipment help {% if phase == 'sonya'%}Sonya Corkery{% else %}Dereck Smith{% endif %} at work?
+How will this equipment help you at work?
 </dt>
 <dd class="govuk-summary-list__value">
 
@@ -66,13 +66,13 @@ I need Jaws and ZoomText software to read out the content on a screen to me, as 
                 </legend>
                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                   <div class="govuk-radios__item govuk-radios--inline">
-                    <input class="govuk-radios__input" id="linked" name="linked" type="radio" value="Yes" {{ checked("linked", "Yes") }}>
+                    <input class="govuk-radios__input" id="linked" name="linked-2" type="radio" value="Yes" {{ checked("linked-2", "Yes") }}>
                     <label class="govuk-label govuk-radios__label" for="linked">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="linked-2" name="linked" type="radio" value="No" {{ checked("linked", "No") }}>
+                    <input class="govuk-radios__input" id="linked-2" name="linked-2" type="radio" value="No" {{ checked("linked-2", "No") }}>
                     <label class="govuk-label govuk-radios__label" for="linked-2">
                       No
                     </label>
@@ -90,13 +90,13 @@ I need Jaws and ZoomText software to read out the content on a screen to me, as 
                     </legend>
                     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                       <div class="govuk-radios__item govuk-radios--inline">
-                        <input class="govuk-radios__input" id="medical" name="medical" type="radio" value="Yes" {{ checked("medical", "Yes") }}>
+                        <input class="govuk-radios__input" id="medical" name="medical-2" type="radio" value="Yes" {{ checked("medical-2", "Yes") }}>
                         <label class="govuk-label govuk-radios__label" for="medical">
                           Yes
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="medical-2" name="medical" type="radio" value="No" {{ checked("medical", "No") }}>
+                        <input class="govuk-radios__input" id="medical-2" name="medical-2" type="radio" value="No" {{ checked("medical-2", "No") }}>
                         <label class="govuk-label govuk-radios__label" for="medical-2">
                           No
                         </label>
@@ -115,13 +115,13 @@ I need Jaws and ZoomText software to read out the content on a screen to me, as 
                                 </legend>
                                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                   <div class="govuk-radios__item govuk-radios--inline">
-                                    <input class="govuk-radios__input" id="social-domestic" name="social-domestic{{phase}}" type="radio" value="Yes" {{ checked("social-domestic"+ phase, "Yes") }}>
+                                    <input class="govuk-radios__input" id="social-domestic" name="social-domestic-2{{phase}}" type="radio" value="Yes" {{ checked("social-domestic-2"+ phase, "Yes") }}>
                                     <label class="govuk-label govuk-radios__label" for="social-domestic">
                                       Yes
                                     </label>
                                   </div>
                                   <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="social-domestic-2" name="social-domestic{{phase}}" type="radio" value="No" {{ checked("social-domestic"+ phase, "No") }}>
+                                    <input class="govuk-radios__input" id="social-domestic-2" name="social-domestic-2{{phase}}" type="radio" value="No" {{ checked("social-domestic-2"+ phase, "No") }}>
                                     <label class="govuk-label govuk-radios__label" for="social-domestic-2">
                                       No
                                     </label>

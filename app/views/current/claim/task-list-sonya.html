@@ -197,30 +197,44 @@ data['wpa'+ phase]  %}
     <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 
-        Specialist equipment details
+        Confirm details for specialist equipment 1
+
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+    <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+
+        Confirm details for specialist equipment 2
 
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
 
+
       </ul>{% endif %}
 
+{% if data['social-domestic-2'+ phase]%}
+      <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
-
-
+      <p>You do not need to send this award to anyone else for approval. </p>
+    
+    <br>
+{% endif %}
 
 
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">6. </span> Award decision
           </h2>
-          {% if data['element-decision'+ phase]%}
+          {% if data['social-domestic-2'+ phase]%}
+
             {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
+
           {% else %}
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Award summary
+              Approve specialist equipment
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
@@ -236,12 +250,17 @@ data['wpa'+ phase]  %}
           {% endif %}
         </li>
       </ol>
+
+
+
+
+
       {% if data['wpa'+ phase]=='No'%}
     {% if totalcomplete > 2 and
     data['award'+ phase]%}
 <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
        <button class="govuk-button" data-module="govuk-button">
-        Continue
+      Confirm award
       </button>{% endif %}
 {% endif %}
 
@@ -250,7 +269,7 @@ data['wpa'+ phase]  %}
 data['award'+ phase]%}
 <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
-  Continue
+  Confirm award
 </button>{% endif %}
 {% endif %}
   </div>
