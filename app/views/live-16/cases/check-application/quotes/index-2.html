@@ -1,0 +1,68 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">   Quote for the cost of support for Jaws screen reader</h1>
+
+
+
+        {% include "live-16/claim/_quote-sae-1.html"%}
+
+<p>Only 1 quote is needed from {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %} because the total cost is below £500.</p>
+
+
+
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Add more details
+</button>
+</form>
+
+
+<form action="/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    {% include  "./content/more-information.html" %}
+
+              </legend>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item govuk-radios--inline">
+                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check{{phase}}" type="radio" value="Yes" {{ checked("quotes-check"+ phase, "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="quotes-check">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check{{phase}}" type="radio" value="No" {{ checked("quotes-check"+ phase, "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="quotes-check-2">
+                    No
+                  </label>
+                </div>
+
+              </div>
+
+            </fieldset>
+    </div>
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
