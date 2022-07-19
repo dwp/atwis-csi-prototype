@@ -18,7 +18,7 @@
    {% if not data['chosen-quote-sae']%}<li class="app-task-list__item">
    <span class="app-task-list__task-name">
 
-   Specialist equipment details
+     Confirm details for specialist equipment 1
 
    </span>
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
@@ -28,14 +28,33 @@
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 <a href="specialist-equipment" aria-describedby="job-status">
-Specialist equipment details
+  Confirm details for specialist equipment 1
 </a>
 </span>
-{% if not data['element-decision'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-{% if data['element-decision'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+{% if not data['social-domestic'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['social-domestic'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
  </li>{% endif %}
+ {% if not data['chosen-quote-sae']%}<li class="app-task-list__item">
+ <span class="app-task-list__task-name">
 
+   Confirm details for specialist equipment 2
+
+ </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+
+
+  </li>{% else %}
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="specialist-equipment/index-2" aria-describedby="job-status">
+Confirm details for specialist equipment 2
+</a>
+</span>
+{% if not data['social-domestic-2'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['social-domestic-2'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+</li>{% endif %}
 
 {% else %}
 
@@ -44,11 +63,11 @@ Specialist equipment details
  <li class="app-task-list__item">
  <span class="app-task-list__task-name">
  <a href="specialist-equipment" aria-describedby="job-status">
- Specialist equipment details
+  Confirm details for specialist equipment
  </a>
  </span>
- {% if not data['element-decision']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
- {% if data['element-decision']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+ {% if not data['social-domestic']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+ {% if data['social-domestic']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
   </li>{% endif %}
 <!-- <li class="app-task-list__item">

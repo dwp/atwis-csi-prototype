@@ -185,7 +185,7 @@ data['wpa'] and (data['quotes-choose'] or data['quotes-checksonya'])%}
     <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 
-        Specialist equipment details
+        Confirm details for specialist equipment
 
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
@@ -196,7 +196,13 @@ data['wpa'] and (data['quotes-choose'] or data['quotes-checksonya'])%}
       </ul>{% endif %}{% endif %}
 
 
+      {% if data['social-domestic']%}
+            <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
+            <p>You do not need to send this award to anyone else for approval. </p>
+
+          <br>
+      {% endif %}
 
 
 
@@ -204,13 +210,13 @@ data['wpa'] and (data['quotes-choose'] or data['quotes-checksonya'])%}
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">{% if data['elements']=='Yes'%}6{% else %}5{% endif %}. </span> Award decision
           </h2>
-          {% if data['element-decision']%}
+          {% if data['social-domestic']%}
             {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}
           {% else %}
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Award summary
+                Approve specialist equipment
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>

@@ -10,7 +10,7 @@
 
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}decision/index-2-2" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -25,24 +25,25 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h1 class="govuk-fieldset__heading">
-                   {% include  "current/cases/decision/content/under-25.html" %} 1
+                   {% include  "current/cases/decision/content/under-25.html" %} 2
                  </h1>
                </legend>
 
 
 
 
-  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
 
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
-Item 1
+Item 2
 </dt>
 <dd class="govuk-summary-list__value">
 
-  Jaws screen reader
+ZoomText
 
 
 
@@ -59,7 +60,7 @@ Quote
 </dt>
 <dd class="govuk-summary-list__value">
 
-£499, Jaws screen reader
+£501, ZoomText
 <br>
 </dd>
 
@@ -74,30 +75,28 @@ Quote
 </dl>
 
 <fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        {% include  "./content/accept-element.html" %}
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    {% include  "./content/accept-element.html" %}
 
-  </legend>
-  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-    <div class="govuk-radios__item govuk-radios--inline">
-      <input class="govuk-radios__input" id="element-decision" name="element-decision{{phase}}" type="radio" value="Yes" {{ checked("element-decision"+ phase, "Yes") }}>
-      <label class="govuk-label govuk-radios__label" for="element-decision">
-        Yes
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="element-decision-2" name="element-decision{{phase}}" type="radio" value="No" {{ checked("element-decision"+ phase, "No") }}>
-      <label class="govuk-label govuk-radios__label" for="element-decision-2">
-        No
-      </label>
-    </div>
-
+</legend>
+<div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+  <div class="govuk-radios__item govuk-radios--inline">
+    <input class="govuk-radios__input" id="element-decision" name="element-decision-2{{phase}}" type="radio" value="Yes" {{ checked("element-decision-2"+ phase, "Yes") }}>
+    <label class="govuk-label govuk-radios__label" for="element-decision">
+      Yes
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="element-decision-2" name="element-decision-2{{phase}}" type="radio" value="No" {{ checked("element-decision-2"+ phase, "No") }}>
+    <label class="govuk-label govuk-radios__label" for="element-decision-2">
+      No
+    </label>
   </div>
 
-</fieldset>
 </div>
 
-
+</fieldset>
+</div></div></div>
 
            <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
 Save and continue

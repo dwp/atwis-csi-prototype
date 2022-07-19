@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="/current/cases/check-application/sae/details/type" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/type" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -17,7 +17,8 @@
             <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-l">
 
-                     Does {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %} need a wheelchair or a hearing aid to support them at work?</h1>
+                  
+                   {% include "current/cases/check-application/sae/details/content/index.html" %}</h1>
 
 
 
