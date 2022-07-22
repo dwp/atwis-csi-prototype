@@ -177,7 +177,8 @@
    </script>
 
 </div></div>
-{% include  "../claim/timeline.html" %}
+{% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% else %}
+{% include  "../claim/timeline-dereck.html" %}{% endif %}
 </div>
 
 

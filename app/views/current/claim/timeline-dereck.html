@@ -36,15 +36,53 @@
 
 <ol class="dwp-timeline">
 
+  {% if data ['citizen-address-line-1']=='73 Guild Street'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Address updated </h2>
+      <p class="govuk-caption-m" id="timeline-date">72 Guild Street to {{data['citizen-address-line-1']}}</p>
 
-  <!-- {% if data['employer-confirmed']%}
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:46am
+      </p>
+  </li>
+  {% endif %}
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">  Workplace assessment referral form: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+  Which tasks have you completed? Completed and sent referral form, Saved copies to Sharepoint, Set up a record for Dereck Smith on LMS and Added workplace assessment type in LMS
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">  Workplace assessment referral form: in progress </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+
+  {% if data['employer-confirmed']%}
 
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Job details: completed </h2>
 
 
       <p class="govuk-caption-m" id="timeline-date">
-
+    <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
   5 June 2022, 11:49am
@@ -59,7 +97,7 @@
     <p class="govuk-caption-m govuk-!-margin-bottom-1">{% include  "current/cases/job-details/content/agree-to-cost-share.html" %} {{data['employer-cost-share']}}</p>
 
       <p class="govuk-caption-m" id="timeline-date">
-
+    <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
   5 June 2022, 11:47am
@@ -74,7 +112,7 @@
 
 
       <p class="govuk-caption-m" id="timeline-date">
-
+    <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
   5 June 2022, 11:49am
@@ -88,13 +126,13 @@
   <p class="govuk-caption-m govuk-!-margin-bottom-1">{% include  "current/cases/contact-employer/content/have-you-contacted-employer.html" %} {{data['contact-employer']}}</p>
 
       <p class="govuk-caption-m" id="timeline-date">
-
+    <!-- <a>  Link to note</a> -->
       </p>
       <p class="govuk-caption-m" id="timeline-date">
   5 June 2022, 11:47am
       </p>
   </li>
-  {% endif %} -->
+  {% endif %}
 
   <!-- {% if data['contact']=='No'%}
   <li class="dwp-timeline__entry">
@@ -109,19 +147,7 @@
       </p>
   </li>
   {% endif %} -->
-  {% if data ['citizen-address-line-1']=='73 Guild Street'%}
-  <li class="dwp-timeline__entry">
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Address updated </h2>
-      <p class="govuk-caption-m" id="timeline-date">72 Guild Street to {{data['citizen-address-line-1']}}</p>
 
-      <p class="govuk-caption-m" id="timeline-date">
-    <!-- <a>  Link to note</a> -->
-      </p>
-      <p class="govuk-caption-m" id="timeline-date">
-  5 June 2022, 11:46am
-      </p>
-  </li>
-  {% endif %}
 
   {% if data['searchlight-correct']=='No' and data['cis500']%}
     {% if data['cis500']=='Yes'%}
@@ -333,6 +359,135 @@
       </p>
   </li>
   {% endif %} -->
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">    Type of workplace assessment: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">   Type of workplace assessment: in progress </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  What type of workplace assessment does Dereck Smith want? Face-to-face
+  Is Dereck Smith available for a workplace assessment in the next 8 working days? Yes
+  Does Dereck Smith want anyone else to be at the workplace assessment? No
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">   Confirm whether workplace assessment is needed: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">  Confirm whether workplace assessment is needed: in progress </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  Do you recommend a workplace assessment for Dereck Smith? Yes
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">     Summary of support requested: in progress </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->This task will stay ‘in progress’ until you update whether Dereck Smith needs:
+
+    specialist equipment
+
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">    Employment details: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">    Employment details: in progress </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  Do you need more information about the  employment details for Dereck Smith? No
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">   Contact details: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">    Contact details: in progress </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  Do you need more information about the contact details for Dereck Smith? No
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">  Health condition or disability: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">   Health condition or disability: in progress </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    Do you need more information about this health condition or disability? No
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 11:49am
+      </p>
+  </li>
 
   {% if 'Personal Independence Payment' in data['benefits']%}
   <li class="dwp-timeline__entry">
