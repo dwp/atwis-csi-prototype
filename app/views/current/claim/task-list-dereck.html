@@ -178,7 +178,7 @@ data ['benefits']
         </h2>
 
 {% if data['employer-size'] and
-data['wpa'] and (data['quotes-choose'] or data['quotes-checksonya'])%}
+data['wpa'] and data['wpa-report'] and (data['quotes-choose'] or data['quotes-checksonya'])%}
     {% include  "../claim/_task-list-element.html" %}{% else %}
 
     <ul class="app-task-list__items">
