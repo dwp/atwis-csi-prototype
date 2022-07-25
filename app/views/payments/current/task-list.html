@@ -24,7 +24,9 @@
                   Check eligibility
                 </a>
               </span>
-              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+              {% if not data['name-here-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
+              {% if data['name-here-1'] and not data['name-here-5']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
+              {% if data['name-here-5'] %} <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>{% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
