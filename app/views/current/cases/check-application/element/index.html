@@ -181,7 +181,7 @@
                <div class="govuk-radios__item">
                  <input class="govuk-radios__input" id="support-needs-3" name="support-needs" type="radio" value="I dont know~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks">
                  <label class="govuk-label govuk-radios__label" for="support-needs-3">
-                  I’m waiting for more information about the support that Dereck Smith needs
+                  I’m waiting for more information about the support that {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %} needs
                  </label>
                </div>
              </div>
