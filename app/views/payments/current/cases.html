@@ -34,7 +34,7 @@
               <div class="govuk-form-group" style="float: left">
 
                       <label class="govuk-label" for="sort">
-                        Type of claim
+                        Claim type
                       </label>
                       <select class="govuk-select" id="claims" name="claims">
                         <option value="No specialist equipment"
@@ -69,7 +69,6 @@
                           <tr class="govuk-table__row">
                             <th scope="col" class="govuk-table__header">Name</th>
                             <th scope="col" class="govuk-table__header">Claim type</th>
-                            <th scope="col" class="govuk-table__header">Form referance</th>
                             <th scope="col" class="govuk-table__header">Date received </th>
                             <th scope="col" class="govuk-table__header">Status</th>
                             <th scope="col" class="govuk-table__header">Action</th>
@@ -81,8 +80,7 @@
 
                             <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Dereck Smith</th>
-                              <td class="govuk-table__cell">One off costs (SAE)</td>
-                              <td class="govuk-table__cell">DP224JP</td>
+                              <td class="govuk-table__cell">Specialist equipment</td>
                               <td class="govuk-table__cell">12 June 2022</td>
                               <td class="govuk-table__cell">Not started</td>
                               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
@@ -105,7 +103,6 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Name</th>
             <th scope="col" class="govuk-table__header">Claim type</th>
-            <th scope="col" class="govuk-table__header">Form referance</th>
             <th scope="col" class="govuk-table__header">Date received </th>
             <th scope="col" class="govuk-table__header">Status</th>
             <th scope="col" class="govuk-table__header">Action</th>
@@ -117,8 +114,7 @@
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Jane Doe</th>
-              <td class="govuk-table__cell">One off costs (SAE)</td>
-              <td class="govuk-table__cell">DP224JP</td>
+              <td class="govuk-table__cell">Specialist equipment</td>
               <td class="govuk-table__cell">12 June 2022</td>
               <td class="govuk-table__cell">Not started</td>
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
