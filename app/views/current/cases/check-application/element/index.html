@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set changeHide = "True" %}
+{% if 'Yes' in data['elements']%}{% set changeHide = "True" %}{% endif %}
 {% if phase == 'sonya' %}{% set case = "-sonya" %}{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
@@ -9,7 +9,7 @@
 
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+
 <div class="govuk-width-container">
 
 
@@ -151,17 +151,47 @@
 
   {% if data['elements']=='Yes'%}{% else %}
     {% if phase == "sonya"%}{% else %}
-<p>This task will stay ‘in progress’ until you update whether Dereck Smith needs:
+<p>This task will stay <strong>in progress</strong> until you update whether Dereck Smith needs:
 <ul class="govuk-list govuk-list--bullet">
   <li>specialist equipment</li>
 
 </ul></p>{% endif %}{% endif %}
 
 
-          <input type="hidden" name="appointee-checked" value="true">
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+{% if not 'Yes' in data['elements']%}
+         <div class="govuk-form-group">
+           <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            {% include  "./content/update-support.html" %}
+             </legend>
+             <div class="govuk-radios" data-module="govuk-radios">
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="support-needs" name="support-needs" type="radio" value="yes~/current/cases/check-application/element/element">
+                 <label class="govuk-label govuk-radios__label" for="support-needs">
+                   Yes
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="support-needs-2" name="support-needs" type="radio" value="no~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" {{ checked("chosen-quote-sae-justification", "It was the most suitable support for Sonya Corkery") }}>
+                 <label class="govuk-label govuk-radios__label" for="support-needs-2">
+                   No
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="support-needs-3" name="support-needs" type="radio" value="I dont know~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks">
+                 <label class="govuk-label govuk-radios__label" for="support-needs-3">
+                  I’m waiting for more information about the support that Dereck Smith needs
+                 </label>
+               </div>
+             </div>
+
+           </fieldset>
+         </div>
+{% endif %}
 
           <button class="govuk-button" data-module="govuk-button" name="elements-task{{phase}}" value="{% if phase == "sonya"%}complete{% else %}{% if data['elements']=='I do not know'%}in progress{% else %}complete{% endif %}{% endif %}">
-          Confirm and return to your tasks
+        {% if 'Yes' in data['elements']%}Return to your tasks{% else %}  Save and continue{% endif %}
           </button>
 
         </form>
