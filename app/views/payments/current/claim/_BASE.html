@@ -77,7 +77,7 @@
           <li{% if yourCases %} class="active"{% endif %}>
 
 {% if (not contactCentre)  %}
-          <a href="/sprint-8/your-cases{% if phase == "payment officer"%}-payment officer{% endif %}{% if phase == "case-manger-view" %}-payment officer{% endif %}" class="active" aria-current="page">Your cases</a>
+          <a href="/current/your-cases{% if phase == "payment officer"%}-payment officer{% endif %}{% if phase == "case-manger-view" %}-payment officer{% endif %}" class="active" aria-current="page">Your cases</a>
 
         </li>
 {% if (phase == "case-manger-view" or phase == "payment officer") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
