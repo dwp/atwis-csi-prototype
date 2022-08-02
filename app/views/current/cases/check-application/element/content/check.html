@@ -1,1 +1,6 @@
-Which types of support does {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %} need? 
+{% if not 'Yes' in data['elements']%}
+Summary of support requested by {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %} in application
+
+{% else %}
+
+Summary of support that {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %} needs{% endif %}
