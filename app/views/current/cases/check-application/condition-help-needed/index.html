@@ -31,7 +31,7 @@
 {% endif %}
 <div class="govuk-width-container">
 
-  <form action="/current/cases/{% if phase == "sonya" %}sonya/cases/{% else %}{% endif %}check-application/condition-help-needed/details/{{totalhealthdetails + 1}}" method="post" novalidate>
+  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% else %}{% endif %}check-application/condition-help-needed/details/{{totalhealthdetails + 1}}" method="post" novalidate>
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -94,7 +94,7 @@
     </form>
 
 
-  <form action="/current/cases/{% if phase == "sonya" %}sonya/cases/{% else %}{% endif %}claim#your-tasks" method="post" novalidate>
+  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% else %}{% endif %}claim#your-tasks" method="post" novalidate>
 
     <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">

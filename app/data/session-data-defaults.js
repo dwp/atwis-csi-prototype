@@ -25,6 +25,7 @@ module.exports = {
 'remove' : "",
 'notification' : "",
 'notificationsonya' : "",
+'notificationthomas' : "",
 'wpa-report' : "",
 
 'Searchligh' : "Yes and application details match",
@@ -123,7 +124,9 @@ module.exports = {
 
   'priority-cases': [{
     'name': 'Dereck Smith',
-'job-deatils-contact' : "They gave permission (apply)",
+    'ref': 'RMPX30',
+    'case': 'Priority',
+    'job-deatils-contact' : "They gave permission (apply)",
     'type': 'New Application',
     'priority' : "true",
     'date': '4 October 2021 13:23'
@@ -132,7 +135,20 @@ module.exports = {
 
   'other-cases': [{
     'name': 'Sonya Corkery',
+    'ref': 'RMPX31',
+    'dos': '2 June 2022',
+    'case': 'Other',
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
+  }],
 
+  'other-cases-2': [{
+    'name': 'Thomas King',
+    'ref': 'RMPX32',
+    'dos': '2 August 2022',
+    'case': 'Other',
     'type': 'New Application',
     'priority' : false,
     'date': '15 October 2021 15:23',
