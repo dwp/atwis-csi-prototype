@@ -22,8 +22,8 @@
                   </h1>
 
                   <p class="govuk-body">
-Based on the application, {% if phase =="sonya"%}Sonya Corkery{% else %}Dereck Smith{% endif %} does not need a workplace assessment.     </p>
-<p>This is because {% if phase =="sonya"%}Sonya Corkery{% else %}Dereck Smith{% endif %} knows what support they need.</p>
+Based on the application, {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} does not need a workplace assessment.     </p>
+<p>This is because {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} knows what support they need.</p>
 
 
                   <p class="govuk-body">   <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/30-workplace-assessment" target="_blank">Check Workplace assesment guidance (opens in a new tab)</a></p>

@@ -181,7 +181,7 @@ data ['benefits']
 
 {% if data['employer-size'+ phase] and
 data['wpa'+ phase]  %}
-    {% include  "../claim/_task-list-element.html" %}{% else %}
+    {% include  "../claim/task-list-comp/_task-list-element-thomas.html" %}{% else %}
 
     <ul class="app-task-list__items">
 
@@ -199,7 +199,7 @@ data['wpa'+ phase]  %}
 
       </ul>{% endif %}
 
-{% if data['award'+ phase]%}
+{% if data['chosen-quote-sw']%}
       <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
       <p>You do not need to send this award to anyone else for approval. </p>
@@ -212,7 +212,7 @@ data['wpa'+ phase]  %}
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">6. </span> Award decision
           </h2>
-          {% if data['social-domestic-2'+ phase]%}
+          {% if data['chosen-quote-sw']%}
 
             {% include  "../claim/task-list-comp/_task-list-decision-thomas.html" %}
 
