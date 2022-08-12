@@ -35,24 +35,7 @@ module.exports = {
 'benefits' : "No",
 'job-deatils-contact' : "They gave permission (apply)",
 //delete later
-'condition-check': 'No',
-'contact-check': 'No',
-'job-deatils-check': 'No',
-'elements-task': 'in progress',
-'wpa': 'Yes',
-'wpa-type': 'Face-to-face',
-'wpa-availability': 'Yes',
-'others-wpa': 'No',
-'contact-employer': 'Yes',
-'employer-confirmed': 'Yes',
-'employer-size': '10 to 49 (small)',
-'employer-wpa-answer': 'Yes',
-'employer-cost-share': 'I have not discussed a cost share with the employer',
-'referral-form': 'Completed and sent referral form',
-'referral-form': 'Saved copies to Sharepoint',
-'referral-form': 'Saved copies to Sharepoint',
-'referral-form': 'Set up a record for Dereck Smith on LMS',
-'referral-form': 'Added workplace assessment type in LMS',
+
 //delete later
 'elements' : "I do not know",
 
