@@ -107,6 +107,8 @@ module.exports = {
 
   'priority-cases': [{
     'name': 'Dereck Smith',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
     'ref': 'RMPX30',
     'case': 'Priority',
     'job-deatils-contact' : "They gave permission (apply)",
@@ -118,6 +120,8 @@ module.exports = {
 
   'other-cases': [{
     'name': 'Sonya Corkery',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
     'ref': 'RMPX31',
     'dos': '2 June 2022',
     'case': 'Other',
@@ -129,6 +133,8 @@ module.exports = {
 
   'other-cases-2': [{
     'name': 'Thomas King',
+    'condition': 'Profound deafness',
+    'conditiondetails': 'I am profoundly deaf in both ears, from birth. Which means I cannot hear a sound below 90dB. My first language is BSL. I ask colleagues to communicate with notes, who are not BSL, I also communicate in writing and lip reading.',
     'ref': 'RMPX32',
     'dos': '2 August 2022',
     'case': 'Other',

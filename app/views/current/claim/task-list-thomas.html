@@ -20,7 +20,7 @@
 
     {% for i in [1] -%}
      {% set contactindex = i %}
-      {% if data['wpa'+ phase]=='Yes' and data['others-wpa'+ phase]  %}
+      {% if data['wpa'+ phase]=='Yes' and data['others-wpa']  %}
       {% set totaljob = totaljob + 1 %}
     {% endif %}
       {%- endfor %}
