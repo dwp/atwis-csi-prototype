@@ -29,7 +29,7 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="chosen-quote-sw-1" name="chosen-quote-sw" type="radio" value="{% if case =='other-cases' %}£501{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sw", "501") }}>
+                <input class="govuk-radios__input" id="chosen-quote-sw-1" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£501{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "501") }}>
          <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-1">
           {% if case =='other-cases' %}£501{% endif %}
           {% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}
@@ -42,7 +42,7 @@
 
        <div class="govuk-radios" data-module="govuk-radios">
          <div class="govuk-radios__item">
-           <input class="govuk-radios__input" id="chosen-quote-sw-2" name="chosen-quote-sw" type="radio" value="{% if case =='other-cases' %}£502{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sw", "502") }}>
+           <input class="govuk-radios__input" id="chosen-quote-sw-2" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£502{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "502") }}>
     <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-2">
       {% if case =='other-cases' %}£502{% endif %}
       {% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}
@@ -55,7 +55,7 @@
 
   <div class="govuk-radios" data-module="govuk-radios">
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="chosen-quote-sw-3" name="chosen-quote-sw" type="radio" value="{% if case =='other-cases' %}£503{% endif %}{% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sw", "503") }}>
+      <input class="govuk-radios__input" id="chosen-quote-sw-3" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£503{% endif %}{% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "503") }}>
 <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-3">
   {% if case =='other-cases' %}£503{% endif %}
   {% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}
@@ -84,22 +84,22 @@
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chosen-quote-sw-justification" name="chosen-quote-sw-justification" type="radio" value="It was the most cost-effective" {{ checked("chosen-quote-sw-justification", "It was the most cost-effective") }}>
-            <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-justification">
+            <input class="govuk-radios__input" id="chosen-quote-justification" name="chosen-quote-justification" type="radio" value="It was the most cost-effective" {{ checked("chosen-quote-justification", "It was the most cost-effective") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification">
               Most cost-effective
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chosen-quote-sw-justification-2" name="chosen-quote-sw-justification" type="radio" value="It was the most suitable support for Sonya Corkery" {{ checked("chosen-quote-sw-justification", "It was the most suitable support for Sonya Corkery") }}>
-            <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-justification-2">
+            <input class="govuk-radios__input" id="chosen-quote-justification-2" name="chosen-quote-justification" type="radio" value="It was the most suitable support for Sonya Corkery" {{ checked("chosen-quote-justification", "It was the most suitable support for Sonya Corkery") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-2">
             Best support for {% if case =='other-cases' %}Sonya Corkery {% endif %}
              {% if case =='other-cases-2' %}Thomas King{% endif %}
             </label>
           </div>
 
           <!-- <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chosen-quote-sw-justification-4" name="chosen-quote-sw-justification" type="radio" value="northern-ireland">
-            <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-justification-4">
+            <input class="govuk-radios__input" id="chosen-quote-justification-4" name="chosen-quote-justification" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-4">
               Other
             </label>
           </div> -->
