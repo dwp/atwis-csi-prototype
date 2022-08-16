@@ -45,7 +45,7 @@
         <dd class="govuk-summary-list__value">
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
-          {{ case.condition-details }}
+          {{ case.conditiondetails }}
           {% endfor %}
           {% endif %}
 
@@ -57,7 +57,7 @@
 
           {% if not case %}
           {% for case in data['priority-cases'] %}
-          {{ case.condition }}
+          {{ case.conditiondetails }}
           {% endfor %}
           {% endif %}
 
