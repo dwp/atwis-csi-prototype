@@ -39,12 +39,25 @@
 
           </dt>
           <dd class="govuk-summary-list__value">
-            macular oedema
-            <br>
 
-            <br>
+                      {% if case =='other-cases' %}
+                      {% for case in data['other-cases'] %}
+                      {{ case.condition }}
+                      {% endfor %}
+                      {% endif %}
 
-            <br>
+                      {% if case =='other-cases-2' %}
+                      {% for case in data['other-cases-2'] %}
+                      {{ case.condition }}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if not case %}
+                      {% for case in data['priority-cases'] %}
+                      {{ case.condition }}
+                      {% endfor %}
+                      {% endif %}
+
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -61,9 +74,24 @@
 
         </dt>
         <dd class="govuk-summary-list__value">
-          I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.
 
-I ask colleagues to read thing out aloud and describe them to me on video calls and in person.
+                    {% if case =='other-cases' %}
+                    {% for case in data['other-cases'] %}
+                    {{ case.conditiondetails }}
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if case =='other-cases-2' %}
+                    {% for case in data['other-cases-2'] %}
+                    {{ case.conditiondetails }}
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if not case %}
+                    {% for case in data['priority-cases'] %}
+                    {{ case.conditiondetails }}
+                    {% endfor %}
+                    {% endif %}
 
 
           <br>

@@ -14,10 +14,11 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">  Choose quote: specialist equipment 2</h1>
+        <h1 class="govuk-heading-l">  Choose quote: {% if case =='other-cases-2' %}British Sign Language (BSL) interpreter{% endif %}{% if case =='other-cases' %}specialist equipment 2{% endif %}</h1>
 
-
-
+{% if case =='other-cases-2' %}
+<div class="govuk-inset-text">
+<p>These quotes are based on 10 hours of support per week for 3 years.</p></div>{% endif %}
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -28,34 +29,41 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="501" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "501") }}>
-         <label class="govuk-label govuk-radios__label" for="sign-in">
-          £501
+                <input class="govuk-radios__input" id="chosen-quote-sw-1" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£501{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "501") }}>
+         <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-1">
+          {% if case =='other-cases' %}£501{% endif %}
+          {% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}
          </label>
          <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-          ZoomText Professional License from ZoomText Supplier
+          {% if case =='other-cases' %}ZoomText Professional License from ZoomText Supplier{% endif %}
+          {% if case =='other-cases-2' %}Agency One, Thomas King has worked with Agency One before.{% endif %}
          </div>
        </div>
 
        <div class="govuk-radios" data-module="govuk-radios">
          <div class="govuk-radios__item">
-           <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="502" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "502") }}>
-    <label class="govuk-label govuk-radios__label" for="sign-in">
-     £502
+           <input class="govuk-radios__input" id="chosen-quote-sw-2" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£502{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "502") }}>
+    <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-2">
+      {% if case =='other-cases' %}£502{% endif %}
+      {% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}
     </label>
     <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-     ZoomText Professional License from Real Fake Software Supplier
+     {% if case =='other-cases' %}ZoomText Professional License from Real Fake Software Supplier{% endif %}
+     {% if case =='other-cases-2' %}Agency Two, Thomas King has not worked with Agency Two before.{% endif %}
     </div>
   </div>
 
   <div class="govuk-radios" data-module="govuk-radios">
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="503" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "503") }}>
-<label class="govuk-label govuk-radios__label" for="sign-in">
-£503
+      <input class="govuk-radios__input" id="chosen-quote-sw-3" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£503{% endif %}{% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "503") }}>
+<label class="govuk-label govuk-radios__label" for="chosen-quote-sw-3">
+  {% if case =='other-cases' %}£503{% endif %}
+  {% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}
 </label>
 <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-ZoomText Professional License from Software R Us
+{% if case =='other-cases' %}ZoomText Professional License from Software R Us{% endif %}
+{% if case =='other-cases-2' %}Agency Three, Thomas King has not worked with Agency Three before.{% endif %}
+
 </div>
 </div>
 
@@ -76,21 +84,22 @@ ZoomText Professional License from Software R Us
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chosen-quote-sae-justification" name="chosen-quote-sae-justification" type="radio" value="It was the most cost-effective" {{ checked("chosen-quote-sae-justification", "It was the most cost-effective") }}>
-            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification">
+            <input class="govuk-radios__input" id="chosen-quote-justification" name="chosen-quote-justification" type="radio" value="It was the most cost-effective" {{ checked("chosen-quote-justification", "It was the most cost-effective") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification">
               Most cost-effective
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chosen-quote-sae-justification-2" name="chosen-quote-sae-justification" type="radio" value="It was the most suitable support for Sonya Corkery" {{ checked("chosen-quote-sae-justification", "It was the most suitable support for Sonya Corkery") }}>
-            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification-2">
-            Best support for Sonya Corkery
+            <input class="govuk-radios__input" id="chosen-quote-justification-2" name="chosen-quote-justification" type="radio" value="It was the most suitable support for Sonya Corkery" {{ checked("chosen-quote-justification", "It was the most suitable support for Sonya Corkery") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-2">
+            Best support for {% if case =='other-cases' %}Sonya Corkery {% endif %}
+             {% if case =='other-cases-2' %}Thomas King{% endif %}
             </label>
           </div>
 
           <!-- <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chosen-quote-sae-justification-4" name="chosen-quote-sae-justification" type="radio" value="northern-ireland">
-            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification-4">
+            <input class="govuk-radios__input" id="chosen-quote-justification-4" name="chosen-quote-justification" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-4">
               Other
             </label>
           </div> -->

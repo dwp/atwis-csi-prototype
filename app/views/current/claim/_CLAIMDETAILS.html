@@ -44,10 +44,25 @@
               Case type
             </dt>
             <dd class="govuk-summary-list__value">
-            {% if phase == "sonya"  %}Other{% else %}
-            Priority{% endif %}
+              {% if case =='other-cases' %}
+              {% for case in data['other-cases'] %}
+              {{ case.case }}
+              {% endfor %}
+              {% endif %}
+
+              {% if case =='other-cases-2' %}
+              {% for case in data['other-cases-2'] %}
+              {{ case.case }}
+              {% endfor %}
+              {% endif %}
+
+              {% if not case %}
+              {% for case in data['priority-cases'] %}
+              {{ case.case }}
+              {% endfor %}
+              {% endif %}
             </dd>
-          </div>{% if not phase == "sonya"  %}
+          </div>{% if case == "priority-cases"  %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Priority type
@@ -61,8 +76,23 @@
           Full name
         </dt>
         <dd class="govuk-summary-list__value">
-      {% if phase == "sonya"  %}Sonya Corkery{% else %}  {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}{% endif %}
-        </dd>
+          {% if case =='other-cases' %}
+          {% for case in data['other-cases'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+
+          {% if case =='other-cases-2' %}
+          {% for case in data['other-cases-2'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+
+          {% if not case %}
+          {% for case in data['priority-cases'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}        </dd>
       </div>
     <!-- <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -226,9 +256,23 @@
       {% else %}
     {% endif %}
 
-      {% if phase == "sonya"  %}
-    {% include  "./task-list-sonya.html" %}{% else %}
-  {% include  "./task-list-dereck.html" %}{% endif %}
+
+
+
+    {% if case =='other-cases' %}
+      {% include  "./task-list-sonya.html" %}
+    {% endif %}
+
+    {% if case =='other-cases-2' %}
+      {% include  "./task-list-thomas.html" %}
+    {% endif %}
+
+    {% if not case %}
+    {% include  "./task-list-dereck.html" %}
+    {% endif %}
+
+
+
 
   </div>
 

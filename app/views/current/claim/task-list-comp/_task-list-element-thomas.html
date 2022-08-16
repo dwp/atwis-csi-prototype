@@ -1,0 +1,19 @@
+
+
+
+
+<ul class="app-task-list__items">
+
+  <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+  <a href="check-application/quotes/select" aria-describedby="job-status">
+   Choose quote: support worker
+  </a>
+  </span>
+  {% if not data['chosen-quote-'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+  {% if data['chosen-quote-'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+   </li>
+
+
+</ul>

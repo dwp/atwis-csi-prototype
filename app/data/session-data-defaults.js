@@ -25,6 +25,7 @@ module.exports = {
 'remove' : "",
 'notification' : "",
 'notificationsonya' : "",
+'notificationthomas' : "",
 'wpa-report' : "",
 
 'Searchligh' : "Yes and application details match",
@@ -34,24 +35,7 @@ module.exports = {
 'benefits' : "No",
 'job-deatils-contact' : "They gave permission (apply)",
 //delete later
-'condition-check': 'No',
-'contact-check': 'No',
-'job-deatils-check': 'No',
-'elements-task': 'in progress',
-'wpa': 'Yes',
-'wpa-type': 'Face-to-face',
-'wpa-availability': 'Yes',
-'others-wpa': 'No',
-'contact-employer': 'Yes',
-'employer-confirmed': 'Yes',
-'employer-size': '10 to 49 (small)',
-'employer-wpa-answer': 'Yes',
-'employer-cost-share': 'I have not discussed a cost share with the employer',
-'referral-form': 'Completed and sent referral form',
-'referral-form': 'Saved copies to Sharepoint',
-'referral-form': 'Saved copies to Sharepoint',
-'referral-form': 'Set up a record for Dereck Smith on LMS',
-'referral-form': 'Added workplace assessment type in LMS',
+
 //delete later
 'elements' : "I do not know",
 
@@ -123,7 +107,11 @@ module.exports = {
 
   'priority-cases': [{
     'name': 'Dereck Smith',
-'job-deatils-contact' : "They gave permission (apply)",
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
+    'ref': 'RMPX30',
+    'case': 'Priority',
+    'job-deatils-contact' : "They gave permission (apply)",
     'type': 'New Application',
     'priority' : "true",
     'date': '4 October 2021 13:23'
@@ -132,7 +120,24 @@ module.exports = {
 
   'other-cases': [{
     'name': 'Sonya Corkery',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
+    'ref': 'RMPX31',
+    'dos': '2 June 2022',
+    'case': 'Other',
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
+  }],
 
+  'other-cases-2': [{
+    'name': 'Thomas King',
+    'condition': 'Profound deafness',
+    'conditiondetails': 'I am profoundly deaf in both ears, from birth. Which means I cannot hear a sound below 90dB. My first language is BSL. I ask colleagues to communicate with notes, who are not BSL, I also communicate in writing and lip reading.',
+    'ref': 'RMPX32',
+    'dos': '2 August 2022',
+    'case': 'Other',
     'type': 'New Application',
     'priority' : false,
     'date': '15 October 2021 15:23',
