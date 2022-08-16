@@ -1,0 +1,86 @@
+<li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">2. </span> Review application
+    </h2>
+    <ul class="app-task-list__items">
+
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+       <a href="./check-application/condition-help-needed" aria-describedby="read-declaration-status">
+             Health condition or disability
+         </a>
+        </span>
+      {% if 'Health condition or disability' in data['wpa-report'] and not data['more-detail1']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% else %}
+      {% if data['condition-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+      {% if data['condition-check']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+      {% if not data['condition-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
+      </li>
+
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                   <a href="./check-application/contact" aria-describedby="read-declaration-status">
+                      Contact details
+                     </a>
+                    </span>
+                    {% if 'Contact details' in data['wpa-report'] and not data['more-detail-contact-1']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% else %}
+                    {% if data['contact-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                    {% if data['contact-check']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+                    {% if not data['contact-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
+                  </li>
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                   <a href="./check-application/employment-details" aria-describedby="read-declaration-status">
+                         Employment details
+                     </a>
+                    </span>
+                            {% if 'Employment details' in data['wpa-report'] and not data['more-detail-job-1']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% else %}
+                    {% if data['job-deatils-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                    {% if data['job-deatils-check']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+                    {% if not data['job-deatils-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
+                  </li>
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+   <a href="./check-application/element" aria-describedby="read-declaration-status">
+         Summary of support
+     </a>
+    </span>
+        {% if data['support-needs']=='yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+    {% if data['elements-task']=='in progress'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% else %}
+
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
+  </li>
+
+{% if  data['elements']=='I do not know'%}{% else %}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+   <a href="{% if data['sae-check']%}./check-application/sae/index{% else %}./check-application/sae/details{% endif %}" aria-describedby="read-declaration-status">
+         Support details: Specialist equipment
+     </a>
+    </span>
+    {% if data['sae-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+    {% if data['sae-check']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+    {% if not data['sae-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+  </li>
+{% endif %}
+
+
+
+  {% if data['sae-check']%}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+<a href="./check-application/quotes/details" aria-describedby="job-status">
+        Quote: specialist equipment
+</a>
+    </span>
+
+    {% if data['quotes-choose']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+
+    {% if not data['quotes-check'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+  </li>
+{% endif %}
+
+</ul>
+</li>
