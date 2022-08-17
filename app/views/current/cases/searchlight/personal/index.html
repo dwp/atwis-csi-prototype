@@ -1,0 +1,143 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="/current/cases/claim#searchlight" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Personal details</h2>
+
+  <div class="govuk-inset-text">  <p> Updating personal details may result in the searchlight task needing to be checked again.</p></div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+
+First Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+Dereck
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="check-searchlight">
+                Update<span class="govuk-visually-hidden"> {% include  "current/cases/searchlight/national-insurance/content/are-these-details-in-searchlight.html" %}
+</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+          Last name
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+Smith
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="find-national-insurance-number">
+                Update<span class="govuk-visually-hidden"> {% include  "current/cases/searchlight/national-insurance/content/national-insurance-searchlight.html" %}</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Date of birth
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+1 October 1978
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-national-insurance-number">
+                Update<span class="govuk-visually-hidden">                   {% include  "current/cases/searchlight/national-insurance/content/add-national-insurance.html" %}
+</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+        Address
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                  72 Guild Street<br>
+                  London<br>
+                  SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-national-insurance-number">
+                Update<span class="govuk-visually-hidden">                   {% include  "current/cases/searchlight/national-insurance/content/add-national-insurance.html" %}
+        </span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+
+
+
+
+<!-- {% if data['Searchligh']=='Yes, but name, date of birth or address do not match' and data['found-nino']=='Yes'%}
+        <div class="govuk-inset-text">
+        <p>  You need to contact Dereck Smith to check their name, date of birth or address in Searchlight. This will be added to your <strong>log contact with Dereck Smith</strong>. </p>
+
+        </div>
+{% endif %}
+
+
+{% if data['Searchligh']=='Yes, but name, date of birth or address do not match' and data['found-nino']=='No'%}
+        <div class="govuk-inset-text">
+        <p>  You need to contact Dereck Smith to get their National Insurance number and check their personal details in Searchlight. This will be added to your <strong>log contact with Dereck Smith</strong>. </p>
+
+        </div>
+{% endif %}
+
+{% if data['Searchligh']=='Yes and application details match' and data['found-nino']=='No'%}
+        <div class="govuk-inset-text">
+        <p>  You need to contact Dereck Smith. This will be added to your <strong>log contact with Dereck Smith</strong>.</p>
+
+        </div>
+{% endif %}
+
+
+{% if data['Searchligh']=='No'%}
+        <div class="govuk-inset-text">
+        <p>  You need to contact Dereck Smith. This will be added to your <strong>log contact with Dereck Smith</strong>. </p>
+
+        </div>
+{% endif %} -->
+
+
+
+          <button class="govuk-button" data-module="govuk-button" name="personal-details-cya" value="finished">
+            Return to personal details
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

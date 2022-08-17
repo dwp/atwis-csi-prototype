@@ -12,17 +12,21 @@
         Application summary
       </a>
     </li>
-
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#searchlight">
+        Personal details
+      </a>
+    </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#your-tasks">
         Your tasks
       </a>
     </li>
-    <li class="govuk-tabs__list-item">
+    <!-- <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#citizen-details">
       Application details
       </a>
-    </li>
+    </li> -->
 
 
 
@@ -94,6 +98,15 @@
           {% endfor %}
           {% endif %}        </dd>
       </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                 Health condition or disability
+              </dt>
+              <dd class="govuk-summary-list__value">
+              macular oedema
+              </dd>
+            </div>
     <!-- <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Unique reference number (URN)
@@ -146,14 +159,6 @@
       </div>
 
 
-      <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Version of questions
-        </dt>
-        <dd class="govuk-summary-list__value">
-        25.25.0-rc
-        </dd>
-      </div> -->
 
     </dl>
 
@@ -277,41 +282,77 @@
   </div>
 
 
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="searchlight">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Personal details</h2>
+    {% if phase == "notEligible"  %}
+    {% include  "./notification.html" %}
+      {% else %}
+    {% endif %}
+
+
+    {% if data['Searchligh']=='No'%}
+    <p >
+    <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+    Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+    </a>
+    </p>
+
+    <!-- <div class="govuk-inset-text">
+    <p>  You need to contact Dereck Smith.  </p>
+
+    </div> -->
+
+    <br>
+    {% else %}
+
+
+    {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+    data ['elements']
+    and
+    data ['condition-check']
+    and
+    data ['job-deatils-check']
+
+    and
+    data ['contact-check']
+
+    and
+    data ['appointee']
+    and
+    data ['benefits']
+    %}
+
+
+                    {% else %}
+                    <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+            {% endif %}
+            {% endif %}
+<p>You can <a href="/current/cases/searchlight/personal">update personal details</a>, this may effect the status of the task.</p>
+    {% if case =='other-cases' %}
+      {% include  "./task-list-sonya.html" %}
+    {% endif %}
+
+    {% if case =='other-cases-2' %}
+      {% include  "./task-list-thomas.html" %}
+    {% endif %}
+
+    {% if not case %}
+    {% include  "./task-list-comp/searchlight.html" %}
+    {% endif %}
 
 
 
-
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
-    <h2 class="govuk-heading-l">Past year</h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Case manager</th>
-          <th scope="col" class="govuk-table__header">Cases opened</th>
-          <th scope="col" class="govuk-table__header">Cases closed</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">David Francis</td>
-          <td class="govuk-table__cell">1380</td>
-          <td class="govuk-table__cell">1472</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Paul Farmer</td>
-          <td class="govuk-table__cell">1129</td>
-          <td class="govuk-table__cell">1083</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Rita Patel</td>
-          <td class="govuk-table__cell">1539</td>
-          <td class="govuk-table__cell">1265</td>
-        </tr>
-      </tbody>
-    </table>
-
+  </div>  </div>
+  <p><a href="#your-tasks">Continue to your task</a></p>
   </div>
-</div>
+
+
+
+
 
 
 
