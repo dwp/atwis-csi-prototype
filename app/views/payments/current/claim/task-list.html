@@ -24,7 +24,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/payments/current/cases/claim-match-grant/matches-grant" aria-describedby="claim-completed">
+                <a href="claim-match-grant/matches-grant" aria-describedby="claim-completed">
                   Check claim matches grant award
                 </a>
               </span>
@@ -37,16 +37,6 @@
             {% if data['grant-matches-claim'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %} -->
 
 
-<!-- 1 CHECK INVOICE MATCHES CLAIM -->
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="/payments/current/cases/claim-match-invoice/matches-invoice" aria-describedby="read-declaration-completed">
-                  Check claim matches invoice
-                </a>
-                </span>
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-                <li>
           </ul>
         </li>
         <li>
@@ -57,36 +47,128 @@
             <span class="app-task-list__section-number">2. </span> Review invoice
           </h2>
 
-<!-- 2 CHECK ELEMENT DETAILS -->
+
+<!-- 2 CHECK CLAIM MATCHES INVOICE-->
 
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/payments/current/cases/claim-match-grant/element-details" aria-describedby="company-information-completed">
-                  Check element details
+                <a href="claim-match-invoice/claim-matches-invoice" aria-describedby="read-declaration-completed">
+                  Check claim matches invoice
+                </a>
+                </span>
+                {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                {% if data['grant-matches-claim'] and not data ['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['claim-matches-invoice'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                <li>
+
+
+
+<!-- 2 CHECK ELEMENT AMOUNT-->
+
+            <!-- <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="element-details/element-details" aria-describedby="company-information-completed">
+                  Check element amount
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-              <li>
+              <li> -->
 
-<!-- 2 INVOICE ELEGABILITY CHECK -->
+<!-- 2 CHECK INVOICE TOTAL -->
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="#" aria-describedby="company-information-completed">
-                Check invoice is complete
+            <a href="invoice-total/invoice-total" aria-describedby="company-information-completed">
+                Check invoice total
+              </a>
+              </span>
+              {% if not data['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['claim-matches-invoice'] and not data ['invoice-total']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['invoice-total'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
+
+
+<!-- 2 PAID IN FULLL -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="paid-in-full/paid-in-full" aria-describedby="company-information-completed">
+                Check invoice type
+              </a>
+              </span>
+              {% if not data['invoice-total']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['invoice-total'] and not data ['paid-in-full']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['paid-in-full'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
+
+
+
+<!-- 2 CHECK COMPANY DETAILS -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="company-details/company-details" aria-describedby="company-information-completed">
+                Check company details
+              </a>
+              </span>
+              {% if not data['paid-in-full']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['paid-in-full'] and not data ['company-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['company-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
+
+
+
+
+
+<!-- 2 CHECK PAYEE DETAILS -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="payee-details/payee-details" aria-describedby="company-information-completed">
+                Check payee details
+              </a>
+              </span>
+              {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['company-details'] and not data ['payee-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['payee-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
+
+
+<!-- 2 CHECK COMPANY DETAILS -->
+
+            <!-- <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="company-details/payee-details" aria-describedby="company-information-completed">
+                Check company details
             </a>
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-            </ul>
-            <li>
+            <li> -->
+
+
+<!-- 2 ADD INVOICE NUMBER AND DATE -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="add-invoice-details/add-invoice-date" aria-describedby="company-information-completed">
+                Add invoice number and date
+              </span>
+              {% if not data['payee-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['payee-details'] and not data ['invoice-number']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['invoice-number'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              </ul>
+              <li>
+</a>
+
 
 
 <!-- 3 SOP -->
 
-            <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> SOP
-            </h2>
+<h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">2. </span> Sop
+</h2>
+
 
 <!-- 3 CHECK PAYEE DETAILS IN SOP -->
 
@@ -95,10 +177,12 @@
             <span class="app-task-list__task-name">
             <a href="#" aria-describedby="company-information-completed">
                 Check payee details in SOP
-            </a>
-            </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-            </li>
+              </a>
+              </span>
+              {% if not data['invoice-number']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['invoice-number'] and not data ['check-sop']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['check-sop'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
 
 
 <!-- 3 PROCESS PAYMENT IN SOP -->
