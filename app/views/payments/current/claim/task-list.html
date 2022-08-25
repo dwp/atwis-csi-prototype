@@ -53,7 +53,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="claim-match-invoice/claim-matches-invoice" aria-describedby="read-declaration-completed">
+                {% if data['grant-matches-claim']%}<a href="claim-match-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">{% endif %}
                   Check claim matches invoice
                 </a>
                 </span>
@@ -77,7 +77,7 @@
 
 <!-- 2 CHECK INVOICE TOTAL -->
 
-            <li class="app-task-list__item">
+            <!-- <li class="app-task-list__item">
             <span class="app-task-list__task-name">
             <a href="invoice-total/invoice-total" aria-describedby="company-information-completed">
                 Check invoice total
@@ -86,19 +86,19 @@
               {% if not data['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
               {% if data['claim-matches-invoice'] and not data ['invoice-total']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
               {% if data['invoice-total'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
-              <li>
+              <li> -->
 
 
 <!-- 2 PAID IN FULLL -->
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="paid-in-full/paid-in-full" aria-describedby="company-information-completed">
+            {% if data['claim-matches-invoice']%}<a href="paid-in-full/paid-in-full" aria-describedby="company-information-completed">{% endif %}
                 Check invoice type
               </a>
               </span>
-              {% if not data['invoice-total']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-              {% if data['invoice-total'] and not data ['paid-in-full']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if not data['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['claim-matches-invoice'] and not data ['paid-in-full']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
               {% if data['paid-in-full'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
               <li>
 
@@ -108,7 +108,7 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="company-details/company-details" aria-describedby="company-information-completed">
+            {% if data['paid-in-full']%}<a href="company-details/company-details" aria-describedby="company-information-completed">{% endif %}
                 Check company details
               </a>
               </span>
@@ -121,12 +121,12 @@
 
 
 
-<!-- 2 CHECK PAYEE DETAILS -->
+<!-- 2 CHECK PAYEE ADDRESS DETAILS -->
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="payee-details/payee-details" aria-describedby="company-information-completed">
-                Check payee details
+            {% if data['company-details']%}<a href="payee-details/payee-details" aria-describedby="company-information-completed">{% endif %}
+                Check payee address details
               </a>
               </span>
               {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -151,7 +151,7 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="add-invoice-details/add-invoice-date" aria-describedby="company-information-completed">
+            {% if data['payee-details']%}<a href="add-invoice-details/add-invoice-date" aria-describedby="company-information-completed">{% endif %}
                 Add invoice number and date
               </span>
               {% if not data['payee-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -163,10 +163,10 @@
 
 
 
-<!-- 3 SOP -->
+<!-- 3 REVIEW PAYMENT -->
 
 <h2 class="app-task-list__section">
-  <span class="app-task-list__section-number">2. </span> Sop
+  <span class="app-task-list__section-number">2. </span> Review Payment
 </h2>
 
 
@@ -175,7 +175,7 @@
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="#" aria-describedby="company-information-completed">
+            {% if data['invoice-number']%}<a href="sop/sop-find" aria-describedby="company-information-completed">{% endif %}
                 Check payee details in SOP
               </a>
               </span>
@@ -209,7 +209,7 @@
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="#" aria-describedby="company-information-completed">
+            {% if data['check-sop']%}<a href="#" aria-describedby="company-information-completed">{% endif %}
                 Send payment for approval
             </a>
             </span>

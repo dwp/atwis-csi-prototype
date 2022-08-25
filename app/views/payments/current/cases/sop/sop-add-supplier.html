@@ -13,8 +13,8 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
 <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
-
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
@@ -28,24 +28,25 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Are supplier details included on the invoice?
+Check payee details
     </h2>
-    <div id="changed-name-hint" class="govuk-hint">
-          Company address, phone number and email address should be included. 
-        </div>
+
 
         </legend>
+        <div id="changed-name-hint" class="govuk-hint">
+      Do the payee detals on SOP maatch the invice?
+    </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="yes~claim#your-tasks" {{ checked("company-details", "Yes") }}>
+            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~claim#your-tasks" {{ checked("paid-in-full", "Yes") }}>
             <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
-            <label class="govuk-label govuk-radios__label" for="company-details-1">
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="company-details-2" name="company-details" type="radio" value="No~claim#your-tasks" {{ checked("company-details", "No") }}>
-            <label class="govuk-label govuk-radios__label" for="company-details-2">
+            <input class="govuk-radios__input" id="paid-in-full-2" name="paid-in-full" type="radio" value="No~claim#your-tasks" {{ checked("paid-in-full", "No") }}>
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-2">
               No
             </label>
           </div>
@@ -54,9 +55,13 @@ Are supplier details included on the invoice?
       </fieldset>
     </div>
 
-               <button class="govuk-button" data-module="govuk-button">
-             Save and continue
-           </button>
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      <a class="govuk-link" href="#">Cancel</a>
+    </div>
          </form>
        </div>
      </div>

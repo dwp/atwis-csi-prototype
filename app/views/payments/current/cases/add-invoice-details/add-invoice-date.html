@@ -25,58 +25,54 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Add invoice number
+                Add invoice number and date
               </h1>
             </legend>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="invoice-number-1">
-                <!-- ADD HINT TEXT -->
-              </label>
-              <input class="govuk-input" id="invoice-number-1" name="invoice-number" type="text">
-            </div>
+                        <label class="govuk-label govuk-label--m" for="passport-number">
+                          Add invoice number
+                        </label>
+                        <div id="passport-number-hint" class="govuk-hint">
+                          <!-- For example, 502135326 -->
+                        </div>
+                        <input class="govuk-input govuk-input--width-10" id="invoice-number" name="invoice-number" type="text" aria-describedby="invoice-number-hint">
+                      </div>
 
-
-          </fieldset>
-
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Add invoice date
-                </h1>
-              </legend>
-              <div id="passport-issued-hint" class="govuk-hint">
-                For example, 27 3 2007
-              </div>
-              <div class="govuk-date-input" id="passport-issued">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-      </div>
-    </fieldset>
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Add invoice date
+                          </legend>
+                          <div id="expiry-hint" class="govuk-hint">
+                            <!-- For example, 31 3 1980 -->
+                          </div>
+                          <div class="govuk-date-input" id="expiry">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="expiry-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-day" name="expiry-day" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="expiry-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="expiry-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>    </fieldset>
   </div>
            <button class="govuk-button" data-module="govuk-button">
              Save and continue

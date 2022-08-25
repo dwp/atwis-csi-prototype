@@ -28,7 +28,7 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Check details of the person or company that paid the invoice
+Check and appove payment details
     </h2>
 
   </legend>
@@ -41,46 +41,83 @@ Check details of the person or company that paid the invoice
 <br>
 
 <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
+
+
+    <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Name
+         Invoice referance
     </dt>
     <dd class="govuk-summary-list__value">
-      Smith Digital Limited
+         {{data['invoice-number']}}
     </dd>
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
       </a> -->
     </dd>
-  </div>
-  <div class="govuk-summary-list__row">
+    </div>
+
+
+    <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Address
+         Invoice date
     </dt>
     <dd class="govuk-summary-list__value">
-      220 St Vincent Street<br>Glasgow<br>AB1 1AB
+         {{data['']}}
     </dd>
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> address</span>
       </a> -->
     </dd>
-  </div>
-  <div class="govuk-summary-list__row">
+    </div>
+
+
+    <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Contact details
+         Payee postcode
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">123456789</p>
-      <p class="govuk-body">Jane@smithdigital.co</p>
+         {{data['']}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a> -->
+    </dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+         Payment amount
+    </dt>
+    <dd class="govuk-summary-list__value">
+         £499
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a> -->
+    </dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+         SOP supplier number
+    </dt>
+    <dd class="govuk-summary-list__value">
+         {{data['sop-supplier-number']}}
     </dd>
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> contact details</span>
       </a> -->
     </dd>
-  </div>
+    </div>
+
+
 </dl>
 
 
@@ -116,7 +153,7 @@ Check details of the person or company that paid the invoice
       <div class="govuk-form-group">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h2 class="govuk-heading-m">
-          Do the details match the invoice?
+          Do the payee details match the invoce?
         </h2>
       </legend>
           <div class="govuk-radios" data-module="govuk-radios">
