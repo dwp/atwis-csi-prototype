@@ -13,7 +13,7 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/payments/sprint-10/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -28,7 +28,7 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Check and appove payment details
+Check details of the person or company that paid the invoice
     </h2>
 
   </legend>
@@ -41,83 +41,46 @@ Check and appove payment details
 <br>
 
 <dl class="govuk-summary-list">
-
-
-    <div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-         Invoice referance
+      Name
     </dt>
     <dd class="govuk-summary-list__value">
-         {{data['invoice-number']}}
+      Smith Digital Limited
     </dd>
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> name</span>
       </a> -->
     </dd>
-    </div>
-
-
-    <div class="govuk-summary-list__row">
+  </div>
+  <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-         Invoice date
+      Address
     </dt>
     <dd class="govuk-summary-list__value">
-         {{data['']}}
+      220 St Vincent Street<br>Glasgow<br>AB1 1AB
     </dd>
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> address</span>
       </a> -->
     </dd>
-    </div>
-
-
-    <div class="govuk-summary-list__row">
+  </div>
+  <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-         Payee postcode
+      Contact details
     </dt>
     <dd class="govuk-summary-list__value">
-         {{data['']}}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <!-- <a class="govuk-link" href="#">
-        Change<span class="govuk-visually-hidden"> address</span>
-      </a> -->
-    </dd>
-    </div>
-
-
-    <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-         Payment amount
-    </dt>
-    <dd class="govuk-summary-list__value">
-         £499
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <!-- <a class="govuk-link" href="#">
-        Change<span class="govuk-visually-hidden"> address</span>
-      </a> -->
-    </dd>
-    </div>
-
-
-    <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-         SOP supplier number
-    </dt>
-    <dd class="govuk-summary-list__value">
-         {{data['sop-supplier-number']}}
+      <p class="govuk-body">123456789</p>
+      <p class="govuk-body">Jane@smithdigital.co</p>
     </dd>
     <dd class="govuk-summary-list__actions">
       <!-- <a class="govuk-link" href="#">
         Change<span class="govuk-visually-hidden"> contact details</span>
       </a> -->
     </dd>
-    </div>
-
-
+  </div>
 </dl>
 
 
@@ -128,7 +91,7 @@ Check and appove payment details
 
 
 <!-- {% if data['clear']=='No' %}{% else %}
-  {% include  "current/claim/notification-contact.html" %}{% endif %} -->
+  {% include  "sprint-10/claim/notification-contact.html" %}{% endif %} -->
 
   <!-- <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -153,19 +116,19 @@ Check and appove payment details
       <div class="govuk-form-group">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h2 class="govuk-heading-m">
-          Do the payee details match the invoce?
+          Do the details match the invoice?
         </h2>
       </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="payee-details-1" name="payee-details" type="radio" value="yes~sop-add-supplier" {{ checked("payee-details", "Yes") }}>
+              <input class="govuk-radios__input" id="payee-details-1" name="payee-details" type="radio" value="yes~claim#your-tasks" {{ checked("payee-details", "Yes") }}>
               <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
               <label class="govuk-label govuk-radios__label" for="payee-details-1">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="payee-details-2" name="payee-details" type="radio" value="No~sop-add-supplier" {{ checked("payee-details", "No") }}>
+              <input class="govuk-radios__input" id="payee-details-2" name="payee-details" type="radio" value="No~claim#your-tasks" {{ checked("payee-details", "No") }}>
               <label class="govuk-label govuk-radios__label" for="payee-details-2">
                 No
               </label>
@@ -175,10 +138,10 @@ Check and appove payment details
       </div>
     </fieldset>
   </div>
-  <button class="govuk-button" data-module="govuk-button">
-    Save and continue
-  </button>
-</form>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
        </div>
      </div>
 

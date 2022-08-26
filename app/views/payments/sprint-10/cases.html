@@ -1,0 +1,285 @@
+
+
+
+<!-- HEADER -->
+
+        <!-- <div class="govuk-grid-column-two-thirds"> -->
+<h1 class="govuk-heading-l top-section">
+      <strong><span>Adviser: </span></strong>
+  {% if phase == "payment officer"  %}
+  <span class="normal"> Sue Pearson  </span>{% else %}
+  John Goldsmith
+  {% endif %}
+    </h1>
+
+
+
+
+
+
+
+<!-- CLAIMS -->
+
+
+                {% set doc %}
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-one-third">
+                    <h2 class="govuk-heading-m">Claims </h2>
+                  </div>
+
+                </div>
+                <form action="/payments/sprint-10/your-cases#claims" method="post" novalidate for="submitButtonRequestGetNewClaim">
+                  <div class="govuk-grid-column-one-quaters">
+
+              <div class="govuk-form-group" style="float: left">
+
+                      <label class="govuk-label" for="sort">
+                        Claim type
+                      </label>
+                      <select class="govuk-select" id="claims" name="claims">
+                        <option value="No specialist equipment"
+                        {% if 'No specialist equipment' in data['claims']%}selected{% endif %}>No specialist equipment</option>
+                        <option value="Specialist equipment"
+                        {% if 'Specialist equipment' in data['claims']%}selected{% endif %}>Specialist equipment</option>
+                        <option value="TESG"
+                        {% if 'TESG' in data['claims']%}selected{% endif %}>TESG</option>
+                        <option value="CSI"
+                        {% if 'CSI' in data['claims']%}selected{% endif %}>CSI</option>
+                      </select>
+                  </div>
+                  </div>
+
+                  <div class="govuk-grid-column-one-third" >
+
+                <p class="govuk-body govuk-!-margin-bottom-6"></p>
+                      <input type="submit" class="govuk-button" id="submitButtonRequestGetNewClaim" value="Get new claim" style="float: left">
+
+
+
+                  </div>
+                  </form>
+
+                  {% if phase == "payment officer"  %}
+                  <br></br></br></br></br></br>
+                  {% if 'Specialist equipment' in data['claims']%}
+                  <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Name</th>
+                            <th scope="col" class="govuk-table__header">Claim type</th>
+                            <th scope="col" class="govuk-table__header">Date received </th>
+                            <th scope="col" class="govuk-table__header">Status</th>
+                            <th scope="col" class="govuk-table__header">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                            <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Dereck Smith</th>
+                              <td class="govuk-table__cell">Specialist equipment</td>
+                              <td class="govuk-table__cell">12 June 2022</td>
+                              <td class="govuk-table__cell">Not started</td>
+                              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                            </tr>
+
+
+
+
+                      </tbody>
+                    </table>
+
+
+
+
+  {% endif %}
+
+  {% if 'No specialist equipment' in data['claims']%}
+  <table class="govuk-table">
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Claim type</th>
+            <th scope="col" class="govuk-table__header">Date received </th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Jane Doe</th>
+              <td class="govuk-table__cell">Specialist equipment</td>
+              <td class="govuk-table__cell">12 June 2022</td>
+              <td class="govuk-table__cell">Not started</td>
+              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+            </tr>
+
+
+
+
+      </tbody>
+    </table>
+
+{% endif %}
+
+
+
+{% if not data['claims'] %}
+<p>You have no cases.</P>{% endif %}
+
+
+                  {% else %}
+<p>You have no cases.</P>
+
+                  {% endif %}
+
+
+              {% endset -%}
+
+
+
+<!-- CSI TABLES -->
+
+              <!-- {% macro statusTable(payment="") %}
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th class="govuk-table__header">Name</th>
+
+                          <th class="govuk-table__header">Date submitted</th>
+                          <th class="govuk-table__header">Interview date</th>
+                          <th class="govuk-table__header">Status</th>
+                          <th class="govuk-table__header"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</th>
+
+                            <td class="govuk-table__cell">{{data['csi-info'][3]['submission-date']}}</td>
+                            <td class="govuk-table__cell">{{ data['csi-info'][3]['interview-date-day'] }} {{ data['csi-info'][3]['interview-date-month'] | toMonth }} {{ data['csi-info'][3]['interview-date-year'] }}</td>
+                            <td class="govuk-table__cell">{% if phase == 'waiting' %}No action needed{% elif not phase and not data['searchlight'] %}New{% else %}Action needed{% endif %}
+                            <td class="govuk-table__cell"><a href="csi/index{% if payment %}-payment{% else %}{% if phase == "interview" %}-interview{% elif phase == "waiting" %}-waiting{% elif phase == "same-day" %}-same-day{% elif phase == "payment-adviser" %}-payment-adviser{% endif %}{% endif %}">Go to case</a></td>
+                          </tr>
+                    </tbody>
+                  </table>
+                {%- endmacro %}
+
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+
+              {% if taskUpdated %}
+              <div class="container status-message">
+              <div class="govuk-panel govuk-panel--confirmation">
+
+                <h2 class="govuk-!-font-size-36"><img class="icon" style="height: 1em;
+                  margin: 0 15px;
+                  vertical-align: top;
+              }" src="{{asset_path}}images/icon-tick@2x.png" alt="">Case allocated</h2>
+
+
+              </div></div>
+              {% endif %}
+
+
+
+
+                  {% set csi %}
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                      <h2 class="govuk-heading-m">CSI cases </h2>
+                    </div>
+                  </div>
+
+              <form action="/sprint-10/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
+
+
+                <div class="govuk-grid-column-one-quaters">
+
+
+                  <p class="govuk-body govuk-!-margin-bottom-6"></p>
+                        <input type="submit" class="govuk-button" id="submitButtonRequestcsi" name="csi-button" value="Request a new CSI case"></form>
+                    </div>
+
+
+
+
+
+              {% if (phase == "empty" or phase == "payment officer")  %}
+              <br>
+              <p>There are sprint-10ly no CSI Cases.</P>
+
+              {% else %}
+
+              <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th class="govuk-table__header">Name</th>
+
+                          <th class="govuk-table__header">Date submitted</th>
+                          <th class="govuk-table__header">Interview date</th>
+                          <th class="govuk-table__header">Status</th>
+                          <th class="govuk-table__header"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Thomas Brown</th>
+
+                            <td class="govuk-table__cell">2 November 2021 13:23</td>
+                            <td class="govuk-table__cell">9 March 2021</td>
+                            <td class="govuk-table__cell">New
+                            </td><td class="govuk-table__cell"><a href="/sprint-13/agreed/csi/index">Go to case</a></td>
+                          </tr>
+                    </tbody>
+                  </table>
+
+
+              {% endif %}
+
+                    {% endset -%} -->
+
+
+
+
+<!-- TABS -->
+
+{% if not data['claims'] %}
+{{ govukTabs({
+  items: [
+    {
+      label: "Claims (0)",
+      id: "in-disc",
+      panel: {
+        html: doc
+      }
+    }
+  ]
+}) }}
+{% else %}
+{{ govukTabs({
+  items: [
+    {
+      label: "Claims (1)",
+      id: "in-disc",
+      panel: {
+        html: doc
+      }
+    }
+  ]
+}) }}
+{% endif %}
+
+  </div>
+</div>

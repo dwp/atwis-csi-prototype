@@ -13,7 +13,7 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="" method="post" novalidate>
+<form action="/payments/sprint-10/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -28,17 +28,14 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Check payee details
+Has the invoice been marked as 'paid in full'?
     </h2>
 
 
         </legend>
-        <div id="changed-name-hint" class="govuk-hint">
-      Do the payee detals on SOP match the invice?
-    </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~sop-add-supplier" {{ checked("paid-in-full", "Yes") }}>
+            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~claim#your-tasks" {{ checked("paid-in-full", "Yes") }}>
             <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
             <label class="govuk-label govuk-radios__label" for="paid-in-full-1">
               Yes
@@ -55,11 +52,10 @@ Check payee details
       </fieldset>
     </div>
 
-    <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button>
-    </form>
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
        </div>
      </div>
 
