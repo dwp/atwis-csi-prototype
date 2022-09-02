@@ -63,7 +63,7 @@
      </div>
      {% if not hideUser %}
      <div class="header-user-details">
-          {% if contactCentre %}Chris Connolly{% elif (phase == "case-manger-view" or phase == "payment officer") %}Sue Pearson{% elif payments or paymentLink %}Rich Silver{% else %}John Goldsmith{% endif %}
+          {% if contactCentre %}Chris Connolly{% elif (phase == "case-manger-view" or phase == "payment officer") %}Sue Pearson{% elif payments or paymentLink %}Rich Silver{% else %}Sue Pearson{% endif %}
          </div>
         {% endif %}
    </div>
@@ -149,7 +149,7 @@
 
           <div class="dwp-key-details-bar__bottom-block">
       {% if (phase == "case-manger-view" or phase == "payment officer") %}   <dt>Allocated to:</dt>
-            <dd>John Goldsmith</dd> {% endif %}
+            <dd>Sue Pearson</dd> {% endif %}
 
             {% if phase == "CSI" %}   <dt>Interview date:</dt>
                   <dd>9 March 2022</dd> {% endif %}
@@ -159,7 +159,7 @@
             <dd>RMPX30</dd>
   {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
             <dt>Appointee:</dt>
-            <dd>John Smith</dd>{% endif %}
+            <dd>Sue Pearson</dd>{% endif %}
               <!-- <dt>Date of birth:</dt>
               <dd>4 June 1972</dd>
 

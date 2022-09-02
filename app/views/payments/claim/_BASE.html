@@ -63,7 +63,7 @@
      </div>
      {% if not hideUser %}
      <div class="header-user-details">
-          {% if contactCentre %}Chris Connolly{% elif (phase == "case-manger-view" or phase == "allocator") %}Al Ó Catháin{% elif payments or paymentLink %}Rich Silver{% else %}John Goldsmith{% endif %}
+          {% if contactCentre %}Chris Connolly{% elif (phase == "case-manger-view" or phase == "allocator") %}Al Ó Catháin{% elif payments or paymentLink %}Rich Silver{% else %}Sue Pearson{% endif %}
          </div>
         {% endif %}
    </div>
@@ -77,7 +77,7 @@
           <li{% if yourCases %} class="active"{% endif %}>
 
 {% if (not contactCentre)  %}
-          <a href="/sprint-8/your-cases{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view" %}-allocator{% endif %}" class="active" aria-current="page">Your cases</a>
+          <a href="/payments/current/your-cases{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view" %}-allocator{% endif %}" class="active" aria-current="page">Your cases</a>
 
         </li>
 {% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
@@ -149,7 +149,7 @@
 
           <div class="dwp-key-details-bar__bottom-block">
       {% if (phase == "case-manger-view" or phase == "allocator") %}   <dt>Allocated to:</dt>
-            <dd>John Goldsmith</dd> {% endif %}
+            <dd>Sue Pearson</dd> {% endif %}
 
             {% if phase == "CSI" %}   <dt>Interview date:</dt>
                   <dd>9 March 2022</dd> {% endif %}

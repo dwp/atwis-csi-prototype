@@ -60,7 +60,20 @@ Check and approve payment details
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['invoice-day']}}
-            {% if data['invoice-month']%}  <body>Febuary</body>{% endif %}
+
+            {% if (data['invoice-month'] =='01') or (data['invoice-month'] =='1') %} January {% endif%}
+       {% if (data['invoice-month'] =='02') or (data['invoice-month'] =='2') %} February  {% endif%}
+       {% if (data['invoice-month'] =='03') or (data['invoice-month'] =='3') %} March {% endif%}
+       {% if (data['invoice-month'] =='04') or (data['invoice-month'] =='4') %} June {% endif%}
+       {% if (data['invoice-month'] =='05') or (data['invoice-month'] =='5') %} May {% endif%}
+       {% if (data['invoice-month'] =='06') or (data['invoice-month'] =='6') %} June {% endif%}
+       {% if (data['invoice-month'] =='07') or (data['invoice-month'] =='7') %} July {% endif%}
+       {% if (data['invoice-month'] =='08') or (data['invoice-month'] =='8') %} August {% endif%}
+       {% if (data['invoice-month'] =='09') or (data['invoice-month'] =='9') %} September {% endif%}
+       {% if data['invoice-month'] =='10' %} October {% endif%}
+       {% if data['invoice-month'] =='11'%} November {% endif%}
+       {% if data['invoice-month'] =='12' %} December {% endif%}
+
             {{data['invoice-year']}}
 
 
