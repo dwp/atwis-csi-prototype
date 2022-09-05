@@ -109,7 +109,7 @@
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
             {% if data['paid-in-full']%}<a href="company-details/company-details" aria-describedby="company-information-completed">{% endif %}
-                Check company details
+                Check supplier details
               </a>
               </span>
               {% if not data['paid-in-full']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -126,7 +126,7 @@
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
             {% if data['company-details']%}<a href="payee-details/payee-details" aria-describedby="company-information-completed">{% endif %}
-                Check payee address details
+                Check payee contact details
               </a>
               </span>
               {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -166,7 +166,7 @@
 <!-- 3 REVIEW PAYMENT -->
 
 <h2 class="app-task-list__section">
-  <span class="app-task-list__section-number">2. </span> Review Payment
+  <span class="app-task-list__section-number">3. </span> Review payment
 </h2>
 
 
