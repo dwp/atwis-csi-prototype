@@ -54,7 +54,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 {% if data['grant-matches-claim']%}<a href="claim-match-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">{% endif %}
-                  Check claim matches invoice
+                  Check invoice matches claim
                 </a>
                 </span>
                 {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -94,7 +94,7 @@
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
             {% if data['claim-matches-invoice']%}<a href="paid-in-full/paid-in-full" aria-describedby="company-information-completed">{% endif %}
-                Check invoice type
+                Check invoice has been paid
               </a>
               </span>
               {% if not data['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
