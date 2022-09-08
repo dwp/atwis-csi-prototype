@@ -123,7 +123,7 @@
 
 <!-- 2 CHECK PAYEE ADDRESS DETAILS -->
 
-            <li class="app-task-list__item">
+            <!-- <li class="app-task-list__item">
             <span class="app-task-list__task-name">
             {% if data['company-details']%}<a href="payee-details/payee-details" aria-describedby="company-information-completed">{% endif %}
                 Check payee contact details
@@ -132,7 +132,7 @@
               {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
               {% if data['company-details'] and not data ['payee-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
               {% if data['payee-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
-              <li>
+              <li> -->
 
 
 <!-- 2 CHECK COMPANY DETAILS -->
@@ -154,8 +154,8 @@
             {% if data['payee-details']%}<a href="add-invoice-details/add-invoice-date" aria-describedby="company-information-completed">{% endif %}
                 Add invoice number and date
               </span>
-              {% if not data['payee-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-              {% if data['payee-details'] and not data ['invoice-number']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['company-details'] and not data ['invoice-number']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
               {% if data['invoice-number'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
               </ul>
               <li>

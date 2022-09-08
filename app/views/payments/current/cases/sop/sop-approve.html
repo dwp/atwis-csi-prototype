@@ -43,7 +43,7 @@ Check and approve payment details
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Invoice referance
+            Invoice number
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['invoice-number']}}
@@ -85,46 +85,85 @@ Check and approve payment details
             </a> -->
           </dd>
         </div>
+
+
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payee postcode
-          </dt>
-          <dd class="govuk-summary-list__value">
-            AB1 1AB
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a> -->
-          </dd>
+        <dt class="govuk-summary-list__key">
+             Payee name
+        </dt>
+        <dd class="govuk-summary-list__value">
+             Lime Limited
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a> -->
+        </dd>
         </div>
+
+
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payment amount
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">£499.00</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> contact details</span>
-            </a> -->
-          </dd>
+        <dt class="govuk-summary-list__key">
+             Payee postcode
+        </dt>
+        <dd class="govuk-summary-list__value">
+             AB1 1AB
+             <!-- {{data['']}} -->
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a> -->
+        </dd>
         </div>
+
+
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            SOP supplier number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p class="govuk-body">{{data['sop-supplier-number']}}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> contact details</span>
-            </a> -->
-          </dd>
+        <dt class="govuk-summary-list__key">
+             Payment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+             £499
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a> -->
+        </dd>
         </div>
-      </dl>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+             Site code
+        </dt>
+        <dd class="govuk-summary-list__value">
+             {{data['sop-site-code']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a> -->
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+             SOP supplier number
+        </dt>
+        <dd class="govuk-summary-list__value">
+             {{data['sop-supplier-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a> -->
+        </dd>
+        </div>
+
+
+    </dl>
 
             <div class="govuk-form-group">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
