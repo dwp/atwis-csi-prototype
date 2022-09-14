@@ -1,0 +1,194 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-11/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Check and appove payment details
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<br>
+
+<dl class="govuk-summary-list">
+
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+         Invoice referance
+    </dt>
+    <dd class="govuk-summary-list__value">
+         {{data['invoice-number']}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a> -->
+    </dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+         Invoice date
+    </dt>
+    <dd class="govuk-summary-list__value">
+         {{data['']}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a> -->
+    </dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+         Payee postcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+         {{data['']}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a> -->
+    </dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+         Payment amount
+    </dt>
+    <dd class="govuk-summary-list__value">
+         £499
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a> -->
+    </dd>
+    </div>
+
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+         SOP supplier number
+    </dt>
+    <dd class="govuk-summary-list__value">
+         {{data['sop-supplier-number']}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <!-- <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> contact details</span>
+      </a> -->
+    </dd>
+    </div>
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-yes" name="grant-match-claim-yes" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-1">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-no" name="grant-match-claim-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-2">
+        No
+      </label> -->
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 class="govuk-heading-m">
+          Do the payee details match the invoce?
+        </h2>
+      </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="payee-details-1" name="payee-details" type="radio" value="yes~sop-add-supplier" {{ checked("payee-details", "Yes") }}>
+              <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+              <label class="govuk-label govuk-radios__label" for="payee-details-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="payee-details-2" name="payee-details" type="radio" value="No~sop-add-supplier" {{ checked("payee-details", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="payee-details-2">
+                No
+              </label>
+            </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+</form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
