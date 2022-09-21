@@ -1,79 +1,9 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  {{title}} - {{serviceName}} - GOV.UK
-{% endblock %}
-
 {% block header %}
 
+{% block atwisHeader %}
 
-  {% block atwisHeader %}
-
-{% if (not contactCentre)  %}
-
-        </li>
-{% if (phase == "case-manger-view" or phase == "payment officer") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
-<!-- {% if (phase == "case-manger-view" or phase == "payment officer") or Unallocated or payments %}<li{% if advisers %} class="active"{% endif %}><a href="/{{folder}}/all-advisers{% if payments %}-payments{% endif %}">All advisers</a></li> {% endif %} -->
-
-
-{% endif %}
-
-
-
-
-
-{% if not hideBanner %}
-    {% block banner %}
-
-
-
-
-
-
-
-
-            <!-- <dt class="govuk-visually-hidden">Nino:</dt>
-            <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 X</dd> -->
-
-
-
-
-
-
-
-      </div>
-
-
-<div class="govuk-width-container">
-
-
-
-
-{% if not hideback %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-<br>
-{{ govukBackLink({
-text: "Back",
-href: "javascript:history.go(-1)"
-}) }}<br></div></div>{% endif %}
-
-<main>
-
-    {% endblock %}
-{% endif %}
-
-  {% endblock %}
 {% endblock %}
-
-
-
-
-{% block head %}
-  {% include "includes/head.html" %}
-  <!-- extra agent-only css  -->
-<link href="/public/stylesheets/dwp.css" media="all" rel="stylesheet" type="text/css" />
-<link href="/public/stylesheets/atwis.css" media="all" rel="stylesheet" type="text/css" />
 
 {% endblock %}

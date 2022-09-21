@@ -159,43 +159,60 @@
               {% if data['invoice-number'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
               </ul>
               <li>
-</a>
 
+</a>
 
 
 <!-- 3 REVIEW PAYMENT -->
 
 <h2 class="app-task-list__section">
-  <span class="app-task-list__section-number">3. </span> Review payment
+  <span class="app-task-list__section-number">3. </span>
+  Review payment
 </h2>
 
 
-<!-- 3 CHECK PAYEE DETAILS IN SOP -->
+<!-- 3 FIND PAYEE IN SOP -->
 
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
             {% if data['invoice-number']%}<a href="sop/sop-find" aria-describedby="company-information-completed">{% endif %}
-                Check payee details in SOP
+                Find payee in SOP
               </a>
               </span>
               {% if not data['invoice-number']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-              {% if data['invoice-number'] and not data ['sop-approve']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-              {% if data['sop-approve'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              {% if data['invoice-number'] and not data ['sop-find']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['sop-find'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
               <li>
 
+<!-- 3 CHECK PAYEE DETAILS ON INVOICE -->
 
-<!-- 3 PROCESS PAYMENT IN SOP -->
-
-            <!-- <li class="app-task-list__item">
+            <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            <a href="#" aria-describedby="company-information-completed">
-                Process Payment in SOP
+            {% if data['sop-find']%}<a href="sop/sop-match" aria-describedby="company-information-completed">{% endif %}
+                Check payee details on invoice
             </a>
             </span>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong> -->
+            {% if not data['sop-find']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+            {% if data['sop-find'] and not data ['sop-match']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+            {% if data['sop-match'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+            <li>
+
+<!-- 3 ADD DETTAILS FROM SOP -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            {% if data['sop-match']%}<a href="sop/sop-add-supplier" aria-describedby="company-information-completed">{% endif %}
+              Add details from SOP
+            </a>
+            </span>
+            {% if not data['sop-match']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+            {% if data['sop-match'] and not data ['sop-add-supplier']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+            {% if data['sop-add-supplier'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
             </ul>
             <li>
+
+
 
 <!-- 4 SEND PAYMENT -->
 
@@ -204,74 +221,22 @@
                 Send payment
             </h2>
 
-<!-- 4 PAYMENT FOR APPROVAL -->
+<!-- 4 CHECK DETAILS AND SND FOR APPROVAL -->
 
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['sop-approve']%}<a href="#" aria-describedby="company-information-completed">{% endif %}
-                Send payment for approval
+            {% if data['sop-add-supplier']%}<a href="sop/sop-approve" aria-describedby="company-information-completed">{% endif %}
+                Check payment and send for approval
             </a>
           </span>
-          {% if not data['sop-approve']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-          {% if data['sop-approve'] and not data ['send-payment']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-          {% if data['send-payment'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+          {% if not data['sop-add-supplier']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+          {% if data['sop-add-supplier'] and not data ['sop-approve']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+          {% if data['sop-approve'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
           </ul>
           <li>
 
 
 
-              <!-- <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-completed">
-                  Your contact details
-                </a>
-              </span>
-              <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#">
-                  List convictions
-                </a>
-              </span>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#">
-                  Provide financial evidence
-                </a>
-              </span>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="medical-information-completed">
-                  Give medical information
-                </a>
-              </span>
-              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">Completed</strong>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Apply
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#">
-                  Submit and pay
-                </a>
-              </span>
-            </li>
-          </ul>
-        </li>
-      </ol>
-
-    </div>
-  </div> -->
 
 {% endblock %}

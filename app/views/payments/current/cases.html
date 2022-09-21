@@ -5,7 +5,7 @@
 
         <!-- <div class="govuk-grid-column-two-thirds"> -->
 <h1 class="govuk-heading-l top-section">
-      <strong><span>Adviser: </span></strong>
+      <strong><span>Payment officer: </span></strong>
 
 {% if data['advisor-name'] %}
 <span class="normal"> {{data['advisor-name']}}  </span>
@@ -31,9 +31,10 @@
 <!-- CLAIMS -->
 
 
-                {% set doc %}
+                {% set claims %}
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-third">
+
                     <h2 class="govuk-heading-m">Claims </h2>
                   </div>
 
@@ -58,6 +59,8 @@
                       </select>
                   </div>
                   </div>
+
+
 
                   <div class="govuk-grid-column-one-third" >
 
@@ -149,6 +152,152 @@
 
 
               {% endset -%}
+
+
+
+
+              <!-- CLAIMS -->
+
+
+                              {% set pending %}
+                              <div class="govuk-grid-row">
+                                <div class="govuk-grid-column-one-third">
+                                  <h2 class="govuk-heading-m">Cases pending approval </h2>
+                                </div>
+
+                              </div>
+                                <div class="govuk-grid-column-one-quaters">
+
+                            <div class="govuk-form-group" style="float: left">
+
+                                </div>
+
+                                <div class="govuk-grid-column-one-third" >
+
+
+
+
+                                </div>
+                                </form>
+
+                                <br>
+                                <table class="govuk-table">
+                                    <thead class="govuk-table__head">
+                                        <tr class="govuk-table__row">
+                                          <th scope="col" class="govuk-table__header">Name</th>
+                                          <th scope="col" class="govuk-table__header">Claim type</th>
+                                          <th scope="col" class="govuk-table__header">Date received </th>
+                                          <th scope="col" class="govuk-table__header">Date sent for approval </th>
+                                          <th scope="col" class="govuk-table__header">Status</th>
+                                          <th scope="col" class="govuk-table__header">Action</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+
+
+
+                                          <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Dereck Smith</th>
+                                            <td class="govuk-table__cell">Specialist equipment</td>
+                                            <td class="govuk-table__cell">12 June 2022</td>
+                                            <td class="govuk-table__cell">25 November 2022</td>
+                                            <td class="govuk-table__cell">Pending approval</td>
+                                            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                                          </tr>
+
+
+
+
+                                    </tbody>
+                                  </table>
+
+
+
+
+
+                                <!-- {% if phase == "payment officer"  %}
+                                <br>
+                                {% if 'Specialist equipment' in data['claims']%}
+                                <table class="govuk-table">
+                                    <thead class="govuk-table__head">
+                                        <tr class="govuk-table__row">
+                                          <th scope="col" class="govuk-table__header">Name</th>
+                                          <th scope="col" class="govuk-table__header">Claim type</th>
+                                          <th scope="col" class="govuk-table__header">Date received </th>
+                                          <th scope="col" class="govuk-table__header">Status</th>
+                                          <th scope="col" class="govuk-table__header">Action</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+
+
+
+                                          <tr class="govuk-table__row">
+                                            <th scope="row" class="govuk-table__header">Dereck Smith</th>
+                                            <td class="govuk-table__cell">Specialist equipment</td>
+                                            <td class="govuk-table__cell">12 June 2022</td>
+                                            <td class="govuk-table__cell">Not started</td>
+                                            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                                          </tr>
+
+
+
+
+                                    </tbody>
+                                  </table>
+
+
+
+
+                {% endif %}
+
+                {% if 'No specialist equipment' in data['claims']%}
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header">Name</th>
+                          <th scope="col" class="govuk-table__header">Claim type</th>
+                          <th scope="col" class="govuk-table__header">Date received </th>
+                          <th scope="col" class="govuk-table__header">Status</th>
+                          <th scope="col" class="govuk-table__header">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+
+
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Jane Doe</th>
+                            <td class="govuk-table__cell">Specialist equipment</td>
+                            <td class="govuk-table__cell">12 June 2022</td>
+                            <td class="govuk-table__cell">Not started</td>
+                            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                          </tr>
+
+
+
+
+                    </tbody>
+                  </table>
+
+              {% endif %}
+
+
+
+              {% if not data['claims'] %}
+              <p>You have no cases.</P>{% endif %}
+
+
+                                {% else %}
+              <p>You have no cases.</P>
+
+                                {% endif %} -->
+
+
+                            {% endset -%}
+
+
+
 
 
 
@@ -263,7 +412,10 @@
 
 
 
-<!-- TABS -->
+<!-- TABS CLAIMS -->
+
+
+
 
 {% if not data['claims'] %}
 {{ govukTabs({
@@ -272,8 +424,16 @@
       label: "Claims (0)",
       id: "in-disc",
       panel: {
-        html: doc
+        html: claims
       }
+    },
+    {
+      label: "Pending appoval (0)",
+      id: "pending-aproval",
+      panel: {
+        html: pending
+      }
+
     }
   ]
 }) }}
@@ -284,12 +444,29 @@
       label: "Claims (1)",
       id: "in-disc",
       panel: {
-        html: doc
+        html: claims
+      }
+    },
+    {
+      label: "Pending appoval (0)",
+      id: "pending-aproval",
+      panel: {
+        html: pending
       }
     }
   ]
 }) }}
 {% endif %}
+
+
+
+
+
+
+
+  </div>
+</div>
+
 
   </div>
 </div>

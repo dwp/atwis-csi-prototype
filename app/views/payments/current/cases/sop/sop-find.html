@@ -29,7 +29,7 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Check payee details on SOP
+Find payee in SOP
     </h2>
 
   </legend>
@@ -41,7 +41,7 @@ Check payee details on SOP
 
 <br>
 
-<h2 class="govuk-heading-m">   Claim details</h2>
+<h2 class="govuk-heading-m">   Payee details from claim</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
@@ -153,20 +153,20 @@ Check payee details on SOP
       <div class="govuk-form-group">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h2 class="govuk-heading-m">
-          Is the payee on SOP?
+          Is the payee in SOP?
         </h2>
       </legend>
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~sop-match" {{ checked("paid-in-full", "Yes") }}>
+          <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="yes~sop-match" {{ checked("sop-find", "Yes") }}>
           <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
-          <label class="govuk-label govuk-radios__label" for="paid-in-full-1">
+          <label class="govuk-label govuk-radios__label" for="sop-find-1">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="paid-in-full-2" name="paid-in-full" type="radio" value="No~claim#your-tasks" {{ checked("paid-in-full", "No") }}>
-          <label class="govuk-label govuk-radios__label" for="paid-in-full-2">
+          <input class="govuk-radios__input" id="sop-find-2" name="sop-find" type="radio" value="No~claim#your-tasks" {{ checked("sop-find", "No") }}>
+          <label class="govuk-label govuk-radios__label" for="sop-find-2">
             No
           </label>
         </div>
