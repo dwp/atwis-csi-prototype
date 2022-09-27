@@ -13,7 +13,7 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/payments/sprint-12/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -28,25 +28,22 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Check payee details on invoice
+Has the invoice been marked as 'paid in full'?
     </h2>
 
 
         </legend>
-        <div id="changed-name-hint" class="govuk-hint">
-      Do the payee detals on the invoice match SOP?
-    </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sop-match-1" name="sop-match" type="radio" value="yes~claim#your-tasks" {{ checked("sop-match", "Yes") }}>
+            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~claim#your-tasks" {{ checked("paid-in-full", "Yes") }}>
             <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
-            <label class="govuk-label govuk-radios__label" for="sop-match-1">
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sop-match-2" name="sop-match" type="radio" value="No~claim#your-tasks" {{ checked("sop-match", "No") }}>
-            <label class="govuk-label govuk-radios__label" for="sop-match-2">
+            <input class="govuk-radios__input" id="paid-in-full-2" name="paid-in-full" type="radio" value="No~claim#your-tasks" {{ checked("paid-in-full", "No") }}>
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-2">
               No
             </label>
           </div>
@@ -55,11 +52,10 @@ Check payee details on invoice
       </fieldset>
     </div>
 
-    <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button">
-        Save and continue
-      </button>
-    </form>
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
        </div>
      </div>
 
