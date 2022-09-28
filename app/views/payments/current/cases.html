@@ -63,14 +63,7 @@
 
 {% endif %}
 
-                        <!-- {% if not data['sop-supplier-number']%}
-                        <li class="govuk-tabs__list-item">
-                          <a class="govuk-tabs__tab" href="#past-week">
-                            Waiting for approval (0)
-                          </a>
-                        </li>
 
-{% endif %} -->
 
 
                       </ul>
@@ -82,7 +75,7 @@
                       <div class="govuk-tabs__panel" id="past-day">
                         <h2 class="govuk-heading-m">Claims</h2>
 
-                        <form action="/payments/sprint-12/your-cases#claims" method="post" novalidate for="submitButtonRequestGetNewClaim">
+                        <form action="/payments/current/your-cases#claims" method="post" novalidate for="submitButtonRequestGetNewClaim">
                           <div class="govuk-grid-column-one-quaters">
 
                       <div class="govuk-form-group" style="float: left">
@@ -176,9 +169,11 @@
 
 
 
-<!-- {% if data['sop-supplier-number']%}
+{% if data['sop-supplier-number']%}
+
 
                       </div>
+                                            </div>
                       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
                         <h2 class="govuk-heading-l">Waiting for approval</h2>
                         <table class="govuk-table">
@@ -203,10 +198,10 @@
                             </tr>
                           </tbody>
                         </table>
-{% endif %} -->
+{% endif %}
 
-<!-- {% if not data['sop-supplier-number'] %}
-<p>You have no cases waiting for approval.</P>{% endif %} -->
+{% if not data['sop-supplier-number'] %}
+<p>You have no cases waiting for approval.</P>{% endif %}
 
 
                       </div>
