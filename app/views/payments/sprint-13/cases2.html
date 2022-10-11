@@ -26,12 +26,13 @@
 
 
 
-<!-- PAYMENT OFFICER -->
+
 
 
 {% if user == "payment officer" %}
-<form action="/payments/current/your-cases#claims" method="post" novalidate for="submitButtonRequestGetNewClaim">
+<form action="/payments/sprint-13/your-cases#claims" method="post" novalidate for="submitButtonRequestGetNewClaim">
 
+<!-- CLAIMS -->
 
                   <!-- <div class="govuk-grid-column-one-third"> -->
         <div class="govuk-tabs" data-module="govuk-tabs">
@@ -70,13 +71,44 @@
             Waiting for approval (1)
           </a>
         </li>
-
+        
 {% endif %}
+{% endif %}
+
+
+
+
+
+
+
+{% if user == "team lead" %}
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+
+
+<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+  <a class="govuk-tabs__tab" href="#action">
+    Action needed
+  </a>
+</li>
+{% endif %}
+
+
+
+
 
 
 
                       </ul>
 
+
+
+
+{% if user == "payment officer" %}
                       <div class="govuk-tabs__panel" id="claims">
                         <h2 class="govuk-heading-m">Claims</h2>
 
@@ -104,10 +136,47 @@
                           <p class="govuk-body govuk-!-margin-bottom-6"></p>
                               <input type="submit" class="govuk-button" id="submitButtonRequestGetNewClaim" value="Get new claim" style="float: left">
                           </div>
+{% endif %}
+
+
+{% if user == "team lead" %}
+                          <div class="govuk-tabs__panel" id="claims">
+                            <h2 class="govuk-heading-m">Action needed</h2>
+
+                              <div class="govuk-grid-column-one-quaters">
+
+                          <div class="govuk-form-group" style="float: left">
+
+                                  <label class="govuk-label" for="sort">
+                                    Subheading
+                                  </label>
+                                  <select class="govuk-select" id="claims" name="claims">
+                                    <option value="No specialist equipment"
+                                    {% if 'No specialist equipment' in data['claims']%}selected{% endif %}>No specialist equipment</option>
+                                    <option value="Specialist equipment"
+                                    {% if 'Specialist equipment' in data['claims']%}selected{% endif %}>Specialist equipment</option>
+                                    <option value="TESG"
+                                    {% if 'TESG' in data['claims']%}selected{% endif %}>TESG</option>
+                                    <option value="CSI"
+                                    {% if 'CSI' in data['claims']%}selected{% endif %}>CSI</option>
+                                  </select>
+                              </div>
+
+                              <div class="govuk-grid-column-one-third" >
+
+                              <p class="govuk-body govuk-!-margin-bottom-6"></p>
+                                  <input type="submit" class="govuk-button" id="submitButtonRequestGetNewClaim" value="Get new claim" style="float: left">
+                              </div>
+{% endif %}
 
 
 
 
+
+
+
+
+{% if user == "payment officer" %}
 {% if not data['claims']%}
 
   <table class="govuk-table">
@@ -249,41 +318,9 @@
                             </tr>
                           </tbody>
                         </table>
-                      </form>
 
 {% endif %}
 {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- TEAM LEAD -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -291,52 +328,14 @@
 {% if user == "team lead" %}
 
 
-
-<form action="/payments/current/your-cases-team-lead#attention-needed" method="post" novalidate for="submitButtonRequestApplyFilters">
-
-
-                  <!-- <div class="govuk-grid-column-one-third"> -->
-        <div class="govuk-tabs" data-module="govuk-tabs">
-          <h2 class="govuk-tabs__title">
-            Contents
-          </h2>
-          <ul class="govuk-tabs__list">
-
-
-{% if data['filters-button']%}
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#claims">
-            Attention needed (3)
-          </a>
-        </li>
-{%else%}
-<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-  <a class="govuk-tabs__tab" href="#claims">
-    Attention needed (8)
-  </a>
-</li>
-{% endif %}
+                      </div>
+                                            </div>
+                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="action">
+                        <h2 class="govuk-heading-m">Action needed</h2>
 
 
 
-
-      </ul>
-
-      <div class="govuk-tabs__panel" id="claims">
-        <h2 class="govuk-heading-m">Attention needed</h2>
-
-          <div class="govuk-grid-column-one-quaters">
-
-      <div class="govuk-form-group" style="float: left">
-
-          </div>
-
-
-
-
-
-
-
+<!-- FILTER CODE -->
 
 
 
@@ -356,9 +355,9 @@
 
       <div class="moj-filter__header">
 
-        <!-- <div class="moj-filter__header-title">
+        <div class="moj-filter__header-title">
           <h2 class="govuk-heading-m">Filter</h2>
-        </div> -->
+        </div>
 
         <div class="moj-filter__header-action">
 
@@ -366,51 +365,12 @@
 
       </div>
 
-      <div class="moj-filter__content">
-
-        <div class="moj-filter__selected">
-
-          <div class="moj-filter__selected-heading">
-
-            <!-- <div class="moj-filter__heading-title">
-              <h2 class="govuk-heading-m">Selected filters</h2>
-            </div> -->
-
-            <!-- <div class="moj-filter__heading-action">
+            <div class="moj-filter__heading-action">
               <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
             </div>
 
-          </div> -->
+          </div>
 
-          <!-- <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Colour</h3>
-
-          <ul class="moj-filter-tags">
-
-            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Blue</a></li>
-
-            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Yellow</a></li>
-
-          </ul>
-
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
-
-          <ul class="moj-filter-tags">
-
-            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Complete</a></li>
-
-          </ul>
- -->
-
-
-
- <div class="moj-filter__heading-action">
-   <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
- </div>
-
-</div>
-
-
-        </div>
 
         <div class="moj-filter__options">
 
@@ -418,40 +378,35 @@
             Apply filters
           </button>
 
-
-
-
-
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="keywords">
               Keywords
             </label>
 
-
-            <input class="govuk-input govuk-!-width-two-thirds" id="keywords" name="keywords" type="text">
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
 
           <div class="govuk-form-group">
 
-            <!-- <fieldset class="govuk-fieldset"> -->
+            <fieldset class="govuk-fieldset">
 
-              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
                 Colour
 
-              </legend> -->
+              </legend>
 
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
-                <!-- <div class="govuk-checkboxes__item">
+                <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type">
                     Blue (18)
                   </label>
 
-                </div> -->
+                </div>
 
-                <!-- <div class="govuk-checkboxes__item">
+                <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="type-2">
                     Yellow (5)
@@ -465,11 +420,11 @@
                     Red (2)
                   </label>
 
-                </div> -->
+                </div>
 
               </div>
 
-            <!-- </fieldset> -->
+            </fieldset>
 
           </div>
 
@@ -479,35 +434,33 @@
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-                Claim type
+                Status
 
               </legend>
 
-              <div class="govuk-checkboxes govuk-checkboxes--medium" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status" name="filters-button" type="checkbox" value="1260" checked>
+                  <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" checked>
                   <label class="govuk-label govuk-checkboxes__label" for="status">
-                    Specialist equipment
+                    Complete (5)
                   </label>
 
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="filters-button" type="checkbox" value="1261">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
                   <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                    Support worker
+                    Incomplete (3)
                   </label>
 
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-3" name="filters-button" type="checkbox" value="1262">
+                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
                   <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                    Travel to work
+                    In progress (13)
                   </label>
-
-
 
                 </div>
 
@@ -525,220 +478,113 @@
 
   </div>
 
-  <!-- <div class="moj-filter-layout__content">
+  <div class="moj-filter-layout__content">
+
     <div class="moj-action-bar">
+
       <div class="moj-action-bar__filter"></div>
-      <div class="moj-button-menu"> -->
+
+      <div class="moj-button-menu">
         <div class="moj-button-menu__wrapper">
 
-          <!-- <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+          <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
             Action 1
           </button>
 
           <button class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
             Action 2
-          </button> -->
+          </button>
 
         </div>
       </div>
 
     </div>
 
+    <div class="moj-scrollable-pane">
 
-    <h2 class="govuk-heading-m">
-      Documents
-    </h2>
-
-    {% if not data['filters-button']%}
-    <div class="govuk-body govuk-!-font-size-19">
-      Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">20</span> of <span class="govuk-!-font-weight-bold">100</span> results.
-    </div><table class="govuk-table" id="list-envelopes">
-
-
+      <div class="moj-scrollable-pane__wrapper">
 
         <table class="govuk-table">
+
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
+
               <th scope="col" class="govuk-table__header">Name</th>
               <th scope="col" class="govuk-table__header">Claim type</th>
               <th scope="col" class="govuk-table__header">Date received</th>
               <th scope="col" class="govuk-table__header">Date sent for approval</th>
-              <th scope="col" class="govuk-table__header">Ammount</th>
               <th scope="col" class="govuk-table__header">Status</th>
               <th scope="col" class="govuk-table__header">Action</th>
+
 
             </tr>
           </thead>
 
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Dereck Smith</th>
-            <td class="govuk-table__cell">Specialist equipment</td>
-            <td class="govuk-table__cell">12 June 2022</td>
-            <td class="govuk-table__cell">25 November 2022</td>
-            <td class="govuk-table__cell">£499.00</td>
-            <td class="govuk-table__cell">Waiting for approval</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Paul Hill</th>
-            <td class="govuk-table__cell">Specialist equipment</td>
-            <td class="govuk-table__cell">10 June 2022</td>
-            <td class="govuk-table__cell">20 November 2022</td>
-            <td class="govuk-table__cell">£568.90</td>
-            <td class="govuk-table__cell">Waiting for approval</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Finn Laynes</th>
-            <td class="govuk-table__cell">Travel to work</td>
-            <td class="govuk-table__cell">8 June 2022</td>
-            <td class="govuk-table__cell">17 November 2022</td>
-            <td class="govuk-table__cell">£1290.62</td>
-            <td class="govuk-table__cell">Waiting for approval</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Lisa Gillingham</th>
-            <td class="govuk-table__cell">Support worker</td>
-            <td class="govuk-table__cell">1 June 2022</td>
-            <td class="govuk-table__cell">13 November 2022</td>
-            <td class="govuk-table__cell">£346.20</td>
-            <td class="govuk-table__cell">Waiting for approval</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Vannesh Karr</th>
-            <td class="govuk-table__cell">Specialist equipment</td>
-            <td class="govuk-table__cell">20 May 2022</td>
-            <td class="govuk-table__cell">10 November 2022</td>
-            <td class="govuk-table__cell">£900.00</td>
-            <td class="govuk-table__cell">Review needed</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Johanna Mills</th>
-            <td class="govuk-table__cell">Travel to work</td>
-            <td class="govuk-table__cell">18 May 2022</td>
-            <td class="govuk-table__cell">8 November 2022</td>
-            <td class="govuk-table__cell">£1570.04</td>
-            <td class="govuk-table__cell">Waiting for approval</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">George Benson</th>
-            <td class="govuk-table__cell">Travel to work</td>
-            <td class="govuk-table__cell">15 May 2022</td>
-            <td class="govuk-table__cell">1 November 2022</td>
-            <td class="govuk-table__cell">£862.45</td>
-            <td class="govuk-table__cell">Review needed</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Sonya Corkey</th>
-            <td class="govuk-table__cell">Support worker</td>
-            <td class="govuk-table__cell">15 May</td>
-            <td class="govuk-table__cell">29 October 2022</td>
-            <td class="govuk-table__cell">£234.20</td>
-            <td class="govuk-table__cell">Waiting for approval</td>
-            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-          </tr>
+          <tbody class="govuk-table__body">
 
-
-          {% if data['filters-button']%}
-
-
-
-
-{% if '1260' in data['filters-button']%}
-
-
-
-          {% endif %}
-          {% endif %}
-          {% else %}
-
-          <div class="govuk-body govuk-!-font-size-19">
-            Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">3</span> of <span class="govuk-!-font-weight-bold">3</span> results.
-          </div><table class="govuk-table" id="list-envelopes">
-
-
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Name</th>
-                <th scope="col" class="govuk-table__header">Claim type</th>
-                <th scope="col" class="govuk-table__header">Date received</th>
-                <th scope="col" class="govuk-table__header">Date sent for approval</th>
-                <th scope="col" class="govuk-table__header">Ammount</th>
-                <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header">Action</th>
-
-              </tr>
-            </thead>
 
             <tr class="govuk-table__row">
+
               <th scope="row" class="govuk-table__header">Dereck Smith</th>
               <td class="govuk-table__cell">Specialist equipment</td>
               <td class="govuk-table__cell">12 June 2022</td>
               <td class="govuk-table__cell">25 November 2022</td>
-              <td class="govuk-table__cell">£499.00</td>
               <td class="govuk-table__cell">Waiting for approval</td>
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+
             </tr>
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Paul Hill</th>
+
+              <th scope="row" class="govuk-table__header">Dereck Smith</th>
               <td class="govuk-table__cell">Specialist equipment</td>
-              <td class="govuk-table__cell">10 June 2022</td>
-              <td class="govuk-table__cell">20 November 2022</td>
-              <td class="govuk-table__cell">£568.90</td>
+              <td class="govuk-table__cell">12 June 2022</td>
+              <td class="govuk-table__cell">25 November 2022</td>
               <td class="govuk-table__cell">Waiting for approval</td>
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+
             </tr>
+
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Vannesh Karr</th>
+
+              <th scope="row" class="govuk-table__header">Dereck Smith</th>
               <td class="govuk-table__cell">Specialist equipment</td>
-              <td class="govuk-table__cell">20 May 2022</td>
-              <td class="govuk-table__cell">10 November 2022</td>
-              <td class="govuk-table__cell">£900.00</td>
-              <td class="govuk-table__cell">Review needed</td>
+              <td class="govuk-table__cell">12 June 2022</td>
+              <td class="govuk-table__cell">25 November 2022</td>
+              <td class="govuk-table__cell">Waiting for approval</td>
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+
             </tr>
 
-          {% endif %}
-
-
-
-
+          </tbody>
         </table>
 
       </div>
 
     </div>
-</form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FILTER CODE -->
+
 
 {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -755,3 +601,37 @@
 
                       </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+  </div>
+</div>
