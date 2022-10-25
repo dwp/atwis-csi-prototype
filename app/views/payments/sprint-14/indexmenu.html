@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+
+      <span class="govuk-caption-xl"></span>
+
+</h1>
+<p>Jump to page:</p>
+  <ul class="govuk-list">
+    <p class="govuk-body-l">Custom user name for UR</p>
+    <p>This screen will allow you to enter a username that then replaces all holding text of that name within the prototype to better aclimitise the user to the prototype for testing. <p>
+
+    <li>
+      <a class="govuk-link" href="cases/set-advisor.html">Custom user name </a>
+    </li>
+    <br>
+
+  <ul class="govuk-list">
+    <p class="govuk-body-l">Case manager view</p>
+    <li>
+      <a class="govuk-link" href="your-cases.html">Your cases - User type: Payment Officer</a>
+    </li>
+    <br>
+    <p class="govuk-body-l">Team lead view</p>
+    <li>
+      <a class="govuk-link" href="your-cases-team-lead.html">Your cases - User type: Team Lead</a>
+    </li>
+    <br>
+
+
+    <p class="govuk-body-l"> Screens</p>
+    <p>If you do not select a user type view from the above link, the following pages will default to the last type you had or Case manager. <p>
+
+    <li>
+      <a class="govuk-link" href="cases/claim.html">Claim (Summary tab)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim#your-tasks.html">Claim (Your tasks tab)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim#invoice-details.html">Claim (Invoice tab)</a>
+    </li>
+<br>
+<br>
+
+    <p class="govuk-body-l"> Task list </p>
+
+    <p class="govuk-body-l"> 1. Review claim </p>
+
+    <!-- <p>  extra info</p> -->
+    <li>
+      <a class="govuk-link" href="cases/review-claim/matches-grant.html">Check claim matches grant award?</a>
+    </li>
+    <br>
+    <br>
+
+
+    <p class="govuk-body-l"> 2. Review invoice </p>
+
+    <!-- <p>  extra info</p> -->
+    <li>
+      <a class="govuk-link" href="cases/review-invoice/claim-matches-invoice-total.html">Check invoice matches claim?</a>
+    </li>
+    <!-- <p>  extra info</p> -->
+    <li>
+      <a class="govuk-link" href="cases/review-invoice/paid-in-full.html">Check invoice has been paid?</a>
+    </li>
+    <!-- <p>  extra info</p> -->
+    <li>
+      <a class="govuk-link" href="cases/review-invoice/company-details.html">Check supplier details?</a>
+    </li>
+    <!-- <p>  extra info</p> -->
+    <li>
+      <a class="govuk-link" href="cases/review-invoice/add-invoice-date.html">Add invoice number and date?</a>
+    </li>
+    <br>
+    <br>
+
+
+    <p class="govuk-body-l"> 3. Review payment </p>
+
+    <!-- <p>  extra info</p> -->
+    <li>
+      <a class="govuk-link" href="cases/review-payment/sop-find.html">Find payee in SOP</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/review-payment/sop-match.html">Check payee details on invoice</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/review-payment/sop-add-supplier.html">Add details from SOP</a>
+    </li>
+
+
+    <br>
+    <br>
+
+
+    <p class="govuk-body-l"> 4. Send payment </p>
+
+    <!-- <p>  extra info</p> -->
+    <li>
+      <a class="govuk-link" href="cases/review-payment/sop-approve.html">Check payment and send for approval</a>
+    </li>
+
+
+
+
+    <!-- <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/find-national-insurance-number.html">Have you found Dereck Smith’s National Insurance number in Searchlight?</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/add-national-insurance-number.html">Add Dereck Smith’s National Insurance number from Searchlight?</a>
+    </li>
+
+    <br>
+    <p>  Check for appointee </p>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/appointee.html">Does Dereck Smith have an appointee?</a>
+    </li>
+    <li>
+      If user answers 'Yes, add an appointee' <a class="govuk-link" href="cases/searchlight/appointee-details.html">Add appointee details for Dereck Smith</a>
+    </li>
+
+
+        <br>
+        <p>    Check benefits </p>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/check.html">Does Searchlight show benefits that could affect Dereck Smith’s eligibility?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/exceptions.html">Can Dereck Smith still get Access to Work?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/answers.html">Check Derek Smith’s benefits</a>
+        </li>
+        <br>
+
+  <p class="govuk-body">Personal details</p>
+  <li>
+   Job details  <a class="govuk-link" href="cases/job-details.html">Job details (employed)</a>    </li>
+   <li>
+     <li>
+      Job details  <a class="govuk-link" href="cases/job-details.html">Job details (employed)</a>    </li>
+      <li>
+<br>
+
+    <p class="govuk-body-l"> 2. Business cases </p>
+    <li>
+     Employe contact  <a class="govuk-link" href="cases/contact-employer.html">Has {name here} confirmed Access to Work can communicate with their workplace contact?  (employed)</a>   <br>
+   Yes, they gave permission branch:<br>
+<a class="govuk-link" href="cases/contact-employer.html">Have you contacted the workplace contact about this application?</a>   <br>
+They did not give permission:<br>
+<a class="govuk-link" href="cases/contact-employer.html">This case will be closed because you cannot contact Smith Digital Limited</a>   <br>
+
+  </li>
+     <li>
+    <li>
+     Job details  <a class="govuk-link" href="cases/job-details.html">Job details (employed)</a>    </li>
+     <li>
+      Job details  <a class="govuk-link" href="cases/job-details/self-employment.html">Job details (self employed)</a>
+     </li>
+     No, {employer} has not confirmed job details branch:<br>
+    <a class="govuk-link" href="cases/job-details/unhappy-employment-details.html">This case will be closed because {employer} has no records of {name here}</a>   <br>
+     Small/micro branch:<br>
+     <a class="govuk-link" href="cases/job-details/contact-cost-share-agreement-micro-small.html">Cost share agreement </a>    <br>
+     Medium/large branch:<br>
+     <a class="govuk-link" href="cases/job-details/contact-cost-share-agreement.html">Cost share agreement </a>    <br>
+     Did Smith Digital Limited agree to a cost share? No branch:<br>
+     <a class="govuk-link" href="cases/job-details/third-party.html">Has a third party agreed to a cost share? </a>    <br>
+     Has a third party agreed to a cost share? Yes branch:<br>
+     <a class="govuk-link" href="cases/job-details/third-party-details.html">Add third party details </a>    <br>
+     <a class="govuk-link" href="cases/job-details/third-party-telephone-email.html">Add third party contact details (select the type from the last page) </a>    <br>
+     Has a third party agreed to a cost share? N0 (is a large or medium) branch:<br>
+     <a class="govuk-link" href="cases/job-details/third-party-details.html">live-15/cases/job-details/unhappy-cost-share  </a>    <br>
+
+
+     <li>
+      Job details  <a class="govuk-link" href="cases/job-details/note.html">Job details: contact notes </a>
+     </li> -->
+
+
+  </ul>
+</div>
+
+{% endblock %}
