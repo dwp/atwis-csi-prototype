@@ -1,0 +1,134 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="how-do-you-want-to-contact" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+
+
+      <div class="govuk-grid-row">
+
+
+
+              <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+              <form action="log-condensed" method="post" class="form">
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        What type of new entry?
+                      </h1>
+                    </legend>
+
+                  <!--  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      <h1 class="govuk-fieldset__heading">
+                      What happened?
+                      </h1>
+                    </legend> -->
+
+                    <fieldset class="govuk-fieldset">
+
+                      <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="what-outgoing" name="what" type="radio" value="outgoing">
+                          <label class="govuk-label govuk-radios__label" for="what-outgoing">
+                            We contacting Dreck Smith
+                          </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="what-incoming" name="what" type="radio" value="incoming">
+                          <label class="govuk-label govuk-radios__label" for="what-incoming">
+                            Someone contacted us about the Dereck Smith application
+                          </label>
+                        </div>
+
+
+
+
+                        </div>
+                      </fieldset>
+
+
+                  </fieldset>
+
+
+            <br>
+                <!-- commenting out to accomodate unanswered call journey -->
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Was this today?
+                    </h2>
+                  </legend>
+
+                  <div class="govuk-radios ">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="email" name="_do_{{number}}" type="radio" value="Email~/live-18/cases/contact/{{number}}/email">
+                          <label class="govuk-label govuk-radios__label" for="email">
+                        Yes
+                      </label>
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="phone" name="_do_{{number}}" type="radio" value="Telephone~/live-18/cases/contact/{{number}}/phone">
+                          <label class="govuk-label govuk-radios__label" for="phone">
+                        No
+                      </label>
+
+                        </div>
+
+
+
+                        </div>
+                  </div>
+
+
+
+
+
+
+
+             <button class="govuk-button" data-module="govuk-button">
+               Save and continue
+             </button>
+           </form>
+         </div>
+       </div>
+
+
+          </main>
+          </div>
+
+
+
+
+{% endblock %}
