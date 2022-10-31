@@ -1,4 +1,4 @@
-<li>
+    <ol class="app-task-list"><li>
     <h2 class="app-task-list__section">
       <span class="app-task-list__section-number">2. </span> Review application
     </h2>
@@ -41,19 +41,7 @@
                     {% if not data['job-deatils-check'+ phase]%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}
                   </li>
 
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-   <a href="./check-application/element" aria-describedby="read-declaration-status">
-         Summary of support
-     </a>
-    </span>
-        {% if data['support-needs']=='yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-  {% if data['support-needs']=='no'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% if data['support-needs']=='I dont know'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
-    {% if data['elements-task'+ phase]=='in progress'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
 
-    {% if not data['support-needs']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-  </li>
 
 
 
@@ -99,3 +87,15 @@
 
 </ul>
 </li>
+{% if data['job-deatils-check']
+and
+   data['contact-check']
+   and
+   data['condition-check']
+ %}
+<p>Go to next tab <a href="/current/cases/claim#business-case">your tasks</a></p><br>
+ {% else %}
+
+
+
+{% endif %}

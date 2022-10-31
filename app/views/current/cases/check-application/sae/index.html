@@ -24,9 +24,9 @@
 {% if phase == 'sonya'%}
   {% include "current/claim/_sae-sonya.html"%}{% else %}{% set changeHide = "true"%}
   {% include "current/claim/_sae-dereck.html"%}{% endif %}
-  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Add more details
-  </button>
+  </button> -->
   </form>
 <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
   <div class="govuk-form-group">

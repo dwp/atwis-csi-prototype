@@ -238,7 +238,7 @@
 
 
     {% if case =='other-cases' %}
-      {% include  "./task-list-sonya.html" %}
+      {% include  "./task-list-sonya-searchlight.html" %}
     {% endif %}
 
     {% if case =='other-cases-2' %}
@@ -262,9 +262,11 @@
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
 
+  {% if case =='other-cases' %}
+    {% include  "./task-list-sonya-application.html" %}{% endif %}
 
-    {% include  "./task-list-dereck-application.html" %}
-
+      {% if not case %}
+{% include  "./task-list-dereck-application.html" %}    {% endif %}
 
   </div>  </div>  </div>
 
@@ -276,8 +278,11 @@
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
 
+  {% if case =='other-cases' %}
+  {% include  "./task-list-sonya-business-case.html" %}{% endif %}
 
-  {% include  "./task-list-dereck-business-case.html" %}
+      {% if not case %}
+  {% include  "./task-list-dereck-business-case.html" %}{% endif %}
 
 
 </div>  </div>

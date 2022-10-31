@@ -3,10 +3,9 @@
 
 
 
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Dereck Smiths Application</h2>
+        <h2 class="govuk-heading-l">Sonya Corkery Application</h2>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
@@ -16,7 +15,7 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %}
 </a>
 </p>
 
@@ -31,6 +30,9 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 
 {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
 
+data ['contact-check']
+
+and
 data ['appointee']
 and
 data ['benefits']
@@ -38,41 +40,35 @@ data ['benefits']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 
 
 
 
-{% include  "current/claim/task-list-comp/review-application-dereck.html" %}
 
+{% include  "../claim/task-list-comp/review-application-sonya.html" %}
 
-        </li>
-      </ol>
-
-      <h2 class="govuk-heading-m">
+<h2 class="govuk-heading-m">
 Summary of support requested by
 
-
-Dereck Smith   in application
+    Sonya Corkery   in application
 
 
 </h2>
-      <p>Dereck Smith needs <strong>Specialist equipment</strong> support but has not given details.
+<p>Sonya Corkery needs <strong>Specialist equipment</strong> support and has given details.
 
-      </p>
-      <p>Dereck Smith has said <strong>No</strong> the following support:
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-      
+</p>
+<p>Sonya Corkery has said <strong>No</strong> the following support:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+
 <li>Mental health support </li>
 <li>Support worker  </li>
 <li>Travel to and from work</li>
 <li>Travel during work </li>
 <li>Workplace adaptations  </li>
 <li>Vehicle adaptations  </li>
-        </ul>
-
-
+  </ul>
 {% endfor %}
