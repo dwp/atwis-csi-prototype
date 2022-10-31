@@ -114,3 +114,16 @@
 
         </ul>
         </li>
+
+        </ol>  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+
+            data ['appointee']
+            and
+            data ['benefits']
+          %}
+  <p>Go to next tab <a href="/current/cases/claim#citizen-details">Application</a></p>
+          {% else %}
+
+
+
+        {% endif %}</div>
