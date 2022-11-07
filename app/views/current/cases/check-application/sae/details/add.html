@@ -14,8 +14,76 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+{% if phase == 'sonya'%}
+{% if data['sae-item-type']%}
+        <h1 class="govuk-heading-l">
+
+            Total 3  item of specialist equipment </h1>{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+ <fieldset class="govuk-fieldset">
+<h2 class="govuk-heading-{% if data['sae-item-type']%}m{% else %}l{% endif %}">
+
+    Sonya Corkery has added 2 item of specialist equipment </h2>
+
+
+    <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+          Jaws Screen reader
+        </dt>
+
+
+        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+          ZoomText
+        </dt>
+
+
+        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+
+    </dl>
+
+         </fieldset>
+
+
+
+
+  {% endif %}
+
+{% if data['sae-item-type']%}
             <fieldset class="govuk-fieldset">
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-{% if phase == 'sonya'%}m{% else %}l{% endif %}">
 
               You have added 1 item of specialist equipment </h1>
 
@@ -48,7 +116,12 @@
               </dl>
 
                    </fieldset>
-                   </div>         </div><form action="/current/cases/claim#business-case" method="post" novalidate>
+
+{% endif %}
+
+
+
+                   <form action="" method="post" novalidate>
                      <div class="govuk-form-group">
                                  <fieldset class="govuk-fieldset">
                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -57,13 +130,13 @@
                                    </legend>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
-                                       <input class="govuk-radios__input" id="sae-add" name="sae-add" type="radio" value="Yes" {{ checked("sae-add", "Yes") }}>
+                                       <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}sonya/cases/{% endif %}sae/details/type.html" {{ checked("sae-add", "Yes") }}>
                                        <label class="govuk-label govuk-radios__label" for="sae-add">
                                          Yes
                                        </label>
                                      </div>
                                      <div class="govuk-radios__item">
-                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add" type="radio" value="No" {{ checked("sae-add", "No") }}>
+                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}sonya/cases/{% endif %}claim#business-case" {{ checked("sae-add", "No") }}>
                                        <label class="govuk-label govuk-radios__label" for="sae-add-2">
                                          No
                                        </label>

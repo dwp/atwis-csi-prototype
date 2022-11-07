@@ -3,12 +3,12 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-<a href="specialist-equipment" aria-describedby="job-status">
+<a href="sae/details/add" aria-describedby="job-status">
   Specialist equipment
 </a>
 </span>
-{% if not data['social-domestic'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-{% if data['social-domestic'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+{% if not data['sae-add'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['sae-add'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
  </li>
 
@@ -16,18 +16,18 @@
 
 
 
-  <li class="app-task-list__item">
-  <span class="app-task-list__task-name">
-  <a href="check-application/quotes/select" aria-describedby="job-status">
-   Choose quote: specialist equipment 2
-  </a>
-  </span>
-  {% if not data['chosen-quote-'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-  {% if data['chosen-quote-'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
-   </li>
 
-   {% if not data['chosen-quote-'+ phase]%}
+   {% if not data['sae-add'+ phase]%}
+   <li class="app-task-list__item">
+   <span class="app-task-list__task-name">
+
+    Choose quote: specialist equipment 2
+
+   </span>
+   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+
+    </li>
    <li class="app-task-list__item">
    <span class="app-task-list__task-name">
 
@@ -44,7 +44,16 @@
 
 
 
+    <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+    <a href="check-application/quotes/select" aria-describedby="job-status">
+     Choose quote: specialist equipment 2
+    </a>
+    </span>
+    {% if not data['chosen-quote-'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+    {% if data['chosen-quote-'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
+     </li>
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 <a href="specialist-equipment" aria-describedby="job-status">

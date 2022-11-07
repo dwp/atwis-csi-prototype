@@ -83,20 +83,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 {% else %}
 
 
-{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
-data ['elements']
-and
-data ['condition-check']
-and
-data ['job-deatils-check']
-
-and
-data ['contact-check']
-
-and
-data ['appointee']
-and
-data ['benefits']
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') 
 %}
 
 
@@ -107,35 +94,28 @@ data ['benefits']
 
 
 
-{% include  "../claim/task-list-comp/searchlight.html" %}
-
-
-{% include  "../claim/task-list-comp/review-application-sonya.html" %}
-
 
 
   {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
-    data ['elements']
-    and
+
     data ['condition-check'+ phase]
     and
     data ['job-deatils-check'+ phase]
     and
 
     data ['contact-check'+ phase]
-    and
-    data ['quotes-check'+ phase]
+
     and
     data ['quotes-check-2'+ phase]
     and
     data ['appointee']
     and
     data ['benefits']
-  %}
+  %}<ol class="app-task-list">
     {% include  "../claim/task-list-comp/_task-list-open-sonya.html" %}
   {% else %}
 
-
+<ol class="app-task-list">
   <li>
     <h2 class="app-task-list__section">
       <span class="app-task-list__section-number">3. </span> Workplace assessment
@@ -182,45 +162,33 @@ data ['benefits']
 
 {% if data['employer-size'+ phase] and
 data['wpa'+ phase]  %}
-    {% include  "../claim/_task-list-element.html" %}{% else %}
-
+    {% include  "../claim/task-list-comp/_task-list-element-thomas.html" %}{% else %}
     <ul class="app-task-list__items">
-      <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-
-           Specialist equipment
-
-      </span>
-      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
           <li class="app-task-list__item">
           <span class="app-task-list__task-name">
 
-               Choose quote: Specialist equipment 2
+               Support worker
 
           </span>
           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
-    <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
 
-        Confirm details for specialist equipment 1
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
 
-    </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
-    <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
+               Choose quote: support worker
 
-        Confirm details for specialist equipment 2
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
-    </span>
-    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+
 
 
 
       </ul>{% endif %}
 
-{% if data['social-domestic-2'+ phase]%}
+{% if data['chosen-quote-thomas']%}
       <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
       <p>You do not need to send this award to anyone else for approval. </p>
@@ -233,15 +201,15 @@ data['wpa'+ phase]  %}
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">6. </span> Award decision
           </h2>
-          {% if data['social-domestic-2'+ phase]%}
+          {% if data['chosen-quote-thomas']%}
 
-            {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
+            {% include  "../claim/task-list-comp/_task-list-decision-thomas.html" %}
 
           {% else %}
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              Approve specialist equipment
+              Approve support worker
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>

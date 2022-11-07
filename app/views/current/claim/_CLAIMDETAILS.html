@@ -212,8 +212,9 @@
    </script>
 
 </div></div>
-{% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% else %}
-{% include  "../claim/timeline-dereck-new.html" %}{% endif %}
+{% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% endif %}
+{% if phase == "thomas"  %}{% include  "../claim/timeline-thomas-new.html" %}</div></div>{% endif %}
+{% if not phase %}{% include  "../claim/timeline-dereck-new.html" %}{% endif %}
 </div>
 
 
@@ -242,7 +243,7 @@
     {% endif %}
 
     {% if case =='other-cases-2' %}
-      {% include  "./task-list-thomas.html" %}
+      {% include  "./task-list-thomas-searchlight.html" %}
     {% endif %}
 
     {% if not case %}
@@ -265,6 +266,9 @@
   {% if case =='other-cases' %}
     {% include  "./task-list-sonya-application.html" %}{% endif %}
 
+    {% if case =='other-cases-2' %}
+      {% include  "./task-list-thomas-application.html" %}{% endif %}
+
       {% if not case %}
 {% include  "./task-list-dereck-application.html" %}    {% endif %}
 
@@ -277,6 +281,9 @@
 
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
+
+  {% if case =='other-cases-2' %}
+  {% include  "./task-list-thomas-business-case.html" %}{% endif %}
 
   {% if case =='other-cases' %}
   {% include  "./task-list-sonya-business-case.html" %}{% endif %}

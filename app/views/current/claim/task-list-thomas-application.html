@@ -5,7 +5,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Sonya Corkery’s Application</h2>
+        <h2 class="govuk-heading-l">Thomas King’s Application</h2>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
@@ -15,7 +15,7 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %}
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Thomas King{% endif %}
 </a>
 </p>
 
@@ -30,17 +30,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 
 {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
 
-data ['condition-check'+ phase]
-and
-data ['job-deatils-check'+ phase]
-and
 
-data ['contact-check'+ phase]
-and
-data ['quotes-check'+ phase]
-and
-data ['quotes-check-2'+ phase]
-and
 data ['appointee']
 and
 data ['benefits']
@@ -48,7 +38,7 @@ data ['benefits']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing all Searchlight checks.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Thomas King{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 
@@ -56,24 +46,24 @@ data ['benefits']
 
 
 
-{% include  "../claim/task-list-comp/review-application-sonya.html" %}
+{% include  "../claim/task-list-comp/review-application-thomas.html" %}
 
 <h2 class="govuk-heading-m">
 Summary of support requested by
 
-    Sonya Corkery   in application
+    Thomas King   in application
 
 
 </h2>
-<p>Sonya Corkery needs <strong>Specialist equipment</strong> support and has given details.
+<p>Thomas King needs <strong>Support worker </strong> support and has given details.
 
 </p>
-<p>Sonya Corkery does not need:
+<p>Thomas King does not need:
   </p>
   <ul class="govuk-list govuk-list--bullet">
-
+<li>Specialist equipment  </li>
 <li>Mental health support </li>
-<li>Support worker  </li>
+
 <li>Travel to and from work</li>
 <li>Travel during work </li>
 <li>Workplace adaptations  </li>

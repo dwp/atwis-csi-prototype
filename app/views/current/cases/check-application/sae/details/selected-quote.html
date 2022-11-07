@@ -71,7 +71,7 @@ Total cost
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose" type="radio" value="Best support for Dereck Smith">
             <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
-            Best support for Dereck Smith
+            Best support for {% if not phase%}Dereck Smith{% endif %}{% if phase == 'sonya'%}Sonya Corkery{% endif %}
             </label>
           </div>
           <div class="govuk-radios__item">
