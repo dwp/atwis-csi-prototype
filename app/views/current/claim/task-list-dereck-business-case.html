@@ -159,19 +159,30 @@ data ['benefits']
         </li>
     {% if  data['elements']=='I do not know'%}{% else %}
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">{% if data['elements']=='Yes'%}5{% else %}4{% endif %}. </span> Element
-        </h2>
-        <ul class="app-task-list__items">  <li class="app-task-list__item">
+          <span class="app-task-list__section-number">{% if data['report']%}5{% else %}4{% endif %}. </span> Element
+        </h2>  <ul class="app-task-list__items">
+        {% if 'Specialist equipment' in data['elements']%}
+        <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-         <a href="./check-application/sae/details/type" aria-describedby="read-declaration-status">
+         <a href="{% if data['sae-item-type']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
                Specialist equipment
            </a>
           </span>
-          {% if data['sae-check'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-          {% if data['sae-check'+ phase]=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
-          {% if not data['sae-check'+ phase]%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-        </li>
-
+          {% if data['sae-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+          {% if data['sae-add']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+          {% if not data['sae-add']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+        </li>{% endif %}
+        {% if 'Support worker' in data['elements']%}
+       <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+         <a href="{% if data['sae-item-type']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
+               Support worker
+           </a>
+          </span>
+          {% if data['sae-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+          {% if data['sae-add']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+          {% if not data['sae-add']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+        </li>{% endif %}
 {% if data['employer-size'] and
 data['wpa'] and data['report'] and data['sae-item-type'] %}
     {% include  "../claim/_task-list-element.html" %}{% else %}
@@ -194,7 +205,7 @@ data['wpa'] and data['report'] and data['sae-item-type'] %}
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">{% if data['elements']=='Yes'%}6{% else %}5{% endif %}. </span> Award decision
+            <span class="app-task-list__section-number">{% if data['report']%}6{% else %}5{% endif %}. </span> Award decision
           </h2>
           {% if data['social-domestic']%}
             {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}

@@ -172,12 +172,20 @@ data ['benefits']
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">5. </span> Element
         </h2>
-
+<ul class="app-task-list__items">
 {% if data['employer-size'+ phase] and
 data['wpa'+ phase]  %}
+
     {% include  "../claim/_task-list-element.html" %}{% else %}
 
-    <ul class="app-task-list__items">
+
+      <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+
+          Specialist equipment
+
+      </span>
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
           <li class="app-task-list__item">
           <span class="app-task-list__task-name">

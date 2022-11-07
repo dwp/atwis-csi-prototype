@@ -1,6 +1,19 @@
 {% if phase =="sonya"%}
 
 
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="specialist-equipment" aria-describedby="job-status">
+  Specialist equipment
+</a>
+</span>
+{% if not data['social-domestic'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['social-domestic'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+ </li>
+
+
+
 
 
   <li class="app-task-list__item">
@@ -14,7 +27,8 @@
 
    </li>
 
-   {% if not data['chosen-quote-'+ phase]%}<li class="app-task-list__item">
+   {% if not data['chosen-quote-'+ phase]%}
+   <li class="app-task-list__item">
    <span class="app-task-list__task-name">
 
      Confirm details for specialist equipment 1
@@ -24,6 +38,13 @@
 
 
     </li>{% else %}
+
+
+
+
+
+
+
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 <a href="specialist-equipment" aria-describedby="job-status">
