@@ -83,7 +83,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 {% else %}
 
 
-{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') 
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')
 %}
 
 
@@ -112,7 +112,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
     and
     data ['benefits']
   %}<ol class="app-task-list">
-    {% include  "../claim/task-list-comp/_task-list-open-sonya.html" %}
+    {% include  "../claim/task-list-comp/_task-list-open-thomas.html" %}
   {% else %}
 
 <ol class="app-task-list">
@@ -174,13 +174,7 @@ data['wpa'+ phase]  %}
           <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
 
-          <li class="app-task-list__item">
-          <span class="app-task-list__task-name">
 
-               Choose quote: support worker
-
-          </span>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
 
 

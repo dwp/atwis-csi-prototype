@@ -13,7 +13,7 @@ Support worker
   {% if data['sw-add'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
    </li>
-  <li class="app-task-list__item">
+{% if  data['sw-add'+ phase]%}  <li class="app-task-list__item">
   <span class="app-task-list__task-name">
   <a href="check-application/quotes/select" aria-describedby="job-status">
    Choose quote: support worker
@@ -22,7 +22,7 @@ Support worker
   {% if not data['chosen-quote-'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
   {% if data['chosen-quote-'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
-   </li>
+   </li>{% endif %}
 
 
 </ul>

@@ -19,7 +19,7 @@
 
 
    {% if not data['sae-add'+ phase]%}
-   <li class="app-task-list__item">
+   <!-- <li class="app-task-list__item">
    <span class="app-task-list__task-name">
 
     Choose quote: specialist equipment 2
@@ -37,7 +37,7 @@
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
 
 
-    </li>{% else %}
+    </li>-->{% else %}
 
 
 
@@ -64,16 +64,7 @@
 {% if data['social-domestic'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
  </li>{% endif %}
- {% if not data['chosen-quote-'+ phase]%}<li class="app-task-list__item">
- <span class="app-task-list__task-name">
-
-   Confirm details for specialist equipment 2
-
- </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
-
-
-  </li>{% else %}
+ {% if not data['chosen-quote-'+ phase]%}{% else %}
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 <a href="specialist-equipment/index-2" aria-describedby="job-status">
