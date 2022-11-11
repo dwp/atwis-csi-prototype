@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="{% if data['wpa']=='Yes' %}from{% else %}why{% endif %}" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/add" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -17,20 +17,19 @@
             <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-l">
 
-                {% include "current/cases/check-application/sae/details/content/type.html" %}  </h1>
+
+                   {% include "current/cases/check-application/sae/details/content/not-needed.html" %}</h1>
 
 
 
-                  <div class="govuk-form-group">
-
-            <input class="govuk-input" id="sae-item-type" name="sae-item-type" type="text" spellcheck="false" autocomplete="name">
-
-            </div>
 
 
 
                    </fieldset>
-                   </div>         </div><br>
+                   <div class="govuk-inset-text">
+                 {{data['sae-item-type']}}
+                   </div>
+
                    <button class="govuk-button" data-module="govuk-button">
                    Save and continue
                    </button>

@@ -24,25 +24,25 @@
       <div id="elements-hint" class="govuk-hint">
         Select all that apply.
       </div>
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    {% if phase == 'sonya'%} {% else %} <div class="govuk-checkboxes" data-module="govuk-checkboxes">
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="elements" name="elements" type="checkbox" value="Specialist equipment">
+          <input class="govuk-checkboxes__input" id="elements" name="elements" type="checkbox" value="Specialist equipment" {{ checked("elements", "Specialist equipment") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements">
           Specialist equipment
           </label>
-        </div>
+        </div>{% endif %}
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="elements-2" name="elements" type="checkbox" value="Mental health support">
+          <input class="govuk-checkboxes__input" id="elements-2" name="elements" type="checkbox" value="Mental health support" {{ checked("elements", "Mental health support") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-2">
           Mental health support
           </label>
         </div>
-        <div class="govuk-checkboxes__item">
+        {% if phase == 'thomas'%} {% else %}  <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="elements-3" name="elements" type="checkbox" value="Support worker">
           <label class="govuk-label govuk-checkboxes__label" for="elements-3">
           Support worker
           </label>
-        </div>
+        </div>{% endif %}
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="elements-4" name="elements" type="checkbox" value="Travel to and from work">
           <label class="govuk-label govuk-checkboxes__label" for="elements-4">
@@ -70,7 +70,7 @@
       </div>
 
     </fieldset>
-  </div>
+  {% if not phase %}</div>{% endif %}
 
 
          <button class="govuk-button" data-module="govuk-button">

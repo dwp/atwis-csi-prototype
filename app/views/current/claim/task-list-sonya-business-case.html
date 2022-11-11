@@ -60,7 +60,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Your tasks</h2>
+        <h2 class="govuk-heading-l"> Prepare business case</h2>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
@@ -147,7 +147,7 @@ data ['benefits']
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-                  Employment
+                  Contact employer
 
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
@@ -165,6 +165,35 @@ data ['benefits']
         <h2 class="app-task-list__section">
           <span class="app-task-list__section-number">5. </span> Element
         </h2>
+        {% if not elementAdd %}
+          {% set elementAdd = 0 %}
+          {% endif %}
+
+  {% if data['wpa'+ phase]=='Yes'%}
+        {% for i in [1] -%}
+         {% set contactindex = i %}
+          {% if data['report'+ phase] %}
+          {% set elementAdd = elementAdd + 1 %}
+        {% endif %}
+          {%- endfor %}
+  {% endif %}
+  {% if data['wpa'+ phase]=='No'%}
+        {% for i in [1] -%}
+         {% set contactindex = i %}
+          {% if data['employer-cost-share'+ phase] %}
+          {% set elementAdd = elementAdd + 1 %}
+        {% endif %}
+          {%- endfor %}
+  {% endif %}
+
+
+{% if not elementAdd =='1'%}
+<p>Add new elements</p>{% else %}
+<form class="" action="/current/cases/sonya/cases/workplace-assesment/wpa-report/support" method="post" >
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add new elements
+  </button>{% endif %}
+</form>
 <ul class="app-task-list__items">
 {% if data['employer-size'+ phase] and
 data['wpa'+ phase]  %}
@@ -178,9 +207,9 @@ data['wpa'+ phase]  %}
           Specialist equipment
 
       </span>
-      <!-- <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
-          <li class="app-task-list__item">
+        <!--     <li class="app-task-list__item">
           <span class="app-task-list__task-name">
 
                Choose quote: Specialist equipment 2

@@ -60,7 +60,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Your tasks</h2>
+        <h2 class="govuk-heading-l"> Prepare business case</h2>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
@@ -143,7 +143,7 @@ data ['benefits']
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-                  Employment
+                  Contact employer
 
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
@@ -157,10 +157,49 @@ data ['benefits']
 
           </ul>
         </li>
-    {% if  data['elements']=='I do not know'%}{% else %}
+
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">{% if data['report']%}5{% else %}4{% endif %}. </span> Element
-        </h2>  <ul class="app-task-list__items">
+          <span class="app-task-list__section-number">5. </span> Element
+        </h2>
+
+
+
+        {% if not elementAdd %}
+          {% set elementAdd = 0 %}
+          {% endif %}
+
+  {% if data['wpa']=='Yes'%}
+        {% for i in [1] -%}
+         {% set contactindex = i %}
+          {% if data['report'] %}
+          {% set elementAdd = elementAdd + 1 %}
+        {% endif %}
+          {%- endfor %}
+  {% endif %}
+  {% if data['wpa']=='No'%}
+        {% for i in [1] -%}
+         {% set contactindex = i %}
+          {% if data['employer-cost-share'] %}
+          {% set elementAdd = elementAdd + 1 %}
+        {% endif %}
+          {%- endfor %}
+  {% endif %}
+
+
+{% if not elementAdd =='1'%}
+<p>Add new elements</p>{% else %}
+<form class="" action="/current/cases/workplace-assesment/wpa-report/support" method="post" >
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add new elements
+  </button>{% endif %}
+</form>
+
+
+
+
+
+
+    <ul class="app-task-list__items">
         {% if 'Specialist equipment' in data['elements']%}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
@@ -182,15 +221,15 @@ data ['benefits']
           {% if data['sae-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
           {% if data['sae-add']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
           {% if not data['sae-add']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-        </li>{% endif %}
-{% if data['employer-size'] and
-data['wpa'] and data['report'] and data['sae-item-type'] %}
+        </li>
+{% endif %}
+{% if data['sae-item-type'] %}
     {% include  "../claim/_task-list-element.html" %}{% else %}
 
 
 
 
-  {% endif %}{% endif %}    </ul>
+  {% endif %}  </ul>
 
 
       {% if data['social-domestic']%}
@@ -205,7 +244,7 @@ data['wpa'] and data['report'] and data['sae-item-type'] %}
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">{% if data['report']%}6{% else %}5{% endif %}. </span> Award decision
+            <span class="app-task-list__section-number">6. </span> Award decision
           </h2>
           {% if data['social-domestic']%}
             {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}

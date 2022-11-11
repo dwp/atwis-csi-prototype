@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="selected-quote" method="post" novalidate>
+<form action="" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -15,26 +15,24 @@
       <div class="govuk-grid-column-two-thirds">
 
         <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="approve-hint">
+      <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-          Do you approve this item for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}'s award?
+          Where are these details from?
           </h1>
         </legend>
-        <div class="govuk-inset-text">
-      {{data['sae-item-type']}}
-        </div>
+
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="approve" name="approve" type="radio" value="true~selected-quote">
-            <label class="govuk-label govuk-radios__label" for="approve">
-              Yes
+            <input class="govuk-radios__input" id="from-sae" name="from-sae" type="radio" value="Yes~approve">
+            <label class="govuk-label govuk-radios__label" for="from-sae">
+            Workplace assessment report
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="approve-2" name="approve" type="radio" value="false~not-needed">
-            <label class="govuk-label govuk-radios__label" for="approve-2">
-              No
+            <input class="govuk-radios__input" id="from-sae-2" name="from-sae" type="radio" value="No~why">
+            <label class="govuk-label govuk-radios__label" for="from-sae-2">
+        {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}'s
             </label>
           </div>
         </div>
