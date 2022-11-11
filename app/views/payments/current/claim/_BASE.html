@@ -90,16 +90,13 @@
 
 
 
-{% if case %}
-              {% for case in data['other-cases'] %}
-                  {{ case.name }}
-              {% endfor %}
-{% else %}
-              {% for case in data['priority-cases'] %}
-                  {{ case.name }}
-              {% endfor %}
-
+{% if case == Sonya %}
+Sonya Corkey
 {% endif %}
+{% if case == Dereck %}
+Dereck Smith
+{% endif %}
+
 
 </dd>
 
