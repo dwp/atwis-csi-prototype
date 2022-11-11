@@ -26,10 +26,10 @@
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 {% if case == 'sonya' %}
-                <a href="/payments/current/cases/review-claim/select-claim-items" aria-describedby="claim-completed">
+                <a href="/payments/sprint-15/cases/review-claim/select-claim-items" aria-describedby="claim-completed">
 {% endif %}
 {% if case == 'dereck' %}
-                <a href="/payments/current/cases/review-claim/matches-grant" aria-describedby="claim-completed">
+                <a href="/payments/sprint-15/cases/review-claim/matches-grant" aria-describedby="claim-completed">
 {% endif %}
 
 
@@ -59,7 +59,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                {% if data['grant-matches-claim']%}<a href="/payments/current/cases/review-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">{% endif %}
+                {% if data['grant-matches-claim']%}<a href="/payments/sprint-15/cases/review-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">{% endif %}
                   Check invoice matches claim form
                 </a>
                 </span>
@@ -74,7 +74,7 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['claim-matches-invoice']%}<a href="/payments/current/cases/review-invoice/paid-in-full" aria-describedby="company-information-completed">{% endif %}
+            {% if data['claim-matches-invoice']%}<a href="/payments/sprint-15/cases/review-invoice/paid-in-full" aria-describedby="company-information-completed">{% endif %}
                 Check invoice has been paid
               </a>
               </span>
@@ -90,7 +90,7 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['paid-in-full']%}<a href="/payments/current/cases/review-invoice/company-details" aria-describedby="company-information-completed">{% endif %}
+            {% if data['paid-in-full']%}<a href="/payments/sprint-15/cases/review-invoice/company-details" aria-describedby="company-information-completed">{% endif %}
                 Check supplier details
               </a>
               </span>
@@ -105,7 +105,7 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['company-details']%}<a href="/payments/current/cases/review-invoice/add-invoice-date" aria-describedby="company-information-completed">{% endif %}
+            {% if data['company-details']%}<a href="/payments/sprint-15/cases/review-invoice/add-invoice-date" aria-describedby="company-information-completed">{% endif %}
                 Add invoice number and date
               </span>
               {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -131,7 +131,7 @@
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['invoice-number']%}<a href="/payments/current/cases/review-payment/sop-find" aria-describedby="company-information-completed">{% endif %}
+            {% if data['invoice-number']%}<a href="/payments/sprint-15/cases/review-payment/sop-find" aria-describedby="company-information-completed">{% endif %}
                 Find payee in SOP
               </a>
               </span>
@@ -145,7 +145,7 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['sop-find']%}<a href="/payments/current/cases/review-payment/sop-add-supplier" aria-describedby="company-information-completed">{% endif %}
+            {% if data['sop-find']%}<a href="/payments/sprint-15/cases/review-payment/sop-add-supplier" aria-describedby="company-information-completed">{% endif %}
               Add payee details from SOP
             </a>
             </span>
@@ -169,7 +169,7 @@
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['sop-supplier-number']%}<a href="/payments/current/cases/review-payment/sop-approve" aria-describedby="company-information-completed">{% endif %}
+            {% if data['sop-supplier-number']%}<a href="/payments/sprint-15/cases/review-payment/sop-approve" aria-describedby="company-information-completed">{% endif %}
                 Check payment and send for approval
             </a>
           </span>
