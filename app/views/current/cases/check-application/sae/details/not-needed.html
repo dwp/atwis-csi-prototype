@@ -13,27 +13,33 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-            <fieldset class="govuk-fieldset">
-      <h1 class="govuk-heading-l">
-
-
-                   {% include "current/cases/check-application/sae/details/content/not-needed.html" %}</h1>
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
 
 
-
+                       {% include "current/cases/check-application/sae/details/content/not-needed.html" %}
+        </label>
+          </h1>
 
 
 
-                   </fieldset>
-                   <div class="govuk-inset-text">
-                 {{data['sae-item-type']}}
-                   </div>
 
-                   <button class="govuk-button" data-module="govuk-button">
-                   Save and continue
-                   </button>
 
+
+
+                           <div class="govuk-inset-text">
+                         Jaws Screen Reader
+                           </div>
+                           <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                           <button class="govuk-button" data-module="govuk-button">
+                           Save and continue
+                           </button>
+
+
+
+
+                           </div>
+          
                    </form>
 
 

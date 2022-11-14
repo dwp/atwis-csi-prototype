@@ -36,12 +36,7 @@ module.exports = {
 
 
 
-'condition-checksonya' : "No",
-'contact-checksonya' : "No",
-'job-deatils-checksonya' : "No",
-'sae-checksonya' : "No",
-'quotes-checksonya' : "No",
-'quotes-check-2sonya' : "No",
+
 
 'job-deatils-contact' : "They gave permission (apply)",
 //delete later
