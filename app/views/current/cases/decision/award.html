@@ -31,19 +31,19 @@
 
 
                <table class="govuk-table">
-                 <caption class="govuk-table__caption govuk-table__caption--m">Summary</caption>
+                 <caption class="govuk-table__caption govuk-table__caption--m">Award summary</caption>
                  <thead class="govuk-table__head">
                    <tr class="govuk-table__row">
-                     <th scope="col" class="govuk-table__header">Type</th>
-                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">What</th>
+                     <th scope="col" class="govuk-table__header">Support type</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
                      <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="text-align: center;">Cost</th>
                    </tr>
                  </thead>
                  <tbody class="govuk-table__body">
                    <tr class="govuk-table__row">
                      <th scope="row" class="govuk-table__header">Specialist equipment</th>
-                     <td class="govuk-table__cell govuk-table__cell--numeric">Jaws Screen Reader</td>
-                     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£499</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">{{data['cost-per-item']}}</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item']}}</td>
                    </tr>
 
                  </tbody>
@@ -103,22 +103,24 @@ Quote
                           Total award
                           </dt>
                           <dd class="govuk-summary-list__value" style="text-align: right;">
-                        £499
+                        £{{data['cost-per-item']}}
                           </dd>
                           </div>
 
 
                           </dl>
-<p>You have reviewed and approved these details. When you have confirmed the award summary, you will be able to send the award decision to Dereck Smith.</p>
-<p>If you have to make any changes to these details, you will need to return to the relevant task.</p>
+
+                          <p>By confirming, you are agreeing that Dereck Smith can receive all of the support in the award summary. </p>
+<p>Once you have confirmed the award summary, you will be able to send the award decision to Dereck Smith.</p>
+
 
 
 
 
            <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
-Confirm award summary
+Confirm the award summary
            </button>
-<p><a href="/current/cases/claim#your-tasks">I need to change some award details</a></p>
+<p><a href="/current/cases/claim#your-tasks">I need to go back and change something </a></p>
 
          </form>
        </div>

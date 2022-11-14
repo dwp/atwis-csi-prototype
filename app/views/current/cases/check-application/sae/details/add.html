@@ -33,7 +33,7 @@
  <fieldset class="govuk-fieldset">
 <h2 class="govuk-heading-{% if data['sae-item-type']%}m{% else %}l{% endif %}">
 
-    Sonya Corkery has added 2 item of specialist equipment </h2>
+    Sonya Corkery has added 2 items of specialist equipment </h2>
 
 
     <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
@@ -133,6 +133,9 @@
 
 {% include "current/cases/check-application/sae/details/content/add.html" %}
                                    </legend>
+
+
+                                <div id="event-name-hint" class="govuk-hint">You should add all  items suggested in the workplace assessment and by {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}</div>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
                                        <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}sonya/cases/{% endif %}sae/details/type.html" {{ checked("sae-add", "Yes") }}>
