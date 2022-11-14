@@ -49,7 +49,7 @@
         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Jaws Screen reader</span></a>
+              <a class="govuk-link" href=""><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Jaws Screen reader</span></a>
             </li>
 
           </ul>
@@ -67,7 +67,7 @@
         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> ZoomText</span></a>
+              <a class="govuk-link" href=""><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> ZoomText</span></a>
             </li>
 
           </ul>
@@ -108,7 +108,7 @@
                   <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
                     <ul class="govuk-summary-list__actions-list">
                       <li class="govuk-summary-list__actions-list-item">
-                        <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">  {{data['sae-item-type']}}</span></a>
+                        <a class="govuk-link" href=""><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">  {{data['sae-item-type']}}</span></a>
                       </li>
                       <li class="govuk-summary-list__actions-list-item">
                         <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">  {{data['sae-item-type']}}</span></a>
@@ -138,13 +138,13 @@
                                 <div id="event-name-hint" class="govuk-hint">You should add all  items suggested in the workplace assessment and by {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}</div>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
-                                       <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}sonya/cases/{% endif %}sae/details/type.html" {{ checked("sae-add", "Yes") }}>
+                                       <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}sonya/cases/{% endif %}sae/details/type.html" >
                                        <label class="govuk-label govuk-radios__label" for="sae-add">
                                          Yes
                                        </label>
                                      </div>
                                      <div class="govuk-radios__item">
-                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}sonya/cases/{% endif %}claim#business-case" {{ checked("sae-add", "No") }}>
+                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}sonya/cases/{% endif %}claim#business-case" {{ checked("sae-add"+ phase, "No") }}>
                                        <label class="govuk-label govuk-radios__label" for="sae-add-2">
                                          No
                                        </label>

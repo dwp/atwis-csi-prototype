@@ -201,17 +201,33 @@ data ['benefits']
         {% if 'Specialist equipment' in data['elements']%}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-         <a href="{% if data['sae-addsonya']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
+         <a href="{% if data['sae-add']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
                Specialist equipment
            </a>
           </span>
           {% if data['sae-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
           {% if data['sae-add']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
           {% if not data['sae-add']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-        </li>{% endif %}
-{% if data['sae-item-type'] %}
-    {% include  "../claim/_task-list-element.html" %}{% else %}
-  {% endif %}
+        </li>
+
+        {% if data['sae-item-type']%}
+                <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                <a href="specialist-equipment" aria-describedby="job-status">
+                  Confirm details for specialist equipment 1
+                </a>
+                </span>
+                {% if not data['social-domestic']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+                {% if data['social-domestic']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+                 </li>
+        {% endif %}
+
+
+        {% endif %}
+
+
+
 
 
 
@@ -269,7 +285,7 @@ data ['benefits']
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Approve
+                Review and  confirm award summary
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
