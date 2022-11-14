@@ -236,23 +236,40 @@ data['wpa'+ phase]  %}
 
       </ul>{% endif %}
 
-{% if data['social-domestic-2'+ phase]%}
-      <h2 class="govuk-heading--m">Award is under approval limits</h2>
+      {% if data['sae-item-type']%}
+      {% if data['social-domestic-3'+ phase]%}
+            <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
-      <p>You do not need to send this award to anyone else for approval. </p>
+            <p>You do not need to send this award to anyone else for approval. </p>
 
-    <br>
-{% endif %}
+          <br>
+      {% endif %}
+      {% else %}
+      {% if data['social-domestic-2'+ phase]%}
+            <h2 class="govuk-heading--m">Award is under approval limits</h2>
+
+            <p>You do not need to send this award to anyone else for approval. </p>
+
+          <br>
+      {% endif %}
+      {% endif %}
 
 
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">6. </span> Award decision
           </h2>
-          {% if data['social-domestic-2'+ phase]%}
 
+
+
+
+
+
+
+
+                {% if data['sae-item-type']%}
+                {% if data['social-domestic-3'+ phase]%}
             {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
-
           {% else %}
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -267,10 +284,31 @@ data['wpa'+ phase]  %}
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
-
-
-
           {% endif %}
+
+{% else %}
+
+          {% if data['social-domestic-2'+ phase]%}
+      {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
+    {% else %}
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+        Approve specialist equipment
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+      </li>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          Decision letters
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+      </li>
+    {% endif %}
+
+      {% endif %}
+
+
         </li>
       </ol>
 

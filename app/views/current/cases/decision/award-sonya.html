@@ -51,6 +51,16 @@
                        <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£501</td>
                      </tr>
 
+
+
+{% if data['sae-item-type']%}
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Specialist equipment</th>
+    <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type']}}</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item']}}</td>
+  </tr>
+  {% endif %}
                  </tbody>
                </table>
 
@@ -62,7 +72,11 @@
                           Total award
                           </dt>
                           <dd class="govuk-summary-list__value" style="text-align: right;">
-                        £1000
+
+{% set i = data['cost-per-item'] %}
+{% if i == 0 %}{% endif %}
+                        £{{ i + 1000 }}
+
                           </dd>
                           </div>
 
