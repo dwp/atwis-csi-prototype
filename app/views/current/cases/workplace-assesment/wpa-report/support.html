@@ -38,31 +38,31 @@
           </label>
         </div>
         {% if phase == 'thomas'%} {% else %}  <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="elements-3" name="elements" type="checkbox" value="Support worker">
+          <input class="govuk-checkboxes__input" id="elements-3" name="elements" type="checkbox" value="Support worker" {{ checked("elements", "Support worker") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-3">
           Support worker
           </label>
         </div>{% endif %}
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="elements-4" name="elements" type="checkbox" value="Travel to and from work">
+          <input class="govuk-checkboxes__input" id="elements-4" name="elements" type="checkbox" value="Travel to and from work" {{ checked("elements", "Travel to and from work") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-4">
           Travel to and from work
           </label>
         </div>
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="elements-5" name="elements" type="checkbox" value="Travel during work">
+          <input class="govuk-checkboxes__input" id="elements-5" name="elements" type="checkbox" value="Travel during work" {{ checked("elements", "Travel during work") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-5">
           Travel during work
           </label>
         </div>
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="elements-6" name="elements" type="checkbox" value="Workplace adaptations">
+          <input class="govuk-checkboxes__input" id="elements-6" name="elements" type="checkbox" value="Workplace adaptations" {{ checked("elements", "Workplace adaptations") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-6">
           Workplace adaptations
           </label>
         </div>
         <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="elements-7" name="elements" type="checkbox" value="Vehicle adaptations">
+          <input class="govuk-checkboxes__input" id="elements-7" name="elements" type="checkbox" value="Vehicle adaptations"{{ checked("elements", "Vehicle adaptations") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-7">
           Vehicle adaptations
           </label>
