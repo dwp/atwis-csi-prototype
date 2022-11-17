@@ -85,16 +85,14 @@
             <dd class="dwp-key-details-bar__primary">
 
 
-
-
-              {% if case == sonya %}
+{% if data['claims'] %}
               Sonya Corkey
-              {% endif %}
+{% endif %}
 
 
-              {% if case == deereck %}
+{% if not data['claims'] %}
               Dereck Smith
-              {% endif %}
+{% endif %}
 
 
 

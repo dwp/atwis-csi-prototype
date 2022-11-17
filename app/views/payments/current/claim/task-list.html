@@ -25,10 +25,16 @@
 <ul class="app-task-list__items">
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-{% if case == 'sonya' %}
-                <a href="/payments/current/cases/review-claim/select-claim-items" aria-describedby="claim-completed">
+
+{% if data ['claims'] and not data['claim-item'] %}
+                <a href="/payments/current/cases/sonya/cases/review-claim/select-claim-items" aria-describedby="claim-completed">
 {% endif %}
-{% if case == 'dereck' %}
+
+{% if data ['claims'] and data['claim-item'] %}
+                <a href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi" aria-describedby="claim-completed">
+{% endif %}
+
+{% if not data['claims'] %}
                 <a href="/payments/current/cases/review-claim/matches-grant" aria-describedby="claim-completed">
 {% endif %}
 

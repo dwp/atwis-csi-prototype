@@ -1,9 +1,9 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
-
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 {% block csi %}
@@ -40,11 +40,23 @@ Check claim form matches grant award
 
 
 <br>
+<h2 class="govuk-heading-m">Grant award details</h2>
 
 
 {% if 'Jaws screen reader' in data['claim-item'] %}
-<h2 class="govuk-heading-m">Grant award details first item</h2>
+<!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Jaws screen reader
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -56,16 +68,7 @@ Specialist equipment
           <dd class="govuk-summary-list__actions">
           </dd>
           </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Jaws screen reader
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
 Cost
@@ -81,8 +84,19 @@ Cost
 
 
 {% if 'ZoomText Professional License' in data['claim-item'] %}
-<h2 class="govuk-heading-m">Grant award details second item</h2>
+<!-- <h2 class="govuk-heading-m">Grant award details second item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Zoom text professional license
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -94,16 +108,7 @@ Specialist equipment
           <dd class="govuk-summary-list__actions">
           </dd>
           </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Zoom text professional license
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
 Cost
@@ -119,8 +124,19 @@ Cost
 
 
 {% if 'Ipad Pro case' in data['claim-item'] %}
-<h2 class="govuk-heading-m">Grant award details third item</h2>
+<!-- <h2 class="govuk-heading-m">Grant award details third item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Ipad Pro case
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -132,16 +148,7 @@ Specialist equipment
           <dd class="govuk-summary-list__actions">
           </dd>
           </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Ipad Pro case
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
 Cost
@@ -157,8 +164,19 @@ Cost
 
 
 {% if 'Erganomic Keyboard' in data['claim-item'] %}
-<h2 class="govuk-heading-m">   Grant award details forth item</h2>
+<!-- <h2 class="govuk-heading-m">   Grant award details forth item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Ergonomic keyboard
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -170,16 +188,7 @@ Specialist equipment
           <dd class="govuk-summary-list__actions">
           </dd>
           </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Ergonomic keyboard
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
 Cost
@@ -195,8 +204,19 @@ Cost
 
 
 {% if 'Office chair' in data['claim-item'] %}
-<h2 class="govuk-heading-m">   Grant award details fith item</h2>
+<!-- <h2 class="govuk-heading-m">   Grant award details fith item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Office chair
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -208,16 +228,7 @@ Specialist equipment
           <dd class="govuk-summary-list__actions">
           </dd>
           </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Office chair
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
 Cost
@@ -233,8 +244,19 @@ Cost
 
 
 {% if 'Ergonomic mouse' in data['claim-item'] %}
-<h2 class="govuk-heading-m">   Grant award details sixth item</h2>
+<!-- <h2 class="govuk-heading-m">   Grant award details sixth item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Ergonomic mouse
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -246,16 +268,7 @@ Specialist equipment
           <dd class="govuk-summary-list__actions">
           </dd>
           </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Ergonomic mouse
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
 Cost
