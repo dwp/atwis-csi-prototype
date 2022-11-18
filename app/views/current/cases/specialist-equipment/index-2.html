@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -15,12 +15,11 @@
       <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
 
-                     Confirm details for specialist equipment 2</h1>
+                     Confirm details for specialist equipment:{% if phase =='sonya'%} ZoomText{% endif %}</h1>
 
 
         <!-- <h2 class="govuk-heading-m">Special aids and equipment</h2> -->
-{% if phase =='sonya'%}
-  <h2 class="govuk-heading-m">ZoomText</h2>{% else %}{{data['sae-item-type']}}{% endif %}
+
 
       {% if data['wpa']=='Yes'%}
         {% include "current/claim/_sae-dereck.html"%}

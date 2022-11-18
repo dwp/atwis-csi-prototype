@@ -10,7 +10,7 @@
 
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -21,17 +21,11 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-  <div class="govuk-form-group">
-             <fieldset class="govuk-fieldset">
-               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                 <h2 class="govuk-fieldset__heading">
-    {% include  "./content/have-you-contacted-employer.html" %}
-                 </h2>
-               </legend>
+
 
 
 <!-- <p>To clarify employment and company size. Company size will determine cost share.</p> -->
-               <h3 class="govuk-heading-m">  Workplace contact</h3>
+               <h1 class="govuk-heading-l">  Workplace contact</h1>
                                  <dl class="govuk-summary-list">
                                    <div class="govuk-summary-list__row">
                                      <dt class="govuk-summary-list__key">
@@ -76,6 +70,13 @@
                                    </div>
                                  </dl>
 
+                                 <div class="govuk-form-group">
+                                            <fieldset class="govuk-fieldset">
+                                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                                <h2 class="govuk-fieldset__heading">
+                                   {% include  "./content/have-you-contacted-employer.html" %}
+                                                </h2>
+                                              </legend>
 
                <div class="govuk-radios ">
                  <div class="govuk-radios__item">
