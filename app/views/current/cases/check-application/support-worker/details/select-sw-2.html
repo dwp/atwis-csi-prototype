@@ -18,7 +18,7 @@
 
 
 <div class="govuk-inset-text">
-<p>These quotes are based on 10 hours of support per week for 3 years.</p></div>
+<p>These quotes are based on 5 hours of support per week for 3 years.</p></div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -32,11 +32,11 @@
                 <input class="govuk-radios__input" id="chosen-quote-sw-1" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£501{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "501") }}>
          <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-1">
 
-      £16 per hour, total cost £23,040
+      £16 per hour, total cost £11,520
          </label>
          <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
 
-  Agency One – Thomas King has worked with this provider before
+  Agency One 
          </div>
        </div>
 
@@ -45,7 +45,7 @@
            <input class="govuk-radios__input" id="chosen-quote-sw-2" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£502{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "502") }}>
     <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-2">
 
-      £16 per hour, total cost £23,040
+      £16 per hour, total cost £11,520
     </label>
     <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
 
@@ -58,11 +58,11 @@
       <input class="govuk-radios__input" id="chosen-quote-sw-3" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£503{% endif %}{% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "503") }}>
 <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-3">
 
-£15 per hour, total cost £21,600
+£15 per hour, total cost £10,800
 </label>
 <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
 
-Agency Three
+Agency Three – Thomas King has worked with this provider before
 
 </div>
 </div>
