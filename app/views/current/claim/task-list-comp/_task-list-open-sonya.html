@@ -52,15 +52,11 @@
   {% if data['wpa-availability'+ phase]=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
       {% if not data['wpa-type'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
     </li>{% endif %}
-</ul>
+
 
 
 {% if not totaljob == 1  %}
-<li>
-  <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">4. </span> Prepare business case
-  </h2>
-<ul class="app-task-list__items">
+
     <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 
@@ -70,16 +66,9 @@
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
 
-
-
-      </ul>
 {% else %}
 
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Prepare business case
-          </h2>
-          <ul class="app-task-list__items">
+
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">

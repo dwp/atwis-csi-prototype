@@ -15,10 +15,7 @@
       <div class="govuk-grid-column-two-thirds">
 
 {% if phase == 'thomas'%}
-{% if data['sae-item-type']%}
-        <h1 class="govuk-heading-l">
 
-            Total 2  item of specialist equipment </h1>{% endif %}
 
 
 
@@ -33,7 +30,7 @@
  <fieldset class="govuk-fieldset">
 <h2 class="govuk-heading-{% if data['sae-item-type']%}m{% else %}l{% endif %}">
 
-    Thomas King has added 1 support worker </h2>
+    Thomas King has added 2 support worker </h2>
 
 
     <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
@@ -42,6 +39,31 @@
           British Sign Language (BSL) interpreter
         </dt>
 
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+          {% if data['approve-1']=='true'%}Added to award{% endif %}
+            {% if data['approve-1']=='false'%}Not added to award{% endif %}
+        </dt>
+        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+        Note taker
+        </dt>
+        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+          {% if data['approve-2']=='true'%}Added to award{% endif %}
+            {% if data['approve-2']=='false'%}Not added to award{% endif %}
+        </dt>
 
         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
