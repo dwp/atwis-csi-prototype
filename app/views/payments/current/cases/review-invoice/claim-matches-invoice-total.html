@@ -2,7 +2,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 
@@ -86,14 +86,14 @@ Does the total cost on the invoice match the claim form?
       </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="claim-matches-invoice-1" name="claim-matches-invoice" type="radio" value="yes~claim#your-tasks" {{ checked("claim-matches-invoice", "Yes") }}>
+              <input class="govuk-radios__input" id="claim-matches-invoice-1" name="claim-matches-invoice" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("claim-matches-invoice", "Yes") }}>
               <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
               <label class="govuk-label govuk-radios__label" for="claim-matches-invoice-1">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="claim-matches-invoice-2" name="claim-matches-invoice" type="radio" value="No~claim#your-tasks" {{ checked("claim-matches-invoice", "No") }}>
+              <input class="govuk-radios__input" id="claim-matches-invoice-2" name="claim-matches-invoice" type="radio" value="No~dereck/claim-dereck#your-tasks" {{ checked("claim-matches-invoice", "No") }}>
               <label class="govuk-label govuk-radios__label" for="claim-matches-invoice-2">
                 No
               </label>

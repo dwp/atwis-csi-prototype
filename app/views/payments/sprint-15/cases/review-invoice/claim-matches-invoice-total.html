@@ -1,0 +1,123 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-15/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Does the total cost on the invoice match the claim form?
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<!-- <br>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Claim items</th>
+      <th scope="col" class="govuk-table__header">Claim amount</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">JAWS, Job Access With Speech</th>
+      <td class="govuk-table__cell">£499.00</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total cost</th>
+      <td class="govuk-table__cell">£499.00</td>
+    </tr>
+  </tbody>
+</table>
+                <br> -->
+
+
+
+
+
+
+
+
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 class="govuk-heading-m">
+          <!-- Do the item amounts and total cost match the claim? -->
+        </h2>
+
+
+
+<!-- INVOICE LINK -->
+
+        <!-- <p class="govuk-body">   <a class="govuk-link" href="/public/images/test-invoice.pdf" target="_blank" download="test-invoice.pdf">Download invoice</a></p> -->
+
+
+
+
+      </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="claim-matches-invoice-1" name="claim-matches-invoice" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("claim-matches-invoice", "Yes") }}>
+              <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+              <label class="govuk-label govuk-radios__label" for="claim-matches-invoice-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="claim-matches-invoice-2" name="claim-matches-invoice" type="radio" value="No~dereck/claim-dereck#your-tasks" {{ checked("claim-matches-invoice", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="claim-matches-invoice-2">
+                No
+              </label>
+            </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

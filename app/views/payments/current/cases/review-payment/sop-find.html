@@ -2,7 +2,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 
@@ -29,7 +29,7 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Find payee in SOP
+Is the payee in SOP?
     </h2>
 
   </legend>
@@ -151,11 +151,6 @@ Find payee in SOP
 
 
       <div class="govuk-form-group">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h2 class="govuk-heading-m">
-          Is the payee in SOP?
-        </h2>
-      </legend>
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="yes~claim#your-tasks" {{ checked("sop-find", "Yes") }}>

@@ -40,37 +40,44 @@
           </h2>
           <ul class="govuk-tabs__list">
 
-
-{% if not data['claims']%}
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#claims">
-            Claims (2)
-          </a>
-        </li>
+{% if not data['claims'] and not data ['sop-supplier-number']%}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                      <a class="govuk-tabs__tab" href="#claims">
+                        Claims (9)
+                      </a>
+                    </li>
+{% endif %}
+{% if not data['claims'] and data ['sop-supplier-number']%}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                      <a class="govuk-tabs__tab" href="#claims">
+                        Claims (8)
+                      </a>
+                    </li>
 {% endif %}
 
 
 {% if data['claims'] and not data ['sop-supplier-number']%}
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#claims">
-            Claims (3)
-          </a>
-        </li>
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                      <a class="govuk-tabs__tab" href="#claims">
+                        Claims (10)
+                      </a>
+                    </li>
+{% endif %}
+{% if data['claims'] and data ['sop-supplier-number']%}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                      <a class="govuk-tabs__tab" href="#claims">
+                        Claims (9)
+                      </a>
+                    </li>
 {% endif %}
 
 
-{% if data['sop-supplier-number'] %}
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#claims">
-            Claims (2)
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#waiting">
-            Waiting for approval (1)
-          </a>
-        </li>
-
+{% if data ['sop-supplier-number']%}
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                      <a class="govuk-tabs__tab" href="#waiting">
+                        Waiting for approval (1)
+                      </a>
+                    </li>
 {% endif %}
 
 
@@ -106,9 +113,92 @@
                           </div>
 
 
+{% if not data['claims'] and not data ['sop-supplier-number']%}
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Claim type</th>
+      <th scope="col" class="govuk-table__header">Date received</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Action</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Dereck Smith</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">2 April 2022</td>
+      <td class="govuk-table__cell">Not started</td>
+      <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Paul Hill</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">28 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Shameela Shaan</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">27 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Jessica Martins</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">25 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Katherin Jane Pearson</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">23 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Susan Poole</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">23 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">John Humphries</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">22 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Selma Yousef</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">22 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Jemma Barns</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">20 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+
+  </tbody>
+</table>
 
 
-{% if not data['claims']%}
+{% endif %}
+
+
+{% if not data['claims'] and data ['sop-supplier-number']%}
 
   <table class="govuk-table">
     <thead class="govuk-table__head">
@@ -136,6 +226,49 @@
         <td class="govuk-table__cell">In progress</td>
         <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
       </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Jessica Martins</th>
+        <td class="govuk-table__cell">Specialist equipment</td>
+        <td class="govuk-table__cell">25 March 2022</td>
+        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Katherin Jane Pearson</th>
+        <td class="govuk-table__cell">No specialist equipment</td>
+        <td class="govuk-table__cell">23 March 2022</td>
+        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Susan Poole</th>
+        <td class="govuk-table__cell">No specialist equipment</td>
+        <td class="govuk-table__cell">23 March 2022</td>
+        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">John Humphries</th>
+        <td class="govuk-table__cell">No specialist equipment</td>
+        <td class="govuk-table__cell">22 March 2022</td>
+        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Selma Yousef</th>
+        <td class="govuk-table__cell">Specialist equipment</td>
+        <td class="govuk-table__cell">22 March 2022</td>
+        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Jemma Barns</th>
+        <td class="govuk-table__cell">No specialist equipment</td>
+        <td class="govuk-table__cell">20 March 2022</td>
+        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      </tr>
+
     </tbody>
   </table>
 
@@ -144,6 +277,97 @@
 
 
 {% if data['claims'] and not data ['sop-supplier-number']%}
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Claim type</th>
+      <th scope="col" class="govuk-table__header">Date received</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Action</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Sonya Corkey</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">4 April 2022</td>
+      <td class="govuk-table__cell">Not started</td>
+      <td class="govuk-table__cell"><a href="cases/sonya/claim-sonya{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Dereck Smith</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">2 April 2022</td>
+      <td class="govuk-table__cell">Not started</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Paul Hill</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">28 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Shameela Shaan</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">27 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Jessica Martins</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">25 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Katherin Jane Pearson</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">23 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Susan Poole</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">23 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">John Humphries</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">22 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Selma Yousef</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">22 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Jemma Barns</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">20 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+{% endif %}
+
+{% if data['claims'] and data ['sop-supplier-number']%}
+
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -178,40 +402,49 @@
       <td class="govuk-table__cell">In progress</td>
       <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
-  </tbody>
-</table>
-
-{% endif %}
-
-
-{% if data['sop-supplier-number'] %}
-
-<table class="govuk-table">
-  <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Name</th>
-      <th scope="col" class="govuk-table__header">Claim type</th>
-      <th scope="col" class="govuk-table__header">Date received</th>
-      <th scope="col" class="govuk-table__header">Status</th>
-      <th scope="col" class="govuk-table__header">Action</th>
-
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Paul Hill</th>
+      <th scope="row" class="govuk-table__header">Jessica Martins</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">28 March 2022</td>
+      <td class="govuk-table__cell">25 March 2022</td>
       <td class="govuk-table__cell">In progress</td>
       <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Shameela Shaan</th>
+      <th scope="row" class="govuk-table__header">Katherin Jane Pearson</th>
       <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">27 March 2022</td>
+      <td class="govuk-table__cell">23 March 2022</td>
       <td class="govuk-table__cell">In progress</td>
       <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Susan Poole</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">23 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">John Humphries</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">22 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Selma Yousef</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">22 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Jemma Barns</th>
+      <td class="govuk-table__cell">No specialist equipment</td>
+      <td class="govuk-table__cell">20 March 2022</td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+
   </tbody>
 </table>
 
@@ -220,7 +453,49 @@
 
 
 
-{% if data['sop-supplier-number']%}
+{% if data['claims'] and data ['sop-supplier-number']%}
+
+
+                      </div>
+                                            </div>
+                      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="waiting">
+                        <h2 class="govuk-heading-l">Waiting for approval</h2>
+                        <table class="govuk-table">
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Name</th>
+                              <th scope="col" class="govuk-table__header">Claim type</th>
+                              <th scope="col" class="govuk-table__header">Date received</th>
+                              <th scope="col" class="govuk-table__header">Date sent for approval</th>
+                              <th scope="col" class="govuk-table__header">Status</th>
+                              <th scope="col" class="govuk-table__header">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Sonya Corkey</th>
+                              <td class="govuk-table__cell">Specialist equipment</td>
+                              <td class="govuk-table__cell">4 April 2022</td>
+                              <td class="govuk-table__cell">25 November 2022</td>
+                              <td class="govuk-table__cell">Waiting for approval</td>
+                              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                            </tr>
+                            <!-- <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Dereck Smith</th>
+                              <td class="govuk-table__cell">Specialist equipment</td>
+                              <td class="govuk-table__cell">2 April 2022</td>
+                              <td class="govuk-table__cell">25 November 2022</td>
+                              <td class="govuk-table__cell">Waiting for approval</td>
+                              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                            </tr> -->
+                          </tbody>
+                        </table>
+                      </form>
+
+{% endif %}
+
+
+{% if not data['claims'] and data ['sop-supplier-number']%}
 
 
                       </div>
@@ -247,11 +522,20 @@
                               <td class="govuk-table__cell">Waiting for approval</td>
                               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
                             </tr>
+                            <!-- <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Dereck Smith</th>
+                              <td class="govuk-table__cell">Specialist equipment</td>
+                              <td class="govuk-table__cell">2 April 2022</td>
+                              <td class="govuk-table__cell">25 November 2022</td>
+                              <td class="govuk-table__cell">Waiting for approval</td>
+                              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                            </tr> -->
                           </tbody>
                         </table>
                       </form>
 
 {% endif %}
+
 {% endif %}
 
 

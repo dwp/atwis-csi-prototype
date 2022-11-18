@@ -2,7 +2,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 
@@ -37,14 +37,14 @@ Are the supplier contact details on the invoice?
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="yes~claim#your-tasks" {{ checked("company-details", "Yes") }}>
+            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("company-details", "Yes") }}>
             <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
             <label class="govuk-label govuk-radios__label" for="company-details-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="company-details-2" name="company-details" type="radio" value="No~claim#your-tasks" {{ checked("company-details", "No") }}>
+            <input class="govuk-radios__input" id="company-details-2" name="company-details" type="radio" value="No~dereck/claim-dereck#your-tasks" {{ checked("company-details", "No") }}>
             <label class="govuk-label govuk-radios__label" for="company-details-2">
               No
             </label>

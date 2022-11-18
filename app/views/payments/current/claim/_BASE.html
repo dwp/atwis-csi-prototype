@@ -53,15 +53,12 @@
         <ul class="nav-pri">
           <li{% if yourCases %} class="active"{% endif %}>
 
-{% if (not contactCentre)  %}
-          <a href="/current/your-cases{% if phase == "payment officer"%}-payment officer{% endif %}{% if phase == "case-manger-view" %}-payment officer{% endif %}" class="active" aria-current="page">Your cases</a>
+
+          <a href="/payments/current/your-cases" class="active" aria-current="page">Your cases</a>
 
         </li>
-{% if (user == "payment officer" or user == "team lead") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
-<!-- {% if (phase == "case-manger-view" or phase == "payment officer") or Unallocated or payments %}<li{% if advisers %} class="active"{% endif %}><a href="/{{folder}}/all-advisers{% if payments %}-payments{% endif %}">All advisers</a></li> {% endif %} -->
 
 
-{% endif %}
 
           <li{% if Search %} class="active"{% endif %}><a href="search">Search</a></li>
         </ul>
@@ -87,16 +84,19 @@
             <dt class="govuk-visually-hidden">Name:</dt>
             <dd class="dwp-key-details-bar__primary">
 
-{% if case %}
-              {% for case in data['other-cases'] %}
-                  {{ case.name }}
-              {% endfor %}
-{% else %}
-              {% for case in data['priority-cases'] %}
-                  {{ case.name }}
-              {% endfor %}
 
-{% endif %}</dd>
+{% if data['claims'] %}
+              Sonya Corkey
+{% endif %}
+
+
+{% if not data['claims'] %}
+              Dereck Smith
+{% endif %}
+
+
+
+</dd>
 
 
 

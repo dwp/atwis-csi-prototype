@@ -2,7 +2,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 
@@ -28,21 +28,21 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Has the invoice been marked as 'paid in full'?
+Has the invoice been marked as paid?
     </h2>
 
 
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~claim#your-tasks" {{ checked("paid-in-full", "Yes") }}>
+            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("paid-in-full", "Yes") }}>
             <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
             <label class="govuk-label govuk-radios__label" for="paid-in-full-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="paid-in-full-2" name="paid-in-full" type="radio" value="No~claim#your-tasks" {{ checked("paid-in-full", "No") }}>
+            <input class="govuk-radios__input" id="paid-in-full-2" name="paid-in-full" type="radio" value="No~dereck/claim-dereck#your-tasks" {{ checked("paid-in-full", "No") }}>
             <label class="govuk-label govuk-radios__label" for="paid-in-full-2">
               No
             </label>
