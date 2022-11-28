@@ -16,7 +16,7 @@
       <h1 class="govuk-heading-l">
 
                      Confirm details for specialist equipment: {% if phase =='sonya'%}
-                       Jaws screen reader{% else %}{{data['sae-item-type-2']}}{% endif %}</h1>
+                       Jaws screen reader{% else %}{{data['sae-item-type-3']}}{% endif %}</h1>
 
 
         <!-- <h2 class="govuk-heading-m">Special aids and equipment</h2> -->
@@ -78,13 +78,13 @@ How will this equipment help {% if phase == 'sonya'%}Sonya Corkery{% else %}Dere
                 </legend>
                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                   <div class="govuk-radios__item govuk-radios--inline">
-                    <input class="govuk-radios__input" id="linked" name="linked-2" type="radio" value="Yes" {{ checked("linked-2", "Yes") }}>
+                    <input class="govuk-radios__input" id="linked" name="linked-3" type="radio" value="Yes" {{ checked("linked-3", "Yes") }}>
                     <label class="govuk-label govuk-radios__label" for="linked">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="linked-2" name="linked-2" type="radio" value="No" {{ checked("linked-2", "No") }}>
+                    <input class="govuk-radios__input" id="linked-2" name="linked-3" type="radio" value="No" {{ checked("linked-3", "No") }}>
                     <label class="govuk-label govuk-radios__label" for="linked-2">
                       No
                     </label>
@@ -102,13 +102,13 @@ How will this equipment help {% if phase == 'sonya'%}Sonya Corkery{% else %}Dere
                     </legend>
                     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                       <div class="govuk-radios__item govuk-radios--inline">
-                        <input class="govuk-radios__input" id="medical" name="medical-2" type="radio" value="Yes" {{ checked("medical-2", "Yes") }}>
+                        <input class="govuk-radios__input" id="medical" name="medical-3" type="radio" value="Yes" {{ checked("medical-3", "Yes") }}>
                         <label class="govuk-label govuk-radios__label" for="medical">
                           Yes
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="medical-2" name="medical-2" type="radio" value="No" {{ checked("medical-2", "No") }}>
+                        <input class="govuk-radios__input" id="medical-2" name="medical-3" type="radio" value="No" {{ checked("medical-3", "No") }}>
                         <label class="govuk-label govuk-radios__label" for="medical-2">
                           No
                         </label>
@@ -127,13 +127,13 @@ How will this equipment help {% if phase == 'sonya'%}Sonya Corkery{% else %}Dere
                                 </legend>
                                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                   <div class="govuk-radios__item govuk-radios--inline">
-                                    <input class="govuk-radios__input" id="social-domestic" name="social-domestic-2{{phase}}" type="radio" value="Yes" {{ checked("social-domestic"+ phase, "Yes") }}>
+                                    <input class="govuk-radios__input" id="social-domestic" name="social-domestic-3{{phase}}" type="radio" value="Yes" {{ checked("social-domestic"+ phase, "Yes") }}>
                                     <label class="govuk-label govuk-radios__label" for="social-domestic">
                                       Yes
                                     </label>
                                   </div>
                                   <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="social-domestic-2" name="social-domestic-2{{phase}}" type="radio" value="No" {{ checked("social-domestic"+ phase, "No") }}>
+                                    <input class="govuk-radios__input" id="social-domestic-2" name="social-domestic-3{{phase}}" type="radio" value="No" {{ checked("social-domestic"+ phase, "No") }}>
                                     <label class="govuk-label govuk-radios__label" for="social-domestic-2">
                                       No
                                     </label>

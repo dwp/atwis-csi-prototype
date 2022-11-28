@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="add" method="post" novalidate>
+<form action="../add" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -20,7 +20,7 @@
 
 
 
-<p>Add your chosen quote for {{data['sae-item-type']}}.</p>
+<p>Add your chosen quote for {{data['sae-item-type-2']}}.</p>
 
 <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -28,24 +28,24 @@
 
 
               </legend>
-              <!-- <div class="govuk-form-group">
-    <label class="govuk-label" for="Brand">
+              <div class="govuk-form-group">
+    <!-- <label class="govuk-label" for="Brand">
       Brand
     </label>
-    <input class="govuk-input" id="Brand" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
+    <input class="govuk-input" id="Brand" name="quotes-check-2" type="text" spellcheck="false" autocomplete="name">
   </div> -->
   <div class="govuk-form-group">
 <label class="govuk-label" for="Supplier">
 Supplier
 </label>
-<input class="govuk-input" id="Supplier" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
+<input class="govuk-input" id="Supplier" name="quotes-check-2" type="text" spellcheck="false" autocomplete="name">
 </div>
 <label class="govuk-label" for="cost-per-item">
 Total cost
 </label>
   <div class="govuk-input__wrapper">
       <div class="govuk-input__prefix" aria-hidden="true">£</div>
-      <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+      <input class="govuk-input govuk-input--width-5" id="cost-per-item-2" name="cost-per-item-2" type="text" spellcheck="false">
 
     </div>
 
