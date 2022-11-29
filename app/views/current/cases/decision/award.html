@@ -114,15 +114,18 @@ Quote
 </dl> -->
 
 
-{% if data['approve-2']=='true' and not data['approve-3']%} {% set total = "998" %}{% endif %}
+{% if data['approve-2']=='true' and not data['approve-3']%} {% set total = "998" %}{% else %}
 
      {% if data['approve-3']=='true'%}
-{% if data['cost-per-item-3']=='1195'%}{% set total = "2193" %}{% endif %}
-{% if data['cost-per-item-3']=='1349'%}{% set total = "2347" %}{% endif %}
-{% if data['cost-per-item-3']=='1040'%}{% set total = "2038" %}{% endif %}
+{% if data['cost-per-item-3']=='1195' or data['cost-per-item-3']=='1195.00'%}{% set total = "2193" %}{% endif %}
+{% if data['cost-per-item-3']=='1349' or data['cost-per-item-3']=='1349.00'%}{% set total = "2347" %}{% endif %}
+{% if data['cost-per-item-3']=='1049' or data['cost-per-item-3']=='1049.00'%}{% set total = "2038" %}{% endif %}
      {% endif %}
 
-          {% if data['approve-3']=='false'%}{% set total = "998" %}{% endif %}
+     {% if data['approve-3']=='false'%}
+{% set total = "998" %}     {% endif %}
+
+        {% endif %}
 <dl class="govuk-summary-list">
                           <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
