@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -15,27 +15,15 @@
       <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
 
-                     Confirm details for specialist equipment 1</h1>
+                     Confirm details for specialist equipment: {% if phase =='sonya'%}
+                       Jaws screen reader{% else %}{{data['sae-item-type']}}{% endif %}</h1>
 
 
         <!-- <h2 class="govuk-heading-m">Special aids and equipment</h2> -->
-<h2 class="govuk-heading-m">{% if phase =='sonya'%}
-  Jaws screen reader{% else %}{{data['sae-item-type']}}{% endif %}</h2>
+
 
       {% if data['wpa']=='Yes'%}
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-      How will this equipment help {% if phase == 'sonya'%}Sonya Corkery{% else %}Dereck Smith{% endif %} at work?
-      </dt>
-      <dd class="govuk-summary-list__value">
-                      {{data['more-detail']}}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      </dd>
-      </div>
-      </dl>
 {% else %}{% if phase == 'sonya'%}
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 

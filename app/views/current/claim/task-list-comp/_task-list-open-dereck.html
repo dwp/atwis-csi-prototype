@@ -9,12 +9,12 @@
 
       </ul>
       </li>
-      <p >
+      <!-- <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
   Record contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}{% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}{% endif %}
 </a>
-      </p><br>
+      </p><br> -->
 
       <!-- <p >
       <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
@@ -24,7 +24,7 @@
 <!-- <br> -->
 <li>
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">3. </span> Workplace assessment
+    <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
   </h2>
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
@@ -52,19 +52,16 @@
   {% if data['wpa-availability']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
       {% if not data['wpa-type']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
     </li>{% endif %}
-</ul>
+
 
 
 {% if not totaljob == 1  %}
 <li>
-  <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">4. </span> Prepare business case
-  </h2>
-<ul class="app-task-list__items">
+
     <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 
-          Employment
+          Contact employer
 
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
@@ -76,10 +73,7 @@
 {% else %}
 
         <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Prepare business case
-          </h2>
-          <ul class="app-task-list__items">
+
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
@@ -91,7 +85,7 @@
 {% endif %}
 " aria-describedby="job-status">
 
-                  Employment
+                  Contact employer
 </a>
               </span>
 
@@ -125,7 +119,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="{% if data['employer-confirmed']%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
-                  Job details
+                  Confirm job and company details
 </a>
               </span>
               {% if data['employer-confirmed']=='No, Smith Digital Limited has not confirmed job details'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% else %}
@@ -160,7 +154,7 @@
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-<a href="/current/cases/workplace-assesment/wpa-report" aria-describedby="cost-share-agreement">
+<a href="{% if data['report']%}/current/cases/workplace-assesment/wpa-report/check{% else %}/current/cases/workplace-assesment/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
       Review workplace assessment report
 </a>
     </span>

@@ -24,13 +24,13 @@
 {% include "current/claim/_quote-sae-2.html"%}
 {% endif %}
 
-<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+<!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Add more details
-</button>
+</button> -->
 </form>
 
 
-<form action="/current/cases/{% if phase%}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase%}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
 <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

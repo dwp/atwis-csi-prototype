@@ -9,18 +9,23 @@
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#application-summary">
-        Application summary
+      Application summary
       </a>
     </li>
 
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#your-tasks">
-        Your tasks
+      Check Searchlight
       </a>
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#citizen-details">
-      Application details
+    Review application
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#business-case">
+      Prepare business case
       </a>
     </li>
 
@@ -207,36 +212,10 @@
    </script>
 
 </div></div>
-{% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% else %}
-{% include  "../claim/timeline-dereck.html" %}{% endif %}
+{% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% endif %}
+{% if phase == "thomas"  %}{% include  "../claim/timeline-thomas-new.html" %}</div></div>{% endif %}
+{% if not phase %}{% include  "../claim/timeline-dereck-new.html" %}{% endif %}
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
- {% include "./details.html"%}
-
-
-  </div>    </div>    </div>
-
 
 
 
@@ -260,58 +239,70 @@
 
 
     {% if case =='other-cases' %}
-      {% include  "./task-list-sonya.html" %}
+      {% include  "./task-list-sonya-searchlight.html" %}
     {% endif %}
 
     {% if case =='other-cases-2' %}
-      {% include  "./task-list-thomas.html" %}
+      {% include  "./task-list-thomas-searchlight.html" %}
     {% endif %}
 
     {% if not case %}
-    {% include  "./task-list-dereck.html" %}
+    {% include  "./task-list-dereck-searchlight.html" %}
     {% endif %}
 
 
-
-
-  </div>
-
+  </div>     </div>
 
 
 
 
 
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
-    <h2 class="govuk-heading-l">Past year</h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Case manager</th>
-          <th scope="col" class="govuk-table__header">Cases opened</th>
-          <th scope="col" class="govuk-table__header">Cases closed</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">David Francis</td>
-          <td class="govuk-table__cell">1380</td>
-          <td class="govuk-table__cell">1472</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Paul Farmer</td>
-          <td class="govuk-table__cell">1129</td>
-          <td class="govuk-table__cell">1083</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Rita Patel</td>
-          <td class="govuk-table__cell">1539</td>
-          <td class="govuk-table__cell">1265</td>
-        </tr>
-      </tbody>
-    </table>
 
-  </div>
-</div>
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
+
+  {% if case =='other-cases' %}
+    {% include  "./task-list-sonya-application.html" %}{% endif %}
+
+    {% if case =='other-cases-2' %}
+      {% include  "./task-list-thomas-application.html" %}{% endif %}
+
+      {% if not case %}
+{% include  "./task-list-dereck-application.html" %}    {% endif %}
+
+  </div>  </div>  </div>
+
+
+
+
+
+
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
+
+  {% if case =='other-cases-2' %}
+  {% include  "./task-list-thomas-business-case.html" %}{% endif %}
+
+  {% if case =='other-cases' %}
+  {% include  "./task-list-sonya-business-case.html" %}{% endif %}
+
+      {% if not case %}
+  {% include  "./task-list-dereck-business-case.html" %}{% endif %}
+
+
+</div>  </div>
+
+
+
+
+
+
+
+
+
+
 
 
 

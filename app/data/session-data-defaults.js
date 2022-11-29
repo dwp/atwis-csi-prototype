@@ -33,6 +33,11 @@ module.exports = {
 'national-insurance-number' : "AB 123456 C",
 'appointee' : "No",
 'benefits' : "No",
+
+
+
+
+
 'job-deatils-contact' : "They gave permission (apply)",
 //delete later
 
