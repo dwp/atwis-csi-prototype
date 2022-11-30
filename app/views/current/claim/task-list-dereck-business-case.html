@@ -210,7 +210,7 @@ data ['benefits']
           {% if not data['sae-add']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
         </li>
 
-        {% if data['sae-item-type']%}
+        {% if data['approve']=='true'%}
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                 <a href="specialist-equipment" aria-describedby="job-status">
@@ -222,7 +222,31 @@ data ['benefits']
 
                  </li>
         {% endif %}
+        {% if data['approve-2']=='true'%}
+                <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                <a href="specialist-equipment/index-2" aria-describedby="job-status">
+                  Confirm details for specialist equipment 2
+                </a>
+                </span>
+                {% if not data['social-domestic-2']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+                {% if data['social-domestic-2']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
+                 </li>
+        {% endif %}
+
+        {% if data['approve-3']=='true'%}
+                <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                <a href="specialist-equipment/index-3" aria-describedby="job-status">
+                  Confirm details for specialist equipment 3
+                </a>
+                </span>
+                {% if not data['social-domestic-3']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+                {% if data['social-domestic-3']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+                 </li>
+        {% endif %}
 
         {% endif %}
 
@@ -279,7 +303,7 @@ data ['benefits']
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">5. </span> Award decision
           </h2>
-          {% if data['social-domestic']%}
+          {% if data['social-domestic-2']%}
             {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}
           {% else %}
           <ul class="app-task-list__items">
@@ -295,10 +319,9 @@ data ['benefits']
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
-
-
-
           {% endif %}
+
+
         </li>
       </ol>
       {% if data['wpa']=='No'%}

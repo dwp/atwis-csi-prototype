@@ -4,6 +4,25 @@
 
 {% extends folder + "/claim/_CSIBASE.html" %}
 
+
+{% if not totalsw %}
+  {% set totalsw = 0 %}
+  {% endif %}
+
+
+
+    {% if data['sae-item-type']  %}
+    {% set totalsw = totalsw + 1 %}
+  {% endif %}
+
+
+    {% for i in [1,2,3,4] -%}
+       {% set index = i %}
+        {% if data['sae-item-type-'+ index]%}
+        {% set totalsw = totalsw + 1 %}
+      {% endif %}
+        {%- endfor %}
+
 {% block csi %}
 
 
@@ -87,7 +106,7 @@
             <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-{% if phase == 'sonya'%}m{% else %}l{% endif %}">
 
-              You have added 1 item of specialist equipment </h1>
+              You have added {{totalsw}} item of specialist equipment </h1>
 
 
 
@@ -116,8 +135,54 @@
                     </ul>
                   </dd>
                 </div>
+{% if data['sae-item-type-2']%}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                    {{data['sae-item-type-2']}}
+                  </dt>
+
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+                    {% if data['approve-2']=='true'%}Added to award{% endif %}
+                      {% if data['approve-2']=='false'%}Not added to award{% endif %}
+                  </dt>
 
 
+                  <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                    <ul class="govuk-summary-list__actions-list">
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">  {{data['sae-item-type-2']}}</span></a>
+                      </li>
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">  {{data['sae-item-type-2']}}</span></a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                {% endif %}
+                {% if data['sae-item-type-3']%}
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                                    {{data['sae-item-type-3']}}
+                                  </dt>
+
+                                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+                                    {% if data['approve-3']=='true'%}Added to award{% endif %}
+                                      {% if data['approve-3']=='false'%}Not added to award{% endif %}
+                                  </dt>
+
+
+                                  <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                                    <ul class="govuk-summary-list__actions-list">
+                                      <li class="govuk-summary-list__actions-list-item">
+                                        <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">  {{data['sae-item-type-3']}}</span></a>
+                                      </li>
+                                      <li class="govuk-summary-list__actions-list-item">
+                                        <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">  {{data['sae-item-type-3']}}</span></a>
+                                      </li>
+                                    </ul>
+                                  </dd>
+                                </div>
+                                {% endif %}
               </dl>
 
                    </fieldset>
@@ -138,13 +203,13 @@
                                 <div id="event-name-hint" class="govuk-hint">You should add all  items suggested in the workplace assessment and by {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}</div>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
-                                       <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}sonya/cases/{% endif %}check-application/sae/details/type.html" >
+                                       <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{% if data['sae-item-type-2']%}3{% else %}2{% endif %}/type.html" >
                                        <label class="govuk-label govuk-radios__label" for="sae-add">
                                          Yes
                                        </label>
                                      </div>
                                      <div class="govuk-radios__item">
-                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}sonya/cases/{% endif %}claim#business-case" {{ checked("sae-add"+ phase, "No") }}>
+                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}sonya/cases/{% endif %}claim#business-case" {{ checked("sae-add", "No") }}>
                                        <label class="govuk-label govuk-radios__label" for="sae-add-2">
                                          No
                                        </label>

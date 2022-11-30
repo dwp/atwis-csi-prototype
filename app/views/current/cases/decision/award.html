@@ -45,7 +45,22 @@
                      <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type']}}</td>
                      <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item']}}</td>
                    </tr>
-
+    {% if data['approve-2']=='true'%}
+                   <tbody class="govuk-table__body">
+                     <tr class="govuk-table__row">
+                       <th scope="row" class="govuk-table__header">Specialist equipment</th>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type-2']}}</td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item-2']}}</td>
+                     </tr>
+{% endif %}
+    {% if data['approve-3']=='true'%}
+                     <tbody class="govuk-table__body">
+                       <tr class="govuk-table__row">
+                         <th scope="row" class="govuk-table__header">Specialist equipment</th>
+                         <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type-3']}}</td>
+                         <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item-3']}}</td>
+                       </tr>
+{% endif %}
                  </tbody>
                </table>
   <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -97,13 +112,27 @@ Quote
 </div>
 
 </dl> -->
+
+
+{% if data['approve-2']=='true' and not data['approve-3']%} {% set total = "998" %}{% else %}
+
+     {% if data['approve-3']=='true'%}
+{% if data['cost-per-item-3']=='1195' or data['cost-per-item-3']=='1195.00'%}{% set total = "2193" %}{% endif %}
+{% if data['cost-per-item-3']=='1349' or data['cost-per-item-3']=='1349.00'%}{% set total = "2347" %}{% endif %}
+{% if data['cost-per-item-3']=='1049' or data['cost-per-item-3']=='1049.00'%}{% set total = "2038" %}{% endif %}
+     {% endif %}
+
+     {% if data['approve-3']=='false'%}
+{% set total = "998" %}     {% endif %}
+
+        {% endif %}
 <dl class="govuk-summary-list">
                           <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
                           Total award
                           </dt>
                           <dd class="govuk-summary-list__value" style="text-align: right;">
-                        £{{data['cost-per-item']}}
+                        £{{total}}
                           </dd>
                           </div>
 
