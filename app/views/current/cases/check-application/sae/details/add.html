@@ -4,6 +4,25 @@
 
 {% extends folder + "/claim/_CSIBASE.html" %}
 
+
+{% if not totalsw %}
+  {% set totalsw = 0 %}
+  {% endif %}
+
+
+
+    {% if data['sae-item-type']  %}
+    {% set totalsw = totalsw + 1 %}
+  {% endif %}
+
+
+    {% for i in [1,2,3,4] -%}
+       {% set index = i %}
+        {% if data['sae-item-type-'+ index]%}
+        {% set totalsw = totalsw + 1 %}
+      {% endif %}
+        {%- endfor %}
+
 {% block csi %}
 
 
@@ -87,7 +106,7 @@
             <fieldset class="govuk-fieldset">
       <h1 class="govuk-heading-{% if phase == 'sonya'%}m{% else %}l{% endif %}">
 
-              You have added {{number}} item of specialist equipment </h1>
+              You have added {{totalsw}} item of specialist equipment </h1>
 
 
 
