@@ -15,12 +15,9 @@
       <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
 
-                     Support details</h1>
+                     Support details: Support worker</h1>
 
 
-      <h2 class="govuk-heading-m">
-
-                     Support worker</h2>
   {% if case =='other-cases' %}
   {% include "current/claim/_sae-sonya.html"%}{% endif %}
 
@@ -33,9 +30,9 @@
 
 
 
-  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Add more details
-  </button>
+  </button> -->
   </form>
 <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
   <div class="govuk-form-group">

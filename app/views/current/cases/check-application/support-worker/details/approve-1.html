@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="select-sw" method="post" novalidate>
+<form action="" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -26,13 +26,13 @@ Do you approve this support worker for {% if case =='other-cases-2' %}Thomas Kin
   </div>
   <div class="govuk-radios " data-module="govuk-radios">
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="approve-1" name="approve-1" type="radio" value="true">
+      <input class="govuk-radios__input" id="approve-1" name="approve-1" type="radio" value="true~select-sw">
       <label class="govuk-label govuk-radios__label" for="approve-1">
         Yes, add to the award
       </label>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="approve-1-2" name="approve-1" type="radio" value="false">
+      <input class="govuk-radios__input" id="approve-1-2" name="approve-1" type="radio" value="false~not-needed">
       <label class="govuk-label govuk-radios__label" for="approve-1-2">
         No, do not add to the award
       </label>
