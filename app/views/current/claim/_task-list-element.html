@@ -4,7 +4,7 @@
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 <a href="{% if data['sae-addsonya']%}./check-application/sae/details/add{% else %}sae/details/approve-1{% endif %}" aria-describedby="job-status">
-  Specialist equipment
+  Specialist equipment: add or change support
 </a>
 </span>
 {% if not data['sae-add'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
@@ -115,7 +115,7 @@ Confirm details for specialist equipment 3
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
    <a href="" aria-describedby="read-declaration-status">
-        Mental health support
+        Mental health support: add or change support
      </a>
     </span>
     {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -129,7 +129,7 @@ Confirm details for specialist equipment 3
  <li class="app-task-list__item">
     <span class="app-task-list__task-name">
    <a href="{% if data['sae-item-type']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
-         Support worker
+         Support worker: add or change support
      </a>
     </span>
     {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}

@@ -202,7 +202,7 @@ data ['benefits']
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
          <a href="{% if data['sae-add']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
-               Specialist equipment
+               Specialist equipment: add or change support
            </a>
           </span>
           {% if data['sae-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -259,7 +259,7 @@ data ['benefits']
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
    <a href="" aria-describedby="read-declaration-status">
-        Mental health support
+        Mental health support: add or change support
      </a>
     </span>
     {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -273,7 +273,7 @@ data ['benefits']
  <li class="app-task-list__item">
     <span class="app-task-list__task-name">
    <a href="{% if data['sae-item-type']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
-         Support worker
+         Support worker: add or change support
      </a>
     </span>
     {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
