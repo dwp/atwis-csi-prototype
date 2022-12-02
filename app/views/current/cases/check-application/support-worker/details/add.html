@@ -40,8 +40,8 @@
         </dt>
 
         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
-          {% if data['approve-1']=='true'%}Added to award{% endif %}
-            {% if data['approve-1']=='false'%}Not added to award{% endif %}
+          {% if data['approve-1']=='true'%}Added to award
+            {% else %}Not added to award{% endif %}
         </dt>
         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
