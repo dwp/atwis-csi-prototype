@@ -12,9 +12,15 @@
 
 
 
-<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
-<form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
+{% if case == 'dereck' %}
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'sonya' %}
+<form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+{% endif %}
+
+
+
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper">

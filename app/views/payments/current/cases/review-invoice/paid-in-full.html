@@ -28,15 +28,28 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Are all the invoices marked as paid?
+
+{% if case == 'dereck' %}
+      Is the invoice marked as paid
+{% endif %}
+
+{% if case == 'sonya' %}
+      Are all the invoices marked as paid
+{% endif %}
+
     </h2>
 
 
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
+{% if case == 'dereck' %}
             <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("paid-in-full", "Yes") }}>
-            <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+{% endif %}
+{% if case == 'sonya' %}
+            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="yes~sonya/claim-sonya#your-tasks" {{ checked("paid-in-full", "Yes") }}>
+{% endif %}
+
             <label class="govuk-label govuk-radios__label" for="paid-in-full-1">
               Yes
             </label>

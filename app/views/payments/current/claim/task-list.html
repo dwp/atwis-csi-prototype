@@ -26,16 +26,16 @@
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 
-{% if data ['claims'] and not data['claim-item'] %}
+{% if case == 'sonya' and not data['claim-item'] %}
                 <a href="/payments/current/cases/sonya/cases/review-claim/select-claim-items" aria-describedby="claim-completed">
 {% endif %}
 
-{% if data ['claims'] and data['claim-item'] %}
+{% if case == 'sonya' and data['claim-item'] %}
                 <a href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi" aria-describedby="claim-completed">
 {% endif %}
 
-{% if not data['claims'] %}
-                <a href="/payments/current/cases/review-claim/matches-grant" aria-describedby="claim-completed">
+{% if case == 'dereck' %}
+                <a href="/payments/current/cases/dereck/cases/review-claim/matches-grant" aria-describedby="claim-completed">
 {% endif %}
 
 
@@ -56,7 +56,16 @@
 <!-- 2 REVIEW INVOICE -->
 
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Review invoices
+            <span class="app-task-list__section-number">2. </span>
+
+            <!-- LANGUAGE CHANGE FOR MULTIPLES -->
+{% if case == 'dereck' %}
+                  Review invoice
+{% endif %}
+{% if case == 'sonya' %}
+                  Review invoices
+{% endif %}
+
           </h2>
 
 
@@ -65,8 +74,21 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                {% if data['grant-matches-claim']%}<a href="/payments/current/cases/review-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">{% endif %}
-                  Check invoices match claim form
+{% if case == 'dereck' and data['grant-matches-claim'] %}
+                <a href="/payments/current/cases/dereck/cases/review-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">
+{% endif %}
+{% if case == 'sonya' and data['grant-matches-claim'] %}
+                <a href="/payments/current/cases/sonya/cases/review-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">
+{% endif %}
+
+<!-- LANGUAGE CHANGE FOR MULTIPLES -->
+{% if case == 'dereck' %}
+        Check invoice match claim form
+{% endif %}
+{% if case == 'sonya' %}
+        Check invoices match claim form
+{% endif %}
+
                 </a>
                 </span>
                 {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -80,8 +102,21 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['claim-matches-invoice']%}<a href="/payments/current/cases/review-invoice/paid-in-full" aria-describedby="company-information-completed">{% endif %}
-                Check invoices have been paid
+{% if case == 'dereck' and data['claim-matches-invoice'] %}
+                <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full" aria-describedby="read-declaration-completed">
+{% endif %}
+{% if case == 'sonya' and data['claim-matches-invoice'] %}
+                <a href="/payments/current/cases/sonya/cases/review-invoice/paid-in-full" aria-describedby="company-information-completed">
+{% endif %}
+
+<!-- LANGUAGE CHANGE FOR MULTIPLES -->
+{% if case == 'dereck' %}
+        Check invoice have been paid
+{% endif %}
+{% if case == 'sonya' %}
+        Check invoices have been paid
+{% endif %}
+
               </a>
               </span>
               {% if not data['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -94,9 +129,14 @@
 
 <!-- 2 CHECK COMPANY DETAILS -->
 
-            <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-            {% if data['paid-in-full']%}<a href="/payments/current/cases/review-invoice/company-details" aria-describedby="company-information-completed">{% endif %}
+              <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+{% if case == 'dereck' and data ['paid-in-full'] %}
+              <a href="/payments/current/cases/dereck/cases/review-invoice/company-details" aria-describedby="read-declaration-completed">
+{% endif %}
+{% if case == 'sonya' and data ['paid-in-full'] %}
+              <a href="/payments/current/cases/sonya/cases/review-invoice/company-details" aria-describedby="company-information-completed">
+{% endif %}
                 Check supplier details
               </a>
               </span>
@@ -111,7 +151,12 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['company-details']%}<a href="/payments/current/cases/review-invoice/add-invoice-date" aria-describedby="company-information-completed">{% endif %}
+{% if case == 'dereck' and data['company-details'] %}
+            <a href="/payments/current/cases/dereck/cases/review-invoice/add-invoice-date" aria-describedby="company-information-completed">
+{% endif %}
+{% if case == 'sonya' and data['company-details'] %}
+            <a href="/payments/current/cases/sonya/cases/review-invoice/add-invoice-date" aria-describedby="company-information-completed">
+{% endif %}
                 Add invoice number and date
               </span>
               {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
@@ -137,7 +182,13 @@
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['invoice-number']%}<a href="/payments/current/cases/review-payment/sop-find" aria-describedby="company-information-completed">{% endif %}
+{% if case == 'dereck' and data['invoice-number'] %}
+              <a href="/payments/current/cases/dereck/cases/review-payment/sop-find" aria-describedby="company-information-completed">
+{% endif %}
+{% if case == 'sonya' and data['invoice-number'] %}
+              <a href="/payments/current/cases/sonya/cases/review-payment/sop-find" aria-describedby="company-information-completed">
+{% endif %}
+
                 Find payee in SOP
               </a>
               </span>
@@ -151,7 +202,13 @@
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['sop-find']%}<a href="/payments/current/cases/review-payment/sop-add-supplier" aria-describedby="company-information-completed">{% endif %}
+{% if case == 'dereck' and data['sop-find'] %}
+            <a href="/payments/current/cases/dereck/cases/review-payment/sop-add-supplier" aria-describedby="company-information-completed">
+{% endif %}
+{% if case == 'sonya' and data['sop-find'] %}
+            <a href="/payments/current/cases/sonya/cases/review-payment/sop-add-supplier" aria-describedby="company-information-completed">
+{% endif %}
+
               Add payee details from SOP
             </a>
             </span>
@@ -175,7 +232,14 @@
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-            {% if data['sop-supplier-number']%}<a href="/payments/current/cases/review-payment/sop-approve" aria-describedby="company-information-completed">{% endif %}
+{% if case == 'dereck' and data['sop-supplier-number'] %}
+            <a href="/payments/current/cases/dereck/cases/review-payment/sop-approve" aria-describedby="company-information-completed">
+{% endif %}
+{% if case == 'sonya' and data['sop-supplier-number'] %}
+            <a href="/payments/current/cases/sonya/cases/review-payment/sop-approve" aria-describedby="company-information-completed">
+
+{% endif %}
+
                 Check payment and send for approval
             </a>
           </span>

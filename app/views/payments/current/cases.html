@@ -3,7 +3,6 @@
 
 <!-- HEADER -->
 
-<!-- <div class="govuk-grid-column-two-thirds"> -->
 {% if user == "team lead" %}
 <h1 class="govuk-heading-l top-section">
       <strong><span>Team Lead: </span></strong>
@@ -25,8 +24,8 @@
 
 
 
-
 <!-- PAYMENT OFFICER -->
+<!-- TABS -->
 
 
 {% if user == "payment officer" %}
@@ -40,7 +39,7 @@
           </h2>
           <ul class="govuk-tabs__list">
 
-{% if not data['claims'] and not data ['sop-supplier-number']%}
+{% if not data['claims'] and not data ['sop-approve']%}
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                       <a class="govuk-tabs__tab" href="#claims">
                         Claims (9)
@@ -56,14 +55,14 @@
 {% endif %}
 
 
-{% if data['claims'] and not data ['sop-supplier-number']%}
+{% if data['claims'] and not data ['sop-approve']%}
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                       <a class="govuk-tabs__tab" href="#claims">
                         Claims (10)
                       </a>
                     </li>
 {% endif %}
-{% if data['claims'] and data ['sop-supplier-number']%}
+{% if data['claims'] and data ['sop-approve']%}
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                       <a class="govuk-tabs__tab" href="#claims">
                         Claims (9)
@@ -72,7 +71,7 @@
 {% endif %}
 
 
-{% if data ['sop-supplier-number']%}
+{% if data ['sop-approve']%}
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                       <a class="govuk-tabs__tab" href="#waiting">
                         Waiting for approval (1)
@@ -82,10 +81,15 @@
 
 
 
+
+<!-- SUBTITLE -->
                       </ul>
 
                       <div class="govuk-tabs__panel" id="claims">
                         <h2 class="govuk-heading-m">Claims</h2>
+
+
+<!-- DROP DOWN SELECTION -->
 
                           <div class="govuk-grid-column-one-quaters">
 
@@ -113,7 +117,11 @@
                           </div>
 
 
-{% if not data['claims'] and not data ['sop-supplier-number']%}
+
+<!-- TABEL CONTENTS -->
+
+
+{% if not data['claims'] and not data ['sop-approve']%}
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -198,7 +206,7 @@
 {% endif %}
 
 
-{% if not data['claims'] and data ['sop-supplier-number']%}
+{% if not data['claims'] and data ['sop-approve']%}
 
   <table class="govuk-table">
     <thead class="govuk-table__head">
@@ -276,7 +284,7 @@
 {% endif %}
 
 
-{% if data['claims'] and not data ['sop-supplier-number']%}
+{% if data['claims'] and not data ['sop-approve']%}
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -302,7 +310,7 @@
       <td class="govuk-table__cell">Specialist equipment</td>
       <td class="govuk-table__cell">2 April 2022</td>
       <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Paul Hill</th>
@@ -366,7 +374,7 @@
 
 {% endif %}
 
-{% if data['claims'] and data ['sop-supplier-number']%}
+{% if data['claims'] and data ['sop-approve']%}
 
 
 <table class="govuk-table">
@@ -386,7 +394,7 @@
       <td class="govuk-table__cell">Specialist equipment</td>
       <td class="govuk-table__cell">2 April 2022</td>
       <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Paul Hill</th>
@@ -453,7 +461,7 @@
 
 
 
-{% if data['claims'] and data ['sop-supplier-number']%}
+{% if data['claims'] and data ['sop-approve']%}
 
 
                       </div>
@@ -478,7 +486,7 @@
                               <td class="govuk-table__cell">4 April 2022</td>
                               <td class="govuk-table__cell">25 November 2022</td>
                               <td class="govuk-table__cell">Waiting for approval</td>
-                              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                              <td class="govuk-table__cell"><a href="cases/sonya/claim-sonya{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
                             </tr>
                             <!-- <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Dereck Smith</th>
@@ -495,7 +503,7 @@
 {% endif %}
 
 
-{% if not data['claims'] and data ['sop-supplier-number']%}
+{% if not data['claims'] and data ['sop-approve']%}
 
 
                       </div>
@@ -520,7 +528,7 @@
                               <td class="govuk-table__cell">2 April 2022</td>
                               <td class="govuk-table__cell">25 November 2022</td>
                               <td class="govuk-table__cell">Waiting for approval</td>
-                              <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+                              <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
                             </tr>
                             <!-- <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Dereck Smith</th>
@@ -557,17 +565,6 @@
 
 
 <!-- TEAM LEAD -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 

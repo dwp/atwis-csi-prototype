@@ -1,13 +1,10 @@
-
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set case = "sonya" %}
 {% set hideback = "true" %}
 
 
-{% if data['exceptions']=='No'%}
-{% set phase = "notEligible" %}{% endif %}
 
 {% extends   "payments/current/claim/_CSIBASE.html" %}
 

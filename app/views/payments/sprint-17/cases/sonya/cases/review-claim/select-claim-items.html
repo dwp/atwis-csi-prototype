@@ -1,9 +1,9 @@
-
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/sprint-17/claim/_CSIBASE.html" %}
 
 
 
@@ -13,7 +13,7 @@
 
 
 
-<form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="matches-grant-multi" method="post" novalidate>
   <div class="govuk-width-container">
 
     <main class="govuk-main-wrapper">
@@ -26,7 +26,7 @@
                     <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                          Select all items that appear on one invoice
+                          Select all items that appear on the claim form
                         </h1>
                       </legend>
                       <div id="nationality-hint" class="govuk-hint">
@@ -34,32 +34,60 @@
                       </div>
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
-                          <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                          <input class="govuk-checkboxes__input" id="claim-item-1" name="claim-item" type="checkbox" value="Jaws screen reader" aria-describedby="claim-item-hint">
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-1">
                             Jaws screen reader
                           </label>
-                          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £499
-                          </div>
+                          </div> -->
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
-                          <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                          <input class="govuk-checkboxes__input" id="claim-item-2" name="claim-item" type="checkbox" value="ZoomText Professional License">
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-2">
+                            ZoomText Professional License
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £501
+                          </div> -->
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-3" name="claim-item" type="checkbox" value="Ipad Pro case">
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-3">
+                            Ipad Pro case
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £80
+                          </div> -->
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-4" name="claim-item" type="checkbox" value="Erganomic Keyboard">
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-4">
                             Erganomic Keyboard
                           </label>
-                          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                            £120
-                          </div>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
-                          <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
-                            Mouse
+                          <input class="govuk-checkboxes__input" id="claim-item-5" name="claim-item" type="checkbox" value="Office chair">
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-5">
+                            Office chair
                           </label>
-                          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                            £40
-                          </div>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £230
+                          </div> -->
                         </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-6" name="claim-item" type="checkbox" value="Ergonomic mouse">
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-6">
+                            Ergonomic mouse
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £40
+                          </div> -->
+                        </div>
+
                       </div>
 
 

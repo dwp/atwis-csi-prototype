@@ -28,7 +28,14 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Are supplier contact details on each invoice?
+{% if case == 'dereck' %}
+      Are the supplier contact details on the invoice?
+{% endif %}
+
+{% if case == 'sonya' %}
+      Are supplier contact details on each invoice?
+{% endif %}
+
     </h2>
     <div id="changed-name-hint" class="govuk-hint">
           For example, company address, phone number or email. 
@@ -37,8 +44,12 @@ Are supplier contact details on each invoice?
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
+            {% if case == 'dereck' %}
             <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("company-details", "Yes") }}>
-            <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+            {% endif %}
+            {% if case == 'sonya' %}
+            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="yes~sonya/claim-sonya#your-tasks" {{ checked("company-details", "Yes") }}>
+            {% endif %}
             <label class="govuk-label govuk-radios__label" for="company-details-1">
               Yes
             </label>

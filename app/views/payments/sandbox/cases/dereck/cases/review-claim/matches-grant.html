@@ -1,8 +1,9 @@
+{% set case = "dereck" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/sandbox/claim/_CSIBASE.html" %}
 
 
 
@@ -13,7 +14,7 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/payments/sandbox/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">

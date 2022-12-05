@@ -28,7 +28,14 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Does the total cost on the invoices match the claim form?
+{% if case == 'dereck' %}
+    Does the total cost on the invoice match the claim form?
+{% endif %}
+
+{% if case == 'sonya' %}
+    Does the total cost on the invoices match the claim form?
+{% endif %}
+
     </h2>
 
   </legend>
@@ -86,8 +93,12 @@ Does the total cost on the invoices match the claim form?
       </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
+              {% if case == 'dereck' %}
               <input class="govuk-radios__input" id="claim-matches-invoice-1" name="claim-matches-invoice" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("claim-matches-invoice", "Yes") }}>
-              <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+              {% endif %}
+              {% if case == 'sonya' %}
+              <input class="govuk-radios__input" id="claim-matches-invoice-1" name="claim-matches-invoice" type="radio" value="yes~sonya/claim-sonya#your-tasks" {{ checked("claim-matches-invoice", "Yes") }}>
+              {% endif %}
               <label class="govuk-label govuk-radios__label" for="claim-matches-invoice-1">
                 Yes
               </label>
