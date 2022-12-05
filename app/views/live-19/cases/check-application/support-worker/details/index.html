@@ -1,0 +1,61 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/live-19/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/type" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            <fieldset class="govuk-fieldset">
+      <h1 class="govuk-heading-l">
+
+                  
+                   {% include "live-19/cases/check-application/sae/details/content/index.html" %}</h1>
+
+
+
+
+                     <div class="govuk-radios " data-module="govuk-radios">
+                       <div class="govuk-radios__item govuk-radios--inline">
+                         <input class="govuk-radios__input" id="sae-type" name="sae-type" type="radio" value="Yes, a wheelchair" {{ checked("sae-type", "Yes, a wheelchair") }}>
+                         <label class="govuk-label govuk-radios__label" for="sae-type">
+                          Yes, a wheelchair
+                         </label>
+                       </div>
+                       <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="sae-type-2" name="sae-type" type="radio" value="Yes, a hearing aid" {{ checked("sae-type", "Yes, a hearing aid") }}>
+                         <label class="govuk-label govuk-radios__label" for="sae-type-2">
+                           Yes, a hearing aid
+                         </label>
+                       </div>
+                       <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="sae-type-3" name="sae-type" type="radio" value="No, something else" {{ checked("sae-type", "No, something else") }}>
+                          <label class="govuk-label govuk-radios__label" for="sae-type-3">
+                          No, something else
+                          </label>
+                        </div>
+
+                     </div>
+
+                   </fieldset>
+                   </div>         </div><br>
+                   <button class="govuk-button" data-module="govuk-button">
+                   Save and continue
+                   </button>
+
+                   </form>
+
+
+                   </main>
+                 </div>
+
+
+               {% endblock %}

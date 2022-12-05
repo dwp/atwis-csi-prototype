@@ -1,0 +1,240 @@
+{% set monthAndYear = "November 2021" %}
+
+  {% set cases = [
+    {
+      name: "Dereck Smith",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "3  "  + monthAndYear +  "  11:57"
+    },
+    {
+
+      name: "Maximillia Erdman",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "3  "  + monthAndYear +  "  10:22"
+    },
+    {
+      name: "Sonya Corkery",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "2  "  + monthAndYear +  "  09:23"
+    },
+    {
+      name: "Adaline Mann",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "2  "  + monthAndYear +  "  16:23"
+    }
+
+    ]
+    %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{title}} - {{serviceName}} - GOV.UK
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+   <div class="govuk-header__container govuk-width-container">
+     <div class="govuk-header__logo">
+       <a href="#" class="govuk-header__link govuk-header__link--homepage">
+         <span class="govuk-header__logotype">
+      
+           <span class="govuk-header__logotype-text">
+             GOV.UK
+           </span>
+         </span>
+       </a>
+     </div>
+     <div class="govuk-header__content">
+       <a href="/{{folder}}/" class="govuk-header__link govuk-header__link--service-name">
+        {{serviceName}}
+       </a>
+
+
+     </div>
+     {% if not hideUser %}
+     <div class="header-user-details">
+          {% if contactCentre %}Chris Connolly{% elif (phase == "case-manger-view" or phase == "allocator") %}Al Ó Catháin{% elif payments or paymentLink %}Rich Silver{% else %}John Goldsmith{% endif %}
+         </div>
+        {% endif %}
+   </div>
+ </header>
+
+
+  {% block atwisHeader %}
+    <div class="nav-horizontal">
+      <div class="govuk-width-container">
+        <ul class="nav-pri">
+          <li{% if yourCases %} class="active"{% endif %}>
+
+{% if (not contactCentre)  %}
+          <a href="/live-19/your-cases{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view" %}-allocator{% endif %}" class="active" aria-current="page">Your cases</a>
+
+        </li>
+{% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
+{% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if advisers %} class="active"{% endif %}><a href="/{{folder}}/all-advisers{% if payments %}-payments{% endif %}">All advisers</a></li> {% endif %}
+
+
+{% endif %}
+
+          <li{% if Search %} class="active"{% endif %}><a href="search">Search</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+{% if not hideBanner %}
+    {% block banner %}
+
+    <div class="app-example-page">
+
+
+
+    <section class="dwp-key-details-bar" aria-label="Key details">
+      <dl class="dwp-key-details-bar__key-details">
+
+        <div class="dwp-key-details-bar__top-block">
+
+
+            <dt class="govuk-visually-hidden">Name:</dt>
+            <dd class="dwp-key-details-bar__primary">
+
+  {% if case =='other-cases' %}
+  {% for case in data['other-cases'] %}
+  {{ case.name }}
+  {% endfor %}
+  {% endif %}
+
+  {% if case =='other-cases-2' %}
+  {% for case in data['other-cases-2'] %}
+  {{ case.name }}
+  {% endfor %}
+  {% endif %}
+
+  {% if not case %}
+  {% for case in data['priority-cases'] %}
+  {{ case.name }}
+  {% endfor %}
+  {% endif %}
+          </dd>
+
+
+
+            <!-- <dt class="govuk-visually-hidden">Nino:</dt>
+            <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 X</dd> -->
+
+
+
+            <dt class="govuk-visually-hidden">Decisions status:</dt>
+       <dd class="dwp-key-details-bar__status">
+  {% if phase == "complete" %}
+  completed{% else %}
+              {% if data ['Searchligh'] or
+                         data ['appointee']
+                          or
+                        data ['benefits']
+                         %}
+ In progress
+{% else %}
+        Not started
+        {% endif %}
+{% endif %}
+            </dd>
+
+        </div>
+
+
+          <div class="dwp-key-details-bar__bottom-block">
+      {% if (phase == "case-manger-view" or phase == "allocator") %}   <dt>Allocated to:</dt>
+            <dd>John Goldsmith</dd> {% endif %}
+
+            {% if phase == "CSI" %}
+            <dt>Interview date:</dt>
+            <dd>9 March 2022</dd> {% endif %}
+
+
+            <dt>Application reference:</dt>
+            <dd>
+            {% if case =='other-cases' %}
+            {% for case in data['other-cases'] %}
+            {{ case.ref }}
+            {% endfor %}
+            {% endif %}
+
+            {% if case =='other-cases-2' %}
+            {% for case in data['other-cases-2'] %}
+            {{ case.ref }}
+            {% endfor %}
+            {% endif %}
+
+            {% if not case %}
+            {% for case in data['priority-cases'] %}
+            {{ case.ref }}
+            {% endfor %}
+            {% endif %}
+          </dd>
+
+  {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
+            <dt>Appointee:</dt>
+            <dd>{{data['appointee-name']}}</dd>{% endif %}
+              <!-- <dt>Date of birth:</dt>
+              <dd>4 June 1972</dd>
+
+              <dt>Mobile number:</dt>
+              <dd>07777 900 900</dd>
+
+              <dt>Language:</dt>
+              <dd>Welsh speaker</dd> -->
+
+          </div>
+
+
+
+      </dl>
+    </section>
+
+
+      </div>
+
+
+<div class="govuk-width-container">
+
+
+
+
+{% if not hideback %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+<br>
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.go(-1)"
+}) }}<br></div></div>{% endif %}
+
+<main>
+
+    {% endblock %}
+{% endif %}
+
+  {% endblock %}
+{% endblock %}
+
+
+
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <!-- extra agent-only css  -->
+<link href="/public/stylesheets/dwp.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/public/stylesheets/atwis.css" media="all" rel="stylesheet" type="text/css" />
+
+{% endblock %}
