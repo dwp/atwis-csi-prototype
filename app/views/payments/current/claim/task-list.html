@@ -157,7 +157,13 @@
 {% if case == 'sonya' and data['company-details'] %}
             <a href="/payments/current/cases/sonya/cases/review-invoice/add-invoice-date" aria-describedby="company-information-completed">
 {% endif %}
-                Add invoice number and date
+{% if case == 'dereck' %}
+            Add invoice number
+{% endif %}
+{% if case == 'sonya' %}
+            Add invoice numbers
+{% endif %}
+
               </span>
               {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
               {% if data['company-details'] and not data ['invoice-number']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}

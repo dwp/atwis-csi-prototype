@@ -1,6 +1,6 @@
 {% set monthAndYear = "November 2022" %}
 
-  
+
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -73,7 +73,14 @@
   {% if data['invoice-number']%}
   <li class="dwp-timeline__entry">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Add invoice number and date: completed
+        {% if case == 'dereck' %}
+                    Invoice number: completed
+        {% endif %}
+        {% if case == 'sonya' %}
+                    Invoice numbers: completed
+        {% endif %}
+
+
       </h2>
       <p class="govuk-caption-m govuk-!-margin-bottom-1">
         {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
