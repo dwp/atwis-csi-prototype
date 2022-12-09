@@ -63,20 +63,20 @@
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-<a href="./check-application/quotes/index" aria-describedby="job-status">
+<a href="/current/cases/thomas/cases/check-application/quotes/index" aria-describedby="job-status">
         Quote: support worker 1
 </a>
     </span>
 
-    {% if data['quotes-check-2'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-    {% if data['quotes-check-2'+ phase]=='Yes'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>  {% endif %}
-    {% if not data['quotes-check-2'+ phase] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+    {% if data['quotes-check-1'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+    {% if data['quotes-check-1'+ phase]=='Yes'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>  {% endif %}
+    {% if not data['quotes-check-1'+ phase] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
   </li>
 
 
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-  <a href="./check-application/quotes/index" aria-describedby="job-status">
+  <a href="/current/cases/thomas/cases/check-application/quotes/support-worker-2" aria-describedby="job-status">
           Quote: support worker 2
   </a>
       </span>

@@ -14,15 +14,13 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">   Quote for the cost of support for   {% if case =='other-cases-2' %}British Sign Language (BSL) interpreter{% endif %}{% if case =='other-cases' %}ZoomText{% endif %} </h1>
+        <h1 class="govuk-heading-l">   Quote for the cost of support for   Note taker </h1>
 
 
-  {% if case =='other-cases-2' %}
-{% include "current/claim/_quote-sw.html"%}
-{% endif %}
-  {% if case =='other-cases' %}
-{% include "current/claim/_quote-sae-2.html"%}
-{% endif %}
+
+{% include "current/claim/_quote-sw-2.html"%}
+
+
 
 <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Add more details
@@ -39,13 +37,13 @@
               </legend>
               <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                 <div class="govuk-radios__item govuk-radios--inline">
-                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check-1{{phase}}" type="radio" value="Yes" {{ checked("quotes-check-1"+ phase, "Yes") }}>
+                  <input class="govuk-radios__input" id="quotes-check" name="quotes-check-2{{phase}}" type="radio" value="Yes" {{ checked("quotes-check-2"+ phase, "Yes") }}>
                   <label class="govuk-label govuk-radios__label" for="quotes-check">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check-1{{phase}}" type="radio" value="No" {{ checked("quotes-check-1"+ phase, "No") }}>
+                  <input class="govuk-radios__input" id="quotes-check-2" name="quotes-check-2{{phase}}" type="radio" value="No" {{ checked("quotes-check-2"+ phase, "No") }}>
                   <label class="govuk-label govuk-radios__label" for="quotes-check-2">
                     No
                   </label>
