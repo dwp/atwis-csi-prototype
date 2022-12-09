@@ -61,7 +61,7 @@
     <li class="app-task-list__item">
     <span class="app-task-list__task-name">
 
-          Contact employer
+          Get information from the employer
 
     </span>
     <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
@@ -85,7 +85,7 @@
 {% endif %}
 " aria-describedby="job-status">
 
-                  Contact employer
+                Get information from the employer
 </a>
               </span>
 
@@ -115,7 +115,7 @@
 </li>
 
 
-{% if data ['contact-employer']=='Yes'%}
+<!-- {% if data ['contact-employer']=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="{% if data['employer-confirmed']%}/current/cases/job-details/check{% else %}/current/cases/job-details{% endif %}" aria-describedby="job-status">
@@ -130,7 +130,7 @@
 {% endif %}
             {% if not data['employer-confirmed']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
-{% endif %}
+{% endif %} -->
 
 
 {% if data['employer-cost-share'] and data['wpa']=='Yes'%}
