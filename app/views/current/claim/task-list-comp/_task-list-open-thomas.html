@@ -24,7 +24,7 @@
 <!-- <br> -->
 <li>
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">3. </span> Workplace assessment and job details 
+    <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
   </h2>
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
@@ -76,11 +76,9 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="
-{% if data ['job-deatils-contact']=='They gave permission (apply)'%}
-{% if data ['contact-employer']%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/contact-employment{% endif %}
-{% else %}
-{% if data ['job-deatils-contact']%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer{% endif %}
-{% endif %}
+
+{% if data ['contact-employerthomas']%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/contact-employment{% endif %}
+
 " aria-describedby="job-status">
 
                   Get information from the employer
@@ -113,7 +111,7 @@
 </li>
 
 
-{% if data ['contact-employer'+ phase]=='Yes'%}
+<!-- {% if data ['contact-employer'+ phase]=='Yes'%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
   <a href="{% if data['employer-confirmed']%}/current/{% if phase %}{{phase}}/cases/{% endif %}cases/job-details/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details{% endif %}" aria-describedby="job-status">
@@ -128,7 +126,7 @@
 {% endif %}
             {% if not data['employer-confirmed'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
-{% endif %}
+{% endif %} -->
 
 
 {% if data['employer-cost-share'+ phase] and data['wpa'+ phase]=='Yes'%}
