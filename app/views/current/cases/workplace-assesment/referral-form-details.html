@@ -153,15 +153,6 @@ Between 8:30 am and 6pm Monday to Saturday.
 
 
 <h2>Place of Assessment</h2>
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Company or organisation name
-</dt>
-<dd class="govuk-summary-list__value">
-Smith Digital Limited
-</dd>
-</div>
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
 Address of Assessment
@@ -169,40 +160,7 @@ Address of Assessment
 <dd class="govuk-summary-list__value">
 
 
-  <div class="govuk-form-group">
-<label class="govuk-label" for="address-line-1">
-Address line 1
-</label>
-<input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
-</div>
-
-<div class="govuk-form-group">
-<label class="govuk-label" for="address-line-2">
-Address line 2 (optional)
-</label>
-<input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
-</div>
-
-<div class="govuk-form-group">
-<label class="govuk-label" for="address-town">
-Town or city
-</label>
-<input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
-</div>
-
-<div class="govuk-form-group">
-<label class="govuk-label" for="address-county">
-County (optional)
-</label>
-<input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-</div>
-
-<div class="govuk-form-group">
-<label class="govuk-label" for="address-postcode">
-Postcode
-</label>
-<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
-</div>
+{{data['address-of-wpa']}}
 
 
 </dd>
@@ -211,6 +169,15 @@ Postcode
     </dd>
 
 </div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Company or organisation name
+</dt>
+<dd class="govuk-summary-list__value">
+Smith Digital Limited
+</dd>
+</div>
+
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
 Organisational Set Up
@@ -271,7 +238,7 @@ Phone number
 
 
 
-<div class="govuk-form-group">
+<!-- <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
@@ -295,7 +262,7 @@ Phone number
     </div>
 
   </fieldset>
-</div>
+</div> -->
 
 
 
@@ -306,12 +273,9 @@ Phone number
       Availability of Dereck Smith over the next 8 working days
     </label>
   </h2>
-  <div id="more-detail-hint" class="govuk-hint">
-    Include availability on non-working days/out of working hours if
-appropriate.
-  </div>
-  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-</div>
+
+<p>{{ data['availability-wpa']}}</p>
+
 {% if 'No' in data['others-wpa']%}
 <p>Dereck Smith has requested no one else at the WPA.</p>{% endif %}
 
@@ -399,13 +363,17 @@ document.getElementById("month").innerHTML = month;
 document.getElementById("year").innerHTML = d.getFullYear();
 </script>
 
-
-
-
-           <button class="govuk-button" data-module="govuk-button" onclick="window.print();">
+<div class="govuk-inset-text">
+To save the referral you may need to select the PDF option from the 'printer' or 'destination' dropdown<br><br>
+<button class="govuk-button" data-module="govuk-button" onclick="window.print();">
+ Save as pdf
+</button>
+</form>
+</div>
+           <!-- <button class="govuk-button" data-module="govuk-button" onclick="window.print();">
             Save as pdf
            </button>
-         </form>
+         </form> -->
        </div>
      </div>
 
