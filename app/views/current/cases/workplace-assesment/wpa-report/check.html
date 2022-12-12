@@ -42,19 +42,28 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-{% include  "./content/support.html" %}
+{% include  "./content/date-of-wpa.html" %}
 
             </dt>
             <dd class="govuk-summary-list__value">
-              {% for feature in data['elements'] %}
-                 <li>{{ feature }}</li>
-               {% else %}
-                 <li>None </li>
-               {% endfor %}
+{{ data['wpa-date-day']}}
+{% if data['wpa-date-month']=='1' or data['wpa-date-month']=='01'%}January{% endif %}
+{% if data['wpa-date-month']=='2' or data['wpa-date-month']=='02'%}February{% endif %}
+{% if data['wpa-date-month']=='3' or data['wpa-date-month']=='03'%}March{% endif %}
+{% if data['wpa-date-month']=='4' or data['wpa-date-month']=='04'%}April{% endif %}
+{% if data['wpa-date-month']=='5' or data['wpa-date-month']=='05'%}May{% endif %}
+{% if data['wpa-date-month']=='6' or data['wpa-date-month']=='06'%}June{% endif %}
+{% if data['wpa-date-month']=='7' or data['wpa-date-month']=='07'%}July{% endif %}
+{% if data['wpa-date-month']=='8' or data['wpa-date-month']=='08'%}August{% endif %}
+{% if data['wpa-date-month']=='9' or data['wpa-date-month']=='09'%}Sepember{% endif %}
+{% if data['wpa-date-month']=='10' %}October{% endif %}
+{% if data['wpa-date-month']=='11' %}November{% endif %}
+{% if data['wpa-date-month']=='12' %}December{% endif %}
+{{ data['wpa-date-year']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
-              Update<span class="govuk-visually-hidden">  {% include  "./content/support.html" %}        </span>
+              <a class="govuk-link" href="/current/cases/workplace-assesment/wpa-report/date-of-assessment">
+              Update<span class="govuk-visually-hidden">  {% include  "./content/date-of-wpa.html" %}      </span>
               </a>
             </dd>
           </div>
