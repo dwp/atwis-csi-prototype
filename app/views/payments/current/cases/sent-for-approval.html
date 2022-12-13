@@ -25,7 +25,14 @@
               Payment sent for approval
             </h1>
             <div class="govuk-panel__body">
-              Amount<br><strong>£499</strong>
+              Amount<br><strong>
+                {% if case == 'dereck' %}
+                          £499
+                {% endif %}
+                {% if case == 'sonya' %}
+                          £649
+                {% endif %}
+              </strong>
             </div>
           </div>
 
