@@ -159,8 +159,14 @@ Address of Assessment
 </dt>
 <dd class="govuk-summary-list__value">
 
-
-{{data['address-of-wpa']}}
+{% if data['address-of-wpa']=='Other address'%}
+{{data['address-wpa-line-1']}}<br>
+{{data['address-wpa-line-2']}}{% if data['address-wpa-line-2']%}<br>{% endif %}
+{{data['address-wpa-town']}}<br>
+{{data['address-wpa-county']}}<br>
+{{data['address-wpa-postcode']}}
+{% else %}
+{{data['address-of-wpa']}}{% endif %}
 
 
 </dd>

@@ -45,7 +45,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="">
-              Update<span class="govuk-visually-hidden">   </span>
+              Update<span class="govuk-visually-hidden">  {% include "./content/available.html"%} </span>
               </a>
             </dd>
           </div>
@@ -60,17 +60,61 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="">
-              Update<span class="govuk-visually-hidden">    </span>
+              Update<span class="govuk-visually-hidden">  {% include "./content/anyone.html"%}  </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+Availability of Dereck Smith over the next 8 working days
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+        {{ data['availability-wpa']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="">
+              Update<span class="govuk-visually-hidden">  Availability of Dereck Smith over the next 8 working days   </span>
               </a>
             </dd>
           </div>
 
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+Where will Dereck Smith be for the workplace assessment?
+            </dt>
+            <dd class="govuk-summary-list__value">
 
+        {{ data['address-of-wpa']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="">
+              Update<span class="govuk-visually-hidden"> Where will Dereck Smith be for the workplace assessment?   </span>
+              </a>
+            </dd>
+          </div>
 
-
-
-
+{% if data['address-of-wpa'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Address of the workplace assessment
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{data['address-wpa-line-1']}}<br>
+    {{data['address-wpa-line-2']}}{% if data['address-wpa-line-2']%}<br>{% endif %}
+    {{data['address-wpa-town']}}<br>
+    {{data['address-wpa-county']}}<br>
+    {{data['address-wpa-postcode']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="">
+    Update<span class="govuk-visually-hidden"> Address of the workplace assessment   </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
 
 <br>
 
