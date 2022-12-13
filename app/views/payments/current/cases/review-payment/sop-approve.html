@@ -128,7 +128,13 @@ Check payment and send for approval
              Payment amount
         </dt>
         <dd class="govuk-summary-list__value">
-             £499
+{% if case == 'dereck' %}
+          £499
+{% endif %}
+{% if case == 'sonya' %}
+          £649
+{% endif %}
+
         </dd>
         <dd class="govuk-summary-list__actions">
           <!-- <a class="govuk-link" href="#">
