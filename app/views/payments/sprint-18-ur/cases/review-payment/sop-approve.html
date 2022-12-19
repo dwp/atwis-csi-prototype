@@ -1,0 +1,228 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-18-ur/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<!-- <form action="/payments/sprint-18-ur/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-18-ur/cases/claim#your-tasks" method="post" novalidate>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Check payment and send for approval
+    </h2>
+
+
+        </legend>
+        <div id="contact-hint" class="govuk-hint">
+                    Check the details before you approve the payment request.
+                      </div>
+
+
+
+      <br>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+{% if case == 'dereck' %}
+            Invoice number
+{% endif %}
+{% if case == 'sonya' %}
+            Invoice numbers
+{% endif %}
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['invoice-number']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a> -->
+          </dd>
+        </div>
+
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Invoice date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['invoice-day']}}
+
+            {% if (data['invoice-month'] =='01') or (data['invoice-month'] =='1') %} January {% endif%}
+       {% if (data['invoice-month'] =='02') or (data['invoice-month'] =='2') %} February  {% endif%}
+       {% if (data['invoice-month'] =='03') or (data['invoice-month'] =='3') %} March {% endif%}
+       {% if (data['invoice-month'] =='04') or (data['invoice-month'] =='4') %} June {% endif%}
+       {% if (data['invoice-month'] =='05') or (data['invoice-month'] =='5') %} May {% endif%}
+       {% if (data['invoice-month'] =='06') or (data['invoice-month'] =='6') %} June {% endif%}
+       {% if (data['invoice-month'] =='07') or (data['invoice-month'] =='7') %} July {% endif%}
+       {% if (data['invoice-month'] =='08') or (data['invoice-month'] =='8') %} August {% endif%}
+       {% if (data['invoice-month'] =='09') or (data['invoice-month'] =='9') %} September {% endif%}
+       {% if data['invoice-month'] =='10' %} October {% endif%}
+       {% if data['invoice-month'] =='11'%} November {% endif%}
+       {% if data['invoice-month'] =='12' %} December {% endif%}
+
+            {{data['invoice-year']}}
+
+
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div> -->
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+             Payee name
+        </dt>
+        <dd class="govuk-summary-list__value">
+             {{data['sop-payee-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a> -->
+        </dd>
+        </div>
+
+
+        <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+             Payee postcode
+        </dt>
+        <dd class="govuk-summary-list__value">
+             AB1 1AB -->
+             <!-- {{data['']}} -->
+        <!-- </dd>
+        <dd class="govuk-summary-list__actions"> -->
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a> -->
+        <!-- </dd>
+        </div> -->
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+             Payment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+{% if case == 'dereck' %}
+          £499
+{% endif %}
+{% if case == 'sonya' %}
+          £649
+{% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> address</span>
+          </a> -->
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+             Site code
+        </dt>
+        <dd class="govuk-summary-list__value">
+             {{data['sop-site-code']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a> -->
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+             SOP supplier number
+        </dt>
+        <dd class="govuk-summary-list__value">
+             {{data['sop-supplier-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a> -->
+        </dd>
+        </div>
+
+
+    </dl>
+
+            <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m">
+                Do you want to send this payment for approval?
+              </h2>
+            </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+{% if case == 'dereck' %}
+                    <input class="govuk-radios__input" id="sop-approve-1" name="sop-approve" type="radio" value="yes~dereck/sent-for-approval" {{ checked("sop-approve", "Yes") }}>
+{% endif %}
+{% if case == 'sonya' %}
+                    <input class="govuk-radios__input" id="sop-approve-1" name="sop-approve" type="radio" value="yes~sonya/sent-for-approval" {{ checked("sop-approve", "Yes") }}>
+{% endif %}
+                    <label class="govuk-label govuk-radios__label" for="sop-approve-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="sop-approve-2" name="sop-approve" type="radio" value="No~claim#your-tasks" {{ checked("sop-approve", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="sop-approve-2">
+                      No
+                    </label>
+                  </div>
+
+              </div>
+            </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

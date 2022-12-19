@@ -34,7 +34,10 @@
                       </div>
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-1" name="claim-item" type="checkbox" value="Jaws screen reader" aria-describedby="claim-item-hint">
+                          <input class="govuk-checkboxes__input" id="claim-item-1" name="claim-item" type="checkbox" value="Jaws screen reader" {{ checked("claim-item", "Jaws screen reader") }}>
+
+                          <!-- <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~dereck/claim-dereck#your-tasks" {{ checked("grant-matches-claim", "Yes") }}> -->
+
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-1">
                             Jaws screen reader
                           </label>
@@ -43,7 +46,7 @@
                           </div> -->
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-2" name="claim-item" type="checkbox" value="ZoomText Professional License">
+                          <input class="govuk-checkboxes__input" id="claim-item-2" name="claim-item" type="checkbox" value="ZoomText Professional License" {{ checked("claim-item", "ZoomText Professional License") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-2">
                             ZoomText Professional License
                           </label>
@@ -52,7 +55,7 @@
                           </div> -->
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-3" name="claim-item" type="checkbox" value="Ipad Pro case">
+                          <input class="govuk-checkboxes__input" id="claim-item-3" name="claim-item" type="checkbox" value="Ipad Pro case" {{ checked("claim-item", "Ipad Pro case") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-3">
                             Ipad Pro case
                           </label>
@@ -61,7 +64,7 @@
                           </div> -->
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-4" name="claim-item" type="checkbox" value="Ergonomic Keyboard">
+                          <input class="govuk-checkboxes__input" id="claim-item-4" name="claim-item" type="checkbox" value="Ergonomic Keyboard" {{ checked("claim-item", "Ergonomic Keyboard") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-4">
                             Ergonomic Keyboard
                           </label>
@@ -70,7 +73,7 @@
                           </div> -->
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-5" name="claim-item" type="checkbox" value="Office chair">
+                          <input class="govuk-checkboxes__input" id="claim-item-5" name="claim-item" type="checkbox" value="Office chair" {{ checked("claim-item", "Office chair") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-5">
                             Office chair
                           </label>
@@ -79,7 +82,7 @@
                           </div> -->
                         </div>
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-6" name="claim-item" type="checkbox" value="Ergonomic mouse">
+                          <input class="govuk-checkboxes__input" id="claim-item-6" name="claim-item" type="checkbox" value="Ergonomic mouse" {{ checked("claim-item", "Ergonomic mouse") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-6">
                             Ergonomic mouse
                           </label>
