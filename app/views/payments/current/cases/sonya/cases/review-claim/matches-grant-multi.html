@@ -321,20 +321,41 @@ Cost
           <p class="govuk-body">   <a class="govuk-link" href="/public/images/S3-Sonya-Corkey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
 
         </h2>
+
+<!-- RADIO BUTTONS -->
+
       </legend>
           <div class="govuk-radios" data-module="govuk-radios">
+
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
               <label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
                 Yes
               </label>
             </div>
+
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~claim#your-tasks" {{ checked("grant-matches-claim", "No") }}>
+              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="total-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "total-doesnt-match") }}>
               <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
-                No
+                Total amount does not match
               </label>
             </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "element-doesnt-match") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-3">
+                Element does not match
+              </label>
+            </div>
+
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="total-element-doesnt-match~claim#your-tasks" {{ checked("grant-matches-claim", "total-element-doesnt-match") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-3">
+                Both amount and element do not match
+              </label>
+            </div>
+
 
         </div>
       </div>

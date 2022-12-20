@@ -3,7 +3,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends   "payments/sandbox/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 
@@ -13,7 +13,7 @@
 
 
 
-<form action="matches-grant-multi" method="post" novalidate>
+<form action="claim-item-no-match" method="post" novalidate>
   <div class="govuk-width-container">
 
     <main class="govuk-main-wrapper">
@@ -26,7 +26,9 @@
                     <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                          Select all items that appear on the claim form
+
+<!-- MAKE DYNAMIC TEXT BASED ON FEEDER RADIOS AS WE KNOW WHAT IS WRONG ALREADY, AMOUNT, ELEMENT OR BOTH -->
+                          Select all items that do not match
                         </h1>
                       </legend>
                       <div id="nationality-hint" class="govuk-hint">
@@ -34,59 +36,82 @@
                       </div>
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-1" name="claim-item" type="checkbox" value="Jaws screen reader" aria-describedby="claim-item-hint">
-                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-1">
+{% if 'Jaws screen reader' in data['claim-item'] %}
+                          <input class="govuk-checkboxes__input" id="claim-item-no-match-1" name="claim-item-no-match" type="checkbox" value="Jaws screen reader" {{ checked("claim-item-no-match", "Jaws screen reader") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-1">
                             Jaws screen reader
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £499
                           </div> -->
                         </div>
+{% endif %}
+
+{% if 'ZoomText Professional License' in data['claim-item'] %}
+
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-2" name="claim-item" type="checkbox" value="ZoomText Professional License">
-                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-2">
+                          <input class="govuk-checkboxes__input" id="claim-item-no-match-2" name="claim-item-no-match" type="checkbox" value="ZoomText Professional License" {{ checked("claim-item-no-match", "ZoomText Professional License") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-2">
                             ZoomText Professional License
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £501
                           </div> -->
                         </div>
+{% endif %}
+
+
+{% if 'Ipad Pro case' in data['claim-item'] %}
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-3" name="claim-item" type="checkbox" value="Ipad Pro case">
-                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-3">
+                          <input class="govuk-checkboxes__input" id="claim-item--no-match-3" name="claim-item-no-match" type="checkbox" value="Ipad Pro case" {{ checked("claim-item-no-match", "Ipad Pro case") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item--no-match-3">
                             Ipad Pro case
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £80
                           </div> -->
                         </div>
+{% endif %}
+
+
+{% if 'Ergonomic Keyboard' in data['claim-item'] %}
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-4" name="claim-item" type="checkbox" value="Erganomic Keyboard">
-                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-4">
-                            Erganomic Keyboard
+                          <input class="govuk-checkboxes__input" id="claim-item--no-match-4" name="claim-item-no-match" type="checkbox" value="Ergonomic Keyboard" {{ checked("claim-item-no-match", "Ergonomic Keyboard") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item--no-match-4">
+                            Ergonomic Keyboard
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £110
                           </div> -->
                         </div>
+{% endif %}
+
+
+{% if 'Office chair' in data['claim-item'] %}
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-5" name="claim-item" type="checkbox" value="Office chair">
-                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-5">
+                          <input class="govuk-checkboxes__input" id="claim-item--no-match-5" name="claim-item-no-match" type="checkbox" value="Office chair" {{ checked("claim-item-no-match", "Office chair") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item--no-match-5">
                             Office chair
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £230
                           </div> -->
                         </div>
+{% endif %}
+
+
+{% if 'Ergonomic mouse' in data['claim-item'] %}
                         <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="claim-item-6" name="claim-item" type="checkbox" value="Ergonomic mouse">
-                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-6">
+                          <input class="govuk-checkboxes__input" id="claim-item--no-match-6" name="claim-item-no-match" type="checkbox" value="Ergonomic mouse" {{ checked("claim-item-no-match", "Ergonomic mouse") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item--no-match-6">
                             Ergonomic mouse
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £40
                           </div> -->
                         </div>
+{% endif %}
+
 
                       </div>
 

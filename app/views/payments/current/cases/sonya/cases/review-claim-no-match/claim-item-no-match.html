@@ -3,7 +3,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends   "payments/sandbox/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 {% block csi %}
@@ -13,7 +13,7 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="/payments/sandbox/cases/claim#your-tasks" method="post" novalidate>
+<form action="element-type-no-match" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -28,7 +28,7 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Check claim form matches grant award
+Tell us what is wrong with this claim item
     </h2>
 
   </legend>
@@ -36,18 +36,13 @@ Check claim form matches grant award
               <!-- Does the claim match the grant award information below for the claim and grant award match. -->
                 </div>
 
-                {% if case == 'sonya' %}
-sonya                {% endif %}
-                {% if case == 'dereck' %}
-dereck                {% endif %}
-
 
 
 <br>
 <h2 class="govuk-heading-m">Grant award details</h2>
 
 
-{% if 'Jaws screen reader' in data['claim-item'] %}
+{% if 'Jaws screen reader' in data['claim-item-no-match'] %}
 <!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -87,7 +82,7 @@ Cost
 {% endif %}
 
 
-{% if 'ZoomText Professional License' in data['claim-item'] %}
+{% if 'ZoomText Professional License' in data['claim-item-no-match'] %}
 <!-- <h2 class="govuk-heading-m">Grant award details second item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -127,7 +122,7 @@ Cost
 {% endif %}
 
 
-{% if 'Ipad Pro case' in data['claim-item'] %}
+{% if 'Ipad Pro case' in data['claim-item-no-match'] %}
 <!-- <h2 class="govuk-heading-m">Grant award details third item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -167,7 +162,7 @@ Cost
 {% endif %}
 
 
-{% if 'Erganomic Keyboard' in data['claim-item'] %}
+{% if 'Ergonomic Keyboard' in data['claim-item-no-match'] %}
 <!-- <h2 class="govuk-heading-m">   Grant award details forth item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -207,7 +202,7 @@ Cost
 {% endif %}
 
 
-{% if 'Office chair' in data['claim-item'] %}
+{% if 'Office chair' in data['claim-item-no-match'] %}
 <!-- <h2 class="govuk-heading-m">   Grant award details fith item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -247,7 +242,7 @@ Cost
 {% endif %}
 
 
-{% if 'Ergonomic mouse' in data['claim-item'] %}
+{% if 'Ergonomic mouse' in data['claim-item-no-match'] %}
 <!-- <h2 class="govuk-heading-m">   Grant award details sixth item</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -319,27 +314,54 @@ Cost
       <div class="govuk-form-group">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h2 class="govuk-heading-m">
-          Does the claim form match the grant award?
-          <br>
-          <br>
-
-          <p class="govuk-body">   <a class="govuk-link" href="/public/images/S3-Sonya-Corkey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
+          Select all options that apply to this item?
 
         </h2>
-      </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="yes~sonya/claim-sonya#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~claim#your-tasks" {{ checked("grant-matches-claim", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
-                No
-              </label>
-            </div>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item-no-match-reason-1" name="claim-item-no-match-reason" type="checkbox" value="Jaws-screen-reader" {{ checked("claim-item-no-match-reason", "The element type does not match") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-reason-1">
+              The element type does not match
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £499
+            </div> -->
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item-no-match-reason-2" name="claim-item-no-match-reason" type="checkbox" value="ZoomText-Professional-License" {{ checked("claim-item-no-match-reason", "Amount is higher than grant award") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-reason-2">
+              Amount is higher than grant award
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £501
+            </div> -->
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item--no-match-reason-3" name="claim-item-no-match-reason" type="checkbox" value="Ipad-Pro-case" {{ checked("claim-item-no-match-reason", "Amount is lower than grant award") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item--no-match-reason-3">
+              Amount is lower than grant award
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £80
+            </div> -->
+          </div>
+
+          <div class="govuk-checkboxes__divider">or</div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item--no-match-reason-4" name="claim-item-no-match-reason" type="checkbox" value="Ergonomic-Keyboard" {{ checked("claim-item-no-match-reason", "The details on this item are correct") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item--no-match-reason-4">
+              The details on this item are correct
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £110
+            </div> -->
+          </div>
 
         </div>
       </div>
