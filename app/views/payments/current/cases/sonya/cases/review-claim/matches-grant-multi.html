@@ -281,6 +281,20 @@ Cost
 </dl>
 {% endif %}
 
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+Total
+  </dt>
+  <dd class="govuk-summary-list__value">
+£649
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  </dd>
+  </div>
+</dl>
+
 
                 <br>
 
@@ -335,26 +349,43 @@ Cost
             </div>
 
             <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+                No
+              </label>
+            </div>
+
+
+            <!-- <div class="govuk-radios__item">
+{% if 'Jaws screen reader' and 'Ergonomic mouse' in data['claim-item'] %}
               <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="total-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "total-doesnt-match") }}>
+{% else %}
+              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="total-doesnt-match~sonya/cases/review-claim-no-match/claim-item-no-match" {{ checked("grant-matches-claim", "total-doesnt-match") }}>
+{% endif %}
               <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
                 Total amount does not match
               </label>
             </div>
 
             <div class="govuk-radios__item">
+{% if 'Jaws screen reader' and 'Ergonomic mouse' in data['claim-item'] %}
               <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "element-doesnt-match") }}>
+{% else %}
+              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/element-type-no-match" {{ checked("grant-matches-claim", "element-doesnt-match") }}>
+{% endif %}
               <label class="govuk-label govuk-radios__label" for="grant-matches-claim-3">
                 Element does not match
               </label>
             </div>
 
             <div class="govuk-radios__divider">or</div>
+
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="total-element-doesnt-match~claim#your-tasks" {{ checked("grant-matches-claim", "total-element-doesnt-match") }}>
-              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-3">
+              <input class="govuk-radios__input" id="grant-matches-claim-4" name="grant-matches-claim" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "both-doesnt-match") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-4">
                 Both amount and element do not match
               </label>
-            </div>
+            </div> -->
 
 
         </div>

@@ -13,7 +13,12 @@
 
 
 
-<form action="claim-item-no-match" method="post" novalidate>
+{% if case == 'dereck' %}
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'sonya' %}
+<form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+{% endif %}
   <div class="govuk-width-container">
 
     <main class="govuk-main-wrapper">
@@ -36,6 +41,8 @@
                       </div>
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
+
+
 {% if 'Jaws screen reader' in data['claim-item'] %}
                           <input class="govuk-checkboxes__input" id="claim-item-no-match-1" name="claim-item-no-match" type="checkbox" value="Jaws screen reader" {{ checked("claim-item-no-match", "Jaws screen reader") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-1">

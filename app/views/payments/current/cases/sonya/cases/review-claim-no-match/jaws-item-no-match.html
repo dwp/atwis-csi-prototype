@@ -1,0 +1,189 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/current/claim/_CSIBASE.html" %}
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="amount-high-no-match" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Jaws sceen reader
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<br>
+<h2 class="govuk-heading-m">Grant award details</h2>
+
+
+<!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Jaws screen reader
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+£499
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+
+
+                <br>
+
+
+
+
+
+
+
+
+  <!-- <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-yes" name="grant-match-claim-yes" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-1">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-no" name="grant-match-claim-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-2">
+        No
+      </label> -->
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+
+<h2 class="govuk-heading-m">
+  Select all options that apply to this item?
+</h2>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item-no-match-jaws-1" name="claim-item-no-match-jaws" type="checkbox" value="The element type does not match" {{ checked("claim-item-no-match-jaws", "The element type does not match") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-jaws-1">
+              The element type does not match
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £499
+            </div> -->
+
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item-no-match-jaws-2" name="claim-item-no-match-jaws" type="checkbox" value="Amount is higher than grant award~amount-high-no-match" {{ checked("claim-item-no-match-jaws", "Amount is higher than grant award") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-jaws-2">
+              Amount is higher than grant award
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £501
+            </div> -->
+          </div>
+
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item-no-match-jaws-3" name="claim-item-no-match-jaws" type="checkbox" value="Amount is lower than grant award~amount-low-no-match" {{ checked("claim-item-no-match-jaws", "Amount is lower than grant award") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-jaws-3">
+              Amount is lower than grant award
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £80
+            </div> -->
+          </div>
+
+          <div class="govuk-checkboxes__divider">or</div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="claim-item-no-match-jaws-4" name="claim-item-no-match-jaws" type="checkbox" value="The details on this item are correct" {{ checked("claim-item-no-match-jaws", "The details on this item are correct") }}>
+            <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-jaws-4">
+              The details on this item are correct
+            </label>
+            <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              £110
+            </div> -->
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
