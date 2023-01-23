@@ -1,0 +1,19 @@
+
+
+
+
+<ul class="app-task-list__items">
+  <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+  <a href="{% if data['sw-addthomas']%}check-application/support-worker/details/add{% else %}check-application/support-worker/details/approve-1{% endif %}" aria-describedby="job-status">
+Support worker: add or change support
+  </a>
+  </span>
+  {% if not data['sw-add'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+  {% if data['sw-add'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+   </li>
+
+
+
+</ul>
