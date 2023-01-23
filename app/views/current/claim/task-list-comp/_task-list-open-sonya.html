@@ -74,37 +74,37 @@
               <span class="app-task-list__task-name">
   <a href="
 
-{% if data ['contact-employer']%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/contact-employment{% endif %}
+{% if data ['contact-employer'+phase]%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer/contact-employment{% endif %}
 
 " aria-describedby="job-status">
 
                   Get information from the employer
 </a>
               </span>
-
-{% if data['job-deatils-contact']=='They gave permission (apply)'%}
-{% if data ['contact-employer'+ phase]=='Yes'%}
+{% if data['employer-size'+ phase]=='50 to 249 (medium)' or '250 or more (large)' %}
+{% if data ['employer-cost-share']=='Yes'%}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-{% if  data['contact-employer'+ phase]=='Yes, but I’m waiting for an answer' %}
+
+{% if data ['employer-cost-share']=='No'%}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+{% if data ['employer-cost-share']=='I have not discussed a cost share with the employer'%}
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-{% if not data['contact-employer'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+{% if data ['employer-cost-share']=='I’m waiting for an answer from Smith Digital Limited'%}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+
+{% else %}
+
+{% if data ['employer-cost-share']=='Yes'%}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+{% if data ['employer-cost-share']=='I’m waiting for an answer from Smith Digital Limited'%}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+
+
 {% if data ['contact-employer'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}
-
-{% else %}
-
-{% if  data['job-deatils-contact'+ phase]=='They gave permission' and data ['contact-employer']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-{% if  data['job-deatils-contact'+ phase+ phase]=='They did not give permission'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-{% if  data['job-deatils-contact'+ phase]=='They gave permission' and data ['contact-employer']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-{% if  data['contact-employer'+ phase]=='Yes, but I’m waiting for an answer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-{% if  data['job-deatils-contact'+ phase]=='I have not spoken to them' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-
-{% if data ['job-deatils-contact'+ phase]=='They gave permission (apply)'%}
+{% endif %}
 {% if not data['contact-employer'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-
-{% else %}
-{% if not data['job-deatils-contact'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-{% endif %}
-{% endif %}
 </li>
 
 <!--

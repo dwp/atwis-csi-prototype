@@ -48,7 +48,7 @@
                      <tr class="govuk-table__row">
                        <th scope="row" class="govuk-table__header">Specialist equipment</th>
                        <td class="govuk-table__cell govuk-table__cell--numeric">ZoomText</td>
-                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£501</td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">{{data['chosen-quote-sonya']}}</td>
                      </tr>
 
 
@@ -72,10 +72,12 @@
                           Total award
                           </dt>
                           <dd class="govuk-summary-list__value" style="text-align: right;">
+{% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
+{% if data['chosen-quote-sonya']=='£502'%}{% set i = 502 %} {% endif %}
+{% if data['chosen-quote-sonya']=='£503'%}{% set i = 503 %} {% endif %}
 
-{% set i = data['cost-per-item'] %}
-{% if i == 0 %}{% endif %}
-                        £{{ i + 1000 }}
+{% if not i  %}0{% endif %}
+                        £{{ i + 499 }}
 
                           </dd>
                           </div>

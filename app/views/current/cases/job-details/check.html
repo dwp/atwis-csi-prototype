@@ -8,7 +8,7 @@
 <br>
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -27,7 +27,7 @@
 
             </dt>
             <dd class="govuk-summary-list__value">
-{{ data['employer-confirmed']}}
+{{ data['employer-confirmed'+ phase]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">
@@ -41,7 +41,7 @@
                             {% include  "./content/how-many-people-work.html" %}
             </dt>
             <dd class="govuk-summary-list__value">
-{{ data['employer-size']}}
+{{ data['employer-size'+ phase]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="index">

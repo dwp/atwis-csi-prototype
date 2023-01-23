@@ -124,7 +124,7 @@ data ['benefits']
 <ol class="app-task-list">
   <li>
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details 
+      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
     </h2>
     <ul class="app-task-list__items">
   <li class="app-task-list__item">
@@ -190,8 +190,8 @@ data ['benefits']
   </button>{% endif %}
 </form>
 <ul class="app-task-list__items">
-{% if data['employer-size'+ phase] and
-data['wpa'+ phase]  %}
+{% if 
+data['employer-cost-share']=='Yes'  %}
 
     {% include  "../claim/_task-list-element.html" %}{% else %}
 
