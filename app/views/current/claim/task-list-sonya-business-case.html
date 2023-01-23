@@ -182,19 +182,14 @@ data ['benefits']
   {% endif %}
 
 
-{% if not elementAdd =='1'%}
-<p>Add new elements</p>{% else %}
-<form class="" action="/current/cases/sonya/cases/workplace-assesment/wpa-report/support" method="post" >
-  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Add new elements
-  </button>{% endif %}
-</form>
-<ul class="app-task-list__items">
+
+
+
 {% if  data['employer-cost-share']=='Yes' or data['employer-sizesonya']=='10 to 49 (small)' and data['employer-cost-sharesonya']=='I have not discussed a cost share with the employer' %}
 
     {% include  "../claim/_task-list-element.html" %}{% else %}
-
-
+<p>Add new elements</p>
+<ul class="app-task-list__items">
       <li class="app-task-list__item">
       <span class="app-task-list__task-name">
 
