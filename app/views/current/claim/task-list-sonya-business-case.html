@@ -190,8 +190,7 @@ data ['benefits']
   </button>{% endif %}
 </form>
 <ul class="app-task-list__items">
-{% if 
-data['employer-cost-share']=='Yes'  %}
+{% if  data['employer-cost-share']=='Yes' or data['employer-sizesonya']=='10 to 49 (small)' and data['employer-cost-sharesonya']=='I have not discussed a cost share with the employer' %}
 
     {% include  "../claim/_task-list-element.html" %}{% else %}
 

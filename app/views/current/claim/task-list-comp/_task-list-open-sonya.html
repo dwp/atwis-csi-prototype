@@ -81,7 +81,7 @@
                   Get information from the employer
 </a>
               </span>
-{% if data['employer-size'+ phase]=='50 to 249 (medium)' or '250 or more (large)' %}
+{% if data['employer-size'+ phase]=='50 to 249 (medium)' or data['employer-size'+ phase]=='250 or more (large)' %}
 {% if data ['employer-cost-share']=='Yes'%}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
 
@@ -95,11 +95,11 @@
 
 {% else %}
 
-{% if data ['employer-cost-share']=='Yes'%}
+{% if data ['employer-cost-sharesonya']=='Yes'%}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
 
-{% if data ['employer-cost-share']=='I’m waiting for an answer from Smith Digital Limited'%}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% if data ['employer-cost-sharesonya']=='I have not discussed a cost share with the employer'%}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
 
 
 {% if data ['contact-employer'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}

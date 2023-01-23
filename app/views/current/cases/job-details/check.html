@@ -44,7 +44,7 @@
 {{ data['employer-size'+ phase]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="index">
+              <a class="govuk-link" href="details">
               Update<span class="govuk-visually-hidden">      {% include  "./content/how-many-people-work.html" %}</span>
               </a>
             </dd>
@@ -75,6 +75,8 @@
                                       {% include  "./content/agree-to-cost-share.html" %}
                       </dt>
                       <dd class="govuk-summary-list__value">
+            {% if data['employer-size'+ phase]=='' %}      {{ data['employer-cost-share'+ phase]}}
+
                   {{ data['employer-cost-share']}}
                       </dd>
                       <dd class="govuk-summary-list__actions">
