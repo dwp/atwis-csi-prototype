@@ -9,7 +9,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-<a href="{% if data['sae-addsonya']%}./check-application/sae/details/add{% else %}sae/details/approve-1{% endif %}" aria-describedby="job-status">
+<a href="{% if data['sae-addsonya']%}./check-application/sae/details/add{% else %}./check-application/sae/details/approve-1{% endif %}" aria-describedby="job-status">
   Specialist equipment: add or change support
 </a>
 </span>
@@ -66,8 +66,8 @@
   Confirm details for specialist equipment 1
 </a>
 </span>
-{% if not data['social-domestic'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-{% if data['social-domestic'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+{% if not data['medical']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['medical']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
  </li>
 
@@ -77,8 +77,8 @@
 Confirm details for specialist equipment 2
 </a>
 </span>
-{% if not data['social-domestic-2'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-{% if data['social-domestic-2'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+{% if not data['medical-2']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['medical-2']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
 </li>{% endif %}
 
@@ -89,8 +89,8 @@ Confirm details for specialist equipment 2
 Confirm details for specialist equipment 3
 </a>
 </span>
-{% if not data['social-domestic-3'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-{% if data['social-domestic-3'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+{% if not data['medical-3'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['medical-3'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
 </li>
 {% endif %}
@@ -104,8 +104,8 @@ Confirm details for specialist equipment 3
   Confirm details for specialist equipment
  </a>
  </span>
- {% if not data['social-domestic']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
- {% if data['social-domestic']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+ {% if not data['medical']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+ {% if data['medical']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
   </li>{% endif %}
 <!-- <li class="app-task-list__item">

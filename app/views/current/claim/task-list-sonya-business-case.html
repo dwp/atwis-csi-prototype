@@ -226,7 +226,7 @@ data ['benefits']
       </ul>{% endif %}
 
       {% if data['sae-item-type']%}
-      {% if data['social-domestic-3'+ phase]%}
+      {% if data['medical-2']%}
             <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
             <p>You do not need to send this award to anyone else for approval. </p>
@@ -234,7 +234,7 @@ data ['benefits']
           <br>
       {% endif %}
       {% else %}
-      {% if data['social-domestic-2'+ phase]%}
+      {% if data['medical-2']%}
             <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
             <p>You do not need to send this award to anyone else for approval. </p>
@@ -257,7 +257,7 @@ data ['benefits']
 
 
                 {% if data['sae-item-type']%}
-                {% if data['social-domestic-3'+ phase]%}
+                {% if data['medical-3']%}
             {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
           {% else %}
           <ul class="app-task-list__items">
@@ -277,7 +277,7 @@ data ['benefits']
 
 {% else %}
 
-          {% if data['social-domestic-2'+ phase]%}
+          {% if data['medical-2']%}
       {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
     {% else %}
     <ul class="app-task-list__items">
