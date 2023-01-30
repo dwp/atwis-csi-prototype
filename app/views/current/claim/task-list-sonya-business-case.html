@@ -182,19 +182,14 @@ data ['benefits']
   {% endif %}
 
 
-{% if not elementAdd =='1'%}
-<p>Add new elements</p>{% else %}
-<form class="" action="/current/cases/sonya/cases/workplace-assesment/wpa-report/support" method="post" >
-  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Add new elements
-  </button>{% endif %}
-</form>
-<ul class="app-task-list__items">
+
+
+
 {% if  data['employer-cost-share']=='Yes' or data['employer-sizesonya']=='10 to 49 (small)' and data['employer-cost-sharesonya']=='I have not discussed a cost share with the employer' %}
 
     {% include  "../claim/_task-list-element.html" %}{% else %}
-
-
+<p>Add new elements</p>
+<ul class="app-task-list__items">
       <li class="app-task-list__item">
       <span class="app-task-list__task-name">
 
@@ -231,7 +226,7 @@ data ['benefits']
       </ul>{% endif %}
 
       {% if data['sae-item-type']%}
-      {% if data['social-domestic-3'+ phase]%}
+      {% if data['medical-2']%}
             <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
             <p>You do not need to send this award to anyone else for approval. </p>
@@ -239,7 +234,7 @@ data ['benefits']
           <br>
       {% endif %}
       {% else %}
-      {% if data['social-domestic-2'+ phase]%}
+      {% if data['medical-2']%}
             <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
             <p>You do not need to send this award to anyone else for approval. </p>
@@ -262,7 +257,7 @@ data ['benefits']
 
 
                 {% if data['sae-item-type']%}
-                {% if data['social-domestic-3'+ phase]%}
+                {% if data['medical-3']%}
             {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
           {% else %}
           <ul class="app-task-list__items">
@@ -282,7 +277,7 @@ data ['benefits']
 
 {% else %}
 
-          {% if data['social-domestic-2'+ phase]%}
+          {% if data['medical-2']%}
       {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
     {% else %}
     <ul class="app-task-list__items">
