@@ -22,9 +22,55 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading">
-                  Is Dereck Smith available for a workplace assessment in the next 8 working days?
+                   Is Derek Smith available for a workplace assessment on any of the next 8
+   weekdays?
                  </h2>
                </legend>
+
+
+
+
+               <p>Consider weekdays up to and including <span id="future-date"></span>. Exclude public holidays.
+Assessments can:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>
+take place between 8am and 6pm
+</li>
+<li>
+last up to 90 minutes
+</li>
+</ul>
+
+
+
+<script>
+//get todays Date
+var today = new Date();
+var days = 0;
+var futureDate = new Date();
+
+//Add 8 weekdays to todays Date
+while (days < 8) {
+  futureDate.setDate(futureDate.getDate() + 1);
+  var day = futureDate.getDay();
+  if (day !== 0 && day !== 6) {
+    days++;
+}
+}
+
+//formate
+var options = { day: 'numeric', month: 'long', year: 'numeric'
+};
+var formattedDate = futureDate.toLocaleDateString('en-GB', options);
+
+// Display the future date on the page
+document.getElementById("future-date").innerHTML =
+formattedDate;
+</script>
+
+
+
+
                <div class="govuk-radios ">
                  <div class="govuk-radios__item">
                    <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="Yes~others" {{ checked("wpa-availability", "Yes") }}>
