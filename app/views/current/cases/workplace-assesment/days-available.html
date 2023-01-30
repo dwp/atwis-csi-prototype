@@ -21,13 +21,48 @@
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="availability-wpa">
-                Availability of Dereck Smith over the next 8 working days
+              When is Derek Smith available for a workplace assessment in the next 8
+weekdays?
               </label>
             </h2>
-            <div id="availability-wpa-hint" class="govuk-hint">
-              Include availability on non-working days and out of working hours if
-          appropriate.
-            </div>
+        <p>Provide details of Derek Smith’s availability for a workplace assessment between 8am and 6pm
+on the following days:</p>
+
+
+<ul id="future-date"></ul>
+
+<script>
+//get todays Date
+var today = new Date();
+var days = 0;
+var futureDate = new Date();
+var dateList = [];
+
+
+//Add 8 weekdays to todays Date
+while (days < 8) {
+  futureDate.setDate(futureDate.getDate() + 1);
+  var day = futureDate.getDay();
+  if (day !== 0 && day !== 6) {
+    var options = { day: 'numeric', month: 'long', year: 'numeric'
+    };
+    var formattedDate = futureDate.toLocaleDateString('en-GB', options);
+
+    days++;
+}
+}
+
+
+// Display the future date on the page
+var list = "";
+for (var i = 0; i < dateList.lenght; i++) {
+  list += "<li>" + dateList[i] + "</li>";
+}
+document.getElementById("future-date").innerHTML =
+list;
+</script>
+<p>Allow 90 minutes for an assessment.</p>
+
             <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa" rows="5" aria-describedby="availability-wpa-hint"></textarea>
           </div>
           {% if 'No' in data['others-wpa']%}
@@ -38,7 +73,11 @@
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-2">
-                Avability of third party over the next 8 working days
+              When is the third party available for a workplace assessment in the next 8
+              weekdays?
+
+
+
               </label>
             </h2>
             <div id="availability-wpa-hint" class="govuk-hint">
@@ -58,7 +97,10 @@
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-3">
-                Avability of someone from Smith Digital Limited over the next 8 working days
+
+
+                When is the someone from Smith Digital Limited available for a workplace assessment in the next 8
+                weekdays?
               </label>
             </h2>
             <div id="availability-wpa-hint" class="govuk-hint">
