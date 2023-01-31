@@ -29,38 +29,38 @@ weekdays?
 on the following days:</p>
 
 
-<ul id="future-date"></ul>
+<ul id="future-dates"></ul>
+  <script>
+    const today = new Date();
+    let days = 0;
+    let futureDate = new Date();
+    const dateList = [];
 
-<script>
-//get todays Date
-var today = new Date();
-var days = 0;
-var futureDate = new Date();
-var dateList = [];
+    // Add 8 weekdays to today's date
+    while (days < 8) {
+      futureDate.setDate(futureDate.getDate() + 1);
+      const day = futureDate.getDay();
+      if (day !== 0 && day !== 6) {
+        days++;
+        dateList.push(new Date(futureDate));
+      }
+    }
+
+    // Display the future dates on the HTML page
+    const list = dateList
+      .map(
+        date =>
+          `<li>${date.toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+          })}</li>`
+      )
+      .join("");
+    document.getElementById("future-dates").innerHTML = list;
+  </script>
 
 
-//Add 8 weekdays to todays Date
-while (days < 8) {
-  futureDate.setDate(futureDate.getDate() + 1);
-  var day = futureDate.getDay();
-  if (day !== 0 && day !== 6) {
-    var options = { day: 'numeric', month: 'long', year: 'numeric'
-    };
-    var formattedDate = futureDate.toLocaleDateString('en-GB', options);
-
-    days++;
-}
-}
-
-
-// Display the future date on the page
-var list = "";
-for (var i = 0; i < dateList.lenght; i++) {
-  list += "<li>" + dateList[i] + "</li>";
-}
-document.getElementById("future-date").innerHTML =
-list;
-</script>
 <p>Allow 90 minutes for an assessment.</p>
 
             <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa" rows="5" aria-describedby="availability-wpa-hint"></textarea>
