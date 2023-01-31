@@ -3,7 +3,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/sprint-20/claim/_CSIBASE.html" %}
 
 {% block csi %}
 
@@ -12,8 +12,8 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
-<form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+<!-- <form action="/payments/sprint-20/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-20/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
 
 
 
@@ -76,7 +76,7 @@ What does not match the grant award?
 Amount is lower than grant
         </dd>
         <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match">
+        <a class="govuk-link" href="/payments/sprint-20/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match">
 Update
         <span class="govuk-visually-hidden"> - </span>
         </a>
@@ -92,7 +92,7 @@ Amount to pay
 £{{data['new-low-amount-1']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match">
+        <a class="govuk-link" href="/payments/sprint-20/cases/sonya/cases/review-claim-no-match/amount-low-no-match">
 Update
         <span class="govuk-visually-hidden">amount to pay</span>
         </a>
