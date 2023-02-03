@@ -69,6 +69,19 @@
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
+
+        {% if  data['employer-sizesonya']=='1 to 9 (micro)' or not data['employer-sizesonya']=='10 to 49 (small)' and (data['social-domestic'+ phase]=='Yes') or (data['social-domestic-1'+ phase]=='Yes')%}
+      <th scope="row" class="govuk-table__header"> Total award before cost share</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">   {% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
+         {% if data['chosen-quote-sonya']=='£502'%}{% set i = 502 %} {% endif %}
+         {% if data['chosen-quote-sonya']=='£503'%}{% set i = 503 %} {% endif %}
+
+         {% if not i  %}0{% endif %}
+             £{{ i + 499 }}</td>
+    </tr>{% endif %}
+
+
       {% if  data['employer-sizesonya']=='50 to 249 (medium)' or data['employer-sizesonya']=='250 or more (large)'%}
       <th scope="row" class="govuk-table__header"> Total award before cost share</th>
       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
@@ -110,7 +123,16 @@
           <td class="govuk-table__cell govuk-table__cell--numeric" >   {% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
           {% if data['employer-sizesonya']=='50 to 249 (medium)'%}{% if data['social-domestic'+ phase]=='Yes'%}£114.29{% else %}£400{% endif %}{% endif %}
         {% if data['employer-sizesonya']=='250 or more (large)'%}£0{% endif %}
-  {% if not (data['employer-sizesonya']=='50 to 249 (medium)' or  data['employer-sizesonya']=='250 or more (large)')%}£1000{% endif %}
+  {% if not (data['employer-sizesonya']=='50 to 249 (medium)' or  data['employer-sizesonya']=='250 or more (large)')%}
+
+{% if data['social-domestic'+ phase]=='Yes' and data['social-domestic-1'+ phase]=='Yes'%}£714.29{% endif %}
+{% if data['social-domestic'+ phase]=='Yes' and  data['social-domestic-1'+ phase]=='No'%}£{% endif %}
+{% if data['social-domestic'+ phase]=='No' and data['social-domestic-1'+ phase]=='Yes'%}£{% endif %}
+{% if data['social-domestic'+ phase]=='No' and data['social-domestic-1'+ phase]=='No'%}  £1000{% endif %}
+
+
+
+  {% endif %}
 
 
       </td>
