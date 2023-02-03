@@ -37,22 +37,19 @@ Check payment and send for approval
                     Check the details before you approve the payment request.
                       </div>
 
+                      <br>
+                      <h2 class="govuk-heading-m">Payee details</h2>
 
 
-      <br>
-      <dl class="govuk-summary-list">
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-{% if case == 'dereck' %}
-            Invoice number
-{% endif %}
-{% if case == 'sonya' %}
-            Invoice numbers
-{% endif %}
-
+            Payee name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['invoice-number']}}
+            {{data['sop-payee-name']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <!-- <a class="govuk-link" href="#">
@@ -60,121 +57,125 @@ Check payment and send for approval
             </a> -->
           </dd>
         </div>
-
-
-        <!-- <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Invoice date
+            Site code
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['invoice-day']}}
-
-            {% if (data['invoice-month'] =='01') or (data['invoice-month'] =='1') %} January {% endif%}
-       {% if (data['invoice-month'] =='02') or (data['invoice-month'] =='2') %} February  {% endif%}
-       {% if (data['invoice-month'] =='03') or (data['invoice-month'] =='3') %} March {% endif%}
-       {% if (data['invoice-month'] =='04') or (data['invoice-month'] =='4') %} June {% endif%}
-       {% if (data['invoice-month'] =='05') or (data['invoice-month'] =='5') %} May {% endif%}
-       {% if (data['invoice-month'] =='06') or (data['invoice-month'] =='6') %} June {% endif%}
-       {% if (data['invoice-month'] =='07') or (data['invoice-month'] =='7') %} July {% endif%}
-       {% if (data['invoice-month'] =='08') or (data['invoice-month'] =='8') %} August {% endif%}
-       {% if (data['invoice-month'] =='09') or (data['invoice-month'] =='9') %} September {% endif%}
-       {% if data['invoice-month'] =='10' %} October {% endif%}
-       {% if data['invoice-month'] =='11'%} November {% endif%}
-       {% if data['invoice-month'] =='12' %} December {% endif%}
-
-            {{data['invoice-year']}}
-
-
-
+            {{data['sop-site-code']}}
           </dd>
           <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a> -->
           </dd>
-        </div> -->
-
-
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-             Payee name
-        </dt>
-        <dd class="govuk-summary-list__value">
-             {{data['sop-payee-name']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> address</span>
-          </a> -->
-        </dd>
         </div>
-
-
-        <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-             Payee postcode
-        </dt>
-        <dd class="govuk-summary-list__value">
-             AB1 1AB -->
-             <!-- {{data['']}} -->
-        <!-- </dd>
-        <dd class="govuk-summary-list__actions"> -->
-          <!-- <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> address</span>
-          </a> -->
-        <!-- </dd>
-        </div> -->
-
-
         <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-             Payment amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-{% if case == 'dereck' %}
-          £499
-{% endif %}
-{% if case == 'sonya' %}
-          £639
-{% endif %}
-
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> address</span>
-          </a> -->
-        </dd>
+          <dt class="govuk-summary-list__key">
+            SOP supplier number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sop-supplier-number']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a> -->
+          </dd>
         </div>
-
-
         <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-             Site code
-        </dt>
-        <dd class="govuk-summary-list__value">
-             {{data['sop-site-code']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> contact details</span>
-          </a> -->
-        </dd>
+          <dt class="govuk-summary-list__key">
+            {% if case == 'dereck' %}
+                        Invoice number
+            {% endif %}
+            {% if case == 'sonya' %}
+                        Invoice numbers
+            {% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['invoice-number']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a> -->
+          </dd>
         </div>
+      </dl>
 
 
+      <h2 class="govuk-heading-m">Payment breakdown</h2>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-             SOP supplier number
-        </dt>
-        <dd class="govuk-summary-list__value">
-             {{data['sop-supplier-number']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> contact details</span>
-          </a> -->
-        </dd>
+          <dt class="govuk-summary-list__key">
+            Jaws screen reader
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £499
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a> -->
+          </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Ergonomic keyboard
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £{{data['new-low-amount-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Ergonomic mouse
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £40
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a> -->
+          </dd>
+        </div>
+      </dl>
 
 
-    </dl>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total amount to pay
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £639
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a> -->
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+
+
+
+
+
+
+
 
             <div class="govuk-form-group">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
