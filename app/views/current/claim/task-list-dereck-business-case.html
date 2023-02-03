@@ -217,8 +217,8 @@ data ['benefits']
                   Confirm details for specialist equipment 1
                 </a>
                 </span>
-                {% if not data['social-domestic']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-                {% if data['social-domestic']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+                {% if not data['medical']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+                {% if data['medical']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
                  </li>
         {% endif %}
@@ -289,7 +289,7 @@ data ['benefits']
 </ul>
 
 
-      {% if data['social-domestic']%}
+      {% if data['medical']%}
             <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
             <p>You do not need to send this award to anyone else for approval. </p>
@@ -303,7 +303,7 @@ data ['benefits']
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">5. </span> Award decision
           </h2>
-          {% if data['social-domestic-2']%}
+          {% if data['medical']%}
             {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}
           {% else %}
           <ul class="app-task-list__items">
