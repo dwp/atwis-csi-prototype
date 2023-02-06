@@ -70,7 +70,9 @@
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
 
-        {% if  data['employer-sizesonya']=='1 to 9 (micro)' or not data['employer-sizesonya']=='10 to 49 (small)' and (data['social-domestic'+ phase]=='Yes') or (data['social-domestic-1'+ phase]=='Yes')%}
+        {% if  data['employer-sizesonya']=='1 to 9 (micro)' or
+         data['employer-sizesonya']=='10 to 49 (small)'
+        and (data['social-domestic'+ phase]=='Yes') or (data['social-domestic-1'+ phase]=='Yes') and not data['employer-sizesonya']=='50 to 249 (medium)' or not data['employer-sizesonya']=='250 or more (large)'%}
       <th scope="row" class="govuk-table__header"> Total award before cost share</th>
       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
       <td class="govuk-table__cell govuk-table__cell--numeric">   {% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
@@ -105,23 +107,57 @@
       </tr>
       {% endif %}
 
-      {% if data['social-domestic'+ phase]=='Yes'%}
+      {% if data['social-domestic'+ phase]=='Yes' and  data['social-domestic-1'+ phase]=='No'%}
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">  Total social and domestic contribution: 2 days</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">Jaws Screen Reader<br>ZoomText </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">Jaws Screen Reader </td>
           <td class="govuk-table__cell govuk-table__cell--numeric" >
-              -£285.71
+              -£142.57
 
               </td>
         </tr>{% endif %}
+
+        {% if data['social-domestic'+ phase]=='Yes' and  data['social-domestic-1'+ phase]=='Yes'%}
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">  Total social and domestic contribution: 2 days</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">Jaws Screen Reader<br> ZoomText </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" >
+                -£285.71
+
+                </td>
+          </tr>{% endif %}
+
+          {% if data['social-domestic'+ phase]=='No' and  data['social-domestic-1'+ phase]=='Yes'%}
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">  Total social and domestic contribution: 2 days</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">ZoomText </td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" >
+                  -£143.14
+
+                  </td>
+            </tr>{% endif %}
+
+
       <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"> Total award </th>
           <td class="govuk-table__cell govuk-table__cell--numeric"></td>
           <td class="govuk-table__cell govuk-table__cell--numeric" >   {% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
-          {% if data['employer-sizesonya']=='50 to 249 (medium)'%}{% if data['social-domestic'+ phase]=='Yes'%}£114.29{% else %}£400{% endif %}{% endif %}
+          {% if data['employer-sizesonya']=='50 to 249 (medium)'%}
+
+
+
+          {% if data['social-domestic'+ phase]=='Yes' and data['social-domestic-1'+ phase]=='Yes'%}£114.29{% endif %}
+{% if data['social-domestic'+ phase]=='Yes' and  data['social-domestic-1'+ phase]=='No'%}£257.43{% endif %}
+{% if data['social-domestic'+ phase]=='No' and data['social-domestic-1'+ phase]=='Yes'%}£256.86{% endif %}
+{% if data['social-domestic'+ phase]=='No' and data['social-domestic-1'+ phase]=='No'%}  £400{% endif %}
+
+
+          {% endif %}
         {% if data['employer-sizesonya']=='250 or more (large)'%}£0{% endif %}
   {% if not (data['employer-sizesonya']=='50 to 249 (medium)' or  data['employer-sizesonya']=='250 or more (large)')%}
 
