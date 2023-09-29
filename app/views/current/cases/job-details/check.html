@@ -27,7 +27,7 @@
 
             </dt>
             <dd class="govuk-summary-list__value">
-{{ data['employer-sector']}}
+{{ data['employer-sector'+ phase]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="employment-sector">
@@ -36,13 +36,13 @@
             </dd>
           </div>
 
-{% if data['employer-sector']=='Yes'%}
+{% if data['employer-sector'+ phase]=='Yes'%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
               Which type of organisation is Smith Digital Limited?
   </dt>
   <dd class="govuk-summary-list__value">
-{{ data['employer-sector-type']}}
+{{ data['employer-sector-type'+ phase]}}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="employment-sector-type">
@@ -59,7 +59,7 @@
                             {% include  "./content/how-many-people-work.html" %}
             </dt>
             <dd class="govuk-summary-list__value">
-{{ data['employer-size']}}
+{{ data['employer-size'+ phase]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="employer-size">
@@ -68,15 +68,15 @@
             </dd>
           </div>
 
-{% if data['employer-size']=='50 to 249 (medium)' or data['employer-size']=='250 or more (large)'%}
+{% if data['employer-size'+ phase]=='50 to 249 (medium)' or data['employer-size'+ phase]=='250 or more (large)'%}
           <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                                       {% include  "./content/agree-to-cost-share.html" %}
                       </dt>
                       <dd class="govuk-summary-list__value">
-       {{ data['employer-cost-share']}}
+       {{ data['employer-cost-share'+ phase]}}
 
-                  {{ data['employer-cost-share']}}
+                  {{ data['employer-cost-share'+ phase]}}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="contact-cost-share-agreement">
@@ -86,13 +86,13 @@
                     </div>
 {% endif %}
 
-{% if data['employer-cost-share']=='No'%}
+{% if data['employer-cost-share'+ phase]=='No'%}
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                                       {% include  "./content/third-party-agreed.html" %}
                       </dt>
                       <dd class="govuk-summary-list__value">
-                  {{ data['third-party']}}
+                  {{ data['third-party'+ phase]}}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="third-party">
@@ -100,7 +100,7 @@
                         </a>
                       </dd>
                     </div>
-{% if data['third-party']=='Yes'%}
+{% if data['third-party'+ phase]=='Yes'%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
 
@@ -109,7 +109,7 @@
 
   </dt>
   <dd class="govuk-summary-list__value">
-    {{data['third-party-name']}}
+    {{data['third-party-name'+ phase]}}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="third-party-details#third-party-name">
@@ -126,11 +126,11 @@ Third party’s address
 
   </dt>
   <dd class="govuk-summary-list__value">
-    {{data['third-party-address-line-1']}}<br>
-    {{data['third-party-address-line-2']}}{% if data['third-party-address-line-2']%}<br>{% endif %}
-    {{data['third-party-address-town']}}{% if data['third-party-address-town']%}<br>{% endif %}
-    {{data['third-party-address-county']}}{% if data['third-party-address-county']%}<br>{% endif %}
-    {{data['third-party-address-postcode']}}
+    {{data['third-party-address-line-1'+ phase]}}<br>
+    {{data['third-party-address-line-2'+ phase]}}{% if data['third-party-address-line-2'+ phase]%}<br>{% endif %}
+    {{data['third-party-address-town'+ phase]}}{% if data['third-party-address-town'+ phase]%}<br>{% endif %}
+    {{data['third-party-address-county'+ phase]}}{% if data['third-party-address-county'+ phase]%}<br>{% endif %}
+    {{data['third-party-address-postcode'+ phase]}}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="third-party-details#third-party-address-line-1">
@@ -150,7 +150,7 @@ Third party’s address
 
     </dt>
     <dd class="govuk-summary-list__value">
-      {% for feature in data['third-party-contact'] %}
+      {% for feature in data['third-party-contact'+ phase] %}
         <li>{{ feature }}</li>
       {% else %}
         <li>None </li>
@@ -163,14 +163,14 @@ Third party’s address
     </dd>
   </div>
 
-{% if 'email' in data['third-party-contact']%}
+{% if 'email' in data['third-party-contact'+ phase]%}
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
 Third party’s email
 
 </dt>
   <dd class="govuk-summary-list__value">
-  {{data['third-party-email']}}
+  {{data['third-party-email'+ phase]}}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="third-party-telephone-email#third-party-email">
@@ -180,14 +180,14 @@ Third party’s email
 </div>
 {% endif %}
 
-{% if 'telephone' in data['third-party-contact']%}
+{% if 'telephone' in data['third-party-contact'+ phase]%}
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
 Third party’s telephone
 
 </dt>
   <dd class="govuk-summary-list__value">
-  {{data['third-party-telephone']}}
+  {{data['third-party-telephone'+ phase]}}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="third-party-telephone-email#third-party-telephone">

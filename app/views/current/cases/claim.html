@@ -4,7 +4,8 @@
 {% set hideback = "true" %}
 
 
-
+{% if data['exceptions']=='No'%}
+{% set phase = "notEligible" %}{% endif %}
 
 {% extends   "../claim/_CSIBASE.html" %}
 

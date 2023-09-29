@@ -5,9 +5,37 @@
 {% if not totalcomplete %}
   {% set totalcomplete = 0 %}
   {% endif %}
+
+  {% if not totaljob %}
+    {% set totaljob = 0 %}
+    {% endif %}
+
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if data['wpa'+ phase]=='No'  %}
+      {% set totaljob = totaljob + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if data['wpa'+ phase]=='Yes' and data['others-wpa'+ phase]  %}
+      {% set totaljob = totaljob + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+{% for i in [1] -%}
+ {% set contactindex = i %}
+  {% if 'Completed and sent letter ATW01CL' in data['notification'+ phase]
+  %}
+  {% set totalcomplete = totalcomplete + 1 %}
+{% endif %}
+  {%- endfor %}
+
   {% for i in [1] -%}
    {% set contactindex = i %}
-    {% if 'Completed and sent letter ATW01CL' in data['notification'+ phase]
+    {% if  'Completed and sent letter ATW02EL' in data['notification'+ phase]
     %}
     {% set totalcomplete = totalcomplete + 1 %}
   {% endif %}
@@ -15,36 +43,18 @@
 
     {% for i in [1] -%}
      {% set contactindex = i %}
-      {% if  'Completed and sent letter ATW02EL' in data['notification'+ phase]
+      {% if  'Sent any attachments' in data['notification'+ phase]
       %}
       {% set totalcomplete = totalcomplete + 1 %}
     {% endif %}
       {%- endfor %}
-
-      {% for i in [1] -%}
-       {% set contactindex = i %}
-        {% if  'Sent any attachments' in data['notification'+ phase]
-        %}
-        {% set totalcomplete = totalcomplete + 1 %}
-      {% endif %}
-        {%- endfor %}
-
-    {% for i in [1] -%}
-     {% set contactindex = i %}
-      {% if
-      'Saved copy of letters and any attachments to Sharepoint' in data['notification'+ phase]
-      %}
-      {% set totalcomplete = totalcomplete + 1 %}
-    {% endif %}
-      {%- endfor %}
-{% if not totaljob %}
-  {% set totaljob = 0 %}
-  {% endif %}
 
   {% for i in [1] -%}
    {% set contactindex = i %}
-    {% if data['wpa'+ phase]=='No'  %}
-    {% set totaljob = totaljob + 1 %}
+    {% if
+    'Saved copy of letters and any attachments to Sharepoint' in data['notification'+ phase]
+    %}
+    {% set totalcomplete = totalcomplete + 1 %}
   {% endif %}
     {%- endfor %}
 
@@ -60,7 +70,7 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %}
 </a>
 </p>
 
@@ -73,28 +83,76 @@
 {% else %}
 
 
-{% if
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
 
 
 data ['appointee']
-
+and
+data ['benefits']
 %}
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing appointee task.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 
 
+
+
+
+  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+
+    data ['condition-check'+ phase]
+    and
+    data ['job-deatils-check'+ phase]
+
+    and
+    data ['appointee']
+    and
+    data ['benefits']
+  %}<ol class="app-task-list">
+    {% include  "../claim/task-list-comp/_task-list-open-sonya.html" %}
+  {% else %}
 
 <ol class="app-task-list">
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
+    </h2>
+    <ul class="app-task-list__items">
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+
+        Confirm whether workplace assessment is needed
+
+    </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
 
 
 
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                   Add information about the employer
+
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+            </li>
+
+
+
+
+
+{% endif %}
+
+          </ul>
+        </li>
 
         <h2 class="app-task-list__section">
-      Element
+          <span class="app-task-list__section-number">4. </span> Element
         </h2>
         {% if not elementAdd %}
           {% set elementAdd = 0 %}
@@ -121,7 +179,7 @@ data ['appointee']
 
 
 
-{% if  data['employer-sizesonya'] and data['Searchligh'] %}
+{% if  data['employer-sizesonya'] %}
 
     {% include  "../claim/_task-list-element.html" %}{% else %}
     <ul class="app-task-list__items">
@@ -194,7 +252,7 @@ data ['appointee']
 
         <li>
           <h2 class="app-task-list__section">
-      Award decision
+            <span class="app-task-list__section-number">5. </span> Award decision
           </h2>
 
 
@@ -205,7 +263,7 @@ data ['appointee']
 
 
                 {% if data['sae-item-type']  and data['mhss-support'] %}
-                {% if data['mhss-support']%}
+                {% if data['medical-3']%}
             {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
           {% else %}
           <ul class="app-task-list__items">
@@ -225,7 +283,7 @@ data ['appointee']
 
 {% else %}
 
-          {% if data['mhss-support']%}
+          {% if data['medical-2']%}
       {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
     {% else %}
     <ul class="app-task-list__items">

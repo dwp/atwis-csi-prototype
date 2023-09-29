@@ -6,7 +6,7 @@
 
 {% block csi %}
 <br>
-<form action="/current/cases/thomas/cases/check-application/support-worker/index" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/edit" method="post" novalidate>
 <div class="govuk-width-container">
 
 

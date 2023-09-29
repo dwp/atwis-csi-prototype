@@ -38,7 +38,7 @@
 </a>
   </span>
 
-    {% if not data['wpa'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>  {% else %}
+    {% if not data['wpa'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% else %}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
     {% endif %}
   </li>
@@ -55,20 +55,28 @@
         {% if data['wpa-type'+ phase]=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
         {% if data['wpa-availability'+ phase]=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
         {% if data['wpa-availability'+ phase]=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-            {% if not data['wpa-type'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>  {% endif %}
+            {% if not data['wpa-type'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
           </li>
     {% endif %}
 
 
+    <li>
+
+
+{% if not data['wpa'+ phase]%}
+        <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+
+                Add information about the employer
+
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+{% else %}
 
 
 
 
-
-
-
-
-
+{% if data['wpa'+ phase]=='No'%}
 <li>
 
 
@@ -84,11 +92,28 @@
 </a>
       </span>
 {% if data['employer-sector'+ phase]=='Yes' and data['employer-sector-type'+ phase] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% if not data['employer-sector'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+{% if not data['employer-sector'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
 {% if data ['employer-sector'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
 </li>
+{% else %}
+
+{% if data['address-of-wpa'+ phase]%}
+<li>
 
 
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+<a href="
+
+{% if data ['employer-sector'+ phase]%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/employment-sector{% endif %}" aria-describedby="job-status">
+
+    Add information about the employer
+</a>
+      </span>
+{% if data['employer-sector'+ phase]=='Yes' and data['employer-sector-type'+ phase] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if not data['employer-sector'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+{% if data ['employer-sector'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+</li>
 
 
 
@@ -104,11 +129,11 @@
           </a>
               </span>
               {% if not data['referral-form'+ phase]%}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>            </li>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
 {% else %}
 <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
 {% endif %}
-
+{% endif %}
 
 
 
@@ -122,13 +147,24 @@
 </a>
     </span>
 {% if data['report'+ phase]%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}         </li>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}         </li>
 
 {% endif %}
 
 
 
+{% else %}
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
 
+        Add information about the employer
+
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+
+
+{% endif %}
+{% endif %}
 {% endif %}
 
 

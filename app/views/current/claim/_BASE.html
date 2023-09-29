@@ -106,33 +106,6 @@
 
             <dt class="govuk-visually-hidden">Name:</dt>
             <dd class="dwp-key-details-bar__primary">
-              {% if case =='other-cases-fill-1' %}
-              {% for case in data['other-cases-fill-1'] %}
-              {{ case.name }}
-              {% endfor %}
-              {% endif %}
-              {% if case =='other-cases-fill-2' %}
-              {% for case in data['other-cases-fill-2'] %}
-              {{ case.name }}
-              {% endfor %}
-              {% endif %}
-
-              {% if case =='other-cases-fill-3' %}
-              {% for case in data['other-cases-fill-3'] %}
-              {{ case.name }}
-              {% endfor %}
-              {% endif %}
-
-              {% if case =='other-cases-fill-4' %}
-              {% for case in data['other-cases-fill-4'] %}
-              {{ case.name }}
-              {% endfor %}
-              {% endif %}
-              {% if case =='other-cases-fill-5' %}
-              {% for case in data['other-cases-fill-5'] %}
-              {{ case.name }}
-              {% endfor %}
-              {% endif %}
 
   {% if case =='other-cases' %}
   {% for case in data['other-cases'] %}
@@ -175,15 +148,8 @@
 
             <dt class="govuk-visually-hidden">Decisions status:</dt>
        <dd class="dwp-key-details-bar__status">
-
-  {% if phase == "complete" or phase == "reject" or phase == "withdrawal" or phase == "Copied to DiSC"%}
-{{phase}}
-
-
-
-
-
-  {% else %}
+  {% if phase == "complete" %}
+  completed{% else %}
               {% if data ['Searchligh'] or
                          data ['appointee']
                           or
@@ -191,11 +157,8 @@
                          %}
  In progress
 {% else %}
-  {% if case =='other-cases-fill-5' %}
-  Needs approval
-        {% else %}Not started  {% endif %}
+        Not started
         {% endif %}
-
 {% endif %}
             </dd>
 
@@ -213,35 +176,6 @@
 
             <dt>Application reference:</dt>
             <dd>
-
-              {% if case =='other-cases-fill-1' %}
-              {% for case in data['other-cases-fill-1'] %}
-            {{ case.ref }}
-              {% endfor %}
-              {% endif %}
-              {% if case =='other-cases-fill-2' %}
-              {% for case in data['other-cases-fill-2'] %}
-            {{ case.ref }}
-              {% endfor %}
-              {% endif %}
-
-              {% if case =='other-cases-fill-3' %}
-              {% for case in data['other-cases-fill-3'] %}
-            {{ case.ref }}
-              {% endfor %}
-              {% endif %}
-
-              {% if case =='other-cases-fill-4' %}
-              {% for case in data['other-cases-fill-4'] %}
-            {{ case.ref }}
-              {% endfor %}
-              {% endif %}
-              {% if case =='other-cases-fill-5' %}
-              {% for case in data['other-cases-fill-5'] %}
-            {{ case.ref }}
-              {% endfor %}
-              {% endif %}
-
             {% if case =='other-cases' %}
             {% for case in data['other-cases'] %}
             {{ case.ref }}
@@ -273,15 +207,9 @@
             {% endif %}
           </dd>
 
-
-
-            {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
-                        <br>     <br>  <dt>Appointee:</dt>
-                      <dd>{{data['appointee-name']}}</dd>{% endif %}
-
-                      {% if data['employer-size']%}
-                              <br>     <br>  <dt>Employer size:</dt>
-                                <dd>{{data['employer-size']}}</dd>{% endif %}
+  {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
+            <dt>Appointee:</dt>
+            <dd>{{data['appointee-name']}}</dd>{% endif %}
               <!-- <dt>Date of birth:</dt>
               <dd>4 June 1972</dd>
 

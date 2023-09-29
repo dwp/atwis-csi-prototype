@@ -1,22 +1,17 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 {% block csi %}
 
 
 
 
-{% if case == 'dereck' %}
-<form action="/payments/current/cases/dereck/cases/company-details-no-match/saved-location-tab#your-tasks" method="post" novalidate>
-{% endif %}
-{% if case == 'sonya' %}
-<form action="/payments/current/cases/sonya/cases/company-details-no-match/saved-location-tab#your-tasks" method="post" novalidate>
-{% endif %}
 
+<form action="/payments/current/cases/sonya/cases/company-details-no-match/saved-location" method="post" novalidate>
 
 
 
@@ -28,34 +23,21 @@
 
 
         <h1 class="govuk-heading-l">
-Enter new amount to pay:
-{% if case == 'sonya' %}
- Ipad Pro case
- {% endif %}
- {% if case == 'dereck' %}
-  JAWS screen reader
-  {% endif %}
-
+Amount on invoice has changed: Ipad Pro case
         </h1>
 
         <p class="govuk-body">
-          {% if case == 'sonya' %}
-          The maximum amount you can pay for this item is £80.
-           {% endif %}
-           {% if case == 'dereck' %}
-           The maximum amount you can pay for this item is £499.
-            {% endif %}
-
+The maximum amount you can pay for this item is £80.
         </p>
 
 
         <div class="govuk-form-group">
 
-        <!-- <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 Enter the updated amount to pay
         </legend>
-        <div id="dob-hint" class="govuk-hint"> -->
+        <div id="dob-hint" class="govuk-hint">
 
         </div>
         <div class="govuk-form-group">
@@ -83,7 +65,6 @@ Enter the updated amount to pay
 
 
                           </div>
-</div>
 </div>
 
 

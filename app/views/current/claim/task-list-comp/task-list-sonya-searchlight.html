@@ -25,7 +25,13 @@
     {% endif %}
       {%- endfor %}
 
-
+{% for i in [1] -%}
+ {% set contactindex = i %}
+  {% if 'Completed and sent letter ATW01CL' in data['notification'+ phase]
+  %}
+  {% set totalcomplete = totalcomplete + 1 %}
+{% endif %}
+  {%- endfor %}
 
   {% for i in [1] -%}
    {% set contactindex = i %}
@@ -62,7 +68,7 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %}
 </a>
 </p>
 
@@ -72,16 +78,17 @@
 {% else %}
 
 
-{% if
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
 
 
 data ['appointee']
-
+and
+data ['benefits']
 %}
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing appointee task.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 

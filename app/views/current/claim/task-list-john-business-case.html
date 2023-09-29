@@ -50,7 +50,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l"> Business case</h2>
+        <h2 class="govuk-heading-l"> Prepare business case</h2>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
@@ -60,7 +60,7 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %}
 </a>
 </p>
 
@@ -73,12 +73,12 @@
 {% else %}
 
 
-{% if data ['appointee']
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')
 %}
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing appointee task.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 
@@ -91,10 +91,33 @@
         data['ttw-checkjohn']
          %}
   <ol class="app-task-list">
-
+    {% include  "../claim/task-list-comp/_task-list-open-john.html" %}
   {% else %}
 
+<ol class="app-task-list">
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
+    </h2>
+    <ul class="app-task-list__items">
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
 
+        Confirm whether workplace assessment is needed
+
+    </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
+
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                   Add information about the employer
+
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+            </li>
 
 
 
@@ -106,7 +129,7 @@
         </li>
 
         <h2 class="app-task-list__section">
-       Element
+          <span class="app-task-list__section-number">4. </span> Element
         </h2>
         {% if not elementAdd %}
           {% set elementAdd = 0 %}
@@ -132,9 +155,32 @@
 
 
 
+{% if data['employer-size'+ phase] and
+data['wpa'+ phase]  %}
+    {% include  "../claim/task-list-comp/_task-list-element-john.html" %}{% else %}
+ <ul class="app-task-list__items">
 
-    {% include  "../claim/task-list-comp/_task-list-element-john.html" %}
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
 
+               Travel to and from work: add or change support
+
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+
+
+
+
+
+          <br> <form class="" action="/current/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
+           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+           Add new elements
+           </button></form>
+
+
+
+
+      </ul>{% endif %}
 {% if data['cost-per-journey']%}
 <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
@@ -148,9 +194,9 @@
 
 {% endif %}
 
-
+        <li>
           <h2 class="app-task-list__section">
-    Award decision
+            <span class="app-task-list__section-number">5. </span> Award decision
           </h2>
 
 

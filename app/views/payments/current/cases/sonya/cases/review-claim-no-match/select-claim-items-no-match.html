@@ -1,9 +1,9 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 
@@ -46,7 +46,7 @@
 {% if 'Jaws screen reader' in data['claim-item'] %}
                           <input class="govuk-checkboxes__input" id="claim-item-no-match-1" name="claim-item-no-match" type="checkbox" value="Jaws screen reader" {{ checked("claim-item-no-match", "Jaws screen reader") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="claim-item-no-match-1">
-                            JAWS screen reader
+                            Jaws screen reader
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £499

@@ -32,25 +32,18 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-
-    {% if case == 'sonya' or case == 'dereck'%}
-    {% if 'No' in data['paid-in-full'] and not data ['sop-site-code']%}
-
-    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+    <h2 class="govuk-fieldset__heading">
+Is the payee in SOP?
+    </h2>
+    {% if case == 'sonya' and not data ['sop-site-code'] %}
+    <div class="govuk-inset-text">
+      {{ data['payee-name'] }}
+    </div>
     {% else %}
     <!-- <div class="govuk-inset-text">
       {{ data['payee-name-1'] }}
     </div> -->
     {% endif %}
-    {% endif %}
-
-    <h2 class="govuk-fieldset__heading">
-Is the payee in SOP?
-    </h2>
-
-
-
-
 
   </legend>
   <div id="contact-hint" class="govuk-hint">
@@ -81,8 +74,8 @@ Is the payee in SOP?
           {% if case == 'paul' %}
           <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="Yes~paul/cases/review-payment/sop-find-yes-tab" {{ checked("sop-find", "Yes") }}>
           {% endif %}
-          {% if case == 'thomas' %}
-          <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="Yes~thomas/cases/review-payment/sop-find-yes-tab" {{ checked("sop-find", "Yes") }}>
+          {% if case == 'susan' %}
+          <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="Yes~susan/cases/review-payment/sop-find-yes-tab" {{ checked("sop-find", "Yes") }}>
           {% endif %}
 
           <label class="govuk-label govuk-radios__label" for="sop-find-1">
@@ -90,13 +83,7 @@ Is the payee in SOP?
           </label>
         </div>
         <div class="govuk-radios__item">
-          {% if case == 'sonya' %}
           <input class="govuk-radios__input" id="sop-find-2" name="sop-find" type="radio" value="No~review-payment/sop-find-no" {{ checked("sop-find", "No") }}>
-          {% endif %}
-          {% if case == 'thomas' %}
-          <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="No~thomas/cases/review-payment/sop-find-no-tab" {{ checked("sop-find", "Yes") }}>
-          {% endif %}
-
           <label class="govuk-label govuk-radios__label" for="sop-find-2">
             No
           </label>

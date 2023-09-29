@@ -83,14 +83,25 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 {% else %}
 
 
-{% if
-data ['appointee']
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+data ['elements']
+and
+data ['condition-check']
+and
+data ['job-deatils-check']
 
+and
+data ['contact-check']
+
+and
+data ['appointee']
+and
+data ['benefits']
 %}
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing appointee task.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 
@@ -103,12 +114,10 @@ data ['appointee']
 
 
 
-  {% if data['Searchligh'] and
+  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
     data ['elements-task']
     and
     data ['condition-check']
-    and
-    data ['disc-check']
     and
     data ['job-deatils-check']
     and
@@ -124,7 +133,7 @@ data ['appointee']
 
   <li>
     <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Workplace assessmentdsadsa
+      <span class="app-task-list__section-number">3. </span> Workplace assessment
     </h2>
     <ul class="app-task-list__items">
   <li class="app-task-list__item">

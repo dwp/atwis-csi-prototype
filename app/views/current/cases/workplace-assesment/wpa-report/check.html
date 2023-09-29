@@ -8,7 +8,7 @@
 
 
 
-<form action="/current/cases/claim#wpa" method="post" novalidate>
+<form action="/current/cases/claim#business-case" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -16,7 +16,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h2 class="govuk-heading-l">Task summary:  type of workplace assessment</h2>
+        <h2 class="govuk-heading-l">Task summary:  Type of workplace assessment</h2>
 
 
 
@@ -34,12 +34,12 @@
                {% endfor %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="index">
+              <a class="govuk-link" href="">
               Update<span class="govuk-visually-hidden">  {% include  "./content/which-tasks-completed.html" %}        </span>
               </a>
             </dd>
           </div>
-{% if not data['report'].length == 1 and 'Another workplace assesment needed' in data['report']%}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 {% include  "./content/date-of-wpa.html" %}
@@ -66,45 +66,7 @@
               Update<span class="govuk-visually-hidden">  {% include  "./content/date-of-wpa.html" %}      </span>
               </a>
             </dd>
-          </div>{% endif %}
-
-
-
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-Do you need another workplace assessment?
-
-            </dt>
-            <dd class="govuk-summary-list__value">
-          {{data['another-wpa']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="do-need-wpa">
-              Update<span class="govuk-visually-hidden">  {% include  "./content/which-tasks-completed.html" %}        </span>
-              </a>
-            </dd>
           </div>
-
-
-
-
-          {% if data['another-wpa']=='Yes'%}
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-          Why does Dereck Smith need another workplace assessment?
-
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                    {{data['another-wpa-reason']}}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="reason-another">
-                        Update<span class="govuk-visually-hidden">  {% include  "./content/which-tasks-completed.html" %}        </span>
-                        </a>
-                      </dd>
-                    </div>{% endif %}
 </dl>
 
 

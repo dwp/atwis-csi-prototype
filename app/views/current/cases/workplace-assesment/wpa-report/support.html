@@ -31,12 +31,12 @@
           Specialist equipment
           </label>
         </div>{% endif %}
-        {% if phase == 'sonya'%} {% else %}   <div class="govuk-checkboxes__item">
+        <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="elements-2" name="elements" type="checkbox" value="Mental health support" {{ checked("elements", "Mental health support") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-2">
           Mental health support
           </label>
-        </div>{% endif %}
+        </div>
         {% if phase == 'thomas'%} {% else %}  <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="elements-3" name="elements" type="checkbox" value="Support worker" {{ checked("elements", "Support worker") }}>
           <label class="govuk-label govuk-checkboxes__label" for="elements-3">

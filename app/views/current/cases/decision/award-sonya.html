@@ -35,20 +35,20 @@
                    <tr class="govuk-table__row">
                      <th scope="col" class="govuk-table__header">Support type</th>
                      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
-                     <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="text-align: right;">Cost</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="text-align: center;">Cost</th>
                    </tr>
                  </thead>
                  <tbody class="govuk-table__body">
                    <tr class="govuk-table__row">
                      <th scope="row" class="govuk-table__header">Specialist equipment</th>
                      <td class="govuk-table__cell govuk-table__cell--numeric">Jaws Screen Reader </td>
-                     <td class="govuk-table__cell govuk-table__cell--numeric" >£{{data['cost-per-item']}}</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric" >£499</td>
                    </tr>
                    <tbody class="govuk-table__body">
                      <tr class="govuk-table__row">
                        <th scope="row" class="govuk-table__header">Specialist equipment</th>
                        <td class="govuk-table__cell govuk-table__cell--numeric">ZoomText </td>
-                       <td class="govuk-table__cell govuk-table__cell--numeric" >£{{data['cost-per-item']}}</td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric" >{{data['chosen-quote-sonya']}}</td>
                      </tr>
 
 
@@ -160,8 +160,7 @@
            <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
 Confirm award summary
            </button>
-           <p><a href="/current/cases/sonya/cases/claim#business-case">I need to change some business case details</a></p>
-           <p><a href="/current/cases/sonya/cases/claim#citizen-details">I need to change some application  details</a></p>
+<p><a href="/current/cases/sonya/cases/claim#business-case">I need to change some award details</a></p>
 
          </form>
        </div>

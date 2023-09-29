@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="selected-quote" method="post" novalidate>
+<form action="" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -19,14 +19,14 @@
             <fieldset class="govuk-fieldset" role="group" aria-describedby="sw-start-date-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-What is the start date for this support?
+    What is the start date?
                 </h1>
               </legend>
               <div id="sw-start-date-hint" class="govuk-hint">
                 For example, 27 3 2024
               </div>
               <div class="govuk-inset-text">
-            {% if phase == "thomas" %} British Sign Language (BSL) interpreter{% endif %}   {% if phase == "john" %}Taxi{% endif %}
+            Taxi
               </div>
               <div class="govuk-date-input" id="sw-start-date">
                 <div class="govuk-date-input__item">

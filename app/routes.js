@@ -53,7 +53,7 @@ router.use('/', (req, res, next) => {
 
 
 // Start folder specific routes
-
+router.use('/baseline', require('./views/current/_routes'));
 router.use('/future', require('./views/future/_routes'));
 router.use('/usability', require('./views/usability/_routes'));
 router.use('/current', require('./views/current/_routes'));
@@ -91,47 +91,6 @@ router.use('/sprint-12', require('./views/sprint-12/_routes'));
 router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
 // current sprint, remember to add older sprint when adding a new folder!
 // router.use('/current', require('./views/current/_routes'));
-
-
-
-
-
-router.post('/current/cases/workplace-assesment/answer', function(req, res, next){ 
-
- if (req.session.data['report']){
-  for (i = 0; i<req.session.data['report'].length; i++){
-  switch (req.session.data['report'][i]){
-
-   case "None of the above" :  return res.redirect("/current/cases/workplace-assesment/wpa-report/do-need-wpa"); next(); break;
-   default: continue;
-   }
-   break;
-  }
- } else {
-
- }
-return res.redirect("/current/cases/workplace-assesment-2/wpa-report/date-of-assessment"); next();
-})
-
-router.post('/current/cases/workplace-assesment-2/answer', function(req, res, next){ 
-
- if (req.session.data['report-2']){
-  for (i = 0; i<req.session.data['report-2'].length; i++){
-  switch (req.session.data['report-2'][i]){
-
-   case "None of the above" :  return res.redirect("/current/cases/workplace-assesment-2/wpa-report/do-need-wpa"); next(); break;
-   default: continue;
-   }
-   break;
-  }
- } else {
-
- }
-return res.redirect("/current/cases/workplace-assesment-2/wpa-report/date-of-assessment"); next();
-})
-
-
-
 
 router.post('/contact-answer-john', function(req, res, next){ 
 if (req.session.data['contact-why'] && Array.isArray(req.session.data['contact-why'])){

@@ -5,7 +5,8 @@
 {% set phase = "thomas" %}
 {% set case = 'other-cases-2'%}
 
-
+{% if data['exceptions']=='No'%}
+{% set phase = "notEligible" %}{% endif %}
 
 {% extends   "current/claim/_CSIBASE.html" %}
 

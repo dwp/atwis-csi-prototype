@@ -9,7 +9,7 @@
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#application-summary">
-      Summary
+      Application summary
       </a>
     </li>
 
@@ -26,17 +26,12 @@
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#business-case">
-      Job details and workplace assessment
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#business-case">
-      Business case
+      Prepare business case
       </a>
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#contact">
-      Contact details and log
+      Contact
       </a>
     </li>
 
@@ -52,7 +47,7 @@
 
   <div class="govuk-tabs__panel" id="application-summary">
 
-       {% if data['clear']=='No' %}
+  {% if phase == "notEligible"  %}
 {% include  "../claim/notification.html" %}
 {% endif %}
 
@@ -200,7 +195,7 @@
 
 
 {% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% endif %}
-{% if phase == "john"  %}{% include  "../claim/timelines/timeline-john.html" %}{% endif %}
+{% if phase == "john"  %}{% include  "../claim/timeline-john.html" %}{% endif %}
 {% if phase == "thomas"  %}{% include  "../claim/timeline-thomas-new.html" %}</div></div>{% endif %}
 {% if not phase %}{% include  "../claim/timeline-dereck-new.html" %}{% endif %}
 </div>
@@ -220,7 +215,7 @@
 
 
 
-         {% if data['clear']=='No' %}
+    {% if phase == "notEligible"  %}
     {% include  "./notification.html" %}
       {% else %}
     {% endif %}
@@ -305,7 +300,7 @@
 
  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contact">
 
-     {% if data['clear']=='No' %}
+   {% if phase == "notEligible"  %}
    {% include  "./notification.html" %}
      {% else %}
    {% endif %}
@@ -357,7 +352,7 @@
            </fieldset>
 
 
-               {% if data['clear']=='No' %}
+           {% if data['clear']=='No' %}{% else %}
              {% include  "current/claim/notification-contact.html" %}{% endif %}
 
 

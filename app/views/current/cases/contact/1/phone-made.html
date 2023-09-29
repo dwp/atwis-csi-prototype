@@ -12,7 +12,7 @@
 
 
 
-<form action="" method="post" novalidate>
+<form action="/contact-answer-{{phase}}" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -27,43 +27,7 @@
               <h1 class="govuk-heading-xl">Telephone call made</h1>
 
 
-              {% if data['todays-date'+ number]=='No'%}
-                            <div class="govuk-form-group">
-                              <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
-                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                 Date
-                                </legend>
-                                <div id="expiry-hint" class="govuk-hint">
-                                    Give the date, for example 31 1 2024 
-                                </div>
-                                <div class="govuk-date-input" id="contact-date-">
-                                  <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="contact-date-day">
-                                        Day
-                                      </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-day" name="contact-date-day-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                  </div>
-                                  <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="contact-date-month">
-                                        Month
-                                      </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-month" name="contact-date-month-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                  </div>
-                                  <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                      <label class="govuk-label govuk-date-input__label" for="contact-date-year">
-                                        Year
-                                      </label>
-                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contact-date-year" name="contact-date-year-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                  </div>
-                                </div>
-                                     </div>
-              {% endif %}
+
 
 
               <div class="govuk-form-group">
@@ -76,7 +40,9 @@
                             <div class="govuk-radios" data-module="govuk-radios">
                               <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="contact-who" name="contact-who" type="radio" value="{% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}">
-                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact">
+                                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="{% if phase == "arlo"  %}Arlo Spinka{% endif %}{% if phase == "john"  %}John Smith{% endif %}  {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
+">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                               {% if phase == "arlo"  %}Arlo Spinka{% endif %}{% if phase == "john"  %}John Smith{% endif %}  {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
                               </div>
                               <div class="govuk-radios__item">
@@ -85,17 +51,9 @@
                                 Employer
                                 </label>
                               </div>
-                              {% if data['wpa']=='Yes'%}
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="contact-who-3" name="contact-who" type="radio" value="Workplace assessor~phone-made-about">
-                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact-3">
-                                  Workplace assessor
-                                </label>
-                              </div>
-                              {% endif %}
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="contact-who-4" name="contact-who" type="radio" value="Someone else">
-                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact-4">
+                                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="Someone else">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                                 Someone else
                                 </label>
                               </div>
@@ -112,13 +70,13 @@
                                       </legend>
                                       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                         <div class="govuk-radios__item">
-                                          <input class="govuk-radios__input" id="asked-info-phone-" name="asked-info-phone-{{number}}" type="radio" value="Yes~id">
+                                          <input class="govuk-radios__input" id="asked-info-phone-" name="asked-info-phone-{{number}}" type="radio" value="Yes">
                                           <label class="govuk-label govuk-radios__label" for="contact-who">
                                       Yes
                                           </label>
                                         </div>
                                         <div class="govuk-radios__item">
-                                          <input class="govuk-radios__input" id="contact-who-2" name="asked-info-phone-{{number}}" type="radio" value="No~phone-made-about">
+                                          <input class="govuk-radios__input" id="contact-who-2" name="asked-info-phone-{{number}}" type="radio" value="No">
                                           <label class="govuk-label govuk-radios__label" for="contact-who-2">
                                             No
                                           </label>
@@ -128,6 +86,84 @@
                                     </fieldset>
                                   </div>
 
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="contact-why-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              <h2 class="govuk-fieldset__heading">
+                        What did you call them about?
+                              </h2>
+                            </legend>
+                            <div id="contact-why-hint" class="govuk-hint">
+                              Select all that apply.
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why" name="contact-why" type="checkbox" value="Quotes">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why">
+                                Quotes
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-2" name="contact-why" type="checkbox" value="ID&V">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-2">
+                                ID&V
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why" type="checkbox" value="Element details">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                                Element details
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-4" name="contact-why" type="checkbox" value="Personal details">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-4">
+                                Personal details
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-5" name="contact-why" type="checkbox" value="Health condition or disability">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-5">
+                                 Health condition or disability
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-6" name="contact-why" type="checkbox" value="Employment details">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-6">
+                                Employment details
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-7" name="contact-why" type="checkbox" value="Employer information">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-7">
+                                Employer information
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-8" name="contact-why" type="checkbox" value="Workplace assessment">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-8">
+                                Workplace assessment
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why" type="checkbox" value="Award outcome">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-9">
+                            Award outcome
+                                </label>
+                              </div>
+
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why" type="checkbox" value="Other">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-10">
+                            Other
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
 
 
 {% if data['clear']=='No' %}{% else %}
@@ -150,7 +186,14 @@ Once saved, details cannot be changed.
           </form>
 
 
-        </div>        </div>
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
 
 
 

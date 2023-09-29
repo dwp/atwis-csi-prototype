@@ -37,7 +37,7 @@
                           First Name
                           </dt>
                           <dd class="govuk-summary-list__value">
-                        {% if phase %}{{phase | capitalize}}{% else %}  Dereck{% endif %}
+                          Dereck
                           </dd>
                           </div>
                           <div class="govuk-summary-list__row">
@@ -45,7 +45,7 @@
                           Last Name
                           </dt>
                           <dd class="govuk-summary-list__value">
-                        {% if phase %}{% if phase == "john" %} Smith{% endif %}{% if phase == "sonya" %} Corkery{% endif %}{% if phase == "thomas" %} King{% endif %}{% else %}  Smith{% endif %}
+                          Smith
                           </dd>
                           </div>
                           <div class="govuk-summary-list__row">
@@ -88,20 +88,20 @@
 
                <div class="govuk-radios">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="Searchligh" name="Searchligh{{phase}}" type="radio" value="Yes and application details match~./add-national-insurance-number" {{ checked("Searchligh", "Yes and application details match") }}>
+                   <input class="govuk-radios__input" id="Searchligh" name="Searchligh" type="radio" value="Yes and application details match~./find-national-insurance-number" {{ checked("Searchligh", "Yes and application details match") }}>
                    <label class="govuk-label govuk-radios__label" for="Searchligh">
                       Yes and application details match
 
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="Searchligh-2" name="Searchligh{{phase}}" type="radio" value="Yes, but name, date of birth or address do not match~./add-national-insurance-number" {{ checked("Searchligh", "Yes, but name, date of birth or address do not match") }}>
+                   <input class="govuk-radios__input" id="Searchligh-2" name="Searchligh" type="radio" value="Yes, but name, date of birth or address do not match~./find-national-insurance-number" {{ checked("Searchligh", "Yes, but name, date of birth or address do not match") }}>
                    <label class="govuk-label govuk-radios__label" for="Searchligh-2">
                        Yes, but name, date of birth or address do not match
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh{{phase}}" type="radio" value="No~/current/cases/claim#checks" {{ checked("Searchligh", "No") }}>
+                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh" type="radio" value="No~/current/cases/claim#your-tasks" {{ checked("Searchligh", "No") }}>
                    <label class="govuk-label govuk-radios__label" for="Searchligh-3">
                      No
                    </label>

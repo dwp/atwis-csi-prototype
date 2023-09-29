@@ -31,25 +31,18 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-    {% if case == 'sonya' or case == 'dereck'%}
-    {% if 'No' in data['paid-in-full'] and not data ['sop-site-code']%}
-
-    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+    <h2 class="govuk-fieldset__heading">
+Are the payee details in SOP correct?
+    </h2>
+    {% if case == 'sonya' and not data ['sop-site-code'] %}
+    <div class="govuk-inset-text">
+      {{ data['payee-name'] }}
+    </div>
     {% else %}
     <!-- <div class="govuk-inset-text">
       {{ data['payee-name-1'] }}
     </div> -->
     {% endif %}
-    {% endif %}
-
-
-    <h2 class="govuk-fieldset__heading">
-Are the payee details in SOP correct?
-    </h2>
-
-
-
-
 
   </legend>
   <div id="contact-hint" class="govuk-hint">
@@ -88,8 +81,8 @@ Are the payee details in SOP correct?
           {% if case == 'paul' %}
           <input class="govuk-radios__input" id="sop-find-yes-1" name="sop-find-yes" type="radio" value="Yes~paul/claim-paul#your-tasks" {{ checked("sop-find-yes", "Yes") }}>
           {% endif %}
-          {% if case == 'thomas' %}
-          <input class="govuk-radios__input" id="sop-find-yes-1" name="sop-find-yes" type="radio" value="Yes~thomas/cases/review-payment/sop-add-supplier-tab#your-tasks" {{ checked("sop-find-yes", "Yes") }}>
+          {% if case == 'susan' %}
+          <input class="govuk-radios__input" id="sop-find-yes-1" name="sop-find-yes" type="radio" value="Yes~susan/cases/review-payment/sop-add-supplier-tab#your-tasks" {{ checked("sop-find-yes", "Yes") }}>
           {% endif %}
 
 

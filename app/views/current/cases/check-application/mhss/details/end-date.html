@@ -20,7 +20,7 @@
 
 
 
-  <h1 class="govuk-heading-l">Current mental health support Award end date</h1>
+  <h1 class="govuk-heading-l">Current mental health support end date</h1>
 <p>Labour Market System (LMS) checks show that {% if phase == 'sonya'%}Sonya Corkery{% endif %}{% if phase == 'thomas'%}Thomas King{% endif %}{% if not phase%}Dereck Smith{% endif %} is currently receiving    {% for feature in data['mhss-support-check'] %}
     {{ feature }}{% endfor %}.</p>
 

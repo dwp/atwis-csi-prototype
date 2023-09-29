@@ -9,7 +9,7 @@
 Travel to and from work: add or change support
   </a>
   </span>
-  {% if not data['ttw-add'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}
+  {% if not data['ttw-add'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
   {% if data['ttw-add'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
    </li>
@@ -22,7 +22,7 @@ Travel to and from work: add or change support
    </button></form>
 
 
-   <!-- {% if 'Mental health support' in data['elements']%}
+   {% if 'Mental health support' in data['elements']%}
    <li class="app-task-list__item">
      <span class="app-task-list__task-name">
        <a href="{% if data['mhss-support']%}./check-application/mhss/details/check{% else %}./check-application/mhss/details/mental-health-support{% endif %}" aria-describedby="read-declaration-status">
@@ -35,10 +35,10 @@ Travel to and from work: add or change support
         {% if data['mhss-support']=='I am waiting for an answer'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
         {% if data['mhss-support']=='I have not discussed it with john King yet'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Contact needed</strong>{% endif %}
 
-        {% if not data['mhss-support']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+        {% if not data['mhss-support']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
       </li>
 
-   {% endif %} -->
+   {% endif %}
 
 
 </ul>

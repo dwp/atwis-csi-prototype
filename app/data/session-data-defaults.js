@@ -19,32 +19,12 @@ Example usage:
 
 module.exports = {
 
-'allocator': "Approved",
-'others-wpa-2': "",
-'report': "",
 'ttw-match' : "",
 'claim-item' : "",
-'sw-match' : "",
-'grant-matches-claim-sw' : "",
-'paid-in-full' : "",
-'company-details' : "",
-'additional-cost' : "",
-'details-item-no-match-ipad' : "",
-'cost-share' : "",
-'SEA-hold-1-invoice' : "",
-'whitemail-origin' : "",
-'whitemail-type' : "",
+
+
+  'claims' : "",
 'benefits' : "",
-
-'data-delete-hold-csi' : "",
-'data-delete-hold-renew' : "",
-'data-delete-hold-sonam' : "",
-'data-delete-hold-sarah' : "",
-'data-delete-hold-neil' : "",
-'data-delete-hold' : "",
-
-'claims' : "",
-'found-nino' : "Yes",
 'priority' : "",
 'other' : "",
 'remove' : "",
@@ -54,52 +34,22 @@ module.exports = {
 'notificationjohn' : "",
 'notificationarlo' : "",
 'wpa-report' : "",
-
-
 // '_do_1' : "Telephone call received",
-// 'contact-time-1' : "9:00 am",
-// 'contact-date-day-1' : "2",
-// 'contact-date-month-1' : "5",
-// 'contact-date-year-1' : "2024",
-// 'idv1' : "Yes",
+// 'contact-time-1' : "9am",
+// 'contact-date-day-1' : "25",
+// 'contact-date-month-1' : "4",
+// 'contact-date-year-1' : "2023",
 // 'where-do-you-live' : "Thomas King",
-// 'contact-why' : ["Element details", "Health condition or disability", "Other"],
-// 'other-discussion-1' : "Thomas King contacted ATW asking for mental health support though Access to Work, as they did not included it in the orignial application. They are not on Intensive Personalised Employment Support, Work and Health Programme, Work Able Scotland, and Fair Start Scotland.",
+// 'contact-why' : ["Element details", "ID&V", "Other"],
+'other-discussion-1' : "Thomas King contacted ATW asking for mental health support though Access to Work. They are not on Intensive Personalised Employment Support, Work and Health Programme, Work Able Scotland, and Fair Start Scotland.",
 // 'mhss-support-check' : ["Intensive Personalised Employment Support"],
 
 // assess
-
-// 'Searchligh' : "Yes and application details match",
-//
-// 'national-insurance-number' : "AB 123456 C",
-// 'appointee' : "No",
-// 'benefits' : "No",
-// 'disc-check' : "No",
-// 'job-deatils-check' : "No",
-// 'condition-check' : "No",
-//no to WPA
-//'wpa' : "No",
-//yes to WPA
-// 'wpa' : "Yes",
-// 'wpa-type' : "Virtual",
-// 'wpa-availability' : "Yes",
-// 'other-wpa' : "No",
-// 'wpa-availability' : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-// 'address-of-wpa' : "220 St Vincent Street, Glasgow, AB1 1AB",
-// 'referral-form' : ["Completed and sent referral form", "Saved copies to Sharepoint", "Set up a record for Dereck Smith on LMS", "Added workplace assessment type in LMS"],
-// 'wpa-happen' : "Yes",
-// 'report' : ["Reviewed workplace assessment report","Saved a copy of the workplace assessment report in Sharepoint", "Saved a copy of the workplace assessment email in Sharepoint"],
-// 'another-wpa' : "No",
-//
-// 'employer-sector' : "Yes",
-// 'employer-sector-type' : "Charity",
-// 'employer-size' : "10 to 49 (small)",
-
-'wpathomas' : "No",
-'employer-sectorthomas' : "Yes",
-'employer-sector-typethomas' : "Charity",
-'employer-sizethomas' : "10 to 49 (small)",
-
+'Searchligh' : "Yes and application details match",
+'found-nino' : "Yes",
+'national-insurance-number' : "AB 123456 C",
+'appointee' : "No",
+'benefits' : "No",
 'benefits-change' : "",
 'condition-checkthomas' : "No",
 'contact-checkthomas' : "No",
@@ -108,84 +58,7 @@ module.exports = {
 'quotes-check-1thomas' : "No",
 'quotes-check-2thomas' : "No",
 // '_do_1' : "Email sent",
-'condition-checksonya' : "No",
-'job-deatils-checksonya' : "No",
-'sae-checksonya' : "No",
-'employer-sectorsonya' : "Yes",
-'employer-sizesonya' : "10 to 49 (small)",
-'employer-sector-typesonya' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
-
-'wpasonya' : "Yes",
-'wpa-typesonya' : "Virtual",
-'wpa-availabilitysonya' : "Yes",
-'other-wpasonya' : "No",
-'wpa-availabilitysonya' : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-'address-of-wpasonya' : "220 St Vincent Street, Glasgow, AB1 1AB",
-'referral-formsonya' : ["Completed and sent referral form", "Saved copies to Sharepoint", "Set up a record for Dereck Smith on LMS", "Added workplace assessment type in LMS"],
-'wpa-happensonya' : "Yes",
-'reportsonya' : ["Reviewed workplace assessment report","Saved a copy of the workplace assessment report in Sharepoint", "Saved a copy of the workplace assessment email in Sharepoint"],
-'another-wpasonya' : "No",
-
-// filled in case
-'condition-checkgeorge' : "No",
-'job-deatils-checkgeorge' : "No",
-'sae-checkgeorge' : "No",
-'employer-sectorgeorge' : "Yes",
-'employer-sizegeorge' : "10 to 49 (small)",
-'employer-sector-typegeorge' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
-'wpageorge' : "No",
-'appointeegeorge' : "No",
-// filled in case
-'condition-checkpaul' : "No",
-'job-deatils-checkpaul' : "No",
-'sae-checkpaul' : "No",
-'employer-sectorpaul' : "Yes",
-'employer-sizepaul' : "10 to 49 (small)",
-'employer-sector-typepaul' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
-'wpapaul' : "No",
-'appointeepaul' : "No",
-// filled in case
-'condition-checkanahi' : "No",
-'job-deatils-checkanahi' : "No",
-'sae-checkanahi' : "No",
-'sw-checkanahi' : "No",
-'employer-sectoranahi' : "Yes",
-'employer-sizeanahi' : "10 to 49 (small)",
-'employer-sector-typeanahi' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
-'wpaanahi' : "No",
-'appointeeanahi' : "No",
-// filled in case
-'condition-checkkam' : "No",
-'job-deatils-checkkam' : "No",
-'sae-checkkam' : "No",
-'employer-sectorkam' : "Yes",
-'employer-sizekam' : "10 to 49 (small)",
-'employer-sector-typekam' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
-'wpakam' : "No",
-'appointeekam' : "No",
-// filled in case 5 allocator
-'condition-checkallocator' : "No",
-'job-deatils-checkallocator' : "No",
-'sae-checkallocator' : "No",
-'sw-checkallocator' : "No",
-'employer-sectorallocator' : "Yes",
-'employer-sizeallocator' : "10 to 49 (small)",
-'employer-sector-typeallocator' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
-
-'appointeeallocator' : "No",
-'disc-checkallocator' : "No",
-'wpaallocator' : "Yes",
-
-'wpa-typeallocator' : "Virtual",
-'wpa-availabilityallocator' : "Yes",
-'other-wpaallocator' : "No",
-'wpa-availabilityallocator' : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-'address-of-wpaallocator' : "220 St Vincent Street, Glasgow, AB1 1AB",
-'referral-formallocator' : ["Completed and sent referral form", "Saved copies to Sharepoint", "Set up a record for Dereck Smith on LMS", "Added workplace assessment type in LMS"],
-'wpa-happenallocator' : "Yes",
-'reportallocator' : ["Reviewed workplace assessment report","Saved a copy of the workplace assessment report in Sharepoint", "Saved a copy of the workplace assessment email in Sharepoint"],
-'another-wpaallocator' : "No",
-
+//
 // 'contact-date-day-1' : "29",
 // 'contact-date-month-1' : "03",
 // 'contact-date-year-1' : "2023",
@@ -216,9 +89,9 @@ module.exports = {
   'unallocated-cases': [{
     'name': 'Dereck Smith',
     'specialism': 'Large business',
-    'type': 'New application',
+    'type': 'Renewal',
     'priority' : "true",
-    'date': '4 October 2023, 13:23'
+    'date': '4 October 2021 13:23'
   }, {
     'name': 'Maximillia Erdman',
     'specialism': 'Pan disability',
@@ -279,77 +152,15 @@ module.exports = {
 
   'priority-cases': [{
     'name': 'Dereck Smith',
-    'condition': 'Macular oedema',
+    'condition': 'macular oedema',
     'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
     'ref': 'RMPX30',
     'case': 'Priority',
     'job-deatils-contact' : "They gave permission (apply)",
     'type': 'New Application',
     'priority' : "true",
-    'date': '4 October 2023, 13:23'
+    'date': '4 October 2021 13:23'
 
-  }],
-  'other-cases-fill-1': [{
-    'name': 'George Dermott',
-    'condition': 'macular oedema',
-    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
-    'ref': 'RMPX31',
-    'dos': '2 June 2022',
-    'case': 'Other',
-    'type': 'New Application',
-    'priority' : false,
-    'date': '15 October 2021 15:23',
-    'appointee': 'No'
-  }],
-  'other-cases-fill-2': [{
-    'name': 'Paul Stenberg ',
-    'condition': 'macular oedema',
-    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
-    'ref': 'RMPX31',
-    'dos': '2 June 2022',
-    'case': 'Other',
-    'type': 'New Application',
-    'priority' : false,
-    'date': '15 October 2021 15:23',
-    'appointee': 'No'
-  }],
-
-  'other-cases-fill-3': [{
-    'name': 'Anahi Korrapati',
-    'condition': 'macular oedema',
-    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
-    'ref': 'RMPX40',
-    'dos': '2 June 2022',
-    'case': 'Other',
-    'type': 'New Application',
-    'priority' : false,
-    'date': '15 October 2021 15:23',
-    'appointee': 'No'
-  }],
-
-  'other-cases-fill-4': [{
-    'name': 'Kam Haraguchi',
-    'condition': 'macular oedema',
-    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
-    'ref': 'RMPX41',
-    'dos': '2 June 2022',
-    'case': 'Other',
-    'type': 'New Application',
-    'priority' : false,
-    'date': '15 October 2021 15:23',
-    'appointee': 'No'
-  }],
-  'other-cases-fill-5': [{
-    'name': 'Sarah Lumley',
-    'condition': 'macular oedema',
-    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
-    'ref': 'RMPX40',
-    'dos': '2 June 2022',
-    'case': 'Other',
-    'type': 'New Application',
-    'priority' : false,
-    'date': '15 October 2021 15:23',
-    'appointee': 'No'
   }],
 
   'other-cases': [{

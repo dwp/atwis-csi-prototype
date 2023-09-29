@@ -1,9 +1,9 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 {% block csi %}
@@ -12,12 +12,8 @@
 
 
 
-{% if case == 'dereck' %}
-<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
-{% endif %}
-{% if case == 'sonya' %}
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
-{% endif %}
 
 
   <div class="govuk-width-container">
@@ -32,14 +28,7 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-Reject payment:
-{% if case == 'sonya' %}
- Ipad Pro case
- {% endif %}
- {% if case == 'dereck' %}
-  Jaws screen reader
-  {% endif %}
-
+Reject payment: Ipad Pro case
     </h2>
 
   </legend>

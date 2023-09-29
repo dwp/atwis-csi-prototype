@@ -4,7 +4,7 @@
     <!-------------- header -->
         <!-- <div class="govuk-grid-column-two-thirds" > -->
 <h1 class="govuk-heading-l top-section">
-      <strong><span>Case Manager: </span></strong>
+      <strong><span>Adviser: </span></strong>
   {% if phase == "allocator"  %}
   <span class="normal"> Al Ó Catháin  </span>{% else %}
   John Goldsmith
@@ -178,75 +178,24 @@
             <th scope="col" class="govuk-table__header">Case type</th>
             <th scope="col" class="govuk-table__header">Priority type</th>
             <th scope="col" class="govuk-table__header">Date submitted</th>
-            <!-- <th scope="col" class="govuk-table__header">Status </th> -->
             <th scope="col" class="govuk-table__header"></th>
           </tr>
         </thead>
         <tbody>
 
 
-{% if  data['Dereck-Smith']=='complete'%}{% else %}
+
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Dereck Smith</th>
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
               <td class="govuk-table__cell">New application</td>
               <td class="govuk-table__cell">Job start </td>
-              <td class="govuk-table__cell"><script>
-                // Get date
-                    var now = new Date();
-                    var pastDate = new Date(now);
-                    pastDate.setDate(now.getDate() - 60);
-
-                    var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric'
-                    });
-
-                    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                    hour: 'numeric',
-                    minute: 'numeric',
-                    hour12: true
-                    });
-
-                    document.write(formattedDate + ', 3:00 pm');
-                   </script></td>
-              <!-- <td class="govuk-table__cell">Not started in progress On hold</td> -->
+              <td class="govuk-table__cell">2 August 2023  11:57</td>
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to case</a></td>
             </tr>
 
-{% endif %}
 
 
-
-<tr class="govuk-table__row">
-  <th scope="row" class="govuk-table__header">Imani Olah</th>
-  <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
-  <td class="govuk-table__cell">New application</td>
-  <td class="govuk-table__cell">Job start </td>
-  <td class="govuk-table__cell"><script>
-    // Get date
-        var now = new Date();
-        var pastDate = new Date(now);
-        pastDate.setDate(now.getDate() - 32);
-
-        var formattedDate = pastDate.toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-        });
-
-        var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true
-        });
-
-        document.write(formattedDate + ', 6:13 pm');
-       </script></td>
-  <!-- <td class="govuk-table__cell">Not started in progress On hold</td> -->
-  <td class="govuk-table__cell"><a href="">Go to case</a></td>
-</tr>
 
       </tbody>
     </table>
@@ -307,87 +256,26 @@
           </thead>
           <tbody>
                       <tr class="govuk-table__row">
-                        {% if  data['Sonya-Corkery']=='complete'%}{% else %}
                         <th scope="row" class="govuk-table__header">Sonya Corkery</th>
                         <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
                         <td class="govuk-table__cell">{% for case in data['other-cases'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell"> <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 60);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 3:00 pm');
-                             </script></td>
+                        <td class="govuk-table__cell">  2 July 2023 11:57</td>
                         <td class="govuk-table__cell"><a href="/current/cases/sonya/cases/claim">Go to case</a></td>
                           <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
-                      </tr>{% endif %}
-
-
-                      {% if  data['Thomas-King']=='complete'%}{% else %}
+                      </tr>
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">  Thomas King</th>
                         <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
                         <td class="govuk-table__cell">{% for case in data['other-cases-2'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell">  <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 70);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 4:51 pm');
-                             </script></td>
+                        <td class="govuk-table__cell">  2 July 2023 11:15</td>
                         <td class="govuk-table__cell"><a href="/current/cases/thomas/cases/claim">Go to case</a></td>
                           <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
-                      </tr>{% endif %}
+                      </tr>
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header"> John Smith</th>
                         <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
                         <td class="govuk-table__cell">{% for case in data['other-cases-2'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell">   <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 60);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 1:01 pm');
-                             </script></td>
+                        <td class="govuk-table__cell">   2 July 2023 11:16</td>
                         <td class="govuk-table__cell"><a href="/current/cases/john/cases/claim">Go to case</a></td>
                           <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
                       </tr>
@@ -395,147 +283,10 @@
                         <th scope="row" class="govuk-table__header"> Arlo Spinka</th>
                         <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
                         <td class="govuk-table__cell">{% for case in data['other-cases-2'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell">   <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 59);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 11:13 am');
-                             </script></td>
+                        <td class="govuk-table__cell">   5 July 2023 11:16</td>
                         <td class="govuk-table__cell"><a href="/current/cases/arlo/cases/claim">Go to case</a></td>
                           <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
                       </tr>
-
-
-
-
-                      <tr class="govuk-table__row">
-                        {% if  data['George-Dermott']=='complete'%}{% else %}
-                        <th scope="row" class="govuk-table__header">George Dermott </th>
-                        <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
-                        <td class="govuk-table__cell">{% for case in data['other-cases'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell"> <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 60);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 3:00 pm');
-                             </script></td>
-                        <td class="govuk-table__cell"><a href="/current/cases/george/cases/claim">Go to case</a></td>
-                          <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
-                      </tr>{% endif %}
-                      <tr class="govuk-table__row">
-                        {% if  data['Paul-Stenberg']=='complete'%}{% else %}
-                        <th scope="row" class="govuk-table__header">Paul Stenberg </th>
-                        <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
-                        <td class="govuk-table__cell">{% for case in data['other-cases'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell"> <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 60);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 3:00 pm');
-                             </script></td>
-                        <td class="govuk-table__cell"><a href="/current/cases/paul/cases/claim">Go to case</a></td>
-                          <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
-                      </tr>{% endif %}
-                      <tr class="govuk-table__row">
-                        {% if  data['Anahi-Korrapati']=='complete'%}{% else %}
-                        <th scope="row" class="govuk-table__header">Anahi Korrapati </th>
-                        <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
-                        <td class="govuk-table__cell">{% for case in data['other-cases'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell"> <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 60);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 3:00 pm');
-                             </script></td>
-                        <td class="govuk-table__cell"><a href="/current/cases/anahi/cases/claim">Go to case</a></td>
-                          <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
-                      </tr>{% endif %}
-
-                      <tr class="govuk-table__row">
-                        {% if  data['Kam-Haraguchi']=='complete'%}{% else %}
-                        <th scope="row" class="govuk-table__header">Kam Haraguchi </th>
-                        <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
-                        <td class="govuk-table__cell">{% for case in data['other-cases'] %}{{ case.type }}{% endfor %}</td>
-                        <td class="govuk-table__cell"> <script>
-                          // Get date
-                              var now = new Date();
-                              var pastDate = new Date(now);
-                              pastDate.setDate(now.getDate() - 60);
-
-                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'long',
-                              year: 'numeric'
-                              });
-
-                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                              hour: 'numeric',
-                              minute: 'numeric',
-                              hour12: true
-                              });
-
-                              document.write(formattedDate + ', 3:00 pm');
-                             </script></td>
-                        <td class="govuk-table__cell"><a href="/current/cases/kam/cases/claim">Go to case</a></td>
-                          <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
-                      </tr>{% endif %}
-
             {% for case in cases %}
 
 
@@ -626,14 +377,14 @@
       items: [
 
         {
-          label: "Your other cases (8)",
+          label: "Your other cases (4)",
           id: "other",
           panel: {
             html: other
           }
         },
         {
-          label: "Your priority cases (2)",
+          label: "Your priority cases (1)",
           id: "priority",
           panel: {
             html: priority

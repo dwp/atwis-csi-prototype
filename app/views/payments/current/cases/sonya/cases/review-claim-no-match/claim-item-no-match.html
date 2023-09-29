@@ -1,9 +1,9 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 {% block csi %}
@@ -404,14 +404,14 @@ Cost
     <div class="govuk-radios" data-module="govuk-radios">
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="claim-item-no-match-reason-element-1" name="claim-item-no-match-reason-element" type="radio" value="total-doesnt-match~sonya/cases/review-claim-no-match/element-type-no-match-tab#your-tasks" {{ checked("claim-item-no-match-reason-element", "The element type does not match") }}>
+        <input class="govuk-radios__input" id="claim-item-no-match-reason-element-1" name="claim-item-no-match-reason-element" type="radio" value="total-doesnt-match~sonya/cases/review-claim-no-match/element-type-no-match" {{ checked("claim-item-no-match-reason-element", "The element type does not match") }}>
         <label class="govuk-label govuk-radios__label" for="claim-item-no-match-reason-element-1">
           The element type does not match
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="claim-item-no-match-reason-element-2" name="claim-item-no-match-reason-element" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match-tab#your-tasks" {{ checked("claim-item-no-match-reason-element", "The details on this item are correct") }}>
+        <input class="govuk-radios__input" id="claim-item-no-match-reason-element-2" name="claim-item-no-match-reason-element" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("claim-item-no-match-reason-element", "The details on this item are correct") }}>
         <label class="govuk-label govuk-radios__label" for="claim-item-no-match-reason-element-2">
           The details on this item are correct
         </label>

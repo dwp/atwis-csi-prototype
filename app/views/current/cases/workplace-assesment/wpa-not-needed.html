@@ -7,7 +7,7 @@
 {% block csi %}
 
 
-<form action="" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -22,7 +22,7 @@
                   </h1>
 
                   <p class="govuk-body">
-Based on the application, {% if case =='other-cases-fill-5' %}Sarah Lumley{% endif %}{% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} does not need a workplace assessment.     </p>
+Based on the application, {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} does not need a workplace assessment.     </p>
 <p>This is because {% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} knows what support they need.</p>
 
 
@@ -34,8 +34,7 @@ Based on the application, {% if case =='other-cases-fill-5' %}Sarah Lumley{% end
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                  <h2 class="govuk-fieldset__heading">
-                  Do you recommend a workplace assessment for {% if case =='other-cases-fill-5' %}Sarah Lumley{% endif %}{% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}?
-
+                     {% include  "./content/wpa.html" %}
                  </h2>
                </legend>
                <!-- <div id="national-insurance-number-hint" class="govuk-hint">
@@ -50,7 +49,7 @@ Based on the application, {% if case =='other-cases-fill-5' %}Sarah Lumley{% end
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa{{phase}}-2" name="wpa{{phase}}" type="radio" value="No~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#wpa" {{ checked("wpa"+ phase, "No") }}>
+                   <input class="govuk-radios__input" id="wpa{{phase}}-2" name="wpa{{phase}}" type="radio" value="No" {{ checked("wpa"+ phase, "No") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa{{phase}}-2">
                      No
                    </label>

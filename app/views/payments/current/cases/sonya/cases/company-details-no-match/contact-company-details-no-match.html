@@ -1,25 +1,20 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 {% block csi %}
 <br>
 
-{% if case == 'thomas' %}
-<form action="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-check-tab#your-tasks" method="post" novalidate>
-{% endif %}
-{% if case == 'dereck' %}
-<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
-{% endif %}
-{% if case == 'sonya' %}
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
-{% endif %}
-
-
+<!-- <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate> -->
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
@@ -31,23 +26,23 @@
   <fieldset class="govuk-fieldset">
 
      <h1 class="govuk-heading-l">
-    Deadline for replacement  invoices
+    When do the invoices need to be returned?
     </h1>
 
 <!-- paraagraph ttext -->
 
-      <!-- <p>
+      <p>
          Add the deadline date you are giving the claimant for the replacement invoices.
-      </p> -->
+      </p>
 
 
 
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-          <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Deadline date
-                </legend> -->
+                </legend>
         <div id="passport-issued-hint" class="govuk-hint">
           For example, 27 3 2007
         </div>
@@ -90,12 +85,7 @@
     </fieldset>
   </div>
            <button class="govuk-button" data-module="govuk-button">
-             {% if case == 'thomas' %}
-             Save and continue
-             {% else %}
             Put claim on hold
-            {% endif %}
-
 <!-- alternative button text: -->
 <!-- Save review date -->
            </button>

@@ -88,7 +88,7 @@ Improving Quality Assurance Practices
       {% if data['employment-start-month']=='11' %}November{% endif%}
       {% if data['employment-start-month']=='12' %}December{% endif%}{% endif %}
 
-      {% if not data['employment-start-year'] %}2023{% else %}{{ data['employment-start-year'] }}{% endif %}
+      {% if not data['employment-start-year'] %}2022{% else %}{{ data['employment-start-year'] }}{% endif %}
       </dd>
       <dd class="govuk-summary-list__actions">{% if edit == 'true' %}  <a href="start-date">
               Update
@@ -117,12 +117,12 @@ Improving Quality Assurance Practices
     <dd class="govuk-summary-list__value">
         <ul class="govuk-list govuk-list--bullet">
         <li>Monday  </li>
-        <li>Tuesday</li>
+          <li>Tuesday</li>
          <li>Wednesday  </li>
          <li>Thursday  </li>
          <li>Friday  </li>
          </ul>
-         <p>{% if not phase %}Dereck Smith{% endif %}{% if phase =='kam'%}Kam Haraguchi{% endif %}{% if phase =='anahi'%}Anahi Korrapati{% endif %}{% if phase =='paul'%}Paul Stenberg {% endif %}{% if phase =='george'%}George Dermott{% endif %}{% if phase =='john'%}John Smith{% endif %}{% if phase =='arlo'%}Arlo Spinka{% endif %}{% if phase =='thomas'%}Thomas King{% endif %} does not work flexibly or a shift pattern.</p>
+         <p>{% if not phase %}Dereck Smith{% endif %}{% if phase =='john'%}John Smith{% endif %}{% if phase =='arlo'%}Arlo Spinka{% endif %}{% if phase =='thomas'%}Thomas King{% endif %} does not work flexibly or a shift pattern.</p>
     </dd>
     <dd class="govuk-summary-list__actions">{% if edit == 'true' %}  <a href="days-of-week">
             Update
@@ -137,8 +137,8 @@ Improving Quality Assurance Practices
       </dt>
       <dd class="govuk-summary-list__value">
       {% if not data['employer-name']%}Smith Digital Limited{% else %}{{ data['employer-name'] }}{% endif %}
-    {% if edit == 'true' %}   {% else %}  <div class="govuk-inset-text"><p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/workplace-contact">Workplace contact details</a></div>
-    {% endif %}  </dd>
+        <div class="govuk-inset-text"><p><a href="/current/cases/{{phase}}/cases/contact/contact-details#workplace-contact">Workplace contact details</a></div>
+      </dd>
       <dd class="govuk-summary-list__actions">{% if edit == 'true' %}  <a href="employer-name">
               Update
               <span class="govuk-visually-hidden"> what is your job title</span></a>{% endif %}

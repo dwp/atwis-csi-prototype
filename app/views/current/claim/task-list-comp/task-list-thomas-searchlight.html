@@ -22,32 +22,33 @@
 
 
 {% if data['Searchligh']=='No'%}
-<!-- <p >
+<p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Thomas King{% endif %}
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
 </a>
-</p> -->
+</p>
 
 <!-- <div class="govuk-inset-text">
 <p>  You need to contact Dereck Smith.  </p>
 
 </div> -->
 
-<!-- <br> -->
+<br>
 {% else %}
 
 
-{% if
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
 
 
 data ['appointee']
-
+and
+data ['benefits']
 %}
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Thomas King{% endif %} before completing appointee task.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
         {% endif %}
         {% endif %}
 

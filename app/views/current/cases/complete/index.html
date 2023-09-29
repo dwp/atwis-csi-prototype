@@ -28,12 +28,12 @@
 
 
 
-        <p>{% if case == "other-cases-4" %}Arlo Spinka{% endif %}{% if case == "other-cases-2" %}Thomas King{% endif %}{% if case == "other-cases" %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}'s application has been removed from 'your cases'.</p>
+        <p>{% if case == "other-cases-4" %}Arlo Spinka{% endif %}{% if case == "other-cases-2" %}Thomas King{% endif %}{% if case == "other-cases" %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}'s application has been removed from your cases.</p>
 
 
 
 
-<form action="/current/your-cases" method="post" novalidate name="{% if case == "other-cases-4" %}Arlo-Spinka{% endif %}{% if case == "other-cases-2" %}Thomas-King{% endif %}{% if case == "other-cases" %}Sonya-Corkery{% endif %}{% if not case %}Dereck-Smith{% endif %}" value="complete">
+<form action="/current/your-cases" method="post" novalidate name="dereck-smith" value="complete">
   <button class="govuk-button" data-module="govuk-button">
 Return to your cases
 </button>

@@ -17,7 +17,7 @@
     <main class="govuk-main-wrapper">
 <img src="/public/images/dwp-logo.png" alt="User icon" class="dwp-image">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
+        <div class="govuk-grid-column-two-thirds">
 
 
 
@@ -35,7 +35,8 @@
               Annex A<br>Needs Assessment Referral
 
             </h1>
-
+<p>This report framework should be flexible and open to change to allow us to respond to
+change in the life of the contract.</p>
 
 <!-- <p><a href="https://www.gov.uk/government/publications/access-to-work-holistic-assessments-provider-guidance" target="_blank">Access to Work holistic assessments provider guidance (opens in a new tab)</a>.
 <p> Add any addtional address, contact details and alternatives where needed to the refferal form. As well as: </p>
@@ -57,22 +58,72 @@ Dereck Smith
 </div>
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
-Appointee
-</dt>
-<dd class="govuk-summary-list__value">
-No
-</dd>
-</div>
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
 NINO
 </dt>
 <dd class="govuk-summary-list__value">
 {{data['national-insurance-number']}}
 </dd>
 </div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Assessment Type
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['wpa-type']}}
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Health condition or disability
+</dt>
+<dd class="govuk-summary-list__value">
+macular oedema
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+How does your condition or disability affect you at work? Current reported performance against job tasks (impact of disability)
+</dt>
+<dd class="govuk-summary-list__value">
+I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Detail the customer’s experience with previous solutions
+</dt>
+<dd class="govuk-summary-list__value">
+I need Jaws to read out the content on a screen to me, as I'm unable to visual see the screen currently have to rely on others. I use a computer for 99% of my work.</dd>
+</div>
 
+
+
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Job title
+</dt>
+<dd class="govuk-summary-list__value">
+QA Engineer
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Job description
+</dt>
+<dd class="govuk-summary-list__value">
+Responsible for the creation of tests to identify issues with software before the product launch. Duties include identifying and analysing any bugs and errors found during the test phase and documenting them for review after. Skills: Communications skills, both written and verbal. Strong IT skills Creating documentation Coding Bug Reporting Improving Quality Assurance Practices
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+
+</dt>
+<dd class="govuk-summary-list__value">
+
+</dd>
+</div>
 
 <h2>Contact details</h2>
 <div class="govuk-summary-list__row">
@@ -101,116 +152,6 @@ Between 8:30 am and 6pm Monday to Saturday.
 </div>
 
 
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Reasonable adjustment agreed
-</dt>
-<dd class="govuk-summary-list__value">
-No
-</dd>
-</div>
-</dl>
-
-
-
-
-
-<h2 >
-    Availability
-
-</h2>
-
-
-  <dl class="govuk-summary-list govuk-summary-list--no-border">
-  <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-  Is Dereck Smith available to be contacted by a workplace assessor within the next 2 working days?
-  </dt>
-  <dd class="govuk-summary-list__value">
-  Yes
-  </dd>
-  </div>
-
-
-
-
-
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-    Details of   availability of Dereck Smith over the next 2 working days
-  </dt>
-  <dd class="govuk-summary-list__value">
-
-<p>{{ data['availability-wpa']}}</p>
-</dd>
-</div>
-</dl>
-
-
-
-
-
-<h2>Assessment Preference</h2>
-
-<dl class="govuk-summary-list govuk-summary-list--no-border">
-
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Assessment type
-</dt>
-<dd class="govuk-summary-list__value">
-{{data['wpa-type']}}
-</dd>
-</div>
-</dl>
-
-
-
-
-
-
-
-<h2>Employment Details</h2>
-<dl class="govuk-summary-list govuk-summary-list--no-border">
-  <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-  Work pattern
-  </dt>
-  <dd class="govuk-summary-list__value">
-    <ul class="govuk-list govuk-list--bullet">
-    <li>Monday  </li>
-    <li>Tuesday</li>
-     <li>Wednesday  </li>
-     <li>Thursday  </li>
-     <li>Friday  </li>
-     </ul>
-     <p>Dereck Smith does not work flexibly or a shift pattern.</p>
-<p>37 hours per week</p>
-  </dd>
-  </div>
-
-
-
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Company or organisation name
-</dt>
-<dd class="govuk-summary-list__value">
-Smith Digital Limited
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Address
-</dt>
-<dd class="govuk-summary-list__value">
-220 St Vincent Street, Glasgow, AB1 1AB
-</dd>
-</div>
-
 <h2>Place of Assessment</h2>
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
@@ -223,7 +164,32 @@ Address of Assessment
 {% endif %}
 
 
-</dd></div>
+</dd>
+<dd class="govuk-summary-list__actions">
+
+    </dd>
+
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Company or organisation name
+</dt>
+<dd class="govuk-summary-list__value">
+Smith Digital Limited
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Organisational Set Up
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['employer-size']}}
+
+</dd>
+</div>
+
+
 
 <h2>Workplace contact</h2>
 <div class="govuk-summary-list__row">
@@ -235,7 +201,7 @@ Jane Doe
 </dd>
 <dd class="govuk-summary-list__actions">
 
-</dd>
+    </dd>
 </div>
 
 <div class="govuk-summary-list__row">
@@ -269,51 +235,7 @@ Phone number
     </dd>
 </div>
 
-
-
-<h2>Health condition or disability and job details</h2>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Health condition or disability
-</dt>
-<dd class="govuk-summary-list__value">
-macular oedema
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Job title
-</dt>
-<dd class="govuk-summary-list__value">
-QA Engineer
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Job description
-</dt>
-<dd class="govuk-summary-list__value">
-Responsible for the creation of tests to identify issues with software before the product launch. Duties include identifying and analysing any bugs and errors found during the test phase and documenting them for review after. Skills: Communications skills, both written and verbal. Strong IT skills Creating documentation Coding Bug Reporting Improving Quality Assurance Practices
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-How does your condition or disability affect Dereck Smith at work?
-</dt>
-<dd class="govuk-summary-list__value">
-I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.
-</dd>
-</div>
-
-
-
-
-
-
 </dl>
-
-
-
 
 
 
@@ -347,7 +269,56 @@ I have macular oedema which has cause permanent vision loss in both eyes. It was
 
 
 
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+      Availability of Dereck Smith over the next 8 working days
+    </label>
+  </h2>
 
+<p>{{ data['availability-wpa']}}</p>
+
+{% if 'No' in data['others-wpa']%}
+<p>Dereck Smith has requested no one else at the workplace assessment.</p>{% endif %}
+
+{% if 'portugal' in data['others-wpa']%}
+<p>Dereck Smith has requested a third party at the workplace assessment.</p>
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+      Avability of third party over the next 8 working days
+    </label>
+  </h2>
+  <div id="more-detail-hint" class="govuk-hint">
+    Include names and availability on non-working days/out of working hours if
+appropriate.
+  </div>
+
+  <div class="govuk-form-group">
+</div>
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+{% endif %}
+
+{% if 'france' in data['others-wpa']%}
+<p>Dereck Smith has requested someone from Smith Digital Limited at the workplace assessment.</p>
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+      Avability of someone from Smith Digital Limited over the next 8 working days
+    </label>
+  </h2>
+  <div id="more-detail-hint" class="govuk-hint">
+    Include names and availability on non-working days/out of working hours if
+appropriate.
+  </div>
+
+  <div class="govuk-form-group">
+</div>
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+{% endif %}
             <form action="/form-handler" method="post" novalidate>
 
   </div>
@@ -356,23 +327,21 @@ I have macular oedema which has cause permanent vision loss in both eyes. It was
 
 
   <h2 >
-  Access to Work Case Manager Information
+  Access to Work Adviser Name
   </h2>
   <p>
 John Goldsmith</p>
-<!-- <h2 >
-Access to Work Case Manager Email
-</h2> -->
+<h2 >
+Access to Work Adviser Email
+</h2>
 <p>john@dwp.co.uk</p>
 
 <div class="govuk-form-group">
   <label class="govuk-label" for="telephone-number">
-Telephone Number:
+Access to Work Adviser Telephone Number
   </label>
   <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
 </div>
-
-
 
 <!-- <div id="current_date"></p>
 <script>
@@ -381,7 +350,7 @@ document.getElementById("current_date").innerHTML = Date();
 
 
 
-</div>
+
 
 <p><span id="day"></span> <span id="month"></span> <span id="year"></span></p>
 

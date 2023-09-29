@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
+
 
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
@@ -11,12 +11,10 @@
 
 
 
+
 {% if case == 'dereck' %}
 <form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
 {% endif %}
-
-
-
 {% if case == 'sonya' %}
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
 {% endif %}
@@ -29,8 +27,8 @@
 {% if case == 'paul' %}
 <form action="/payments/current/cases/paul/claim-paul#your-tasks" method="post" novalidate>
 {% endif %}
-{% if case == 'thomas' %}
-<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+{% if case == 'susan' %}
+<form action="/payments/current/cases/susan/claim-susan#your-tasks" method="post" novalidate>
 {% endif %}
 
 
@@ -44,42 +42,27 @@
 
 
 
-{% if case == 'dereck' and not data ['invoice-number'] %}
+{% if case == 'sonya' and not data ['invoice-number'] %}
 
           <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
                 {% if case == 'paul' %}
                 Add any invoice numbers for journeys you are paying (optional)
-                {% endif %}
-                {% if case == 'thomas' %}
-                Add invoice numbers for support you are paying
-                {% endif %}
-
-                {% if case == 'dereck' or case == 'sonya' %}
-                {% if 'No' in data['paid-in-full'] %}
-                <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+                {% else %}
                   Add invoice numbers for items you are paying
-                  {% else %}
-                  <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
-                    Add invoice numbers for items you are paying
-                    {% endif %}
                   {% endif %}
-
                 </label>
               </h1>
-
-              <!-- {% if 'No' in data['paid-in-full'] %}
               <div class="govuk-inset-text">
                 {{ data['payee-name'] }}
               </div>
-              {% endif %} -->
 
               <div id="with-hint-hint" class="govuk-hint">
                 {% if case == 'paul' %}
                 Separate invoice numbers with commas. Leave blank if the invoices or receipts do not have individual reference numbers.)
                 {% else %}
-                Separate invoice numbers with commas
+                Separate invoice numbers with commas.
                   {% endif %}
 
               </div>
@@ -100,22 +83,19 @@
     <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
       {% if case == 'paul' %}
       Add any invoice numbers for journeys you are paying (optional)
-      {% endif %}
-
-      {% if case == 'sonya' or case == 'dereck'%}
-      <span class="govuk-caption-xl">{{ data['payee-name-1'] }}</span>
-      Add invoice numbers for items you are paying
+      {% else %}
+        Add invoice numbers for items you are paying
         {% endif %}
-
       </label>
     </h1>
-
-
+    <!-- <div class="govuk-inset-text">
+      {{ data['payee-name-1'] }}
+    </div> -->
     <div id="with-hint-hint" class="govuk-hint">
       {% if case == 'paul' %}
       Separate invoice numbers with commas. Leave blank if the invoices or receipts do not have individual reference numbers.)
       {% else %}
-      Separate invoice numbers with commas
+      Separate invoice numbers with commas.
         {% endif %}
 
     </div>

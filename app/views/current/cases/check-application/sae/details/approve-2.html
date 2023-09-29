@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="" method="post" novalidate>
+<form action="selected-quote-application-2" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -18,34 +18,26 @@
 <fieldset class="govuk-fieldset" aria-describedby="approve-2-hint">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <h1 class="govuk-fieldset__heading">
-  Add this item to the award?    </h1>
+Do you want to add this item for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}'s award?
+    </h1>
   </legend>
   <div class="govuk-inset-text">
 ZoomText
   </div>
-  <div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios " data-module="govuk-radios">
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="approve-2" name="approve-2" type="radio" value="true~selected-quote-application-2">
+      <input class="govuk-radios__input" id="approve-2" name="approve-2" type="radio" value="true">
       <label class="govuk-label govuk-radios__label" for="approve-2">
-        Yes
+        Yes, add to the award
       </label>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="approve-2-2" name="approve-2" type="radio" value="false~not-needed-2">
+      <input class="govuk-radios__input" id="approve-2-2" name="approve-2" type="radio" value="false">
       <label class="govuk-label govuk-radios__label" for="approve-2-2">
-        No
+        No, do not add to the award
       </label>
     </div>
-    <div class="govuk-radios__divider">or</div>
-
-    <div class="govuk-radios__item">
-                       <input class="govuk-radios__input" id="approve-2" name="approve-2" type="radio" value="I am not sure, I need more details~../add">
-                       <label class="govuk-label govuk-radios__label" for="approve-2">
-                         I am not sure, I need more details
-                       </label>
-                     </div>
   </div>
-
 
 </fieldset>
 </div>

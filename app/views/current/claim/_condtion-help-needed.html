@@ -6,26 +6,6 @@
 
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if case =='other-cases-fill-1' %}
-            {% for case in data['other-cases-fill-1'] %}
-            {{ case.condition }}
-            {% endfor %}
-            {% endif %}
-            {% if case =='other-cases-fill-2' %}
-            {% for case in data['other-cases-fill-2'] %}
-            {{ case.condition }}
-            {% endfor %}
-            {% endif %}
-            {% if case =='other-cases-fill-3' %}
-            {% for case in data['other-cases-fill-3'] %}
-            {{ case.condition }}
-            {% endfor %}
-            {% endif %}
-            {% if case =='other-cases-fill-4' %}
-            {% for case in data['other-cases-fill-4'] %}
-            {{ case.condition }}
-            {% endfor %}
-            {% endif %}
 
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
@@ -45,13 +25,7 @@
           {% endfor %}
           {% endif %}
 
-          {% if case == 'other-cases-4'%}
-          {% for case in data['other-cases-3'] %}
-          {{ case.condition }}
-          {% endfor %}
-          {% endif %}
-
-          {% if case =='other-cases-3' %}
+          {% if case =='other-cases-3' or 'other-cases-4'%}
           {% for case in data['other-cases-3'] %}
           {{ case.condition }}
           {% endfor %}
@@ -75,27 +49,6 @@
 
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if case =='other-cases-fill-1' %}
-          {% for case in data['other-cases-fill-1'] %}
-          {{ case.conditiondetails }}
-          {% endfor %}
-          {% endif %}
-          {% if case =='other-cases-fill-2' %}
-          {% for case in data['other-cases-fill-2'] %}
-          {{ case.conditiondetails }}
-          {% endfor %}
-          {% endif %}
-          {% if case =='other-cases-fill-3' %}
-          {% for case in data['other-cases-fill-3'] %}
-          {{ case.conditiondetails }}
-          {% endfor %}
-          {% endif %}
-          {% if case =='other-cases-fill-4' %}
-          {% for case in data['other-cases-fill-4'] %}
-          {{ case.conditiondetails }}
-          {% endfor %}
-          {% endif %}
-
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
           {{ case.conditiondetails }}
@@ -114,14 +67,8 @@
           {% endfor %}
           {% endif %}
 
-          {% if case =='other-cases-3' %}
+          {% if case =='other-cases-3' or 'other-cases-4'%}
           {% for case in data['other-cases-3'] %}
-          {{ case.conditiondetails }}
-          {% endfor %}
-          {% endif %}
-
-          {% if case =='other-cases-4' %}
-          {% for case in data['other-cases-4'] %}
           {{ case.conditiondetails }}
           {% endfor %}
           {% endif %}

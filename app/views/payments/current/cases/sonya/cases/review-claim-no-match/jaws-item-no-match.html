@@ -1,9 +1,9 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 
 {% block csi %}
@@ -130,13 +130,13 @@ Award amount
                     </label>
                   </div> -->
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-2" name="claim-item-no-match-jaws" type="radio" value="Amount claimed is higher than grant award~/payments/current/cases/sonya/cases/review-claim-no-match/amount-high-no-match-tab#your-tasks" {{ checked("claim-item-no-match-jaws", "Amount claimed is higher than grant award") }}>
+                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-2" name="claim-item-no-match-jaws" type="radio" value="Amount claimed is higher than grant award~/payments/current/cases/sonya/cases/review-claim-no-match/amount-high-no-match" {{ checked("claim-item-no-match-jaws", "Amount claimed is higher than grant award") }}>
                     <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-2">
                       Amount claimed is higher than grant award
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-3" name="claim-item-no-match-jaws" type="radio" value="Amount claimed is lower than grant award~/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match-tab#your-tasks" {{ checked("claim-item-no-match-jaws", "Amount claimed is lower than grant award") }}>
+                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-3" name="claim-item-no-match-jaws" type="radio" value="Amount claimed is lower than grant award~/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match" {{ checked("claim-item-no-match-jaws", "Amount claimed is lower than grant award") }}>
                     <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-3">
                       Amount claimed is lower than grant award
                     </label>

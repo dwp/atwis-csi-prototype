@@ -8,7 +8,7 @@
 <br>
 
 
-<form action="/current/cases/{% if phase %}{{pahse}}/cases{% endif %}/claim#checks" method="post" novalidate>
+<form action="javascript:history.go(-1)" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -39,7 +39,7 @@
           </div>
 
           {% if data['Searchligh']=='No'%}{% else %}
-          <!-- <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               {% include  "current/cases/searchlight/national-insurance/content/national-insurance-searchlight.html" %}
 
@@ -52,7 +52,7 @@
                 Update<span class="govuk-visually-hidden"> {% include  "current/cases/searchlight/national-insurance/content/national-insurance-searchlight.html" %}</span>
               </a>
             </dd>
-          </div> -->
+          </div>
 
   {% if data['found-nino']=='No'%}{% else %}
           <div class="govuk-summary-list__row">
@@ -61,9 +61,7 @@
 
             </dt>
             <dd class="govuk-summary-list__value">
-              <!-- Case managers use the Nino to search on DiSC, Disc search function does not allow spaces. Striped them out using the replace filter -->
-          {{data['national-insurance-number'] | upper | replace(" ", "") }}
-
+              {{data['national-insurance-number']| upper }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="add-national-insurance-number">

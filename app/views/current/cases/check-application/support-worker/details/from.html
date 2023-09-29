@@ -18,24 +18,24 @@
       <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-          {% include "current/cases/check-application/support-worker/details/content/how-type-support-worker-identified.html" %}
+        Where did the details for this support worker come from?
           </h1>
         </legend>
 
         <div class="govuk-inset-text">
       {{ data['sw-type']}}
         </div>
-        <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae" name="from-sae" type="radio" value="From the workplace assessment report">
+            <input class="govuk-radios__input" id="from-sae" name="from-sae" type="radio" value="Yes">
             <label class="govuk-label govuk-radios__label" for="from-sae">
-            From the workplace assessment report
+            Workplace assessment report
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae-2" name="from-sae" type="radio" value="From {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}">
+            <input class="govuk-radios__input" id="from-sae-2" name="from-sae" type="radio" value="No">
             <label class="govuk-label govuk-radios__label" for="from-sae-2">
-        From {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
+        {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
             </label>
           </div>
         </div>

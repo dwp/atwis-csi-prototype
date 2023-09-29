@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="add" method="post" novalidate>
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/support-worker/details/approve-2" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -16,7 +16,7 @@
         <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
 
-Reason for not awarding this support worker?
+Support worker 1: What is the reason for not awarding this support worker?
 
         </label>
           </h1>
@@ -28,7 +28,7 @@ Reason for not awarding this support worker?
 
 
                            <div class="govuk-inset-text">
-                  {{ data['sw-type']}}
+                    British Sign Language (BSL) interpreter
                            </div>
                            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
                            <button class="govuk-button" data-module="govuk-button">

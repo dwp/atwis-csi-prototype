@@ -1,7 +1,7 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
@@ -13,13 +13,7 @@
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
 <!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
-{% if case == 'dereck' %}
-<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
-{% endif %}
-
-{% if case == 'sonya' %}
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
-{% endif %}
 
 
 
@@ -35,11 +29,9 @@
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
 
-          <h2 class="govuk-fieldset__heading">
-            <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
-
-  Check your answers
-          </h2>
+        <h2 class="govuk-fieldset__heading">
+Payee 1: Check your answers
+        </h2>
 
 
         <br>
@@ -59,7 +51,7 @@ Payee name
         </dd>
         </div>
 
-        <!-- <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
 Has cost share been paid?
         </dt>
@@ -72,23 +64,17 @@ Update
         <span class="govuk-visually-hidden"> - </span>
         </a>
         </dd>
-        </div> -->
+        </div>
 
 
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-Items on invoice
+Itmes on invoice
         </dt>
         <dd class="govuk-summary-list__value">
-{% if data ['cost-share']%}
-          <p>JAWS screen reader  </p>
-{% else %}
-          <p>Foot rest </p>
-          <p>Sit stand desk </p>
-          <p>Office chair </p>
-          <p>Desk magnifier </p>
-{% endif %}
-
+Jaws screen reader
+<br>
+ZoomText Professional License
         </dd>
         <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -97,56 +83,6 @@ Items on invoice
         </a>
         </dd>
         </div>
-
-{% if data ['cost-share']%}
-                  <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-          Has the correct cost share amount been paid?
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-          {{data['cost-share-proforma']}}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-          Update
-                  <span class="govuk-visually-hidden"> - </span>
-                    </a>
-                    </dd>
-                    </div>
-
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-            How much has been paid on this invoice?
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-            £{{data['cost-share-amount']}}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="#">
-            Update
-                    <span class="govuk-visually-hidden"> - </span>
-                      </a>
-                      </dd>
-                      </div>
-
-      {% if data ['cost-share-proforma-under']%}
-                      <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-              Place claim on hold while employer makes contribution?
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-              {{data['cost-share-proforma-under']}}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-              Update
-                      <span class="govuk-visually-hidden"> - </span>
-                        </a>
-                        </dd>
-                        </div>
-      {% endif %}
-
-{% endif %}
 
 
         <div class="govuk-summary-list__row">

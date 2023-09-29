@@ -31,1145 +31,364 @@
 <h1 class="govuk-heading-l">
           Check and send payments
         </h1>
-        <!-- <p class="govuk-body">
+        <p class="govuk-body">
           Check payment details before you send for processing.
-        </p> -->
+        </p>
         {% else %}
         <h1 class="govuk-heading-l">
-                  Check and send payments
+                  Check and send payment
                 </h1>
-                <!-- <p class="govuk-body">
+                <p class="govuk-body">
                   Check payment details before you send for processing.
-                </p> -->
+                </p>
                 {% endif %}
 
-
-
-
-
-
-
-
-<!-- SEA SONYA -->
-<!-- SEA SONYA -->
-<!-- SEA SONYA -->
-<!-- SEA SONYA -->
-<!-- SEA SONYA -->
-
+<br>
 
 {% if case == 'sonya' %}
 
 
 
-                      <!-- <div class="govuk-summary-card">
-                        <div class="govuk-summary-card__title-wrapper">
-                          <h2 class="govuk-summary-card__title">Payee 1</h2>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Payee 1</h2>
 
-                        </div>
-                        <div class="govuk-summary-card__content">
-                          <dl class="govuk-summary-list">
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Payee name
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['payee-name']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                                <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                                </a>
-                              </dd>
-                            </div>
-
-
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Site code
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['sop-site-code']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                </a>
-                              </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                SOP supplier number
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['sop-supplier-number']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                </a>
-                              </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Invoice number
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['invoice-number']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                </a>
-                              </dd>
-                            </div>
-                      <br>
-                                <div class="govuk-summary-list__row">
-                                  <dt class="govuk-summary-list__key">
-                                    JAWS screen reader
-                                  </dt>
-                                  <dd class="govuk-summary-list__value">
-                                    	£499
-                                  </dd>
-                                  <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="#">
-                                    </a>
-                                  </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                  <dt class="govuk-summary-list__key">
-                                    Zoom text professional license
-                                  </dt>
-                                  <dd class="govuk-summary-list__value">
-                                    £530.64
-                                  </dd>
-                                  <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="#">
-                                    </a>
-                                  </dd>
-                                </div>
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Claim total
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        £1029.64
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                        </a>
-                                      </dd>
-                                    </div>
-                                    <br>
-
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Cost share
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        Yes
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                      </dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Employer cost share remaining
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        £1100
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                      </dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Employer cost share after this claim
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        £70.36
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                      </dd>
-                                    </div>
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          Total cost share deductions
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          £1029.64
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                        </dd>
-                                      </div>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payee name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['payee-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+          <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+          </a>
+        </dd>
+      </div>
 
 
-                                    <br>
-                                    <br>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Site code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['sop-site-code']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          SOP supplier number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['sop-supplier-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Invoice number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['invoice-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+          </a>
+        </dd>
+      </div>
+<br>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Jaws screen reader
+            </dt>
+            <dd class="govuk-summary-list__value">
+              	£499
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Zoom text professional license
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £530.64
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              </a>
+            </dd>
+          </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Claim total
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £1029.64
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                  </a>
+                </dd>
+              </div>
+              <br>
 
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Total amount to pay
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        <p class="govuk-body govuk-!-font-weight-bold">£0</p>
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                        </a>
-                                      </dd>
-                                    </div>
-
-                          </dl>
-                        </div>
-                      </div>
-
-                      <br>
-                      <div class="govuk-summary-card">
-                        <div class="govuk-summary-card__title-wrapper">
-                          <h2 class="govuk-summary-card__title">Payee 2</h2>
-                        </div>
-                        <div class="govuk-summary-card__content">
-                          <dl class="govuk-summary-list">
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Payee name
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['payee-name-1']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                  <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                                  <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                                </a>
-                              </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Site code
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['sop-site-code-1']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                </a>
-                              </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                SOP supplier number
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['sop-supplier-number-1']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                </a>
-                              </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">
-                                Invoice number
-                              </dt>
-                              <dd class="govuk-summary-list__value">
-                                {{data['invoice-number-1']}}
-                              </dd>
-                              <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                </a>
-                              </dd>
-                            </div>
-                      <br>
-                                <div class="govuk-summary-list__row">
-                                  <dt class="govuk-summary-list__key">
-                                    Ergonomic keyboard
-                                  </dt>
-                                  <dd class="govuk-summary-list__value">
-                                    	£110
-                                  </dd>
-                                  <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="#">
-                                    </a>
-                                  </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                  <dt class="govuk-summary-list__key">
-                                    Ipad Pro case
-                                  </dt>
-                                  <dd class="govuk-summary-list__value">
-                                      £80.49
-                                  </dd>
-                                  <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="#">
-                                    </a>
-                                  </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                  <dt class="govuk-summary-list__key">
-                                    Ergonomic mouse
-                                  </dt>
-                                  <dd class="govuk-summary-list__value">
-                                    £40.22
-                                  </dd>
-                                  <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="#">
-                                    </a>
-                                  </dd>
-                                </div>
-
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Claim total
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        £230.71
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                        </a>
-                                      </dd>
-                                    </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Cost share
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <!-- Employer threshold remaining -->
+                  Employer cost share remaining
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £1100
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <!-- Employer threshold left after this claim -->
+                  Employer cost share after this claim
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £70.36
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Total cost share deductions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £1029.64
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
 
 
-                                    <br>
+              <br>
+              <br>
 
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Cost share
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        Yes
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                      </dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Employer cost share remaining
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        £70.36
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                      </dd>
-                                    </div>
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Employer cost share after this claim
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                        £0
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                      </dd>
-                                    </div>
-                                      <div class="govuk-summary-list__row">
-                                        <dt class="govuk-summary-list__key">
-                                          Total cost share deductions
-                                        </dt>
-                                        <dd class="govuk-summary-list__value">
-                                          £70.36
-                                        </dd>
-                                        <dd class="govuk-summary-list__actions">
-                                        </dd>
-                                      </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Total amount to pay
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body govuk-!-font-weight-bold">£0</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                  </a>
+                </dd>
+              </div>
 
-                      <br>
-                                    <br>
+    </dl>
+  </div>
+</div>
 
-                                    <div class="govuk-summary-list__row">
-                                      <dt class="govuk-summary-list__key">
-                                        Total amount to pay
-                                      </dt>
-                                      <dd class="govuk-summary-list__value">
-                                      <p class="govuk-body govuk-!-font-weight-bold">£160.35</p>
+<br>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Payee 2</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payee name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['payee-name-1']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+            <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Site code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['sop-site-code-1']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          SOP supplier number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['sop-supplier-number-1']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Invoice number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['invoice-number-1']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+          </a>
+        </dd>
+      </div>
+<br>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ergonomic keyboard
+            </dt>
+            <dd class="govuk-summary-list__value">
+              	£110
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ipad Pro case
+            </dt>
+            <dd class="govuk-summary-list__value">
+                £80.49
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Ergonomic mouse
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £40.22
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+              </a>
+            </dd>
+          </div>
 
-                                      </dd>
-                                      <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                        </a>
-                                      </dd>
-                                    </div>
-
-
-                          </dl>
-                        </div>
-                      </div>
-
-
-                      <br>
- -->
-
- <div class="govuk-summary-card">
-   <div class="govuk-summary-card__title-wrapper">
-     <h2 class="govuk-summary-card__title">Payee 1</h2>
-
-   </div>
-   <div class="govuk-summary-card__content">
-     <dl class="govuk-summary-list">
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Payee name
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['payee-name']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-           <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-           </a>
-         </dd>
-       </div>
-
-
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Site code
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['sop-site-code']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="#">
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           SOP supplier number
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['sop-supplier-number']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="#">
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Invoice number
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['invoice-number']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="#">
-           </a>
-         </dd>
-       </div>
- <br>
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Zoom text professional license
-             </dt>
-             <dd class="govuk-summary-list__value">
-               £530.64
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="#">
-               </a>
-             </dd>
-           </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Claim total
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £230.71
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                  </a>
+                </dd>
+              </div>
 
 
+              <br>
 
-               <br>
-               <br>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Cost share
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <!-- Employer threshold remaining -->
+                  Employer cost share remaining
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £70.36
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <!-- Employer threshold left after this claim -->
+                  Employer cost share after this claim
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £0
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Total cost share deductions
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £70.36
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
 
-               <div class="govuk-summary-list__row">
-                 <dt class="govuk-summary-list__key">
-                   Total amount to pay
-                 </dt>
-                 <dd class="govuk-summary-list__value">
-                   <p class="govuk-body govuk-!-font-weight-bold">£530.64</p>
-                 </dd>
-                 <dd class="govuk-summary-list__actions">
-                   <a class="govuk-link" href="#">
-                   </a>
-                 </dd>
-               </div>
+<br>
+              <br>
 
-     </dl>
-   </div>
- </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Total amount to pay
+                </dt>
+                <dd class="govuk-summary-list__value">
+                <p class="govuk-body govuk-!-font-weight-bold">£160.35</p>
 
- <br>
- <div class="govuk-summary-card">
-   <div class="govuk-summary-card__title-wrapper">
-     <h2 class="govuk-summary-card__title">Payee 2</h2>
-   </div>
-   <div class="govuk-summary-card__content">
-     <dl class="govuk-summary-list">
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Payee name
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['payee-name-1']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-             <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Site code
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['sop-site-code-1']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="#">
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           SOP supplier number
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['sop-supplier-number-1']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="#">
-           </a>
-         </dd>
-       </div>
-       <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-           Invoice number
-         </dt>
-         <dd class="govuk-summary-list__value">
-           {{data['invoice-number-1']}}
-         </dd>
-         <dd class="govuk-summary-list__actions">
-           <a class="govuk-link" href="#">
-           </a>
-         </dd>
-       </div>
- <br>
- <div class="govuk-summary-list__row">
-   <dt class="govuk-summary-list__key">
-     JAWS screen reader
-   </dt>
-   <dd class="govuk-summary-list__value">
-       £499
-   </dd>
-   <dd class="govuk-summary-list__actions">
-     <a class="govuk-link" href="#">
-     </a>
-   </dd>
- </div>
-
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Ergonomic keyboard
-             </dt>
-             <dd class="govuk-summary-list__value">
-                 £100
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="#">
-               </a>
-             </dd>
-           </div>
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Ipad Pro case
-             </dt>
-             <dd class="govuk-summary-list__value">
-                 £70.49
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="#">
-               </a>
-             </dd>
-           </div>
-           <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
-               Ergonomic mouse
-             </dt>
-             <dd class="govuk-summary-list__value">
-               £40.22
-             </dd>
-             <dd class="govuk-summary-list__actions">
-               <a class="govuk-link" href="#">
-               </a>
-             </dd>
-           </div>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                  </a>
+                </dd>
+              </div>
 
 
- <br>
-               <br>
-
-               <div class="govuk-summary-list__row">
-                 <dt class="govuk-summary-list__key">
-                   Total amount to pay
-                 </dt>
-                 <dd class="govuk-summary-list__value">
-                 <p class="govuk-body govuk-!-font-weight-bold">£709.71</p>
-
-                 </dd>
-                 <dd class="govuk-summary-list__actions">
-                   <a class="govuk-link" href="#">
-                   </a>
-                 </dd>
-               </div>
-
-
-     </dl>
-   </div>
- </div>
-
-
- <br>
-
-
- {% endif %}
-
-
-
-{% if case == 'dereck' %}
-
-<!-- SINGLE PAYMENT -->
-<!-- SINGLE PAYMENT -->
-<!-- SINGLE PAYMENT -->
-<!-- SINGLE PAYMENT -->
-<!-- SINGLE PAYMENT -->
+    </dl>
+  </div>
+</div>
 
 
 <br>
-<h2 class="govuk-heading-m">Payee details</h2>
+{% else %}
 
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payee name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-payee-name']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Site code
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-site-code']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            SOP supplier number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-supplier-number']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-                        Invoice numbers
-
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['invoice-number']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-      </dl>
-
-<h2 class="govuk-heading-m">Payment calculation</h2>
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      JAWS screen reader
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £499
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Desk magnifier
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £31.70
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-      </a>
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Laptop stand
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £19.99
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">
-      </a>
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Claim total
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £550.69
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd>
-  </div>
-
-
-</dl>
-
-<!-- <h2 class="govuk-heading-m">Cost share</h2>
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Employer threshold
-  </dt>
-  <dd class="govuk-summary-list__value">
-    £0
-  </dd>
-  <dd class="govuk-summary-list__actions">
-  </dd>
-</div>
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Employer threshold left after this claim
-  </dt>
-  <dd class="govuk-summary-list__value">
-    £0
-  </dd>
-  <dd class="govuk-summary-list__actions">
-  </dd>
-</div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      20% cost share
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £80.99
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Total cost share deductions
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £80.99
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd>
-  </div>
-</dl> -->
-
-
-
-
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Total amount to pay
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £550.69
-    </dd>
-    <dd class="govuk-summary-list__actions">
-    </dd>
-  </div>
-</dl>
-
-
-
-<!-- MULTIPLE PAYMENT -->
-<!-- MULTIPLE PAYMENT -->
-<!-- MULTIPLE PAYMENT -->
-<!-- MULTIPLE PAYMENT -->
-<!-- MULTIPLE PAYMENT -->
-
-
-
-      <!-- <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Payee 1</h2>
-
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Payee name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['payee-name']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                </a>
-              </dd>
-            </div>
-
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Site code
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['sop-site-code']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                SOP supplier number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['sop-supplier-number']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Invoice number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['invoice-number']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                </a>
-              </dd>
-            </div>
-      <br>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Ergonomic keyboard
-        </dt>
-        <dd class="govuk-summary-list__value">
-            £110
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Ergonomic mouse
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £40.22
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Item total
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £150.22
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-          </a>
-        </dd>
-      </div>
-
-
-      <br>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Cost share
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Yes
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Employer threshold remaining
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £0
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          20% cost share
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £30.04
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Total threshold and cost share deducted
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £30.04
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-
-
-
-                    <br>
-                    <br>
-
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Total amount to pay
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        <p class="govuk-body govuk-!-font-weight-bold">£120.18</p>
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                        </a>
-                      </dd>
-                    </div>
-
-          </dl>
-        </div>
-      </div>
-
-      <br>
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Payee 2</h2>
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Payee name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['payee-name-1']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                  <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Site code
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['sop-site-code-1']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                SOP supplier number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['sop-supplier-number-1']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Invoice number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['invoice-number-1']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                </a>
-              </dd>
-            </div>
-      <br>
-
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Foot rest
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    £24
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    </a>
-                  </dd>
-                </div>
-
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Desk magnifier
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    £31.70
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    </a>
-                  </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Laptop stand
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    £19.99
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    </a>
-                  </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Item total
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    £75.69
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    </a>
-                  </dd>
-                </div>
-
-
-                <br>
-
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Cost share
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Yes
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Employer threshold remaining
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    £20
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    20% cost share
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    £11.14
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                  </dd>
-                </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Total threshold and cost share deducted
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      £31.14
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    </dd>
-                  </div>
-
-      <br>
-                    <br>
-
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Total amount to pay
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                      <p class="govuk-body govuk-!-font-weight-bold">£44.50</p>
-
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
-                        </a>
-                      </dd>
-                    </div>
-
-
-          </dl>
-        </div>
-      </div>
-
-
-      <br> -->
-
-
-
-
-{% endif %}
-
-
-
-
-<!-- SCENARIO 1 -->
-<!-- SCENARIO 1 -->
-<!-- SCENARIO 1 -->
-<!-- JAMES MCCARTHY -->
-{% if case == 'james' %}
 
 <br>
 <h2 class="govuk-heading-m">Payee details</h2>
@@ -1230,13 +449,67 @@
           </dd>
         </div>
       </dl>
+{% endif %}
+
+{% if case == 'dereck' %}
 
       <h2 class="govuk-heading-m">Payment calculation</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            JAWS screen reader
+            Jaws screen reader
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £499
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim total
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £499
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total amount to pay
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £499
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+{% endif %}
+
+
+
+
+<!-- SCENARIO 1 -->
+<!-- SCENARIO 1 -->
+<!-- SCENARIO 1 -->
+<!-- JAMES MCCARTHY -->
+{% if case == 'james' %}
+
+
+      <h2 class="govuk-heading-m">Payment calculation</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jaws screen reader
           </dt>
           <dd class="govuk-summary-list__value">
             £499
@@ -1359,7 +632,7 @@
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  JAWS screen reader
+                  Jaws screen reader
                 </dt>
                 <dd class="govuk-summary-list__value">
                   £499
@@ -1505,65 +778,6 @@
 <!-- NINA WEST -->
 {% if case == 'nina' %}
 
-<br>
-<h2 class="govuk-heading-m">Payee details</h2>
-
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payee name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-payee-name']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a> -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Site code
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-site-code-1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a> -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            SOP supplier number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-supplier-number-1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a> -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-                        Invoice numbers
-
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['invoice-number-1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> contact details</span>
-            </a> -->
-          </dd>
-        </div>
-      </dl>
 
       <h2 class="govuk-heading-m">Payment calculation</h2>
 
@@ -1807,66 +1021,6 @@
 <!-- NINA WEST -->
 {% if case == 'paul' %}
 
-<br>
-<h2 class="govuk-heading-m">Payee details</h2>
-
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payee name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-payee-name']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a> -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Site code
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-site-code-1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> date of birth</span>
-            </a> -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            SOP supplier number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sop-supplier-number-1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a> -->
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-                        Invoice numbers
-
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['invoice-number-1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> contact details</span>
-            </a> -->
-          </dd>
-        </div>
-      </dl>
-
 
       <h2 class="govuk-heading-m">Payment calculation</h2>
 
@@ -1939,7 +1093,7 @@
             Cost per journey
           </dt>
           <dd class="govuk-summary-list__value">
-            £30
+            £18.50
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -2021,68 +1175,8 @@
       {% endif %}
 
 
-{% if case == 'thomas' %}
+      {% if case == 'susan' %}
 
-
-      <br>
-      <h2 class="govuk-heading-m">Payee details</h2>
-
-
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Payee name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['sop-payee-name']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> name</span>
-                  </a> -->
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Site code
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['sop-site-code-1']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> date of birth</span>
-                  </a> -->
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  SOP supplier number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['sop-supplier-number-1']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> address</span>
-                  </a> -->
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                              Invoice numbers
-
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['invoice-number-1']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <!-- <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> contact details</span>
-                  </a> -->
-                </dd>
-              </div>
-            </dl>
 
             <h2 class="govuk-heading-m">Payment calculation</h2>
 
@@ -2144,18 +1238,17 @@
                   Hours of support
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  40
-                  <!-- {{data['sw-hours']}} -->
+                  {{data['sw-hours']}}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Hourly rate
+                  Cost per hour
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £30
+                  £18.50
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
@@ -2165,25 +1258,11 @@
                   Claim total
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £1200
+                  £592.00
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
               </div>
-
-{% if data ['additional-costs-scenario']%}
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Total additional costs
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  £600
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                </dd>
-              </div>
-{% endif %}
-
             </dl>
 
 
@@ -2241,8 +1320,7 @@
                   Total amount to pay
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £1200
-
+                  £592.00
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
@@ -2252,237 +1330,6 @@
             {% endif %}
 
 
-
-<!-- SW END TO END TESTING -->
-            {% if case == 'thomas end to end testing' %}
-
-
-                  <br>
-                  <h2 class="govuk-heading-m">Payee details</h2>
-
-
-                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Payee name
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              {{data['sop-payee-name']}}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <!-- <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> name</span>
-                              </a> -->
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Site code
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              {{data['sop-site-code-1']}}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <!-- <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> date of birth</span>
-                              </a> -->
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              SOP supplier number
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              {{data['sop-supplier-number-1']}}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <!-- <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> address</span>
-                              </a> -->
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                          Invoice numbers
-
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              {{data['invoice-number-1']}}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                              <!-- <a class="govuk-link" href="#">
-                                Change<span class="govuk-visually-hidden"> contact details</span>
-                              </a> -->
-                            </dd>
-                          </div>
-                        </dl>
-
-                        <h2 class="govuk-heading-m">Payment calculation</h2>
-
-                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Claim start date
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              {{data['sw-claim-start-day']}}
-
-                              {% if (data['sw-claim-start-month'] =='01') or (data['sw-claim-start-month'] =='1') %} January {% endif%}
-                              {% if (data['sw-claim-start-month'] =='02') or (data['sw-claim-start-month'] =='2') %} February  {% endif%}
-                              {% if (data['sw-claim-start-month'] =='03') or (data['sw-claim-start-month'] =='3') %} March {% endif%}
-                              {% if (data['sw-claim-start-month'] =='04') or (data['sw-claim-start-month'] =='4') %} April {% endif%}
-                              {% if (data['sw-claim-start-month'] =='05') or (data['sw-claim-start-month'] =='5') %} May {% endif%}
-                              {% if (data['sw-claim-start-month'] =='06') or (data['sw-claim-start-month'] =='6') %} June {% endif%}
-                              {% if (data['sw-claim-start-month'] =='07') or (data['sw-claim-start-month'] =='7') %} July {% endif%}
-                              {% if (data['sw-claim-start-month'] =='08') or (data['sw-claim-start-month'] =='8') %} August {% endif%}
-                              {% if (data['sw-claim-start-month'] =='09') or (data['sw-claim-start-month'] =='9') %} September {% endif%}
-                              {% if data['sw-claim-start-month'] =='10' %} October {% endif%}
-                              {% if data['sw-claim-start-month'] =='11'%} November {% endif%}
-                              {% if data['sw-claim-start-month'] =='12' %} December {% endif%}
-
-                              {{data['sw-claim-start-year']}}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Claim end date
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              {{data['sw-claim-end-day']}}
-
-                              {% if (data['sw-claim-end-month'] =='01') or (data['sw-claim-end-month'] =='1') %} January {% endif%}
-                              {% if (data['sw-claim-end-month'] =='02') or (data['sw-claim-end-month'] =='2') %} February  {% endif%}
-                              {% if (data['sw-claim-end-month'] =='03') or (data['sw-claim-end-month'] =='3') %} March {% endif%}
-                              {% if (data['sw-claim-end-month'] =='04') or (data['sw-claim-end-month'] =='4') %} April {% endif%}
-                              {% if (data['sw-claim-end-month'] =='05') or (data['sw-claim-end-month'] =='5') %} May {% endif%}
-                              {% if (data['sw-claim-end-month'] =='06') or (data['sw-claim-end-month'] =='6') %} June {% endif%}
-                              {% if (data['sw-claim-end-month'] =='07') or (data['sw-claim-end-month'] =='7') %} July {% endif%}
-                              {% if (data['sw-claim-end-month'] =='08') or (data['sw-claim-end-month'] =='8') %} August {% endif%}
-                              {% if (data['sw-claim-end-month'] =='09') or (data['sw-claim-end-month'] =='9') %} September {% endif%}
-                              {% if data['sw-claim-end-month'] =='10' %} October {% endif%}
-                              {% if data['sw-claim-end-month'] =='11'%} November {% endif%}
-                              {% if data['sw-claim-end-month'] =='12' %} December {% endif%}
-
-                              {{data['sw-claim-end-year']}}
-
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Hours of support
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              20
-                              <!-- {{data['sw-hours']}} -->
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Hourly rate
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              £30
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Claim total
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              £600
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-
-            {% if data ['additional-costs-scenario']%}
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Total additional costs
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              £600
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-            {% endif %}
-
-                        </dl>
-
-
-
-                        <!-- <h2 class="govuk-heading-m">Cost share</h2>
-
-                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                        <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
-                            Employer threshold
-                          </dt>
-                          <dd class="govuk-summary-list__value">
-                            £500
-                          </dd>
-                          <dd class="govuk-summary-list__actions">
-                          </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
-                            Employer threshold left after this claim
-                          </dt>
-                          <dd class="govuk-summary-list__value">
-                            £190.49
-                          </dd>
-                          <dd class="govuk-summary-list__actions">
-                          </dd>
-                        </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              20% cost share
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              £0.00
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Total cost share deductions
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              £309.51
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-                        </dl> -->
-
-
-
-                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                              Total amount to pay
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                              £600
-
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                          </div>
-                        </dl>
-
-                        {% endif %}
 
 
 

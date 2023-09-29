@@ -1,3 +1,55 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
 
-{% set number = 3%}
-{% include "current/cases/check-application/sae/details/1/approve.html" %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="selected-quote" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="approve-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+  Do you approve this item for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}'s award?
+          </h1>
+        </legend>
+        <div class="govuk-inset-text">
+      {{data['sae-item-type-3']}}
+        </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="approve" name="approve-3" type="radio" value="true~selected-quote">
+            <label class="govuk-label govuk-radios__label" for="approve">
+            Yes, add to the award
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="approve-2" name="approve-3" type="radio" value="false~not-needed">
+            <label class="govuk-label govuk-radios__label" for="approve-2">
+              No, do not add to the award
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+                   <button class="govuk-button" data-module="govuk-button">
+                   Save and continue
+                   </button>
+
+                   </form>
+
+
+                   </main>
+                 </div>
+
+
+               {% endblock %}

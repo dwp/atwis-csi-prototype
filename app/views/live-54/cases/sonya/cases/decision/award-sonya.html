@@ -1,8 +1,0 @@
-{% set case = "other-cases" %}
-{% set phase = "sonya" %}
-
-{% if data['approve-2']=='false' %}
-{% include "current/cases/decision/award-sonya-reject.html" %}
-{% else %}
-{% include "current/cases/decision/award-sonya.html" %}
-{% endif %}

@@ -1,56 +1,3 @@
-
-
-
-<script>
-                // Get date
-                    var now = new Date();
-                    var pastDate = new Date(now);
-                    pastDate.setDate(now.getDate() - 60);
-
-                    var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric'
-                    });
-
-                    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                    hour: 'numeric',
-                    minute: 'numeric',
-                    hour12: true
-                    });
-
-                    document.write(formattedDate + ', 3:00 pm');
-                   </script>
-
-
-
-
-
-  {% for feature in data['name-here'] %}
-
-                <li>{{ feature }}</li>
-
-
-              {% endfor %}
-
-[18/09 15:55] Rachel Derbyshire
-
-  <ul class="govuk-list">
-
-{% for feature in data['name-here'] %}
-
-                <li>{{ feature }}</li>
-
-
-              {% endfor %}
-
-</ul>
-
-
-
-
-
-
 {% if case == 'dereck' %}
 dereck
 {% endif %}
@@ -706,11 +653,11 @@ Use for radio buttons
 
 
 
-{% if case == 'thomas' %}
+{% if case == 'susan' %}
       {% if not data ['sw-claim-start-day']%}
       {% endif %}
       {% if data ['sw-claim-start-day'] and not data ['sw-match']%}
-      <a href="/payments/current/cases/thomas/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+      <a href="/payments/current/cases/susan/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
       {% endif %}
       {% if data['sw-match'] %}
       <a href="/payments/current/cases/sonya/cases/review-claim/match-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">

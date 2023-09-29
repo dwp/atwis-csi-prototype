@@ -1,9 +1,9 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 {% block csi %}
 
@@ -76,7 +76,7 @@ What does not match the grant award?
 Amount is lower than grant
         </dd>
         <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match-tab#your-tasks">
+        <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match">
 Update
         <span class="govuk-visually-hidden"> - </span>
         </a>
@@ -92,7 +92,7 @@ Amount to pay
 £{{data['new-low-amount-1']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match-tab#your-tasks">
+        <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match">
 Update
         <span class="govuk-visually-hidden">amount to pay</span>
         </a>

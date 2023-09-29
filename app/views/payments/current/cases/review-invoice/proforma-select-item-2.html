@@ -1,9 +1,10 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
 
 
 {% block csi %}
@@ -15,10 +16,6 @@
 {% if case == 'sonya' %}
 <form action="/payments/current/cases/sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
 {% endif %}
-{% if case == 'dereck' %}
-<form action="/payments/current/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
-{% endif %}
-
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
@@ -27,19 +24,17 @@
 
 
 
-      <div class="govuk-form-group">
-                          <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                              <h1 class="govuk-fieldset__heading">
+<div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
 
-                                <span class="govuk-caption-xl">{{ data['payee-name-1'] }}</span>
-                                Which items are you paying?
-                              </h1>
-                            </legend>
-
-<!-- <div class="govuk-inset-text">
+                          Payee 2: which items are you paying
+                        </h1>
+                      </legend>
+<div class="govuk-inset-text">
   {{ data['payee-name-1'] }}
-</div> -->
+</div>
 
                       <div id="nationality-hint" class="govuk-hint">
                         <!-- If you have dual nationality, select all options that are relevant to you. -->
@@ -52,7 +47,7 @@
                           <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="proforma-payee-2-1" name="proforma-payee-2" type="checkbox" value="Jaws screen reader" {{ checked("proforma-payee-2", "Jaws screen reader") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="proforma-payee-2-1">
-                            JAWS screen reader
+                            Jaws screen reader
                           </label>
                           <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                             £499
@@ -91,51 +86,35 @@
 {% endif %}
 {% endif %}
 
-{% if 'Foot rest' in data['claim-item'] %}
-{% if 'Foot rest' not in data['proforma-payee-1'] %}
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="proforma-payee-2-9" name="proforma-payee-2" type="checkbox" value="Foot rest" {{ checked("proforma-payee-2", "Foot rest") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="proforma-payee-2-9">
-                            Foot rest
-                          </label>
-                        </div>
-{% endif %}
-{% endif %}
 
 
-{% if 'Sit stand desk' in data['claim-item'] %}
-{% if 'Sit stand desk' not in data['proforma-payee-1'] %}
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="proforma-payee-2-10" name="proforma-payee-2" type="checkbox" value="Sit stand desk" {{ checked("proforma-payee-2", "Sit stand desk") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="proforma-payee-2-10">
-                            Sit stand desk
-                          </label>
-                        </div>
-{% endif %}
-{% endif %}
-
-
-<!-- {% if 'Ergonomic Keyboard' in data['claim-item'] %}
+{% if 'Ergonomic Keyboard' in data['claim-item'] %}
 {% if 'Ergonomic Keyboard' not in data['proforma-payee-1'] %}
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="proforma-payee-2-4" name="proforma-payee-2" type="checkbox" value="Ergonomic Keyboard" {{ checked("proforma-payee-2", "Ergonomic Keyboard") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="proforma-payee-2-4">
-                            Ergonomic keyboard
+                            Ergonomic Keyboard
                           </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
                         </div>
 {% endif %}
-{% endif %} -->
+{% endif %}
 
-<!-- {% if 'Ergonomic Keyboard home' in data['claim-item'] %}
+{% if 'Ergonomic Keyboard home' in data['claim-item'] %}
 {% if 'Ergonomic Keyboard home' not in data['proforma-payee-1'] %}
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="proforma-payee-2-7" name="proforma-payee-2" type="checkbox" value="Ergonomic Keyboard home" {{ checked("proforma-payee-2", "Ergonomic Keyboard home") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="proforma-payee-2-7">
                             Ergonomic Keyboard
                           </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
                         </div>
 {% endif %}
-{% endif %} -->
+{% endif %}
 
 
 {% if 'Office chair' in data['claim-item'] %}
@@ -166,27 +145,6 @@
 {% endif %}
 {% endif %}
 
-{% if 'Desk magnifier' in data['claim-item'] %}
-{% if 'Desk magnifier' not in data['proforma-payee-1'] %}
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="proforma-payee-2-8" name="proforma-payee-2" type="checkbox" value="Desk magnifier" {{ checked("proforma-payee-2", "Desk magnifier") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="proforma-payee-2-8">
-                            Desk magnifier
-                          </label>
-                        </div>
-{% endif %}
-{% endif %}
-
-{% if 'Laptop stand' in data['claim-item'] %}
-{% if 'Laptop stand' not in data['proforma-payee-1'] %}
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="proforma-payee-2-11" name="proforma-payee-2" type="checkbox" value="Laptop stand" {{ checked("proforma-payee-2", "Laptop stand") }}>
-                          <label class="govuk-label govuk-checkboxes__label" for="proforma-payee-2-11">
-                            Laptop stand
-                          </label>
-                        </div>
-{% endif %}
-{% endif %}
 
                       </div>
 

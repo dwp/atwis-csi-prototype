@@ -29,7 +29,7 @@
   </ul>
   <div class="govuk-tabs__panel" id="application-summary">
 
-     {% if data['clear']=='No' %}
+  {% if phase == "notEligible"  %}
 {% include  "../claim/notification.html" %}
 {% endif %}
 
@@ -212,7 +212,7 @@
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
 
-     {% if data['clear']=='No' %}
+    {% if phase == "notEligible"  %}
     {% include  "./notification.html" %}
       {% else %}
     {% endif %}

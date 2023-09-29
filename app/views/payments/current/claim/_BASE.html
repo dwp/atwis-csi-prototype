@@ -17,7 +17,6 @@
      <div class="govuk-header__logo">
        <a href="#" class="govuk-header__link govuk-header__link--homepage">
          <span class="govuk-header__logotype">
-
            <span class="govuk-header__logotype-text">
              GOV.UK
            </span>
@@ -28,14 +27,7 @@
        <a href="/{{folder}}/" class="govuk-header__link govuk-header__link--service-name">
         {{serviceName}}
        </a>
-
-
      </div>
-     {% if not hideUser %}
-     <div class="header-user-details">
-          Sue Pearson
-         </div>
-        {% endif %}
    </div>
  </header>
 
@@ -84,8 +76,8 @@
               {% if case == 'paul' %}
               Paul Hill
               {% endif %}
-              {% if case == 'thomas' %}
-              Thomas King
+              {% if case == 'susan' %}
+              Susan Poole
               {% endif %}
 
 
@@ -118,41 +110,6 @@
 
             <dt>Application reference:</dt>
             <dd>RMPX30</dd>
-<br>
-</br>
-            <dt>Claim element:</dt>
-{% if case == 'dereck' or case == 'sonya'%}
-            <dd>specialist equipment</dd>
-{% endif %}
-
-{% if case == 'thomas'%}
-            <dd>support worker</dd>
-{% endif %}
-
-
-
-{% if data ['cost-share']%}
-<br>
-</br>
-            <dt>Cost share:</dt>
-            <dd>yes</dd>
-<br>
-</br>
-            <dt>Company size:</dt>
-            <dd>medium</dd>
-
-{% else %}
-<br>
-</br>
-            <dt>Cost share:</dt>
-            <dd>no</dd>
-<br>
-</br>
-            <dt>Company size:</dt>
-            <dd>small</dd>
-
-{% endif %}
-
 
   {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
             <dt>Appointee:</dt>
