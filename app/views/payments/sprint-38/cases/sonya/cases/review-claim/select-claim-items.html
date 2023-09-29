@@ -1,0 +1,253 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-38/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+{% if case == 'susan' %}
+        {% if data ['sw-check']%}
+        <form action="sw-claim-tab#your-tasks" method="post" novalidate>
+        {% endif %}
+        {% if not data ['sw-check']%}
+        <form action="sw-add-hours-tab#your-tasks" method="post" novalidate>
+        {% endif %}
+{% else %}
+<form action="matches-grant-multi-tab#your-tasks" method="post" novalidate>
+{% endif %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+
+
+
+
+
+<div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                          Select all items that appear on the claim form
+                        </h1>
+                      </legend>
+                      <div id="claim-item" class="govuk-hint">
+                        <!-- If you have dual nationality, select all options that are relevant to you. -->
+                      </div>
+
+{% if case == 'susan' %}
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="claim-item-8" name="claim-item-1" type="checkbox" value="bsl" {{ checked("claim-item-1", "bsl") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="claim-item-8">
+    British Sign Language (BSL) interpreter
+  </label>
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="claim-item-9" name="claim-item-1" type="checkbox" value="coping" {{ checked("claim-item-1", "coping") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="claim-item-9">
+    Coping strategy training Specialist
+  </label>
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="claim-item-10" name="claim-item-1" type="checkbox" value="coach" {{ checked("claim-item-1", "coach") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="claim-item-10">
+    Job Coach
+  </label>
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="claim-item-11" name="claim-item-1" type="checkbox" value="note" {{ checked("claim-item-1", "note") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="claim-item-11">
+    Note taker
+  </label>
+</div>
+
+<div class="govuk-checkboxes__divider">or</div>
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="claim-item-11" name="claim-item-1" type="checkbox" value="note" {{ checked("claim-item-1", "note") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="claim-item-11">
+    None of these items
+  </label>
+</div>
+
+
+{% endif %}
+
+
+{% if case == 'paul' %}
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="claim-item-8" name="claim-item" type="checkbox" value="taxi" {{ checked("claim-item", "taxi") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="claim-item-8">
+                          Taxi
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="claim-item-9" name="claim-item" type="checkbox" value="lift" {{ checked("claim-item", "lift") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="claim-item-9">
+                          Lift
+                        </label>
+                      </div>
+
+                      {% endif %}
+
+
+<!-- {% if case == 'dereck' or 'sonya' or 'nina' or 'james '%}
+
+
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-1" name="claim-item" type="checkbox" value="Jaws screen reader" {{ checked("claim-item", "Jaws screen reader") }}>
+
+
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-1">
+                            Jaws screen reader
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-2" name="claim-item" type="checkbox" value="ZoomText Professional License" {{ checked("claim-item", "ZoomText Professional License") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-2">
+                            ZoomText Professional License
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-3" name="claim-item" type="checkbox" value="Ipad Pro case" {{ checked("claim-item", "Ipad Pro case") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-3">
+                            Ipad Pro case
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-4" name="claim-item" type="checkbox" value="Ergonomic Keyboard" {{ checked("claim-item", "Ergonomic Keyboard") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-4">
+                            Ergonomic Keyboard
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-7" name="claim-item" type="checkbox" value="Ergonomic Keyboard home" {{ checked("claim-item", "Ergonomic Keyboard home") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-7">
+                            Ergonomic Keyboard
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-5" name="claim-item" type="checkbox" value="Office chair" {{ checked("claim-item", "Office chair") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-5">
+                            Office chair
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="claim-item-6" name="claim-item" type="checkbox" value="Ergonomic mouse" {{ checked("claim-item", "Ergonomic mouse") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="claim-item-6">
+                            Ergonomic mouse
+                          </label>
+                        </div>
+                      </div>
+
+
+{% endif %} -->
+
+
+                      </div>
+                    </div>
+
+
+
+                  <!-- <p class="govuk-body">
+                     <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                   </p> -->
+
+                          <!-- <p class="govuk-body">
+                            Application details: -->
+                          <!-- </p>
+                          <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Element type
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          Specialist equipment
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Description
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          JAWS, Job Access With Speech
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Cost
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          £499
+                          </dd>
+                          </div>
+                          <br>
+
+                          </dl>
+                          <form action="/form-handler" method="post" novalidate>
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+ -->
+
+
+
+
+                                  <!-- <div class="govuk-form-group">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                    <h2 class="govuk-heading-m">
+                                      Does the claim match the invoice?
+                                    </h2>
+                                  </legend>
+                                      <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-1" name="grant-matches-invoice" type="radio" value="yes~claim#your-tasks" {{ checked("grant-matches-invoice", "Yes") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-1">
+                                            Yes
+                                          </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-2" name="grant-matches-invoice" type="radio" value="No~claim#your-tasks" {{ checked("grant-matches-invoice", "No") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-2">
+                                            No
+                                          </label>
+                                        </div>
+ -->
+                                    </div>
+                                  </div>
+
+
+                                       <button class="govuk-button" data-module="govuk-button">
+                                         Save and continue
+                                       </button>
+                                     </form>
+                                   </div>
+                                  </div>
+
+
+                                    </main>
+                                    </div>
+
+
+
+
+
+
+
+                                  {% endblock %}
