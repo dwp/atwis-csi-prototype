@@ -1,0 +1,624 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  Check your answers before sending your application
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+  <a class="govuk-back-link" href="contact">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+      <form class="form" action="declaration" method="post">
+
+      <h2 class="govuk-heading-m">
+      Your conditions or disabilities
+      </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What are your conditions or disabilities?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/condition?edit&amp;editorigin=%2Fapply%2Freview#f-condition" id="condition-change-action">
+                Change<span class="govuk-visually-hidden"> what are your conditions or disabilities?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+</dl>
+
+
+<h2 class="govuk-heading-m">
+
+  What support you are applying for
+
+</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you want some help to get to work?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/help-with-travel?edit&amp;editorigin=%2Fapply%2Freview#f-helpWanted" id="helpWanted-change-action">
+                Change<span class="govuk-visually-hidden"> do you want some help to get to work?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does your condition make it harder for you to do your job?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work-impact?edit&amp;editorigin=%2Fapply%2Freview#f-jobHarder" id="jobHarder-change-action">
+                Change<span class="govuk-visually-hidden"> does your condition make it harder for you to do your job?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Tell us how it is harder
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work-impact?edit&amp;editorigin=%2Fapply%2Freview#f-harderHow" id="harderHow-change-action">
+                Change<span class="govuk-visually-hidden"> tell us how it is harder</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you do anything to get around these problems at the moment?
+        </dt>
+        <dd class="govuk-summary-list__value">
+         xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work-impact?edit&amp;editorigin=%2Fapply%2Freview#f-getAroundProblems" id="getAroundProblems-change-action">
+                Change<span class="govuk-visually-hidden"> do you do anything to get around these problems at the moment?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you know what you need to help you with this?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work-impact?edit&amp;editorigin=%2Fapply%2Freview#f-knowWhatWouldHelp" id="knowWhatWouldHelp-change-action">
+                Change<span class="govuk-visually-hidden"> do you know what you need to help you with this?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+
+
+</dl>
+
+
+<h2 class="govuk-heading-m">
+
+  Your employment details
+
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your employment status
+        </dt>
+        <dd class="govuk-summary-list__value">
+        <!--Employed scenario journey used for this prototype-->
+          Employed
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/job-status?edit&amp;editorigin=%2Fapply%2Freview#f-howEmployed" id="howEmployed-change-action">
+                Change<span class="govuk-visually-hidden"> your employment status</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your job title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/employed?edit&amp;editorigin=%2Fapply%2Freview#f-jobTitle" id="employed-jobTitle-change-action">
+                Change<span class="govuk-visually-hidden"> your job title</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your employer
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/employed?edit&amp;editorigin=%2Fapply%2Freview#f-employer" id="employer-change-action">
+                Change<span class="govuk-visually-hidden"> your employer</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx<br> xxx<br> xxx<br> xxx xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/employed?edit&amp;editorigin=%2Fapply%2Freview#f-address[address1]" id="employed-address-change-action">
+                Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How long have you been in your current job or role?
+        </dt>
+        <dd class="govuk-summary-list__value">
+         xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work?edit&amp;editorigin=%2Fapply%2Freview#f-currentRoleDuration" id="director-currentRoleDuration-change-action">
+                Change<span class="govuk-visually-hidden"> how long have you been in your current job or role?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Work start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xx xxx xxxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work?edit&amp;editorigin=%2Fapply%2Freview#f-startDateMoreThan6Weeks[dd]" id="startDateMoreThan6Weeks-change-action">
+                Change<span class="govuk-visually-hidden"> work start date</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How many days a week do you usually work?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          x
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work?edit&amp;editorigin=%2Fapply%2Freview#f-daysPerWeek" id="daysPerWeek-change-action">
+                Change<span class="govuk-visually-hidden"> how many days a week do you usually work?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How many hours a week do you usually work?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          x
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work?edit&amp;editorigin=%2Fapply%2Freview#f-hoursPerWeek" id="hoursPerWeek-change-action">
+                Change<span class="govuk-visually-hidden"> how many hours a week do you usually work?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work-contact?edit&amp;editorigin=%2Fapply%2Freview#f-workContactName" id="workContactName-change-action">
+                Change<span class="govuk-visually-hidden"> their name</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work-contact?edit&amp;editorigin=%2Fapply%2Freview#f-workContactPrefs" id="workContactEmail-change-action">
+                Change<span class="govuk-visually-hidden"> email address</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/work-contact?edit&amp;editorigin=%2Fapply%2Freview#workContactPrefs-2" id="workContactNumber-change-action">
+                Change<span class="govuk-visually-hidden"> phone number</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+</dl>
+
+
+<h2 class="govuk-heading-m">
+
+  Your personal details
+
+</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+         xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/personal-details?edit&amp;editorigin=%2Fapply%2Freview#f-firstName" id="personalDetails-firstName-change-action">
+                Change<span class="govuk-visually-hidden"> job-status:firstname.label</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/personal-details?edit&amp;editorigin=%2Fapply%2Freview#f-lastName" id="personalDetails-lastName-change-action">
+                Change<span class="govuk-visually-hidden"> last name</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          		xx xxx xxxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/personal-details?edit&amp;editorigin=%2Fapply%2Freview#f-dob[dd]" id="personalDetails-dob-change-action">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx<br> xxx<br> xxx<br> xxx xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/personal-details?edit&amp;editorigin=%2Fapply%2Freview#f-address[address1]" id="personalDetails-address-change-action">
+                Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who do you want to be contacted about your condition, award or application?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yourself
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/contact?edit&amp;editorigin=%2Fapply%2Freview#f-contactPerson" id="contact-contactPerson-change-action">
+                Change<span class="govuk-visually-hidden"> who do you want to be contacted about your condition, award or application?</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/contact?edit&amp;editorigin=%2Fapply%2Freview#f-contactPrefs" id="contact-email-change-action">
+                Change<span class="govuk-visually-hidden"> email address</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          xxx
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/contact?edit&amp;editorigin=%2Fapply%2Freview#contactPrefs-2" id="contact-phone-change-action">
+                Change<span class="govuk-visually-hidden"> phone number</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+
+</dl>
+
+<!-- 'Support you get' section to be deleted -->
+
+<h2 class="govuk-heading-m">
+<mark>
+  Support you get
+</mark> 
+</h2>
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         <mark>Types of support</mark>
+        </dt>
+        <dd class="govuk-summary-list__value">
+        <!--Example answer from 'support type' question checkbox options-->
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li><mark>Adult Social Care advice or support from your local council</mark></li>
+        <li><mark>Assessed as having ‘limited capability for work and work-related activity’ by Universal Credit</mark></li>
+      </ul>  </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/HTO-4071/service-atw-plus-v2/types-of-support?edit&amp;editorigin=%2Fapply%2Freview#f-priorities" id="any-these-apply-clinicallyExtremelyVulnerable-change-action">
+                <mark>Change</mark><span class="govuk-visually-hidden"> types of support</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         <mark>Education support</mark>
+        </dt>
+        <dd class="govuk-summary-list__value">
+        <!--Example answer from 'Education support' question checkbox options-->
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        <li><mark>Education, Health and Care (EHC) Plan – England</mark></li>
+          <li><mark>Personalised Learning Support Plan (PLSP) – Scotland</mark></li>
+          <li><mark>Statement of Special Educational Need (SSEN) or Individual Development Plan – Wales</mark></li>
+          </ul>
+        </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link govuk-link--no-visited-state" href="apply/HTO-4071/service-atw-plus-v2/education-support?edit&amp;editorigin=%2Fapply%2Freview#f-priorities" id="any-these-apply-clinicallyExtremelyVulnerable-change-action">
+                <mark>Change</mark><span class="govuk-visually-hidden"> education support</span>
+                </a>
+
+          </dd>
+
+      </div>
+
+
+</dl>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+
+        <p class="govuk-body">You can contact us for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+    </ul>
+
+        <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm</p>
+    </aside>
+
+    </div>
+
+  </div>
+
+{% endblock %}

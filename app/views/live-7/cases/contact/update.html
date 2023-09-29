@@ -1,0 +1,180 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-7/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <h2 class="govuk-heading-xl">Update Dereck Smith’s application</h2>
+
+            <h3 class="govuk-heading-m">Personal details</h3>
+
+       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+             Full name
+             </dt>
+             <dd class="govuk-summary-list__value">
+             {% if not data['first-name']%}Dereck{% else %}{{data['first-name']}}{% endif %}
+             {% if not data['last-name']%}Smith{% else %}{{data['last-name']}}{% endif %}
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/live-7/cases/searchlight/update/details/name">
+                 Update<span class="govuk-visually-hidden">  Full name </span>
+               </a>
+             </dd>
+           </div>
+       {% if data['national-insurance-number']%}
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+             National insurance number
+             </dt>
+             <dd class="govuk-summary-list__value">
+             {{data['national-insurance-number']| upper }}
+
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/live-7/cases/searchlight/update/cases/searchlight/national-insurance/add-national-insurance-number">
+                 Update<span class="govuk-visually-hidden">  National insurance number  </span>
+               </a>
+             </dd>
+           </div>
+       {% endif %}
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+             Date of birth
+             </dt>
+             <dd class="govuk-summary-list__value">
+             {% if not data['citizen-dob-']%}  1 October 1978{% else %}
+
+               {{ data['citizen-dob--day'] }}
+           {% if (data['citizen-dob--month'] =='01') or (data['citizen-dob--month'] =='1') %} January {% endif%}
+           {% if (data['citizen-dob--month'] =='02') or (data['citizen-dob--month'] =='2') %} February  {% endif%}
+           {% if (data['citizen-dob--month'] =='03') or (data['citizen-dob--month'] =='3') %} March {% endif%}
+           {% if (data['citizen-dob--month'] =='04') or (data['citizen-dob--month'] =='4') %} April {% endif%}
+           {% if (data['citizen-dob--month'] =='05') or (data['citizen-dob--month'] =='5') %} May {% endif%}
+           {% if (data['citizen-dob--month'] =='06') or (data['citizen-dob--month'] =='6') %} June {% endif%}
+           {% if (data['citizen-dob--month'] =='07') or (data['citizen-dob--month'] =='7') %} July {% endif%}
+           {% if (data['citizen-dob--month'] =='08') or (data['citizen-dob--month'] =='8') %} August {% endif%}
+           {% if (data['citizen-dob--month'] =='09') or (data['citizen-dob--month'] =='9') %} September {% endif%}
+           {% if data['citizen-dob--month'] =='10' %} October {% endif%}
+           {% if data['citizen-dob--month'] =='11'%} November {% endif%}
+           {% if data['citizen-dob--month'] =='12' %} December {% endif%}
+ {{ data['citizen-dob--year' ] }}
+
+{% endif %}
+
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/live-7/cases/searchlight/update/details/date-of-birth">
+                 Update<span class="govuk-visually-hidden"> Date of birth</span>
+               </a>
+             </dd>
+           </div>
+           <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+               Address
+             </dt>
+             <dd class="govuk-summary-list__value">
+               {% if not data['citizen-address-line-1'] %}72 Guild Street{% else %}{{data['citizen-address-line-1']}}{% endif %}
+             {% if data['citizen-address-line-2'] %}<br>{{data['citizen-address-line-2']}}{% endif %}
+               <br>{% if not data['citizen-address-town'] %}London{% else %}{{data['citizen-address-town']}}{% endif %}
+             {% if data['citizen-address-county'] %}<br>{{data['citizen-address-county']}}{% endif %}
+               <br>{% if not data['citizen-address-postcode'] %}SE23 6FH{% else %}{{data['citizen-address-postcode']}}{% endif %}
+
+             </dd>
+             <dd class="govuk-summary-list__actions">
+               <a class="govuk-link" href="/live-7/cases/searchlight/update/details/personal-address">
+                 Update<span class="govuk-visually-hidden"> address</span>
+               </a>
+             </dd>
+           </div>
+
+         </dl>
+
+
+{% if 'Personal Independence Payment' or 'No' in ['Benefits']%}{% else %}
+  <h3 class="govuk-heading-m">Benefits</h3>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Benefits in Searchlight that could affect Dereck Smith’s eligibility
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+
+                  {% for feature in data['benefits'] %}
+                    <li>{{ feature }}</li>
+                  {% else %}
+                    <li>None</li>
+                  {% endfor %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="../searchlight/benefits/check">
+                    Update<span class="govuk-visually-hidden"> Benefits that could affect Dereck Smith’s eligibility</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+
+          Can Dereck Smith still get Access to Work?
+
+
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['exceptions']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="../searchlight/benefits/exceptions">
+                    Update<span class="govuk-visually-hidden"> Can Dereck Smith still get Access to Work?</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+{% endif %}
+
+
+
+
+          <button class="govuk-button" data-module="govuk-button" name="contact" value="complete">
+             Return to your tasks
+          </button>
+
+
+          </form>
+
+
+          <!-- <p><a href="/live-1/agreed/csi/index" class="govuk-link govuk-link--no-visited-state">Return to tasks</a></p> -->
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

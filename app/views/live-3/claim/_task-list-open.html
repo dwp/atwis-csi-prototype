@@ -1,0 +1,80 @@
+
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="
+  {% if data['exceptions']=='I will need to contact Dereck Smith' %}
+  /live-3/cases/contact/how-do-you-want-to-contact{% else %}
+  /live-3/cases/contact/do-not-need-to-contact{% endif %}
+  " aria-describedby="contact-status">
+
+              Contact Dereck Smith about Searchlight details
+</a>
+              </span>
+
+              {% if data['asked-info-phone']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+              {% if data['contact']%}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+              {% if data['contact']=='complete'%}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}{% endif %}{% endif %}
+            </li>
+
+      </ul>
+      </li>
+
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Prepare business case
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="claim#your-tasks" aria-describedby="job-status">
+                  Job details
+</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="claim#your-tasks" aria-describedby="job-status">
+                  Workplace assesment
+</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="claim#your-tasks" aria-describedby="job-status">
+                  Evidence
+</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="claim#your-tasks" aria-describedby="job-status">
+                  Quotes
+</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="claim#your-tasks" aria-describedby="job-status">
+                  Elements
+</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+            <a href="claim#your-tasks" aria-describedby="job-status">
+                    Contact Dereck Smith about the business cases details
+            </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>

@@ -1,0 +1,247 @@
+$govuk-global-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-navigation";
+@import "patterns/task-list";
+@import "patterns/related-items";
+@import "components/nav";
+@import "components/masthead";
+@import "components/update-panel";
+@import "components/sub-tabs";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+
+
+
+
+
+#global-header-bar {
+  display: none;
+}
+
+
+.govuk-header {
+   border-bottom: 0 !important;
+ }
+ .govuk-header__container {
+   border-bottom: 0 !important;
+   padding-bottom: 10px;
+ }
+
+ .govuk-header__content {
+   padding-left:0;
+ }
+
+.navigation-global ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.navigation-global {
+  background: #dee0e2;
+}
+
+.navigation-global ul {
+  margin: 0 auto;
+  max-width: 960px;
+  padding-left: 0;
+}
+
+.navigation-global li {
+  float: left;
+  list-style-type: none;
+}
+
+@media (max-width: 640px) {
+  .navigation-global li {
+    width: 100%;
+  }
+}
+
+.navigation-global a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.navigation-global a:link,
+.navigation-global a:visited {
+  color: #0b0c0c;
+}
+
+.navigation-global a:active,
+.navigation-global a:focus {
+  background: #ffbf47;
+  color: #0b0c0c;
+}
+
+.navigation-global a:hover {
+  background: #f8f8f8;
+  text-decoration: underline;
+}
+
+.navigation-global .active {
+  background: #005ea5;
+  border-bottom: 0;
+  font-weight: 700;
+}
+
+.navigation-global .active:link,
+.navigation-global .active:visited,
+.navigation-global .active:active {
+  color: #fff;
+}
+
+.navigation-global .active:focus {
+  color: #0b0c0c;
+}
+
+.navigation-global .active:hover {
+  background: #005ea5;
+  color: #fff;
+  text-decoration: underline;
+}
+
+// dwp-timeline__entry
+
+
+.dwp-timeline {
+border-left: 3px solid #005ea5;
+list-style-type: none;
+padding-left: 0;
+}
+
+.dwp-timeline__entry {
+margin: 2em 0;
+padding-left: 1em;
+position: relative;
+}
+
+.dwp-timeline__entry::before {
+background-color: #005ea5;
+content: ' ';
+height: 3px;
+left: 0;
+position: absolute;
+top: .5em;
+width: 10px;
+}
+
+.dwp-timeline__entry .dwp-timeline__title {
+display: block;
+font-weight: 700;
+}
+
+.dwp-timeline__entry .dwp-timeline__author,
+.dwp-timeline__entry .dwp-timeline__date {
+color: #6f777b;
+display: block;
+}
+
+.dwp-timeline__entry .dwp-timeline__info {
+margin-top: 0;
+}
+
+.dwp-timeline__entry .dwp-timeline__body {
+display: block;
+}
+
+// secondary nav
+.navigation-secondary ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.navigation-secondary {
+  border-bottom: 1px solid #bfc1c3;
+  margin: auto;
+  max-width: 960px;
+}
+
+.navigation-secondary ul {
+  margin: 0 auto;
+  max-width: 960px;
+  padding-left: 0;
+}
+
+.navigation-secondary li {
+  float: left;
+  list-style-type: none;
+}
+
+@media (max-width: 640px) {
+  .navigation-secondary li {
+    border: 0;
+    width: 100%;
+  }
+}
+
+.navigation-secondary a {
+  display: block;
+  padding: 15px;
+}
+
+.navigation-secondary a:visited {
+  color: #005ea5;
+}
+
+.navigation-secondary a:hover {
+  background-color: #f8f8f8;
+}
+
+.navigation-secondary .active {
+  box-shadow: inset 0px -5px 0px 0px #005ea5;
+  color: #0b0c0c;
+  text-decoration: none;
+}
+
+.navigation-secondary .active:visited {
+  color: #0b0c0c;
+}
+
+
+.app-c-tag {
+background-color: #005ea5;
+color: #fff;
+display: inline-block;
+font-family: 'nta', Arial, sans-serif;
+font-size: 14px;
+font-weight: 700;
+letter-spacing: 1px;
+line-height: 1.25;
+padding: 5px 8px 0;
+text-decoration: none;
+text-transform: uppercase;
+}
+
+.app-c-tag--success {
+background-color: #85994b;
+}
+
+.app-c-tag--warning {
+background-color: #b58840;
+}
+
+.app-c-tag--danger {
+background-color: #df3034;
+}
+
+// verification
+
+.verified-badge {
+    color: #6f777b;
+    float: right;
+    font-size: .7em;
+    margin: .4em 0 0;
+    position: relative;
+}

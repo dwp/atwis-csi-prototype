@@ -1,0 +1,225 @@
+{% set link = "personal-details-router" %}
+{% set personalDetails =  true  %}
+{% set return = "claim" %}
+{% set hideChange = true %}
+{% set customNext = "Save" %}
+{% set title = "Change personal details" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% block csi %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "First name"
+  },
+  id: "name",
+  name: "firstname-change",
+  value: data['csi-info'][1]['firstname'],
+  classes: "govuk-input--width-20"
+}) }}
+
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Last name"
+  },
+  id: "name",
+  name: "surname-change",
+  value: data['csi-info'][1]['surname'],
+  classes: "govuk-input--width-20"
+}) }}
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "dob",
+  namePrefix: "dob-change",
+  fieldset: {
+    legend: {
+      isPageHeading: true,
+      classes: "text"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      autocomplete: "bday-day",
+      value: data['csi-info'][1]['dob-day']
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      autocomplete: "bday-month",
+      value: data['csi-info'][1]['dob-month']
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      autocomplete: "bday-year",
+      value: data['csi-info'][1]['dob-year']
+    }
+  ]
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    text: "",
+    classes: "govuk-fieldset__legend--xl",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+    },
+    id: "address-line-one",
+    name: "address-line-one-change",
+    value: data['csi-info'][1]['address-line-one'],
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+    },
+    id: "address-line-2",
+    name: "address-line-2",
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Town or city"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-town",
+    name: "address-town-change",
+    value: data['csi-info'][1]['address-town'],
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "County"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-county",
+    name: "address-county-change",
+    value: data['csi-info'][1]['address-county'],
+    classes: "govuk-input--width-10"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Postcode"
+    },
+    classes: "govuk-input--width-10",
+    id: "address-postcode",
+    name: "address-postcode-change",
+    value: data['csi-info'][1]['address-postcode'],
+    classes: "govuk-input--width-5"
+
+  }) }}
+
+{% set emailHtml %}
+{{ govukInput({
+  label: {
+    text: "Email address"
+  },
+  id: "email",
+  name: "contact-by-email-change",
+  value: data['csi-info'][1]['contact-by-email'],
+  classes: "govuk-input--width-20"
+}) }}
+
+<p >
+    Department for Work and Pensions (DWP) cannot guarantee external emails against:</p>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>loss or non-delivery</li>
+    <li>theft by third parties</li>
+    <li>manipulation of data</li>
+    </ul>
+    <p>Asking DWP to use email to get in touch with you in this application means you understand this risk. If you have any concerns then do not include your email address.</p>
+
+
+
+                                                                  {{ govukCheckboxes({
+                                       name: "agree-email-terms-change",
+
+                                       items: [
+                                         {
+                                           value: "Yes",
+                                           checked: checked("['csi-info'][1]['agree-email-terms']", "Yes" ),
+                                           text: "Applicant agrees to the email terms"
+                                         }
+                                       ]
+                                     }) }}
+
+{% endset -%}
+
+{% set telephoneHtml %}
+{{ govukInput({
+  label: {
+    text: "Telephone number"
+  },
+  id: "phone",
+  name: "contact-by-phone-change",
+  value: data['csi-info'][1]['contact-by-phone'],
+  classes: "govuk-input--width-20"
+}) }}
+{% endset -%}
+
+
+
+
+
+
+
+{{ govukCheckboxes({
+  name: "personal-contact-preference",
+  fieldset: {
+    legend: {
+      text: "Contact details",
+      isPageHeading: false
+    }
+  },
+
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      checked: checked("['csi-info'][1]['personal-contact-preference']", "email"),
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "Telephone",
+      checked: checked("['csi-info'][1]['personal-contact-preference']", "phone"),
+      conditional: {
+        html: telephoneHtml
+      }
+    }
+  ]
+}) }}
+
+
+
+{% endcall %}
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% set link = "complete" %}
+{% set interviewLink = "true" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title = "Check that the interview happened" %}
+
+{% block csi %}
+
+
+<p>Confirm that Thomas Brown attended the interview at Tesco on 1 November 2019.</p>
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       idPrefix: "confirm",
+       name: "confirm",
+       fieldset: {
+         legend: {
+           text: "Did the interview happen?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

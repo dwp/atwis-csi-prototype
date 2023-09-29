@@ -1,0 +1,101 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Communication support at interview prototype
+{% endblock %}
+
+{% set serviceName = "Access to Work payments design blog" %}
+
+{% block content %}
+
+      <div class="govuk-width-container">
+        <a href="#" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <h1 class="govuk-heading-l">
+                Proforma invoices in payments
+              </h1>
+
+              <h2 class="govuk-heading-m">
+                Introduction
+              </h2>
+
+              <p class="govuk-body">
+                We took a while to get round to proformas for SAE as we wanted t to take the problem to policy for a steer.
+              </p>
+              <p class="govuk-body">
+                Proformas are paid currently to mix of self-employed, small and medium employers, we went too policy to see if this could be broadened to include large employers as this would simplify the journey and it makes no difference for payments, but they thought that this was outside of the initial remit of the policy intent on proformas being used when a cashflow problem was encountered.
+              </p>
+              <br>
+              <p class="govuk-body">The 3 proforma journeys:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Self-employed and small employer with no cost</li>
+                <li>Medium employers with a cost share</li>
+                <li>Large employer where the proforma is rejected</li>
+              </ul>
+              <br>
+
+              <h2 class="govuk-heading-m">
+                Problem
+              </h2>
+              <p class="govuk-body">
+              As digital claims are one payee per claim, we needed a way for the payment officer to add another payee into a one payee system.
+              </p>
+              <br>
+
+
+              <h2 class="govuk-heading-m">
+                Approach
+              </h2>
+
+              <p class="govuk-body">
+              We decided to test an add another option that asks for payee name upfront instead of the current prototype that asks for it in the SOP section, then links that payee name to the items on the invoice they are paying and asks for the invoice number all in the same task.
+              </p>
+              <p class="govuk-body">
+              This was because the officers have an invoice open and can do all of this at the same time then move onto the next invoice and so on.
+              </p>
+              <p class="govuk-body">
+              Once a payee is added on a claim where they have more than one item the task list changes the ‘Add payee name and invoice details’ task to ‘Payee 1: and the name of the payee entered’ and also creates a task in the SOP section mirroring this so each payee can be confirmed in SOP.
+              </p>
+              <p class="govuk-body">
+              If there is more than one payee the ‘check payment and send for processing’ task displays cards with a breakdown of what is being paid to each payee, rather than the simple list view for a single payee.
+              </p>
+              <p class="govuk-body">
+              Once confirmed all payees are paid with a single click and the transactions are done separately.
+              </p>
+
+
+              <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        Images
+                      </span>
+                    </h2>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                    <img src="/public/images/dwp-logo.png" alt="Three">
+                    <!-- <p class='govuk-body'>This is the content for Writing well for the web.</p> -->
+                  </div>
+                </div>
+
+              </div>
+
+
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <!-- <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button> -->
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+
+{% endblock %}

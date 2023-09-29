@@ -1,0 +1,72 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/future/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   <h2 class="govuk-heading-xl">Add third party contact details</h2>
+
+
+
+{% if 'email' in data['third-party-contact']%}
+   <div class="govuk-form-group">
+     <label class="govuk-label" for="third-party-email">
+       Third party’s email address
+     </label>
+
+   <input class="govuk-input govuk-input--width-20" id="third-party-email" name="third-party-email" type="text" value="{{data['third-party-email']}}">
+   </div>
+{% endif %}
+{% if 'telephone' in data['third-party-contact']%}
+   <div class="govuk-form-group">
+     <label class="govuk-label" for="third-party-telephone">
+       Third party’s telephone
+     </label>
+
+   <input class="govuk-input govuk-input--width-20" id="third-party-telephone" name="third-party-telephone" type="numbers" value="{{data['third-party-telephone']}}">
+   </div>
+{% endif %}
+
+   </div>
+
+
+
+
+
+
+
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

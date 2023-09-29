@@ -1,0 +1,66 @@
+{% set link = "4" %}
+{% set personalDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Check personal details</h1>
+
+<p>Use Searchlight to check if these details match.</p>
+
+
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+
+{% set conditionalText %}
+
+{{ govukTextarea({
+  name: "more-detail-3",
+  id: "more-detail",
+  value: data['more-detail-3'],
+  label: {
+    text: "What do you need to contact the applicant about?"
+  },
+  hint: {
+    text: "You will be able to use these notes when you contact the applicant."
+  }
+}) }}
+
+{% endset -%}
+
+{{ govukRadios({
+       name: "personal",
+       fieldset: {
+         legend: {
+           text: "Do the details match?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       hint: {
+         html: ""
+  },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           checked: checked('personal', "yes"),
+           text: "Yes"
+
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No, I need to contact the applicant",
+           checked: checked('personal', "no"),
+           conditional: {
+             html: conditionalText
+           }
+
+         }
+       ]
+     }) }}
+
+
+
+{% endblock %}

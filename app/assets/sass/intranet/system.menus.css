@@ -1,0 +1,69 @@
+ul.menu {
+	list-style: none; border: currentColor; border-image: none; text-align: left;
+}
+ul.menu li {
+	margin: 0px 0px 0px 0.5em;
+}
+ul li.expanded {
+	list-style-type: circle; list-style-image: url("../../misc/menu-expanded.png");
+}
+ul li.collapsed {
+	list-style-type: disc; list-style-image: url("../../misc/menu-collapsed.png");
+}
+ul li.leaf {
+	list-style-type: square; list-style-image: url("../../misc/menu-leaf.png");
+}
+li.expanded {
+	margin: 0px; padding: 0.2em 0.5em 0px 0px;
+}
+li.collapsed {
+	margin: 0px; padding: 0.2em 0.5em 0px 0px;
+}
+li.leaf {
+	margin: 0px; padding: 0.2em 0.5em 0px 0px;
+}
+li a.active {
+	color: rgb(0, 0, 0);
+}
+td.menu-disabled {
+	background: rgb(204, 204, 204);
+}
+ul.inline {
+	padding-left: 0px; display: inline;
+}
+ul.links.inline {
+	padding-left: 0px; display: inline;
+}
+ul.inline li {
+	padding: 0px 0.5em; display: inline; list-style-type: none;
+}
+.breadcrumb {
+	padding-bottom: 0.5em;
+}
+ul.primary {
+	list-style: none; margin: 5px; padding: 0px 0px 0px 1em; height: auto; line-height: normal; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid; white-space: nowrap; border-collapse: collapse;
+}
+ul.primary li {
+	display: inline;
+}
+ul.primary li a {
+	border-width: 1px; border-style: solid solid none; border-color: rgb(187, 187, 187); padding: 0px 1em; height: auto; text-decoration: none; margin-right: 0.5em; background-color: rgb(221, 221, 221);
+}
+ul.primary li.active a {
+	border-width: 1px; border-style: solid; border-color: rgb(187, 187, 187) rgb(187, 187, 187) rgb(255, 255, 255); border-image: none; background-color: rgb(255, 255, 255);
+}
+ul.primary li a:hover {
+	border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(238, 238, 238); background-color: rgb(238, 238, 238);
+}
+ul.secondary {
+	margin: 5px; padding: 0.5em 1em; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid;
+}
+ul.secondary li {
+	padding: 0px 1em; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; display: inline;
+}
+ul.secondary a {
+	padding: 0px; text-decoration: none;
+}
+ul.secondary a.active {
+	border-bottom-color: rgb(153, 153, 153); border-bottom-width: 4px; border-bottom-style: solid;
+}

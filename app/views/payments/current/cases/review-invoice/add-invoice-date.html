@@ -1,0 +1,163 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+
+{% if case == 'dereck' %}
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'sonya' %}
+<form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'james' %}
+<form action="/payments/current/cases/jamesm/claim-jamesm#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'nina' %}
+<form action="/payments/current/cases/nina/claim-nina#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'paul' %}
+<form action="/payments/current/cases/paul/claim-paul#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'susan' %}
+<form action="/payments/current/cases/susan/claim-susan#your-tasks" method="post" novalidate>
+{% endif %}
+
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+{% if case == 'sonya' and not data ['invoice-number'] %}
+
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
+                {% if case == 'paul' %}
+                Add any invoice numbers for journeys you are paying (optional)
+                {% else %}
+                  Add invoice numbers for items you are paying
+                  {% endif %}
+                </label>
+              </h1>
+              <div class="govuk-inset-text">
+                {{ data['payee-name'] }}
+              </div>
+
+              <div id="with-hint-hint" class="govuk-hint">
+                {% if case == 'paul' %}
+                Separate invoice numbers with commas. Leave blank if the invoices or receipts do not have individual reference numbers.)
+                {% else %}
+                Separate invoice numbers with commas.
+                  {% endif %}
+
+              </div>
+              <textarea class="govuk-textarea govuk-js-character-count" id="invoice-number" name="invoice-number" rows="5" aria-describedby="with-hint-info with-hint-hint">{{ data['invoice-number'] }}</textarea>
+            </div>
+            <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+            </div>
+          </div>
+
+
+
+{% else %}
+
+
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
+      {% if case == 'paul' %}
+      Add any invoice numbers for journeys you are paying (optional)
+      {% else %}
+        Add invoice numbers for items you are paying
+        {% endif %}
+      </label>
+    </h1>
+    <!-- <div class="govuk-inset-text">
+      {{ data['payee-name-1'] }}
+    </div> -->
+    <div id="with-hint-hint" class="govuk-hint">
+      {% if case == 'paul' %}
+      Separate invoice numbers with commas. Leave blank if the invoices or receipts do not have individual reference numbers.)
+      {% else %}
+      Separate invoice numbers with commas.
+        {% endif %}
+
+    </div>
+    <textarea class="govuk-textarea govuk-js-character-count" id="invoice-number-1" name="invoice-number-1" rows="5" aria-describedby="with-hint-info with-hint-hint">{{ data['invoice-number-1'] }}</textarea>
+  </div>
+  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+  </div>
+</div>
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Add invoice numbers
+              </h1>
+            </legend>
+
+            <div class="govuk-form-group">
+              <p class="govuk-body">govuk-body</p>
+              <div id="dob-hint" class="govuk-hint">
+                For example, 31 3 1980
+              </div>
+                        <div id="invoice-number-hint" class="govuk-hint">
+                        </div>
+                        <input class="govuk-input govuk-input--width-20" id="invoice-number" name="invoice-number" type="text" aria-describedby="invoice-number-hint">
+                      </div> -->
+
+                          </div>
+                        </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

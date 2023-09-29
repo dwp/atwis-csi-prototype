@@ -1,0 +1,1687 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<div class="govuk-width-container">
+
+
+
+
+
+
+<main>
+
+
+
+
+
+
+
+
+      <div class="govuk-width-container ">
+
+        <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-width-container">
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+
+
+<br>
+
+
+
+
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list" role="tablist">
+    <li class="govuk-tabs__list-item" role="presentation">
+      <a class="govuk-tabs__tab" href="#application-summary" id="tab_application-summary" role="tab" aria-controls="application-summary" aria-selected="false" tabindex="-1">
+        Application summary
+      </a>
+    </li>
+
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+      <a class="govuk-tabs__tab" href="#your-tasks" id="tab_your-tasks" role="tab" aria-controls="your-tasks" aria-selected="true" tabindex="0">
+        Your tasks
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item" role="presentation">
+      <a class="govuk-tabs__tab" href="#citizen-details" id="tab_citizen-details" role="tab" aria-controls="citizen-details" aria-selected="false" tabindex="-1">
+      Application details
+      </a>
+    </li>
+
+
+
+  </ul>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="application-summary" role="tabpanel" aria-labelledby="tab_application-summary">
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+  You must copy and complete this case in DiSC.
+  <!-- <a class="govuk-notification-banner__link" href="/live-20/cases/contact">Your actions</a>.  -->
+    </p>
+
+  </div>
+</div>
+</div></div>
+
+
+
+
+
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-l">Application summary</h2>
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Priority
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Priority type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Clinically extremely vulnerable  (CEV)
+            </dd>
+          </div>
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Dereck Smith
+        </dd>
+      </div>
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Unique reference number (URN)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        123456789
+      </dd>
+    </div> -->
+
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Application refrence
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+      </dd>
+    </div> -->
+
+  </dl>
+
+
+
+<!-- <h3 class="govuk-heading-m">Application details</h3> -->
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Date Submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 November 2021, 10:09am
+        </dd>
+      </div> -->
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 June 2022, 11:57am
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          RMPX30
+        </dd>
+      </div>
+
+
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version of questions
+        </dt>
+        <dd class="govuk-summary-list__value">
+        25.25.0-rc
+        </dd>
+      </div> -->
+
+    </dl>
+
+    </dl></div>
+
+
+ <div class="govuk-grid-column-one-third">
+
+
+
+     <script>
+     window.onload = function() {
+       document.getElementById("timeline-date").innerHTML=moment().format("DD MM YYYY");
+     }
+   </script>
+
+</div></div>
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Case history</h2>
+
+<ol class="dwp-timeline">
+
+
+
+
+
+
+
+  <!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  -->
+
+
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 9:50am
+      </p>
+  </li>
+
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: in progress </h2>
+
+    <p class="govuk-caption-m govuk-!-margin-bottom-1"> Does Searchlight show benefits that could affect this application? No</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 9:49am
+      </p>
+  </li>
+
+
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 9:48am
+      </p>
+  </li>
+
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: in progress </h2>
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Does Dereck Smith have an appointee?
+ No</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 9:47am
+      </p>
+  </li>
+
+
+
+
+
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: in progress </h2>
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is there a record for Dereck Smith in Searchlight? Yes and application details match</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is Dereck Smith’s National Insurance number in Searchlight? Yes</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Add Dereck Smith’s National Insurance number from Searchlight: AB 123456 C</p>
+      <!--
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">You need to contact Dereck Smith to check their name, date of birth or address in Searchlight. This will be added to your 'Contact Dereck Smith' task.</p>
+      <p class="govuk-caption-m" id="timeline-date"> -->
+    <!-- <a>  Link to note</a> -->
+      <p></p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 June 2022, 9:45am
+      </p>
+  </li>
+
+
+<!--  -->
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application allocated </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Al O'Cator to John Goldsmith</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+4 June 2022, 1:51pm
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application received </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"></p>
+
+      <p class="govuk-caption-m">
+
+  2 June 2022, 11:57am
+      </p>
+  </li>
+
+</ol>
+
+
+</div>
+</div>
+
+<!-- <ol class="dwp-timeline">
+ -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details" role="tabpanel" aria-labelledby="tab_citizen-details">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+ <h1 class="govuk-heading-l">Application details</h1>
+
+
+
+
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Version of questions
+   </dt>
+   <dd class="govuk-summary-list__value">
+     25.25.0-rc
+   </dd>
+ </div>
+</dl>
+
+
+
+
+
+<!-- Sparrow apply journey for Personal details -->
+<h2 class="govuk-heading-m">Personal details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Name
+       </dt>
+       <dd class="govuk-summary-list__value">
+
+
+
+         Dereck
+         Smith
+       </dd>
+       <dd class="govuk-summary-list__actions">
+         <a class="govuk-link" href="/live-20/details/name">
+           Change<span class="govuk-visually-hidden">  Full name </span>
+         </a>
+       </dd>
+     </div>
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Date of birth
+       </dt>
+       <dd class="govuk-summary-list__value">
+           1 October 1978
+       </dd>
+       <dd class="govuk-summary-list__actions">
+         <a class="govuk-link" href="/live-20/details/date-of-birth">
+           Change<span class="govuk-visually-hidden"> Date of birth</span>
+         </a>
+       </dd>
+      </div>
+
+
+
+
+
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Address
+       </dt>
+       <dd class="govuk-summary-list__value">
+
+         <ul class="govuk-list">
+         <li>220 St Vincent Street,</li>
+           <li>Glasgow,</li>
+           <li>SE23 6FH</li>
+         </ul>
+
+       </dd>
+       <dd class="govuk-summary-list__actions">
+         <a class="govuk-link" href="/live-20/details/personal-address">
+           Change<span class="govuk-visually-hidden"> address</span>
+         </a>
+       </dd>
+     </div>
+
+
+
+
+
+
+
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Telephone number
+       </dt>
+       <dd class="govuk-summary-list__value">
+        07192 838 482
+       </dd>
+       <dd class="govuk-summary-list__actions">
+         <a class="govuk-link" href="/live-20/details/telephone">
+           Change<span class="govuk-visually-hidden">    Telephone number</span>
+         </a>
+       </dd>
+      </div>
+
+
+
+     <div class="govuk-summary-list__row">
+       <dt class="govuk-summary-list__key">
+         Email address
+       </dt>
+       <dd class="govuk-summary-list__value">
+        dereck@gmail.com
+       </dd>
+       <dd class="govuk-summary-list__actions">
+         <a href="/live-20/details/email">
+           Change
+           <span class="govuk-visually-hidden"> Email address</span>
+         </a>
+       </dd>
+     </div>
+
+
+
+
+
+
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+           National insurance number
+           </dt>
+           <dd class="govuk-summary-list__value">
+           AB 123456 C
+
+           </dd>
+           <dd class="govuk-summary-list__actions">
+             <a class="govuk-link" href="/live-20/cases/searchlight/national-insurance/add-national-insurance-number">
+               Change<span class="govuk-visually-hidden">  National insurance number  </span>
+             </a>
+           </dd>
+         </div>
+
+
+
+
+   </dl>
+
+<!-- Sparrow apply journey for Personal details -->
+
+<!-- Sparrow apply journey for Condition and Help Needed -->
+<h2 class="govuk-heading-m">Health conditions and disabilties</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+
+            Health condition or disability
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+            macular oedema
+            <br>
+
+            <br>
+
+            <br>
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+             <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> What condition or disability do you have?</span>
+            </a>
+
+          </dd>
+        </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+
+          How does your condition or disability affect you at work?
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+          I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.
+
+I ask colleagues to read thing out aloud and describe them to me on video calls and in person.
+
+
+          <br>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+           <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> How do your conditions or disabilities affect you at work?</span>
+          </a>
+
+        </dd>
+      </div>
+    </dl>
+
+<!-- Sparrow apply journey for Condition and Help Needed -->
+
+
+
+<!-- Appointee -->
+
+<h2 class="govuk-heading-m">Appointee</h2>
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+Does Dereck Smith have an appointee?
+
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+No
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="index">
+      Change<span class="govuk-visually-hidden"> Does Dereck Smith have an appointee?</span>
+      </a>
+    </dd>
+  </div>
+
+
+</dl>
+
+<!--  Appointee -->
+
+
+
+
+<!-- Sparrow apply journey for How to contact -->
+<h2 class="govuk-heading-m">How to contact</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who should we contact about your application?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Me
+        </dd>
+        <dd class="govuk-summary-list__actions">
+                  <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> Who should we contact about your application?</span>
+          </a>
+        </dd>
+      </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01234567890
+          </dd>
+          <dd class="govuk-summary-list__actions">
+                  <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> what is your telephone number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+      dereck@gmail.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+                  <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> what is your telephone number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When are the best times to contact you?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Between 8:30 am and 6pm Monday to Saturday.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a href="#">    </a><a href="#">
+              Change
+              <span class="govuk-visually-hidden"> When are the best times to contact you?</span>
+            </a>
+          </dd>
+        </div>
+
+    </dl>
+
+<!-- Sparrow apply journey for How to contact -->
+
+
+
+
+
+<p></p>
+<!-- Appointee -->
+
+<h2 class="govuk-heading-m">Benefits</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Benefits in Searchlight that could affect Dereck Smith’s eligibility
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+
+
+        <li>N</li>
+
+        <li>o</li>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="check">
+        Change<span class="govuk-visually-hidden"> Benefits that could affect Dereck Smith’s eligibility</span>
+      </a>
+    </dd>
+  </div>
+
+
+</dl>
+
+<!--  Appointee -->
+
+
+<!-- Sparrow apply journey for Job details -->
+<h2 class="govuk-heading-m">Employment details</h2>
+
+
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Employment status
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Employed
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your employment status</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Job title
+      </dt>
+      <dd class="govuk-summary-list__value">
+        QA Engineer
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your job title</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Job description
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Responsible for the creation of tests to identify issues with software before the product launch. Duties include identifying and analysing any bugs and errors found during the test phase and documenting them for review after.
+
+Skills:
+Communications skills, both written and verbal.
+Strong IT skills
+Creating documentation
+Coding
+Bug Reporting
+Improving Quality Assurance Practices
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your job title</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        When did you start this job?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1 November 2000
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> When did you start this job?</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How many hours do you work per week?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        37
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> how many hours do you work per week</span>
+          </a>
+      </dd>
+    </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Which days of the week do you work?
+    </dt>
+    <dd class="govuk-summary-list__value">
+        <ul class="govuk-list govuk-list--bullet">
+        <li>Monday  </li>
+          <li>Tuesday</li>
+         <li>Wednesday  </li>
+         <li>Thursday  </li>
+         <li>Friday  </li>
+         </ul>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> Which days of the week do you work?</span>
+        </a>
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Company or organisation name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Smith Digital Limited
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your companies or organisations name</span>
+        </a>
+      </dd>
+    </div>
+
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Workplace address
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list">
+        <li>220 St Vincent Street</li>
+        <li>Glasgow</li>
+        <li>AB1 1AB</li>
+      </ul>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> what is your workplace address</span>
+      </a>
+    </dd>
+  </div>
+
+
+
+
+
+
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How many people work at your company or organisation?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        50 to 249
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> how many people work at your company or organisation</span>
+        </a>
+      </dd>
+    </div> -->
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Are you a company director?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> Director</span>
+        </a>
+      </dd>
+    </div> -->
+
+  </dl>
+
+<h2 class="govuk-heading-m">Workplace contact</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Permission to communicate with workplace contact
+    </dt>
+    <dd class="govuk-summary-list__value">
+Permission given  </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> contact</span>
+      </a>
+    </dd>
+  </div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Jane Doe
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts name</span>
+    </a>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their job title
+  </dt>
+  <dd class="govuk-summary-list__value">
+   Line Manager
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts role</span>
+    </a>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their email address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Jane@smithdigital.co
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts email address</span>
+    </a>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their phone number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    123456789
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts phone number</span>
+    </a>
+  </dd>
+</div>
+
+
+
+
+
+
+
+
+</dl>
+
+<h2 class="govuk-heading-m">Additional employment</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Do you have another job?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    No
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> Do you have another job?</span>
+    </a>
+  </dd>
+</div>
+
+</dl>
+
+
+<!-- Sparrow apply journey for Job details -->
+
+
+
+<!-- Sparrow apply journey for SAE -->
+<h2 class="govuk-heading-m">Specialist equipment</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you need equipment, adaptations or software to support you with your condition at work?
+</dt>
+<dd class="govuk-summary-list__value">
+Yes
+</dd>
+<dd class="govuk-summary-list__actions">
+    <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need equipment, adaptations or software to support you with your condition at work?</span>
+</a>
+</dd>
+</div>
+
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you know what specialist equipment you need?
+</dt>
+<dd class="govuk-summary-list__value">
+Yes, I know what I need
+</dd>
+<dd class="govuk-summary-list__actions">
+    <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you know what specialist equipment you need?</span>
+</a>
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Is this item a wheelchair or a hearing aid?
+</dt>
+<dd class="govuk-summary-list__value">
+Other
+</dd>
+<dd class="govuk-summary-list__actions">
+    <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need equipment, adaptations or software to support you with your condition at work?</span>
+</a>
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+What type of specialist equipment do you need?
+</dt>
+<dd class="govuk-summary-list__value">
+jaws screen reader
+<br>
+
+<br>
+
+<br>
+</dd>
+<dd class="govuk-summary-list__actions">
+
+    <a href="#">
+Change
+<span class="govuk-visually-hidden"> What type of specialist equipment do you need?</span>
+</a>
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+How will this equipment help you at work?
+</dt>
+<dd class="govuk-summary-list__value">
+
+
+
+I need Jaws to read out the content on a screen to me, as I'm unable to visual see the screen currently have to rely on others. I use a computer for 99% of my work.
+
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+    <a href="#">
+Change
+<span class="govuk-visually-hidden"> How will this equipment help you at work?</span>
+</a>
+
+</dd>
+</div>
+</dl>
+
+<!-- Sparrow apply journey for SAE -->
+
+<!-- Sparrow apply journey for SAE quote-->
+<h2 class="govuk-heading-m">Quote for the cost of support</h2>
+
+<h2 class="govuk-heading-m">   Quote 1</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Brand or supplier
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jaws screen reader Professional License
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> </span>
+        </a>
+        </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Total cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £499
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> </span>
+        </a>
+        </dd>
+        </div>
+
+
+
+</dl>
+
+<!-- Sparrow apply journey for SAE quote-->
+
+
+<h2 class="govuk-heading-m"> Mental health support</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you need mental health support at work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need mental health support at work?</span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+
+<h2 class="govuk-heading-m">  Support workers</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need a support worker at work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need a support worker at work? </span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+
+<h2 class="govuk-heading-m">Travelling to and from work</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that it's difficult for you to drive or get public transport to work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="/alpha-1h/travelling-to-and-from-work/screener">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that it's difficult for you to drive or get public transport to work?</span>
+</a>
+</dd>
+</div>
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m">  Travelling during work</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need support to travel to other places during your working day?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need support to travel to other places during your working day?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+<h2 class="govuk-heading-m">   Changes to your workplace</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you would benefit from physical changes at your workplace?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you would benefit from physical changes at your workplace?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+<h2 class="govuk-heading-m">   Changes to your vehicle</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need changes to the vehicle you use to travel to work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need changes to the vehicle you use to travel to work?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+<h2 class="govuk-heading-m">   Additional information </h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Is there anything else that you would like to tell us?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Is there anything else that you would like to tell us?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+
+  </div>    </div>    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel" id="your-tasks" role="tabpanel" aria-labelledby="tab_your-tasks">
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+  You must copy and complete this case in DiSC.
+  <!-- <a class="govuk-notification-banner__link" href="/live-20/cases/contact">Your actions</a>.  -->
+    </p>
+
+  </div>
+</div>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Your tasks</h2>
+
+      <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
+
+
+
+
+
+
+                <div class="govuk-inset-text">You cannot contact Dereck Smith before completing all Searchlight checks.</div>
+
+
+
+
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Searchlight
+          </h2>
+          <ul class="app-task-list__items">
+
+<!-- Add National Insurance number from Searchlight task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Check personal details and add National Insurance number
+                </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+            <!--  -->
+
+
+                    <!-- Completed -->
+
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
+                    <!-- Not started -->
+
+            <!-- Status - end -->
+            </li>
+
+
+<!-- appointee task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="Check-for-appointee">
+                  Check for appointee
+                 </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+                    <!-- complete -->
+
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
+              <!-- Status - end -->
+            </li>
+
+
+
+<!-- benefits task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="benefits-status">
+                Check benefits
+                </a>
+              </span>
+
+              <!-- Status - start -->
+                    <!-- in progress -->
+
+                    <!-- Completed -->
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
+               <!-- Status - end -->
+            </li>
+
+
+
+
+<!-- Update task (if searchlight does not match personal details) -->
+
+
+        </ul>
+        </li>
+
+          <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">2. </span> Review application
+              </h2>
+              <ul class="app-task-list__items">
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                 <a href="./check-application/condition-help-needed" aria-describedby="read-declaration-status">
+                       Health condition or disability
+                   </a>
+                  </span>
+
+                  {% if data['condition-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                  {% if data['condition-check']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Complete</strong>{% endif %}
+                  {% if not data['condition-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+
+                </li>
+
+
+                            <li class="app-task-list__item">
+                              <span class="app-task-list__task-name">
+                             <a href="#" aria-describedby="read-declaration-status">
+                                Contact details
+                               </a>
+                              </span>
+
+
+                                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+             <a href="#" aria-describedby="read-declaration-status">
+                   Summary of support
+               </a>
+              </span>
+
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+             <a href="#" aria-describedby="read-declaration-status">
+                   Employment details
+               </a>
+              </span>
+
+
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+
+
+
+        </ul>
+        </li>
+
+
+
+
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3. </span> Workplace assessment
+    </h2>
+    <ul class="app-task-list__items">
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+
+        Recommendation
+
+    </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Prepare business case
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                  Employment
+
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+            </li>
+
+
+
+
+
+
+
+          </ul>
+        </li>
+
+
+
+
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Award decision
+          </h2>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Award summary
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Decision letters
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </li>
+
+
+
+
+
+      </ul></li></ol>
+
+    </div>
+
+  </div>
+
+
+
+  </div>
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Past year</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+      <div class="govuk-grid-column-one-third">
+
+
+
+
+ <!-- never shown for contact centre -->
+
+
+
+
+
+
+
+
+
+
+
+ <!-- end never shown for contact centre -->
+
+
+
+
+
+
+
+
+
+
+<!-- -->
+
+  </div></div></div></main>
+</div>
+
+
+        </main>
+      </div>
+
+      {% endblock %}

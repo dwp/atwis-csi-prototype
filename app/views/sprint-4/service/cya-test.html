@@ -1,0 +1,74 @@
+{{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              classes: "govuk-!-width-one-half",
+              text: "Name"
+            },
+            value: {
+              text: data['first-name'] | default("John") | safe + " " +  data['last-name'] | default("Smith") | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "your-name",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text:  (data['date-day'] | default("1")  + " " +  data['date-month'] | default("9") + " " + data['date-year'] | default("1999")) | safe
+            },
+            actions: {
+              items: [
+                {
+                  href: "dob",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact details"
+            },
+            value: {
+              html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}

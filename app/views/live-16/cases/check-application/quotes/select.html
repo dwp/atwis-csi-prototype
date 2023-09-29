@@ -1,0 +1,111 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">  Choose quote: specialist equipment 2</h1>
+
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+            Which quote do you want to use for the grant award?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="501" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "501") }}>
+         <label class="govuk-label govuk-radios__label" for="sign-in">
+          £501
+         </label>
+         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          ZoomText Professional License from ZoomText Supplier
+         </div>
+       </div>
+
+       <div class="govuk-radios" data-module="govuk-radios">
+         <div class="govuk-radios__item">
+           <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="502" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "502") }}>
+    <label class="govuk-label govuk-radios__label" for="sign-in">
+     £502
+    </label>
+    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+     ZoomText Professional License from Real Fake Software Supplier
+    </div>
+  </div>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="chosen-quote-sae-1" name="chosen-quote-sae" type="radio" value="503" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-sae", "503") }}>
+<label class="govuk-label govuk-radios__label" for="sign-in">
+£503
+</label>
+<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+ZoomText Professional License from Software R Us
+</div>
+</div>
+
+
+            </div>
+
+          </fieldset>
+        </div>
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+        Why did you choose this quote?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-sae-justification" name="chosen-quote-sae-justification" type="radio" value="It was the most cost-effective" {{ checked("chosen-quote-sae-justification", "It was the most cost-effective") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification">
+              Most cost-effective
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-sae-justification-2" name="chosen-quote-sae-justification" type="radio" value="It was the most suitable support for Sonya Corkery" {{ checked("chosen-quote-sae-justification", "It was the most suitable support for Sonya Corkery") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification-2">
+            Best support for Sonya Corkery
+            </label>
+          </div>
+
+          <!-- <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-sae-justification-4" name="chosen-quote-sae-justification" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-sae-justification-4">
+              Other
+            </label>
+          </div> -->
+        </div>
+
+      </fieldset>
+    </div>
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

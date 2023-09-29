@@ -1,0 +1,53 @@
+{% set link = "unhappy-email-2" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index"}] %}
+
+{% set title =  "[Send an email for more information]" %}
+
+{% block csi %}
+
+
+<p>[Send an email to {{data['csi-info'][0]['name']}} to ask for more information.]</p>
+
+<p>[Use the spreadsheet to say what information you need]</p>
+
+
+  {{ govukButton({
+    text: "Open new email",
+    classes: "govuk-button--secondary",
+    href: "mailto:" + data['csi-info'][0]['contact-by-email']
+  }) }}
+
+
+<br>
+</br>
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+     name: "_email",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No",
+           conditional : {
+             html: "<p>[Repeat the 'check application details' step again to get this information.</p>"
+
+           }
+         }
+       ]
+     }) }}
+
+{% endblock %}

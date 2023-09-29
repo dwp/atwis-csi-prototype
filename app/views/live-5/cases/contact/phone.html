@@ -1,0 +1,158 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-5/cases/contact/update" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <h2 class="govuk-heading-xl">Telephone the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %}</h2>
+
+            <form action="../claim" method="post" novalidate="">
+
+
+
+{% include  "live-5/claim/notification-contact.html" %}
+<!--
+  {% if  data['contact']=='Yes'%}{% else %}
+              <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+
+                  <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Information to check with the applicant
+                  </h2>
+                </div>
+
+                <div class="govuk-notification-banner__content">
+                  <p class="govuk-notification-banner__heading">
+                    Application is not eligible.
+
+                  </p>
+                  <p>Summary of what make the case not eligible...</P>
+                </div>
+              </div>{% endif %} -->
+
+<p>Telephone {% if data['appointee']=='Yes'%}<strong>{{data['appointee-name']}}</strong>{% else %}Dereck Smith{% endif %} on {% if data['appointee']=='Yes'%} <strong>{{data['appointee-telephone']}}</strong>{% else %} <strong> 07192 838 482</strong>{% endif %}.</p>
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+    Has the {% if data['appointee']=='Yes'%}appointee {% else %}applicant{% endif %} answered the telephone?
+
+  </legend>
+
+
+  <div class="govuk-radios">
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="yes" name="asked-info-phone" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="yes">
+        Yes, check information
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no" name="asked-info-phone" type="radio" value="no~/live-5/cases/contact/unhappy-phone">
+          <label class="govuk-label govuk-radios__label" for="no">
+        No
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+
+
+
+
+<!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+
+
+
+
+
+
+
+
+</form>
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+          </button>
+
+
+          </form>
+
+
+          <!-- <p><a href="/live-1/agreed/csi/index" class="govuk-link govuk-link--no-visited-state">Return to tasks</a></p> -->
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+<!--{% if appointee %}{% set appointeeLink = "-appointee" %}{% else %}{% set appointeeLink = "" %}{% endif %}-->
+{% set link = "../close-case" %}
+<!--{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}-->
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index-interview"}] %}
+
+{% set page = "case-closed" %}
+{% set customNext = "Continue" %}
+{% set headerText = "Do you want to reject the case?" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% block csi %}
+
+{{ govukRadios({
+  idPrefix: "interview-happened",
+  name: "interview-happened",
+  fieldset: {
+    legend: {
+      text: headerText,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+
+    {
+      id: "yes",
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      id : "no",
+      text: "No, not yet"
+    }
+  ]
+}) }}
+{% endblock %}

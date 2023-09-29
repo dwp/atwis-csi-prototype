@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+          <h1 class="govuk-heading-xl">Why is taking phone calls a problem for you?</h1>
+
+              <form id="form" method="post" action="get-around">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="event-name">
+
+                    </label>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                  </div>
+
+                  <button class="govuk-button" data-module="govuk-button">
+                      Continue
+                  </button>
+
+             </form>
+        </div>
+      </div>
+    </main>
+	</div>
+
+	{% endblock %}

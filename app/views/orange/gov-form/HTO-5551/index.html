@@ -1,0 +1,144 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-5551 and HTO-5507 index
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to form scenarios',
+    href: "../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-5551 and HTO-5507: AtW Plus referral form</h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+    <p>Also see <a href="https://submit.forms.service.gov.uk/preview-draft/290/access-to-work-plus-referral/670" class="govuk-link--no-visited-state">form preview environment</a> that mirrors live form. Use this if you want to check the current form without affecting data analytics.</p>
+
+
+       <h3 class="govuk-heading-m">Latest versions</h3>
+
+<h4 class="govuk-heading-s">Form</h4>
+
+     <p>
+        <a href="v2iterations/applicant-name" class="govuk-link--no-visited-state">
+      Form
+    <br><strong class="govuk-tag govuk-tag--green">
+        Live – Published: 11 July, 10.30am
+        </strong>
+        </a>
+    </p>
+
+    <h4 class="govuk-heading-s">Email</h4>
+
+      <p>
+        <a href="v2iterations/email/form-output" class="govuk-link--no-visited-state">
+      Mock-up of form output email
+    <br><strong class="govuk-tag govuk-tag--green">
+         Matches form questions
+        </strong>
+        </a>
+    </p> 
+
+<h4 class="govuk-heading-s">GOV.UK content</h4>
+  
+    <p>
+        <a href="v2iterations/govuk/access-to-work-plus-referrals" class="govuk-link--no-visited-state">
+      GOV.UK detailed guide format
+    <br><strong class="govuk-tag govuk-tag--green">
+         Published on GOV.UK: 11 July, 3.15pm
+        </strong>
+        </a>
+    </p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<h3 class="govuk-heading-m">Draft tested in UR</h3>
+
+<p class="govuk-body">UR sessions on 26 and 27 June 2023.</p>
+
+<h4 class="govuk-heading-s">Form</h4>
+
+     <p>
+        <a href="v2-tested-in-ur/referrer-name" class="govuk-link--no-visited-state">
+      Draft form tested in UR
+    <br><strong class="govuk-tag govuk-tag--purple">
+         Version for UR
+        </strong>
+        </a>
+    </p>
+
+<h4 class="govuk-heading-s">GOV.UK content</h4>
+  
+    <p>
+        <a href="v2-tested-in-ur/govuk/guide-for-employers" class="govuk-link--no-visited-state">
+      GOV.UK publication guidance landing page 
+    <br><strong class="govuk-tag govuk-tag--grey">
+         Not used in UR
+        </strong>
+        </a>
+    </p>
+
+     <p>
+        <a href="v2-tested-in-ur/govuk/access-to-work-plus-referrals" class="govuk-link--no-visited-state">
+      GOV.UK publication guidance document – AtW page (journey start page)
+    <br><strong class="govuk-tag govuk-tag--purple">
+         Version for UR
+        </strong>
+        </a>
+    </p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+   <h3 class="govuk-heading-m">First draft with question themes</h3>
+
+      <p>
+        <a href="v1/personal-details" class="govuk-link--no-visited-state">
+      Initial mock-up of referral form content.
+       </a>
+       </p>
+    
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    </div>
+  </div>
+
+{% endblock %}

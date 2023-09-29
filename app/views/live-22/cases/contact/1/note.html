@@ -1,0 +1,81 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-22/cases/contact/how-do-you-want-to-contact" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+                <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+                  <div class="govuk-form-group">
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+                    What do you need to contact Dereck Smith{% if data['appointee']=='Yes, I need to add an appointee'%}’s appointee {{data['appointee-name']}}{% endif %} about?
+
+
+                    </label>
+                    </h1>
+
+
+
+
+  <div id="more-detail-hint" class="govuk-hint">
+    These notes will be added to the case history.
+  </div>
+
+
+  <textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-note1" rows="3" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 80 characters remaining</div>
+</div>
+
+
+
+</div>
+
+
+
+<div class="govuk-!-padding-bottom-0"></div>
+
+
+
+<!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+   Save and continue
+</button>
+
+
+</form>
+
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

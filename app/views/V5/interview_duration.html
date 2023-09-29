@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="interviewer_details">
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-4">
+      Interview Questions:
+    </h1>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        How long is the interview expected to last?
+    </h2>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          Why are we asking
+          </span>
+      </summary>
+      <div class="govuk-details__text">
+        We need to understand how much the support will cost per hour. This helps us decide if the cost is reasonable.
+      </div>
+    </details>
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="full-name">
+            Duration (hours)
+        </label>
+        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- interviewer_details -->
+
+    </form>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

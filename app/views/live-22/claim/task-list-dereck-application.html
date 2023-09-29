@@ -1,0 +1,78 @@
+
+{% for case in data['priority-cases'] %}
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Dereck Smith’s application</h2>
+
+      <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
+
+
+{% if data['Searchligh']=='No'%}
+<p >
+<a href="{% if not data['_do_1']%}/live-22/cases/contact/1/how-do-you-want-to-contact{% else %}/live-22/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
+</a>
+</p>
+
+<!-- <div class="govuk-inset-text">
+<p>  You need to contact Dereck Smith.  </p>
+
+</div> -->
+
+<br>
+{% else %}
+
+
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+
+data ['appointee']
+and
+data ['benefits']
+%}
+
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+        {% endif %}
+        {% endif %}
+
+
+
+
+{% include  "live-22claim/task-list-comp/review-application-dereck.html" %}
+
+
+        </li>
+      </ol>
+
+      <h2 class="govuk-heading-m">
+Summary of support requested by
+
+
+Dereck Smith   in application
+
+
+</h2>
+      <p>Dereck Smith needs <strong>Specialist equipment</strong> support but has not given details.
+
+      </p>
+      <p>Dereck Smith does not need:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+
+<li>Mental health support </li>
+<li>Support worker  </li>
+<li>Travel to and from work</li>
+<li>Travel during work </li>
+<li>Workplace adaptations  </li>
+<li>Vehicle adaptations  </li>
+        </ul>
+
+
+{% endfor %}

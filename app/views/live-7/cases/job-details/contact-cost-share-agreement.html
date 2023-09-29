@@ -1,0 +1,125 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   Have you spoken to the employer about a cost share?
+                 </h2>
+               </legend>
+
+
+               <div class="govuk-inset-text">
+             <p> The company or organisation is classed as a medium-sized employer. This means a cost share applies.</p>
+
+               <a class="govuk-link" href="https://intranet.dwp.gov.uk/manual/access-work/11-cost-share-0" target="_blank">Check cost share guidance (opens in a new tab)</a>.
+               </div>
+
+                   <h3 class="govuk-heading-m">  Workplace contact</h3>
+                   <dl class="govuk-summary-list">
+                     <div class="govuk-summary-list__row">
+                       <dt class="govuk-summary-list__key">
+                        Their name
+                       </dt>
+                       <dd class="govuk-summary-list__value">
+
+    Jane Doe
+                       </dd>
+                     </div>
+                     <div class="govuk-summary-list__row">
+                       <dt class="govuk-summary-list__key">
+                         Their job title
+                       </dt>
+                       <dd class="govuk-summary-list__value">
+                         Line Manager
+                       </dd>
+                     </div>
+                     <div class="govuk-summary-list__row">
+                       <dt class="govuk-summary-list__key">
+                         Their email address
+                       </dt>
+                       <dd class="govuk-summary-list__value">
+                         Jane@dwpdigital.co
+                       </dd>
+                     </div>
+                     <div class="govuk-summary-list__row">
+                       <dt class="govuk-summary-list__key">
+                         Their phone number
+                       </dt>
+                       <dd class="govuk-summary-list__value">
+                         123456789
+                       </dd>
+                     </div>
+                   </dl>
+
+               <div class="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-cost-share" name="employer-cost-share" type="radio" value="Yes and they agreed to a cost share~/live-7/cases/job-details/check.html" {{ checked("employer-cost-share", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-cost-share">
+                     Yes and they agreed to a cost share
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-cost-share-2" name="employer-cost-share" type="radio" value="  Yes and a third party agreed to a cost share~/live-7/cases/job-details/check.html" {{ checked("employer-cost-share", "No but a third party agreed to the cost share") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-cost-share-2">
+                      Yes and a third party agreed to a cost share
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-cost-share-3" name="employer-cost-share" type="radio" value="Yes but no cost share was agreed~/live-7/cases/job-details/unhappy-cost-share" {{ checked("employer-cost-share", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-cost-share-3">
+                     Yes but a cost share was not agreed
+                   </label>
+                 </div>
+
+
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="employer-cost-share-4" name="employer-cost-share" type="radio" value="No, I have not spoken to the employer yet~/live-7/cases/job-details/check" {{ checked("employer-cost-share", "No") }}>
+                                    <label class="govuk-label govuk-radios__label" for="employer-cost-share-4">
+                                      No, I have not spoken to the employer yet
+                                    </label>
+                                  </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

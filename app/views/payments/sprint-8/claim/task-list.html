@@ -1,0 +1,187 @@
+
+
+{% block pageTitle %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Your tasks</h2>
+
+      <ol class="app-task-list">
+        <li>
+
+<!-- 1 REVIEW CLAIM -->
+
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Review claim
+          </h2>
+
+<!-- 1 CHECK CLAIM MATCHES GRANT AWARD -->
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-completed">
+                  Check claim matches grant award
+                </a>
+              </span>
+              {% if not data['name-here-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
+              {% if data['name-here-1'] and not data['name-here-5']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
+              {% if data['name-here-5'] %} <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>{% endif %}
+            </li>
+
+<!-- 1 CHECK INVOICE MATCHES CLAIM -->
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-completed">
+                  Check claim matches invoice
+                </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+                <li>
+          </ul>
+        </li>
+        <li>
+
+<!-- 2 REVIEW INVOICE -->
+
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Review invoice
+          </h2>
+
+<!-- 2 CHECK ELEMENT DETAILS -->
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-completed">
+                  Check element details
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+              <li>
+
+<!-- 2 INVOICE ELEGABILITY CHECK -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="#" aria-describedby="company-information-completed">
+                Invoice elegibility check
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </ul>
+            <li>
+
+
+<!-- 3 SOP -->
+
+            <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> SOP
+            </h2>
+
+<!-- 3 CHECK PAYEE DETAILS IN SOP -->
+
+            <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="#" aria-describedby="company-information-completed">
+                Check payee details in SOP
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </li>
+
+
+<!-- 3 PROCESS PAYMENT IN SOP -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="#" aria-describedby="company-information-completed">
+                Process Payment in SOP
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </ul>
+            <li>
+
+<!-- 4 SEND PAYMENT -->
+
+            <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span>
+                Send payment
+            </h2>
+
+<!-- 4 APPROVE AYMENT -->
+
+            <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            <a href="#" aria-describedby="company-information-completed">
+                Approve payment
+            </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </ul>
+            <li>
+
+
+
+              <!-- <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contact-details-completed">
+                  Your contact details
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  List convictions
+                </a>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Provide financial evidence
+                </a>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="medical-information-completed">
+                  Give medical information
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-completed" id="medical-information-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Apply
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Submit and pay
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+    </div>
+  </div> -->
+
+{% endblock %}

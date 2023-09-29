@@ -1,0 +1,83 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/form-handler" method="post" novalidate>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+              Where will Dereck Smith be for the workplace assessment?
+            </h1>
+              </legend>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="address-of-wpa" name="address-of-wpa" type="radio" value="220 St Vincent Street, Glasgow, AB1 1AB~/live-24/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">
+                  <label class="govuk-label govuk-radios__label" for="address-of-wpa">
+
+
+          Workplace address
+
+
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          220 St Vincent Street, Glasgow, AB1 1AB
+        </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="address-of-wpa-2" name="address-of-wpa" type="radio" value="72 Guild Street,
+London,
+SE23 6FH~/live-24/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">
+                  <label class="govuk-label govuk-radios__label" for="address-of-wpa-2">
+                    Dereck Smith home address
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    72 Guild Street,
+            London,
+            SE23 6FH
+        </div>
+                </div>
+
+                <div class="govuk-radios__divider">or</div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="address-of-wpa-3" name="address-of-wpa" type="radio" value="Other address~address-of-wpa-manual">
+                  <label class="govuk-label govuk-radios__label" for="address-of-wpa-3">
+                  Other address
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

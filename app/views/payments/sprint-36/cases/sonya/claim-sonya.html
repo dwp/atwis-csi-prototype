@@ -1,0 +1,18 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+
+
+
+{% extends   "payments/sprint-36/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+{% include  "payments/sprint-36/claim/_CLAIMDETAILS.html" %}
+
+{% endblock %}

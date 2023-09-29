@@ -1,0 +1,126 @@
+#autocomplete {
+	border: 1px solid currentColor; border-image: none; overflow: hidden; position: absolute; z-index: 100;
+}
+#autocomplete ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#autocomplete li {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0); white-space: pre; cursor: default; -ms-zoom: 1;
+}
+html.js input.form-autocomplete {
+	background-position: 100%; background-image: url("../../misc/throbber-inactive.png"); background-repeat: no-repeat;
+}
+html.js input.throbbing {
+	background-position: 100%; background-image: url("../../misc/throbber-active.gif");
+}
+html.js fieldset.collapsed {
+	height: 1em; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;
+}
+html.js fieldset.collapsed .fieldset-wrapper {
+	display: none;
+}
+fieldset.collapsible {
+	position: relative;
+}
+fieldset.collapsible .fieldset-legend {
+	display: block;
+}
+.form-textarea-wrapper textarea {
+	margin: 0px; width: 100%; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+.resizable-textarea .grippie {
+	background: url("../../misc/grippie.png") no-repeat center 2px rgb(238, 238, 238); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(221, 221, 221); border-image: none; height: 9px; overflow: hidden; cursor: s-resize;
+}
+body.drag {
+	cursor: move;
+}
+.draggable a.tabledrag-handle {
+	height: 1.7em; overflow: hidden; text-decoration: none; margin-left: -1em; float: left; cursor: move;
+}
+a.tabledrag-handle:hover {
+	text-decoration: none;
+}
+a.tabledrag-handle .handle {
+	background: url("../../misc/draggable.png") no-repeat 6px 9px; margin: -0.4em 0.5em; padding: 0.42em 0.5em; width: 13px; height: 13px;
+}
+a.tabledrag-handle-hover .handle {
+	background-position: 6px -11px;
+}
+div.indentation {
+	margin: -0.4em 0.2em -0.4em -0.4em; padding: 0.42em 0px 0.42em 0.6em; width: 20px; height: 1.7em; float: left;
+}
+div.tree-child {
+	background: url("../../misc/tree.png") no-repeat 11px;
+}
+div.tree-child-last {
+	background: url("../../misc/tree-bottom.png") no-repeat 11px;
+}
+div.tree-child-horizontal {
+	background: url("../../misc/tree.png") no-repeat -11px;
+}
+.tabledrag-toggle-weight-wrapper {
+	text-align: right;
+}
+table.sticky-header {
+	margin-top: 0px; background-color: rgb(255, 255, 255);
+}
+.progress .bar {
+	border: 1px solid currentColor; border-image: none; background-color: rgb(255, 255, 255);
+}
+.progress .filled {
+	width: 5px; height: 1.5em; background-color: rgb(0, 0, 0);
+}
+.progress .percentage {
+	float: right;
+}
+.ajax-progress {
+	display: inline-block;
+}
+.ajax-progress .throbber {
+	background: url("../../misc/throbber-active.gif") no-repeat 0px; margin: 2px; width: 15px; height: 15px; float: left;
+}
+.ajax-progress .message {
+	padding-left: 20px;
+}
+tr .ajax-progress .throbber {
+	margin: 0px 2px;
+}
+.ajax-progress-bar {
+	width: 16em;
+}
+.container-inline div {
+	display: inline;
+}
+.container-inline label {
+	display: inline;
+}
+.container-inline .fieldset-wrapper {
+	display: block;
+}
+.nowrap {
+	white-space: nowrap;
+}
+html.js .js-hide {
+	display: none;
+}
+.element-hidden {
+	display: none;
+}
+.element-invisible {
+	height: 1px; overflow: hidden; position: absolute !important; clip: rect(1px, 1px, 1px, 1px);
+}
+.element-invisible.element-focusable:active {
+	height: auto; overflow: visible; position: static !important; clip: auto;
+}
+.element-invisible.element-focusable:focus {
+	height: auto; overflow: visible; position: static !important; clip: auto;
+}
+.clearfix::after {
+	height: 0px; clear: both; display: block; visibility: hidden; content: ".";
+}
+* html .clearfix {
+	height: 1%;
+}
+*:first-child + html .clearfix {
+	min-height: 1%;
+}

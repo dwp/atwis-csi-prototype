@@ -1,0 +1,146 @@
+{% if phase =="sonya"%}
+
+
+<ul class="app-task-list__items">
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="{% if data['sae-addsonya']%}./check-application/sae/details/add{% else %}./check-application/sae/details/approve-1{% endif %}" aria-describedby="job-status">
+  Specialist equipment: add or change support
+</a>
+</span>
+{% if not data['sae-add'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['sae-add'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+ </li>
+<br>
+ <form class="" action="/live-22/cases/sonya/cases/workplace-assesment/wpa-report/support" method="post" >
+   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+     Add new elements
+   </button>
+ </form>
+
+
+
+
+
+   {% if not data['sae-add'+ phase]%}
+   <!-- <li class="app-task-list__item">
+   <span class="app-task-list__task-name">
+
+    Choose quote: specialist equipment 2
+
+   </span>
+   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+
+    </li>
+   <li class="app-task-list__item">
+   <span class="app-task-list__task-name">
+
+     Confirm details for specialist equipment 1
+
+   </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+
+
+    </li>-->{% else %}
+
+
+
+
+
+
+    <!-- <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+    <a href="check-application/quotes/select" aria-describedby="job-status">
+     Choose quote: specialist equipment 2
+    </a>
+    </span>
+    {% if not data['chosen-quote-'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+    {% if data['chosen-quote-'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+     </li> -->
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="specialist-equipment" aria-describedby="job-status">
+  Confirm details for specialist equipment 1
+</a>
+</span>
+{% if not data['medical']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['medical']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+ </li>
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="specialist-equipment/index-2" aria-describedby="job-status">
+Confirm details for specialist equipment 2
+</a>
+</span>
+{% if not data['medical-2']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['medical-2']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+</li>{% endif %}
+
+{% if data['sae-item-type']%}
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="specialist-equipment/index-3" aria-describedby="job-status">
+Confirm details for specialist equipment 3
+</a>
+</span>
+{% if not data['medical-3'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['medical-3'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+</li>
+{% endif %}
+
+{% else %}
+
+
+ <li class="app-task-list__item">
+ <span class="app-task-list__task-name">
+ <a href="specialist-equipment" aria-describedby="job-status">
+  Confirm details for specialist equipment
+ </a>
+ </span>
+ {% if not data['medical']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+ {% if data['medical']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+  </li>{% endif %}
+<!-- <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+<a href="claim#your-tasks" aria-describedby="job-status">
+      Evidence for approval decision
+</a>
+  </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li> -->
+
+
+  {% if 'Mental health support' in data['elements']%}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+   <a href="" aria-describedby="read-declaration-status">
+        Mental health support: add or change support
+     </a>
+    </span>
+    {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+    {% if data['placeholder']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+    {% if not data['placeholder']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+  </li>
+  {% endif %}
+
+
+    {% if 'Support worker' in data['elements']%}
+ <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+   <a href="{% if data['sae-item-type']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
+         Support worker: add or change support
+     </a>
+    </span>
+    {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+    {% if data['placeholder']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+    {% if not data['placeholder']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+  </li>
+{% endif %}
+</ul>

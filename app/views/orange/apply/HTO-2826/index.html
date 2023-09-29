@@ -1,0 +1,112 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-2826 index
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Apply prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to apply scenarios',
+    href: '/apply/index'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-2826: Priority case question change
+ <br>Access to Work Plus</h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+<h3 class="govuk-heading-m">Current – with old priority question</h3>
+
+
+     <p>
+        <a href="service-current/are-you-a-civil-servant" class="govuk-link--no-visited-state">
+       Full service journey: current </a>
+      <br>As-is journey showing current priority question to be removed.</p>
+
+
+        <p>
+        <a href="service-current/any-these-apply" class="govuk-link--no-visited-state">
+       Old CEV, Kicksart and YPGS question – to be removed
+     
+        </a>
+      </p>
+
+      <p>
+        <a href="service-current/review" class="govuk-link--no-visited-state">
+       Check your answers page – section to be removed
+     
+        </a>
+      <br>Highlighted 'Do any of these apply to you?' section to be removed when old CEV, Kicksart and YPGS question deleted.</p>
+      
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h3 class="govuk-heading-m">Updated – with new AtW Plus question</h3>
+
+     <p>
+        <a href="service-updated/are-you-a-civil-servant" class="govuk-link--no-visited-state">
+       Full service journey: updated </a>
+
+       <br>Apply service journey with updated question for priority type.</p>
+       <p>Removing, obsolete CEV, Kicksart and YPGS question and replacing with Access to Work Plus.</p>
+
+
+           <p>
+        <a href="service-updated/application-type" class="govuk-link--no-visited-state">
+      New Access to Work Plus question (application type)
+     
+        </a>
+      <br>Type of AtW listed in radio content. Alternative to hint text used, including reassurance content.</p>
+
+      <p>
+        <a href="service-updated/review" class="govuk-link--no-visited-state">
+       Check your answers page – new application type section
+     
+        </a>
+      <br>'Application type' section to be added for AtW Plus question.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

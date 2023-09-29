@@ -1,0 +1,82 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  Are you a civil servant?
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="clinically-extremely-vulnerable" method="post">
+
+      <form action="/form-handler" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Are you a civil servant?
+                </h1>
+              </legend>
+
+              <div id="dob-hint" class="govuk-hint">
+               If you are not sure whether you are classed as a civil servant, your employer will be able to tell you.
+              </div>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="are-you-a-civil-servant" name="are-you-a-civil-servant" type="radio" value="yes~other-jobs.html">
+                  <label class="govuk-label govuk-radios__label" for="are-you-a-civil-servant">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="are-you-a-civil-servant-2" name="are-you-a-civil-servant" type="radio" value="no~condition.html">
+                  <label class="govuk-label govuk-radios__label" for="are-you-a-civil-servant-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">You can get support by:</h2>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>telephone: 0800 121 7479</li>
+    <li>textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">video relay service</a> for British Sign Language users (<a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a>)</li>
+    </ul>
+
+        <p class="govuk-body">These free services are available Monday to Friday, 9am to 5pm.</p>
+    </aside>
+
+
+      </div> </div>
+
+{% endblock %}

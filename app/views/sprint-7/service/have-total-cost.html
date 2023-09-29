@@ -1,0 +1,58 @@
+{% extends folder + "/_BASE.html" %}
+
+{% set backHidden =  true %}
+
+{% block service %}
+
+
+    <form id="form" method="post" action="">
+
+<!--
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Your job interview
+    </h1>
+-->
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Do you know how much your sign language interpreter or support worker will cost?
+    </h1>
+<p>
+  You need to ask them for their total cost before you can complete your application.
+</p>
+
+
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="yes" name="check-cost" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="check-cost-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no" name="check-cost" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="check-cost-2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- job_company_name -->
+
+    </form>
+
+{% endblock %}
+
+{% block pageScripts %}
+ <script>
+ $( "#yes" ).click(function() {
+  $("form").attr("action", "name")
+ });
+ $( "#no" ).click(function() {
+  $("form").attr("action", "have-total-cost-no")
+ });
+ </script>
+
+ {% endblock %}

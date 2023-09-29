@@ -1,0 +1,46 @@
+{% set link = "contact" %}
+{% set customNext = "Continue to contact options" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "[screen about highlighting changes]" %}
+
+
+{% block csi %}
+
+
+{% if data['personal'] == "no"  %}
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Personal details</h2>
+
+<ul class="govuk-list govuk-list--bullet">
+{% for i in data['error']['personal'] %}
+<li>{{data['csi-info'][0][i]}}</li>
+{%- endfor %}
+</ul>
+{% endif %}
+
+
+{% if data['company'] == "no"  %}
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Company details</h2>
+
+<ul class="govuk-list govuk-list--bullet">
+{% for i in data['error']['company'] %}
+<li>{{data['csi-info'][0][i]}}</li>
+{%- endfor %}
+</ul>
+{% endif %}
+
+{% if data['interview'] == "no"  %}
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Interview details</h2>
+
+<ul class="govuk-list govuk-list--bullet">
+{% for i in data['error']['interview'] %}
+<li>{{data['csi-info'][0][i]}}</li>
+{%- endfor %}
+</ul>
+{% endif %}
+
+
+
+
+
+{% endblock %}

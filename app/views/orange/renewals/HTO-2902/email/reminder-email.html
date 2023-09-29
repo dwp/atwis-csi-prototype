@@ -1,0 +1,96 @@
+{% extends 'layout_email.html' %}
+
+{% block pageTitle %}
+    Email renewal reminder
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            {% set emailContentHTML %}
+
+                <p>Dear Simon Smith</p>
+
+                <p>Your Access to Work grant is due to end on 5 April 2022.</p>
+
+                <p>If you still need your support, you can renew your grant at: <br>
+                <a href="guidance/govuk-renew">https://www.gov.uk/access-to-work/renew</a></p>
+
+                <p>Your unique reference number is RMPX30. It would help if you could provide this when you apply to renew.</p>
+
+                <p>You can also renew by phone on:</p>
+
+                <div class="govuk-inset-text">
+                    Telephone: 0800 121 7479 <br>
+                    Textphone: 0800 121 7579 <br>
+                    Relay UK: 18001 then 0800 121 7479 <a href="https://www.relayuk.bt.com">https://www.relayuk.bt.com</a> <br>
+                    Opening times: Monday to Friday, 9am to 5pm
+                </div>
+
+                <p>Calls to 0800 numbers are free from personal mobiles and landlines.</p>
+
+                <p>Our contact details are also on our GOV.​UK page:<br>
+                <a href="guidance/govuk-renew#access-to-work-helpline">https://www.gov.uk/access-to-work/renew#access-to-work-helpline</a>
+                </p>
+
+
+                <h2 class="govuk-heading-m">If you are a civil servant</h2>
+                <p>If your grant is due to end on or after 1 April 2022, your employer will provide support instead of Access to Work.</p>
+                <p>You will need to contact your employer so they can assess the support you need.</p>
+                <p>If you are not sure whether you are classed as a civil servant, contact your employer for advice.</p>
+
+                <h2 class="govuk-heading-m">Email policy</h2>
+                <p>Please do not reply to this message. DWP will delete any emails sent to this email address without reading them.</p>
+                <p>DWP will never ask you to send usernames or passwords by email.</p>
+
+                <p>Yours sincerely</p>
+                <p>The Access to Work team</p>
+
+            {% endset %}
+
+
+            {{ prototypeEmailPreview({
+                headers: [
+                    {
+                        key: {
+                            text: 'From'
+                        },
+                        value: {
+                            text: '	Access to Work'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'To'
+                        },
+                        value: {
+                            text: 'test@test.com'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'Subject'
+                        },
+                        value: {
+                            text: 'Your Access to Work grant is due to end'
+                        }
+                    }
+                ],
+                content: {
+                    html: emailContentHTML
+
+
+            
+
+                }
+            }) }}
+            
+
+        </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,420 @@
+{% extends folder + "/_BASE.html" %}
+
+{% set backHidden = true %}
+
+
+
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+
+{% block service %}
+
+          <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+          <h2 class="govuk-heading-m">Personal details</h2>
+
+
+
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9 " >
+            <div class="govuk-summary-list__row ">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['first-name']  | default("John") | safe }}
+                    {{ data['last-name'] | default("Smith") | safe }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="your-name">
+                  Change
+                  <span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['date-day'] | default("1") | safe }} {{ data['date-month'] | default("3") | toMonth | safe }} {{ data['date-year'] | default("2000") | safe }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="dob">
+                  Change
+                  <span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['address-line-1'] }}
+                  {{ data['address-line-2'] }} <br>
+                  {{ data['address-town'] }} <br>
+                  {{ data['address-county'] }} <br>
+                  {{ data['address-postcode'] }} <br>
+                  </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="address">
+                  Change
+                  <span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Do you need communication support because you are Deaf or hard of hearing?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['deaf']| default("Yes") | safe }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="deaf">
+                  Change
+                  <span class="govuk-visually-hidden"> if you need communication support because you are Deaf or hard of hearing</span>
+                </a>
+              </dd>
+            </div>
+
+
+
+{% if data['deaf'] and  data['deaf'] == "No" %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    What disability or health condition do you need communication support for?
+   </dt>
+  <dd class="govuk-summary-list__value">
+    {{data['condition']| default("Something else") | safe }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="condition">
+      Change
+      <span class="govuk-visually-hidden"> what disability or health condition you need communication support for</span>
+    </a>
+  </dd>
+</div>
+
+{% endif %}
+</dl>
+
+						<h2 class="govuk-heading-m govuk-!-margin-top-6">Job interview details</h2>
+
+            <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Is the interview for a paid job?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['paid-work'] | default("Yes") | safe }}</p>
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="paid-work">
+                  Change
+                  <span class="govuk-visually-hidden">Is the interview for a paid job? </span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Interview date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['interview-date-day'] }} {{ data['interview-date-month'] }} {{ data['interview-date-year'] }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="interview-date">
+                  Change
+                  <span class="govuk-visually-hidden">interview date</span>
+                </a>
+              </dd>
+            </div>
+
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Company name
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p>{{ data['full-name'] }}</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="interview-company-name">
+									Change
+									<span class="govuk-visually-hidden">company name</span>
+								</a>
+							</dd>
+						</div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Company address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['address-line-1'] }}
+                  {{ data['address-line-2'] }} <br>
+                  {{ data['address-town'] }} <br>
+                  {{ data['address-county'] }} <br>
+                  {{ data['address-postcode'] }} <br>
+                  </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="interview-address.html">
+                  Change
+                  <span class="govuk-visually-hidden">interview location</span>
+                </a>
+              </dd>
+						</div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Interview length
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data['duration'] }}
+                </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="interview-length.html">
+                  Change
+                  <span class="govuk-visually-hidden">interview length</span>
+                </a>
+              </dd>
+						</div>
+
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Who can we contact at the company?
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p class="govuk-body">
+                  {{ data['interviewer-name'] }}
+                </p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="interviewer-details">
+									Change
+									<span class="govuk-visually-hidden">company contact</span>
+								</a>
+							</dd>
+						</div>
+
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            How can we contact them?
+
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">
+                              {{ data['interviewer-contact-preference'] | default("Email, Phone") | safe  }}
+                            </p>
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="contact">
+                              Change
+                              <span class="govuk-visually-hidden"> customer contact</span>
+                            </a>
+                          </dd>
+                        </div>
+
+        {% if not data['interviewer-contact-preference'] or  ( data['interviewer-contact-preference'] and  ("Email" in  data['interviewer-contact-preference'])) %}
+
+
+            <div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Company contact email address
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p class="govuk-body">
+                  {{ data['contact-by-email'] }}</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="interviewer-details">
+									Change
+									<span class="govuk-visually-hidden">company contact</span>
+								</a>
+							</dd>
+						</div>
+{%  endif %}
+{% if not data['interviewer-contact-preference'] or  ( data['interviewer-contact-preference'] and  ("Phone" in  data['interviewer-contact-preference'])) %}
+
+            <div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Company contact phone number
+							</dt>
+							<dd class="govuk-summary-list__value">
+								<p class="govuk-body">
+                  {{ data['contact-by-phone'] }}</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="interviewer-details">
+									Change
+									<span class="govuk-visually-hidden">company contact</span>
+								</a>
+							</dd>
+						</div>
+{%  endif %}
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								 Total cost
+							</dt>
+							<dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+                  {{ data['support-worker-pay'] }}</p>
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="support-worker-page">
+									Change
+									<span class="govuk-visually-hidden">support worker cost</span>
+								</a>
+							</dd>
+						</div>
+          </dl>
+  						<h2 class="govuk-heading-m govuk-!-margin-top-6">Contact details</h2>
+
+            <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            How can we contact you about your application?
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">
+                              {{ data['contact-preference'] | default("Email, Textphone, NGT relay") }}
+                            </p>
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="contact">
+                              Change
+                              <span class="govuk-visually-hidden">customer contact</span>
+                            </a>
+                          </dd>
+                        </div>
+{% if not data['contact-preference'] or  ( data['contact-preference'] and  ("Email" in  data['contact-preference'])) %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+                  {{ data['contact-by-email'] | default("test@example.com") | safe }}
+                </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact">
+                  Change
+                  <span class="govuk-visually-hidden"> customer contact</span>
+                </a>
+              </dd>
+            </div>
+{% endif %}
+
+{% if not data['contact-preference'] or  (data['contact-preference'] and  ("Textphone" in  data['contact-preference'])) %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Textphone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+                  {{ data['contact-by-phone'] | default("0999999999") | safe }}
+                </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact">
+                  Change
+                  <span class="govuk-visually-hidden"> customer contact</span>
+                </a>
+              </dd>
+            </div>
+{% endif %}
+{% if not data['contact-preference'] or  ( data['contact-preference'] and ("NGT relay" in  data['contact-preference'])) %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                NGT relay
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+                  {{ data['contact-by-ngt'] | default("0999999999") | safe }}
+                </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact">
+                  Change
+                  <span class="govuk-visually-hidden"> customer contact</span>
+                </a>
+              </dd>
+            </div>
+{% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you want to receive text messages with updates about your application?
+
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+                  {{ data['text-message']| default("No") | safe  }}
+                </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="text-message">
+                  Change
+                  <span class="govuk-visually-hidden"> Do you want to receive text messages with updates about your application?</span>
+                </a>
+              </dd>
+            </div>
+
+{% if data['text-message'] and data['text-message'] == "Yes" %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               Mobile phone number
+
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">
+                  {{ data['text-message-number' ) | default("No") | safe }}
+                </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="text-message">
+                  Change
+                  <span class="govuk-visually-hidden"> mobile phone number</span>
+                </a>
+              </dd>
+            </div>
+{% endif %}
+
+					</dl>
+
+          <h2 class="govuk-heading-m">Declaration</h2>
+					<div class="govuk-body">
+						<p>By sending this application you are confirming that the information is correct as far as you know.</p>
+
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                It might be a criminal offence if you knowingly give false information.
+              </strong>
+            </div>
+					</div>
+          <form action="confirmation" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <button type="submit" class="govuk-button">
+              Accept and send
+            </button>
+          </form>
+
+	{% endblock %}

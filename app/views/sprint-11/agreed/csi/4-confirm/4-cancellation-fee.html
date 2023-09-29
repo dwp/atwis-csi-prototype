@@ -1,0 +1,40 @@
+{% if appointee %}{% set appointeeLink = "-appointee" %}{% else %}{% set appointeeLink = "" %}{% endif %}
+{% set interviewLink = "true" %}
+{% set link = "4-can-case-be-closed" %}
+{% set redirect = [{id : "no", page: link }, {id: "yes", page: "4-amount-changed" }] %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+
+{% block csi %}
+
+{% set headerText = "Is the support worker eligible to charge a cancellation fee?" %}
+
+{{ govukRadios({
+       classes: "govuk-radios--inline",
+       idPrefix: "cancel-fee",
+       name: "cancel-fee",
+       fieldset: {
+         legend: {
+           text: headerText,
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--xl"
+         }
+       },
+       hint: {
+  text: "There is information about cancellation fees in the guidance."
+      },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+<br>
+{% endblock %}

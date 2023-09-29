@@ -1,0 +1,96 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-4231 index
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Apply prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to apply scenarios',
+    href: '/apply/index'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-4231: updating Remploy to Maximus</h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+<h3 class="govuk-heading-m">Changes to Civil Service journey outcome pages</h3>
+
+
+
+<p>
+        <a href="service/are-you-a-civil-servant" class="govuk-link--no-visited-state">
+       Full service journey</a>
+       <br>
+       Select 'yes' to 'Are you a Civil Cervant?' to view relevant journey for changes.
+      </p>
+
+      <h4 class="govuk-heading-s">Individual pages to update</h4>
+
+        <p>
+        <a href="service/other-jobs" class="govuk-link--no-visited-state">
+      Using this service to apply for Access to Work
+        </a>
+        <br>
+         Outcome page if selected 'yes' to /any-other-jobs.
+        </p>
+
+      <p>
+        <a href="service/civil-service-employment" class="govuk-link--no-visited-state">
+       How to get support for your civil service employment
+        </a>
+        <br>
+         Outcome page if selected 'no' to /any-other-jobs.
+        </p>
+
+        <div class="govuk-inset-text">
+         <p>Remploy links and link text to update to <a href="https://atw.maximusuk.co.uk/" class="govuk-link--no-visited-state">Maximus</a>. Changes <mark>highighted</mark>.</p>
+       </div>
+
+  
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

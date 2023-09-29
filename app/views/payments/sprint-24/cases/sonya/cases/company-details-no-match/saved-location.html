@@ -1,0 +1,90 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-24/claim/_CSIBASE.html" %}
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-24/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+{% if 'Yes item amount is the same' in data ['details-item-no-match-ipad']%}
+Replacment invoice: Ipad Pro case
+{% endif %}
+
+{% if 'No item amount is different' in data ['details-item-no-match-ipad']%}
+Amount on invoice is the same: Ipad Pro case
+{% endif %}
+
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- secondary text -->
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h2 class="govuk-heading-m">
+                        Did you save the replacement invoice in SharePoint?
+                      </h2>
+                    </legend>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~cases/company-details-no-match/rejected-invoice-ipad-check" {{ checked("invoice-saved", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="invoice-saved-1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="invoice-saved-2" name="invoice-saved" type="radio" value="No~cases/company-details-no-match/saved-location-other" {{ checked("invoice-saved", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="invoice-saved-2">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

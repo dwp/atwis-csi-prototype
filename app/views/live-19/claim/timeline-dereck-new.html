@@ -1,0 +1,242 @@
+{% set monthAndYear = "November 2022" %}
+
+  {% set cases = [
+    {
+      name: "Dereck Smith",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "3  "  + monthAndYear +  " - 11:57"
+    },
+    {
+
+      name: "Maximillia Erdman",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "3  "  + monthAndYear +  " - 10:22"
+    },
+    {
+      name: "Sonya Corkery",
+      specialism: "Large business",
+      type: "Renewal",
+      date: "2  "  + monthAndYear +  " - 09:23"
+    },
+    {
+      name: "Adaline Mann",
+      specialism: "Pan disability",
+      type: "New application",
+      date: "2  "  + monthAndYear +  " - 16:23"
+    }
+
+    ]
+    %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Case history</h2>
+
+<ol class="dwp-timeline">
+
+  {% if data ['citizen-address-line-1']=='73 Guild Street'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Address updated </h2>
+      <p class="govuk-caption-m" id="timeline-date">72 Guild Street to {{data['citizen-address-line-1']}}</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 11:46am
+      </p>
+  </li>
+  {% endif %}
+
+
+
+
+  {% if 'Personal Independence Payment' in data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:50am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if 'No' in data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:50am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: in progress </h2>
+
+    <p class="govuk-caption-m govuk-!-margin-bottom-1"> Does Searchlight show benefits that could affect this application? {{data['benefits']}}</p>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:49am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['appointee-cya']=='finished'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:48am
+      </p>
+  </li>
+  {% endif %}
+  {% if data['appointee']=='No'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: completed </h2>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:48am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['appointee']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: in progress </h2>
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> {% include  "live-19/cases/searchlight/appointee/content/does-name-here-have-an-appointee.html" %} {{data['appointee']}}</p>
+      {% if data['appointee']=='Yes, I need to add an appointee'%}
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s full name:  {{data['appointee-name']}}</p>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s address:
+          <br>{{data['appointee-address-line-1']}}<br>
+        {{data['appointee-address-line-2']}}{% if data['appointee-address-line-2']%}<br>{% endif %}
+        {{data['appointee-address-town']}}{% if data['appointee-address-town']%}<br>{% endif %}
+        {{data['appointee-address-county']}}{% if data['appointee-address-county']%}<br>{% endif %}
+        {{data['appointee-address-postcode']}}</p>
+
+         <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s contact details:
+           {% for feature in data['appointee-contact'] %}
+             {{ feature }},
+           {% endfor %}  </p>
+
+      {% endif %}
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:47am
+      </p>
+  </li>
+  {% endif %}
+
+
+
+  {% if data['personal-details-cya']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: completed </h2>
+      <p class="govuk-caption-m" id="timeline-date">
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:46am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['Searchligh']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: in progress </h2>
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is there a record for Dereck Smith in Searchlight? {{data['Searchligh']}}</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is Dereck Smith’s National Insurance number in Searchlight? {{data['found-nino']}}</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Add Dereck Smith’s National Insurance number from Searchlight: {{data['national-insurance-number']| upper }}</p>
+      <!--
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">You need to contact Dereck Smith to check their name, date of birth or address in Searchlight. This will be added to your 'Contact Dereck Smith' task.</p>
+      <p class="govuk-caption-m" id="timeline-date"> -->
+    <!-- <a>  Link to note</a> -->
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 July 2022, 9:45am
+      </p>
+  </li>
+  {% endif %}
+
+<!-- {% if data['hjek']%}
+<li class="dwp-timeline__entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Heading </h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">Tasks</p>
+
+    <p class="govuk-caption-m" id="timeline-date">
+10 January 2022
+    </p>
+</li>
+{% endif %} -->
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application allocated </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Al O'Cator to John Goldsmith</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+4 July 2022, 1:51pm
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application received </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"></p>
+
+      <p class="govuk-caption-m">
+
+  2 June 2022, 11:57am
+      </p>
+  </li>
+
+</ol>
+
+
+</div>
+</div>
+
+
+  <script>
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  const d = new Date();
+  let month = months[d.getMonth()];
+  document.getElementById("day").innerHTML = d.getDate();
+  document.getElementById("month").innerHTML = month;
+  document.getElementById("year").innerHTML = d.getFullYear();
+  </script>
+<!-- <ol class="dwp-timeline">
+{% macro timeline(title="", allocation="", stage="", date="1 "  + monthAndYear +  " at 4:30pm" ) %}
+        <li class="dwp-timeline__entry">
+          <h3  style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">{{title}}  </h3>
+
+          <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">{% if stage == "payment" %}Rich Silver{% elif stage == "allocator" %}Al O'Cator{% elif stage == "unallocated"%}{% else %}John Goldsmith{%endif %} {% if allocation %}to {{allocation}}{% endif %}</span>
+<span class="dwp-timeline__date">{{date}}</span>
+          </p>
+</li>
+{% endmacro %} -->

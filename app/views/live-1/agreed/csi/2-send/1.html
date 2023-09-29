@@ -1,0 +1,139 @@
+{% if appointee %}{% set appointeeLink = "-appointee" %}{% else %}{% set appointeeLink = '' %}{% endif %}
+{% set link = "2"  %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link + appointeeLink }, {id: "no", page: "../index"}] %}
+
+{% set title =  "Send a confirmation email" %}
+
+{% block csi %}
+
+
+{% if appointee %}
+
+{% set appointeeName = data['appointee-name'] | default(appointeeDetails.name) | safe   %}
+{% set appointeeText = [
+  {
+    text: "Appointee name"
+  },
+  {
+    text: appointeeName
+  }
+]
+%}
+
+{% else %}
+{% set appointeeText = '' %}
+{% endif %}
+
+{% if appointee %}
+<p>Send an email to <strong>{{data['appointee-name'] | default(appointeeDetails.name) | safe}}</strong> to confirm
+  that  <strong>{{data['csi-info'][3]['firstname']}} {{data['csi-info'][3]['surname']}}</strong>’s application has been approved.</p>
+{% else %}
+<p>Send an email to <strong>{{data['csi-info'][3]['firstname']}} {{data['csi-info'][3]['surname']}}</strong> to confirm
+  that their application has been approved.</p>
+{% endif %}
+  {{ govukTable({
+    caption: "",
+    firstCellIsHeader: true,
+    head: [
+    {
+      text: "",
+      classes: 'govuk-!-width-one-third'
+    },
+    {
+      text: "",
+      classes: 'govuk-!-width-two-thirds'
+    }
+  ],
+    rows: [
+
+appointeeText  ,
+
+      [
+        {
+          text: "Applicant name"
+        },
+        {
+          text: data['csi-info'][3]['firstname'] +  " " +  data['csi-info'][3]['surname']
+        }
+      ],
+      [
+        {
+          text: "Support cost"
+        },
+        {
+          text: data['csi-info'][3]['support-worker-pay'] | toMoney | safe
+        }
+      ],
+      [
+        {
+          text: "Interview date"
+        },
+        {
+          text:( data['csi-info'][3]['interview-date-day'] + " " + data['csi-info'][3]['interview-date-month']
+          | toMonth ) | safe
+        }
+      ],
+      [
+        {
+          text: "Company name"
+        },
+        {
+          text: data['csi-info'][3]['company-name']
+        }
+      ],
+      [
+        {
+          text: "Reference"
+        },
+        {
+          text: "ATW34593DE"
+        }
+      ]
+    ]
+  }) }}
+
+
+  <p class="govuk-body">Include in the email that:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>they can confirm their booking for an interpreter or support worker</li>
+    <li>we will contact the employer after the interview</li>
+    <li>they should contact us if anything changes</li>
+  </ul>
+
+
+  {{ govukButton({
+    text: "Open new email",
+    classes: "govuk-button--secondary",
+    href: "mailto:" + data['csi-info'][3]['email-for-user-research']
+  }) }}
+
+
+<br>
+</br>
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+     name: "send",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

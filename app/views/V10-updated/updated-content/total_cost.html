@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="support-for-me/your-name">
+
+      <!--<h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+          Your support worker
+      </h1>-->
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+          Tell us how much the support worker will cost
+      </h1>
+
+    <div class="govuk-form-group">
+      <span id="national-insurance-number-hint" class="govuk-hint">
+        You must have a qoute from them before you apply and it must incldue the total costs. Include agency fees,
+        support worker travel and VAT if you need to pay for those too.
+      </span>
+      <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="number" aria-describedby="approximate-cost-hint">
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- customer_contact -->
+
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('cost', function(event) {
+          event.preventDefault();
+          var cost = document.getElementById('cost').value;
+          if (cost > 1) {
+            window.location = 'OW_MUCH';
+          } else {
+            window.location = 'AYE_ALREET';
+          }
+        })
+      </script>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,943 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-33/claim/_CSIBASE-no-footer.html" %}
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+
+{% if case == 'paul' %}
+<form action="/payments/sprint-33/cases/paul/claim-paul#your-tasks" method="post" novalidate>
+{% else %}
+<form action="/payments/sprint-33/cases/claim#your-tasks" method="post" novalidate>
+{% endif %}
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Check claim matches grant award
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<br>
+{% if 'taxi' in data['claim-item'] %}
+{% else %}
+<h2 class="govuk-heading-m">Grant award details</h2>
+{% endif %}
+
+{% if 'taxi' in data['claim-item'] %}
+
+<h2 class="govuk-heading-m">Details entered from claim form</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Claim start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['ttw-claim-start-day']}}
+
+            {% if (data['ttw-claim-start-month'] =='01') or (data['ttw-claim-start-month'] =='1') %} January {% endif%}
+            {% if (data['ttw-claim-start-month'] =='02') or (data['ttw-claim-start-month'] =='2') %} February  {% endif%}
+            {% if (data['ttw-claim-start-month'] =='03') or (data['ttw-claim-start-month'] =='3') %} March {% endif%}
+            {% if (data['ttw-claim-start-month'] =='04') or (data['ttw-claim-start-month'] =='4') %} June {% endif%}
+            {% if (data['ttw-claim-start-month'] =='05') or (data['ttw-claim-start-month'] =='5') %} May {% endif%}
+            {% if (data['ttw-claim-start-month'] =='06') or (data['ttw-claim-start-month'] =='6') %} June {% endif%}
+            {% if (data['ttw-claim-start-month'] =='07') or (data['ttw-claim-start-month'] =='7') %} July {% endif%}
+            {% if (data['ttw-claim-start-month'] =='08') or (data['ttw-claim-start-month'] =='8') %} August {% endif%}
+            {% if (data['ttw-claim-start-month'] =='09') or (data['ttw-claim-start-month'] =='9') %} September {% endif%}
+            {% if data['ttw-claim-start-month'] =='10' %} October {% endif%}
+            {% if data['ttw-claim-start-month'] =='11'%} November {% endif%}
+            {% if data['ttw-claim-start-month'] =='12' %} December {% endif%}
+
+            {{data['ttw-claim-start-year']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Claim end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['ttw-claim-end-day']}}
+
+            {% if (data['ttw-claim-end-month'] =='01') or (data['ttw-claim-end-month'] =='1') %} January {% endif%}
+            {% if (data['ttw-claim-end-month'] =='02') or (data['ttw-claim-end-month'] =='2') %} February  {% endif%}
+            {% if (data['ttw-claim-end-month'] =='03') or (data['ttw-claim-end-month'] =='3') %} March {% endif%}
+            {% if (data['ttw-claim-end-month'] =='04') or (data['ttw-claim-end-month'] =='4') %} April {% endif%}
+            {% if (data['ttw-claim-end-month'] =='05') or (data['ttw-claim-end-month'] =='5') %} May {% endif%}
+            {% if (data['ttw-claim-end-month'] =='06') or (data['ttw-claim-end-month'] =='6') %} June {% endif%}
+            {% if (data['ttw-claim-end-month'] =='07') or (data['ttw-claim-end-month'] =='7') %} July {% endif%}
+            {% if (data['ttw-claim-end-month'] =='08') or (data['ttw-claim-end-month'] =='8') %} August {% endif%}
+            {% if (data['ttw-claim-end-month'] =='09') or (data['ttw-claim-end-month'] =='9') %} September {% endif%}
+            {% if data['ttw-claim-end-month'] =='10' %} October {% endif%}
+            {% if data['ttw-claim-end-month'] =='11'%} November {% endif%}
+            {% if data['ttw-claim-end-month'] =='12' %} December {% endif%}
+
+            {{data['ttw-claim-end-year']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Average journeys a week claimed
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Allowance per journey?
+        </dt>
+        <dd class="govuk-summary-list__value">
+£18.50 %
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div> -->
+
+</dl>
+
+<br>
+
+<h2 class="govuk-heading-m">Grant award details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Grant start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+1 February 2023
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Grant end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+31 January 2025
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Travel to work
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Taxi
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+  Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+14 Herst street, Lincoln, LN2 3BB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+  Work address
+          </dt>
+          <dd class="govuk-summary-list__value">
+  Unit 18b Riding industrial estate, Lincoln, LN14 6RN
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Journeys a week
+        </dt>
+        <dd class="govuk-summary-list__value">
+2
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+amount before deductions
+        </dt>
+        <dd class="govuk-summary-list__value">
+£20.50
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Public transport deductions
+        </dt>
+        <dd class="govuk-summary-list__value">
+£2.00
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div> -->
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award for each journey
+        </dt>
+        <dd class="govuk-summary-list__value">
+£18.50
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+
+</dl>
+
+{% endif %}
+
+
+
+{% if case == 'dereck' %}
+<!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Jaws screen reader
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£499
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+
+{% if 'Jaws screen reader' in data['claim-item'] %}
+<!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Jaws screen reader
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£499
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+{% if 'ZoomText Professional License' in data['claim-item'] %}
+<!-- <h2 class="govuk-heading-m">Grant award details second item</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Zoom text professional license
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£530.64
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+{% if 'Ipad Pro case' in data['claim-item'] %}
+<!-- <h2 class="govuk-heading-m">Grant award details third item</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Ipad Pro case
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£80.49
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+{% if 'Ergonomic Keyboard' in data['claim-item'] %}
+<!-- <h2 class="govuk-heading-m">   Grant award details forth item</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Ergonomic keyboard
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£110
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+{% if 'Ergonomic Keyboard home' in data['claim-item'] %}
+<!-- <h2 class="govuk-heading-m">   Grant award details forth item</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Ergonomic keyboard
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£110
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+{% if 'Office chair' in data['claim-item'] %}
+<!-- <h2 class="govuk-heading-m">   Grant award details fith item</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Office chair
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£280
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+{% if 'Ergonomic mouse' in data['claim-item'] %}
+<!-- <h2 class="govuk-heading-m">   Grant award details sixth item</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Ergonomic mouse
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£40.22
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+{% if case == 'dereck' %}
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Total of items selected
+</dt>
+<dd class="govuk-summary-list__value">
+£499
+</div>
+{% endif %}
+
+{% if case == 'sonya' %}
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Total of items selected
+</dt>
+<dd class="govuk-summary-list__value">
+£1260.35
+</div>
+{% endif %}
+
+{% if case == 'james' %}
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Total of items selected
+</dt>
+<dd class="govuk-summary-list__value">
+£1249.64
+</div>
+{% endif %}
+
+{% if case == 'nina' %}
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Total of items selected
+</dt>
+<dd class="govuk-summary-list__value">
+£300.49
+<!-- £1249.64 -->
+</div>
+{% endif %}
+
+{% if case == 'paul' %}
+{% endif %}
+
+</div>
+</div>
+
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  </dd>
+  </div>
+</dl>
+
+
+                <br>
+
+
+
+
+
+
+
+
+  <!-- <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-yes" name="grant-match-claim-yes" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-1">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-no" name="grant-match-claim-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-2">
+        No
+      </label> -->
+
+
+
+
+
+
+{% if case == 'paul' %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-fieldset__heading">
+              Does the claim match the grant award?
+            </h1>
+          </legend>
+          <div id="countries-hint" class="govuk-hint">
+            Check the amounts claimed, number of journeys and addresses.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grant-matches-claim-ttw-1" name="ttw-match" type="checkbox" value="amounts" {{ checked("ttw-match", "amounts") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-ttw-1">
+                Amounts claimed do not match
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grant-matches-claim-ttw-2" name="ttw-match" type="checkbox" value="journeys" {{ checked("ttw-match", "journeys") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-ttw-2">
+                Number of journeys do not match
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grant-matches-claim-ttw-3" name="ttw-match" type="checkbox" value="addresses" {{ checked("ttw-match", "addresses") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-ttw-3">
+                Journey addresses do not match
+              </label>
+            </div>
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grant-matches-claim-ttw-5" name="ttw-match" type="checkbox" value="Yes" data-behaviour="exclusive" {{ checked("ttw-match", "Yes") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-ttw-5">
+                Yes, the claim matches the grant award
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+{{ checked("grant-matches-claim", "Yes") }}
+
+
+      {% else %}
+
+
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 class="govuk-heading-m">
+
+        Do the amounts on the claim form and invoices match the grant award?
+        </h2>
+
+        <!-- HINT TEXT -->
+        <div id="countries-hint" class="govuk-hint">
+         <!-- Check the amounts claimed, number of jourenys and addresses. -->
+        </div>
+
+<!-- CLAIM FORM LINK -->
+
+
+{% if case == 'sonya' %}
+          <p class="govuk-body">   <a class="govuk-link" href="/public/images/S5-Sonya-Corkey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
+{% endif %}
+{% if case == 'james' %}
+          <p class="govuk-body">   <a class="govuk-link" href="/public/images/S6-James-McCarthey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
+{% endif %}
+{% if case == 'nina' %}
+          <p class="govuk-body">   <a class="govuk-link" href="/public/images/S6-Nina-West-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
+{% endif %}
+
+
+
+
+
+
+
+
+<!-- RADIO BUTTONS -->
+
+      </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+{% if case == 'dereck' %}
+              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~dereck/claim-dereck#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+{% endif %}
+
+{% if case == 'sonya' %}
+              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+{% endif %}
+{% if case == 'james' %}
+              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~jamesm/claim-jamesm#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+{% endif %}
+{% if case == 'nina' %}
+              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~nina/claim-nina#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+{% endif %}
+
+
+<label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
+  Yes
+</label>
+</div>
+
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "No") }}>
+<label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+  No
+</label>
+</div>
+
+
+            {% endif %}
+
+
+
+
+
+
+            <!-- <div class="govuk-radios__item">
+{% if 'Jaws screen reader' and 'Ergonomic mouse' in data['claim-item'] %}
+              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="total-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "total-doesnt-match") }}>
+{% else %}
+              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="total-doesnt-match~sonya/cases/review-claim-no-match/claim-item-no-match" {{ checked("grant-matches-claim", "total-doesnt-match") }}>
+{% endif %}
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+                Total amount does not match
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+{% if 'Jaws screen reader' and 'Ergonomic mouse' in data['claim-item'] %}
+              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "element-doesnt-match") }}>
+{% else %}
+              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/element-type-no-match" {{ checked("grant-matches-claim", "element-doesnt-match") }}>
+{% endif %}
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-3">
+                Element does not match
+              </label>
+            </div>
+
+            <div class="govuk-radios__divider">or</div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-4" name="grant-matches-claim" type="radio" value="element-doesnt-match~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "both-doesnt-match") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-4">
+                Both amount and element do not match
+              </label>
+            </div> -->
+
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

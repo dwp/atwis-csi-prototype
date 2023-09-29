@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+          <h1 class="govuk-heading-l">Please give upto five examples of things you need to do for your job and how your disability
+                                        makes this harder</h1>
+
+              <form id="form" method="post" action="gathering-info-added-1">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="event-name">
+                      What I need to do
+                    </label>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="event-name">
+                      How my disability makes this harder
+                    </label>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="event-name">
+                      What I'm currently doing to deal with this
+                    </label>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="event-name">
+                      How I could be helped to do this better (if known)
+                    </label>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                  </div>
+
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                      Add another
+                  </button>
+
+                  <button class="govuk-button" data-module="govuk-button">
+                      Continue
+                  </button>
+
+             </form>
+        </div>
+      </div>
+    </main>
+	</div>
+
+	{% endblock %}

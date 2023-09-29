@@ -1,0 +1,173 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-26/claim/_CSIBASE.html" %}
+
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/cases/claim/task-list" method="post" novalidate>
+<!-- <form action="amount-high-no-match" method="post" novalidate> -->
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Jaws screen reader: claim does not match grant
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<br>
+<h2 class="govuk-heading-m">Grant award details</h2>
+
+
+<!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Jaws screen reader
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£499
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+
+
+                <br>
+
+
+
+
+
+
+
+
+  <!-- <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-yes" name="grant-match-claim-yes" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-1">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-no" name="grant-match-claim-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-2">
+        No
+      </label> -->
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h2 class="govuk-heading-m">
+                    What does not match the grant award?
+                  </h2>
+                </legend>
+                <!-- <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-1" name="claim-item-no-match-jaws" type="radio" value="Element type" {{ checked("claim-item-no-match-jaws", "Element type") }}>
+                    <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-1">
+                      Element type
+                    </label>
+                  </div> -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-2" name="claim-item-no-match-jaws" type="radio" value="Amount claimed is higher than grant award~/payments/sprint-26/cases/sonya/cases/review-claim-no-match/amount-high-no-match" {{ checked("claim-item-no-match-jaws", "Amount claimed is higher than grant award") }}>
+                    <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-2">
+                      Amount claimed is higher than grant award
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-3" name="claim-item-no-match-jaws" type="radio" value="Amount claimed is lower than grant award~/payments/sprint-26/cases/sonya/cases/review-claim-no-match/amount-low-no-match" {{ checked("claim-item-no-match-jaws", "Amount claimed is lower than grant award") }}>
+                    <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-3">
+                      Amount claimed is lower than grant award
+                    </label>
+                  </div>
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="claim-item-no-match-jaws-4" name="claim-item-no-match-jaws" type="radio" value="Claim matches grant award for this item~/payments/sprint-26/cases/sonya/claim-sonya#your-tasks" {{ checked("claim-item-no-match-jaws", "Claim matches grant award for this item") }}>
+                    <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-4">
+                      Claim matches grant award for this item
+                    </label>
+          </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

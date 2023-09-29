@@ -1,0 +1,21 @@
+{% set  hideForm = true %}
+{% set hideBack = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title = "Tasks complete" %}
+
+
+{% block csi %}
+
+    <P>All tasks have been completed and information saved.
+    The case will now be sent to the payments team.</p>
+
+    <br>
+
+{{ govukButton({
+      href: "/" + folder + "/" + subfolder + "/your-cases-empty",
+          text: "Return to your cases"
+        }) }}
+
+
+{% endblock %}

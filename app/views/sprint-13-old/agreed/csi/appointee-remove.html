@@ -1,0 +1,24 @@
+{% set link = "appointee-router" %}
+{% set appointeeAddLink  = "appointee-details-change" %}
+{% set customNext = "Confirm" %}
+{% set return = "claim" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Confirm that you want to remove the appointee" %}
+
+
+{% block csi %}
+
+
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "appointee-details-changed",
+  name: "appointee-details-changed",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+
+{% endblock %}

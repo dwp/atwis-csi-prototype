@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-4668 index
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Apply prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to apply index',
+    href: '/apply/index'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-4668: updated accessibility statement for 'new apply'</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+     <p>
+        <a href="accessibility-statement" class="govuk-link--no-visited-state">
+       Accessibility statement for AtW 'new apply' go-live<br><strong class="govuk-tag govuk-tag--blue">
+         Ready for dev
+        </strong>
+       </a>
+
+       <p>Updated content to:</p>
+       <ul class="govuk-list govuk-list--bullet"> 
+        <li>align with <a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/publishing-information-about-your-services-accessibility#accessibility-statement-for-service-name">service manual accessibility statement template</a> </li>
+        <li>correct some links and link text</li>
+        <li>update contact information to include Video Relay (match contact content in rest of service)</li>
+        <li>update service tested and statement reviewed dates</li>
+      </ul>
+      
+      
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% if case == 'dereck' %}
+dereck
+{% endif %}
+
+
+
+{% if case == 'dereck' %}
+<h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">2. </span> Review invoice
+</h2>
+
+{% endif %}
+
+
+BOOLIAN binary output statment, derived form George Boul matches
+Use for radio buttons
+
+{% if data ['sop-find-details-amend'] == 'Yes' %}
+{% endif %}
+
+
+
+
+
+
+{% if case == "sonya"%}
+
+<h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">3. </span>
+  Review payment
+</h2>
+
+
+{% endif %}
+
+
+{% if case == 'dereck' %}
+{% include  "./task-list.html" %}
+{% endif %}
+
+
+{% if case == 'dereck' %}
+{% include  "payments/sprint-24/cases/dereck/task-list/task-list-dereck.html" %}
+{% endif %}
+
+{% if case == 'sonya' %}
+{% include  "payments/sprint-24/cases/sonya/task-list/task-list-sonya.html" %}
+{% endif %}
+
+
+
+
+
+
+{% if case %}
+              {% for case in data['other-cases'] %}
+                  {{ case.name }}
+              {% endfor %}
+{% else %}
+              {% for case in data['priority-cases'] %}
+                  {{ case.name }}
+              {% endfor %}
+
+{% endif %}
+
+
+
+
+
+
+{% if not data['claims']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (3)
+          </a>
+        </li>
+{% endif %}
+
+
+{% if data['claims'] and not data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (4)
+          </a>
+        </li>
+{% endif %}
+
+
+{% if data['sop-supplier-number'] %}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (3)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#waiting">
+            Waiting for approval (1)
+          </a>
+        </li>
+
+{% endif %}
+
+
+
+{% if data['claims'] and not data ['sop-supplier-number']%}
+<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+  <a class="govuk-tabs__tab" href="#claims">
+    Claims (4)
+  </a>
+</li>
+{% endif %}
+
+{% if not data['claims'] and not data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (3)
+          </a>
+        </li>
+{% endif %}
+
+{% if data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#waiting">
+            Waiting for approval (1)
+          </a>
+        </li>
+{% endif %}
+
+{% if not data['claims'] and data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#waiting">
+            Waiting for approval (1)
+          </a>
+        </li>
+
+{% endif %}

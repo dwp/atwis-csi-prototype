@@ -1,0 +1,27 @@
+{% extends folder + "/_BASE.html" %}
+
+{% block pageTitle %}
+  What is your mobile phone number
+{% endblock %}
+
+{% block service %}
+
+
+              <form id="form" method="post" action="check-your-answers">
+
+                <h1 class="govuk-heading-xl">What is your mobile phone number?</h1>
+
+                <div class="govuk-form-group">
+                        <label class="govuk-label" for="text-message-number">
+                          Mobile phone number
+                        </label>
+                        <span id="text-message-number-hint" class="govuk-hint"></span>
+                        <input class="govuk-input" id="text-message-number" name="text-message-number" type="number" type="number" pattern="[0-9]* aria-describedby="text-message-number-hint">
+                 </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+
+	{% endblock %}

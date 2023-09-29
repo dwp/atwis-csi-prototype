@@ -1,0 +1,59 @@
+<h1 class="govuk-heading-l">Documents</h1>
+
+
+
+
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <!-- <th scope="col" class="govuk-table__header">Document type</th> -->
+          <th scope="col" class="govuk-table__header">Docment type</th>
+          <!-- <th scope="col" class="govuk-table__header">Document ID</th> -->
+          <th scope="col" class="govuk-table__header">Date received</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+
+{% if case == 'sonya' %}
+
+          <tr class="govuk-table__row">
+            <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
+            <td class="govuk-table__cell">Invoice</td>
+            <!-- <td class="govuk-table__cell">A4443651F-A909-02CA-7EA6<br>D67AB8F0BEBE</td> -->
+            <td class="govuk-table__cell">2 April 2022</td>
+            <td class="govuk-table__cell"><a href="/public/images/S1-Dereck-Smith-Invoice-Payments.pdf" target="_blank" >View invoice</a></td>
+            <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
+            <td class="govuk-table__cell">Invoice</td>
+            <!-- <td class="govuk-table__cell">A4443651F-A909-02CA-7EA6<br>D67AB8F0BEBE</td> -->
+            <td class="govuk-table__cell">2 April 2022</td>
+            <td class="govuk-table__cell"><a href="/public/images/S3-Sonya-Corkey-Invoice-2-Payments.pdf" target="_blank" >View invoice</a></td>
+            <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
+          </tr>
+{% endif %}
+
+{% if case == 'dereck' %}
+
+          <tr class="govuk-table__row">
+            <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
+            <td class="govuk-table__cell">Invoice</td>
+            <!-- <td class="govuk-table__cell">A4443651F-A909-02CA-7EA6<br>D67AB8F0BEBE</td> -->
+            <td class="govuk-table__cell">2 April 2022</td>
+            <td class="govuk-table__cell"><a href="/public/images/S1-Dereck-Smith-Invoice-Payments.pdf" target="_blank" >View invoice</a></td>
+            <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
+          </tr>
+{% endif %}
+
+
+    </tbody>
+  </table>
+
+<br>
+  <!-- <p class="govuk-body">If you need to find these documents on DRS, you can search using the envelope ID,
+  <br>Envelope ID: 22061721100444010</p> -->

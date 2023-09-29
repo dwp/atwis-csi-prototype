@@ -1,0 +1,303 @@
+
+{% set link = "3"  %}
+{% if appointee %}{% set appointeeLink = "-appointee" %}{% else %}{% set appointeeLink = '' %}{% endif %}
+
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set redirect = [{id : "yes", page: link + appointeeLink }, {id: "no", page: "../index"}] %}
+{% set title =  "Fill out the claim form" %}
+
+
+{% block csi %}
+
+
+<p>Download the form <strong>ATW02 CSI</strong> and copy and paste the following information into it.</p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Get the claim form",
+  classes: "govuk-button--secondary",
+  attributes:{'target':'_blank', 'rel' : 'noopener' },
+  href: "/" + folder + "/" + subfolder + "/intranet/letters"
+}) }}
+
+<br>
+</br>
+<h2 class="govuk-heading-m">Page 1: Applicant details</h2>
+
+     {{ govukSummaryList({
+       classes: 'govuk-!-margin-bottom-9',
+       rows: [
+         {
+           key: {
+             text: "Surname"
+           },
+           value: {
+             text: data['csi-info'][1]['surname']
+           }
+         },
+         {
+           key: {
+             text: "First name"
+           },
+           value: {
+             text: data['csi-info'][1]['firstname']
+           }
+         },
+
+         {
+           key: {
+             text: "Date of birth"
+           },
+           value: {
+             text: (data['csi-info'][1]['dob-day'] + " " +  data['csi-info'][1]['dob-month'] | toMonth + " " +  data['csi-info'][1]['dob-year']) | safe
+
+           }
+         },
+         {
+           key: {
+             text: "Condition"
+           },
+           value: {
+             text: "Deaf"
+
+           }
+         },
+         {
+           key: {
+             text: "Home address"
+           },
+           value: {
+             html:  (data['csi-info'][1]['address-line-one'] +  "<br>" + data['csi-info'][1]['address-town']+  "<br>" + data['csi-info'][1]['address-county'] +  "<br>" + data['csi-info'][1]['address-postcode']) | safe
+
+
+
+
+           }
+         },
+         {
+           key: {
+             text: "Telephone"
+           },
+           value: {
+             text: data['csi-info'][1]['contact-by-phone']  | safe
+           }
+         },
+         {
+           key: {
+             text: "Email address"
+           },
+           value: {
+             text: data['csi-info'][1]['contact-by-email'] | safe
+
+           }
+         }
+       ]
+     }) }}
+
+     <h2 class="govuk-heading-m">Page 2: Details of interview</h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+              {
+                key: {
+                  text: "Name of employer"
+                },
+                value: {
+                  text: data['csi-info'][1]['company-name'] | safe
+                }
+              },
+              {
+                key: {
+                  text: "Employer address"
+                },
+                value: {
+                  text: (data['csi-info'][1]['company-address-line-one'] +  "<br>" + data['csi-info'][1]['company-address-town']+  "<br>" + data['csi-info'][1]['company-address-county'] +  "<br>" + data['csi-info'][1]['company-address-postcode']) | safe
+                }
+              },
+
+              {
+                key: {
+                  text: "Telephone number"
+                },
+                value: {
+                  text: data['csi-info'][1]['company-phone']
+
+                }
+              },
+              {
+                key: {
+                  text: "Contact name"
+                },
+                value: {
+                  text: data['csi-info'][1]['interviewer-name']
+
+                }
+              },
+              {
+                key: {
+                  text: "Date of interview"
+                },
+                value: {
+                  text: (data['csi-info'][1]['interview-date-day'] + " " +  data['csi-info'][1]['interview-date-month'] | toMonth + " " +  data['csi-info'][1]['interview-date-year']) | safe
+
+
+
+                }
+              }
+            ]
+          }) }}
+
+          <h2 class="govuk-heading-m">Page 3</h2>
+
+<p class="govuk-body">Nothing</p>
+
+<h2 class="govuk-heading-m">Page 4: Approval</h2>
+
+     {{ govukSummaryList({
+       classes: 'govuk-!-margin-bottom-9',
+       rows: [
+         {
+           key: {
+             text: "CSI cost"
+           },
+           value: {
+             text: data['csi-info'][1]['support-worker-pay'] | safe
+           }
+         },
+         {
+           key: {
+             text: "Adviser name"
+           },
+           value: {
+             text: "John Smith"
+           }
+         },
+
+         {
+           key: {
+             text: "Today's date"
+           },
+           value: {
+             text: "1 November 2019"
+
+           }
+         },
+         {
+           key: {
+             text: "Adviser telephone number"
+           },
+           value: {
+             text: "01273 800 900"
+
+           }
+         },
+         {
+           key: {
+             text: "Address"
+           },
+           value: {
+             html: "Access to Work<br>
+             Mail Opening Unit<br>
+             Wolverhampton<br>
+             WV1 1VW"
+
+
+           }
+         },
+         {
+           key: {
+             text: "Textphone number"
+           },
+           value: {
+             text: "01273 800 900"
+
+
+           }
+         }
+       ]
+     }) }}
+
+     <h2 class="govuk-heading-m">Pages 5-7</h2>
+
+   <p class="govuk-body">Nothing</p>
+
+
+   <h2 class="govuk-heading-m">Page 8: Applicant declaration</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Adviser name"
+              },
+              value: {
+                text: "John Smith"
+              }
+            },
+            {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: "Access to Work<br>
+                Mail Opening Unit<br>
+                Wolverhampton<br>
+                WV1 1VW"
+
+
+              }
+            },
+            {
+              key: {
+                text: "Adviser telephone number"
+              },
+              value: {
+                text: "01273 800 900"
+
+              }
+            },
+
+            {
+              key: {
+                text: "Today's date"
+              },
+              value: {
+                text: "1 November 2019"
+
+              }
+            }
+          ]
+        }) }}
+
+
+
+{{ govukRadios({
+      classes: "govuk-radios--inline",
+       name: "copy",
+       fieldset: {
+         legend: {
+           text: "Have you copied this information into the claim form?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+          id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="job/paid_work">
+
+    <!--<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Personal details
+    </h1>-->
+
+    <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        Do you need communication support because you are Deaf or hard of hearing?
+    </h2>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- job_company_name -->
+
+    </form>
+
+    <script>
+      document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (document.getElementById('terminal-1').checked) {
+          window.location = '../job/paid_work';
+        } else {
+          window.location = '../customer/condition';
+        }
+      })
+    </script>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

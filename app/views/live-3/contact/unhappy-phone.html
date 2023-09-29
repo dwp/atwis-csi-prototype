@@ -1,0 +1,79 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-3/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+              <h1 class="govuk-heading-xl">Telephone call made</h1>
+
+          <form action="unhappy-email-2" method="post" novalidate="">
+
+
+
+
+
+
+<p>This has been saved in the case history.</p>
+
+
+<p>If Dereck Smith calls you back, you can update your answers in the <strong>your tasks</strong> tab for:</p>
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+  Information to check with the applicant
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Application is not eligible.
+
+    </p>
+    <p>Summary of what make the case not eligible...</P>
+  </div>
+</div>
+     <br>
+  <p>Then you can then complete the rest of the tasks.</p>
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+             Return to your tasks
+          </button>
+
+
+          </form>
+
+
+          <p><a href="/live-3/your-cases" class="govuk-link govuk-link--no-visited-state">Return to your cases to work on another case</a></p>
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

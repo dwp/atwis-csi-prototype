@@ -1,0 +1,12 @@
+.view-invotra-configuration-tracker .views-exposed-widgets .views-widget-filter-secondary {
+	width: 100%;
+}
+.view-invotra-configuration-tracker .views-exposed-widgets .views-widget {
+	max-width: 250px;
+}
+.view-invotra-configuration-tracker .views-exposed-widgets .views-widget input {
+	max-width: 250px;
+}
+.view-invotra-configuration-tracker .views-exposed-widgets .form-submit {
+	margin-top: 2em;
+}

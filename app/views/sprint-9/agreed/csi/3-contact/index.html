@@ -1,0 +1,84 @@
+{% set link = "../4-confirm/1" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "email", page: "email/1" }, {id: "phone", page: "phone/1"}, {id: "yes", page: link } ] %}
+
+{% set title =  "Confirm with the employer" %}
+
+{% block csi %}
+
+
+{% if (data['employer-phone'] == 'no') or (data['sent-email'] == "yes") %}
+<ol class="dwp-timeline">
+
+
+  {% if data['employer-phone'] == 'no' %}
+            <li class="dwp-timeline__entry">
+              <h3 class="govuk-heading-s dwp-timeline__title">Attempted to contact employer</h3>
+              <p class="dwp-timeline__info">
+                <span class="dwp-timeline__date">31 October 2019 at 12:22pm</span>
+              </p
+            </li>
+  {% endif %}
+
+  {% if data['sent-email'] == "yes" %}
+            <li class="dwp-timeline__entry">
+              <h3 class="govuk-heading-s dwp-timeline__title">Email sent to employer</h3>
+              <p class="dwp-timeline__info">
+                <span class="dwp-timeline__date">31 October 2019 at 12:22pm</span>
+              </p
+            </li>
+
+  {% endif %}
+</ol>
+
+
+{% if data['employer-note'] %}
+
+{{ govukErrorSummary({
+  titleText: "Notes from attempt to contact employer",
+  classes: "not-error",
+  errorList: [
+    {
+      text: data['employer-note'] | safe
+    }
+  ]
+}) }}
+
+{% endif %}
+
+
+
+
+{% endif %}
+
+{{ govukRadios({
+       idPrefix: "employer",
+       name: "employer",
+       fieldset: {
+         legend: {
+           text: "What do you want to do?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "email",
+           value: "email",
+           text: "Email the employer"
+         },
+         {
+           id: "phone",
+           value: "phone",
+           text: "Telephone the employer"
+         },
+         {
+           id: "yes",
+           value: "yes",
+           text: "Record a response from the employer"
+         }
+       ]
+     }) }}
+
+{% endblock %}

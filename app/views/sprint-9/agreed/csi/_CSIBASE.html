@@ -1,0 +1,278 @@
+{% extends folder + "/" + subfolder + "/_BASE.html" %}
+{% block content %}
+
+
+{% set appointeeDetails = {
+  name: "Mavis Brown",
+  contact:  ["phone" ] ,
+  address: "28 Cathedral Drive<br>Coventry<br>CV3 6JH",
+  telephone: "02475 554 223"
+
+} %}
+
+{% set count = 0 %}
+
+{% if (data['personal'] == 'no' or data['company'] == 'no' or data['interview'] == "no") and not (phase == "interview")  %}
+
+{% set array = [data['personal'], data['company'], data['interview'] ] %}
+
+
+{% for i in array %}
+  {% if i == "no" %}
+  {% set count = count + 1 %}
+  {% endif %}
+{% endfor %}
+
+{% endif  %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper govuk-!-padding-top-0">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <!--    <span class="govuk-caption-l">ZSQYR5</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ data['your-cases'][0]['name'] | safe }}
+              </h1>
+
+<br>  -->
+
+
+
+        <nav class="navigation-secondary">
+                <ul>
+                  <li>
+                    <a href="{% if not (page == 'task-list') %}index{% if phase %}-{{phase}}{% endif %}{% else %}" class="active" aria-current="section{% endif %}">Tasks to complete</a>
+                  </li>
+{% if not payments %}
+                  <li>
+                    <a href="{% if not (page == 'claim') %}claim{% if phase %}-{{phase}}{% endif %}{% else %}" class="active" aria-current="section{% endif %}">Case details</a>
+                  </li>
+{% endif %}
+<!--                  <li>
+                    <a href="#">Interview</a>
+                  </li> -->
+
+<!--
+                  <li>
+                    <a href="{% if not (page == 'evidence') %}evidence{% else %}#" class="active" aria-current="section{% endif %}">Evidence</a>
+                  </li>
+-->
+                </ul>
+              </nav>
+
+
+                    {% block csi %}
+
+                    {% endblock %}
+
+
+      </div>
+
+
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Case history</h2>
+
+        {% if (phase == "interview") or (phase == "waiting")  or (data['claim'] =="yes") %}
+                 <p><a  href="send/2">Print and send claim form again</a></p>
+  <!--              {{ govukButton({
+                  text: "Print and send claim form again",
+                  classes: "govuk-button--secondary",
+                  href: "send/2"
+                }) }}
+-->
+        {% endif %}
+
+
+        <ol class="dwp-timeline">
+{% macro timeline(title="", date="1 November 2019 at 4:30pm" ) %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">{{title}}</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">{{date}}</span>
+            </p>
+</li>
+{% endmacro %}
+
+
+{% if payments %} <!-- section only after handoffs  -->
+
+{% if data['payment'] == "yes"  %}
+  {{timeline(title="(Payment approved)", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+{% if data['correct-details']  %} <!-- found payee -->
+  {{timeline(title="(payee found)	", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+  {% endif %} <!--  end if payments  -->
+
+
+
+  {% if phase == "payment-adviser" or ( payments and data['transfer-back-payments'] == 'yes' ) %}
+
+{% if data['transfer-back-payments'] == 'yes'  %}
+  {{timeline(title="(Confirmation sent)", date="24 October 2019 at 10:24am")}}
+{% endif %}
+
+{% if data['difference'] == 'yes' %}
+  {{timeline(title="(Invoice amount approved)", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+{% if data['difference-asked-phone'] == 'yes'  %}
+  {{timeline(title="(Telephoned applicant)", date="8 January 2020 at 10:24am") }}
+  {% endif %}
+
+  {% if data['difference-asked-phone'] == 'no'  %}
+  {{timeline(title="(Attempted to telephone applicant	)", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+{% if data['difference-asked-email'] == 'yes' %}
+  {{timeline(title="(Email sent for further information)", date="24 October 2019 at 10:24am") }}
+  {% endif %}
+
+  {% endif %} <!-- end if phase payment-adviser -->
+
+
+{% if payments or phase == "payment-adviser" %}
+
+{% if data['sop-transferred'] == "yes"  %}
+  {{timeline(title="(case transferred to add payee)", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+
+{% if data['sent-email-amount'] == "yes"  %}
+  {{timeline(title="(Transferred for more information on cost)", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+{% if data['send-invoice-back'] == "yes"  %}
+  {{timeline(title="(More information requested)", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+{% if data['signed-claim-form']  %} <!-- hack to show answer -->
+  {{timeline(title="(Evidence received)", date="24 October 2019 at 10:24am") }}
+{% endif %}
+
+  {% endif %} <!--  end if payments  -->
+
+
+          {% if data['confirm'] == "no" %}
+                    <li class="dwp-timeline__entry">
+                      <h3 class="govuk-heading-s dwp-timeline__title">(More information needed about interview)</h3>
+                      <p class="dwp-timeline__info">
+                        <span class="dwp-timeline__date">1 November 2019 at 4:30pm</span>
+                      </p>
+                      </li>
+          {% endif %}
+
+{% if payments or ( data['confirm'] == "yes") %}
+
+            {{timeline(title="Interview confirmed", date="24 January 2020 at 10:20am") }}
+{% endif %}
+
+{% if  payments or  data['employer-phone'] == 'no' %}
+
+          {{timeline(title="Attempted to contact employer", date="24 January 2020 at 10:15am") }}
+{% endif %}
+
+{% if payments or  data['sent-email'] == "yes" %}
+
+            {{timeline(title="Email sent to employer", date="22 January 2020 at 10.00am") }}
+{% endif %}
+
+{% if payments or (phase == "interview") or (phase == "waiting")  or (data['claim'] =="yes") %}
+
+              {{timeline(title="Claim form sent", date="7 January 2020 at 3:15pm") }}
+
+{% endif %}
+
+{% if payments or (phase == "interview") or (phase == "waiting")  or (data['send'] =="yes") %}
+
+             {{timeline(title="Confirmation sent	", date="7 January 2020 at 3:05pm") }}
+
+{% endif %}
+
+{% if payments or (phase == "interview") or (phase == "waiting")  or (data['interview'] == "yes") %}
+
+             {{timeline(title="Application checked	", date="7 January 2020 at 3:00pm") }}
+{% endif %}
+
+{% if payments or (phase == "interview") or (phase == "waiting")  or data['asked-info-phone'] %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">{% if  data['asked-info-phone'] == "no" %} Attempted to telephone applicant{% else %}Telephoned applicant{% endif %}</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">7 January 2020 at 11:05am</span>
+            </p>
+          </li>
+{% endif %}
+
+{% if payments or (phase == "interview") or (phase == "waiting")  or data['asked-info-email'] == "yes" %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Email sent for further information</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">6 January 2020 at 3:45pm</span>
+            </p>
+          </li>
+{% endif %}
+
+<!--timeline section for editing personal details  -->
+{% if data['appointee-details-changed'] %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Appointee details changed</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">24 October 2019 at 10:29am</span>
+            </p>
+          </li>
+{% endif %}
+
+<!--timeline section for editing personal details  -->
+{% if data['appointee-status-changed'] %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Appointee status changed</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">24 October 2019 at 10:26am</span>
+            </p>
+          </li>
+{% endif %}
+<!------------------------------------------------------------------------- ----------------------->
+
+<!--timeline section for editing personal details  -->
+{% if data['personal-details-changed'] %}
+
+{{timeline(title="Personal details changed", date="24 October 2019 at 10:24am")}}
+
+{% endif %}
+
+<!------------------------------------------------------------------------- ----------------------->
+
+<!--timeline section for editing company details-->
+{% if data['company-details-changed'] %}
+
+{{timeline(title="Company details changed", date="24 October 2019 at 10:24am")}}
+
+{% endif %}
+
+<!------------------------------------------------------------------------- ----------------------->
+
+<!------------------------------------------------------------------------- ----------------------->
+
+<!--timeline section for editing job details-->
+{% if data['job-details-changed'] %}
+
+{{timeline(title="Interview details changed", date="24 October 2019 at 10:30am")}}
+
+{% endif %}
+
+{{timeline(title="Application allocated", date="6 January 2020 at 3:35pm")}}
+
+{{timeline(title="Application received", date="6 January 2020 at 11:05am")}}
+
+        </ol>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

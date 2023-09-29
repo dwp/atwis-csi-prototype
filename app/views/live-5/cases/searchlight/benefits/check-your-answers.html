@@ -1,0 +1,96 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="/live-5/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Check Derek Smiths benefits</h2>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is Dereck Smith receiving Severe Disablement Allowance?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['sda']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Does Dereck Smith get Income Support for illness or disability?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['income']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Does Dereck Smith get Incapacity Benefit?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['incapacity']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+{% if data ['incapacity']=='Yes' or data ['income']=='Yes' or data ['sda']=='Yes'%}
+        <div class="govuk-inset-text">
+        <p> Dereck Smith gets benefits that affect Access to Work elegibility.  </p>
+
+  Exceptions are:
+  <ul class="govuk-list govuk-list--bullet">
+  <li>starting a work trial</li>
+  <li> has not started their job yet, but will stop claiming benefits when their job begins </li>
+  <li> a permitted work decision from Access to Work</li>
+      </ul>
+
+
+      You will need to contact Dereck Smith to check if there are any exceptions.
+          </div>
+{% endif %}
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="benefits-complete">
+            Return to your task
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

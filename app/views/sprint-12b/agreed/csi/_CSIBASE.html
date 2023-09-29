@@ -1,0 +1,402 @@
+{% extends folder + "/" + subfolder + "/_BASE.html" %}
+{% block content %}
+
+
+{% set appointeeDetails = {
+  name: "Mavis Brown",
+  contact:  ["phone" ] ,
+  address: "28 Cathedral Drive<br>Coventry<br>CV3 6JH",
+  telephone: "02475 554 223"
+
+} %}
+
+{% set count = 0 %}
+
+{% if (data['personal'] == 'no' or data['company'] == 'no' or data['interview'] == "no") and not (phase == "interview")  %}
+
+{% set array = [data['personal'], data['company'], data['interview'] ] %}
+
+
+{% for i in array %}
+  {% if i == "no" %}
+  {% set count = count + 1 %}
+  {% endif %}
+{% endfor %}
+
+{% endif  %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper govuk-!-padding-top-0">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <!--    <span class="govuk-caption-l">ZSQYR5</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ data['your-cases'][0]['name'] | safe }}
+              </h1>
+
+<br>  -->
+
+
+        <nav class="navigation-secondary">
+
+
+                <ul>
+
+{% if not contactCentre %}                  <li>
+                    <a href="{% if not (page == 'task-list') %}index{% if phase %}-{{phase}}{% endif %}{% else %}" class="active" aria-current="section{% endif %}">Tasks to complete</a>
+                  </li>
+
+{% endif %}
+
+
+{% if contactCentre or not payments  %}
+                  <li>
+                    <a href="{% if not (page == 'claim') %}claim{% if contactCentre %}-contact{% elif phase %}-{{phase}}{% endif %}{% else %}" class="active" aria-current="section{% endif %}">Case details</a>
+                  </li>
+{% endif %}
+{% if payments or contactCentre or (phase == "payment-adviser") %}
+<li>
+  <a href="{% if not (page == 'invoice') %}invoice{%if phase == "payment-adviser" %}-payment-adviser{% endif %}{% if contactCentre %}-contact{% endif %}{% else %}" class="active" aria-current="section{% endif %}">Invoice details</a>
+</li>
+{% endif %}
+
+<!--                  <li>
+                    <a href="#">Interview</a>
+                  </li> -->
+
+<!--
+                  <li>
+                    <a href="{% if not (page == 'evidence') %}evidence{% else %}#" class="active" aria-current="section{% endif %}">Evidence</a>
+                  </li>
+-->
+                </ul>
+              </nav>
+
+
+                    {% block csi %}
+
+                    {% endblock %}
+
+
+      </div>
+
+
+
+      <div class="govuk-grid-column-one-third">
+
+        {% if phase == "allocator" %}
+        <div class="">
+          <h3 id="update-adviser-heading" class="govuk-heading-m">Change adviser</h3>
+          <select id="adviser-select" class="govuk-select govuk-!-margin-bottom-3" aria-labelledby="update-adviser-heading">
+<option value="" selected="selected"></option>
+            {% for adviser in data['advisers'] %}
+            <option value="{{ adviser }}">{{ adviser }}</option>
+            {% endfor %}
+          </select>
+          {{ govukButton({
+              attributes: {
+                id: "update-adviser"
+              },
+              text: "Confirm",
+              classes: "govuk-button--secondary"
+            }) }}
+        </div>
+
+        {% endif %}
+
+
+
+{% if not contactCentre %} <!-- never shown for contact centre -->
+        {% if phase == "payment-cancelled" %}
+
+        <p>Stopped payment has been recorded.</p>
+        {% set stopPayment %}
+        <form action="index-payment-cancelled" method="post" novalidate>
+        <p>Confirm that the payment has been resent.</p>
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+        </form>
+
+        {% endset -%}
+        {{ govukDetails({
+          summaryText: "Record resent payment",
+          html: stopPayment
+        }) }}
+
+        {% elif phase == "payment-closed" %}
+        {% set stopPayment %}
+        <form action="index-payment-cancelled" method="post" novalidate>
+        <p>Confirm that the payment has been stopped.</p>
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+        </form>
+        {% endset -%}
+        {{ govukDetails({
+          summaryText: "Record stopped payment",
+          html: stopPayment
+        }) }}
+{% else %}
+
+      {% if not (phase == "closed") and not ( phase == "payment-closed") and not (phase == "payment-cancelled") and not payments %}
+
+       <p><a  href="close-case">Reject the case</a></p>{% endif %}
+
+        {% if (phase == "interview") or (phase == "waiting")  or (data['claim'] =="yes") or (phase == "payment-adviser") %}
+                 <p><a  href="resend">Print and send claim form again</a></p>
+
+{% endif %}
+
+{% endif %}
+
+{% endif %} <!-- end never shown for contact centre -->
+
+
+
+
+
+
+
+
+
+
+
+        <h2 class="govuk-heading-m">Case history</h2>
+
+
+
+        <ol class="dwp-timeline">
+{% macro timeline(title="", allocation="", date="1 "  + monthAndYear +  " at 4:30pm" ) %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">{{title}}  {% if allocation %}<span class="dwp-timeline__date">{{allocation}}</span>{% endif %}</h3>
+
+            <p class="dwp-timeline__info">
+
+              <span class="dwp-timeline__date">{{date}}</span>
+            </p>
+</li>
+{% endmacro %}
+
+
+{% if phase == "payment-cancelled" %}
+
+{{timeline(title="Payment stopped", date="16 "  + monthAndYear +  " at 10:34am") }}
+
+{% endif %}
+
+
+
+{% if (phase == "payment-closed") or (phase == "payment-cancelled") %}
+
+{{timeline(title="Payment sent to SOP", date="16 "  + monthAndYear +  " at 11:59pm") }}
+
+{% endif %}
+
+{% if phase == "closed" %}
+
+{{timeline(title="Case rejected", date="16 "  + monthAndYear +  " at 10:32am") }}
+
+{% endif %}
+
+
+
+{% if payments %} <!-- section only after handoffs  -->
+
+{% if data['app-payment'] == "yes" or data['payment-stopped'] or (phase == "payment-closed") or (phase == "payment-cancelled") %}
+  {{timeline(title="Payment approved", date="16 "  + monthAndYear +  " at 10:30am") }}
+{% endif %}
+
+{% if data['payee-details-match'] == "yes"  %} <!-- Details match -->
+  {{timeline(title="Payee found", date="16 "  + monthAndYear +  " at 10:28am") }}
+{% endif %}
+
+{% if data['completed-sop'] =="yes"  %} <!-- found payee -->
+  {{timeline(title="SOP7 form sent", date="16 "  + monthAndYear +  " at 10:26am") }}
+{% endif %}
+
+
+
+  {% endif %} <!--  end if payments  -->
+
+
+
+  {% if phase == "payment-adviser" or ( payments and data['transfer-to-payments'] == 'yes' ) %}
+
+
+  {% if data['agreed-amount']  %}
+  {{timeline(title="[Different amount approved]", date="16 "  + monthAndYear +  " at 10:24am") }}
+{% endif %}
+
+{% if data['transfer-to-payments'] == 'yes' %}
+  {{timeline(title="Invoice amount approved", date="16 "  + monthAndYear +  " at 10:24am") }}
+{% endif %}
+
+{% if data['difference-asked-phone'] == 'yes'  %}
+  {{timeline(title="Telephoned applicant", date="16 "  + monthAndYear +  " at 10:24am") }}
+  {% endif %}
+
+  {% if data['difference-asked-phone'] == 'no'  %}
+  {{timeline(title="Attempted to telephone applicant", date="16 "  + monthAndYear +  " at 10:24am") }}
+{% endif %}
+
+{% if data['difference-asked-email'] == 'yes' %}
+  {{timeline(title="Email sent for further information", date="16 "  + monthAndYear +  " at 10:24am") }}
+  {% endif %}
+
+  {% endif %} <!-- end if phase payment-adviser -->
+
+
+{% if payments or (phase == "payment-adviser") %}
+
+
+{% if data['sent-email-amount'] == "yes" or  (phase == "payment-adviser")  %}
+  {{timeline(title="Invoice amount different to quote", date="16 "  + monthAndYear +  " at 10:24am") }}
+{% endif %}
+
+
+
+{% if data['send-invoice-back'] == "yes" or  (phase == "payment-adviser")  %}
+  {{timeline(title="More evidence requested", date="16 "  + monthAndYear +  " at 10:24am") }}
+{% endif %}
+
+
+{% if data['invoice']  or  (phase == "payment-adviser") or contactCentre %} <!-- hack to show answer -->
+  {{timeline(title="Evidence received", date="16 "  + monthAndYear +  " at 10:24am") }}
+{% endif %}
+
+
+{% if (data['payment-allocated'] or (phase == "payments") or (phase == "payment-adviser")) and not (phase == "payment-unallocated") %}
+{{timeline(title="Application allocated", allocation="Rich Silver", date="16 "  + monthAndYear +  " at 3:35pm")}}
+{% endif %}
+  {% endif %} <!--  end if payments  -->
+
+
+  {% if (data['claim-resend'] =="yes") %}
+
+                {{timeline(title="Claim form sent again", date="10 "  + monthAndYear +  " at 3:15pm") }}
+
+  {% endif %}
+
+          {% if data['confirm'] == "no" %}
+                    <li class="dwp-timeline__entry">
+                      <h3 class="govuk-heading-s dwp-timeline__title">Waiting for interview confirmation</h3>
+                      <p class="dwp-timeline__info">
+                        <span class="dwp-timeline__date">10 "  + monthAndYear +  " at 4:30pm</span>
+                      </p>
+                      </li>
+          {% endif %}
+
+{% if phase == "payment-adviser" or (payments and not (phase == "payment-interview-not-confirmed") ) or ( data['confirm'] == "yes") %}
+
+            {{timeline(title="Interview confirmed", date="10 "  + monthAndYear +  " at 10:20am") }}
+{% endif %}
+
+{% if phase == "payment-adviser" or payments or  data['employer-phone'] == 'no' %}
+
+          {{timeline(title="Attempted to contact employer", date="10 "  + monthAndYear +  " at 10:15am") }}
+{% endif %}
+
+{% if phase == "payment-adviser" or payments or  data['sent-email'] == "yes" %}
+
+            {{timeline(title="Email sent to employer", date="10 "  + monthAndYear +  " at 10.00am") }}
+{% endif %}
+
+{% if phase == "payment-adviser" or payments or (phase == "interview") or (phase == "waiting")  or (data['claim'] =="yes") %}
+
+              {{timeline(title="Claim form sent", date="2 "  + monthAndYear +  " at 3:15pm") }}
+
+{% endif %}
+
+{% if phase == "payment-adviser" or payments or (phase == "interview") or (phase == "waiting")  or (data['send'] =="yes") %}
+
+             {{timeline(title="Confirmation sent", date="2 "  + monthAndYear +  " at 3:05pm") }}
+
+{% endif %}
+
+{% if phase == "payment-adviser" or payments or (phase == "interview") or (phase == "waiting")  or (data['interview'] == "yes") %}
+
+             {{timeline(title="Application checked", date="2 "  + monthAndYear +  " at 3:00pm") }}
+{% endif %}
+
+{% if phase == "payment-adviser" or payments or (phase == "interview") or (phase == "waiting")  or data['asked-info-phone'] %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">{% if  data['asked-info-phone'] == "no" %} Attempted to telephone applicant{% else %}Telephoned applicant{% endif %}</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">2  {{monthAndYear}} at 11:05am</span>
+            </p>
+          </li>
+{% endif %}
+
+{% if phase == "payment-adviser" or payments or (phase == "interview") or (phase == "waiting")  or data['asked-info-email'] == "yes" %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Email sent for further information</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">2 {{monthAndYear}} at 3:45pm</span>
+            </p>
+          </li>
+{% endif %}
+
+<!--timeline section for editing personal details  -->
+{% if data['appointee-details-changed'] %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Appointee details changed</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">2 "  + monthAndYear +  " at 10:29am</span>
+            </p>
+          </li>
+{% endif %}
+
+<!--timeline section for editing personal details  -->
+{% if data['appointee-status-changed'] %}
+          <li class="dwp-timeline__entry">
+            <h3 class="govuk-heading-s dwp-timeline__title">Appointee status changed</h3>
+            <p class="dwp-timeline__info">
+              <span class="dwp-timeline__date">2 "  + monthAndYear +  " at 10:26am</span>
+            </p>
+          </li>
+{% endif %}
+<!------------------------------------------------------------------------- ----------------------->
+
+<!--timeline section for editing personal details  -->
+{% if data['personal-details-changed'] %}
+
+{{timeline(title="Personal details changed", date="2 "  + monthAndYear +  " at 10:24am")}}
+
+{% endif %}
+
+<!------------------------------------------------------------------------- ----------------------->
+
+<!--timeline section for editing company details-->
+{% if data['company-details-changed'] %}
+
+{{timeline(title="Company details changed", date="2 "  + monthAndYear +  " at 10:24am")}}
+
+{% endif %}
+
+<!------------------------------------------------------------------------- ----------------------->
+
+<!------------------------------------------------------------------------- ----------------------->
+
+<!--timeline section for editing job details-->
+{% if data['job-details-changed'] %}
+
+{{timeline(title="Interview details changed", date="2 "  + monthAndYear +  " at 10:30am")}}
+
+{% endif %}
+
+{% if not (phase == "allocator") %}
+{{timeline(title="Application allocated", allocation="John Goldsmith", date="2 "  + monthAndYear +  " at 3:35pm")}}
+{% endif %}
+
+{{timeline(title="Application received", date="2 "  + monthAndYear +  " at 11:05am")}}
+
+        </ol>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+<!--
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you need equipment, adaptations or software to support you with your condition at work?
+</dt>
+<dd class="govuk-summary-list__value">
+Yes
+</dd>
+<dd class="govuk-summary-list__actions">
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need equipment, adaptations or software to support you with your condition at work?</span>
+</a>{% endif %}
+</dd>
+</div>
+
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you know what specialist equipment you need?
+</dt>
+<dd class="govuk-summary-list__value">
+Yes, I know what I need
+</dd>
+<dd class="govuk-summary-list__actions">
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you know what specialist equipment you need?</span>
+</a>{% endif %}
+</dd>
+</div> -->
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does Dereck Smith need a wheelchair or a hearing aid to support them at work?
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['sae-type']}}
+</dd>
+<dd class="govuk-summary-list__actions">
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need equipment, adaptations or software to support you with your condition at work?</span>
+</a>{% endif %}
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+What type of specialist equipment do you need?
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['sae-item-type']}}
+<br>
+
+<br>
+
+<br>
+</dd>
+<dd class="govuk-summary-list__actions">
+
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> What type of specialist equipment do you need?</span>
+</a>{% endif %}
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+    Do you need to add another item?
+</dt>
+<dd class="govuk-summary-list__value">
+  No
+<br>
+
+<br>
+
+<br>
+</dd>
+<dd class="govuk-summary-list__actions">
+
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> What type of specialist equipment do you need?</span>
+</a>{% endif %}
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+How will this equipment help you at work?
+</dt>
+<dd class="govuk-summary-list__value">
+
+{{data['more-detail-contact']}}
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+  {% if  changeHide %}  <a href="#">
+Change
+<span class="govuk-visually-hidden"> How will this equipment help you at work?</span>
+</a>{% endif %}
+
+</dd>
+</div>
+</dl>

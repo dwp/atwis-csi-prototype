@@ -1,0 +1,208 @@
+{% extends "layout.html" %} {% set serviceName = "Access to Work Plus referral" %}
+
+{% block pageTitle %}
+   Check your answers before sending this Access to Work Plus referral
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+
+<!-- <a class="govuk-back-link" href="work-contact">Back</a> -->
+<a href="./referrer-telephone" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="./submitted" method="post">
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">Check your answers before submitting your form</h1>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the name of the person you are referring?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['applicant-name']}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./applicant-name">
+                Change<span class="govuk-visually-hidden"> name of person you are referring</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is their Access to Work application reference?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['application-reference']}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./application-reference">
+                Change<span class="govuk-visually-hidden"> Access to Work application reference</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             When did they apply for Access to Work?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['form-day']}}
+
+              {% if (data['form-month'] =='01') or (data['form-month'] =='1') %} January {% endif%}
+              {% if (data['form-month'] =='02') or (data['form-month'] =='2') %} February  {% endif%}
+              {% if (data['form-month'] =='03') or (data['form-month'] =='3') %} March {% endif%}
+              {% if (data['form-month'] =='04') or (data['form-month'] =='4') %} June {% endif%}
+              {% if (data['form-month'] =='05') or (data['form-month'] =='5') %} May {% endif%}
+              {% if (data['form-month'] =='06') or (data['form-month'] =='6') %} June {% endif%}
+              {% if (data['form-month'] =='07') or (data['form-month'] =='7') %} July {% endif%}
+              {% if (data['form-month'] =='08') or (data['form-month'] =='8') %} August {% endif%}
+              {% if (data['form-month'] =='09') or (data['form-month'] =='9') %} September {% endif%}
+              {% if data['form-month'] =='10' %} October {% endif%}
+              {% if data['form-month'] =='11'%} November {% endif%}
+              {% if data['form-month'] =='12' %} December {% endif%}
+
+              {{data['form-year']}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./application-date">
+                Change<span class="govuk-visually-hidden"> application date</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is their job title?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['job-title']}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./job-title">
+                Change<span class="govuk-visually-hidden"> job title of person you are referring</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Where will they be working?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['workplace']}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./workplace">
+                Change<span class="govuk-visually-hidden"> the organisation or company the person you are referring works for</span>
+              </a>
+            </dd>
+            </div>
+
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is your relationship to the person you are referring?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['relationship']}}
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./relationship">
+                Change<span class="govuk-visually-hidden"> details of relationship to the person you are referring</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is your name?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['referrer-name']}}
+              
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./referrer-name">
+                Change<span class="govuk-visually-hidden"> referrer full name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is your email address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['email']}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./referrer-email">
+                Change<span class="govuk-visually-hidden"> referrer email address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is your telephone number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['telephone']}}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./referrer-telephone">
+                Change<span class="govuk-visually-hidden"> referrer telephone number</span>
+              </a>
+            </dd>
+          </div>
+
+</dl>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+            Submit
+          </button>
+
+      </form>
+      </div>
+      </div>
+  </main>
+  </div>
+{% endblock %}

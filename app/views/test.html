@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+
+
+
+
+
+
+
+{% block content %}
+<form action="" method="post" novalidate>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which types of waste do you transport?
+      </h1>
+    </legend>
+    <div id="waste-hint" class="govuk-hint">
+      Select all that apply.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Waste from animal carcasses
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Waste from mines or quarries
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+          Farm or agricultural waste
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="none" data-behaviour="exclusive">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+          None of the above
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+</form>
+</div>
+</div>
+<script>
+  router.post('/test', function(req, res, next){ 
+
+   if (req.session.data['waste']){
+    for (i = 0; i<req.session.data['waste'].length; i++){
+    switch (req.session.data['waste'][i]){
+
+     case "carcasses" :  return res.redirect("url1"); next(); break;
+     case "mines" :  return res.redirect("url2"); next(); break;
+     case "farm" :  return res.redirect("url3"); next(); break;
+     case "none" :  return res.redirect("check-your-answers"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("check-your-answers"); next();
+  })
+
+  router.post('/test', function(req, res, next){ 
+
+   if (req.session.data['waste']){
+    for (i = 0; i<req.session.data['waste'].length; i++){
+    switch (req.session.data['waste'][i]){
+
+     case "mines" :  return res.redirect("url2"); next(); break;
+     case "farm" :  return res.redirect("url3"); next(); break;
+     case "none" :  return res.redirect("check-your-answers"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("check-your-answers"); next();
+  })
+
+  router.post('/test', function(req, res, next){ 
+
+   if (req.session.data['waste']){
+    for (i = 0; i<req.session.data['waste'].length; i++){
+    switch (req.session.data['waste'][i]){
+
+     case "farm" :  return res.redirect("url3"); next(); break;
+     case "none" :  return res.redirect("check-your-answers"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("check-your-answers"); next();
+  })
+
+  router.post('/test', function(req, res, next){ 
+
+   if (req.session.data['waste']){
+    for (i = 0; i<req.session.data['waste'].length; i++){
+    switch (req.session.data['waste'][i]){
+
+     case "none" :  return res.redirect("check-your-answers"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+
+   }
+  return res.redirect("check-your-answers"); next();
+  })
+
+
+
+
+
+
+
+  router.post('/benefits', function(req, res, next){
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+     case "Employment and Support Allowance" :  return res.redirect("/alpha-apply-1d/1d-esa"); next(); break;
+     case "Incapacity Benefit" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     case "Income Support" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     case "Severe Disability Allowance" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     case "None of these" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+   }
+  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next();
+  })
+  router.post('/benefits', function(req, res, next){
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+     case "Incapacity Benefit" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     case "Income Support" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     case "Income Support" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     case "None of these" :  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+   }
+  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next();
+  })
+  router.post('/benefits', function(req, res, next){
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+     case "Income Support" :  return res.redirect("alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     case "None of these" :  return res.redirect("alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+   }
+  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next();
+  })
+  router.post('/benefits', function(req, res, next){
+   if (req.session.data['benefits']){
+    for (i = 0; i<req.session.data['benefits'].length; i++){
+    switch (req.session.data['benefits'][i]){
+     case "None of these" :  return res.redirect("alpha-apply-1d/1d-you-may-be-eligible-blue"); next(); break;
+     default: continue;
+     }
+     break;
+    }
+   } else {
+   }
+  return res.redirect("/alpha-apply-1d/1d-you-may-be-eligible-blue"); next();
+  })
+  </script>
+
+{% endblock %}

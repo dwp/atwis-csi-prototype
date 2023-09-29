@@ -1,0 +1,106 @@
+<h1 class="govuk-heading-l">Invoice</h1>
+
+
+
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Document name",
+      classes: 'govuk-!-width-one-half'
+    },
+    {
+      text: "Element type",
+      classes: 'govuk-!-width-one-quarter'
+    }
+  ],
+  rows: [
+    [
+    {
+      href: "#",
+      text: "IN4562000-DN6.PDF",
+      visuallyHiddenText: "name"
+    },
+
+      {
+        text: "One off costs (SAE)"
+      }
+    ]
+  ]
+}) }}
+
+<!-- {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "IN4562000-DN6.PDF",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }} -->

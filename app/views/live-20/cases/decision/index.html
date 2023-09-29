@@ -1,0 +1,117 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+
+<form action="/live-20/cases/{% if phase %}{{phase}}/cases/{% endif %}decision/index-2-2" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   {% include  "live-20/cases/decision/content/under-25.html" %} 1
+                 </h1>
+               </legend>
+
+
+
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Item 1
+</dt>
+<dd class="govuk-summary-list__value">
+
+  Jaws screen reader
+
+
+
+</dd>
+<dd class="govuk-summary-list__actions">
+
+
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Quote
+</dt>
+<dd class="govuk-summary-list__value">
+
+£499
+
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+
+
+</dd>
+</div>
+
+
+</dl>
+
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        {% include  "./content/accept-element.html" %}
+
+  </legend>
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+    <div class="govuk-radios__item govuk-radios--inline">
+      <input class="govuk-radios__input" id="element-decision" name="element-decision{{phase}}" type="radio" value="Yes" {{ checked("element-decision"+ phase, "Yes") }}>
+      <label class="govuk-label govuk-radios__label" for="element-decision">
+        Yes
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="element-decision-2" name="element-decision{{phase}}" type="radio" value="No" {{ checked("element-decision"+ phase, "No") }}>
+      <label class="govuk-label govuk-radios__label" for="element-decision-2">
+        No
+      </label>
+    </div>
+
+  </div>
+
+</fieldset>
+</div>
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
+Save and continue
+           </button>
+
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

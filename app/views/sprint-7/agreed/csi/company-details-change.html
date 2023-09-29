@@ -1,0 +1,123 @@
+{% set link = "claim-router" %}
+{% set personalDetails =  true  %}
+{% set hideChange = true %}
+{% set customNext = "Save" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Change company details</h1>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Company name"
+  },
+  id: "company-name",
+  name: "company-name-change",
+  value: data['csi-info'][1]['company-name'],
+  classes: "govuk-input--width-20"
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    classes: "text",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+    },
+    id: "address-line-1",
+    name: "company-address-line-one-change",
+    value: data['csi-info'][1]['company-address-line-one'],
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+    },
+    id: "address-line-2",
+    name: "address-line-2",
+    value: "",
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Town or city"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-town",
+    name: "company-address-town-change",
+    value: data['csi-info'][1]['company-address-town'],
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "County"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-county",
+    name: "company-address-county-change",
+    value: data['csi-info'][1]['company-address-county'],
+    classes: "govuk-input--width-10"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Postcode"
+    },
+    id: "address-postcode",
+    name: "company-address-postcode-change",
+    value: data['csi-info'][1]['company-address-postcode'],
+    classes: "govuk-input--width-5"
+  }) }}
+
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Company contact"
+  },
+  id: "company-contact",
+  name: "interviewer-name-change",
+  value: data['csi-info'][1]['interviewer-name'],
+  classes: "govuk-input--width-20"
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Email address"
+  },
+  id: "email",
+  name: "company-email-address-change",
+  value: data['csi-info'][1]['company-email-address'] | safe,
+  classes: "govuk-input--width-20"
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Phone number"
+  },
+  id: "Phone",
+  name: "company-phone-change",
+  value: data['csi-info'][1]['company-phone'] | safe,
+  classes: "govuk-input--width-20"
+}) }}
+
+{% endcall %}
+
+{% endblock %}

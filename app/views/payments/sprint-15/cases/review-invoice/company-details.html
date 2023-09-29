@@ -1,0 +1,74 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-15/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Are the supplier contact details on the invoice?
+    </h2>
+    <div id="changed-name-hint" class="govuk-hint">
+          For example, company address, phone number or email. 
+        </div>
+
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="yes~dereck/claim-dereck#your-tasks" {{ checked("company-details", "Yes") }}>
+            <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+            <label class="govuk-label govuk-radios__label" for="company-details-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="company-details-2" name="company-details" type="radio" value="No~dereck/claim-dereck#your-tasks" {{ checked("company-details", "No") }}>
+            <label class="govuk-label govuk-radios__label" for="company-details-2">
+              No
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

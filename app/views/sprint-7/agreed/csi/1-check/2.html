@@ -1,0 +1,31 @@
+{% set link = "3" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: "2-appointee" }, {id: "no", page: link }] %}
+
+{% set title =  "Does " + data['csi-info'][1]['firstname'] +  " " + data['csi-info'][1]['surname']  + " have an appointee?" %}
+
+
+{% block csi %}
+
+<p>Use Searchlight to check  if{{data['csi-info'][1]['firstname']}} {{data['csi-info'][1]['surname']}} has an appointee.</p>
+
+
+{{ govukRadios({
+       name: "appointee",
+
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes, I need to add an appointee"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

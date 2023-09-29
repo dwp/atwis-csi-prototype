@@ -1,0 +1,12 @@
+#comments {
+	margin-top: 15px;
+}
+.indented {
+	margin-left: 25px;
+}
+.comment-unpublished {
+	background-color: rgb(255, 244, 244);
+}
+.comment-preview {
+	background-color: rgb(255, 255, 234);
+}

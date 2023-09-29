@@ -1,0 +1,140 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-13/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Check invoice total
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<br>
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Items</th>
+      <th scope="col" class="govuk-table__header">Amount</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Jaws Jobb Access With Speach</th>
+      <td class="govuk-table__cell">£499.00</td>
+    </tr>
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Erganomic keyboard</th>
+      <td class="govuk-table__cell">£120.00</td>
+    </tr> -->
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Vat</th>
+      <td class="govuk-table__cell">£99.80</td>
+    </tr> -->
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total</th>
+      <td class="govuk-table__cell">£499.00</td>
+    </tr>
+  </tbody>
+</table>
+                <br>
+
+
+
+
+
+
+
+
+  <!-- <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-yes" name="grant-match-claim-yes" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-1">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-no" name="grant-match-claim-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-2">
+        No
+      </label> -->
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 class="govuk-heading-m">
+          Does the total figure match the invoice?
+        </h2>
+      </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="invoice-total-1" name="invoice-total" type="radio" value="yes~claim#your-tasks" {{ checked("invoice-total", "Yes") }}>
+              <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+              <label class="govuk-label govuk-radios__label" for="invoice-total-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="invoice-total-2" name="invoice-total" type="radio" value="No~claim#your-tasks" {{ checked("invoice-total", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="invoice-total-2">
+                No
+              </label>
+            </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "layout.html" %} {% set serviceName = "Access to Work Plus referral" %}
+
+{% block pageTitle %}
+   Your Access to Work Plus referral has been sent
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<!-- <a class="govuk-back-link" href="work-contact">Back</a> -->
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+          <div class="govuk-width-container">
+            <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-panel govuk-panel--confirmation">
+                    <h1 class="govuk-panel__title">
+                      Your form has been submitted
+                    </h1>
+                    <!-- <div class="govuk-panel__body">
+                      Your reference number<br><strong>HDJ2123F</strong>
+                    </div> -->
+                  </div>
+
+                  {# Feature in backlog
+                  <p class="govuk-body">
+                    We have sent you a confirmation email with a copy of your answers.
+                  </p> 
+                  #}
+                  
+                  <h2 class="govuk-heading-m">What happens next</h2>
+                  
+
+                  <p class="govuk-body">
+                    If we need more information about your answers, we will contact you about this referral.
+                  </p>
+                  <p class="govuk-body">
+                   A Case Manager will assess whether the person you are referring is eligible for Access to Work Plus as part of their main Access to Work grant.
+                  </p>
+
+                  <p class="govuk-body">
+                   We will contact the people named on the main Access to Work application when assessing the grant. 
+                   </p>
+                   <p class="govuk-body">
+                   If you need to check the progress of this referral, <a class="gov-link" href="https://www.gov.uk/access-to-work/after-you-apply">contact us using the information on GOV.UK</a> and quote the Access to Work application reference of the person you are referring.
+                  </p>
+
+                  <p class="govuk-body">
+                    You can also read <a class="gov-link" href="https://www.gov.uk/guidance/access-to-work-plus-referrals">guidance about Access to Work Plus on GOV.UK</a>.
+                  </p>
+
+
+                  <!-- <p class="govuk-body">
+                    They will contact you either to confirm your registration, or to ask for more information.
+                  </p>
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+                  </p> -->
+                </div>
+              </div>
+            </main>
+          </div>
+
+
+
+
+
+
+  </div>
+{% endblock %}

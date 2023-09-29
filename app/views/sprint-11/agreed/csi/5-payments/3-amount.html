@@ -1,0 +1,33 @@
+{% set link = "confirm-router" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set paymentLink = true %}
+{% set title =  "Confirm the amount" %}
+
+
+{% block csi %}
+
+  <!--<div class="govuk-inset-text">
+    {{data['csi-info'][2]['firstname']}} {{data['csi-info'][2]['surname']}}
+    <br>
+    {{ data['csi-info'][2]['dob-day'] | safe }} {{ data['csi-info'][2]['dob-month']| safe }}
+    {{ data['csi-info'][2]['dob-year'] | safe }}
+    <br>B2 8FG
+  </div>-->
+
+    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+    <h3 class="govuk-heading-m">What is the total amount on the invoice?</h3>
+
+       {{ govukInput({
+  label: {
+    text: ""
+  },
+  classes: "govuk-input--width-10",
+  id: "invoice-value",
+  name: "invoice-value"
+  }) }}
+       <br>
+
+
+
+{% endblock %}

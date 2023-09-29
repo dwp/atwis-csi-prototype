@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+       <form id="form" method="post" action="end">
+          <div class="govuk-form-group">
+                <h1 class="govuk-heading-xl">What do you need?</h1>
+
+                <div class="govuk-form-group">
+                      <label class="govuk-label" for="more-detail">
+                        For example, tell us if you have an assessment report, and if you have quotes for recommended solutions
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                </div>
+           </div>
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+                </form>
+
+        </div>
+      </div>
+    </main>
+	</div>
+
+	{% endblock %}

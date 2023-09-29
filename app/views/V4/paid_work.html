@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="nino">
+
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-4">
+      Interview Questions:
+    </h1>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+    	Is the interview for a paid or volunteer role?
+    </h2>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Why are we asking
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Currently we are only able to reimburse costs for support at interview when it is for a paid job. We can not offer help with volunteer roles.
+      </div>
+    </details>
+
+    <span  class="govuk-hint">
+
+    </span>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            The interview is for a paid role
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            The interview is for a volunteer role
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- nino -->
+
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', e => {
+          e.preventDefault();
+          if (document.getElementById('terminal-1').checked) {
+            window.location = 'nino';
+          } else {
+            window.location = 'cant_help';
+          }
+        })
+    </script>
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,45 @@
+{% set link = "../index" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Print and send the form" %}
+
+
+{% block csi %}
+
+
+<p>Print and send the form to the following address:</p>
+
+  <div class="govuk-inset-text">
+  Thomas Brown<br>
+  12 Barley Street<br>
+  Birmingham<br>
+  B2 8FG
+</div>
+
+
+
+{{ govukRadios({
+      classes: "govuk-radios--inline",
+       idPrefix: "claim",
+       name: "claim",
+       fieldset: {
+         legend: {
+           text: "Have you printed and sent the form?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

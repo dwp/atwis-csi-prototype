@@ -1,0 +1,57 @@
+{% set link = "1" %}
+{% set paymentAdviserLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% if appointee %}{% set appointeeLink = "-appointee" %}{% endif %}
+
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "unhappy-phone-2" + appointeeLink }] %}
+
+{% if appointee %}
+{% set title =  "Telephone the applicant’s appointee" %}
+{% else %}
+{% set title =  "Telephone the applicant" %}
+{% endif %}
+
+{% block csi %}
+
+{% if appointee %}
+<p>Telephone {{data['appointee-name'] | default(appointeeDetails.name) | safe }} on <strong>{{data['appointee-contact-phone'] | default(appointeeDetails.phone) | safe }}</strong> to ask
+  for more information about <strong>{{data['csi-info'][2]['firstname']}} {{data['csi-info'][2]['surname']}}</strong>’s support cost.</p>
+{% else %}
+<p>Telephone <strong>{{data['csi-info'][2]['firstname']}} {{data['csi-info'][2]['surname']}}</strong> on <strong>{{ data['csi-info'][2]['contact-by-phone'] }}</strong> to ask
+  for more information about their support cost.</p>
+{% endif %}
+
+<br>
+</br>
+
+{% if appointee %}
+{% set telephoneText = "Has the appointee answered the telephone?" %}
+{% else %}
+{% set telephoneText = "Has the applicant answered the telephone?" %}
+{% endif %}
+
+{{ govukRadios({
+     name: "difference-asked-phone",
+       fieldset: {
+         legend: {
+           text: telephoneText,
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes, check information"
+
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% set link = "../index" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Email the employer" %}
+
+
+{% block csi %}
+
+<p>Check that Thomas Brown attended the interview.</p>
+
+<p>Copy and paste the following text into an email and send it to:
+  <strong>{{ data['csi-info'][0]['company-email-address'] }}</strong></p>
+
+  <div class="govuk-inset-text">
+  DWP confirmation of interview attendance<br>
+  <br>
+  Thomas Brown told us that they would be attending an interview at Tesco on 1
+  November 2019. We need confirmation that Thomas attended the interview so that
+  we can pay for the communication support costs.
+</div>
+
+
+{{ govukRadios({
+
+    classes: "govuk-radios--inline",
+       idPrefix: "sent-email",
+       name: "sent-email",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

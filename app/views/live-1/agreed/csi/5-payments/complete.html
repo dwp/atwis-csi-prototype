@@ -1,0 +1,35 @@
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set title =  "" %}
+{% set paymentLink = true  %}
+{% set customNext = "Search for another case" %}
+{% set hideReturn = true %}
+{% set hideForm = true %}
+
+{% block csi %}
+
+{{ govukPanel({
+       titleText: "Payment approved",
+       html: "RSINV" + data['invoice-reference'] | default("123456") | safe
+     }) }}
+<br>
+<p>Write the reference <strong>RSINV{{data['invoice-reference'] | default("123456") | safe}}</strong> on the front of the paperwork.
+
+
+<p>Save the mobile number <strong>07982 727 282</strong> in the shared folder so that a notification can be sent.</p>
+
+
+
+<p>     <a href="/{{folder}}/delete-and-continue-router?next=/{{folder}}/{{subfolder}}/search-payments" class="govuk-link">Search for another case</a></p>
+
+
+
+{% endblock %}
+
+  {% block pageScripts %}
+  <style>
+    .govuk-panel--confirmation {
+        color: #fff;
+        background: #00703c;
+    }
+    </style>
+  {% endblock %}

@@ -1,0 +1,123 @@
+{% extends "layout.html" %} {% set serviceName = "Access to Work Plus referral" %}
+
+{% block pageTitle %}
+   When did they apply for Access to Work? (optional)
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<!-- <a class="govuk-back-link" href="work-contact">Back</a> -->
+<a href="./application-reference" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+{% if not data['workplace'] %}
+      <form class="form" action="./job-title" method="post">
+        {% endif %}
+
+      {% if data['workplace'] %}
+      <form class="form" action="./check" method="post">
+          {% endif %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        When did they apply for Access to Work? (optional)
+      </h1>
+    </legend>
+    <div id="date-hint" class="govuk-hint">
+      This should be the date they sent their application online or by phone, for example, 27 2 2023.
+    </div>
+    <div class="govuk-date-input" id="form date">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="form-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="form-day" name="form-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="form-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="form-month" name="form-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="form-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="form-year" name="form-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Get help with this form
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <h3 class="govuk-heading-s">Phone</h3>
+      <p>Telephone: 0800 121 7479
+      <br>Textphone: 0800 121 7579
+      </p>
+      <p class="govuk-body">
+      <a class="govuk-link" href="https://www.gov.uk/call-charges" target="_blank" rel="noopener noreferrer">Find out about call charges</a>
+      </p>
+    <h3 class="govuk-heading-s">Online</h3>
+     <p class="govuk-body">
+      <a target="_blank" rel="noopener noreferrer" class="govuk-link" href="govuk/access-to-work-plus-referrals">Find out more about Access to Work Plus and other ways to contact us on GOV.UK (opens in new tab)</a>
+     </p>
+    {# <p class="govuk-body">You can read <a href="#">guidance about Access to Work Plus referrals on GOV.UK</a>.</p>
+    <p class="govuk-body">You can also contact Access to Work for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+  <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the Video Relay Service</a></li>
+    </ul> #}
+  </div>
+</details>
+
+  </div>
+{% endblock %}

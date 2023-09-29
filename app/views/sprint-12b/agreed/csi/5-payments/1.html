@@ -1,0 +1,45 @@
+{% set link = "check-evidence-router" %}
+{% set payments = true %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+<!--{% set redirect = [{id : "yes", page: link }, {id: "no", page: "#"}] %}-->
+{% set title =  "Check evidence" %}
+
+
+{% block csi %}
+<p class="govuk-heading-m">Are both of these included?</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>signed claim form</li>
+  <li>completed invoice</li>
+</ul>
+<br>
+
+<!-- Check invoice radio button -->
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "invoice",
+  name: "invoice",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: checked('invoice', "yes")
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: checked('invoice', "no")
+    }
+  ]
+}) }}
+
+
+{% endblock %}

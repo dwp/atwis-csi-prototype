@@ -1,0 +1,68 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<!-- <form action="/payments/sprint-10/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-10/cases/sop/sop-approve" method="post" novalidate>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Add SOP supplier number
+    </h2>
+
+
+        </legend>
+        <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="passport-number">
+                      <!-- Add invoice number -->
+                    </label>
+                    <div id="passport-number-hint" class="govuk-hint">
+                      <!-- For example, 502135326 -->
+                    </div>
+                    <input class="govuk-input govuk-input--width-10" id="sop-supplier-number" name="sop-supplier-number" type="text" aria-describedby="invoice-number-hint">
+
+                  </div>
+
+      </fieldset>
+    </div>
+
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

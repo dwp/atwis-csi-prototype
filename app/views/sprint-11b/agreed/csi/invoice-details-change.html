@@ -1,0 +1,104 @@
+{% set link = "invoice" %}
+{% set page = "invoice" %}
+{% set payments = 'true' %}
+{% set phase = "payment" %}
+{% set return = "invoice" %}
+{% set customNext = "Save" %}
+{% set title = "[Change invoice details]" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% block csi %}
+
+
+{% if data['invoice-reference'] or fullInvoice %}
+
+
+{{ govukInput({
+  label: {
+    text: "Invoice reference"
+  },
+  id: "invoice-reference",
+  name: "invoice-reference",
+  value: data['invoice-reference'],
+  classes: "govuk-input--width-20"
+}) }}
+
+{% endif %}
+
+
+{% if data['invoice-date-month'] or fullInvoice %}
+
+
+{{ govukDateInput({
+  id: "invoice-date",
+  namePrefix: "invoice-date",
+  fieldset: {
+    legend: {
+      text: "Invoice date"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data['invoice-date-day']
+    },
+    {
+      name: "month",
+      value: data['invoice-date-month'],
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      value: data['invoice-date-year'],
+      classes: "govuk-input--width-4"
+    }
+  ]
+}) }}
+
+
+{% endif %}
+
+{% if data['invoice-postcode'] or fullInvoice %}
+
+{{ govukInput({
+  label: {
+    text: "Postcode"
+  },
+  id: "invoice-postcode",
+  name: "invoice-postcode",
+  value: data['invoice-postcode'],
+  classes: "govuk-input--width-10"
+}) }}
+{% endif %}
+
+{% if data['invoice-value'] or fullInvoice %}
+
+
+{{ govukInput({
+label: {
+text: "Invoice value"
+},
+classes: "govuk-input--width-10",
+id: "invoice-value",
+name: "invoice-value",
+value: data['invoice-value']
+}) }}
+
+{% endif %}
+
+{% if data['supplier-reference'] %}
+
+{{ govukInput({
+  label: {
+  text: "SOP supplier number"
+  },
+  id: "supplier-reference",
+  name: "supplier-reference",
+  value: data['supplier-reference'],
+  classes: "govuk-input--width-10"
+}) }}
+
+{%endif %}
+
+{% endblock %}

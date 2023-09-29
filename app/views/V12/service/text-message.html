@@ -1,0 +1,55 @@
+{% extends folder + "/_BASE.html" %}
+
+
+
+{% block pageTitle %}
+  Do you want to receive text messages with updates about your application
+{% endblock %}
+
+{% block service %}
+
+
+              <form id="form" method="post" action="">
+
+                              <div class="govuk-form-group">
+                                      <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                          <h1 class="govuk-fieldset__heading">
+                                            Do you want to receive text messages with updates about your application?
+                                          </h1>
+                                        </legend>
+                                        <div class="govuk-radios">
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="text-message" name="text-message" type="radio" value="yes">
+                                            <label class="govuk-label govuk-radios__label" for="text-message">
+                                              Yes
+                                            </label>
+                                          </div>
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="text-message" name="text-message" type="radio" value="no">
+                                            <label class="govuk-label govuk-radios__label" for="text-message2">
+                                              No
+                                            </label>
+                                          </div>
+                                    </div>
+                              </fieldset>
+
+                        <script>
+                          document.getElementById('form').addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            if (document.getElementById('text-message').checked) {
+                              window.location = 'mobile-phone-number';
+                            } else {
+                              window.location = 'check-your-answers';
+                            }
+                          })
+                        </script>
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+
+
+	{% endblock %}

@@ -1,0 +1,295 @@
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Employment status
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Employed
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your employment status</span>
+        </a>{% endif %}
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Job title
+      </dt>
+      <dd class="govuk-summary-list__value">
+        QA Engineer
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your job title</span>
+        </a>{% endif %}
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Job description
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Responsible for the creation of tests to identify issues with software before the product launch. Duties include identifying and analysing any bugs and errors found during the test phase and documenting them for review after.
+
+Skills:
+Communications skills, both written and verbal.
+Strong IT skills
+Creating documentation
+Coding
+Bug Reporting
+Improving Quality Assurance Practices
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your job title</span>
+        </a>{% endif %}
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        When did you start this job?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1 November 2022
+      </dd>
+      <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}    <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> When did you start this job?</span>
+        </a>{% endif %}
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How many hours do you work per week?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        37
+      </dd>
+      <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}    <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> how many hours do you work per week</span>
+          </a>{% endif %}
+      </dd>
+    </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Which days of the week do you work?
+    </dt>
+    <dd class="govuk-summary-list__value">
+        <ul class="govuk-list govuk-list--bullet">
+        <li>Monday  </li>
+          <li>Tuesday</li>
+         <li>Wednesday  </li>
+         <li>Thursday  </li>
+         <li>Friday  </li>
+         </ul>
+         <p>{% if phase =='john'%}John Smith{% else %}Thomas King{% endif %} does not work flexibly or a shift pattern.</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> Which days of the week do you work?</span>
+        </a>{% endif %}
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Company or organisation name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Smith Digital Limited
+      </dd>
+      <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}    <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> what is your companies or organisations name</span>
+        </a>{% endif %}
+      </dd>
+    </div>
+
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Workplace address
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      <ul class="govuk-list">
+        <li>220 St Vincent Street</li>
+        <li>Glasgow</li>
+        <li>AB1 1AB</li>
+      </ul>
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}  <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> what is your workplace address</span>
+      </a>{% endif %}
+    </dd>
+  </div>
+
+
+
+
+
+
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        How many people work at your company or organisation?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        50 to 249
+      </dd>
+      <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}    <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> how many people work at your company or organisation</span>
+        </a>{% endif %}
+      </dd>
+    </div> -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+
+Are you a hybrid worker?
+
+      </dt>
+      <dd class="govuk-summary-list__value">
+        No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}    <a href="#">
+          Change
+          <span class="govuk-visually-hidden"> Are you a hybrid worker?</span>
+        </a>{% endif %}
+      </dd>
+    </div>
+
+  </dl>
+<!--
+<h2 class="govuk-heading-m">Workplace contact</h2>
+{% if  data['job-deatils-contact']=='They gave permission' or data['job-deatils-contact']=='They gave permission (apply)'%}{% else %}
+<div class="govuk-warning-text">
+<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+<strong class="govuk-warning-text__text">
+<span class="govuk-warning-text__assistive">Warning</span>
+Do not contact without permission
+</strong>
+</div>
+{% endif %} -->
+<!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Permission to communicate with workplace contact
+    </dt>
+    <dd class="govuk-summary-list__value">
+{% if data['job-deatils-contact']=='They gave permission (apply)'%}Permission given{% else %}
+{% if data['job-deatils-contact']=='They gave permission'%}Dereck Smith gave permission durring contact with John Goldsmith{% else %}  Permission not given yet{% endif %}
+  {% endif %}  </dd>
+    <dd class="govuk-summary-list__actions">
+  {% if  changeHide %}    <a href="#">
+        Change
+        <span class="govuk-visually-hidden"> contact</span>
+      </a>{% endif %}
+    </dd>
+  </div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Jane Doe
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  {% if  changeHide %}  <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts name</span>
+    </a>{% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their job title
+  </dt>
+  <dd class="govuk-summary-list__value">
+   Line Manager
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  {% if  changeHide %}  <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts role</span>
+    </a>{% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their email address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Jane@smithdigital.co
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  {% if  changeHide %}  <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts email address</span>
+    </a>{% endif %}
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their phone number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    123456789
+  </dd>
+  <dd class="govuk-summary-list__actions">
+{% if  changeHide %}    <a href="#">
+      Change
+      <span class="govuk-visually-hidden"> what is your workplace contacts phone number</span>
+    </a>{% endif %}
+  </dd>
+</div>
+ -->
+
+
+
+
+
+
+
+</dl>
+
+<h2 class="govuk-heading-m">Additional employment</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Do you have another job?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    No
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    {% if  changeHide %}<a href="#">
+      Change
+      <span class="govuk-visually-hidden"> Do you have another job?</span>
+    </a>{% endif %}
+  </dd>
+</div>
+
+</dl>
+
+<p><a href="/live-31/cases/{{phase}}/cases/contact/contact-details#workplace-contact">Workplace contact details</a>

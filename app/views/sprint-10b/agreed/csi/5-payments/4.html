@@ -1,0 +1,52 @@
+{% set link = "4-check-payee" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index-payment"}] %}
+{% set title =  "Select the payee" %}
+
+
+{% block csi %}
+
+<p>Postcode: <strong>{{ data['payee-search'] | default("NE98 1ZZ") }}</strong> <a href="3" class="govuk-link">Search again</a></p>
+
+<!--<h2 class="govuk-heading-m">Address: 11 Hill Street</h2>-->
+
+<!--<h2 class="govuk-heading-m">Supplier code: 4846738</h2>-->
+<br>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "payee-name",
+  name: "payee-name",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "payee-name",
+      text: "Hedge BSL Services, 11 Hill Street, B1 2HD"
+    }
+  ]
+}) }}
+<p><a href="4-sop-yes-form" class="govuk-link">I cannot find the payee in the list</a></p>
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: ""
+
+  },
+  id: "results-found",
+  name: "results-found",
+  type: "hidden",
+  value: "yes"
+}) }}
+
+{% endblock %}

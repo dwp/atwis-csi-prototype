@@ -1,0 +1,66 @@
+{% set link = "../index" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "[Send email]" %}
+
+
+{% block csi %}
+
+<p>Send an email to {{data['csi-info'][0]['name']}}.</p>
+<p>
+
+<p>[Ask them for more information about:]</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+
+{% for i in data['error']['personal'] %}
+<li>{{data['csi-info'][0][i]}}</li>
+{%- endfor %}
+{% for i in data['error']['company'] %}
+<li>{{data['csi-info'][0][i]}}</li>
+{%- endfor %}
+{% for i in data['error']['interview'] %}
+<li>{{data['csi-info'][0][i]}}</li>
+{%- endfor %}
+</ul>
+
+
+<p>[notes here?]</p>
+
+
+
+  {{ govukButton({
+    text: "Open new email",
+    classes: "govuk-button--secondary",
+    href: "mailto:" + data['csi-info'][0]['contact-by-email']
+  }) }}
+
+<br>
+
+{{ govukRadios({
+
+    classes: "govuk-radios--inline",
+       idPrefix: "sent-email",
+       name: "sent-email",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

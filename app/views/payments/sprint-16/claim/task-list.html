@@ -1,0 +1,190 @@
+
+{% block pageTitle %}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Your tasks</h2>
+      <ol class="app-task-list">
+        <li>
+
+<!-- 1 REVIEW CLAIM -->
+
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Review claim
+          </h2>
+
+<!-- 1 CHECK CLAIM MATCHES GRANT AWARD -->
+
+
+<ul class="app-task-list__items">
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+
+{% if data ['claims'] and not data['claim-item'] %}
+                <a href="/payments/sprint-16/cases/sonya/cases/review-claim/select-claim-items" aria-describedby="claim-completed">
+{% endif %}
+
+{% if data ['claims'] and data['claim-item'] %}
+                <a href="/payments/sprint-16/cases/sonya/cases/review-claim/matches-grant-multi" aria-describedby="claim-completed">
+{% endif %}
+
+{% if not data['claims'] %}
+                <a href="/payments/sprint-16/cases/review-claim/matches-grant" aria-describedby="claim-completed">
+{% endif %}
+
+
+                  Check claim matches grant award
+                  </a>
+                  </span>
+                  {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                  {% if data['grant-matches-claim'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                  </ul>
+                  </li>
+
+
+
+
+
+
+
+<!-- 2 REVIEW INVOICE -->
+
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Review invoices
+          </h2>
+
+
+<!-- 2 Check invoice matches claim FORM-->
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                {% if data['grant-matches-claim']%}<a href="/payments/sprint-16/cases/review-invoice/claim-matches-invoice-total" aria-describedby="read-declaration-completed">{% endif %}
+                  Check invoices match claim form
+                </a>
+                </span>
+                {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                {% if data['grant-matches-claim'] and not data ['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['claim-matches-invoice'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                <li>
+
+
+
+<!-- 2 PAID IN FULLL -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            {% if data['claim-matches-invoice']%}<a href="/payments/sprint-16/cases/review-invoice/paid-in-full" aria-describedby="company-information-completed">{% endif %}
+                Check invoices have been paid
+              </a>
+              </span>
+              {% if not data['claim-matches-invoice']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['claim-matches-invoice'] and not data ['paid-in-full']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['paid-in-full'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
+
+
+
+
+<!-- 2 CHECK COMPANY DETAILS -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            {% if data['paid-in-full']%}<a href="/payments/sprint-16/cases/review-invoice/company-details" aria-describedby="company-information-completed">{% endif %}
+                Check supplier details
+              </a>
+              </span>
+              {% if not data['paid-in-full']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['paid-in-full'] and not data ['company-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['company-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
+
+
+
+<!-- 2 ADD INVOICE NUMBER AND DATE -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            {% if data['company-details']%}<a href="/payments/sprint-16/cases/review-invoice/add-invoice-date" aria-describedby="company-information-completed">{% endif %}
+                Add invoice number and date
+              </span>
+              {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['company-details'] and not data ['invoice-number']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['invoice-number'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+              </ul>
+              </li>
+
+
+</a>
+
+<!-- 3 REVIEW PAYMENT -->
+
+<h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">3. </span>
+  Review payment
+</h2>
+
+
+<!-- 3 FIND PAYEE IN SOP -->
+
+            <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            {% if data['invoice-number']%}<a href="/payments/sprint-16/cases/review-payment/sop-find" aria-describedby="company-information-completed">{% endif %}
+                Find payee in SOP
+              </a>
+              </span>
+              {% if not data['invoice-number']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['invoice-number'] and not data ['sop-find']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if data['sop-find'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+              <li>
+
+
+<!-- 3 ADD PAYEE DETAILS FROM SOP -->
+
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            {% if data['sop-find']%}<a href="/payments/sprint-16/cases/review-payment/sop-add-supplier" aria-describedby="company-information-completed">{% endif %}
+              Add payee details from SOP
+            </a>
+            </span>
+            {% if not data['sop-find']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+            {% if data['sop-find'] and not data ['sop-supplier-number']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+            {% if data['sop-supplier-number'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+            </ul>
+            </li>
+
+
+
+<!-- 4 SEND PAYMENT -->
+
+            <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span>
+                Send payment
+            </h2>
+
+<!-- 4 CHECK DETAILS AND SND FOR APPROVAL -->
+
+            <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+            {% if data['sop-supplier-number']%}<a href="/payments/sprint-16/cases/review-payment/sop-approve" aria-describedby="company-information-completed">{% endif %}
+                Check payment and send for approval
+            </a>
+          </span>
+          {% if not data['sop-supplier-number']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+          {% if data['sop-supplier-number'] and not data ['sop-approve']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+          {% if data['sop-approve'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+          </ul>
+          </li>
+
+
+
+{% endblock %}

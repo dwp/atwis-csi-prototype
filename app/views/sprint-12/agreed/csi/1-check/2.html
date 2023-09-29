@@ -1,0 +1,49 @@
+{% if not link %}
+{% set link = "3" %}
+{% set appointeeAddLink  = "2-appointee" %}
+{% set claim = true %}
+{% endif %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: appointeeAddLink }, {id: "no", page: link }] %}
+
+{% set title =  "Does " + data['csi-info'][2]['firstname'] +  " " + data['csi-info'][2]['surname']  + " have an appointee?" %}
+
+
+{% block csi %}
+
+<p>Use Searchlight to check if {{data['csi-info'][2]['firstname']}} {{data['csi-info'][2]['surname']}} has an appointee.</p>
+
+{% if appointeeAdd %} <!-- trigger to set off event if we use this screen from the claim section -->
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "appointee-status-changed",
+  name: "appointee-status-changed",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+{% endif %}
+
+{{ govukRadios({
+       name: "appointee",
+
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes, I need to add an appointee",
+           checked: checked('appointee', "yes")
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No",
+           checked: checked('appointee', "no")
+         }
+       ]
+     }) }}
+
+{% endblock %}

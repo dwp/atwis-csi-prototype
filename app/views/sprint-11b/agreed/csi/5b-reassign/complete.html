@@ -1,0 +1,37 @@
+{% set  hideForm = true %}
+{% set hideBack = true %}
+{% set paymentAdviserLink = true %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set hideReturn  = true %}
+{% set title = "" %}
+
+
+{% block csi %}
+
+
+{{ govukPanel({
+       titleText: "Tasks completed",
+       html: "All tasks have been completed and information saved."
+     }) }}
+
+    <P>The case has been removed from <strong>Your priority cases</strong>.</p>
+
+    <br>
+
+{{ govukButton({
+      href: "/" + folder + "/scenario-handover-to-payment-team",
+          text: "Return to Your cases"
+        }) }}
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  .govuk-panel--confirmation {
+      color: #fff;
+      background: #00703c;
+  }
+  </style>
+{% endblock %}

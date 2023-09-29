@@ -1,0 +1,102 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="/live-3/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Check Derek Smith’s benefits</h1>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is Dereck Smith receiving Severe Disablement Allowance?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Is Dereck Smith receiving Income Support for illness?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               Is Dereck Smith receiving Incapacity Benefit?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+
+
+        <h2 class="govuk-heading-m">Do these details match Searchlight?</h2>
+
+
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="income" name="income" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="income">
+              Yes
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="income-2" name="income" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="income-2">
+              No
+            </label>
+          </div>
+        <form action="/form-handler" method="post" novalidate>
+</div><br>
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button">
+            Send and return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

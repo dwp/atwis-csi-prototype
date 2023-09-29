@@ -1,0 +1,154 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+   Your workplace contact
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="work">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <form class="form" action="personal-details" method="post">
+
+<header>
+    <h1 class="govuk-heading-l">
+    	Your workplace contact
+    </h1>
+  </header>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-fieldset__legend--s" for="f-workContactName">
+    Their name
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-workContactName" name="workContactName" type="text">
+</div>
+
+
+
+  <p class="govuk-body">This should be someone who can authorise payment for the items and services in your support offer.</p>
+  <p class="govuk-body">We won't contact them until we've spoken to you first.</p>
+
+  
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset" aria-describedby="workContactPrefs-hint">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+  
+    How can we contact them?
+  
+  </legend>
+  
+
+  <div id="workContactPrefs-hint" class="govuk-hint">
+    Select as many as you like:
+  </div>
+
+
+  <div class="govuk-checkboxes" id="f-workContactPrefs-wrapper" data-module="govuk-checkboxes">
+    
+
+        
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="f-workContactPrefs" name="workContactPrefs[]" type="checkbox" data-ga-question="How can we contact them?" data-ga-answer="Email" aria-controls="conditional-f-workContactPrefs" aria-expanded="false">
+          <label class="govuk-label govuk-checkboxes__label" for="f-workContactPrefs">
+        Email
+      </label>
+          
+        </div>
+        
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-f-workContactPrefs">
+            
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-workContactEmail">
+    Email address
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-workContactEmail" name="workContactEmail" type="text">
+</div>
+
+
+          </div>
+        
+      
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="workContactPrefs-2" name="workContactPrefs[]" type="checkbox"   data-ga-question="How can we contact them?" data-ga-answer="Phone" aria-controls="conditional-workContactPrefs-2" aria-expanded="true">
+          <label class="govuk-label govuk-checkboxes__label" for="workContactPrefs-2">
+        Phone
+      </label>
+          
+        </div>
+        
+          <div class="govuk-checkboxes__conditional" id="conditional-workContactPrefs-2">
+            
+
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-workContactNumber">
+    Phone number
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-workContactNumber" name="workContactNumber" type="text">
+</div>
+
+
+          </div>
+        
+      
+    
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        <h3 class="govuk-heading-s">Telephone</h3>
+        <p class="govuk-body">0800 169 0154</p>
+        <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+        <p class="govuk-body">Closed public holidays</p>
+        <h3 class="govuk-heading-s">Email</h3>
+        <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk"> dwponline.helpdesk@dwp.gov.uk</a></p>
+    </aside>
+
+      </div> </div>
+{% endblock %}

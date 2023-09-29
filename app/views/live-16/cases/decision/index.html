@@ -1,0 +1,147 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   {% include  "live-16/cases/decision/content/under-25.html" %}
+                 </h1>
+               </legend>
+
+
+
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Type
+
+      </dt>
+      <dd class="govuk-summary-list__value">
+      Specialist equipment
+
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+      </dd>
+    </div>
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+What type of specialist equipment do you need?
+</dt>
+<dd class="govuk-summary-list__value">
+  <ul>
+    <li>Jaws screen reader</li>
+  <li>ZoomText</li>
+  </ul>
+<br>
+
+<br>
+
+<br>
+</dd>
+<dd class="govuk-summary-list__actions">
+
+
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Quote 1
+</dt>
+<dd class="govuk-summary-list__value">
+
+£499, Jaws screen reader
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+
+
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Quote 2
+</dt>
+<dd class="govuk-summary-list__value">
+
+£{{data['chosen-quote-sae']}}, Zoomtext
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+
+
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you approve this support for {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}?
+</dt>
+<dd class="govuk-summary-list__value">
+
+Yes
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+</dd>
+</div>
+</dl>
+
+<p>You have reviewed and approved these details. When you have confirmed the award summary, you will be able to send the award decision to {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}.</p>
+<p>If you have to make any changes to these details, you will need to return to the relevant task.</p>
+
+
+
+<h2 class="govuk-heading--m">Award is under approval limits</h2>
+
+<p>You do not need to send this award to anyone else for approval. </p>
+<p>This is because the total value is under the annual award limit and case manager approval limit.</p>
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
+Confirm award summary
+           </button>
+<p><a href="/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks">I need to change some application details</a></p>
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

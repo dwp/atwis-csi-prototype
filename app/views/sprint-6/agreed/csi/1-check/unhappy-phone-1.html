@@ -1,0 +1,41 @@
+{% set link = "../claim" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "unhappy-phone-2" }] %}
+
+{% set title =  "Phone the applicant" %}
+
+{% block csi %}
+
+
+<p>Phone <strong>{{data['csi-info'][1]['firstname']}} {{data['csi-info'][1]['surname']}}</strong> on <strong>{{ data['csi-info'][1]['contact-by-phone'] }}</strong> to ask
+  for more information about their application.</p>
+
+
+<br>
+</br>
+{{ govukRadios({
+     name: "asked-info-phone",
+       fieldset: {
+         legend: {
+           text: "Has the applicant answered the phone?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes, check information"
+
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

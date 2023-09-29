@@ -1,0 +1,1686 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Communication support at interview prototype
+{% endblock %}
+
+{% set serviceName = "Access to Work (AtWIS)" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width">
+      <h1 class="govuk-heading-xl">
+      Assess
+        <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
+      </h1>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Navigation page for internal team use only. Not for development or usability sessions.
+        </strong>
+      </div>
+      <p>
+
+      </p>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+            Dev Baseline
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+                  {{ govukTable({
+                    caption: "",
+                    captionClasses: "govuk-heading-m",
+                    firstCellIsHeader: true,
+                    head: [
+                      {
+                        text: "Version"
+                      },
+                      {
+                        text: "Date added"
+                      },
+                      {
+                        text: ""
+                      },
+                      {
+                        text: "Link"
+                      }
+                    ],
+                    rows: [
+                    [
+                    {
+                      text: " 0.1"
+                    },
+                    {
+                      text: "1 March 2022"
+                    },
+                    {
+                      html: '
+
+                         <p><strong>Dev baseline: </strong></p>
+                       <ul class="govuk-list govuk-list--bullet">
+
+                           <li>Application summary</li>
+                          <li>Searchlight checks in task list</li>
+                        </ul>
+
+                        <p><strong>Error messages: </strong></p>
+                    <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132711318839/ATWIS+Error+messages">https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132711318839/ATWIS+Error+messages</>
+
+
+                     '
+                    },
+
+                    {
+                      html: '<a href="/baseline/index">Go to baseline </a>'
+                    }
+      ]
+    ]
+  }) }}
+          </div>
+          </div>
+
+
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Usability prototype
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+
+
+<ul>
+      <li>  <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132548690256">Design decision confluence page</a></li>
+      <li>  <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132548690256">Wireframe</a></li>
+</ul>
+
+
+
+
+      {{ govukTable({
+        caption: "Version history for current team",
+        captionClasses: "govuk-heading-m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Date added"
+          },
+          {
+            text: "Change log"
+          },
+          {
+            text: "Link"
+          }
+        ],
+        rows: [
+        [
+        {
+          text: " 0.5"
+        },
+        {
+          text: ""
+        },
+        {
+          text: "Play area  ideas before sprint"
+        },
+        {
+          html: '<a href="/future/index">Go to future </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "00 Month 2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+            </ul>
+              <p><strong>Changes : </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li></li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/current/index">Go to current </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "00 August 2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133330927643/Sprint+35+-+Assess+the+Grant">Full UR overview from sprint 35</a></li>
+            </ul>
+              <p><strong>Changes : </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>  </li>
+
+
+
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-34/index">Go to sprint 34 and 35</a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "00 August 2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133311955002/Sprint+32+-+Assess+the+Grant+TTW+and+Employer+Contact">Full UR overview from sprint 32</a></li>
+            </ul>
+              <p><strong>Changes : </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li> </li>
+
+
+
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-32/index">Go to sprint 32</a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "21 June 2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133290459137/Sprint+30+7-6-23+to+2o-6-23+Transport+to+Work+1">Full UR overview from sprint 30</a></li>
+            </ul>
+              <p><strong>Changes : </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Added travel to work element   </li>
+
+
+
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-30/index">Go to sprint 30</a>'
+        }
+        ],
+
+
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "01 June 2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133263392838/Sprint+29+24+5+23+-+6+6+23+Scenario+7+-+Iterated+Timeline+and+Contact">Full UR overview from sprint 29</a></li>
+            </ul>
+              <p><strong>Changes : </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Reduced content on the timeline </li>
+    <li>Removed link to take to the check your answers page of completed tasks on the timeline </li>
+    <li>Moved all contact details to the contact tab </li>
+    <li>Created contact details page</li>
+    <li>Added <strong>summary card</strong> css to prototype.</li>
+
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-5408</li>
+ <li>HTO-5409</li>
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-28/index">Go to sprint 28 to 29 </a>'
+        }
+        ],
+
+
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "9 May 2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings for 26 and 27: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133223416318/Sprint+26+12+04-26+04+-+Scenario+7+Assess+MHSS" target="_blank">Full UR overview from sprint 26</a></li>
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133239504902/Sprint+27+26+04-10+05+-+Scenario+7+Assess+MHSS+Round+2" target="_blank">Full UR overview from sprint 27</a></li>
+      </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+
+              <li>Added Mental health support (MHSS) element </li>
+   <li>Removed eligibility screen regarding MHSS</li>
+   <li>Updated timeline css from DWP to MOJ</li>
+   <li>Fixed status tag bug for MHSS</li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-5325</li>
+<li>HTO-5321</li>
+<li>HTO-5183</li>
+<li>HTO-5295</li>
+<li>HTO-5182</li>
+<li>HTO-5181</li>
+            </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-27/index">Go to sprint 26 and 27 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "15 April 2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings for 24 & 25: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133183242520/Sprint+24+15+03+-+28+03+-+Scenario+4+Support+Worker" target="_blank">Full UR overview from sprint 24</a></li>
+    <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133217027474/Sprint+25+29+03-11+04+-+Scenario+6+Cross+Scenario+Designs" target="_blank">Full UR overview from sprint 25</a></li>
+            </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+
+          <li>Mocked up prototype timeline, contact log and task to create a handover scenario.   </li>
+<li>Moved contact log tab to the end of the list of tabs</li>
+<li>Added new status tag [contact needed]</li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-5055</li>
+<li>HTO-5056</li>
+<li>HTO-5096</li>
+            </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-24/index">Go to sprint 24 & 25 </a>'
+        }
+        ],
+
+
+                [
+                {
+                  text: "0.1"
+                },
+                {
+                  text: "01 Febuary  2023"
+                },
+
+                {
+                  html: '
+
+                     <p><strong>Findings for 22: </strong></p>
+                   <ul class="govuk-list govuk-list--bullet">
+                      <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133172625677/Sprint+22+15+02+-+28+02+-+Scenario+4+Support+Worker" target="_blank">Full UR overview from sprint</a></li>
+                    </ul>
+                      <p><strong>Changes: </strong></p>
+                    <ul class="govuk-list govuk-list--bullet">
+
+                      <li>Content added to quotes application review, <strong>Total cost including extra costs, like delivery and VAT</strong>. This is due to case managers questioning if Total cost included VAT etc.
+                      </li>
+                      <li>Added Organisation type page to capture the employer type.</li>
+
+                      <li>Moved Elements task list that have been added by application, above add new elements button. This is due user missing the SAE task and going to the button and getting lost looking for the SAE.
+                      </li>
+
+
+                     </ul>
+                     <p><strong>Jira tickets: </strong></p>
+                   <ul class="govuk-list ">
+                     <li>HTO-5001</li>
+
+
+                    </ul>
+
+                 '
+                },
+                {
+                  html: '<a href="/live-22/index">Go to sprint 22 </a>'
+                }
+                ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "18 January  2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings for 21: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133159290261/Sprint+21+01+02+-+14+01+-+Multiple+SAE+I+know+what+I+want+Mandatory+cost+share" target="_blank">Full UR overview from sprint</a></li>
+            </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+
+            <li>Added cost share</li>
+
+                        <li>Added S&D</li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-4810</li>
+             <li>HTO-4409</li>
+
+            </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-21/index">Go to sprint 21 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "04 January  2023"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings for 20: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133132094439" target="_blank">Full UR overview from sprint</a></li>
+            </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+
+            <li></li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-4764</li>
+
+            </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-12/index">Go to sprint 20 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "05 Dec  2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings for 19: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133100044553" target="_blank">Full UR overview from sprint</a></li>
+            </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+            <strong>*MAJOR ITERATION*</strong>
+            <li>Split task list out into smaller task list</li>
+            <li>Removed summary page</li>
+            <li>Created new feature of adding elements in the elements section of the task list, not the application</li>
+<li>
+Expanded support workers adding functionality from WPA to allow multiple support workers
+</li>
+<li>
+ONS content removed from disability stats page.
+</li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-4590</li>
+ <li>HTO-4592</li>
+  <li>HTO-4302</li>
+    <li>HTO-4377</li>
+            </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-19/index">Go to sprint 19 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "Sep  2022"
+        },
+
+        {
+          html: '
+<strong>Note: AtWIS work put on hold to work on the Apply journey</strong><br><br>
+             <p><strong>Findings for 18 : </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133092083494" target="_blank">Full UR overview from sprint</a></li>
+            </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+
+
+<li>Thomas King case created</li>
+<li>Support worker case added</li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-4233</li>
+
+            </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-18/index">Go to sprint 18 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "02 Aug  2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings from 16 and 17: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132902847032/Sprints+8+9+20+07-16+08+-+Scenario+2+v3">Full UR overview from sprint</a></li>
+            </ul>
+              <p><strong>Changes: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Iterated the <strong>Summary of support</strong> screen. Removed change links and introduced a question that would trigger the ability to change the support (elements).</li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3783</li>
+
+            </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-17/index">Go to sprint 17 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "20 July 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+          <p>Only 3 users, will incorporate users from next sprint. </P>
+       <ul class="govuk-list ">   <li> <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132886790314"> Full UR overview from sprint</a></li>
+               </ul>
+              <p><strong>Changes for test: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Created second case in prototype <strong>Sonya Corkery</strong>  </li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3144</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-16/index">Go to sprint 16 </a>'
+        }
+        ],
+
+
+        [
+
+        {
+          text: "0.1"
+        },
+        {
+          text: "6 July 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132868441363/Sprint+6+22+06-05+07+-+Scenario+2+v1">Full UR overview from sprint 15</a></li>
+            </ul>
+              <p><strong>Changes to test: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Changed workplace assesment task <strong>Recommendation</strong> to <strong>Confirm whether workplace assessment is needed</strong></li>
+<li>Capture the outcomes of the report in AtWIS.</li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3142</li>
+             <li>HTO-3460</li>
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-15/index">Go to sprint 15 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "22 June 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132839833653/Sprints+4+5+25+05-21+06+-+Scenario+1+v3">Full UR overview from sprint live 13 and 14</a></li>
+            </ul>
+              <p><strong>Changes to test: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Full WPA journey</li>
+<li>Capture the outcomes of the report in AtWIS.</li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3142</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-14/index">Go to sprint 14 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "25 May  2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132839833653/Sprints+4+5+25+05-21+06+-+Scenario+1+v3">Full UR overview from sprint live 13 and 14</a></li>
+            <li>Scenario 1 complete journey tested</li>  </ul>
+            <p><strong>Changes to test: </strong></p>
+           <ul class="govuk-list ">
+             <li>Referral form and set of WPA assessment. Beginning of Scenario 2.  </li>
+
+            </ul>
+             <p><strong>Jira tickets: </strong></p>
+            <ul class="govuk-list ">
+              <li>HTO-3140</li>
+
+             </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-14-2/index">Go to sprint 14.2 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "25 May 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Usability done in sprint but analysis not completed. Follow up in next sprint. </li>
+          <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132839833653/Sprints+4+5+25+05-21+06+-+Scenario+1+v3">Full UR overview from sprint live 13 and 14</a></li>  </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Created a "case not appropirate for ATWIS" screen. Created a <a href="/live-13/cases/case-not-appropriate-for-atwis/task-list#your-tasks">separate folder</a> to show the screen triggers different status and notification box.   </li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3078</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-13/index">Go to sprint 13 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "11 May 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132810113033/Sprint+2+11+05-24+05+-+Scenario+1+v2">Full UR overview from sprint live 12</a></li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Full <strong>scenario 1</strong> journey</li>
+              <li>Created award summary section, that playback element and quote details. It also will auto determine if a referral for approval is needed based on the amount. As this is under £500 no referral for approval is needed. </li>
+                <li>Created Decision on award screen.  </li>
+                <li>ONS data capture added. Primary and secondary condition renamed as health condition and Other health condition. </li>
+                <li>Place holder screen for completed screen after ONS screen. Will review after analysis and usability.</li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+            <ul class="govuk-list ">
+              <li>HTO-3049</li>
+             <li>HTO-3044</li>
+             <li>HTO-3372</li>
+             <li>HTO-3047</li>
+             </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-12/index">Go to sprint 12 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "03 May 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings:</strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>No UR ths sprint</li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+              <p>Story mapping approach to design work is implement this sprint. The focus is scenario 1. </P>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>We temporary removed the incomplete task content at the top of the task list till we know how many tasks we will have </li>
+  <li>Created application review section in the task list</li>
+  <li>Moved the job details into the application review section </li>
+    <li>Moved the job details into the application review section </li>
+      <li>Created element section for special aids and equipment (SAE) to review for the business case needs </li>
+        <li>Added a way to record workplace assessment not needed. </li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+            <ul class="govuk-list ">
+              <li>HTO-3043</li>
+             <li>HTO-3274</li>
+   <li>HTO-3040</li>
+             </ul>
+         '
+        },
+
+        {
+          html: '<a href="/live-11/index">Go to sprint 11 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "15 April 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+
+                <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132759356381/Sprint+1222+-+Iterated+Contact+Log+Iterated+Job+Details" target="blank">Full UR overview from sprint 1222</a>
+
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Removed Check Your Answers (CYA) from the end of question journey. CYA Now only appear if a user returns to a task. Previous usability session showed case managers stuck in a loop, after several iteration of content Changes for UR to try address this, we where still seeing the same issue. We have added to the design backlog to explore at a later date   </li>
+              <li>Changed content on <strong>Is Searchlight correct?</strong> (users where confused by the content as there was no refrence to what Searchlight was correct or not) to <strong>Are Dereck Smiths perosnal details correct in Searchlight?</strong></li>
+             <li>Contact journey content updated: <br>-Changed <strong>What did you {contact method} {name here} about?</strong> to <strong>Contact note</strong><br>
+<strong>-How do you want to contact {name here}?</strong> to <strong>Type if contact</strong> and introduced hint text <br>
+-Radio for <strong>SMS</strong> changed to <strong>Text message (SMS)</strong><br>
+-Removed all reference to <strong>Log</strong><br>
+-Changed radio <strong>Yes, check information</strong> to <strong>Yes</strong> on /cases/contact/1/phone.html<br>
+-Added third radio <strong>I need to contact {name here} to confirm</strong> on /cases/update/index.html<br>
+-(Bug fix) wrong status tag and missed CYA in the journy.<br>
+</li></ul>
+<p><strong>Jira tickets: </strong></p>
+<ul class="govuk-list ">
+ <li>HTO-3056</li>
+<li>HTO-3057</li>
+<li>HTO-3058</li>
+</ul>
+         '
+        },
+
+        {
+          html: '<a href="/live-10/index">Go to sprint 16-29-22 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "02 March 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <!-- <li></li> -->
+                            <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132717838340/Sprints+0822+1022+-+Contact+Log+and+Iterated+Job+Details" target="blank">Full UR overview from sprint 0822+1</a>
+
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>JS validation error messages added to the dev baseline</li>
+<li>Added lives version of the Docuemtn tab to the allocator your case</li>
+<li>Strong tag removed off the appointee name</li>
+<li>Dev baseline clean up</li>
+<li>Moved prioty tab after the other tab, on the your case screens for case mangers and allocators view</li>
+<li>Added elements data from the new application design from sparrow on Application details tab (tab now alines with sparrow datat set)</li>
+<li>Introduced the key details banner (testing next sprint)</li>
+<li>Create content folder to manage content in central place</li>
+
+             </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-9/index">Go to sprint 02-15 22 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "1 March 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+        <p>Usability only had 2 sessions, dues to no shows and cancelations. Will be retested next sprint.</p>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+              <li>Removed the contact task from the task list as a task and had it above the task list. Content appears in an inset explain they cannot contact yet. </li>
+              <li>Removed the <strong>why do you need to contact</strong> page in the contact journy to be lean. May consider bring this back in later rounds.</li>
+              <li>Job details expanded to included unhappy paths.</li>
+              <li>Broke down job details into two task, first <strong>employment</strong> shows job details and permission to contact then once completed <strong>job details</strong> task appears, which covers employer size, cost share and confirming job details.</li>
+              <li>Cleaned up searchlight section.</li>
+
+             </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-8/index">Go to 0822 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "16 Febuary 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>After the change of content on the check your answer (CYA) pages users made it past them with no issues.</li>
+              <li>Most (if not all case mangers in this sprint) had not heard of the third party option in the cost share journey. </li>
+              <li>All CMs agreed that the size of the company was essential information, but suggested that the citizen was not necessarily the best source for that information.</li>
+              <li>Only 2/5 CMs clicked on the cost share guidance link in Job details, and they did not expect to be taken there. </li>
+              <li>All CMs noticed the addition of the permission question and reacted positively to it.</li>
+              <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132685758528" target="blank">Full UR overview from sprint 0622</a>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Changed all the content on the check your answer (CYA) pages (named /check.html) links from “change” to “update”. Also changed all titles content to include “Task summary:…”. This is due to the continues feedback that about 50% of case managers were confused about the purpose of the CYA.</li>
+              <li>Job details expanded to capture cost share agreement tasks in employment</li>
+              <li>Timeline expanded </li>
+                <Li>Timeline updated to aligne with Changes for UR</li>
+             </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-7/index">Go to 0622 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "2 February 2022"
+        },
+
+                {
+                  html: '
+
+                     <p><strong>Findings: </strong></p>
+                   <ul class="govuk-list govuk-list--bullet">
+                      <li></li>
+                    </ul>
+                      <p><strong>Changes for UR: </strong></p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Upper case filter added to the NiNO data</li>
+                      <li>Job details section added to the task list and data from the Sparrow new apply design to the application details tab</li>
+                      <li>Employed and self-employed details added</li>
+                      <li>Status tag conditions for check Personal details and National Insurance number task updated to be completed when all question is answered</li>
+                      <li>If the user answers <strong>Yes, but name, date of birth or address do not match</strong> in check Personal details and National Insurance number task this will trigger Personal details and CIS500 task after a contact has been completed </li>
+                      <li>Content update contact journey and update screen removed. As the new Personal details and CIS500 replaces this</li>
+                    </ul>
+
+                 '
+                },
+
+                {
+                  html: '<a href="/live-6/index">Go to sprint 0422 </a>'
+                }
+                ],
+                [
+                {
+                  text: "0.1"
+                },
+                {
+                  text: "5 January 2022"
+                },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>User were confused as to why some tasks were still in progress as they had completed the journey.
+                The scenario we used was some details in searchlight are not matching.
+                The design approach was that the task would remain in progress as the details need updating.
+                Users pointed out they had completed the task (by answering the questions) and did not know what was missing.
+                Most users went to the application details tab to update them. We hypophysis is that with causes a disconnect that the application details tab and task list (on the your task tab) and are not in sync.  </li>
+              <li>User indicated that having the disability on the application summary would be helpful </li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Added notification (using the details component) for the drop down on the “your cases” screen. If there are no cases this will be triggered. Removes the old design of the red or green banner. Applied to priority, other and csi tab. </li>
+              <li>Created completed case and allocated notification box on the your case screen</li>
+              <li>Aligned the type of case dropdown and button to the left</li>
+              <li>Updated table component to have the first column as header (as per the design system) </li>
+              <li>Readded the priority column </li>
+              <li>Case history refined and logic created </li>
+              <li>PiP added to the benefits list</li>
+              <li>When adding an appointee content Changes for UR in the contact journey to reference the appointee</li>
+              <li>Check your answers added to the appointee journey </li>
+
+               <li></li>
+             </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/current/index">Go to sprint 0222 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "8 December 2021"
+        },
+
+        {
+          html: '
+          <ul class="govuk-list govuk-list--bullet">
+             <li>Added PiP to the list of benefits and changed the H1. Users expected it to be part of the list (PiP does not affect eligibility but they expected it there) as a way of marking down that this application may involve PiP </li>
+             <li>Created <strong>All Advisres</strong> screen and added to main nav bar for leads/allocators views. This is using exiting functionality and design that already is in live, that has been turned off to the user. It is out of MVP scope to iterate it in this current phase</li>
+             <li>Added a simplified case history (using timeline component) to application summary tab, with the goal of expanding the complexity as the design develops.  We added it to the application summary tab to remove the need to add another tab (at this stage) and for Leads/allocator to view this as soon as they click “Go to case” links.  </li>
+
+           </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/live-4/index">Go to sprint 4921 </a>'
+        }
+        ],
+        [
+        {
+          text: " 0.2"
+        },
+        {
+          text: "6 December 2021"
+        },
+        {
+          html: ' <ul class="govuk-list govuk-list--bullet">
+             <li>Merged personal details with add NiNo</li>
+             <li>Expanded the placeholder text in contact notification</li>
+           </ul>
+
+         '
+        },
+        {
+          html: '<a href="/live-3-v2/index">Go to sprint 4721 v1</a>'
+        }
+        ],
+        [
+        {
+          text: " 0.1"
+        },
+        {
+          text: "24 November 2021"
+        },
+        {
+          html: '
+           <ul class="govuk-list govuk-list--bullet">
+             <li>Added filtering design to baseline with live</li>
+             <li> Created <strong>allocator</strong> your case view</li>
+     <li>Created a not eligible automated notification for DOB and Address - adds a notification to the case screens </li>
+      <li> Updated the ordering of the task list from usability feedback</li>
+        <li>Added logic for status tags to activate</li>
+            <li>Your task tab always visible and moved ahead of application details - based on usability </li>
+                <li>Added appointee screen</li>
+                    <li>Cleaned up file structure</li>
+                        <li>Created benefits screen and renamed eligibility task to benefits</li>
+                      <li>Added check personal details screen</li>
+                      <li>Added contact journey for missing details in searchlight - both user needing to contact or not based on their answers</li>
+<li>Updated content on task list</li>
+           </ul>
+         '
+        },
+        {
+          html: '<a href="/live-3/index">Go to sprint 4721 v1</a>'
+        }
+        ],
+        [
+        {
+          text: " 0.2"
+        },
+        {
+          text: "15 November 2021"
+        },
+        {
+           html: '
+            <ul class="govuk-list govuk-list--bullet">
+          <li>Iterated mid sprint based of usability testing</li>
+          <li>Rearranged the tabs order  to have the Summary, then Your task followed by details</li>
+          <li>Moved eligibility and appointee in the task list to the first step</li>
+          <li>Merged the add NiNO journey </li>
+
+
+          </ul>
+          '
+        },
+        {
+          html: '<a href="/live-2-v2/index">Go to 4521 v2  </a>'
+        }
+],
+[
+{
+  text: " 0.1"
+},
+{
+  text: "15 November 2021"
+},
+{
+   html: '
+    <ul class="govuk-list govuk-list--bullet">
+  <li>Radio redirect package added to kit</li>
+  <li>Stripped the prototype down to your case view to build up from</li>
+  <li>Added current AtWIS customer/citizen details using data from the QA environments</li>
+  <li>Update templates and folder roots</li>
+  <li>Updated version of the customer/citizen details tab - removed sub nav and added check your answers pattern</li>
+  <li>Added subpages to change links on the citizen details tab/check your answer page</li>
+  <li>Created pages and flow for adding a NiNO</li>
+  <li>Moved application details to application summary tab: Application details are not linked directly to the personal details of the citizen. After discussions with the content designer, they where best suited to the application summary tab.</li>
+  <li>Your tasks tab:  added css for new style task list and put a place holder version of the task list</li>
+  <li>Change green button content to Save and continue in the add NiNO journey</li>
+  <li>Added links that appear in DiSC as features. Will need to review once we get to these tickets</li>
+  <li>Removed <strong>-</strong> from dates</li>
+  <li>Included full text to any anachronism </li>
+  <li><strong>You need to:</strong> changed to <strong>To do:</strong></li>
+
+  </ul>
+  '
+},
+{
+  html: '<a href="/live-2-v1/index">Go to sprint 4521 v1 </a>'
+}
+],
+        [
+        {
+          text: " 0.2"
+        },
+        {
+          text: "9 September 2021 0"
+        },
+        {
+          text: "V3 design added"
+        },
+        {
+          html: '<a href="/live-1/index">Go to sprint 1 </a>'
+        }
+
+
+
+              ]]
+
+      }) }}
+    </div>
+</div>
+
+<div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+        (Retired) 24 September 2019 to 17 November 2021
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+      {{ govukTable({
+        caption: "Version history from previous team",
+        captionClasses: "govuk-heading-m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Date added"
+          },
+          {
+            text: "Description"
+          },
+          {
+            text: "Link"
+          }
+        ],
+        rows: [
+        [
+        {
+          text: "Sprint 13"
+        },
+        {
+          text: "17 November 2021"
+        },
+        {
+          text: "Revised allocation journey"
+        },
+        {
+          html: '<a href="/sprint-13/index">Go to sprint 13 </a>'
+        }
+          ],
+          [
+          {
+            text: "Sprint 12b"
+          },
+          {
+            text: "10 November 2021"
+          },
+          {
+            text: "Harrow testing of allocation and transfer screens"
+          },
+          {
+            html: '<a href="/sprint-12b/index">Go to sprint 12b</a>'
+          }
+            ],
+            [
+            {
+              text: "Sprint 12"
+            },
+            {
+              text: "20 February 2020"
+            },
+            {
+              text: "Design freeze for MVP (including contact centre)"
+            },
+            {
+              html: '<a href="/sprint-12/index">Go to sprint 12</a>'
+            }
+              ],
+        [
+        {
+          text: "Sprint 11b"
+        },
+        {
+          text: "17 February 2020"
+        },
+        {
+          text: "Amends during Harrow sessions"
+        },
+        {
+          html: '<a href="/sprint-11b/index">Go to sprint 11b</a>'
+        }
+          ],
+
+        [
+        {
+          text: "Sprint 11"
+        },
+        {
+          text: "5 February 2020"
+        },
+        {
+          html: '<p>Tidy up for the payment journey</p>
+                  <strong>Focus</strong>
+                  <p>System usability and process stages – case handover between PO and advisor</p>
+
+                  <strong>Learning issues</strong>
+                  <p>Usability - None	</p>
+
+                  <strong>Next steps (Immediate Changes for UR)</strong>
+                   <p>Process flow: Create journey to handle complex case rejection and closure</p>
+
+                   <strong>Next steps (to monitor after moving to Private Beta)</strong>
+                   <ul class="govuk-list govuk-list--bullet">
+                      <li>Sourcing correct data from invoices:  Addition of invoice information to PO
+                        system - are advisors clear about which information they should be taking from
+                        invoices and adding to system (invoice date vs due date, citizen postcode vs
+                        supplier postcode)</li>
+                      <li>Handovers - what impact will there be if tasks become distributed across
+                        geographies? Will email be sufficient? </li>
+                      <li>Handovers (advisor) - Current assumption that payments supervisor will oversee / reallocate
+                        tasks when an advisor goes away.</li>
+                      <li>Claim forms - existing suppliers known to shortcut application form and provide
+                          incomplete details where invoice already provides them.
+                          Will this continue to be allowed by POs?</li>
+                    </ul>'
+        },
+        {
+          html: '<a href="/sprint-11/index">Go to sprint 11</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 10b"
+        },
+        {
+          text: "28 January 2020"
+        },
+        {
+          text: "Amends after Harrow"
+        },
+        {
+          html: '<a href="/sprint-10b/index">Go to sprint 10b</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 10"
+        },
+        {
+          text: "24 January 2020"
+        },
+        {
+          html: '<p>Payments prototype testing 28 January in Harrow</p>
+                  <strong>Focus</strong>
+                  <p>System usability and process stages (payments – unhappy path)</p>
+
+                  <strong>Learning issues</strong>
+                  <p>Clarity on search box use – addition of “optional” alongside superfluous boxes</p>
+                  <p>Clarity on advisor actions (PO need to see more information when an agreed payment is changed)</p>
+
+                  <strong>NEEDS RESEARCH (move into separate tickets if needed)</strong>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>payee search results - details to play back (business name? remove supplier code and replace with what?)</li>
+                    <li>payee details - invoice numbers(s) - do we need to capture something from the invoice? do we need
+                      to create one from atwis for tracking purposes?</li>
+                    <li>adviser handover - can they approve without going back to the application?</li>
+                    <li>journey after payment has been approved - what happens? what do we need to show
+                      to the payment officer? what about recalls?</li>
+                    <li>wider considerations about allocations - do we need to allow for this in the future?</li>
+                    </ul>'
+        },
+        {
+          html: '<a href="/sprint-10/index">Go to sprint 10</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 9"
+        },
+        {
+          text: "13 January 2020"
+        },
+        {
+          html: '<p>Payments prototype testing 28 January in Harrow</p>
+
+                  <strong>Focus</strong>
+                  <p><strong>*No field  UR during this sprint – design only*</strong></p>
+
+                  <strong>Usability issues</strong>
+                  <p></p>
+
+                  <strong>Next steps</strong>
+                  <p></p>'
+        },
+        {
+          html: '<a href="/sprint-9/index">Go to sprint 9</a>'
+        }
+          ],
+        [
+        {
+          text: "Sprint 8"
+        },
+        {
+          text: "18 November 2019"
+        },
+        {
+          html: '<p>Adding payments journey</p>
+                    <strong>UR 6-12-2019</strong>
+
+                  <strong>Focus</strong>
+                  <p>Usability, language, process, use of Searchlight, manually populating an application form, inherited behaviours</p>
+
+                  <strong>Learning issues</strong>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Manually populating a form was a disaster – lack of pre-pop capability a major step backwards.</li>
+                    <li>Training needs identified relating to migrating to new system</li>
+                    <li>Need for further information when amounts are changed</li>
+                    <li>Advisors not picking up on typo errors in contact details</li>
+                    <li>Process was instinctive, language was appropriate, timeline was appreciated</li>
+                  </ul>
+
+                  <strong>Next steps</strong>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Spike to investigate pre-popultion. Pre-pop capability added to MVP</li>
+                      <li>Addition of free text elaboration when amounts changed by advisor</li>
+                      <li>Maintain watch on contact details</li>
+                    </ul>'
+        },
+        {
+          html: '<a href="/sprint-8/index">Go to sprint 8</a>'
+        }
+          ],
+
+        [
+        {
+          text: "Sprint 7"
+        },
+        {
+          text: "28 November 2019"
+        },
+        {
+          html: '<p>Full journey </p>
+
+                  <strong>Focus</strong>
+                  <p></p>
+
+                  <strong>Learning issues</strong>
+
+                  <br>
+                  <strong>Next steps</strong>'
+        },
+        {
+          html: '<a href="/sprint-7/index">Go to sprint 7</a>'
+        }
+          ],
+          [
+          {
+            text: "Sprint 6"
+          },
+          {
+            text: "13 November 2019"
+          },
+          {
+          html: '<p>MVP unhappy path and payments</p>
+                    <strong>Focus</strong>
+                    <p></p>
+
+                    <strong>Testing of unhappy path journey – missing information from application</strong>
+                    <p></p>
+                    <strong>Process steps and usability</strong>
+                    <p></p>
+                    <strong>Learning issues</strong>
+                    <p></p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Users struggled with locating the case details tab. Later addition of a hyperlink to the "case details"
+                         page went some way to rectifying this issue and made it easier for users to know where to go when they needed
+                          to edit information</li>
+
+                      <li>When reading through the details submitted by the applicant, not all advisers picked up on a deliberate
+                        but simple typo in the email address of the employer listed as being terry.gibson@tecso.net rather than Tesco.net
+                         Since making contact with employers is seen as a major pain point for advisers, we need to prioritise improving
+                         ways to confirm that we are receiving the best possible contact details when applications are submitted.</li>
+
+                      <li>Most managed to pick it up and resolve, some did not.  Address ways to confirm that we are receiving the best
+                         possible contact details when applications are submitted.</li>
+
+                      </ul>
+
+                      <strong>Next Steps</strong>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Addition of hyperlink to case details page</li>
+                        <li>Maintain watch on addition of contact details</li>
+                      </ul>
+                      '
+        },
+          {
+            html: '<a href="/sprint-6/index">Go to sprint 6</a>'
+          }
+            ],
+        [
+        {
+          text: "Sprint 5"
+        },
+        {
+          text: "28 October 2019"
+        },
+        {
+          html: '<p>Apply and ‘happy path’ amends, ’unhappy path’ concepts</p>
+                  <strong>Focus</strong>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Obtaining an allocated case</li>
+                    <li>Following the journey to grant approval</li>
+                    <li>Following the journey to payment approval</li>
+
+                    </ul>
+
+                    <strong>Learning issues</strong>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Some language not recognised by users  (Application rather than claim form)</li>
+                      <li>Advisors wrote emails to citizens based on past behaviours rather than suggested text</li>
+                      <li>Advisors struggled with recording employer contact</li>
+
+                      </ul>
+
+                      <strong>Next steps</strong>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>Language changed to reflect users’ choice</li>
+                        <li>Employer contact journey refined to become more instinctive</li>
+
+                        </ul>'
+        },
+        {
+          html: '<a href="/sprint-5/index">Go to sprint 5</a>'
+        }
+          ],[
+          {
+            text: "Sprint&nbsp;4a" | safe
+          },
+          {
+            text: "24 October 2019"
+          },
+          {
+            text: "Amends based on initial adviser"
+          },
+          {
+            html: '<a href="/sprint-4a/index">Go&nbsp;to&nbsp;sprint&nbsp;4a</a>' | safe
+          }
+        ],[
+          {
+            text: "Sprint 4"
+          },
+          {
+            text: "17 October 2019"
+          },
+          {
+            html: '<p>Adviser testing in Harrow of happy path journey. Baselining with new sprints</p>
+
+            <strong>Focus</strong>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Testing the basic design pattern – Task list, automated timeline, claim details tabs,
+                evidence shown with opportunity to verify / amend.</li>
+            </ul>
+
+              <strong>Learning issues</strong>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Uncovered varied advisor case-handling behaviours and impact of legacy thinking / processes</li>
+                <li>Need to focus advisor behaviour and prevent unnecessary citizen contact and data collection</li>
+                <li>Advisers comfortable with being given suggested email content to send</li>
+                <li>Timeline welcomed but also wanted to see time of transaction due to fast SLA’s for CSI and also to start at submission date</li>
+                <li>Advisors wanted a view of all stages, not split pre/post interview</li>
+
+                </ul>
+
+                <strong>Next steps</strong>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li></li>
+                  </ul>'
+
+          },
+          {
+            html: '<a href="/sprint-4/index">Go to sprint 4</a>'
+          }
+        ],[
+            {
+              text: "Baseline"
+            },
+            {
+              text: "4 October 2019"
+            },
+            {
+              text: "As-is CSI journey across online service, comms, ATWIS and DiSC"
+            },
+            {
+              html: '<a href="/sprint-baseline/index">Go to baseline</a>'
+            }
+          ],
+          [
+            {
+              text: "V12"
+            },
+            {
+              text: "24 September 2019"
+            },
+            {
+              text: "Testing application with Deaf participants in Manchester 3 October"
+            },
+            {
+                html: '<a href="/V12/index">Go to V12</a>'
+            }
+          ]
+        ]
+      }) }}
+    </div>
+      </div>
+      <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                (Retired) Old prototype
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+
+      <h3 class="govuk-heading-m">
+        Versions from previous team
+      </h3>
+<ul>
+      <li><a href="/V1/start">V1</a></li>
+      <li><a href="/V2/start">V2</a></li>
+      <li><a href="/V3/start">V3</a></li>
+      <li><a href="/V4/start">V4</a></li>
+      <li><a href="/V5/start">V5</a></li>
+      <li><a href="/V6/start">V6</a></li>
+      <li><a href="/V7/landing/start">V7</a></li>
+      <li><a href="/V8/landing/start">V8</a></li>
+      <li><a href="/V9/landing/start">V9</a></li>
+      <li><a href="/V10/landing/start">V10</a></li>
+      <li><a href="/V10-updated/updated-content/who-needs-support">V10 updated content</a></li>
+      <li><a href="/V11/updated-content/total_cost">V11 support worker question</a></li>
+</ul>
+
+    </div>
+</div>
+
+{% endblock %}

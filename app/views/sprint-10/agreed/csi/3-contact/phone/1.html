@@ -1,0 +1,65 @@
+{% set link = "../../4-confirm/1" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Telephone the employer" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../../index-interview"}] %}
+
+
+{% block csi %}
+
+
+<p>Check that <strong>Thomas Brown</strong> attended the interview with an interpreter or support worker.</p>
+
+<p>Telephone Terry Gibson at Tesco on <strong>07192 838 482</strong>.</p>
+<br>
+
+
+
+{% set conditionalText %}
+{{ govukTextarea({
+  name: "employer-note",
+  id: "employer-note",
+  value: data['employer-note'],
+  label: {
+    text: ""
+  },
+  hint: {
+    text: "For example, if you left a message or they asked you to call them back
+"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+
+      classes: "govuk-radios--inline",
+       name: "employer-phone",
+       fieldset: {
+         legend: {
+           text: "Is the employer available?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           checked: checked('employer-phone', "yes"),
+           text: "Yes, check information"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No, write a note",
+           checked: checked('employer-phone', "no"),
+           conditional: {
+             html: conditionalText
+           }
+         }
+       ]
+     }) }}
+
+{% endblock %}

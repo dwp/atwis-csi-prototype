@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+  <a class="govuk-back-link" href="urn">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Question 6 of 6</span>
+
+      <form class="form" action="review" method="post">
+
+ <h1 class="govuk-heading-xl">
+    Getting in touch
+  </h1>
+
+
+  <div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset" aria-describedby="contact_method-hint">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  
+    How should we contact you to discuss your renewal application?
+  
+  </legend>
+  
+
+  <div id="contact_method-hint" class="govuk-hint">
+    We need to make sure your contact preferences are up to date in our records. Select at least one.
+  </div>
+
+
+  <div class="govuk-checkboxes" id="f-contact_method-wrapper" data-module="govuk-checkboxes">
+    
+            
+          
+          
+          
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="f-contact_method" name="contact_method[]" type="checkbox" value="email" aria-controls="conditional-f-contact_method" aria-expanded="false">
+            <label class="govuk-label govuk-checkboxes__label" for="f-contact_method">
+        Email
+      </label>
+            
+          </div>
+          
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-f-contact_method">
+              
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-email_address">
+    Email address
+  </label>
+
+<input class="govuk-input govuk-!-width-three-quarters" id="f-email_address" name="email_address" type="text">
+</div>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Email terms
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Department for Work and Pensions (DWP) cannot guarantee external emails against:</p><ul class="govuk-list govuk-list--bullet"><li>loss or non-delivery</li><li>theft by third parties</li><li>manipulation of data</li></ul><p class="govuk-body">Asking DWP to use email to get in touch with you in this application means you understand this risk. If you have any concerns then do not include your email address.</p>
+  </div>
+</details>
+
+
+
+
+<div class="govuk-form-group">
+
+  <div class="govuk-checkboxes" id="f-agree_email_terms-wrapper" data-module="govuk-checkboxes">
+    
+      
+             
+          
+          
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="f-agree_email_terms" name="agree_email_terms[]" type="checkbox" value="agree">
+            <label class="govuk-label govuk-checkboxes__label" for="f-agree_email_terms">
+        I agree to the email terms
+      </label>
+            
+          </div>
+          
+           
+    
+  </div>
+
+</div>
+
+
+            </div>
+          
+              
+          
+          
+          
+          
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="contact_method-2" name="contact_method[]" type="checkbox" value="phone" aria-controls="conditional-contact_method-2" aria-expanded="false">
+            <label class="govuk-label govuk-checkboxes__label" for="contact_method-2">
+        Phone call
+      </label>
+            
+          </div>
+          
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact_method-2">
+              
+
+
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-phone_number">
+    Phone number
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-phone_number" name="phone_number" type="text">
+</div>
+
+
+            </div>
+          
+        
+      
+    
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

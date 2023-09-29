@@ -1,0 +1,174 @@
+
+
+
+
+
+
+
+
+
+      </ul>
+      </li>
+      <p >
+<a href="{% if not data['_do_1']%}/live-18/cases/contact/1/how-do-you-want-to-contact{% else %}/live-18/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+  Record contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}{% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}{% endif %}
+</a>
+      </p><br>
+
+      <!-- <p >
+      <a href="{% if not data['_do_1']%}/live-18/cases/contact/1/how-do-you-want-to-contact{% else %}/live-18/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+      Add contact
+      </a>
+      </p> -->
+<!-- <br> -->
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">3. </span> Workplace assessment
+  </h2>
+  <ul class="app-task-list__items">
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+<a href="{% if phase =="sonya"%}/live-18/cases/workplace-assesment/wpa-not-needed{% else %}{% if data['wpa']%}/live-18/cases/workplace-assesment/check-wpa{% else %}{% if data['elements']=='I do not know'%}/live-18/cases/workplace-assesment{% else %}/live-18/cases/workplace-assesment/wpa-not-needed{% endif %}{% endif %}{% endif %}" aria-describedby="job-status">
+  Confirm whether workplace assessment is needed
+</a>
+  </span>
+
+    {% if not data['wpa']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% else %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+    {% endif %}
+  </li>
+
+  {% if data['wpa']=='Yes'%}
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+  <a href="{% if data['wpa-type']%}/live-18/cases/workplace-assesment/check{% else %}/live-18/cases/workplace-assesment/citizen-wpa{% endif %}" aria-describedby="job-status">
+      Type of workplace assessment
+  </a>
+    </span>
+    {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+  {% if data['wpa-type']=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+  {% if data['wpa-availability']=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+  {% if data['wpa-availability']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+      {% if not data['wpa-type']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+    </li>{% endif %}
+</ul>
+
+
+{% if not totaljob == 1  %}
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">4. </span> Prepare business case
+  </h2>
+<ul class="app-task-list__items">
+    <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+
+          Employment
+
+    </span>
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+
+
+
+
+      </ul>
+{% else %}
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Prepare business case
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="
+{% if data ['job-deatils-contact']=='They gave permission (apply)'%}
+{% if data ['contact-employer']%}/live-18/cases/contact-employer/check{% else %}/live-18/cases/contact-employer/contact-employment{% endif %}
+{% else %}
+{% if data ['job-deatils-contact']%}/live-18/cases/contact-employer/check{% else %}/live-18/cases/contact-employer{% endif %}
+{% endif %}
+" aria-describedby="job-status">
+
+                  Employment
+</a>
+              </span>
+
+{% if data['job-deatils-contact']=='They gave permission (apply)'%}
+{% if data ['contact-employer']=='Yes'%}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+{% if  data['contact-employer']=='Yes, but I’m waiting for an answer' %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% if not data['contact-employer']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+{% if data ['contact-employer']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}
+
+{% else %}
+
+{% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+{% if  data['job-deatils-contact']=='They did not give permission'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+{% if  data['job-deatils-contact']=='They gave permission' and data ['contact-employer']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% if  data['contact-employer']=='Yes, but I’m waiting for an answer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% if  data['job-deatils-contact']=='I have not spoken to them' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+
+{% if data ['job-deatils-contact']=='They gave permission (apply)'%}
+{% if not data['contact-employer']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+
+{% else %}
+{% if not data['job-deatils-contact']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+{% endif %}
+{% endif %}
+</li>
+
+
+{% if data ['contact-employer']=='Yes'%}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+  <a href="{% if data['employer-confirmed']%}/live-18/cases/job-details/check{% else %}/live-18/cases/job-details{% endif %}" aria-describedby="job-status">
+                  Job details
+</a>
+              </span>
+              {% if data['employer-confirmed']=='No, Smith Digital Limited has not confirmed job details'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% else %}
+              {% if data['employer-cost-share']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+              {% if data['employer-cost-share']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+              {% if data['employer-cost-share']=='I have not discussed a cost share with the employer' %}  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+              {% if data['employer-cost-share']=='I’m waiting for an answer from the employer' %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+{% endif %}
+            {% if not data['employer-confirmed']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+            </li>
+{% endif %}
+
+
+{% if data['employer-cost-share'] and data['wpa']=='Yes'%}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+          <a href="{% if data['referral-form']%}/live-18/cases/workplace-assesment/check-referral-form{% else %}/live-18/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
+                  Workplace assessment referral form
+          </a>
+              </span>
+              {% if not data['referral-form']%}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li>
+{% else %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+{% endif %}
+{% endif %}
+
+
+
+
+  {% if data['referral-form']%}
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+<a href="/live-18/cases/workplace-assesment/wpa-report" aria-describedby="cost-share-agreement">
+      Review workplace assessment report
+</a>
+    </span>
+{% if data['report']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}         </li>
+
+{% endif %}
+
+    </ul>
+
+          {% endif %}

@@ -1,0 +1,164 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="
+{% if data['clear']=='No' %}/live-16/cases/contact/contact-log{% else %}
+{% if data ['Searchligh']=='No' or
+data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
+data ['found-nino']=='No' or
+data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
+data ['job-deatils-contact']=='No, I have not spoken to them' %}/live-16/cases/contact/{{number}}/notification-need{% else %}/live-16/cases/contact/contact-log{% endif %}{% endif %}" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+              <h2 class="govuk-heading-xl">Telephone call made</h2>
+
+
+
+
+
+<p>
+  Case history updated to show call made.
+</p>
+
+
+{% if data['clear']=='No' %}{% else %}
+  {% include  "live-16/claim/notification-contact.html" %}{% endif %}
+
+
+
+  <!-- <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="ID&V-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h2 class="govuk-fieldset__heading">
+          Did Dereck Smith pass identification and verification (ID&V) check?
+        </h2>
+      </legend>
+
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="ID&V" name="ID&V" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="ID&V">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="ID&V-2" name="ID&V" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="ID&V-2">
+            No
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+  </div> -->
+  <div class="govuk-form-group">
+             <label class="govuk-label govuk-label--m" for="contact-time">
+               Time of call
+             </label>
+             <div id="contact-time-hint" class="govuk-hint">
+               For example, 9am or 2:30pm - enter 12pm for midday
+             </div>
+             <input class="govuk-input govuk-input--width-5" id="contact-time" name="contact-time-{{number}}" type="text" aria-describedby="contact-time-hint">
+
+
+           </div>
+
+
+           <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset" role="group" aria-describedby="contact-date-hint">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Date of call
+               </legend>
+               <div id="contact-date-hint" class="govuk-hint">
+                 For example, 31 1 2022
+               </div>
+               <div class="govuk-date-input" id="contact-date-">
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label" for="contact-date-day">
+                       Day
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-day" name="contact-date-day-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                   </div>
+                 </div>
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label" for="contact-date-month">
+                       Month
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-month" name="contact-date-month-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                   </div>
+                 </div>
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label" for="contact-date-year">
+                       Year
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contact-date-year" name="contact-date-year-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                   </div>
+                 </div>
+               </div>
+                    </div>
+               <!-- <a href="">Set to todays date</a> -->
+
+<br>
+
+
+
+
+  <div class="govuk-form-group">
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="300">
+  <div class="govuk-form-group">
+    <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="job-detail-note1">
+
+Contact notes
+
+    </label>
+    </h2>
+
+<textarea class="govuk-textarea govuk-js-character-count" id="job-detail-note1" name="job-detail-discussion-{{number}}" rows="5" aria-describedby="job-detail-note1-info job-detail-note1-hint"></textarea><div id="job-detail-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 300 characters remaining</div>
+</div>
+</div>
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+             Save and continue
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

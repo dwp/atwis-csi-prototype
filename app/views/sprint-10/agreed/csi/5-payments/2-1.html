@@ -1,0 +1,45 @@
+{% set link = "invoice-router" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "2"}] %}
+{% set paymentLink = true %}
+{% set title =  "Confirm the amount" %}
+
+{% block csi %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+             idPrefix: "check-amount",
+             name: "check-amount",
+             fieldset: {
+               legend: {
+                 text: "Is £"+  data['invoice-value'] | default('200') + " the amount on the invoice?",
+                 isPageHeading: false,
+                 classes: "govuk-fieldset__legend--m"
+               }
+             },
+             hint: {
+             html: ""
+        },
+             items: [
+             {
+               id: "yes",
+               value: "yes",
+               checked: checked('check-amount', "yes"),
+               text: "Yes"
+             },
+               {
+                 id: "no",
+                 value: "no",
+                 text: "No, change amount",
+                 checked: checked('check-amount', "no"),
+                 conditional: {
+                   html: conditionalText
+                 }
+               }
+             ]
+           }) }}
+
+
+
+
+{% endblock %}

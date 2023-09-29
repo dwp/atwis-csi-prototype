@@ -1,0 +1,123 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-form-group">
+                     <fieldset class="govuk-fieldset">
+                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                         <h2 class="govuk-fieldset__heading">
+                            {% include  "./content/how-many-people-work.html" %}
+                         </h2>
+                       </legend>
+
+
+               <div class="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-size{{phase}}"name="employer-size{{phase}}"type="radio" value="1 to 9 (micro)~/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/contact-cost-share-agreement-micro-small" {{ checked("employer-size"+ phase, "1 to 9 (micro)") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-size">
+                    1 to 9 (micro)
+                   </label>
+                 </div>
+
+
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="employer-size-2" name="employer-size{{phase}}"type="radio" value="10 to 49 (small)~/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/contact-cost-share-agreement-micro-small" {{ checked("employer-size"+ phase, "10 to 49 (small)") }}>
+                                    <label class="govuk-label govuk-radios__label" for="employer-size-2">
+                                      10 to 49 (small)
+                                    </label>
+                                  </div>
+
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="employer-size-3" name="employer-size{{phase}}"type="radio" value="50 to 249 (medium)~/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/contact-cost-share-agreement" {{ checked("employer-size"+ phase, "50 to 249 (medium)") }}>
+                                    <label class="govuk-label govuk-radios__label" for="employer-size-3">
+                                      50 to 249 (medium)
+                                    </label>
+                                  </div>
+
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="employer-size-4" name="employer-size{{phase}}"type="radio" value="250 or more (large)~/live-16/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/contact-cost-share-agreement" {{ checked("employer-size"+ phase, "250 or more (large)") }}>
+                                    <label class="govuk-label govuk-radios__label" for="employer-size-4">
+                                      250 or more (large)
+                                    </label>
+                                  </div>
+
+               </div>
+
+             </fieldset>
+           </div>
+
+{% if data['wpa']=='Yes'%}
+           <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+  {% include  "./content/wpa.html" %}
+
+
+  </legend>
+  <div class="govuk-radios" data-module="govuk-radios">
+   <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employer-wpa-answer" name="employer-wpa-answer" type="radio" value="Yes" >
+                    <label class="govuk-label govuk-radios__label" for="employer-wpa-answer">
+                      Yes
+                    </label>
+                  </div>
+
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employer-wpa-answer-3" name="employer-wpa-answer" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="employer-wpa-answer-3">
+                      No
+                    </label>
+                  </div>
+
+
+                                   <div class="govuk-radios__item">
+                                     <input class="govuk-radios__input" id="employer-wpa-answer-4" name="employer-wpa-answer" type="radio" value="I have not discussed a cost share with the employer">
+                                     <label class="govuk-label govuk-radios__label" for="employer-wpa-answer-4">
+                                        I have not discussed a workplace assessment with Smith Digital Limited
+                                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-wpa-answer-5" name="employer-wpa-answer" type="radio" value="I’m waiting for an answer from the employer">
+                   <label class="govuk-label govuk-radios__label" for="employer-wpa-answer-5">
+                   I’m waiting for an answer from Smith Digital Limited
+                 </label>
+ </div>
+               </div>
+
+             </fieldset>
+             </div>   </div>   </div>{% endif %}
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

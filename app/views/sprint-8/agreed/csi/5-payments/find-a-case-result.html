@@ -1,0 +1,45 @@
+{% set link = "1" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "" %}
+
+
+{% block csi %}
+<!--<h2 class="govuk-heading-m">URN: 2FFJK33</h2>
+<h2 class="govuk-heading-m">Applicant name: Thomas Brown</h2>
+<h2 class="govuk-heading-m">Interview date: 1 November 2019</h2>
+
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+{{ govukTag({
+  text: "Interview confirmed"
+}) }} -->
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header">Name</th>
+        <th class="govuk-table__header">Specialism</th>
+        <th class="govuk-table__header">Case Type</th>
+        <th class="govuk-table__header">Status</th>
+        <th class="govuk-table__header">Date submitted</th>
+        <th class="govuk-table__header">Adviser</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Thomas Brown</td>
+          <td class="govuk-table__cell">CSI</td>
+          <td class="govuk-table__cell">CSI</td>
+          <td class="govuk-table__cell">Unallocated</td>
+          <td class="govuk-table__cell">8 Jan 2020, 3.46pm</td>
+          <td class="govuk-table__cell">-</td>
+        </tr>
+  </tbody>
+</table>
+
+ <br>
+
+{% endblock %}

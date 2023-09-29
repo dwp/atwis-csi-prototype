@@ -1,0 +1,96 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/current/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+
+<form action="/payments/current/cases/sonya/cases/company-details-no-match/rejected-invoice-ipad-check" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <h1 class="govuk-heading-l">
+Where did you save the replacment invoice?
+        </h1>
+
+
+
+        <p class="govuk-body">
+Add a short note to help other payment officers find the replacment invice for the Ipad Pro case.
+        </p>
+
+
+        <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+<!-- Enter the amount to pay -->
+        </legend>
+        <div id="dob-hint" class="govuk-hint">
+
+        </div>
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="new-invoice-location">
+
+        </label>
+        <input class="govuk-input govuk-input--width-30" id="new-invoice-location-1" name="new-invoice-location-1" type="text" autocomplete="address-line1">
+        </div>
+        </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          </div>
+</div>
+
+
+
+        </fieldset>
+        </div>
+
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+Save and continue
+        </button>
+        </form>
+
+
+
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

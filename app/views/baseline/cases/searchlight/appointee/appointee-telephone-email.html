@@ -1,0 +1,72 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="{% if data['appointee']=='Yes, I need to add an appointee' and (data['appointee-telephone'] or data['appointee-email'])%}check{% else %}/baseline/cases/claim#your-tasks{% endif %}" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   <h2 class="govuk-heading-xl"> {% include  "./content/appointee-contact-details.html" %}</h2>
+
+
+
+{% if 'email' in data['appointee-contact']%}
+   <div class="govuk-form-group" data-module="radios" data-required="Enter an email address">
+     <label class="govuk-label" for="appointee-email">
+       {% include  "./content/appointee-email.html" %}
+     </label>
+
+   <input class="govuk-input govuk-input--width-20" id="appointee-email" name="appointee-email" type="text" value="{{data['appointee-email']}}"data-validation="email">
+   </div>
+{% endif %}
+{% if 'telephone' in data['appointee-contact']%}
+   <div class="govuk-form-group" data-module="radios" data-required="Enter a UK telephone number">
+     <label class="govuk-label" for="appointee-telephone">
+       Appointee’s telephone
+     </label>
+
+   <input class="govuk-input govuk-input--width-20" id="appointee-telephone" name="appointee-telephone" type="numbers" value="{{data['appointee-telephone']}}" data-validation="telephone_number">
+   </div>
+{% endif %}
+
+   </div>
+
+
+
+
+
+
+
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

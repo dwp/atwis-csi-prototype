@@ -1,0 +1,238 @@
+{% set monthAndYear = "November 2022" %}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Case history</h2>
+
+<ol class="dwp-timeline">
+
+
+  {% if data['sop-approve']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check payment and send for approval: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:58am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['sop-add-supplier']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Add details from SOP: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:54am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['sop-find-details-confirm']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Amend existing payee details: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:49am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['sop-find']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Find payee in SOP: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:46am
+      </p>
+  </li>
+  {% endif %}
+
+
+
+  {% if data['invoice-number']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        {% if case == 'dereck' %}
+                    Invoice number: completed
+        {% endif %}
+        {% if case == 'sonya' %}
+                    Invoice numbers: completed
+        {% endif %}
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:42am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['invoice-saved']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Review invoices: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:32am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['paid-in-full']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check invoices have been paid: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:32am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['details-item-no-match-ipad']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Review rejected invoice Ipad Pro case: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:23am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['company-details']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check invoices are valid: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:37am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['claim-item-no-match-keyboard']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Amount lower than grant award Ergonomic keyboard: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:23am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['claim-item-no-match-jaws']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Amount higher than grant award Jaws screen reader: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:23am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['grant-matches-claim']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check claim matches grant award: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:22am
+      </p>
+  </li>
+  {% endif %}
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Identity checks completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        Personal details match Searchlight
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+        4 March 2023, 1:51pm
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Digital claim received
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+      </p>
+      <p class="govuk-caption-m">
+        2 March 2023, 11:57am
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Grant awarded
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+      </p>
+      <p class="govuk-caption-m">
+        14 January 2023, 13:24pm
+      </p>
+  </li>
+
+</ol>
+
+
+</div>
+</div>

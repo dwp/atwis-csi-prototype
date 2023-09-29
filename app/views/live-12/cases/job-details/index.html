@@ -1,0 +1,119 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-12/cases/job-details/contact-cost-share-agreement" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-form-group">
+                     <fieldset class="govuk-fieldset">
+                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                         <h2 class="govuk-fieldset__heading">
+                            {% include  "./content/have-confirmed-job-details.html" %}
+                         </h2>
+                       </legend>
+
+                       <div class="govuk-radios">
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="employer-confirmed" name="employer-confirmed" type="radio" value="Yes and all of the details match" {{ checked("employer-confirmed", "Yes and all of the details match") }}>
+                           <label class="govuk-label govuk-radios__label" for="employer-confirmed">
+                            Yes and all of the details match
+                           </label>
+                         </div>
+
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="Yes, but some details do not match" {{ checked("employer-confirmed", "Yes, but some details do not match") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-confirmed-2">
+                                              Yes, but some details do not match
+                                            </label>
+                                          </div>
+
+                                                                                    <div class="govuk-radios__item">
+                                                                                      <input class="govuk-radios__input" id="employer-confirmed-2" name="employer-confirmed" type="radio" value="No, Smith Digital Limited has not confirmed job details~/live-12/cases/job-details/unhappy-employment-details" {{ checked("employer-confirmed", "  No, Smith Digital Limited has not confirmed job details yet") }}>
+                                                                                      <label class="govuk-label govuk-radios__label" for="employer-confirmed-2">
+                                                                                        No, Smith Digital Limited has not confirmed job details
+                                                                                      </label>
+                                                                                    </div>
+
+
+                       </div>
+
+                     </fieldset>
+                   </div>
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   {% include  "./content/how-many-people-work.html" %}
+                 </h2>
+               </legend>
+
+
+
+
+
+               <div class="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="employer-size" name="employer-size" type="radio" value="1 to 9 (micro)~/live-12/cases/job-details/contact-cost-share-agreement-micro-small" {{ checked("employer-size", "1 to 9 (micro)") }}>
+                   <label class="govuk-label govuk-radios__label" for="employer-size">
+                    1 to 9 (micro)
+                   </label>
+                 </div>
+
+
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="employer-size-2" name="employer-size" type="radio" value="10 to 49 (small)~/live-12/cases/job-details/contact-cost-share-agreement-micro-small" {{ checked("employer-size", "10 to 49 (small)") }}>
+                                    <label class="govuk-label govuk-radios__label" for="employer-size-2">
+                                      10 to 49 (small)
+                                    </label>
+                                  </div>
+
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="employer-size-3" name="employer-size" type="radio" value="50 to 249 (medium)~/live-12/cases/job-details/contact-cost-share-agreement" {{ checked("employer-size", "50 to 249 (medium)") }}>
+                                    <label class="govuk-label govuk-radios__label" for="employer-size-3">
+                                      50 to 249 (medium)
+                                    </label>
+                                  </div>
+
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="employer-size-4" name="employer-size" type="radio" value="250 or more (large)~/live-12/cases/job-details/contact-cost-share-agreement" {{ checked("employer-size", "250 or more (large)") }}>
+                                    <label class="govuk-label govuk-radios__label" for="employer-size-4">
+                                      250 or more (large)
+                                    </label>
+                                  </div>
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

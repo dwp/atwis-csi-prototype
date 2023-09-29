@@ -1,0 +1,40 @@
+{% set link = "2" %}
+{% set personalDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Check personal details</h1>
+
+<p>Check on CIS if these details are correct.</p>
+
+
+
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       idPrefix: "personal",
+       name: "personal",
+       fieldset: {
+         legend: {
+           text: "Are these details correct?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

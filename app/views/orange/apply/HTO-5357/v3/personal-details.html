@@ -1,0 +1,210 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+   About you
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="work-contact">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <form class="form" action="contact" method="post">
+
+  <header>
+    <h1 class="govuk-heading-l">
+    	About you
+    </h1>
+  </header>
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-firstName">
+    First name
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-firstName" name="firstName" type="text">
+</div>
+
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-lastName">
+    Last name
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-lastName" name="lastName" type="text">
+</div>
+
+
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+  
+  <legend class="govuk-fieldset__legend">
+  
+    Date of birth
+  
+  </legend>
+  
+
+  <div id="dob-hint" class="govuk-hint">
+    DD MM YYYY
+  </div>
+
+
+  <div class="govuk-date-input" id="dob">
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-dobdd">
+          Day
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-dobdd" name="dobdd" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-dobmm">
+          Month
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-dobmm" name="dobmm" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-dobyyyy">
+          Year
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-4 
+        
+      " id="f-dobyyyy" name="dobyyyy" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+
+<fieldset class="govuk-fieldset govuk-!-width-three-quarters apply-address">
+  
+  <legend class="govuk-fieldset__legend">
+  
+    Address
+  
+  </legend>
+  
+
+
+  <div class="govuk-form-group">
+    
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-address1">
+    Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+  </label>
+
+<input class="govuk-input" id="f-address1" name="address1" type="text">
+</div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-address2">
+    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+  </label>
+
+<input class="govuk-input" id="f-address2" name="address2" type="text">
+</div>
+
+  </div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-address3">
+    Town or city
+  </label>
+
+<input class="govuk-input govuk-!-width-two-thirds" id="f-address3" name="address3" type="text">
+</div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-address4">
+    County
+  </label>
+
+<input class="govuk-input govuk-!-width-two-thirds" id="f-address4" name="address4" type="text">
+</div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-addresspostcode">
+    Postcode
+  </label>
+
+<input class="govuk-input govuk-input--width-10" id="f-addresspostcode" name="addresspostcode" type="text">
+</div>
+
+</fieldset>
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        
+        <p class="govuk-body">You can contact us for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+    </ul>
+
+        <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm</p>
+    </aside>
+
+    </div> 
+
+  </div>
+{% endblock %}

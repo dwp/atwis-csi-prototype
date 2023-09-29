@@ -1,0 +1,130 @@
+{% set link = "closed-case" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "index"}] %}
+
+{% if appointee %}
+
+{% set appointeeName = data['appointee-name'] | default(appointeeDetails.name) | safe   %}
+{% set appointeeText = [
+  {
+    text: "Appointee name"
+  },
+  {
+    text: "Mavis Brown"
+  }
+]
+%}
+
+{% else %}
+{% set appointeeText = '' %}
+{% endif %}
+
+{% if appointee %}
+{% set title =  "Send a letter to the applicant’s appointee" %}
+{% else %}
+{% set title =  "Send a letter to the applicant" %}
+{% endif %}
+
+{% block csi %}
+
+<p>Download and complete <strong>ATW05NARL Application Rejection letter</strong>.</p>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Get the letter",
+  classes: "govuk-button--secondary",
+  attributes:{'target':'_blank', 'rel' : 'noopener' },
+  href: "/" + folder + "/" + subfolder + "/intranet/letters"
+}) }}
+
+{{ govukTable({
+  caption: "",
+  firstCellIsHeader: true,
+  head: [
+  {
+    text: "",
+    classes: 'govuk-!-width-one-third'
+  },
+  {
+    text: "",
+    classes: 'govuk-!-width-two-thirds'
+  }
+],
+  rows: [
+
+appointeeText  ,
+
+    [
+      {
+        text: "Applicant name"
+      },
+      {
+        text: data['csi-info'][2]['firstname'] +  " " +  data['csi-info'][2]['surname']
+      }
+    ],
+    [
+      {
+        text: "Application date"
+      },
+      {
+        text: "6 January 2020"
+      }
+    ],
+    [
+      {
+        text: "Reference"
+      },
+      {
+        text: "ATW34593DE"
+      }
+    ]
+  ]
+}) }}
+
+<p>Send the letter to the following address:</p>
+
+
+
+
+<div class="govuk-inset-text">
+  {% if appointee %}
+Mavis Brown<br>28 Cathedral Drive<br>Coventry<br>CV3 6JH
+{% else %}
+
+  Thomas Brown <br>
+  14 Kings Road <br>
+  Birmingham <br>
+  Midlands  <br>
+  B1 1EQ
+{% endif %}
+
+</div>
+
+
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+     name: "asked-info-email",
+       fieldset: {
+         legend: {
+           text: "Have you printed and sent the letter?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

@@ -1,0 +1,195 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+   Do you want some help to get to work?
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="condition">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <form class="form" action="work-impact" method="post">
+
+      <div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  
+    <h1 class="govuk-fieldset__heading">
+      Do you want some help to get to work?
+    </h1>
+  
+  </legend>
+  
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="f-helpWanted" name="helpWanted" type="radio" value="yes" data-ga-question="help-with-travel:helpWanted.label" data-ga-answer="Yes I want help" aria-controls="conditional-f-helpWanted" aria-expanded="false">
+          <label class="govuk-label govuk-radios__label" for="f-helpWanted">
+        Yes I want help
+      </label>
+          
+        </div>
+        
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-helpWanted">
+ 
+  
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset" aria-describedby="f-travelMethods-hint">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+  
+    How do you get to work at the moment?
+  
+  </legend>
+  
+
+  <div id="f-travelMethods-hint" class="govuk-hint">
+    Tick all that apply
+  </div>
+
+
+  <div class="govuk-checkboxes" id="f-travelMethods-wrapper" data-module="govuk-checkboxes">
+        
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="f-travelMethods" name="travelMethods[]" type="checkbox" value="car" data-ga-question="How do you get to work at the moment?" data-ga-answer="Car, lift or taxi">
+          <label class="govuk-label govuk-checkboxes__label" for="f-travelMethods">
+        Car, lift or taxi
+      </label>
+          
+        </div>
+
+        
+        
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="f-travelMethods-2" name="travelMethods[]" type="checkbox" value="bus" data-ga-question="How do you get to work at the moment?" data-ga-answer="Bus or tram">
+          <label class="govuk-label govuk-checkboxes__label" for="f-travelMethods-2">
+        Bus or tram
+      </label>
+          
+        </div>
+
+        
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="f-travelMethods-3" name="travelMethods[]" type="checkbox" value="walking" data-ga-question="How do you get to work at the moment?" data-ga-answer="Walking or cycling">
+          <label class="govuk-label govuk-checkboxes__label" for="f-travelMethods-3">
+        Walking or cycling
+      </label>
+          
+        </div>
+
+        
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="f-travelMethods-4" name="travelMethods[]" type="checkbox" value="train" data-ga-question="How do you get to work at the moment?" data-ga-answer="Train or tube">
+          <label class="govuk-label govuk-checkboxes__label" for="f-travelMethods-4">
+        Train or tube
+      </label>
+          
+        </div>
+
+        
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="f-travelMethods-5" name="travelMethods[]" type="checkbox" value="somethingElse" data-ga-question="How do you get to work at the moment?" data-ga-answer="Something else" aria-controls="conditional-f-travelMethods-5" aria-expanded="false">
+          <label class="govuk-label govuk-checkboxes__label" for="f-travelMethods-5">
+        Something else
+      </label>
+          
+        </div>
+        
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-f-travelMethods-5">
+            
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-travelMethodSomethingElse">
+    What?
+  </label>
+
+<input class="govuk-input" id="f-travelMethodSomethingElse" name="travelMethodSomethingElse" type="text">
+</div>
+
+
+          </div>
+        
+      
+    
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+          </div>
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="helpWanted-2" name="helpWanted" type="radio" value="no"   data-ga-question="help-with-travel:helpWanted.label" data-ga-answer="No, I can get to work ok">
+          <label class="govuk-label govuk-radios__label" for="helpWanted-2">
+        No, I can get to work ok
+      </label>
+          
+        </div>
+        
+
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        
+        <p class="govuk-body">You can contact us for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+    </ul>
+
+        <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm</p>
+    </aside>
+
+    </div> 
+
+  </div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="{% if data['benefits'] and data['exceptions']%}check{% else %}/live-27/cases/claim#your-tasks{% endif %}" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+
+    <h2 class="govuk-heading-l">
+          Check if the benefits in Searchlight affect eligibility
+        </h2>
+
+        <p class="govuk-body">
+        <a href="https://intranet.dwp.gov.uk/manual/access-work/customers-receipt-benefit" class="govuk-link">Check eligibility guidance on the intranet (opens in a new tab)</a>
+        </p>
+
+    <p> Benefits will not affect Dereck Smith’s eligibility for Access to Work if they:</P>
+  <ul class="govuk-list govuk-list--bullet">
+  <li> are starting a work trial</li>
+  <li> have not started their job yet, but will stop claiming benefits when their job begins </li>
+  <li> have a permitted work decision from DWP</li>
+    </ul>
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+            {% include  "./content/get-acess-to-work.html" %}
+
+              </legend>
+
+
+
+
+
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="exceptions" name="exceptions" type="radio" value="Yes" {{ checked("exceptions", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="exceptions">
+                     Yes
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="exceptions-2" name="exceptions" type="radio" value="No" {{ checked("exceptions", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="exceptions-2">
+                     No
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="exceptions-3" name="exceptions" type="radio" value="I need to contact Dereck Smith about their benefits" {{ checked("exceptions", "I need to contact Dereck Smith about their benefits") }}>
+                   <label class="govuk-label govuk-radios__label" for="exceptions-3">
+                     I need to contact Dereck Smith about their benefits
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+     </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

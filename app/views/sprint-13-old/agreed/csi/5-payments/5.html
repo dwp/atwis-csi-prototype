@@ -1,0 +1,35 @@
+{% set link = "6" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set payments = true %}
+{% set paymentLink = true %}
+{% set title =  "Add SOP supplier number" %}
+
+{% block csi %}
+
+
+{{ govukInput({
+  id: "supplier-reference",
+  name: "supplier-reference",
+  classes: "govuk-input--width-10"
+}) }}
+
+
+
+
+
+
+
+<!-- trigger to set off event if we use this screen for task completion -->
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "supplier-id-complete",
+  name: "supplier-id-complete",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+
+
+{% endblock %}

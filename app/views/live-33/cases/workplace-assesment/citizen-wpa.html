@@ -1,0 +1,99 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+                    Type of workplace assessment
+                  </h1>
+
+                  <p class="govuk-body">
+You must contact Dereck Smith and recommend a workplace assessment. You should ask:  </p>
+
+
+
+<ul class="govuk-list govuk-list--bullet">
+<li>    if they would prefer a face-to-face or virtual assessment   </li>
+<li>    if they want anyone else to be at the assessment </li>
+
+<li>what their availability is in the next 8 working days.</li>
+
+</ul>
+
+<div class="govuk-inset-text">
+Get permission to contact there employmer as Dereck Smith did not give permission to contact the employer in the application.
+</div>
+
+<p>You'll need to contact <a href="#">Dereck Smith</a>
+
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                 <h2 class="govuk-fieldset__heading">
+                {% include "./content/type.html"%}
+                 </h2>
+               </legend>
+               <!-- <div id="national-insurance-number-hint" class="govuk-hint">
+                For example, ‘QQ 12 34 56 C’.
+                </div> -->
+
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="wpa-type" name="wpa-type" type="radio" value="Face-to-face~availability" {{ checked("wpa-type", "Face-to-face") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa-type">
+                     Face-to-face
+                   </label>
+                 </div>
+                  <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="wpa-type" name="wpa-type" type="radio" value="Virtual~availability" {{ checked("wpa-type", "Virtual") }}>
+                 <label class="govuk-label govuk-radios__label" for="wpa-type">
+                   Virtual
+                 </label>
+               </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="They do not want a workplace assessment~/live-33/cases/claim#your-tasks" {{ checked("wpa-type", "They do not want a workplace assessment") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa-type-2">
+                     They do not want a workplace assessment
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="I have not discussed it with them yet~/live-33/cases/claim#business-case" {{ checked("wpa-type", "I have not discussed it with them yet") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa-type-2">
+                     I have not discussed it with them yet
+                   </label>
+                 </div>
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

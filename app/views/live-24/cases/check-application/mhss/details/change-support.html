@@ -1,0 +1,52 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-width-container">
+<form action="support-service" method="post" novalidate>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="mhss-support-change-check-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-heading-l">
+  Which mental health support service should be used?
+      </h2>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mhss-support-change" name="mhss-support-change" type="radio" value="Able Futures">
+          <label class="govuk-label govuk-radios__label" for="mhss-support-change">
+            Able Futures
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mhss-support-change-2" name="mhss-support-change" type="radio" value="Maximus">
+          <label class="govuk-label govuk-radios__label" for="mhss-support-change-2">
+            Maximus
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+
+{% endblock %}

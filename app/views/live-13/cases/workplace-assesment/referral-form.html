@@ -1,0 +1,98 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="/live-13/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+    <h1 class="govuk-heading-l">
+              Referral form
+            </h1>
+
+<p>To refer Dereck Smith for a workplace assessment, you must:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>   <a href="referral-form-details" class="govuk-link govuk-link--no-visited-state" target="_blank">complete referral form (opens in a new tab)</a>   </li>
+
+        <li>
+             use <a href="" class="govuk-link govuk-link--no-visited-state" target="_blank">DWP Place to send a secure email to {% if data['national-insurance-number']=='AB 123456 C'%}Royal British Legion Industries (RBLI)</a> at <a href="">atwsouth@rbli.co.uk</a>{% else %}People Plus</a> at <a href="">chris.williams2@peopleplus.co.uk</a>{% endif %}. You must attach the referral form.
+            </li>
+
+
+            <li><a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">save a copy of decision letters in Sharepoint (opens in a new tab)</a>  </li>
+<li>add the workplace assessment type on Labour Market System (LMS) – you must set up a record for Dereck Smith in LMS if there is not one already</li>
+</ul>
+<br>
+            <form action="/form-handler" method="post" novalidate>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+Which tasks have you completed?
+
+                  </legend>
+                  <div id="referral-form-hint" class="govuk-hint">
+       Select all that apply.
+     </div>
+     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form" name="referral-form" type="checkbox" value="Completed and sent referral form" {{ checked("referral-form", "Completed and sent referral form") }}>
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form">
+           Completed and sent referral form
+         </label>
+       </div>
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-2" name="referral-form" type="checkbox" value="Saved copies to Sharepoint" {{ checked("referral-form", "Saved copies to Sharepoint") }}>
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-2">
+           Saved copies to Sharepoint
+         </label>
+       </div>
+
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-3" name="referral-form" type="checkbox" value="Set up on Labour Market System (LMS)" {{ checked("referral-form", "Set up on Labour Market System (LMS)") }}>
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-3">
+           Set up a record for Dereck Smith on LMS
+         </label>
+       </div>
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-4" name="referral-form" type="checkbox" value="Record workplace assessment type in LMS" {{ checked("referral-form", "Record workplace assessment type in LMS") }}>
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-4">
+               Added workplace assessment type in LMS
+         </label>
+       </div>
+
+     </div>
+
+                </fieldset>
+              </div>
+  </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

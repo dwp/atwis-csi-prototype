@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Prototypes: Report a change to Carer's Allowance
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work: Decision</h1>
+
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">'Award letters' prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to prototype home',
+    href: '/'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    This page is for navigation to the prototype. For interal team use only and not for devlopment or for userability sessions.
+  </strong>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+      <h2 class="govuk-heading-m">
+        <a href="../content/templates/letter-ur-v2.html" class="govuk-link--no-visited-state">
+          Awared letter version 2 <br><strong class="govuk-tag govuk-tag--red">
+  Experimental
+</strong>
+        </a>
+      </h2>
+
+      <p>Travel to work content with only "Does not make sense" button.</p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-m">
+        <a href="../content/templates/letter-ur.html" class="govuk-link--no-visited-state">
+          Awared letter version 1<br><strong class="govuk-tag govuk-tag--red">
+  Experimental
+</strong>
+        </a>
+      </h2>
+
+      <p>Travel to work content with "Does not make sense" and "Makes sense" button.</p>
+    </div>
+  </div>
+
+{% endblock %}

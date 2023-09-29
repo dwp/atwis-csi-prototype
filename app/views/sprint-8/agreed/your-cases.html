@@ -1,0 +1,177 @@
+{% set hideBanner = true %}
+{% extends "./_BASE.html" %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+{% if taskUpdated %}
+<div class="container status-message">
+<div class="govuk-panel govuk-panel--confirmation">
+
+  <h2 class="govuk-!-font-size-36"><img class="icon" style="height: 1em;
+    margin: 0 15px;
+    vertical-align: top;
+}" src="{{asset_path}}images/icon-tick@2x.png" alt="">Task completed</h2>
+
+
+</div></div>
+{% endif %}
+
+    <h1 class="govuk-heading-l">Adviser: <span class="govuk-!-font-weight-regular">John Goldsmith</span></h1>
+    {% if showNotice %}
+      {{ govukInsetText({
+        text: "There are no cases to allocate at the moment. Please try again later."
+      }) }}
+    {% endif %}
+
+    <form method="post" action="your-cases">
+      {{ govukButton({
+        text: "Request a new case"
+      }) }}
+    </form>
+
+
+    {% set allocated %}
+    <h2 class="govuk-heading-m">Your priority cases</h2>
+
+
+{% if (phase == "waiting") or (phase == "empty") %}
+<p>You have no priority cases.</P>
+
+{% else %}
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+            <th class="govuk-table__header">Specialism</th>
+            <th class="govuk-table__header">Case type</th>
+            <th class="govuk-table__header">Date submitted</th>
+            <th class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['csi-info'][1]['firstname'] }} {{ data['csi-info'][1]['surname'] }}</td>
+              <td class="govuk-table__cell">CSI</td>
+              <td class="govuk-table__cell">CSI</td>
+              <td class="govuk-table__cell">24 October 2019 13:02</td>
+              <td class="govuk-table__cell"><a href="csi/index{% if phase == "interview" %}-interview{% elif phase == "same-day" %}-same-day{% endif %}">View case</a></td>
+            </tr>
+      </tbody>
+    </table>
+
+{% endif %}
+    <h2 class="govuk-heading-m">Your cases </h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+            <th class="govuk-table__header">Specialism</th>
+            <th class="govuk-table__header">Case type</th>
+            <th class="govuk-table__header">Date submitted</th>
+            <th class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for case in data['unallocated-cases'] %}
+
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ case.name }}</td>
+              <td class="govuk-table__cell">{{ case.specialism }}</td>
+              <td class="govuk-table__cell">{{ case.type }}</td>
+              <td class="govuk-table__cell">{{ case.date }}</td>
+              <td class="govuk-table__cell"><a href="#">View case</a></td>
+            </tr>
+          {% endfor %}
+
+          {% if phase == "waiting" %} <!-- option to show that case is there but at the bottom for now -->
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ data['csi-info'][1]['firstname'] }} {{ data['csi-info'][1]['surname'] }}</td>
+            <td class="govuk-table__cell">CSI</td>
+            <td class="govuk-table__cell">CSI</td>
+            <td class="govuk-table__cell">24 October 2019 13:02</td>
+            <td class="govuk-table__cell"><a href="csi/index-waiting">View case</a></td>
+          </tr>
+          {% endif %}
+
+      </tbody>
+    </table>
+
+
+      {% endset -%}
+
+
+      {% set disc %}
+      <h2 class="govuk-heading-m">Your priority cases </h2>
+
+<p>You have no priority cases.</P>
+
+
+      <h2 class="govuk-heading-m">Your cases </h2>
+
+<p>You have no cases.</P>
+        {% endset -%}
+
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Allocated",
+          id: "allocated",
+          panel: {
+            html: allocated
+          }
+        },
+        {
+          label: "In DiSC",
+          id: "in-disc",
+          panel: {
+            html: disc
+          }
+        }
+      ]
+    }) }}
+
+
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "your-cases",
+          text: "Cases before interview"
+        },
+        {
+          href: "your-cases-waiting",
+          text: "Cases waiting"
+        },
+        {
+          href: "your-cases-interview",
+          text: "Cases after interview"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}

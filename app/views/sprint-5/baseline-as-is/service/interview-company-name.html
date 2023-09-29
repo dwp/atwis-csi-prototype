@@ -1,0 +1,25 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+		<form id="form" method="post" action="interview-address">
+
+		<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+				Your job interview
+		</h1>
+
+		<h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+				What is the name of the company your job interview is with?
+		</h2>
+
+		<div class="govuk-form-group govuk-!-margin-bottom-8">
+				<label class="govuk-label" for="full-name">
+
+				</label>
+				<input class="govuk-input" id="company-name" name="company-name" type="text" autocomplete="name" spellcheck="false">
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- interview_length -->
+
+		</form>
+
+{% endblock %}

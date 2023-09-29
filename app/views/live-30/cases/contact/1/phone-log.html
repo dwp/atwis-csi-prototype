@@ -1,0 +1,98 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="javascript:history.go(-1)" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+  <div class="govuk-form-group">
+    <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+Telephone call made on    {{ data['contact-date-day-'+ number] }}
+{% if (data['contact-date-month-'+ number] =='01') or (data['contact-date-month-'+ number] =='1') %} January {% endif%}
+{% if (data['contact-date-month-'+ number] =='02') or (data['contact-date-month-'+ number] =='2') %} February  {% endif%}
+{% if (data['contact-date-month-'+ number] =='03') or (data['contact-date-month-'+ number] =='3') %} March {% endif%}
+{% if (data['contact-date-month-'+ number] =='04') or (data['contact-date-month-'+ number] =='4') %} April {% endif%}
+{% if (data['contact-date-month-'+ number] =='05') or (data['contact-date-month-'+ number] =='5') %} May {% endif%}
+{% if (data['contact-date-month-'+ number] =='06') or (data['contact-date-month-'+ number] =='6') %} June {% endif%}
+{% if (data['contact-date-month-'+ number] =='07') or (data['contact-date-month-'+ number] =='7') %} July {% endif%}
+{% if (data['contact-date-month-'+ number] =='08') or (data['contact-date-month-'+ number] =='8') %} August {% endif%}
+{% if (data['contact-date-month-'+ number] =='09') or (data['contact-date-month-'+ number] =='9') %} September {% endif%}
+{% if data['contact-date-month-'+ number] =='10' %} October {% endif%}
+{% if data['contact-date-month-'+ number] =='11'%} November {% endif%}
+{% if data['contact-date-month-'+ number] =='12' %} December {% endif%}
+{{ data['contact-date-year-'+ number] }} at {{data['contact-time-'+ number]| lower}}
+
+
+    </label>
+    </h2>
+{% if data['_do_1']=='Telephone call received'%}
+<p>From Thomas King to John Goldsmith</p>{% else %}
+<p>By Jane Doe to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
+{% endif %}
+{% if data['asked-info-phone-'+number]=='Yes'%}
+<p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} answered the telephone.</p>{% endif %}
+{% if data['asked-info-phone-'+number]=='No'%}
+<p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} did not answer the telephone.</p>{% endif %}
+
+
+<p>About: </p>
+<ul class="govuk-list govuk-list--bullet">
+  {% for feature in data['contact-why'] %}
+    <li>{{ feature }}</li>
+  {% else %}
+    <li>No features selected</li>
+  {% endfor %}
+</ul>
+</div>
+<p>{{data['other-discussion-1']}}</p>
+<!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
+<!-- {% include  "current/claim/notification-contact.html" %} -->
+     <br>
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+             Return
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

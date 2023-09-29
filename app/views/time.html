@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="cost">		
+
+
+		<div class="govuk-form-group">
+		  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+					<h1 class="govuk-heading-m govuk-!-margin-bottom-4">
+						Interview Questions:
+					</h1>
+			
+					<h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+							What time is the interview scheduled?
+					</h2>
+		    </legend>
+		    <span id="dob-hint" class="govuk-hint">
+		      For example, 15 00
+		    </span>
+		    <div class="govuk-date-input" id="time">
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="time-hours">
+		            Hour
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="time-hours" name="time-hours" type="number" pattern="[0-9]*">
+		        </div>
+		      </div>
+		      <div class="govuk-date-input__item">
+		        <div class="govuk-form-group">
+		          <label class="govuk-label govuk-date-input__label" for="time-minutes">
+		            Minutes
+		          </label>
+		          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="time-minutes" name="time-minutes" type="number" pattern="[0-5][0-9]*">
+		        </div>
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- cost -->	
+
+ 	</form>
+
+ </div>
+</div> 	
+
+{% endblock %}

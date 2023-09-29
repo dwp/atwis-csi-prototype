@@ -1,0 +1,156 @@
+{% set bodyClasses = "search" %}
+
+{% extends "./_BASE.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <form method="post" action="search">
+  <div class="govuk-grid-column-full">
+
+    {{ govukInput({
+      label: {
+        text: "Find a case",
+        classes: "govuk-label--l"
+      },
+      classes: 'govuk-!-width-one-half',
+      hint: {
+        text: 'Enter customer name, URN or application reference'
+      },
+      id: "f-search",
+      name: "q",
+      value: data.q
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+
+    {{ govukSelect({
+      id: "adviser",
+      name: "adviser",
+
+      label: {
+        text: "Select an adviser"
+      },
+      items: [
+      {
+        value: "",
+        text: ""
+      },
+
+        {
+          value: "published",
+          text: "Recently published"
+        },
+        {
+          value: "updated",
+          text: "Recently updated"
+          },
+        {
+          value: "views",
+          text: "Most views"
+        },
+        {
+          value: "comments",
+          text: "Most comments"
+        }
+      ]
+    }) }}
+</div>
+  <div class="govuk-grid-column-one-quarter">
+
+
+    {{ govukSelect({
+      id: "status",
+      name: "status",
+      label: {
+        text: "Select a status"
+      },
+      items: [
+      {
+        value: "",
+        text: ""
+      },
+        {
+          value: "unallocated",
+          text: "Unallocated"
+        },
+        {
+          value: "allocated",
+          text: "Allocated"
+        },
+        {
+          value: "disc",
+          text: "In DiSC"
+        }
+      ]
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-one-quarter">
+
+    {{ govukSelect({
+      id: "case",
+      name: "case",
+      label: {
+        text: "Select a case type"
+      },
+      items: [
+      {
+        value: "",
+        text: ""
+      },
+        {
+          value: "new",
+          text: "New application"
+        },
+        {
+          value: "renewal",
+          text: "Renewal"
+        },
+        {
+          value: "CSI",
+          text: "CSI"
+        }
+      ]
+    }) }}
+
+  </div>
+    <div class="govuk-grid-column-full">
+
+    {{ govukButton({
+      text: "Search"
+    }) }}
+    </form>
+
+    {% if data.q %}
+      {% if cases.length > 0 %}
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Name</th>
+              <th class="govuk-table__header">Specialism</th>
+              <th class="govuk-table__header">Case type</th>
+              <th class="govuk-table__header">Date submitted</th>
+              <th class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for case in cases %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ case.name }}</td>
+                <td class="govuk-table__cell">{{ case.specialism }}</td>
+                <td class="govuk-table__cell">{{ case.type }}</td>
+                <td class="govuk-table__cell">{{ case.date }}</td>
+                <td class="govuk-table__cell"><a href="case?n={{ case.name }}&ua=true">View case</a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>There are no cases that match your search</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

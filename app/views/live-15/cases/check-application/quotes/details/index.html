@@ -1,0 +1,103 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/live-15/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">  Quote for the cost of specialist equipment</h1>
+
+
+
+
+
+<p>Add the chosen quote for the specialist equipment that was recommended in the workplace assessment report.</p>
+
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+
+              </legend>
+              <div class="govuk-form-group">
+    <label class="govuk-label" for="full-name">
+      Brand
+    </label>
+    <input class="govuk-input" id="full-name" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
+  </div>
+  <div class="govuk-form-group">
+<label class="govuk-label" for="full-name">
+Supplier
+</label>
+<input class="govuk-input" id="full-name" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
+</div>
+<label class="govuk-label" for="full-name">
+Total cost
+</label>
+  <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+
+    </div>
+
+
+            </fieldset>
+    </div>
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+        Why did you choose this quote?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+              It was the most cost-effective
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+              It was the most suitable support for Dereck Smith
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+              It was the only quote
+            </label>
+          </div>
+          <!-- <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+              Other
+            </label>
+          </div> -->
+        </div>
+
+      </fieldset>
+    </div>
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

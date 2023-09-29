@@ -1,0 +1,122 @@
+{% set page = "evidence" %}
+{% set title = "Evidence" %}
+
+{% extends "./_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">[information from citizen]</h2>
+
+{% if data['interview'] == "yes"  %}
+{% set confirmation = "[CIS]" %}
+{% else %}
+{% set confirmation = "[Verification needed]" %}
+{% endif %}
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "[Contact details match]"
+          },
+          value: {
+            text: confirmation
+          },
+          actions: {
+            items: [
+              {
+                href: "check/1",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "[Claim form received]"
+          },
+          value: {
+            text: "Not received"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+<!--
+<p> <a href="send/1" class="govuk-link">Send confirmation email again</a></p>
+
+
+<p> <a href="send/2" class="govuk-link">Print and send the form and cover note again</a></p>
+-->
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Interview with employer</h2>
+
+{% if data['employer'] %}
+{% set confirmation = "Employer confirmed" %}
+{% else %}
+{% set confirmation = "Confirmation from employer needed" %}
+{% endif %}
+
+    {{ govukSummaryList({
+      classes: 'govuk-!-margin-bottom-9',
+      rows: [
+        {
+          key: {
+            text: "Inteview confirmation"
+          },
+          value: {
+            text: confirmation
+          },
+          actions: {
+            items: [
+              {
+                href: "contact/index",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+<!--
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">Claim form</h2>
+
+        {{ govukSummaryList({
+          classes: 'govuk-!-margin-bottom-9',
+          rows: [
+            {
+              key: {
+                text: "Form"
+              },
+              value: {
+                text: "Claim form not received"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+-->
+
+{% endblock %}

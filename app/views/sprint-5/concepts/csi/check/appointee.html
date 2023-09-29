@@ -1,0 +1,129 @@
+{% set link = "3" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Add appointee details for " + data['csi-info'][0]['name']  + "" %}
+
+
+{% block csi %}
+
+<p>Copy information for {{ data['csi-info'][0]['name'] | safe }}’s appointee from Searchlight.</p>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Appointee name"
+  },
+  id: "appointee-name",
+  name: "appointee-name"
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    text: "",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: true
+  }
+}) %}
+
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+name: "address",
+id: "address",
+label: {
+  text: "Address"
+},
+hint: {
+  text: ""
+}
+}) }}
+
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {% set emailHtml %}
+  {{ govukInput({
+    id: "appointee-email",
+    name: "appointee-email",
+    type: "email",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Email address"
+    },
+    attributes: {
+      spellcheck: "false"
+    }
+  }) }}
+  {% endset -%}
+
+  {% set phoneHtml %}
+  {{ govukInput({
+    id: "appointee-contact-phone",
+    name: "appointee-contact-phone",
+    type: "tel",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Phone number"
+    }
+  }) }}
+  {% endset -%}
+
+  {% set textHtml %}
+  {{ govukInput({
+    id: "contact-by-text",
+    name: "contact-by-text",
+    type: "tel",
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Mobile phone number"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukCheckboxes({
+    idPrefix: "citizenship-conditional",
+    name: "citizen",
+    fieldset: {
+      legend: {
+        text: "Contact details",
+        isPageHeading: true,
+        classes: "text"
+      }
+    },
+    hint: {
+      text: "Select all options that are available."
+    },
+    items: [
+      {
+        value: "email",
+        text: "Email",
+        conditional: {
+          html: emailHtml
+        }
+      },
+      {
+        value: "phone",
+        text: "Phone",
+        conditional: {
+          html: phoneHtml
+        }
+      }
+    ]
+  }) }}
+
+
+
+{% endcall %}
+<!--<ul class="govuk-list govuk-list--bullet">
+  <li>name of person</li>
+  <li>address (if there's residential or correspondence address it needs to be correspondence)</li>
+  <li>contact information (Searchlight has email, and several types of phone details, how much do we need to add?)</li>
+</ul>-->
+
+{% endblock %}

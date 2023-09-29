@@ -1,0 +1,574 @@
+
+{% set changeHide = 'true '%}
+
+{% if claim %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#application-summary">
+      Application summary
+      </a>
+    </li>
+
+
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#checks">
+      Checks
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#citizen-details">
+    Review application
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#business-case">
+      Prepare business case
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#contact">
+      Contact
+      </a>
+    </li>
+
+
+  </ul>
+  <div class="govuk-tabs__panel" id="application-summary">
+
+  {% if phase == "notEligible"  %}
+{% include  "../claim/notification.html" %}
+{% endif %}
+
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-l">Application summary</h2>
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if case =='other-cases' %}
+              {% for case in data['other-cases'] %}
+              {{ case.case }}
+              {% endfor %}
+              {% endif %}
+
+              {% if case =='other-cases-2' %}
+              {% for case in data['other-cases-2'] %}
+              {{ case.case }}
+              {% endfor %}
+              {% endif %}
+
+              {% if not case %}
+              {% for case in data['priority-cases'] %}
+              {{ case.case }}
+              {% endfor %}
+              {% endif %}
+            </dd>
+          </div>{% if case == "priority-cases"  %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Priority type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Clinically extremely vulnerable  (CEV)
+            </dd>
+          </div>{% endif %}
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if case =='other-cases' %}
+          {% for case in data['other-cases'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+
+          {% if case =='other-cases-2' %}
+          {% for case in data['other-cases-2'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+
+          {% if not case %}
+          {% for case in data['priority-cases'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}        </dd>
+      </div>
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Unique reference number (URN)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        123456789
+      </dd>
+    </div> -->
+
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Application refrence
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+      </dd>
+    </div> -->
+
+  </dl>
+
+
+
+<!-- <h3 class="govuk-heading-m">Application details</h3> -->
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Date Submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 November 2021, 10:09am
+        </dd>
+      </div> -->
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 January 2023, 11:57am
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          RMPX3{% if phase == "sonya"  %}0{% endif %}{% if phase == "thomas"  %}2{% endif %}{% if phase == "dereck"  %}0{% endif %}
+        </dd>
+      </div>
+
+
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version of questions
+        </dt>
+        <dd class="govuk-summary-list__value">
+        25.25.0-rc
+        </dd>
+      </div> -->
+
+    </dl>
+
+    </div>
+
+
+ <div class="govuk-grid-column-one-third">
+  {% if phase == "allocator"  %}
+  <div class="update-panel">
+       <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
+       <form action="/cases/apply/RMPX30/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+         <div class="govuk-form-group form-group-compound">
+           <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
+             <option value="" data-name=""></option>
+
+                   <option value="4" data-name="Aaron">Aaron</option>
+
+                   <option value="36" data-name="Adviser">Adviser</option>
+
+                   <option value="37" data-name="Case Team Lead">Case Team Lead</option>
+
+                   <option value="35" data-name="FRM">FRM</option>
+
+                   <option value="38" data-name="Payment Officer">Payment Officer</option>
+
+                   <option value="39" data-name="Payment Team Lead" selected="selected"> John Goldsmith</option>
+
+                   <option value="40" data-name="Quality">Quality</option>
+
+                   <option value="42" data-name="Quality1">Quality1</option>
+
+                   <option value="5" data-name="Shannon White">Shannon White</option>
+
+                   <option value="34" data-name="Telephony Agent">Telephony Agent</option>
+
+
+
+           </select>
+         </div>
+         <div>
+           <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+         </div>
+       </form>
+     </div> {% endif %}
+
+
+     <script>
+     window.onload = function() {
+       document.getElementById("timeline-date").innerHTML=moment().format("DD MM YYYY");
+     }
+   </script>
+
+</div></div>
+{% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% endif %}
+{% if phase == "thomas"  %}{% include  "../claim/timeline-thomas-new.html" %}</div></div>{% endif %}
+{% if not phase %}{% include  "../claim/timeline-dereck-new.html" %}{% endif %}
+</div>
+
+
+
+
+
+
+
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contact">
+
+  {% if phase == "notEligible"  %}
+  {% include  "./notification.html" %}
+    {% else %}
+  {% endif %}
+
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+</div>
+{% if not totalcontact %}
+  {% set totalcontact = 0 %}
+  {% endif %}
+
+
+
+  {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+   {% set contactindex = i %}
+    {% if data['_do_'+ contactindex]%}
+    {% set totalcontact = totalcontact + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+
+
+  <form action="/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
+
+
+
+
+
+
+
+
+        <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+      Contact
+    </h1>
+        <p><a href="/current/cases/{{phase}}/cases/contact/contact-details">View contact details</a></p>
+
+
+
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+            You have added {{totalcontact}} contact
+              </h2>
+            </legend>
+          </fieldset>
+
+
+          {% if data['clear']=='No' %}{% else %}
+            {% include  "current/claim/notification-contact.html" %}{% endif %}
+
+
+            <!-- <p>Best times to contact Dereck Smith:</p>
+                <p>Between 8:30 am and 6pm Monday to Saturday. </p> -->
+
+<div class="govuk-form-group">
+  <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+
+
+
+{% for i in [5,4,3,2,1] -%}
+{% set contactindex = i  %}
+{% if data['_do_'+ contactindex] %}
+
+    <div class="hmrc-list-with-actions__item">
+      <dt class="hmrc-list-with-actions__name">
+      {{data['_do_'+ contactindex]}}
+      </dt>
+      <dt class="hmrc-list-with-actions__name">
+
+         {{ data['contact-date-day-'+ contactindex] }}
+     {% if (data['contact-date-month-'+ contactindex] =='01') or (data['contact-date-month-'+ contactindex] =='1') %} January {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='02') or (data['contact-date-month-'+ contactindex] =='2') %} February  {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='03') or (data['contact-date-month-'+ contactindex] =='3') %} March {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='04') or (data['contact-date-month-'+ contactindex] =='4') %} April {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='05') or (data['contact-date-month-'+ contactindex] =='5') %} May {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='06') or (data['contact-date-month-'+ contactindex] =='6') %} June {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='07') or (data['contact-date-month-'+ contactindex] =='7') %} July {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='08') or (data['contact-date-month-'+ contactindex] =='8') %} August {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='09') or (data['contact-date-month-'+ contactindex] =='9') %} September {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='10' %} October {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='11'%} November {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
+{{ data['contact-date-year-'+ contactindex] }},
+
+{{data['contact-time-'+ contactindex ] | lower}}
+      </dt>
+      <div class="hmrc-list-with-actions__actions">
+        <dd class="hmrc-list-with-actions__action">
+          <a class="govuk-link"
+          href="{% if data['_do_'+ contactindex]=='Email sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call made'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
+            <span aria-hidden="true">View </span>
+            <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
+          </a>
+        </dd>
+      </div>
+    </div>
+
+{% endif %}
+{%- endfor %}
+
+
+  </dl>
+  <form method="post" novalidate action="">
+
+
+    <button class="govuk-button" data-module="govuk-button">
+      Add {% if totalcontact == 0 %}a{% else %}another{% endif %} contact
+    </button>
+  </form>
+{% if phase == "thomas"  %}
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+  Jane Doe has added 3 contacts
+      </h2>
+    </legend>
+  </fieldset>
+  <div class="govuk-form-group">
+    <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+
+
+
+
+
+
+
+
+      <div class="hmrc-list-with-actions__item">
+        <dt class="hmrc-list-with-actions__name">
+        Telephone call made
+        </dt>
+        <dt class="hmrc-list-with-actions__name">
+
+           30
+
+
+        March
+
+
+
+
+
+
+
+
+
+  2023,
+
+  10am
+        </dt>
+        <div class="hmrc-list-with-actions__actions">
+          <dd class="hmrc-list-with-actions__action">
+            <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/phone-log-prefill">
+              <span aria-hidden="true">View </span>
+              <span class="govuk-visually-hidden"> Telephone call made</span>
+            </a>
+          </dd>
+        </div>
+      </div>
+
+
+
+
+      <div class="hmrc-list-with-actions__item">
+        <dt class="hmrc-list-with-actions__name">
+        Text message (SMS) sent
+        </dt>
+        <dt class="hmrc-list-with-actions__name">
+
+           29
+
+
+        March
+
+
+
+
+
+
+
+
+
+  2023,
+
+  1pm
+        </dt>
+        <div class="hmrc-list-with-actions__actions">
+          <dd class="hmrc-list-with-actions__action">
+            <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/sms-log-prefill">
+              <span aria-hidden="true">View </span>
+              <span class="govuk-visually-hidden"> Text message (SMS) sent</span>
+            </a>
+          </dd>
+        </div>
+      </div>
+
+
+
+
+      <div class="hmrc-list-with-actions__item">
+        <dt class="hmrc-list-with-actions__name">
+        Email sent
+        </dt>
+        <dt class="hmrc-list-with-actions__name">
+
+           29
+
+
+        March
+
+
+
+
+
+
+
+
+
+  2023,
+
+  1pm
+        </dt>
+        <div class="hmrc-list-with-actions__actions">
+          <dd class="hmrc-list-with-actions__action">
+            <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/email-log-prefill">
+              <span aria-hidden="true">View </span>
+              <span class="govuk-visually-hidden"> Email sent</span>
+            </a>
+          </dd>
+        </div>
+      </div>
+
+
+
+
+    </dl>
+
+
+  </div>{% endif %}
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>     </div>
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="checks">
+
+    {% if phase == "notEligible"  %}
+    {% include  "./notification.html" %}
+      {% else %}
+    {% endif %}
+
+
+
+
+    {% if case =='other-cases' %}
+      {% include  "./task-list-sonya-searchlight.html" %}
+    {% endif %}
+
+    {% if case =='other-cases-2' %}
+      {% include  "./task-list-thomas-searchlight.html" %}
+    {% endif %}
+
+    {% if not case %}
+    {% include  "./task-list-dereck-searchlight.html" %}
+    {% endif %}
+
+
+  </div>     </div>
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
+
+  {% if case =='other-cases' %}
+    {% include  "./task-list-sonya-application.html" %}{% endif %}
+
+    {% if case =='other-cases-2' %}
+      {% include  "./task-list-thomas-application.html" %}{% endif %}
+
+      {% if not case %}
+{% include  "./task-list-dereck-application.html" %}    {% endif %}
+
+  </div>  </div>  </div>
+
+
+
+
+
+
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
+
+  {% if case =='other-cases-2' %}
+  {% include  "./task-list-thomas-business-case.html" %}{% endif %}
+
+  {% if case =='other-cases' %}
+  {% include  "./task-list-sonya-business-case.html" %}{% endif %}
+
+      {% if not case %}
+  {% include  "./task-list-dereck-business-case.html" %}{% endif %}
+
+
+</div>  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endif %}

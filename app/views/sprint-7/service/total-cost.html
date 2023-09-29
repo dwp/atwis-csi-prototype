@@ -1,0 +1,34 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+    <form id="form" method="post" action="contact">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+          Your support
+      </h1>
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+          How much does your sign language interpreter or support worker cost?
+      </h2>
+
+    <div class="govuk-form-group">
+      
+      <input class="govuk-input govuk-input--width-10" id="support-worker-cost" name="support-worker-cost" type="number" aria-describedby="approximate-cost-hint">
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- customer_contact -->
+
+    </form>
+
+    <!--<script>
+        document.getElementById('form').addEventListener('cost', function(event) {
+          event.preventDefault();
+          var cost = document.getElementById('cost').value;
+          if (cost > 1) {
+            window.location = 'OW_MUCH';
+          } else {
+            window.location = 'AYE_ALREET';
+          }
+        })
+      </script>-->
+
+{% endblock %}

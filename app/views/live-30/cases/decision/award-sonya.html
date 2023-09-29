@@ -1,0 +1,175 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   {% include  "current/cases/decision/content/under-25.html" %}
+                 </h1>
+               </legend>
+
+
+               <table class="govuk-table">
+                 <caption class="govuk-table__caption govuk-table__caption--m">Award summary</caption>
+                 <thead class="govuk-table__head">
+                   <tr class="govuk-table__row">
+                     <th scope="col" class="govuk-table__header">Support type</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="text-align: center;">Cost</th>
+                   </tr>
+                 </thead>
+                 <tbody class="govuk-table__body">
+                   <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header">Specialist equipment</th>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">Jaws Screen Reader </td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric" >£499</td>
+                   </tr>
+                   <tbody class="govuk-table__body">
+                     <tr class="govuk-table__row">
+                       <th scope="row" class="govuk-table__header">Specialist equipment</th>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">ZoomText </td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric" >{{data['chosen-quote-sonya']}}</td>
+                     </tr>
+
+
+
+{% if data['sae-item-type']%}
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Specialist equipment</th>
+    <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type']}} </td>
+    <td class="govuk-table__cell govuk-table__cell--numeric" >£{{data['cost-per-item']}}</td>
+  </tr>
+  {% endif %}
+
+</tbody>
+</table>
+
+<table class="govuk-table">
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+
+        {% if  data['employer-sizesonya']=='1 to 9 (micro)' or not data['employer-sizesonya']=='10 to 49 (small)' and (data['social-domestic'+ phase]=='Yes') or (data['social-domestic-1'+ phase]=='Yes')%}
+      <th scope="row" class="govuk-table__header"> Total award before cost share</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">   {% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
+         {% if data['chosen-quote-sonya']=='£502'%}{% set i = 502 %} {% endif %}
+         {% if data['chosen-quote-sonya']=='£503'%}{% set i = 503 %} {% endif %}
+
+         {% if not i  %}0{% endif %}
+             £{{ i + 499 }}</td>
+    </tr>{% endif %}
+
+
+      {% if  data['employer-sizesonya']=='50 to 249 (medium)' or data['employer-sizesonya']=='250 or more (large)'%}
+      <th scope="row" class="govuk-table__header"> Total award before cost share</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">   {% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
+         {% if data['chosen-quote-sonya']=='£502'%}{% set i = 502 %} {% endif %}
+         {% if data['chosen-quote-sonya']=='£503'%}{% set i = 503 %} {% endif %}
+
+         {% if not i  %}0{% endif %}
+             £{{ i + 499 }}</td>
+    </tr>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> Mandatory cost share to be paid by employer</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">{% if data['employer-sizesonya']=='50 to 249 (medium)'%}Medium employer{% endif %}
+{% if data['employer-sizesonya']=='250 or more (large)'%}Large employer{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" >
+            {% if data['employer-sizesonya']=='50 to 249 (medium)'%}  -£600{% endif %}
+  {% if data['employer-sizesonya']=='250 or more (large)'%}-£1000{% endif %}
+
+            </td>
+      </tr>
+      {% endif %}
+
+      {% if data['social-domestic'+ phase]=='Yes'%}
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">  Total social and domestic contribution: 2 days</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">Jaws Screen Reader<br>ZoomText </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" >
+              -£285.71
+
+              </td>
+        </tr>{% endif %}
+      <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"> Total award </th>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" >   {% if data['chosen-quote-sonya']=='£501'%}{% set i = 501 %} {% endif %}
+          {% if data['employer-sizesonya']=='50 to 249 (medium)'%}{% if data['social-domestic'+ phase]=='Yes'%}£114.29{% else %}£400{% endif %}{% endif %}
+        {% if data['employer-sizesonya']=='250 or more (large)'%}£0{% endif %}
+  {% if not (data['employer-sizesonya']=='50 to 249 (medium)' or  data['employer-sizesonya']=='250 or more (large)')%}
+
+{% if data['social-domestic'+ phase]=='Yes' and data['social-domestic-1'+ phase]=='Yes'%}£714.29{% endif %}
+{% if data['social-domestic'+ phase]=='Yes' and  data['social-domestic-1'+ phase]=='No'%}£{% endif %}
+{% if data['social-domestic'+ phase]=='No' and data['social-domestic-1'+ phase]=='Yes'%}£{% endif %}
+{% if data['social-domestic'+ phase]=='No' and data['social-domestic-1'+ phase]=='No'%}  £1000{% endif %}
+
+
+
+  {% endif %}
+
+
+      </td>
+        </tr>
+
+
+
+
+
+
+
+                        </tbody>
+                       </table>
+
+
+
+
+
+                       <p>By confirming, you are agreeing that Sonya Corkery can receive all of the support in the award summary. </p>
+                   <p>Once you have confirmed the award summary, you will be able to send the award decision to Sonya Corkery.</p>
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
+Confirm award summary
+           </button>
+<p><a href="/current/cases/sonya/cases/claim#business-case">I need to change some award details</a></p>
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

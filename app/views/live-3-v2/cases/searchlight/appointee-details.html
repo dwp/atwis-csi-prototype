@@ -1,0 +1,151 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/current/cases/searchlight/appointee-telephone-email" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   <h2 class="govuk-heading-xl">Add appointee details for Dereck Smith</h2>
+
+
+
+
+   <div class="govuk-form-group">
+     <label class="govuk-label" for="appointee-name">
+       Appointee’s full name
+     </label>
+
+   <input class="govuk-input govuk-input--width-20" id="appointee-name" name="appointee-name" type="text">
+   </div>
+
+   </div>
+
+
+   <fieldset class="govuk-fieldset">
+
+
+     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+       <h2 class="govuk-fieldset__heading">
+         Appointee’s address
+       </h2>
+     </legend>
+
+
+
+
+     <div class="govuk-form-group">
+       <label class="govuk-label" for="address-line-1">
+         Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+       </label>
+       <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+
+     <div class="govuk-form-group">
+       <label class="govuk-label" for="address-line-2">
+         <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+       </label>
+       <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2"></div>
+
+     <div class="govuk-form-group">
+       <label class="govuk-label" for="address-town">
+         Town or city
+       </label>
+       <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2"></div>
+
+     <div class="govuk-form-group">
+       <label class="govuk-label" for="address-county">
+         County
+       </label>
+       <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text"></div>
+
+     <div class="govuk-form-group">
+       <label class="govuk-label" for="address-postcode">
+         Postcode
+       </label>
+       <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"></div>
+
+   </fieldset>
+
+
+
+   <div class="govuk-form-group">
+     <fieldset class="govuk-fieldset" aria-describedby="appointee-contact-hint">
+       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+         <h2 class="govuk-fieldset__heading">
+           Appointee contact details
+         </h2>
+       </legend>
+       <div id="appointee-contact-hint" class="govuk-hint">
+         Select all that apply.
+       </div>
+       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+         <div class="govuk-checkboxes__item">
+           <input class="govuk-checkboxes__input" id="appointee-contact" name="appointee-contact" type="checkbox" value="email">
+           <label class="govuk-label govuk-checkboxes__label" for="appointee-contact">
+             Email
+           </label>
+         </div>
+         <div class="govuk-checkboxes__item">
+           <input class="govuk-checkboxes__input" id="appointee-contact-2" name="appointee-contact" type="checkbox" value="telephone">
+           <label class="govuk-label govuk-checkboxes__label" for="appointee-contact-2">
+             Telephone
+           </label>
+         </div>
+
+       </div>
+
+     </fieldset>
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+
+
+
+
+
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

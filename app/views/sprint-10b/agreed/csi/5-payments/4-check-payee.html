@@ -1,0 +1,69 @@
+{% set link = "5" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "4-sop-yes-form"}] %}
+{% set title =  "Check payee details" %}
+
+
+{% block csi %}
+
+<p><a href="3" class="govuk-link">Search again</a></p>
+<br>
+
+{% macro defItem(key='', value='') %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      {{key}}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p>{{value}}</p>
+    </dd>
+
+  </div>
+{% endmacro %}
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+{{ defItem(key='Name', value='Hedge BSL Services') }}
+{{ defItem(key='Address', value='11 Hill Street, B1 2HD') }}
+{{ defItem(key='Supplier code', value='4846738') }}
+{{ defItem(key='Bank name', value='HSBC') }}
+{{ defItem(key='Bank account number', value='38473927') }}
+{{ defItem(key='Sort code', value='40-75-37') }}
+
+</dl>
+
+
+
+{{ govukRadios({
+  idPrefix: "correct-details",
+  name: "correct-details",
+  fieldset: {
+    legend: {
+      text: "Do the details match the invoice?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      id: "yes",
+      value: "yes",
+      checked: checked('correct-details', "yes"),
+      text: "Yes"
+    },
+    {
+      id: "no",
+      value: "no",
+      checked: checked('correct-details', "no"),
+      text: "No, update details"
+
+    }
+  ]
+}) }}
+
+
+
+{% endblock %}

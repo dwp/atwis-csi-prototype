@@ -1,0 +1,184 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-4071 index
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Apply prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to apply scenarios',
+    href: '/apply/index'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-4071: Access to Work Plus 
+ <br>Priority case question iteration</h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+<h3 class="govuk-heading-m">Current: AtW Plus question</h3>
+
+        <p>
+        <a href="service-atw-plus-v1/application-type" class="govuk-link--no-visited-state">
+      Access to Work Plus question (application type)
+     
+        </a>
+      <br>Type of AtW listed in radio content.<br><strong class="govuk-tag govuk-tag--red">
+         To be replaced
+        </strong></p>
+
+      <p>
+        <a href="service-atw-plus-v1/review" class="govuk-link--no-visited-state">
+       Check your answers page – application type section
+        </a>
+        </p>
+
+        <p>
+        <a href="service-atw-plus-v1/are-you-a-civil-servant" class="govuk-link--no-visited-state">
+       Full service journey: current </a>
+      </p>
+
+  
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <h3 class="govuk-heading-m">Updated question: eligibility checboxes</h3>
+
+    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Summary of changes
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+  <li>reference to AtW Plus removed</li>
+  <li>radios replaced with eligibility criteria checkboxes</li>
+  <li>split into 2 questions</li>
+  <li>if any of the eligibility checboxes selected, the case will show up in ATWIS and an AtW Plus priority case</li>
+</ul>
+  </div>
+</details>
+
+
+         <p><a href="service-atw-plus-v2/types-of-support" class="govuk-link--no-visited-state">
+      Updated question – split into 2
+        </a>
+        <br><strong class="govuk-tag govuk-tag--green">
+         Replacement questions 
+        </strong></p>
+
+     <h4 class="govuk-heading-s">Types of support question</h4>
+         <p>
+        <a href="service-atw-plus-v2/types-of-support" class="govuk-link--no-visited-state">
+       Types of support
+     
+        </a>
+         <br>First AtW Plus eligibility question in journey.</p>
+
+
+         <div class="govuk-inset-text">
+
+          <h5 class="govuk-error-message" class="govuk-heading-xs">Error messages</h5>
+       
+        <p>
+         <a href="service-atw-plus-v2/types-of-support-no-js-error-message" class="govuk-link--no-visited-state">
+       No JS – if none selected with another checkbox: types of support
+     
+        </a> <br>For no JS – if 'none' checkbox is selected alongside other checkboxes. </p>
+
+        <p>
+         <a href="service-atw-plus-v2/types-of-support-error-no-selection" class="govuk-link--no-visited-state">
+        No checkboxes selected: education support
+     
+        </a> <br>If continue button selected before checkboxes completed. </p>
+ 
+        </div>
+    
+
+        <h4 class="govuk-heading-s">Education support question</h4>
+
+
+      <p>
+      <a href="service-atw-plus-v2/education-support" class="govuk-link--no-visited-state">
+       Education support  
+        </a>
+      <br>Second AtW Plus eligibility question.</p>
+
+      <div class="govuk-inset-text">
+
+       <h5 class="govuk-error-message" class="govuk-heading-xs">Error messages</h5>
+
+      <p>
+         <a href="service-atw-plus-v2/education-support-no-js-error-message" class="govuk-link--no-visited-state">
+       No JS – if none selected with another checkbox: education support
+     
+        </a> <br>For no JS – if 'none' checkbox is selected alongside other checkboxes. </p>
+
+        <p>
+         <a href="service-atw-plus-v2/education-support-error-no-selection" class="govuk-link--no-visited-state">
+        No checkboxs selected: education support
+     
+        </a> <br>If continue button selected before checkboxes completed. </p>
+
+      </div>
+
+      <p>--------</p>
+
+      <p>
+        <a href="service-atw-plus-v2/review" class="govuk-link--no-visited-state">
+       Check your answers page: updated
+     
+        </a>
+      <br>'Support you get' section added and 'Application type' section removed.</p>
+
+        <p>
+        <a href="service-atw-plus-v2/are-you-a-civil-servant" class="govuk-link--no-visited-state">
+       Full service journey: updated</a>
+       <p>     
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    </div>
+  </div>
+
+{% endblock %}

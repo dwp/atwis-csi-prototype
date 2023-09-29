@@ -1,0 +1,62 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/sprint-29/claim/_CSIBASE-set-advisor.html" %}
+
+
+
+{% block csi %}
+
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-29/your-cases" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                This page is not part of the prototype
+              </h1>
+              <br>
+            </legend>
+
+            <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="advisor-name">
+                          Type your name
+                        </label>
+                        <div id="advisor-name-hint" class="govuk-hint">
+                          <!-- For example, 502135326 -->
+                        </div>
+                        <input class="govuk-input govuk-input--width-10" id="advisor-name" name="advisor-name" type="text" aria-describedby="advisor-name-hint">
+                      </div>
+
+                          </div>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Continue to prototype
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

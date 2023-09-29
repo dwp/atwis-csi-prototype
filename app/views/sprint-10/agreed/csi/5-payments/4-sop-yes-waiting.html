@@ -1,0 +1,19 @@
+{% set link = "../../search-payments" %}
+{% set customNext = "Search for another case" %}
+{% set hideReturn = true %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "SPO7 form submitted" %}
+
+
+{% block csi %}
+
+<p>You will be able to continue with this case once the payee has been added on SOP.
+
+</p>
+
+
+
+
+{% endblock %}

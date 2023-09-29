@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+   What is your name?
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% if not hideback %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.go(-1)"
+}) }}
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <form class="form" action="personal-details-dob" method="post">
+
+      <h1 class="govuk-heading-l">
+         What are your conditions or disabilities?
+      </h1>
+
+      <div class="govuk-form-group">
+        <input class="govuk-input govuk-!-width-one-half" id="condition" name="condition" type="text">
+     </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        <h3 class="govuk-heading-s">Telephone</h3>
+        <p class="govuk-body">0800 169 0154</p>
+        <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+        <p class="govuk-body">Closed public holidays</p>
+        <h3 class="govuk-heading-s">Email</h3>
+        <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk"> dwponline.helpdesk@dwp.gov.uk</a></p>
+    </aside>
+
+      </div> </div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+
+<form action="/live-21/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+                     Decision letters
+                  </h1>
+
+                  <p class="govuk-body"> <a href="https://intranet.dwp.gov.uk/manual/access-work/40-customer-content-portal-ccp">Check guidance on using the Customer Content Portal (CCP) (opens in a new tab)</a>  to complete and send decision letters.            </p>
+
+                  <!-- <p><a href="/live-21/cases/claim#your-tasks">View application details</a> to complete decision letters.</p> -->
+
+<p class="govuk-body"><a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">Save a copy of decision letters in Sharepoint (opens in a new tab)</a>  </p>
+
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                 <h2 class="govuk-fieldset__heading">
+                   {% include  "./content/notification.html" %}
+                 </h2>
+               </legend>
+
+
+               <div id="notification-hint" class="govuk-hint">
+   Select all that apply.
+ </div>
+ <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification" name="notification{{phase}}" type="checkbox" value="Completed and sent letter ATW01CL" {{ checked("notification"+ phase, "Completed and sent letter ATW01CL") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification{{phase}}">
+       Completed and sent letter ATW01CL
+     </label>
+   </div>
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification-2" name="notification{{phase}}" type="checkbox" value="Completed and sent letter ATW02EL" {{ checked("notification"+ phase, "Completed and sent letter ATW02EL") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification-2">
+     Completed and sent letter ATW02EL
+     </label>
+   </div>
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification-3" name="notification{{phase}}" type="checkbox" value="Sent any attachments" {{ checked("notification"+ phase, "Sent any attachments") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification-3">
+       Sent any attachments
+     </label>
+   </div>
+   <div class="govuk-checkboxes__item">
+     <input class="govuk-checkboxes__input" id="notification-3" name="notification{{phase}}" type="checkbox" value="Saved copy of letters and any attachments to Sharepoint" {{ checked("notification"+ phase, "Saved copy of letters and any attachments to Sharepoint") }}>
+     <label class="govuk-label govuk-checkboxes__label" for="notification-3">
+      Saved copies of letters and any attachments to Sharepoint
+     </label>
+   </div>
+ </div>
+
+                 </fieldset>
+               </div>
+
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" >
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

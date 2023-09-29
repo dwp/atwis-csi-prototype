@@ -1,0 +1,94 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-3065 index
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Apply prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to apply index',
+    href: '/apply/index'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-3065: UR prototype with content iterations</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+
+
+     <p>
+        <a href="guidance/govuk-apply" class="govuk-link--no-visited-state">
+       GOV.UK</a>
+
+       <p>Full guide with suggested content, which has been sent to GDS. Green button links to service prototype.</p>
+
+
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+     <p>
+        <a href="service/apply-cs-filtering" class="govuk-link--no-visited-state">
+       Service
+
+        </a>
+      <p>
+      <p>Filtering questions and beginning of current service (not full service journey).</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <p>
+        <a href="/orange/renewals/HTO-2902/index" class="govuk-link--no-visited-state">
+       Renewals
+
+        </a>
+      <p>
+      <p>Email and SMS scenarios, linking to renewals filtering questions. </p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    </div>
+  </div>
+
+{% endblock %}

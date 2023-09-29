@@ -1,0 +1,1475 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Communication support at interview prototype
+{% endblock %}
+
+{% set serviceName = "Apply for commmunication support at interview (Access to Work)" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width">
+      <h1 class="govuk-heading-xl">
+        Payments
+        <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
+      </h1>
+
+      <p>
+
+      </p>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Usability prototype
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+      <p>  <a href="https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133008032235/Payments+Design+Decisions">Payments Design decissions</a></p>
+      <p>  <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1655804540834/09e07ceb2415521ed8e2178092cfe08e1f276d90?sender=u047308549892a3e9b99c4020">Payments Mural board</a></p>
+
+      {{ govukTable({
+        caption: "Version history for current team",
+        captionClasses: "govuk-heading-m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Date added"
+          },
+          {
+            text: "Change log"
+          },
+          {
+            text: "Link"
+          }
+        ],
+        rows: [
+        [
+        {
+          text: " 0.5"
+        },
+        {
+          text: ""
+        },
+        {
+          text: "Play area for testing ideas before sprint"
+        },
+        {
+          html: '<a href="">Go to future </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "00 Month 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li></li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/current/indexmenu">Go to current </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "11 October 2023"
+        },
+
+        {
+          html: '
+
+          <!-- <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis </li>
+          <li>Completed design </li>
+         </ul>
+
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul>
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5143>
+                  HTO-5143</a></li>
+
+          </ul> -->
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-38/indexmenu">Go to sprint-38 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "27 September 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design moving questions in check claim mattches grant to enteerr claim details </li>
+          <!-- <li>Completed design </li> -->
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-6013>
+                  HTO-6013</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-37/indexmenu">Go to sprint-37 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "13 September 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design desicsions documentattion fo S04, S07 & S08 </li>
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5900>
+                  HTO-5900</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-36/indexmenu">Go to sprint-36 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "16 August 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Key scenario: </strong></p>
+            <p>Susan Poole easy path BSL SW 1 invoice.</p>
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design of support worker easy path </li>
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5849>
+                  HTO-5849</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-34/indexmenu">Go to sprint-34 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "02 August 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Key scenario: </strong></p>
+            <p>Sonya Corkey easy path pro-forma 2 invoices.</p>
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis for proforma invoicie journey</li>
+          <li>Completed design for proforma invoicie journey</li>
+          <li>Completed design analysis for proforma invoicie journey cost share</li>
+         </ul>
+
+           <p><strong>UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133339416125/PTG+UR+16+-+Proforma+1>Full UR overview from proformas</a></li>
+          </ul>
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5446>
+                  HTO-5446</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5238>
+                      HTO-5238</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5256>
+                          HTO-5256</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-33/indexmenu">Go to sprint-33 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "19 July 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Key scenario: </strong></p>
+            <p>Paul Hill easy path TTW 2 invoices - public transportt deductions.</p>
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design itterations for invoice date findings </li>
+          <li>Completed design documentation update</li>
+          <li>Started design analysis on Support worker</li>
+          <li>Completed design TTW public transport deductions</li>
+          <li>Completed design review for task list on all cases</li>
+
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5424>
+                  HTO-5424</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5405>
+                      HTO-5405</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4601>
+                          HTO-4601</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4601>
+                              HTO-5485</a></li>
+                              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5488>
+                                  HTO-5488</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-32/indexmenu">Go to sprint-32 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "21 June 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Key scenario: </strong></p>
+            <p>Paul Hill easy path TTW 2 invoices.</p>
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design TTW Taxi no deductions easy path ready for UR </li>
+          <li>Completed design Analysis on TTW Taxi public tansport deductions</li>
+          <li>Completed design of timeline for Paul Hill ready for UR </li>
+          <li>Completed design Analysis on TTW Claim form</li>
+
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5477>
+                  HTO-5477</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5478>
+                      HTO-5478</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5635>
+                          HTO-5635</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5437>
+                              HTO-5437</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-31/indexmenu">Go to sprint-31 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "07 June 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design TTW Element Taxi through to award </li>
+          <li>Completed analysis TTW Taxi no deductions</li>
+          <li>Completed design timeline triggers for cost share UR</li>
+          <li>Completed design ATW plus GOV FORMS prototype</li>
+
+         </ul>
+
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133294653441/PTG+UR+14+i>Full UR overview from sprint 30</a></li>
+           <!-- <li><a href=/payments/sprint-24/indexmenu>Sprint- UR Prototype</a></li> -->
+          </ul>
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5455>
+                  HTO-5455</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5476>
+                      HTO-5476</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5501>
+                          HTO-5501</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5551>
+                              HTO-5551</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-30/indexmenu">Go to sprint-30 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "24 May 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis for blanket Travel To Work and set up individual tickets </li>
+          <li>Started design of Travel To Work taxi easiest path no deductions</li>
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5434>
+                  HTO-5434</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5477>
+                      HTO-5477</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-29/indexmenu">Go to sprint-29 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "10 May 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design Second claim partial payment cost share</li>
+          <li>Completed design Second claim full payment cost share</li>
+          <li>Completed design of new invoices for cost share scenarios</li>
+          <li>Updateed design documentation</li>
+          <li>Updateed prototype to remove duplicate footer</li>
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5370>
+                  HTO-5370</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5371>
+                      HTO-5371</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5373>
+                          HTO-5373</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5405>
+                              HTO-5405</a></li>
+                              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5417>
+                                  HTO-5417</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-28/indexmenu">Go to sprint-28 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "26 April 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design Add cost share to claim matches grant and check payment</li>
+          <li>Completed design New case James McCarthy</li>
+          <li>Update design documentation & prototype</li>
+          <li>Completed design First claim no payment cost share</li>
+          <li>Completed design First claim full payment cost share</li>
+          <li>Completed design New case Nina West</li>
+         </ul>
+
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5100>
+                  HTO-5100</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5332>
+                      HTO-5332</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5340>
+                          HTO-5340</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5368>
+                              HTO-5368</a></li>
+                              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5369>
+                                  HTO-5369</a></li>
+                                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5391>
+                                      HTO-5391</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-27/indexmenu">Go to sprint-27 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "12 April 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed changes to prototype for some check boxes not being checked when navigated back to in prototype</li>
+          <li>Completed design analysis cost share jouney</li>
+          <li>Completed design of the other text entry page for rejected proforma invoices</li>
+          <li>Completed design case history iteration first pass</li>
+          <li>Completed design analysis navigate to invoices tab from task</li>
+          <li>Completed design navigate to invoices tab from task</li>
+         </ul>
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul> -->
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5143>
+                  HTO-5143</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5155>
+                      HTO-5155</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5241>
+                      HTO-5241</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5289>
+                          HTO-5289</a></li>
+                                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5304>
+                                          HTO-5304</a></li>
+                                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5306>
+                                              HTO-5306</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-26/indexmenu">Go to sprint-26 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "15 March 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis on the sop sectioon of the payments journey</li>
+          <li>Completed design of content for invoicee paid in full</li>
+          <li>Completed changes to prototype for UR only show no paths for Porforma and sop</li>
+          <li>Completed design for new invoices and claim for UR</li>
+          <li>Completed design rrefinment for SOP section 4</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133207425025/PTG+UR+13+S5>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-24/indexmenu>Sprint-24 UR Prototype</a></li>
+          </ul>
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4006>
+                  HTO-4006</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4006>
+                      HTO-5099</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4006>
+                          HTO-5197</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4006>
+                              HTO-5196</a></li>
+                              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4006>
+                                  HTO-3923</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-24/indexmenu">Go to sprint-24 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "1 March 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Minor changes to prototype, renewals was prioritised for this sprint</li>
+          <li>Still working on No paths and analysis in SOP</li>
+          <!-- <li>Completed itteration of paymnt summary breakdown</li> -->
+         </ul>
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133169283073/PTG+UR12+S4>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-21/indexmenu>Sprint-20 UR Prototype</a></li>
+          </ul> -->
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4006>
+                  HTO-4006</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-23/indexmenu">Go to sprint-23 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "15 February 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis invoice not paid in full</li>
+          <li>Completed design for new invoices and claim form for UR</li>
+          <!-- <li>Completed itteration of paymnt summary breakdown</li> -->
+         </ul>
+           <!-- <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133169283073/PTG+UR12+S4>Full UR overview from sprint 21</a></li>
+           <li><a href=/payments/sprint-21/indexmenu>Sprint-20 UR Prototype</a></li>
+          </ul> -->
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5040>
+                  HTO-5040</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-5084>
+                      HTO-5084</a></li>
+                      <!-- <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4970>
+                          HTO-4970</a></li> -->
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-22/indexmenu">Go to sprint-22 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "01 February 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis invoice not paid in full</li>
+          <li>Completed design of invalid invoice no path</li>
+          <li>Completed itteration of paymnt summary breakdown</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133169283073/PTG+UR12+S4>Full UR overview from sprint 21</a></li>
+           <!-- <li><a href=/payments/sprint-21/indexmenu>Sprint-20 UR Prototype</a></li> -->
+          </ul>
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4968>
+                  HTO-4968</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4967>
+                      HTO-4967</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4970>
+                          HTO-4970</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-21/indexmenu">Go to sprint-21 </a>'
+        }
+        ],
+
+
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "17 January 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Key scenario: </strong></p>
+            <p>Sonya Corkey claim does not match.</p>
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis of when the invoice does not match the claim</li>
+          <li>Completed design analysis of when Supplier details are not on the invoice</li>
+          <li>Completed design of new invoices for UR</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133132320836/PTG+UR+11+S4+Claim+Doesn+t+Match+Grant+Award>Full UR overview from sprint 20</a></li>
+           <li><a href=/payments/sprint-20/indexmenu>Sprint-20 UR Prototype</a></li>
+          </ul>
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4519>
+                  HTO-4519</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4520>
+                      HTO-4520</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4910>
+                          HTO-4910</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-20/indexmenu">Go to sprint-20 </a>'
+        }
+        ],
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "03 January 2023"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis iterate grant match claim Page to show total figure</li>
+          <li>Completed design for iterate grant match claim Page to show total figure</li>
+          <li>Completed design for when the claim does not match the grant award</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <!-- <ul class="govuk-list govuk-list--bullet">
+           <li><a href=#>Full UR overview from sprint 18</a></li>
+           <li><a href=/payments/sprint-18-ur/indexmenu>Sprint-18 UR Prototype</a></li>
+          </ul> -->
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4846>
+              HTO-4846</a></li>
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4799>
+                  HTO-4799</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-19/indexmenu">Go to sprint-19 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "07 December 2022"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed design analysis of No paths when claim does not match grant</li>
+          <li>Completed design analysis for changes to task list regarding multiple invoices</li>
+          <li>Completed design analysis on the invoice referance number question and how Payment officers are recording multiplle invoices numbers in ATWS</li>
+          <li>Completed design of item selection for cases with multiple items on claim</li>
+          <li>Completed design of invoice refereance number entry field free text box with a 150 character limit</li>
+          <li>Completed design itteration to allow user inputs in UR to remain in text areas checkbooxes and radio button when checked and navigated back to</li>
+          <li>Updated design documntation</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=#>Full UR overview from sprint 18</a></li>
+           <li><a href=/payments/sprint-18-ur/indexmenu>Sprint-18 UR Prototype</a></li>
+          </ul>
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4518>
+              HTO-4518</a></li>
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4433>
+                  HTO-4433</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4437>
+                      HTO-4437</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4462>
+                          HTO-4462</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4646>
+                              HTO-4646</a></li>
+                              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4671>
+                                  HTO-4671</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-18/indexmenu">Go to sprint-18 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "23 November 2022"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Completed the follow up issues with prototyp files allowing for future cases</li>
+          <li>Completed design of new S3 multiple items claim form</li>
+          <li>Completed design of new S3 multiple items invoices</li>
+          <li>Completed design addition of new content to reflect multipe items and invoices</li>
+          <li>Updated design documntation</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4463>
+              HTO-4463</a></li>
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4464>
+                  HTO-4464</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4465>
+                      HTO-4465</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4468>
+                          HTO-4468</a></li>
+                          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4469>
+                              HTO-4469</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-17/indexmenu">Go to sprint-17 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "09 November 2022"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Clearly defined the Senaio 2 Pivot wwithin the index page</li>
+          <li>Completed design analysis on multiple item selection where the grant has been awarded but the claim is only for a few of those items</li>
+          <li>Completed peliminary design analysis on the use of Referance numbers and dates for invoices</li>
+          <li>Completed design restructure to allw morre than one case e.g. Dereck (S1 single itm claim happy path) and Sonya (S3 multiple items multiple invoices single payee)</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4284>
+              HTO-4284</a></li>
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4430>
+                  HTO-4430</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4435>
+                      HTO-4435</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4450>
+                          HTO-4450</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-16/indexmenu">Go to sprint-16 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "26 October 2022"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Designed and content poduced for first pass Sent for approval page</li>
+          <li>Completed first stage design analysis on multiple invoices</li>
+          <li>Completed design of Review and send payment section in line with digital journey through DRS</li>
+          <li>Completed first stagee design analysis on linking unstructured whitemail to cases in ATWIS</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+          <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4167>
+              HTO-4167</a></li>
+              <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4354>
+                  HTO-4354</a></li>
+                  <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4355>
+                      HTO-4355</a></li>
+                      <li><a href=https://dwpdigital.atlassian.net/browse/HTO-4371>
+                          HTO-4371</a></li>
+
+          </ul>
+
+        '
+        },
+
+        {
+          html: '<a href="/payments/sprint-15/indexmenu">Go to sprint-15 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "12 October 2022"
+        },
+
+        {
+          html: '
+
+          <p><strong>Findings: </strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+           <li>Completed design analysis on possible data points for digital journey through DRS</li>
+           <li>Completed design analysis on preliminaryy types of filtering for Payment tam leads</li>
+           <li>Completed design analysis on the whitemail journey in ATWIS and DRS</li>
+           <li>Completed design analysis on task list for digital journey through DRS</li>
+           <li>Completed design analysis on Case history for digital journey through DRS</li>
+           <li>Itteration to section 1 & 2 of the payments prototype ready for UR</li>
+           <li>Built test digital claim form and open in browser ready for UR</li>
+         </ul>
+           <p><strong>Changes for UR: </strong></p>
+         <ul class="govuk-list govuk-list--bullet">
+           <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/133001969839/PTG+UR9+-+PO2+Prototype+Testing>Full UR overview from sprint 14</a></li>
+           <li><a href=/payments/sprint-14-ur/indexmenu>Sprint-14 UR Prototype</a></li>
+          </ul>
+          <p><strong>Jira tickets: </strong></p>
+        <ul class="govuk-list ">
+          <li>HTO-4226</li>
+          <li>HTO-4227</li>
+          <li>HTO-4228</li>
+          <li>HTO-4229</li>
+          <li>HTO-4230</li>
+          <li>HTO-4353</li>
+
+         </ul>
+
+      '
+     },
+
+     {
+          html: '<a href="/payments/sprint-14/indexmenu">Go to sprint-14 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "28 September 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Discussed Pivot of direction for payments to a digital claim ingested via DRS and impact to service</li>
+              <li>Decided to re-focus the payments and start Scenario 2 with the above in mind</li>
+              <li>First pass at Team lead view and basic filtering</li>
+              <li>Built and refined the custom user name entry for UR</li>
+              <li>Reviewed key points of the journey where process of paper a digital claims differ</li>
+            </ul>
+            <p><strong>Changes for UR: </strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <!-- <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132956913665/PTG+UR+8+-+PO+Prototype+Testing+1>Full UR overview from sprint 11</a></li> -->
+            <!-- <li><a href=/payments/sprint-13-ur/indexmenu>Sprint-13 UR Prototype</a></li> -->
+           </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-4009</li>
+             <li>HTO-4084</li>
+             <li>HTO-4085</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/sprint-13/indexmenu">Go to sprint-13 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "14 September 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Completed design analysis of Team lead view for end of payment journey S1</li>
+              <li>Completed preliminary design analysis of SAT check journey need</li>
+              <li>Completed design analysis of case history</li>
+              <li>Built revised Case history section of the task list that adds tasks compleated from list ready for UR</li>
+              <li>Updated payment officer job role in ATWIS ready for UR</li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132956913665/PTG+UR+8+-+PO+Prototype+Testing+1>Full UR overview from sprint 12</a></li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-4083</li>
+             <li>HTO-4087</li>
+             <li>HTO-4088</li>
+             <li>HTO-4093</li>
+             <li>HTO-4094</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/sprint-12/indexmenu">Go to sprint-12 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "31 August 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Completed design analysis on Review Payment section of task list</li>
+              <li>Completed design analysis content cleanup and stress test on prototype, ready for first round of live UR</li>
+              <li>Built Review Payment section of the task list ready for UR</li>
+              <li>Built test invoice and open in browser ready for UR</li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132956913665/PTG+UR+8+-+PO+Prototype+Testing+1>Full UR overview from sprint 11</a></li>
+              <li><a href=/payments/sprint-11-ur/indexmenu>Sprint-11 UR Prototype</a></li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-4001</li>
+             <li>HTO-4002</li>
+             <li>HTO-4008</li>
+             <li>HTO-4012</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/sprint-11/indexmenu">Go to sprint-11 </a>'
+        }
+        ],
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "17 August 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Completed design analysis on Review invoice header section of task list</li>
+              <li>Built Check claim matches invoice task ready for UR</li>
+              <li>Built Check invoice type task ready for UR</li>
+              <li>Built Check company details task ready for UR</li>
+              <li>Built Check payee address details task ready for UR</li>
+              <li>Built Add invoice number and date task ready for UR</li>
+              <li>Built Add invoice number and date task ready for UR</li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href=https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1661246086214/f045cfcc1e852b43912d6c496a38281a63e08b36?sender=u047308549892a3e9b99c4020">Full UR overview from sprint 10</a></li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3916</li>
+             <li>HTO-3917</li>
+             <li>HTO-3918</li>
+             <li>HTO-3919</li>
+             <li>HTO-3920</li>
+             <li>HTO-3921</li>
+             <li>HTO-3922</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/sprint-10/indexmenu">Go to sprint-10 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "03 August 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Built the layout of invoice tab ready fo UR</li>
+              <li>Completed design analysis of the first task list item Claim matches grant</li>
+              <li>Built Case matches grant task list section ready for UR</li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href=https://dwpdigital.atlassian.net/wiki/spaces/ATW/pages/132929945692/PTG+UR+7+-+Paper+Prototype+first+draft">Full UR overview from sprint 9</a></li>
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3844</li>
+             <li>HTO-3854</li>
+             <li>HTO-3855</li>
+
+
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/sprint-9/indexmenu">Go to sprint-9 </a>'
+        }
+        ],
+
+
+
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "20 July 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Compleated design analysis on Case Summary and a Task List structure</li>
+              <li>Built Task list and initial content ready for UR</li>
+              <li>Built Case Summary and initial conteent ready for UR</li>
+              <li>Built Case history and initial content ready for UR</li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>no UR at this stage</li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3787</li>
+             <li>HTO-3789</li>
+             <li>HTO-3788</li>
+             <li>HTO-3790</li>
+
+
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/sprint-8/indexmenu">Go to sprint-8 </a>'
+        }
+        ],
+        [
+        {
+          text: "0.1"
+        },
+        {
+          text: "06 July 2022"
+        },
+
+        {
+          html: '
+
+             <p><strong>Findings: </strong></p>
+           <ul class="govuk-list govuk-list--bullet">
+              <li>Stripped asses allocation screen to build up for payments</li>
+              <li>Built single tab Claim allocation view as foundation for Payments journey waiting on BA analysis for possible further tab creation</li>
+              <li>Conttent changed to reflect Payment officer</li>
+              <li>Set up new Payment officer profile Sue Pearson</li>
+            </ul>
+              <p><strong>Changes for UR: </strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>no UR at this stage</li>
+
+             </ul>
+             <p><strong>Jira tickets: </strong></p>
+           <ul class="govuk-list ">
+             <li>HTO-3618</li>
+             <li>HTO-3698</li>
+
+            </ul>
+
+         '
+        },
+
+        {
+          html: '<a href="/payments/sprint-7/indexmenu">Go to sprint-7 </a>'
+        }
+        ]
+
+
+]
+
+      }) }}
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+.hmrc-add-to-a-list{padding-left:0;font-family:GDS Transport,arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-size:16px;font-size:1rem;line-height:1.25}
+@media print{
+  .hmrc-add-to-a-list{font-family:sans-serif}}
+  @media (min-width:40.0625em){.hmrc-add-to-a-list{font-size:19px;font-size:1.1875rem;line-height:1.31579}}
+  @media print{
+    .hmrc-add-to-a-list{font-size:14pt;line-height:1.15}}
+    @media (min-width:48.0625em){
+      .hmrc-add-to-a-list{display:table}}
+      @media (min-width:48.0625em){
+        .hmrc-add-to-a-list--short{width:100%}.hmrc-add-to-a-list--short
+        .hmrc-add-to-a-list__identifier{width:30%}}
+        @media (min-width:48.0625em){
+          .hmrc-add-to-a-list--long{width:100%}.hmrc-add-to-a-list--long .hmrc-add-to-a-list__identifier{width:50%}}
+          .hmrc-add-to-a-list__contents{display:block;position:relative;padding-bottom:5px;border-bottom:1px solid #b1b4b6}
+          @media (min-width:48.0625em){
+            .hmrc-add-to-a-list__contents{display:table-row;padding-bottom:0;border-bottom-width:0}}
+.hmrc-add-to-a-list__change,
+.hmrc-add-to-a-list__identifier,
+.hmrc-add-to-a-list__remove{display:block;margin:0}
+@media (min-width:48.0625em){
+  .hmrc-add-to-a-list__change,.hmrc-add-to-a-list__identifier,
+  .hmrc-add-to-a-list__remove{display:table-cell;padding:15px 0;border-bottom:1px solid #b1b4b6}}
+  .hmrc-add-to-a-list__identifier{margin:10px 60px 0 0;font-weight:700}@media (min-width:48.0625em){.hmrc-add-to-a-list__identifier{margin:0}}
+  .hmrc-add-to-a-list__identifier--light{font-weight:400}
+  .hmrc-add-to-a-list__remove{margin-top:10px;margin-bottom:10px;text-align:right}
+  @media (min-width:48.0625em){
+    .hmrc-add-to-a-list__remove{padding-right:0}}
+    .hmrc-add-to-a-list__change{position:absolute;top:0;right:0;text-align:right}
+    @media (min-width:48.0625em){
+      .hmrc-add-to-a-list__change{position:static}
+      .hmrc-add-to-a-list__change+
+      .hmrc-add-to-a-list__remove{width:6em}}
+      .hmrc-list-with-actions{font-family:GDS Transport,arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-weight:400;font-size:16px;font-size:1rem;line-height:1.25}
+      @media print{
+        .hmrc-list-with-actions{font-family:sans-serif}}
+        @media (min-width:40.0625em){.hmrc-list-with-actions{font-size:19px;font-size:1.1875rem;line-height:1.31579}}
+        @media print{
+        .hmrc-list-with-actions{font-size:14pt;line-height:1.15}}
+        @media (min-width:48.0625em){
+          .hmrc-list-with-actions--short
+        .hmrc-list-with-actions__name{width:30%}}
+        @media (min-width:48.0625em){
+          .hmrc-list-with-actions--long .hmrc-list-with-actions__name{width:50%}}
+          .hmrc-list-with-actions__item{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #b1b4b6}
+          .hmrc-list-with-actions__name{font-weight:400}
+          .hmrc-list-with-actions__actions{display:flex;flex-direction:column;flex-wrap:wrap}
+          @media (min-width:48.0625em){
+            .hmrc-list-with-actions__actions{flex-direction:row}}
+            .hmrc-list-with-actions__action{margin-bottom:10px;text-align:right}
+            @media (min-width:48.0625em){
+              .hmrc-list-with-actions__action{margin-bottom:0;flex-direction:row}}
+              .hmrc-list-with-actions__action:last-of-type{margin-bottom:0}

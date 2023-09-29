@@ -1,0 +1,152 @@
+{% extends 'layout_email.html' %}
+
+{% block pageTitle %}
+    Access to Work Plus referral email
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            {% set emailContentHTML %}
+
+                <p class="govuk-body">This form was submitted at 10:56:31 on 28 June 2023.</p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">What is the name of the person you are referring?</h2>
+
+                <p class="govuk-body">
+                First name: Charles
+                <br>
+                Last name: Wilson</p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">What is their Access to Work application reference (optional)</h2>
+
+                <p class="govuk-body">
+                AB12CD
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                 <h2 class="govuk-heading-m">When did they apply for Access to Work? (optional)</h2>
+
+                <p class="govuk-body">
+                27/06/2023
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">What is their job title?</h2>
+
+                <p class="govuk-body">
+                Warehouse packer
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">Where will they be working?</h2>
+
+                <p class="govuk-body">
+               International Systems Limited
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">What is your relationship to the person you are referring?</h2>
+
+                <p class="govuk-body">
+                Employer
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">What is your name?</h2>
+
+                <p class="govuk-body">
+                First name: Amy
+                <br>
+                Last name: Simpson</p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">What is your email address?</h2>
+
+                <p class="govuk-body">
+                amy.simpson@testemail.com
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <h2 class="govuk-heading-m">What is your telephone number?</h2>
+
+                <p class="govuk-body">
+                01234 567 890
+                </p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+                <div class="govuk-inset-text">
+
+                    <h2 class="govuk-heading-m">You cannot reply to this email</h2>
+
+                    <p class="govuk-body">
+                    If you need to contact the person who completed this form, you’ll need to contact them directly.
+                    </p>
+
+                    <p class="govuk-body">
+                    If you have a technical issue with this form, send an email to <a href= "govuk-forms-support@govuk.zendesk.com">govuk-forms-support@govuk.zendesk.com</a> with details of the issue and the form it relates to.
+                    </p>
+
+                </div>
+
+            {% endset %}
+
+
+            {{ prototypeEmailPreview({
+                headers: [
+                    {
+                        key: {
+                            text: 'From: '
+                        },
+                        value: {
+                            text: '	GOV.UK Forms'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'To: '
+                        },
+                        value: {
+                            text: 'dwpatwplusreferrals@dwp.gov.uk'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'Subject: '
+                        },
+                        value: {
+                            text: 'Access to Work Plus referral'
+                        }
+                    }
+                ],
+                content: {
+                    html: emailContentHTML
+
+
+            
+
+                }
+            }) }}
+            
+
+        </div>
+
+</div>
+
+{% endblock %}

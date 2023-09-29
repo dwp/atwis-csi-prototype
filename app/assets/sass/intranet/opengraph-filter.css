@@ -1,0 +1,24 @@
+.opengraph-filter {
+	padding: 1em; border: 1px solid rgb(249, 249, 249); border-image: none; margin-bottom: 1em; background-color: rgb(246, 246, 242);
+}
+.opengraph-filter img {
+	border: currentColor; border-image: none;
+}
+.opengraph-filter a {
+	color: rgb(59, 59, 59); text-decoration: none;
+}
+.opengraph-filter a:hover {
+	color: rgb(59, 59, 59); text-decoration: none;
+}
+.opengraph-filter a.hover {
+	color: rgb(59, 59, 59); text-decoration: none;
+}
+.opengraph-filter .left {
+	width: 100px; float: left; display: inline; position: relative;
+}
+.opengraph-filter .right {
+	margin-left: 100px;
+}
+.opengraph-filter .title {
+	font-weight: bold;
+}

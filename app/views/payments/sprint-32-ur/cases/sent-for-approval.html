@@ -1,0 +1,88 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "../claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+
+<br>
+
+
+
+
+<form action="/payments/current/your-cases" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Payment sent for processing
+            </h1>
+            <div class="govuk-panel__body">
+              Amount<br><strong>
+                {% if case == 'dereck' %}
+                          £499
+                {% endif %}
+                {% if case == 'sonya' %}
+                          £729.71
+                {% endif %}
+                {% if case == 'james' %}
+                          <!-- £488.11 -->
+                          £511.71
+                {% endif %}
+                {% if case == 'nina' %}
+                          £0.00
+                {% endif %}
+                {% if case == 'paul' %}
+                          £296.00
+                {% endif %}
+
+              </strong>
+            </div>
+          </div>
+
+
+          <h2 class="govuk-heading-m">What happens next</h2>
+
+          <p class="govuk-body">
+            The payment will be made once any checks have been completed.
+
+            <p class="govuk-body">
+              You will be able to see this claim in your <a href="/payments/current/your-cases#waiting" class="govuk-link">waiting for payment tab</a> until it has been sent to SOP.</p>
+          </p>
+          <!-- <p class="govuk-body">
+            You will be able to see this claim in your
+            <a href="/payments/current/your-cases#waiting" class="govuk-link">waiting for approval tab</a>
+            until the payment has been approved and sent to SOP.
+          </p> -->
+
+        </div>
+      </div>
+
+
+
+
+
+    <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Back to your cases
+        </button>
+      </form>
+
+
+      </main>
+      </div>
+
+
+
+
+
+
+
+{% endblock %}

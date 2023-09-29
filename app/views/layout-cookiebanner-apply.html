@@ -1,0 +1,131 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"           import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"         import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"              import govukButton %}
+{% from "govuk/components/character-count/macro.njk"     import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
+{% from "govuk/components/cookie-banner/macro.njk"       import govukCookieBanner %}
+{% from "govuk/components/date-input/macro.njk"          import govukDateInput %}
+{% from "govuk/components/details/macro.njk"             import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"       import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"       import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"            import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"         import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"               import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/panel/macro.njk"               import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"              import govukRadios %}
+{% from "govuk/components/select/macro.njk"              import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"           import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"        import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"               import govukTable %}
+{% from "govuk/components/tabs/macro.njk"                import govukTabs %}
+{% from "govuk/components/tag/macro.njk"                 import govukTag %}
+{% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
+
+
+{% from "./components/dwp-logo.njk"                   import dwpLogo %}
+{% from "./components/dwp-old-logo.njk"               import dwpOldLogo %}
+{% from "./components/ni-logo.njk"                    import niLogo %}
+
+{% block head %}
+{#- Banner starts -#}
+<div class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on [name of service]">
+
+      <div class="govuk-cookie-banner__message govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                      <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on Apply for Access to Work</h2>
+                    <p class="govuk-body">We use some essential cookies to make this service work. We would also like to use analytics cookies to help improve our services.</p>
+                    <p class="govuk-body">You can <a href='cookie-policy' class=“govuk-link”>read more about cookies on this service</a> before you decide.</p>
+                      <div class="govuk-button-group">  <form method="post" action="/apply/HTO-2717/accepted-banner-start-of-service">
+
+<button class="govuk-button govuk-!-margin-bottom-4 govuk-!-margin-right-4" data-module="govuk-button">
+  Accept analytics cookies
+</button>
+
+                    </form>
+                    <form method="post" action="/apply/HTO-2717/rejected-banner-start-of-service">
+
+
+<button class="govuk-button govuk-!-margin-bottom-4" data-module="govuk-button">
+  Reject analytics cookies
+</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+    </div>
+{#- Banner ends -#}
+
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+
+{% endblock %}
+
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% if useAutoStoreData %}
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://www.get-disability-work-support.service.gov.uk/apply/accessibility-statement",
+            text: "Accessibility statement "
+          },
+          {
+            href: "cookie-policy",
+            text: "Cookies"
+          },
+          {
+            href: "https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter",
+            text: "Privacy Policy"
+          },
+
+          {
+            href: "https://www.get-disability-work-support.service.gov.uk/apply/accessibility-help",
+            text: "Accessibility Help"
+          }
+
+
+        ]
+      }
+    }) }}
+  {% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}

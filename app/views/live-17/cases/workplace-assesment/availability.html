@@ -1,0 +1,67 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                  Is Dereck Smith available for a workplace assessment in the next 8 working days?
+                 </h2>
+               </legend>
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="Yes~others" {{ checked("wpa-availability", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa-availability">
+                    Yes
+                   </label>
+                 </div>
+                  <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="No" {{ checked("wpa-availability", "No") }}>
+                 <label class="govuk-label govuk-radios__label" for="wpa-availability">
+                  No
+                 </label>
+               </div>
+
+
+               <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="I’m waiting for an answer~/live-17/cases/claim#your-tasks" {{ checked("wpa-availability", "I’m waiting for an answer") }}>
+              <label class="govuk-label govuk-radios__label" for="wpa-availability">
+            I’m waiting for an answer
+              </label>
+            </div>
+
+                 </fieldset>
+               </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

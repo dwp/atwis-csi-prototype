@@ -1,0 +1,157 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+      Usability testing
+        <span class="govuk-caption-xl">Sprint 2</span>
+
+
+      <p>
+        Examples to be tested with users
+      </p>
+
+
+      {{ govukButton({
+        href: "apply",
+        text: "Full journey from GOV.UK page"
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "List of all screens in journey",
+        html:
+'  <ul class="govuk-list">
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/apply">Guidance</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/have-total-cost">(NEW) Have total cost?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/have-total-cost-no">(NEW - kickout) Need to get total cost</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/your-name">What is your name?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/dob">Date of birth</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_age">(kickout) Cannot help - age</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/address">Address</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/deaf">Deaf</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/condition">(IF NOT DEAF) Condition</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/paid-work">Paid work</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_paid">(kickout) Cannot help - not paid work</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-date">Interview date</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_date">(kickout) Cannot help - in the past</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-company-name">What is the name of the company your job interview is with?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-address">Where will your job interview take place?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-length">How long is the interview expected to last?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interviewer-details">Who can we contact at the company?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/support-worker-page">What is the total cost of the BSL interpreter or support worker that you need at the interview?</a>
+          </li>
+
+
+
+
+
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/contact">How would you like to be contacted?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/text-message">Do you want to receive text messages with updates about your application?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/mobile-phone-number">What is your mobile phone number?</a>
+          </li>
+
+
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/check-your-answers">Check your answers</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/confirmation">Confirmation</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/timed-out">Timed out</a>
+          </li>
+        </ul>
+
+'          }) }}
+
+
+{{ govukDetails({
+  summaryText: "Other versions",
+  text:
+' <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="gathering-info">Apply Questions Work and Condition Example 1</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="atw-example-2/difficult-tasks">Apply Questions Work and Condition Example 2</a>>
+    </li>
+    <li>
+      <a class="govuk-link" <a href="support-worker/job/support-worker-page">Communication support at Interview</a>
+    </li>
+  </ul>
+
+  <li>
+    <a class="govuk-link" href="/' + folder + '/service/alternative-contact">Alternative contact</a>
+  </li>
+
+<p>Screens without a home</p>
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="/' + folder + '/service/phone-number">Phone number</a>
+  </li>
+
+  <li>
+    <a class="govuk-link" href="/' + folder + '/service/talk-phone">Talk phone</a>
+  </li>
+</ul>
+'          }) }}
+
+    </div>
+</div>
+
+
+
+{% endblock %}

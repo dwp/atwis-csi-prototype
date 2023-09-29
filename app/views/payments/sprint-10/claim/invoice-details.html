@@ -1,0 +1,115 @@
+<h1 class="govuk-heading-l">Invoice</h1>
+
+
+
+
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <!-- <th scope="col" class="govuk-table__header">Document type</th> -->
+          <th scope="col" class="govuk-table__header">Claim type</th>
+          <th scope="col" class="govuk-table__header">Date received</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+
+          <tr class="govuk-table__row">
+            <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
+            <td class="govuk-table__cell">Specialist equipment</td>
+            <td class="govuk-table__cell">12 June 2022</td>
+            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">View invoice</a></td>
+          </tr>
+
+          <!-- <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Invoice</th>
+            <td class="govuk-table__cell">Specialist equipment</td>
+            <td class="govuk-table__cell">12 June 2022</td>
+            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">View document</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Invoice</th>
+            <td class="govuk-table__cell">Specialist equipment</td>
+            <td class="govuk-table__cell">12 June 2022</td>
+            <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">View document</a></td>
+          </tr> -->
+
+
+
+    </tbody>
+  </table>
+
+
+<!-- {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "IN4562000-DN6.PDF",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }} -->

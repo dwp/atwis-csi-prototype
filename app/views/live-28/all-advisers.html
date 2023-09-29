@@ -1,0 +1,73 @@
+{% extends "./claim/_BASE.html" %}
+{% set hideBanner = true %}
+
+{% if not phase %}
+{% set phase = "allocator" %}
+
+{% endif %}
+
+{% set advisers = true %}
+
+{% set unallocated = [
+  {
+
+    name: "Desmond Smith",
+    submitted: "27 February 2020 - 04:23",
+    interview: "1 November 2021",
+    status: "New"
+  },
+  {
+
+    name: "Sam Argentino",
+    submitted: "23 February 2020 - 13:23",
+    interview: "2 November 2021",
+    status: "Action needed"
+  }
+
+  ]
+  %}
+
+{% block content %}
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">All advisers</h1>
+
+      </div>
+    </div>
+
+    <ul class="govuk-list">
+
+      <li>
+        <a class="govuk-link" href="/live-28/your-cases-case-manager-view">John Goldsmith</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">John Smith</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#"> Imani Pretorius </a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Tom Garb </a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Robyn Wallis  </a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Caelan Stafford   </a>
+      </li>
+    </ul>
+
+  </main>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

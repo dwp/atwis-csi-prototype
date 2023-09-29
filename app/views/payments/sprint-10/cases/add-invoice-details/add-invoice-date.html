@@ -1,0 +1,94 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-10/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Add invoice number and date
+              </h1>
+            </legend>
+
+            <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="passport-number">
+                          Add invoice number
+                        </label>
+                        <div id="invoice-number-hint" class="govuk-hint">
+                          <!-- For example, 502135326 -->
+                        </div>
+                        <input class="govuk-input govuk-input--width-10" id="invoice-number" name="invoice-number" type="text" aria-describedby="invoice-number-hint">
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Add invoice date
+                          </legend>
+                          <div id="expiry-hint" class="govuk-hint">
+                            <!-- For example, 31 3 1980 -->
+                          </div>
+                          <div class="govuk-date-input" id="expiry">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="invoice-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="invoice-day" name="invoice-day" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="invoice-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="invoice-month" name="invoice-month" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="invoice-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="invoice-year" name="invoice-year" type="text" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

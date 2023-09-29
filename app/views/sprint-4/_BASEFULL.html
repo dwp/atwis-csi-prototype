@@ -1,0 +1,73 @@
+{% set serviceName = "Communication Support at Interview" %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{title}} - {{serviceName}} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+
+{% endblock %}
+
+
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% if not backHidden %}
+  <a class="govuk-back-link" onclick="history.back();" >Back</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if span %}<span class="govuk-caption-xl">{{span}}</span>{% endif %}
+        {{title}}
+      </h1>
+
+{% if form %}
+      <form class="form" action="{{page}}" method="post">
+{% endif %}
+
+{% block service %}
+
+{% endblock %}
+
+{% if form %}
+        <button class="govuk-button">Continue</button>
+
+      </form>
+{% endif %}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <div id="ad-helpline">
+  <p class="govuk-heading-m">Get help</p>
+  <p class="govuk-heading-s">Telephone</p>
+  <p class="govuk-body">0800 169 0154</p>
+  <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+  <p class="govuk-body">Closed public holidays</p>
+  <p class="govuk-heading-s">Email</p>
+  <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk" class="govuk-link">dwponline.helpdesk@dwp.gov.uk</a></p>
+</div>
+
+    </div>
+  </div>
+{% endblock %}

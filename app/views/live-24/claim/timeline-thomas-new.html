@@ -1,0 +1,365 @@
+{% set monthAndYear = "November 2023" %}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Case history</h2>
+
+<ol class="dwp-timeline">
+
+
+  <script>
+    const currentDate = new Date();
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+      hourCycle: 'h12'
+    };
+    const currentDateTime = currentDate.toLocaleString('en-GB', options);
+    // const currentDateTime = date + ',' + time;
+    document.getElementById('currentDateTime').textContent = currentDateTime;
+    </script>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Telephone call recived from Thomas King</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  Telephone call recived at 5 April 2023 11am about
+  elements and other.
+
+      </p>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">    <a href="/live-24/cases/thomas/cases/contact/1/phone-log">View details</a></p>
+      <p class="govuk-caption-m" id="timeline-date">
+  5 April 2023 at 11:30am
+      </p>
+  </li>
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application allocated </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Al O'Cator to John Goldsmith</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  <span id="currentDateTime">  5 April 2023 at 11:00am
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Health condition or disability </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"></p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  No further information needed.
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  <span id="currentDateTime">  30 March 2023 at 11:05am</span>
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Update to: Health condition or disability</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+<a href="/live-24/cases/thomas/cases/check-application/condition-help-needed">More details added</a>
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  30 March 2023 at 11:01am
+      </p>
+  </li>
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Telephone call made</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  Telephone call made at 30 March 2023 10am about
+  health condition or disability
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  30 March 2023 at 11:00am
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Text message (SMS) sent</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  SMS sent at 29 March 2023 1pm about
+  health condition or disability and notifications
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  29 March 2023 at 4:01pm
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Email sent</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  Email sent at 29 March 2023 1pm about
+  health condition or disability
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  29 March 2023 at 4:00pm
+      </p>
+  </li>
+
+
+
+
+
+
+  {% if data ['citizen-address-line-1']=='73 Guild Street'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Address updated </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">72 Guild Street to {{data['citizen-address-line-1']}}</p>
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+  5 March 2023 at 11:46am
+      </p>
+  </li>
+  {% endif %}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Quote: support worker 2</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  No further information needed.
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Quote: support worker 1</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  No further information needed.
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Support details: support worker</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  No further information needed.
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Employment details</h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  No further information needed.
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1"> Contact details </h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  No further information needed.
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Health condition or disability </h2>
+
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+  Contact needed for more information.
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+
+
+  {% if 'Personal Independence Payment' in data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: completed </h2>
+
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if 'No' in data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: completed </h2>
+
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:50am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['benefits']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check benefits: in progress </h2>
+
+    <p class="govuk-caption-m govuk-!-margin-bottom-1"> Does Searchlight show benefits that could affect this application? {{data['benefits']}}</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:49am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['appointee-cya']=='finished'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: completed </h2>
+
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:48am
+      </p>
+  </li>
+  {% endif %}
+  {% if data['appointee']=='No'%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: completed </h2>
+
+
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:48am
+      </p>
+  </li>
+  {% endif %}
+
+  {% if data['appointee']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check appointee: in progress </h2>
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> {% include  "live-24/cases/searchlight/appointee/content/does-name-here-have-an-appointee.html" %} {{data['appointee']}}</p>
+      {% if data['appointee']=='Yes, I need to add an appointee'%}
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s full name:  {{data['appointee-name']}}</p>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s address:
+          <br>{{data['appointee-address-line-1']}}<br>
+        {{data['appointee-address-line-2']}}{% if data['appointee-address-line-2']%}<br>{% endif %}
+        {{data['appointee-address-town']}}{% if data['appointee-address-town']%}<br>{% endif %}
+        {{data['appointee-address-county']}}{% if data['appointee-address-county']%}<br>{% endif %}
+        {{data['appointee-address-postcode']}}</p>
+
+         <p class="govuk-caption-m govuk-!-margin-bottom-1">Appointee’s contact details:
+           {% for feature in data['appointee-contact'] %}
+             {{ feature }},
+           {% endfor %}  </p>
+
+      {% endif %}
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:47am
+      </p>
+  </li>
+  {% endif %}
+
+
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: completed </h2>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:46am
+      </p>
+  </li>
+
+
+  {% if data['Searchligh']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Check personal details and add National Insurance number: in progress </h2>
+
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is there a record for Thomas King in Searchlight? {{data['Searchligh']}}</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Is Thomas King’s National Insurance number in Searchlight? {{data['found-nino']}}</p>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"> Add Thomas King’s National Insurance number from Searchlight: {{data['national-insurance-number']| upper }}</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+  25 March 2023 at 9:45am
+      </p>
+  </li>
+  {% endif %}
+
+<!-- {% if data['hjek']%}
+<li class="dwp-timeline__entry">
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Heading </h2>
+    <p class="govuk-caption-m govuk-!-margin-bottom-1">Tasks</p>
+
+    <p class="govuk-caption-m" id="timeline-date">
+10 January 2023
+    </p>
+</li>
+{% endif %} -->
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application allocated </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">by Al O'Cator to Jane Doe</p>
+
+      <p class="govuk-caption-m" id="timeline-date">
+4 March 2023 at 1:51pm
+      </p>
+  </li>
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Application received </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1"></p>
+
+      <p class="govuk-caption-m">
+
+  2 January 2023 at 11:57am
+      </p>
+  </li>
+
+</ol>
+
+
+
+
+
+  <script>
+  const months = ["January","February","March","April","May","June","March","August","September","October","November","December"];
+
+  const d = new Date();
+  let month = months[d.getMonth()];
+  document.getElementById("day").innerHTML = d.getDate();
+  document.getElementById("month").innerHTML = month;
+  document.getElementById("year").innerHTML = d.getFullYear();
+  </script>
+<!-- <ol class="dwp-timeline">
+{% macro timeline(title="", allocation="", stage="", date="1 "  + monthAndYear +  " at 4:30pm" ) %}
+        <li class="dwp-timeline__entry">
+          <h3  style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">{{title}}  </h3>
+
+          <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">{% if stage == "payment" %}Rich Silver{% elif stage == "allocator" %}Al O'Cator{% elif stage == "unallocated"%}{% else %}John Goldsmith{%endif %} {% if allocation %}to {{allocation}}{% endif %}</span>
+<span class="dwp-timeline__date">{{date}}</span>
+          </p>
+</li>
+{% endmacro %} -->

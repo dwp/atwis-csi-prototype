@@ -1,0 +1,189 @@
+{% set case = "dereck" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-23/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-23/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Check claim form matches grant award
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+
+<br>
+
+<h2 class="govuk-heading-m">   Grant award details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+        Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+          Specialist equipment
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+        Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jaws screen reader
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+          </div>
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £499
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+</dl>
+
+
+
+                <br>
+
+
+
+
+
+
+
+
+  <!-- <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-yes" name="grant-match-claim-yes" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-1">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-no" name="grant-match-claim-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-2">
+        No
+      </label> -->
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 class="govuk-heading-m">
+          Does the claim form match the grant award?
+          <br>
+          <br>
+
+          <p class="govuk-body">   <a class="govuk-link" href="/public/images/test-claim-form.pdf" target="_blank" >View claim form</a></p>
+
+        </h2>
+      </legend>
+
+<!-- RADIO BUTTONS -->
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="total-doesnt-match~claim#your-tasks" {{ checked("grant-matches-claim", "total-doesnt-match") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+                Total amount does not match
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="element-doesnt-match~claim#your-tasks" {{ checked("grant-matches-claim", "element-doesnt-match") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-3">
+                Element does not match
+              </label>
+            </div>
+
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-3" name="grant-matches-claim" type="radio" value="total-element-doesnt-match~claim#your-tasks" {{ checked("grant-matches-claim", "total-element-doesnt-match") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-3">
+                Both amount and element do not match
+              </label>
+            </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

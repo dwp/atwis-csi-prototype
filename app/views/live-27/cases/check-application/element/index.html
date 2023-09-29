@@ -1,0 +1,220 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% if 'Yes' in data['elements']%}{% set changeHide = "True" %}{% endif %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">   {% include  "./content/check.html" %}</h1>
+
+      {% if case =='other-cases' %}
+      <div class="govuk-inset-text">
+      <p> {% if case =='other-cases' %}{% for case in data['other-cases'] %}{{ case.name }}  {% endfor %}{% endif %} needs specialist equipment. They do not need any other types of support.   </p>
+
+      </div>{% endif %}
+
+      {% if case =='other-cases-2' %}
+      <div class="govuk-inset-text">
+      <p> {% if case =='other-cases-2' %}{% for case in data['other-cases-2'] %}{{ case.name }}  {% endfor %}{% endif %} needs a support worker. They do not need any other types of support.   </p>
+
+      </div>{% endif %}
+
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    {% include  "./content/specialist-equipment.html" %}
+    </dt>
+    <dd class="govuk-summary-list__value">
+{% if case =='other-cases' %}Yes{% endif %}
+{% if case =='other-cases-2' %}No{% endif %}
+
+  {% if not case %}{% if data['elements']=='Yes'%}Yes{% else %}Dereck Smith needs this support but has not given details{% endif %}{% endif %}
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="/live-27/cases/check-application/element/sae">
+        Update
+          <span class="govuk-visually-hidden">   {% include  "./content/specialist-equipment.html" %}</span>
+        </a>{% endif %}
+    </dd>
+  </div>
+
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    {% include  "./content/mental-health.html" %}
+    </dt>
+    <dd class="govuk-summary-list__value">
+    No
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Update
+          <span class="govuk-visually-hidden">   {% include  "./content/mental-health.html" %}</span>
+        </a>{% endif %}
+    </dd>
+  </div>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    {% include  "./content/support-worker.html" %}
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+
+
+  {% if case =='other-cases' %}No{% endif %}
+  {% if case =='other-cases-2' %}Yes{% endif %}
+  {% if not case %}No{% endif %}
+
+
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Update
+          <span class="govuk-visually-hidden">  {% include  "./content/support-worker.html" %} </span>
+        </a>{% endif %}
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    {% include  "./content/travelling-to-from-work.html" %}
+    </dt>
+    <dd class="govuk-summary-list__value">
+    No
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Update
+          <span class="govuk-visually-hidden">{% include  "./content/travelling-to-from-work.html" %} </span>
+        </a>{% endif %}
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    {% include  "./content/travelling-during-work.html" %}
+    </dt>
+    <dd class="govuk-summary-list__value">
+    No
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Update
+          <span class="govuk-visually-hidden">  {% include  "./content/travelling-during-work.html" %} </span>
+        </a>{% endif %}
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    {% include  "./content/changes-to-your-workplace.html" %}
+    </dt>
+    <dd class="govuk-summary-list__value">
+    No
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Update
+          <span class="govuk-visually-hidden">{% include  "./content/changes-to-your-workplace.html" %} </span>
+        </a>{% endif %}
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    {% include  "./content/changes-to-your-vehicle.html" %}
+    </dt>
+    <dd class="govuk-summary-list__value">
+    No
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {% if  changeHide %}  <a href="#">
+          Update
+          <span class="govuk-visually-hidden">  {% include  "./content/changes-to-your-vehicle.html" %} </span>
+        </a>{% endif %}
+    </dd>
+  </div>
+
+
+
+        </dl>
+
+
+  {% if data['elements']=='Yes'%}{% else %}
+    {% if phase == "sonya"%}{% else %}
+    {% if phase == "thomas"%}{% else %}
+<p>This task will stay <strong>in progress</strong> until you update whether Dereck Smith needs:
+<ul class="govuk-list govuk-list--bullet">
+  <li>specialist equipment</li>
+
+</ul></p>{% endif %}{% endif %}{% endif %}
+
+
+<form action="/live-27/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+{% if not 'Yes' in data['elements']%}
+         <div class="govuk-form-group">
+           <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            {% include  "./content/update-support.html" %}
+             </legend>
+             <div class="govuk-radios" data-module="govuk-radios">
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="support-needs" name="support-needs" type="radio" value="yes~/live-27/cases/check-application/element/element">
+                 <label class="govuk-label govuk-radios__label" for="support-needs">
+                   Yes
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="support-needs-2" name="support-needs" type="radio" value="no~/live-27/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" {{ checked("chosen-quote-sae-justification", "It was the most suitable support for Sonya Corkery") }}>
+                 <label class="govuk-label govuk-radios__label" for="support-needs-2">
+                   No
+                 </label>
+               </div>
+               <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="support-needs-3" name="support-needs" type="radio" value="I dont know~/live-27/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks">
+                 <label class="govuk-label govuk-radios__label" for="support-needs-3">
+                  I’m waiting for more information about the support that {% if case =='other-cases-2' %}{% for case in data['other-cases-2'] %}{{ case.name }}  {% endfor %}{% endif %}{% if case =='other-cases' %}{% for case in data['other-cases'] %}{{ case.name }}  {% endfor %}{% endif %} needs
+                 </label>
+               </div>
+             </div>
+
+           </fieldset>
+         </div>
+{% endif %}
+
+          <button class="govuk-button" data-module="govuk-button" name="elements-task{{phase}}" value="{% if phase == "sonya"%}complete{% else %}{% if data['elements']=='I do not know'%}in progress{% else %}complete{% endif %}{% endif %}">
+        {% if 'Yes' in data['elements']%}Return to your tasks{% else %}  Save and continue{% endif %}
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

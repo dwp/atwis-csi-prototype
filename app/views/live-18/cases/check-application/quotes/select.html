@@ -1,0 +1,120 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/live-18/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">  Choose quote: {% if case =='other-cases-2' %}British Sign Language (BSL) interpreter{% endif %}{% if case =='other-cases' %}specialist equipment 2{% endif %}</h1>
+
+{% if case =='other-cases-2' %}
+<div class="govuk-inset-text">
+<p>These quotes are based on 10 hours of support per week for 3 years.</p></div>{% endif %}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+            Which quote do you want to use for the grant award?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="chosen-quote-sw-1" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£501{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "501") }}>
+         <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-1">
+          {% if case =='other-cases' %}£501{% endif %}
+          {% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}
+         </label>
+         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          {% if case =='other-cases' %}ZoomText Professional License from ZoomText Supplier{% endif %}
+          {% if case =='other-cases-2' %}Agency One, Thomas King has worked with Agency One before.{% endif %}
+         </div>
+       </div>
+
+       <div class="govuk-radios" data-module="govuk-radios">
+         <div class="govuk-radios__item">
+           <input class="govuk-radios__input" id="chosen-quote-sw-2" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£502{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "502") }}>
+    <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-2">
+      {% if case =='other-cases' %}£502{% endif %}
+      {% if case =='other-cases-2' %}£16 per hour, total cost £24,960{% endif %}
+    </label>
+    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+     {% if case =='other-cases' %}ZoomText Professional License from Real Fake Software Supplier{% endif %}
+     {% if case =='other-cases-2' %}Agency Two, Thomas King has not worked with Agency Two before.{% endif %}
+    </div>
+  </div>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="chosen-quote-sw-3" name="chosen-quote-{{phase}}" type="radio" value="{% if case =='other-cases' %}£503{% endif %}{% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "503") }}>
+<label class="govuk-label govuk-radios__label" for="chosen-quote-sw-3">
+  {% if case =='other-cases' %}£503{% endif %}
+  {% if case =='other-cases-2' %}£15 per hour, total cost £23,400{% endif %}
+</label>
+<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+{% if case =='other-cases' %}ZoomText Professional License from Software R Us{% endif %}
+{% if case =='other-cases-2' %}Agency Three, Thomas King has not worked with Agency Three before.{% endif %}
+
+</div>
+</div>
+
+
+            </div>
+
+          </fieldset>
+        </div>
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+        Why did you choose this quote?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-justification" name="chosen-quote-justification" type="radio" value="It was the most cost-effective" {{ checked("chosen-quote-justification", "It was the most cost-effective") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification">
+              Most cost-effective
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-justification-2" name="chosen-quote-justification" type="radio" value="It was the most suitable support for Sonya Corkery" {{ checked("chosen-quote-justification", "It was the most suitable support for Sonya Corkery") }}>
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-2">
+            Best support for {% if case =='other-cases' %}Sonya Corkery {% endif %}
+             {% if case =='other-cases-2' %}Thomas King{% endif %}
+            </label>
+          </div>
+
+          <!-- <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-justification-4" name="chosen-quote-justification" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-4">
+              Other
+            </label>
+          </div> -->
+        </div>
+
+      </fieldset>
+    </div>
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

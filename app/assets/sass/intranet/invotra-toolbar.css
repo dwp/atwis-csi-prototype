@@ -1,0 +1,1498 @@
+#toolbar-subscriptions {
+	margin: 0px; float: left; position: relative;
+}
+#toolbar-subscriptions > ul {
+	margin: 0px; padding: 0px;
+}
+#toolbar-subscriptions .expanded {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#toolbar-subscriptions .expanded .feeds-link {
+	padding: 0px 20px; color: rgb(255, 255, 255); font-size: 0px; display: block; position: relative; z-index: 10;
+}
+#toolbar-subscriptions .expanded .feeds-link::before {
+	left: -5px; text-align: center; color: rgb(255, 255, 254); line-height: 45px; font-family: "invotra-iconset-comprehensive"; font-size: 27px; display: inline-block; position: relative; cursor: pointer; content: "\e80b";
+}
+#toolbar-subscriptions .expanded .feeds-link.focus::after {
+	left: 15px; text-align: center; color: rgb(208, 68, 55); line-height: 45px; font-family: "invotra-iconset-comprehensive"; font-size: 27px; display: inline-block; position: absolute; cursor: pointer; content: "\e80b";
+}
+#toolbar-subscriptions .count {
+	background: rgb(208, 68, 55); margin: 12px 0px 0px -2px; padding: 0px 4.5px; border-radius: 100px; top: -1px; height: 14px; right: 1px; color: rgb(255, 255, 255); line-height: 14.5px; letter-spacing: -0.6px; font-size: 10px; font-weight: 400; vertical-align: top; display: none; position: absolute; z-index: 102; -moz-border-radius: 100px; -webkit-border-radius: 100px;
+}
+.standard-button-small {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#invotra-profile-toolbar .profile-menu-logout a.log-out {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#invotra-toolbar #ipe-links a {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#invotra-toolbar #ipe-links .form-submit {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#invotra-toolbar #panels-ipe-edit-control-form a {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#invotra-toolbar #panels-ipe-edit-control-form .form-submit {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#mobile-bar #profile-mobile .profile-menu ul li.profile-menu-logout a {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#mobile-bar #profile-mobile .profile-menu-tag a.log-out {
+	background: none; padding: 0px 25px; border-radius: 3px; border: 1px solid currentColor; border-image: none; height: 32px; text-align: center; color: rgb(50, 50, 50); line-height: 32px; font-size: 12px; font-weight: normal; text-decoration: none; display: inline-block; min-width: 55px; box-shadow: none; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+.standard-button-small:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+#invotra-profile-toolbar .profile-menu-logout a.log-out:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+#invotra-toolbar #ipe-links a:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+#invotra-toolbar #ipe-links .form-submit:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+#invotra-toolbar #panels-ipe-edit-control-form a:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+#invotra-toolbar #panels-ipe-edit-control-form .form-submit:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+#mobile-bar #profile-mobile .profile-menu ul li.profile-menu-logout a:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+#mobile-bar #profile-mobile .profile-menu-tag a.log-out:hover {
+	background: rgba(0, 0, 0, 0.05); color: rgb(50, 50, 50);
+}
+.standard-button-small:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+#invotra-profile-toolbar .profile-menu-logout a.log-out:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+#invotra-toolbar #ipe-links a:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+#invotra-toolbar #ipe-links .form-submit:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+#invotra-toolbar #panels-ipe-edit-control-form a:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+#invotra-toolbar #panels-ipe-edit-control-form .form-submit:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+#mobile-bar #profile-mobile .profile-menu ul li.profile-menu-logout a:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+#mobile-bar #profile-mobile .profile-menu-tag a.log-out:active {
+	background: rgba(0, 0, 0, 0.05); box-shadow: 0px 0px 3px 0px #4bb88b; -moz-box-shadow: 0px 0px 3px 0px #4BB88B; -webkit-box-shadow: 0px 0px 3px 0px #4BB88B;
+}
+.toolbar-section-inner {
+	padding-left: 2px;
+}
+.toolbar-section-inner.with-logo {
+	padding-left: 50px;
+}
+.toolbar-section-inner .toolbar-logo {
+	left: 0px; top: 0px; overflow: hidden; padding-right: 2px; position: absolute;
+}
+.toolbar-section-inner .toolbar-logo ul {
+	margin: 0px; padding: 0px;
+}
+.toolbar-section-inner .toolbar-logo a {
+	width: 50px; height: 45px; text-indent: 9999em; font-size: 0px !important; display: block; position: relative; -ms-word-break: keep-all; -ms-word-wrap: normal;
+}
+.toolbar-section-inner .toolbar-logo a img {
+	padding: 10px;
+}
+.toolbar-section-inner .toolbar-logo a.focus::after {
+	display: none;
+}
+#invotra-toolbar-wrapper {
+	/* height: 45px; */
+	height: 20px;
+}
+#invotra-toolbar {
+	left: 0px; top: 0px; width: 100%; font-weight: 400; position: fixed; z-index: 999;
+}
+#invotra-toolbar .show {
+	display: block !important;
+}
+#invotra-toolbar a {
+	text-decoration: none;
+}
+#toolbar-branding-section {
+	background: rgb(233, 230, 225);
+}
+#invotra-toolbar .clr-bth {
+	height: 0px; clear: both;
+}
+#toolbar-section {
+	background: rgb(51, 51, 55); height: 45px; text-align: right; font-size: 16px; white-space: nowrap; min-width: 960px;
+}
+#invotra-profile-menu > ul > li > a span.reserved-space {
+	height: 1px; overflow: hidden; font-weight: bold; margin-bottom: -1px; display: block; visibility: hidden;
+}
+#invotra-profile-toolbar .profile-menu li a span.reserved-space {
+	height: 1px; overflow: hidden; font-weight: bold; margin-bottom: -1px; display: block; visibility: hidden;
+}
+#invotra-profile-menu .toolbar-menu-icon {
+	display: none;
+}
+#invotra-profile-menu .toolbar-menu-letter {
+	display: none;
+}
+#invotra-profile-menu ul {
+	margin: 0px; padding: 0px;
+}
+#invotra-profile-menu ul li {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#invotra-profile-menu ul li ul {
+	background: rgb(255, 255, 255); padding: 0px; border: 2px solid rgb(51, 51, 55); border-image: none; top: 100%; display: none; position: absolute; min-width: 320px; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.5), 2px 0px 6px 0px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5), 2px 0px 6px 0px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5), 2px 0px 6px 0px rgba(0, 0, 0, 0.5);
+}
+#invotra-profile-menu ul li ul a {
+	padding: 16px 20px; line-height: 138%; letter-spacing: 0.4px; font-weight: 500; display: block;
+}
+#invotra-profile-menu ul li ul a .title {
+	color: rgb(51, 51, 51); line-height: 134%; overflow: hidden; font-size: 12px; font-weight: 500; display: block;
+}
+#invotra-profile-menu ul li ul a.active {
+	background: rgb(72, 110, 169); padding: 6px 10px; border: 10px solid rgb(255, 255, 255); border-image: none; color: rgb(255, 255, 255); font-weight: 300;
+}
+#invotra-profile-menu ul li ul a.active-trail {
+	background: rgb(72, 110, 169); padding: 6px 10px; border: 10px solid rgb(255, 255, 255); border-image: none; color: rgb(255, 255, 255); font-weight: 300;
+}
+#invotra-profile-menu ul li ul a:hover {
+	background: rgb(72, 110, 169); padding: 6px 10px; border: 10px solid rgb(255, 255, 255); border-image: none; color: rgb(255, 255, 255); font-weight: 300;
+}
+#invotra-profile-menu ul li ul a.active span {
+	color: rgb(255, 255, 255);
+}
+#invotra-profile-menu ul li ul a.active-trail span {
+	color: rgb(255, 255, 255);
+}
+#invotra-profile-menu ul li ul a:hover span {
+	color: rgb(255, 255, 255);
+}
+#invotra-profile-menu ul li ul li {
+	border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid; white-space: nowrap; position: static;
+}
+#invotra-profile-menu ul li ul li.expanded > a {
+	margin: 0px -2px 0px 0px; padding-right: 40px; position: relative;
+}
+#invotra-profile-menu ul li ul li.expanded > a::after {
+	top: 50%; right: 20px; color: rgb(224, 224, 224); line-height: 1; font-family: "FontAwesome"; font-size: 30px; font-weight: normal; margin-top: -15px; display: inline-block; position: absolute; content: "\f105";
+}
+#invotra-profile-menu ul li ul li.expanded:hover > a {
+	background: none; border-width: 0px 0px 0px 4px; border-style: solid; border-color: rgb(75, 184, 139); padding: 16px 20px 16px 16px; color: rgb(0, 94, 165);
+}
+#invotra-profile-menu ul li ul li.expanded > a.active {
+	background: none; border-width: 0px 0px 0px 4px; border-style: solid; border-color: rgb(75, 184, 139); padding: 16px 20px 16px 16px; color: rgb(0, 94, 165);
+}
+#invotra-profile-menu ul li ul li.expanded > a:hover {
+	background: none; border-width: 0px 0px 0px 4px; border-style: solid; border-color: rgb(75, 184, 139); padding: 16px 20px 16px 16px; color: rgb(0, 94, 165);
+}
+#invotra-profile-menu ul li ul li.expanded > a.active-trail {
+	background: none; border-width: 0px 0px 0px 4px; border-style: solid; border-color: rgb(75, 184, 139); padding: 16px 20px 16px 16px; color: rgb(0, 94, 165);
+}
+#invotra-profile-menu ul li ul li.expanded:hover > a span {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-menu ul li ul li.expanded > a.active span {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-menu ul li ul li.expanded > a:hover span {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-menu ul li ul li.expanded > a.active-trail span {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-menu ul li ul li.expanded:hover > a::after {
+	color: rgb(75, 184, 139);
+}
+#invotra-profile-menu ul li ul li.expanded > a.active::after {
+	color: rgb(75, 184, 139);
+}
+#invotra-profile-menu ul li ul li.expanded > a:hover::after {
+	color: rgb(75, 184, 139);
+}
+#invotra-profile-menu ul li ul li.expanded > a.active-trail::after {
+	color: rgb(75, 184, 139);
+}
+#invotra-profile-menu ul li ul li ul {
+	border: 2px solid rgb(151, 151, 151); border-image: none; left: 100%; top: -2px; margin-left: 2px; position: absolute; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.15), 2px 0px 6px 0px rgba(0,0,0,0.1); -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.15), 2px 0px 6px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.15), 2px 0px 6px 0px rgba(0, 0, 0, 0.1);
+}
+#invotra-profile-menu ul li ul li ul li {
+	border: currentColor; border-image: none; margin-bottom: 1px;
+}
+#invotra-profile-menu ul li ul li ul li a {
+	font-weight: normal;
+}
+#invotra-profile-menu ul li ul li:hover > ul {
+	display: block;
+}
+#invotra-profile-menu > ul > li {
+	height: 45px; float: left;
+}
+#invotra-profile-menu > ul > li > a {
+	padding: 0px 12px; height: 45px; text-align: center; color: rgb(255, 255, 254); line-height: 45px; letter-spacing: 0.4px; font-weight: 400; display: inline-block; position: relative; z-index: 2;
+}
+#invotra-profile-menu > ul > li > a.focus::after {
+	display: none;
+}
+#invotra-profile-menu > ul > li > a .toolbar-menu-icon {
+	background-position: 50% 50%; width: 35px; height: 35px; margin-right: 8px; margin-bottom: 2px; vertical-align: middle; display: inline-block; background-size: 100%;
+}
+#invotra-profile-menu > ul > li:hover > a {
+	background: rgb(255, 255, 255); border-width: 0px 2px; border-style: solid; border-color: rgb(51, 51, 55); padding: 0px 12px 0px 10px; height: 43px; color: rgb(51, 51, 51); line-height: 43px; font-weight: 500; margin-right: -2px;
+}
+#invotra-profile-menu > ul > li > a:hover {
+	background: rgb(255, 255, 255); border-width: 0px 2px; border-style: solid; border-color: rgb(51, 51, 55); padding: 0px 12px 0px 10px; height: 43px; color: rgb(51, 51, 51); line-height: 43px; font-weight: 500; margin-right: -2px;
+}
+#invotra-profile-menu > ul > li > a.open {
+	background: rgb(255, 255, 255); border-width: 0px 2px; border-style: solid; border-color: rgb(51, 51, 55); padding: 0px 12px 0px 10px; height: 43px; color: rgb(51, 51, 51); line-height: 43px; font-weight: 500; margin-right: -2px;
+}
+#invotra-profile-menu > ul > li > a.active {
+	background: rgb(255, 255, 255); border-width: 0px 2px; border-style: solid; border-color: rgb(51, 51, 55); padding: 0px 12px 0px 10px; height: 43px; color: rgb(51, 51, 51); line-height: 43px; font-weight: 500; margin-right: -2px;
+}
+#invotra-profile-menu > ul > li > a.active-trail {
+	background: rgb(255, 255, 255); border-width: 0px 2px; border-style: solid; border-color: rgb(51, 51, 55); padding: 0px 12px 0px 10px; height: 43px; color: rgb(51, 51, 51); line-height: 43px; font-weight: 500; margin-right: -2px;
+}
+#invotra-profile-menu > ul > li:hover > a::after {
+	height: 43px;
+}
+#invotra-profile-menu > ul > li > a:hover::after {
+	height: 43px;
+}
+#invotra-profile-menu > ul > li > a.open::after {
+	height: 43px;
+}
+#invotra-profile-menu > ul > li > a.active::after {
+	height: 43px;
+}
+#invotra-profile-menu > ul > li > a.active-trail::after {
+	height: 43px;
+}
+#invotra-profile-menu > ul > li:hover > a::before {
+	background: rgb(255, 255, 255); left: 0px; height: 7px; right: 0px; bottom: 0px; margin-bottom: -4px; display: block; position: absolute; z-index: 2; content: "";
+}
+#invotra-profile-menu > ul > li > a:hover::before {
+	background: rgb(255, 255, 255); left: 0px; height: 7px; right: 0px; bottom: 0px; margin-bottom: -4px; display: block; position: absolute; z-index: 2; content: "";
+}
+#invotra-profile-menu > ul > li > a.open::before {
+	background: rgb(255, 255, 255); left: 0px; height: 7px; right: 0px; bottom: 0px; margin-bottom: -4px; display: block; position: absolute; z-index: 2; content: "";
+}
+#invotra-profile-menu > ul > li > a.active::before {
+	background: rgb(255, 255, 255); left: 0px; height: 7px; right: 0px; bottom: 0px; margin-bottom: -4px; display: block; position: absolute; z-index: 2; content: "";
+}
+#invotra-profile-menu > ul > li > a.active-trail::before {
+	background: rgb(255, 255, 255); left: 0px; height: 7px; right: 0px; bottom: 0px; margin-bottom: -4px; display: block; position: absolute; z-index: 2; content: "";
+}
+#invotra-profile-menu > ul > li.children-icons > ul {
+	padding-bottom: 24px; min-width: 360px;
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li {
+	margin: 0px; width: auto; clear: none !important; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none; float: none;
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a {
+	margin: 24px 0px 0px 20px; padding: 2px; border: currentColor; border-image: none; width: 60px; text-align: center; color: rgb(38, 38, 38); line-height: 14px; overflow: hidden; font-size: 12px; font-weight: normal; float: left; white-space: normal; -ms-text-overflow: ellipsis;
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a:hover {
+	background: white; border: currentColor; border-image: none; color: rgb(38, 38, 38);
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a.open {
+	background: white; border: currentColor; border-image: none; color: rgb(38, 38, 38);
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a.active {
+	background: white; border: currentColor; border-image: none; color: rgb(38, 38, 38);
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a.active-trail {
+	background: white; border: currentColor; border-image: none; color: rgb(38, 38, 38);
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a .toolbar-menu-icon {
+	border-radius: 3px; border: 1px solid rgb(151, 151, 151); border-image: none; margin-bottom: 8px; box-shadow: 0px 2px 3px rgba(0,0,0,0.35), 0px -1px 3px rgba(0,0,0,0.25); -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35), 0 -1px 3px rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35), 0 -1px 3px rgba(0, 0, 0, 0.25);
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a .toolbar-menu-letter {
+	border-radius: 3px; border: 1px solid rgb(151, 151, 151); border-image: none; margin-bottom: 8px; box-shadow: 0px 2px 3px rgba(0,0,0,0.35), 0px -1px 3px rgba(0,0,0,0.25); -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35), 0 -1px 3px rgba(0, 0, 0, 0.25); -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35), 0 -1px 3px rgba(0, 0, 0, 0.25);
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a .toolbar-menu-icon {
+	background-position: 50% 50%; width: 60px; height: 60px; vertical-align: middle; display: block; background-size: 100%;
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a .toolbar-menu-letter {
+	background: white; width: 60px; height: 60px; text-align: center; color: rgb(63, 31, 113); line-height: 60px; font-size: 27px; font-weight: 400; vertical-align: middle; display: block;
+}
+#invotra-profile-menu > ul > li.children-icons > ul > li > a .title {
+	display: none;
+}
+#invotra-profile-menu li.productivity > ul {
+	overflow: hidden;
+}
+#invotra-profile-menu li.productivity > ul li {
+	margin: 1px 4px -1px; width: 320px; float: left;
+}
+#invotra-profile-menu li.productivity > ul li.nth-1 {
+	margin-right: 0px; margin-left: 0px;
+}
+#invotra-profile-menu li.productivity > ul li.nth-3 {
+	margin-right: 0px; margin-left: 0px;
+}
+#invotra-profile-menu li.productivity > ul li.nth-1 {
+	clear: left;
+}
+@media all and (max-width:1380px)
+{
+#invotra-profile-menu li.productivity > ul li {
+	margin: 1px 0px -1px; width: 50%;
+}
+#invotra-profile-menu li.productivity > ul li a {
+	padding: 6px 10px; border: 10px solid rgb(255, 255, 255); border-image: none; overflow: hidden;
+}
+#invotra-profile-menu li.productivity > ul li.nth-1 {
+	clear: none;
+}
+}
+#invotra-profile-menu li.create-content > ul {
+	min-height: 213px;
+}
+#invotra-profile-menu li.create-content > ul.cols-2 {
+	width: 640px; overflow: hidden;
+}
+#invotra-profile-menu li.create-content > ul.cols-2 li {
+	margin: 1px 0px -1px; width: 50%; overflow: hidden; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid; float: left;
+}
+#invotra-profile-menu li.create-content > ul.cols-2 li .title {
+	overflow: hidden; -ms-text-overflow: ellipsis;
+}
+#invotra-profile-menu li.manage-content > ul {
+	min-height: 285px;
+}
+#invotra-profile-toolbar-wrapper {
+	height: 45px; float: right;
+}
+#invotra-profile-toolbar {
+	background: rgb(51, 51, 55); display: inline-block; position: relative; min-width: 212px; max-width: 260px;
+}
+#invotra-profile-toolbar a:hover {
+	text-decoration: underline;
+}
+#invotra-profile-toolbar ul {
+	margin: 0px; padding: 0px;
+}
+#invotra-profile-toolbar li {
+	margin: 0px; padding: 0px;
+}
+#invotra-profile-toolbar .expanded {
+	list-style: none;
+}
+#invotra-profile-toolbar .profile-menu {
+	background: rgb(255, 255, 255); padding: 30px 0px 20px; border: 2px solid rgb(51, 51, 55); border-image: none; left: 0px; top: 0px; width: auto; right: 0px; display: none; position: absolute; z-index: 9; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5);
+}
+@media all and (max-width:960px)
+{
+#invotra-profile-toolbar .profile-menu {
+	left: auto; width: 202px;
+}
+}
+#invotra-profile-toolbar .profile-menu li {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#invotra-profile-toolbar .profile-menu li a {
+	padding: 0px 14px; color: rgb(72, 110, 169); line-height: 172%; font-size: 14px; display: block;
+}
+#invotra-profile-toolbar .profile-menu li.help-centre {
+	padding-top: 12px;
+}
+#invotra-profile-toolbar .profile-menu li.account-settings {
+	padding-bottom: 12px;
+}
+#invotra-profile-toolbar .profile-menu-my-feed {
+	display: none;
+}
+#invotra-profile-toolbar .profile-menu-tag {
+	text-align: left; white-space: nowrap;
+}
+#invotra-profile-toolbar .profile-menu-tag h3 {
+	margin: 25px 0px 0px; padding: 0px 14px; height: 25px; color: rgb(101, 101, 101); line-height: 24px; font-size: 16px; font-weight: 600;
+}
+#invotra-profile-toolbar .profile-menu-tag a {
+	line-height: 136%; letter-spacing: 0.4px; font-weight: 700;
+}
+#invotra-profile-toolbar .profile-menu-logout a.log-out {
+	margin: 25px 14px 0px;
+}
+#invotra-profile-toolbar .profile-info {
+	padding: 0px; height: 45px; text-align: right; line-height: 45px; font-size: 0px; position: relative; z-index: 10;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name {
+	font-size: 14px; font-weight: 500;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a {
+	height: 45px; color: rgb(255, 255, 254); text-decoration: none; display: inline-block;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a:hover img {
+
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.focus {
+	outline: rgb(220, 232, 111) solid 1px; color: rgb(51, 51, 51);
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.focus .usrn {
+	border: currentColor; border-image: none;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.focus .usrn::before {
+	display: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.focus .img::before {
+	display: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a .usrn {
+	padding: 0px 16px; left: auto; top: auto; text-align: right; line-height: inherit; overflow: hidden; font-size: 16px; display: inline-block; white-space: nowrap; position: relative; -ms-text-overflow: ellipsis; min-width: 102px; max-width: 150px;
+}
+@media all and (max-width:960px)
+{
+#invotra-profile-toolbar .profile-info .profile-info-name a .usrn {
+	padding: 0px; left: -120px; top: 70px; text-align: left; line-height: 14px; font-size: 14px; display: none; position: absolute; min-width: 0px;
+}
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.open {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a:hover {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.open .usrn {
+	border: currentColor !important; border-image: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a:hover .usrn {
+	border: currentColor !important; border-image: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.open .usrn::before {
+	display: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a:hover .usrn::before {
+	display: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.open .img::before {
+	display: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a:hover .img::before {
+	display: none !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a.focus .usrn {
+	color: rgb(191, 23, 34);
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a .fcs-state {
+	display: none;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name .img {
+	padding: 0px 14px; overflow: auto; display: block;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name img {
+	margin: 0px; border-radius: 50px; width: auto; height: auto; vertical-align: middle; max-height: 30px; max-width: 30px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name .ou-name {
+	display: none;
+}
+#invotra-profile-toolbar .profile-info .profile-info-avatar {
+	margin: 10px 0px; width: 40px; height: 40px; text-align: center; line-height: 40px; float: right;
+}
+#invotra-profile-toolbar .profile-info .profile-info-avatar a:hover img {
+
+}
+#invotra-profile-toolbar .profile-info img {
+	border-radius: 50px; width: auto; height: auto; vertical-align: middle; max-height: 40px; max-width: 40px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+.open#invotra-profile-toolbar {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-toolbar:hover {
+	color: rgb(51, 51, 51);
+}
+.open#invotra-profile-toolbar .usrn {
+	color: rgb(51, 51, 51);
+}
+#invotra-profile-toolbar:hover .usrn {
+	color: rgb(51, 51, 51);
+}
+.open#invotra-profile-toolbar .usrn::before {
+	display: none !important;
+}
+#invotra-profile-toolbar:hover .usrn::before {
+	display: none !important;
+}
+.open#invotra-profile-toolbar .img::before {
+	display: none !important;
+}
+#invotra-profile-toolbar:hover .img::before {
+	display: none !important;
+}
+.open#invotra-profile-toolbar .profile-menu {
+	display: block !important;
+}
+#invotra-profile-toolbar:hover .profile-menu {
+	display: block !important;
+}
+.open#invotra-profile-toolbar .profile-info .profile-info-name .usrn {
+	text-align: left; float: left;
+}
+#invotra-profile-toolbar:hover .profile-info .profile-info-name .usrn {
+	text-align: left; float: left;
+}
+.open#invotra-profile-toolbar {
+	background: rgb(255, 255, 255);
+}
+.open#invotra-profile-toolbar .profile-info .profile-info-name a .usrn {
+	display: inline-block;
+}
+#invotra-toolbar-login-form {
+	background: rgb(54, 56, 59); padding: 30px 30px 20px; border: 1px solid rgb(77, 77, 77); border-image: none; top: 42px; width: 220px; right: -3px; color: rgb(255, 255, 255); overflow: hidden; display: none; position: absolute;
+}
+#invotra-toolbar-login-form a {
+	color: rgb(255, 255, 255);
+}
+#invotra-login-error {
+	margin-bottom: 20px; white-space: normal; position: relative;
+}
+#invotra-toolbar-login-form .form-item {
+	margin-bottom: 20px; white-space: normal; position: relative;
+}
+#invotra-toolbar-login-form .form-item label {
+	padding: 0px 15px; left: 0px; top: 0px; color: rgb(176, 178, 175); line-height: 40px; font-size: 14px; position: absolute;
+}
+#invotra-toolbar-login-form .form-type-password label {
+	background: url("i/input-bg.png") no-repeat 7px 10px; padding-left: 35px;
+}
+#invotra-toolbar-login-form .form-type-textfield label {
+	background: url("i/input-bg.png") no-repeat 7px 10px; padding-left: 35px;
+}
+#invotra-toolbar-login-form .form-type-password label {
+	background-position: 9px -53px;
+}
+#invotra-toolbar-login-form .error label {
+	padding-left: 15px; background-image: none;
+}
+#invotra-toolbar-login-form .form-item label span.form-required {
+	display: none;
+}
+#invotra-toolbar-login-form .form-text {
+	background: rgb(255, 255, 255); padding: 10px 15px; border: currentColor; border-image: none; width: 190px; height: 20px; color: rgb(0, 0, 0); line-height: 20px; font-size: 14px; box-sizing: content-box; -moz-box-sizing: content-box; -webkit-box-sizing: content-box;
+}
+#invotra-toolbar-login-form .form-text.error {
+	padding: 9px 14px; border: 1px solid rgb(255, 77, 77); border-image: none;
+}
+#invotra-toolbar-login-form .form-actions {
+	margin: 0px 0px 20px; overflow: visible; position: relative;
+}
+#invotra-toolbar-login-form .form-submit {
+	background: rgb(75, 184, 139); padding: 0px; border-radius: 0px; border: 1px solid rgb(163, 211, 156); border-image: none; width: 218px; height: 38px; text-align: center; color: rgb(255, 255, 255); font-size: 14px; font-weight: bold; display: block; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;
+}
+#invotra-toolbar-login-form .form-submit:focus {
+	outline: rgb(163, 211, 156) solid 1px; border: 1px solid rgb(163, 211, 156); border-image: none; text-decoration: underline;
+}
+#invotra-toolbar-login-form .form-submit:hover {
+	background: rgb(74, 183, 138);
+}
+#invotra-toolbar-login-form .form-submit.effects {
+	animation-name: wobble-horizontal; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1; -webkit-animation-name: wobble-horizontal; -webkit-animation-duration: 1s; -webkit-animation-timing-function: ease-in-out; -webkit-animation-iteration-count: 1;
+}
+#invotra-toolbar-login-form .forget-pass {
+	clear: both; font-size: 12px; float: right;
+}
+#invotra-toolbar-login-form a:focus {
+	color: rgb(162, 210, 155); text-decoration: underline;
+}
+#invotra-login-error div {
+	background: url("i/icons.png") no-repeat 0px -268px; text-align: left; padding-left: 28px; font-size: 12px; margin-bottom: 10px;
+}
+#invotra-toolbar-login-form .form-actions .ajax-progress {
+	background: url("i/ajax-loader.gif") no-repeat 50% 50% rgb(170, 170, 170); left: 0px; top: 0px; right: 0px; bottom: 0px; position: absolute; z-index: 2; opacity: 0.7;
+}
+#invotra-toolbar-login-form .form-actions .ajax-progress * {
+	display: none;
+}
+#toolbar-section .login-box {
+	margin: 3px; float: right; position: relative;
+}
+#invotra-login-link {
+	background: url("i/icons.png") no-repeat 93% -31px rgb(54, 56, 59); padding: 0px 34px 0px 11px; border: 1px solid rgb(77, 77, 77); border-image: none; height: 38px; color: rgb(255, 255, 255); line-height: 38px; text-decoration: none; display: block;
+}
+#invotra-login-link:hover {
+	border-color: rgb(163, 211, 156); background-color: rgb(74, 183, 138);
+}
+.focus#invotra-login-link {
+	position: relative;
+}
+.focus#invotra-login-link .fcs-state {
+	outline: rgb(255, 191, 71) solid 2px; left: 0px; top: 0px; right: 0px; bottom: 0px; display: block; position: absolute;
+}
+body.toolbar-ipe #panels-ipe-control-container {
+	display: none !important;
+}
+#invotra-toolbar #ipe-links {
+	background: url("i/ipe-bg.png") 0px 0px; left: 0px; top: 0px; height: 80px; text-align: center; right: 0px; bottom: 0px; position: absolute; z-index: 200;
+}
+#invotra-toolbar #panels-ipe-edit-control-form {
+	background: url("i/ipe-bg.png") 0px 0px; left: 0px; top: 0px; height: 80px; text-align: center; right: 0px; bottom: 0px; position: absolute; z-index: 200;
+}
+#invotra-toolbar #ipe-links a {
+	margin: 15px 5px; height: 40px; color: rgb(255, 255, 255); line-height: 40px; font-size: 16px; min-width: 80px;
+}
+#invotra-toolbar #ipe-links .form-submit {
+	margin: 15px 5px; height: 40px; color: rgb(255, 255, 255); line-height: 40px; font-size: 16px; min-width: 80px;
+}
+#invotra-toolbar #panels-ipe-edit-control-form a {
+	margin: 15px 5px; height: 40px; color: rgb(255, 255, 255); line-height: 40px; font-size: 16px; min-width: 80px;
+}
+#invotra-toolbar #panels-ipe-edit-control-form .form-submit {
+	margin: 15px 5px; height: 40px; color: rgb(255, 255, 255); line-height: 40px; font-size: 16px; min-width: 80px;
+}
+#invotra-toolbar #ipe-links a:hover {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #ipe-links a:active {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #ipe-links .form-submit:hover {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #ipe-links .form-submit:active {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #panels-ipe-edit-control-form a:hover {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #panels-ipe-edit-control-form a:active {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #panels-ipe-edit-control-form .form-submit:hover {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #panels-ipe-edit-control-form .form-submit:active {
+	background: rgba(254, 255, 255, 0.8); color: rgb(51, 51, 51);
+}
+#invotra-toolbar #ipe-links a {
+	padding: 0px 4px; width: 140px;
+}
+#invotra-toolbar #ipe-links .form-submit {
+	padding: 0px 4px; width: 140px;
+}
+#invotra-toolbar #panels-ipe-edit-control-form a {
+	padding: 0px 4px; width: 140px;
+}
+#invotra-toolbar #panels-ipe-edit-control-form .form-submit {
+	padding: 0px 4px; width: 140px;
+}
+.footer-wrapper.indicators-1 .section-footer {
+	margin-bottom: 49px;
+}
+.footer-wrapper.indicators-2 .section-footer {
+	margin-bottom: 98px;
+}
+#invotra-toolbar-indicators {
+	left: 0px; right: 0px; bottom: 0px; position: fixed; z-index: 10;
+}
+#invotra-toolbar-indicators div {
+	padding: 0px 10px; height: 49px; text-align: center; line-height: 49px; font-weight: 500;
+}
+#invotra-toolbar-indicators div.preview-mode {
+	background: rgb(254, 206, 108); color: rgb(51, 51, 51);
+}
+#invotra-toolbar-indicators div.redacted-version {
+	background: rgb(178, 46, 37); color: rgb(255, 255, 255);
+}
+#toolbar-section .toolbar-logo a.focus {
+	outline: rgb(220, 232, 111) solid 1px !important; color: rgb(208, 68, 55) !important; background-color: rgb(255, 255, 204) !important;
+}
+#toolbar-section #invotra-profile-menu a.focus {
+	outline: rgb(220, 232, 111) solid 1px !important; color: rgb(208, 68, 55) !important; background-color: rgb(255, 255, 204) !important;
+}
+#toolbar-section #toolbar-notifications a.focus {
+	outline: rgb(220, 232, 111) solid 1px !important; color: rgb(208, 68, 55) !important; background-color: rgb(255, 255, 204) !important;
+}
+#toolbar-section #toolbar-subscriptions a.focus {
+	outline: rgb(220, 232, 111) solid 1px !important; color: rgb(208, 68, 55) !important; background-color: rgb(255, 255, 204) !important;
+}
+#toolbar-section #invotra-profile-toolbar a.focus {
+	outline: rgb(220, 232, 111) solid 1px !important; color: rgb(208, 68, 55) !important; background-color: rgb(255, 255, 204) !important;
+}
+#toolbar-section .toolbar-logo a.focus::after {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section .toolbar-logo a.focus::before {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #invotra-profile-menu a.focus::after {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #invotra-profile-menu a.focus::before {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #toolbar-notifications a.focus::after {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #toolbar-notifications a.focus::before {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #toolbar-subscriptions a.focus::after {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #toolbar-subscriptions a.focus::before {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #invotra-profile-toolbar a.focus::after {
+	color: rgb(208, 68, 55) !important;
+}
+#toolbar-section #invotra-profile-toolbar a.focus::before {
+	color: rgb(208, 68, 55) !important;
+}
+.menu-with-search > .menu {
+	float: left;
+}
+#toolbar-section #search-block-toolbar {
+	padding: 0px; margin-top: 6px; float: left; position: relative;
+}
+#toolbar-section #search-block-toolbar label {
+	height: 1px; overflow: hidden; position: absolute !important; clip: rect(1px, 1px, 1px, 1px);
+}
+#toolbar-section #search-block-toolbar form .search-button {
+	height: 34px;
+}
+#toolbar-section #search-block-toolbar form .search-button::after {
+	height: 36px; line-height: 32px;
+}
+#toolbar-section #search-block-toolbar form .form-item {
+	margin: 0px;
+}
+#toolbar-section #search-block-toolbar form .form-text {
+	background: rgb(255, 255, 255); padding: 0px 10px; border-radius: 5px 0px 0px 5px; border: 1px solid white; border-image: none; height: 34px; line-height: 34px; -moz-border-radius: 5px 0 0 5px; -webkit-border-radius: 5px;
+}
+#toolbar-section #search-block-toolbar form .form-submit {
+	height: 34px;
+}
+.clean-header #invotra-profile-menu-wrapper {
+	float: left; position: relative;
+}
+.clean-header #invotra-profile-menu-wrapper #search-block-toolbar {
+	left: 100%; top: 0px; position: absolute;
+}
+.clean-header #invotra-profile-menu-wrapper #search-block-toolbar .form-text {
+	min-width: 0px; max-width: 100%;
+}
+.ui-widget {
+	font-family: inherit;
+}
+@media all and (max-width:380px)
+{
+body #mobile-bar #mobile-buttons a {
+	margin: 0px; width: 42px;
+}
+}
+@media all and (max-width:352px)
+{
+body #mobile-bar #mobile-buttons a {
+	width: 35px;
+}
+}
+#mobile-bar {
+	margin-bottom: 20px; display: none; position: relative; z-index: 1000;
+}
+#mobile-bar #mobile-buttons {
+	padding: 4px; height: 52px; vertical-align: middle; white-space: nowrap; box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12), 0px 1px 3px 0px rgba(0,0,0,0.2); -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+#mobile-bar #mobile-buttons .mobile-bar-right {
+	float: right;
+}
+#mobile-bar #mobile-buttons a#show-menu {
+	margin: 0px 4px 0px 0px; width: 48px; height: 52px; text-align: center; color: rgb(255, 255, 255); line-height: 52px; font-family: "FontAwesome"; font-size: 20px; text-decoration: none; vertical-align: middle; display: inline-block;
+}
+#mobile-bar #mobile-buttons a#show-search {
+	margin: 0px 4px 0px 0px; width: 48px; height: 52px; text-align: center; color: rgb(255, 255, 255); line-height: 52px; font-family: "FontAwesome"; font-size: 20px; text-decoration: none; vertical-align: middle; display: inline-block;
+}
+#mobile-bar #mobile-buttons a#show-profile-menu {
+	margin: 0px 4px 0px 0px; width: 48px; height: 52px; text-align: center; color: rgb(255, 255, 255); line-height: 52px; font-family: "FontAwesome"; font-size: 20px; text-decoration: none; vertical-align: middle; display: inline-block;
+}
+#mobile-bar #mobile-buttons a.notifications-link {
+	margin: 0px 4px 0px 0px; width: 48px; height: 52px; text-align: center; color: rgb(255, 255, 255); line-height: 52px; font-family: "FontAwesome"; font-size: 20px; text-decoration: none; vertical-align: middle; display: inline-block;
+}
+#mobile-bar #mobile-buttons a.focus#show-menu {
+	outline: rgb(255, 191, 71) solid 2px; box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+#mobile-bar #mobile-buttons a.focus#show-search {
+	outline: rgb(255, 191, 71) solid 2px; box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+#mobile-bar #mobile-buttons a.focus#show-profile-menu {
+	outline: rgb(255, 191, 71) solid 2px; box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+#mobile-bar #mobile-buttons a.notifications-link.focus {
+	outline: rgb(255, 191, 71) solid 2px; box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+#mobile-bar #mobile-buttons .logo {
+	height: 52px; vertical-align: middle; display: inline-block;
+}
+@media all and (max-width:380px)
+{
+#mobile-bar #mobile-buttons .logo::before {
+	height: 100%; vertical-align: middle; display: inline-block; content: "";
+}
+}
+#mobile-bar #mobile-buttons .logo img {
+	width: auto; height: auto; margin-right: 4px; max-height: 52px; max-width: 144px;
+}
+@media all and (max-width:380px)
+{
+#mobile-bar #mobile-buttons .logo img {
+	vertical-align: middle; max-width: 100px;
+}
+}
+#mobile-bar #mobile-buttons #show-profile-menu {
+	float: left;
+}
+#mobile-bar #mobile-buttons #show-profile-menu::before {
+	color: rgb(51, 51, 49); font-family: "invotra-iconset-comprehensive"; font-size: 20px; content: "\e812";
+}
+#mobile-bar #mobile-buttons #show-menu {
+	float: left;
+}
+#mobile-bar #mobile-buttons #show-menu::before {
+	color: rgb(51, 51, 49); content: "\f0c9";
+}
+#mobile-bar #mobile-buttons #show-search {
+	float: left;
+}
+#mobile-bar #mobile-buttons #show-search::before {
+	color: rgb(51, 51, 49); content: "\f002";
+}
+#mobile-bar #mobile-buttons .logo {
+	float: left;
+}
+#mobile-bar #search-block-toolbar {
+	background: rgb(255, 255, 255); margin: 0px; padding: 0px 52px; height: 56px; float: none; display: none; position: relative; max-width: 100%; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12), 0px 4px 4px 0px rgba(0,0,0,0.24); -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.24); -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.24);
+}
+#mobile-bar #block-invotra-search-and-do-search-lite {
+	background: rgb(255, 255, 255); margin: 0px; padding: 0px 52px; height: 56px; float: none; display: none; position: relative; max-width: 100%; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12), 0px 4px 4px 0px rgba(0,0,0,0.24); -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.24); -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.24);
+}
+#mobile-bar #search-block-toolbar form {
+	padding: 0px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite form {
+	padding: 0px;
+}
+#mobile-bar #search-block-toolbar form::after {
+	top: 8px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite form::after {
+	top: 8px;
+}
+#mobile-bar #search-block-toolbar .search-button {
+	top: 5px; height: 46px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .search-button {
+	top: 5px; height: 46px;
+}
+#mobile-bar #search-block-toolbar .search-button::after {
+	line-height: 45px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .search-button::after {
+	line-height: 45px;
+}
+#mobile-bar #search-block-toolbar .form-item {
+	float: none;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .form-item {
+	float: none;
+}
+#mobile-bar #search-block-toolbar .form-text {
+	margin: 4px 0px 0px; padding: 0px 10px; border: currentColor; border-image: none; width: 100%; height: 48px; color: rgb(51, 51, 51); line-height: 48px; font-size: 18px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .form-text {
+	margin: 4px 0px 0px; padding: 0px 10px; border: currentColor; border-image: none; width: 100%; height: 48px; color: rgb(51, 51, 51); line-height: 48px; font-size: 18px;
+}
+#mobile-bar #search-block-toolbar :-ms-input-placeholder.form-text {
+	color: rgb(101, 101, 101);
+}
+#mobile-bar #block-invotra-search-and-do-search-lite :-ms-input-placeholder.form-text {
+	color: rgb(101, 101, 101);
+}
+#mobile-bar #search-block-toolbar .form-text:focus {
+	background: rgb(255, 255, 255);
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .form-text:focus {
+	background: rgb(255, 255, 255);
+}
+#mobile-bar #search-block-toolbar .form-submit {
+	display: none;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .form-submit {
+	display: none;
+}
+#mobile-bar #search-block-toolbar .hide {
+	top: 2px; width: 48px; height: 52px; text-align: center; line-height: 52px; display: block; position: absolute; cursor: pointer;
+}
+#mobile-bar #search-block-toolbar .clear {
+	top: 2px; width: 48px; height: 52px; text-align: center; line-height: 52px; display: block; position: absolute; cursor: pointer;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .hide {
+	top: 2px; width: 48px; height: 52px; text-align: center; line-height: 52px; display: block; position: absolute; cursor: pointer;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .clear {
+	top: 2px; width: 48px; height: 52px; text-align: center; line-height: 52px; display: block; position: absolute; cursor: pointer;
+}
+#mobile-bar #search-block-toolbar .hide::before {
+	color: rgb(117, 117, 117); font-family: "FontAwesome"; font-size: 20px; content: "\f00d";
+}
+#mobile-bar #search-block-toolbar .clear::before {
+	color: rgb(117, 117, 117); font-family: "FontAwesome"; font-size: 20px; content: "\f00d";
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .hide::before {
+	color: rgb(117, 117, 117); font-family: "FontAwesome"; font-size: 20px; content: "\f00d";
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .clear::before {
+	color: rgb(117, 117, 117); font-family: "FontAwesome"; font-size: 20px; content: "\f00d";
+}
+#mobile-bar #search-block-toolbar .hide:hover {
+	text-decoration: none;
+}
+#mobile-bar #search-block-toolbar .clear:hover {
+	text-decoration: none;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .hide:hover {
+	text-decoration: none;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .clear:hover {
+	text-decoration: none;
+}
+#mobile-bar #search-block-toolbar .hide {
+	left: 2px; right: auto;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .hide {
+	left: 2px; right: auto;
+}
+#mobile-bar #search-block-toolbar .hide::before {
+	content: "\f060";
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .hide::before {
+	content: "\f060";
+}
+#mobile-bar #search-block-toolbar .clear {
+	right: 2px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .clear {
+	right: 2px;
+}
+#mobile-bar #search-block-toolbar::after {
+	display: none;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite::after {
+	display: none;
+}
+#mobile-bar #search-block-toolbar .targeted-search .form-item-keyword {
+	margin-left: 74px !important;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .targeted-search .form-item-keyword {
+	margin-left: 74px !important;
+}
+#mobile-bar #search-block-toolbar .targeted-search a.targeted-search-select-link {
+	top: 4px; width: 72px; height: 48px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .targeted-search a.targeted-search-select-link {
+	top: 4px; width: 72px; height: 48px;
+}
+#mobile-bar #search-block-toolbar .targeted-search a.targeted-search-select-link i::before {
+	left: 12px; line-height: 48px; font-size: 24px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .targeted-search a.targeted-search-select-link i::before {
+	left: 12px; line-height: 48px; font-size: 24px;
+}
+#mobile-bar #search-block-toolbar .targeted-search a.targeted-search-select-link i::after {
+	width: 17px; right: 12px; line-height: 48px; font-size: 17px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .targeted-search a.targeted-search-select-link i::after {
+	width: 17px; right: 12px; line-height: 48px; font-size: 17px;
+}
+#mobile-bar #search-block-toolbar .targeted-search ul.targeted-search-types {
+	top: 58px;
+}
+#mobile-bar #block-invotra-search-and-do-search-lite .targeted-search ul.targeted-search-types {
+	top: 58px;
+}
+#mobile-bar #search-block-toolbar .form-submit {
+	border-color: rgb(85, 106, 142); margin: 4px 0px 0px; height: 48px; display: block;
+}
+#mobile-bar #search-block-toolbar a.focus {
+	outline: rgb(255, 191, 71) solid 2px; box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+#mobile-bar #profile-mobile {
+	transition:0.5s; left: 0px; top: 1px; width: 350px; overflow: hidden; display: none; position: absolute; z-index: 1000; max-width: 100%;
+}
+#mobile-bar #profile-mobile .menu {
+	width: 310px;
+}
+@media all and (max-width:350px)
+{
+#mobile-bar #profile-mobile .menu {
+	width: calc(100vw - 40px);
+}
+}
+#mobile-bar #profile-mobile ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#mobile-bar #profile-mobile li {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#mobile-bar #profile-mobile .profile-mobile-inner {
+	background: rgb(255, 255, 255); float: left; position: relative; z-index: 999; box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.25); -webkit-transform: translateZ(0); -moz-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.25); -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
+#mobile-bar #profile-mobile .profile-info {
+	background: url("i/invotra_brand.png") no-repeat 100% 100% / 186px 174px rgb(39, 44, 71); padding: 16px; min-height: 142px;
+}
+#mobile-bar #profile-mobile .profile-info-avatar img {
+	border-radius: 50%; height: auto; max-width: 64px; -moz-border-radius: 50%; -webkit-border-radius: 50%;
+}
+#mobile-bar #profile-mobile .profile-info-avatar a:hover img {
+
+}
+#mobile-bar #profile-mobile .profile-info-name {
+	margin: 11px 0px 0px; color: rgb(255, 255, 255); font-size: 14px;
+}
+#mobile-bar #profile-mobile .profile-info-name a {
+	color: rgb(255, 255, 255);
+}
+#mobile-bar #profile-mobile .profile-info-name .img {
+	margin: 0px 10px 0px 0px; float: left;
+}
+#mobile-bar #profile-mobile .profile-info-name .img img {
+	border-radius: 50px; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+#mobile-bar #profile-mobile .profile-info-name .ou-name {
+	font-weight: 500;
+}
+#mobile-bar #profile-mobile .profile-menu {
+	z-index: 9;
+}
+#mobile-bar #profile-mobile .profile-menu ul {
+	margin: 0px; padding: 0px;
+}
+#mobile-bar #profile-mobile .profile-menu ul li {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#mobile-bar #profile-mobile .profile-menu ul li a {
+	padding: 12px 16px; width: auto; line-height: 20px; display: block;
+}
+#mobile-bar #profile-mobile .profile-menu ul li a span.reserved-space {
+	display: none;
+}
+#mobile-bar #profile-mobile .profile-menu ul li a.focus {
+	outline: rgb(220, 232, 111) solid 1px; color: rgb(208, 68, 55); background-color: rgb(255, 255, 204);
+}
+#mobile-bar #profile-mobile .profile-menu ul li.content {
+	margin-top: 18px; border-top-color: rgb(224, 224, 224); border-top-width: 1px; border-top-style: solid;
+}
+#mobile-bar #profile-mobile .profile-menu ul li.help-centre {
+	margin-top: 18px; border-top-color: rgb(224, 224, 224); border-top-width: 1px; border-top-style: solid;
+}
+#mobile-bar #profile-mobile .profile-menu ul li.profile-menu-logout {
+	padding: 12px 15px;
+}
+#mobile-bar #profile-mobile .profile-menu-my-feed {
+	font-size: 16px; display: block;
+}
+#mobile-bar #profile-mobile .profile-menu-tag {
+	text-align: left; white-space: nowrap;
+}
+#mobile-bar #profile-mobile .profile-menu-tag h3 {
+	margin: 0px; padding: 5px 16px; border: 1px solid rgb(224, 224, 224); border-image: none; color: rgb(101, 101, 101); line-height: 34px; font-size: 16px; font-weight: 600;
+}
+#mobile-bar #profile-mobile .profile-menu-tag a {
+	font-weight: 700;
+}
+#mobile-bar #profile-mobile .profile-menu-tag a.log-out {
+	margin: 12px 15px;
+}
+.show-profile-menu#mobile-bar::after {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; height: 100%; right: 0px; bottom: 0px; display: block; position: absolute; z-index: 999; content: ""; opacity: 0.85;
+}
+#mobile-bar .menu-close {
+	padding: 0px; width: 40px; height: 40px; color: white; overflow: hidden; font-size: 20px; float: left; display: inline-block; position: fixed; z-index: 1111;
+}
+#mobile-bar .menu-close::after {
+	left: calc(50% - 8px); top: calc(50% - 15px); font-family: "FontAwesome"; position: relative; content: "\f00d";
+}
+#mobile-bar .menu-close.focus {
+	outline: rgb(255, 191, 71) solid 2px; box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5), inset 0px 2px 4px 2px rgba(0,0,0,0.5); -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5), inset 0px 2px 4px 2px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5), inset 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+#toolbar-mobile-overlay {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; height: 100%; right: 0px; bottom: 0px; position: absolute; z-index: 999; opacity: 0.85;
+}
+ul#mobile-menus {
+	margin: 0px 0px 20px; padding: 0px; left: 0px; width: 100%; line-height: 1.2; overflow: hidden; clear: both; font-size: 14px; font-weight: 400; display: none; position: absolute;
+}
+ul#mobile-menus::after {
+	overflow: hidden; clear: both; display: block; content: "";
+}
+ul#mobile-menus #invotra-login-link {
+	margin: 0px; border: currentColor; border-image: none; line-height: 1.2;
+}
+ul#mobile-menus li.open > .item-list > ul {
+	display: block;
+}
+ul#mobile-menus li.open > ul {
+	display: block;
+}
+ul#mobile-menus li.active > .item-list > ul {
+	display: block;
+}
+ul#mobile-menus li.active > ul {
+	display: block;
+}
+ul#mobile-menus a {
+	color: rgb(240, 237, 231); text-decoration: none;
+}
+ul#mobile-menus li#main {
+	margin: 0px; padding: 0px; width: 50%; float: left;
+}
+ul#mobile-menus li#user {
+	margin: 0px; padding: 0px; width: 50%; float: left;
+}
+ul#mobile-menus li#main > a {
+	padding: 14px 20px 14px 13px; height: 22px; text-align: center; color: rgb(51, 51, 51); text-transform: uppercase; line-height: 22px; font-size: 14px; font-weight: 700; text-decoration: none; border-bottom-color: rgb(255, 255, 255); border-bottom-width: 1px; border-bottom-style: solid; display: block; background-image: none;
+}
+ul#mobile-menus li#user > a {
+	padding: 14px 20px 14px 13px; height: 22px; text-align: center; color: rgb(51, 51, 51); text-transform: uppercase; line-height: 22px; font-size: 14px; font-weight: 700; text-decoration: none; border-bottom-color: rgb(255, 255, 255); border-bottom-width: 1px; border-bottom-style: solid; display: block; background-image: none;
+}
+ul#mobile-menus li#main > .item-list > ul {
+	position: relative;
+}
+ul#mobile-menus li#main > ul {
+	position: relative;
+}
+ul#mobile-menus li#user > .item-list > ul {
+	position: relative;
+}
+ul#mobile-menus li#user > ul {
+	position: relative;
+}
+ul#mobile-menus li.item-1 > .item-list > ul {
+	margin-right: -100%;
+}
+ul#mobile-menus li.item-2 > ul {
+	margin-left: -100%;
+}
+ul#mobile-menus li#main > a {
+	margin-right: 2px;
+}
+ul#mobile-menus ul {
+	background: rgb(51, 51, 51); margin: 0px; padding: 0px; display: none; z-index: 100; transform: translateZ(0px); -webkit-transform: translateZ(0); -webkit-perspective: 1000; -webkit-backface-visibility: hidden;
+}
+ul#mobile-menus ul li {
+	margin: 0px; padding: 0px; display: block;
+}
+ul#mobile-menus ul li a {
+	background: rgb(51, 51, 51); padding: 17px 40px 17px 16px; color: rgb(255, 255, 255); line-height: 21px; font-size: 16px; font-weight: 700; text-decoration: none; border-bottom-color: rgb(255, 255, 255); border-bottom-width: 1px; border-bottom-style: solid; display: block;
+}
+ul#mobile-menus ul li a:hover {
+	background-color: rgb(34, 34, 34);
+}
+ul#mobile-menus ul li a span.reserved-space {
+	display: none;
+}
+ul#mobile-menus ul li.expanded > a {
+	position: relative;
+}
+ul#mobile-menus ul li.parent > a {
+	position: relative;
+}
+ul#mobile-menus ul li.expanded > a .arrow {
+	top: 0px; width: 40px; right: 0px; bottom: 0px; color: rgb(74, 74, 74); font-size: 30px; font-weight: bold; vertical-align: middle; display: block; position: absolute;
+}
+ul#mobile-menus ul li.parent > a .arrow {
+	top: 0px; width: 40px; right: 0px; bottom: 0px; color: rgb(74, 74, 74); font-size: 30px; font-weight: bold; vertical-align: middle; display: block; position: absolute;
+}
+ul#mobile-menus ul li.expanded > a .arrow::after {
+	margin: -15px 0px 0px; top: 50%; width: 24px; height: 30px; text-align: right; right: 0px; line-height: 30px; padding-right: 16px; font-family: "FontAwesome"; font-size: 30px; display: block; position: absolute; content: "\f105";
+}
+ul#mobile-menus ul li.parent > a .arrow::after {
+	margin: -15px 0px 0px; top: 50%; width: 24px; height: 30px; text-align: right; right: 0px; line-height: 30px; padding-right: 16px; font-family: "FontAwesome"; font-size: 30px; display: block; position: absolute; content: "\f105";
+}
+ul#mobile-menus ul li.expanded li .arrow {
+	color: rgb(224, 224, 224); font-weight: normal;
+}
+ul#mobile-menus ul li.parent li .arrow {
+	color: rgb(224, 224, 224); font-weight: normal;
+}
+ul#mobile-menus ul li ul {
+	background: rgb(255, 255, 255); left: 100%; top: -50px; width: 100%; position: absolute; transform: translateZ(0px); -webkit-transform: translateZ(0); -webkit-perspective: 1000; -webkit-backface-visibility: hidden;
+}
+ul#mobile-menus ul li ul ul {
+	top: 0px;
+}
+ul#mobile-menus ul li ul ul .move-back .title {
+	display: none;
+}
+ul#mobile-menus ul li li {
+	border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+ul#mobile-menus ul li li.open {
+	border: currentColor; border-image: none;
+}
+ul#mobile-menus ul li li.last {
+	border: currentColor; border-image: none;
+}
+ul#mobile-menus ul li li a {
+	background: rgb(255, 255, 255); padding: 16px 20px; border: currentColor; border-image: none; color: rgb(51, 51, 51); line-height: 138%; font-weight: 500; display: block;
+}
+ul#mobile-menus ul li li a .title {
+	display: none;
+}
+ul#mobile-menus ul li li a:hover {
+	background: rgb(255, 255, 255); border: currentColor; border-image: none; text-decoration: none;
+}
+ul#mobile-menus ul li li.parent > a:hover .arrow {
+	color: rgb(75, 184, 139);
+}
+ul#mobile-menus ul li li.expanded > a:hover .arrow {
+	color: rgb(75, 184, 139);
+}
+ul#mobile-menus ul li.move-back {
+	background: rgb(220, 217, 213); text-align: center; overflow: hidden; padding-right: 115px; margin-top: -1px; border-top-color: rgb(255, 255, 255); border-top-width: 1px; border-top-style: solid; white-space: nowrap;
+}
+ul#mobile-menus ul li.move-back a {
+	background: none; width: 80px; padding-right: 0px; padding-left: 35px; font-size: 16px; font-weight: 400; float: left; position: relative;
+}
+ul#mobile-menus ul li.move-back a::before {
+	margin: -11px 0px 0px; left: 20px; top: 50%; font-family: "FontAwesome"; font-size: 30px; position: absolute; content: "\f104";
+}
+ul#mobile-menus ul li.move-back a:hover {
+	background: none; padding: 16px 0px 16px 35px; border: currentColor; border-image: none;
+}
+ul#mobile-menus ul li.move-back .title {
+	color: rgb(51, 51, 51); text-transform: uppercase; line-height: 55px; font-size: 16px; font-weight: bold;
+}
+ul#mobile-menus li#user > a {
+	background: rgb(51, 51, 51); color: rgb(255, 255, 255);
+}
+ul#mobile-menus li#main > a {
+	background: rgb(240, 238, 232);
+}
+ul#mobile-menus li#main > .item-list > ul {
+	background: rgb(240, 238, 232);
+}
+ul#mobile-menus li#main > .item-list > ul > li > a {
+	background: rgb(240, 238, 232); color: rgb(51, 51, 51);
+}
+ul#mobile-menus li#main li a .arrow {
+	font-weight: normal;
+}
+#mobile-bar #mobile-buttons #mobile-notification-header {
+	left: 0px; top: 0px; width: 100%; color: black; display: none; position: fixed; z-index: 99; min-height: 60px; box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12), 0px 1px 3px 0px rgba(0,0,0,0.2); background-color: rgb(255, 255, 255);
+}
+#mobile-bar #mobile-buttons #mobile-notification-header h2 {
+	margin: 0px; width: 100%; text-align: center; color: black; line-height: 60px; font-family: "Libre Franklin"; font-size: 17px; float: left; display: inline-block;
+}
+#mobile-bar #mobile-buttons #mobile-notification-header a {
+	margin: 9px; padding: 0px 10px; left: 0px; top: 0px; color: black; line-height: 30px; font-size: 17px; text-decoration: none; position: absolute;
+}
+#mobile-bar #mobile-buttons #mobile-notification-header a::before {
+	bottom: -5px; font-family: "FontAwesome"; font-size: 31px; margin-right: 9px; position: relative; content: "\f104";
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications::before {
+	display: none;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications .notifications-link {
+	margin: 0px; padding: 0px; vertical-align: top;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications .notifications-link::before {
+	color: rgb(51, 51, 49); line-height: 52px;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications .notifications-wrapper {
+	left: 0px; top: 55px; width: auto; height: auto; right: 0px; bottom: 0px; margin-left: 0px; position: fixed;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu {
+	max-height: calc(100% - 102px);
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu li {
+	border-bottom-color: rgb(217, 217, 217); border-bottom-width: 1px; border-bottom-style: solid;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu li.last {
+	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu li a {
+	margin: 0px; padding: 15px 0px; width: 100%; line-height: 0; font-family: "Libre Franklin", Arial, FreeSans, sans-serif; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none; max-width: 100%;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu li a span {
+	text-align: left; display: block;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu li a span.time {
+	top: 28px; float: right;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu li a span.text > span {
+	color: rgb(0, 94, 165); line-height: 24px; display: block;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications ul.notifications.menu li a img {
+	margin: 8px 16px; border-radius: 50px; border: currentColor; border-image: none; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications div.clear {
+	line-height: 1;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications div.view-all-link {
+	line-height: 1;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications div.clear a {
+	width: auto; height: auto; color: rgb(0, 94, 165); line-height: 1; font-family: "Libre Franklin", Arial, FreeSans, sans-serif; font-size: 14px; text-decoration: underline; min-height: 0px;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications div.view-all-link a {
+	width: auto; height: auto; color: rgb(0, 94, 165); line-height: 1; font-family: "Libre Franklin", Arial, FreeSans, sans-serif; font-size: 14px; text-decoration: underline; min-height: 0px;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications div.clear a:hover {
+	background: none;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications div.view-all-link a:hover {
+	background: none;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications .notifications-wrapper.no-notifications ul li {
+	text-align: center; color: rgb(74, 74, 74); font-size: 14px; font-weight: bold;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications .notifications-wrapper.no-notifications ul li:first-child {
+	border: currentColor; border-image: none;
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications .notifications-wrapper.no-notifications ul li::before {
+	margin: 40px auto; line-height: 60px; font-family: "invotra-iconset-comprehensive"; font-size: 58px; font-weight: 400; display: block; content: "\e815";
+}
+#mobile-bar #mobile-buttons .mobile#toolbar-notifications .notifications-wrapper.no-notifications div.view-all-link {
+	margin-top: 0px;
+}
+#toolbar-notifications {
+	margin: 0px; float: left; position: relative;
+}
+#toolbar-notifications ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#toolbar-notifications li {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#toolbar-notifications .notifications-link {
+	padding: 0px 15px; color: rgb(255, 255, 255); text-indent: -9999px; display: block; position: relative;
+}
+#toolbar-notifications .notifications-link::before {
+	margin: 0px; color: rgb(255, 255, 255); line-height: 45px; text-indent: 0px; font-family: "invotra-iconset-comprehensive"; font-size: 22px; display: block; content: "\e815";
+}
+#toolbar-notifications .notifications-link.focus::after {
+	left: 15px; color: rgb(208, 68, 55); line-height: 45px; font-family: "invotra-iconset-comprehensive"; font-size: 22px; display: inline-block; position: absolute; content: "\e815";
+}
+#toolbar-notifications .count {
+	background: rgb(208, 68, 55); padding: 0px 5px 0px 4px; border-radius: 100px; left: 60%; top: 10px; height: 14px; color: rgb(255, 255, 255); line-height: 14px; text-indent: 0px; letter-spacing: -0.6px; font-size: 10px; font-weight: 400; display: inline-block; position: absolute; z-index: 3; -moz-border-radius: 100px; -webkit-border-radius: 100px;
+}
+#toolbar-notifications .notifications-wrapper {
+	background: rgb(255, 255, 255); border-radius: 6px; border: 2px solid rgb(151, 151, 151); border-image: none; left: 50%; width: 320px; margin-left: -160px; display: none; position: absolute; box-shadow: 2px 0px 6px rgba(0,0,0,0.1), 0px 2px 6px rgba(0,0,0,0.15); -moz-border-radius: 6px; -webkit-border-radius: 6px; -moz-box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.15); -webkit-box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+#toolbar-notifications .notifications-wrapper .ico::before {
+	background: rgb(255, 255, 255); border-width: 2px medium medium 2px; border-style: solid none none solid; border-color: rgb(151, 151, 151) currentColor currentColor rgb(151, 151, 151); padding: 5px; border-image: none; left: 47%; top: -8px; width: 2px; height: 2px; position: absolute; z-index: 10; content: ""; transform: rotate(45deg);
+}
+#toolbar-notifications .notifications-wrapper ul.notifications {
+	-ms-overflow-y: auto; max-height: 566px;
+}
+#toolbar-notifications .notifications-wrapper ul.notifications a {
+	margin: 0px 14px; padding: 14px 40px 14px 64px; text-align: left; overflow: hidden; border-bottom-color: rgb(232, 229, 224); border-bottom-width: 1px; border-bottom-style: solid; display: block; white-space: normal; position: relative; min-height: 42px;
+}
+#toolbar-notifications .notifications-wrapper ul.notifications a img {
+	border-radius: 50px; width: 40px; height: 40px; margin-left: -50px; float: left; -moz-border-radius: 50px; -webkit-border-radius: 50px;
+}
+#toolbar-notifications .notifications-wrapper ul.notifications a .text {
+	color: rgb(51, 51, 51); line-height: 134%; font-size: 12px; font-weight: 300; display: block; -ms-word-wrap: break-word;
+}
+@media all and (max-width:960px)
+{
+#toolbar-notifications .notifications-wrapper ul.notifications a .text {
+	padding-right: 35px;
+}
+}
+#toolbar-notifications .notifications-wrapper ul.notifications a .time {
+	top: 14px; right: 10px; color: rgb(51, 51, 51); font-size: 12px; position: absolute;
+}
+#toolbar-notifications .notifications-wrapper ul.notifications a:hover {
+	background: rgb(237, 239, 241);
+}
+#toolbar-notifications .notifications-wrapper ul.notifications a:hover img {
+
+}
+#toolbar-notifications .notifications-wrapper ul.notifications li.last a {
+	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+#toolbar-notifications .notifications-wrapper div.clear {
+	padding: 15px 0px; cursor: default;
+}
+#toolbar-notifications .notifications-wrapper div.view-all-link {
+	padding: 15px 0px; cursor: default;
+}
+#toolbar-notifications .notifications-wrapper div.clear a {
+	font-size: 14px; font-weight: 500; text-decoration: underline; min-height: 0px;
+}
+#toolbar-notifications .notifications-wrapper div.view-all-link a {
+	font-size: 14px; font-weight: 500; text-decoration: underline; min-height: 0px;
+}
+#toolbar-notifications .notifications-wrapper div.clear {
+	text-align: right; padding-right: 20px; border-bottom-color: rgb(232, 229, 224); border-bottom-width: 1px; border-bottom-style: solid;
+}
+#toolbar-notifications .notifications-wrapper div.clear a {
+	padding-right: 0px;
+}
+#toolbar-notifications .notifications-wrapper div.view-all-link {
+	text-align: center; border-top-color: rgb(232, 229, 224); border-top-width: 1px; border-top-style: solid;
+}
+#toolbar-notifications .notifications-wrapper.no-notifications ul li {
+	padding: 20px 10px; text-align: center; color: rgb(117, 117, 117); font-size: 14px; font-weight: 700;
+}
+#toolbar-notifications .notifications-wrapper.no-notifications div.clear {
+	display: none;
+}
+#toolbar-notifications .notifications-wrapper.no-notifications div.view-all-link {
+	padding-top: 0px; margin-top: -10px; border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+.show#toolbar-mobile-overlay {
+	display: none;
+}
+#toolbar-mobile-overlay {
+	display: none;
+}
+#mobile-bar {
+	display: none;
+}
+@media all and (max-width:960px)
+{
+#admin-menu {
+	height: 40px; display: none; white-space: nowrap;
+}
+body.admin-menu {
+	margin-top: 0px !important;
+}
+.region-page-top-inner {
+	height: auto !important;
+}
+#invotra-profile-toolbar .profile-info .profile-info-name a .usrn {
+	display: none !important;
+}
+.show#toolbar-mobile-overlay {
+	display: block;
+}
+.region-menu-inner {
+	display: none;
+}
+#invotra-toolbar {
+	display: none;
+}
+#page #mobile-bar {
+	display: block;
+}
+#page #region-menu {
+	margin: 0px;
+}
+#page .primary-menu-sticky#region-menu {
+	margin-bottom: -20px;
+}
+#page #region-branding {
+	display: none;
+}
+}

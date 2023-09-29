@@ -1,0 +1,135 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+   Where you work
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="job-status">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="work" method="post">
+
+
+  <header>
+    <h1 class="govuk-heading-l">
+    	Where you work
+    </h1>
+  </header>
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-jobTitle">
+    Your job title
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-jobTitle" name="jobTitle" type="text">
+</div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="f-employer">
+    Your employer
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="f-employer" name="employer" type="text">
+</div>
+
+
+<fieldset class="govuk-fieldset govuk-!-width-three-quarters apply-address">
+
+  <legend class="govuk-fieldset__legend">
+
+    Address
+
+  </legend>
+
+
+
+
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="f-address[address1]">
+    Building and street 
+    <!-- Visually hidden class not working in prototype
+    <span class="govuk-visually-hidden">line 1 of 2</span>
+    -->
+     </label>
+      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-2">
+        <!-- Visually hidden class not working in prototype
+    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+    -->
+      </label>
+      <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-town">
+        Town or city
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-county">
+        County
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-postcode">
+        Postcode
+      </label>
+      <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+    </div>
+
+  </fieldset>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        <h3 class="govuk-heading-s">Telephone</h3>
+        <p class="govuk-body">0800 169 0154</p>
+        <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+        <p class="govuk-body">Closed public holidays</p>
+        <h3 class="govuk-heading-s">Email</h3>
+        <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk"> dwponline.helpdesk@dwp.gov.uk</a></p>
+    </aside>
+
+      </div> </div>
+{% endblock %}

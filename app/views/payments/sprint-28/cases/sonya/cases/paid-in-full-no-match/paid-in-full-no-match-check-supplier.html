@@ -1,0 +1,86 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Do you need to check whether any of the items have been supplied?" %}
+
+{% extends   "payments/sprint-28/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-28/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+      <h1 class="govuk-fieldset__heading">
+        Do you need to check whether any of the items have been supplied?
+      </h1>
+
+    </legend>
+
+
+
+  <div class="govuk-inset-text">
+Employer size: small
+</div>
+  <!-- <div id="contact-hint" class="govuk-hint">
+              Answer yes if you need to contact the supplier or employer to check you can pay a proforma invoice.
+                </div> -->
+
+
+
+
+
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="paid-in-full-check-supplier-1" name="paid-in-full-check-supplier" type="radio" value="Yes~sonya/cases/paid-in-full-no-match/paid-in-full-no-match-select" {{ checked("paid-in-full-check-supplier", "Yes") }}>
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-check-supplier-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="paid-in-full-check-supplier-2" name="paid-in-full-check-supplier" type="radio" value="No~sonya/cases/paid-in-full-no-match/paid-in-full-no-match-valid-yes" {{ checked("paid-in-full-check-supplier", "No") }}>
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-check-supplier-2">
+              No
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

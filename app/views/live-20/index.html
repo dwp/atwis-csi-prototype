@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+
+      <span class="govuk-caption-xl"></span>
+
+</h1>
+
+<p>Jump to page:</p>
+  <ul class="govuk-list">
+    <p class="govuk-body-l">Case manager view</p>
+    <li>
+      <a class="govuk-link" href="your-cases.html">Your cases - User type: Case manager</a>
+    </li>
+    <br>
+
+    <li>
+      <a class="govuk-link" href="your-cases-allocator.html">Your cases - User type: Leads/Allocator </a>
+    </li>
+    <br>
+
+
+    <p class="govuk-body-l"> Screens</p>
+    <p>If you do not select as user type view from the above two links, the following page will default to the last type you had or Case manager. <p>
+
+    <li>
+      <a class="govuk-link" href="search.html">Search</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="all-advisers.html">All advisers (Lead/allocator view only)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim.html">Claim (Summary tab)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim#your-tasks.html">Claim (Your tasks tab)</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/claim#citizen-details.html">Claim (Application details tab)</a>
+    </li>
+
+    <br>
+    <p>Eligible<p>
+
+    <li>
+      <a class="govuk-link" href="cases/claim-not-eligible.html">Claim not eligible (automated)</a>
+    </li>
+
+<br>
+      <p class="govuk-body-l">    Contact </p>
+      <li>
+       Recording contact:  <a class="govuk-link" href="cases/contact/1/how-do-you-want-to-contact.html">Type of contact
+</a>
+      </li>
+    <li>
+     Email:  <a class="govuk-link" href="cases/contact/email.html">Do you need to contact Dereck Smith at this time?</a>
+    </li>
+    <li>
+     Email sent:  <a class="govuk-link" href="cases/contact/email.html">Email sent</a>
+    </li>
+    <li>
+     Telephone:  <a class="govuk-link" href="cases/contact/phone.html">Has Dereck Smith answered the telephone?</a>
+    </li>
+    <li>
+     Telephone (Yes):  <a class="govuk-link" href="cases/contact/happy-phone.html">Telephone call made (happy)</a>
+    </li>
+    <li>
+     Telephone (No):  <a class="govuk-link" href="cases/contact/unhappy-phone.html">Telephone call made (not happy)</a>
+    </li>
+    <li>
+     Add another contact:  <a class="govuk-link" href="cases/contact/contact-log.html">Contact log (add at least one to trigger list)</a>
+    </li>
+    <br>
+<br>
+    <p class="govuk-body-l"> Task list </p>
+
+    <p class="govuk-body-l"> 1. Searchlight </p>
+
+    <p>  Add National Insurance number from Searchligh</p>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/check-searchlight.html">Is Dereck Smith in Searchlight?</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/find-national-insurance-number.html">Have you found Dereck Smith’s National Insurance number in Searchlight?</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/national-insurance/add-national-insurance-number.html">Add Dereck Smith’s National Insurance number from Searchlight?</a>
+    </li>
+
+    <br>
+    <p>  Check for appointee </p>
+    <li>
+      <a class="govuk-link" href="cases/searchlight/appointee.html">Does Dereck Smith have an appointee?</a>
+    </li>
+    <li>
+      If user answers 'Yes, add an appointee' <a class="govuk-link" href="cases/searchlight/appointee-details.html">Add appointee details for Dereck Smith</a>
+    </li>
+
+
+        <br>
+        <p>    Check benefits </p>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/check.html">Does Searchlight show benefits that could affect Dereck Smith’s eligibility?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/exceptions.html">Can Dereck Smith still get Access to Work?</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="cases/searchlight/benefits/answers.html">Check Derek Smith’s benefits</a>
+        </li>
+        <br>
+
+  <p class="govuk-body">Personal details</p>
+  <li>
+   Job details  <a class="govuk-link" href="cases/job-details.html">Job details (employed)</a>    </li>
+   <li>
+     <li>
+      Job details  <a class="govuk-link" href="cases/job-details.html">Job details (employed)</a>    </li>
+      <li>
+<br>
+
+    <p class="govuk-body-l"> 2. Business cases </p>
+    <li>
+     Employe contact  <a class="govuk-link" href="cases/contact-employer.html">Has {name here} confirmed Access to Work can communicate with their workplace contact?  (employed)</a>   <br>
+   Yes, they gave permission branch:<br>
+<a class="govuk-link" href="cases/contact-employer.html">Have you contacted the workplace contact about this application?</a>   <br>
+They did not give permission:<br>
+<a class="govuk-link" href="cases/contact-employer.html">This case will be closed because you cannot contact Smith Digital Limited</a>   <br>
+
+  </li>
+     <li>
+    <li>
+     Job details  <a class="govuk-link" href="cases/job-details.html">Job details (employed)</a>    </li>
+     <li>
+      Job details  <a class="govuk-link" href="cases/job-details/self-employment.html">Job details (self employed)</a>
+     </li>
+     No, {employer} has not confirmed job details branch:<br>
+    <a class="govuk-link" href="cases/job-details/unhappy-employment-details.html">This case will be closed because {employer} has no records of {name here}</a>   <br>
+     Small/micro branch:<br>
+     <a class="govuk-link" href="cases/job-details/contact-cost-share-agreement-micro-small.html">Cost share agreement </a>    <br>
+     Medium/large branch:<br>
+     <a class="govuk-link" href="cases/job-details/contact-cost-share-agreement.html">Cost share agreement </a>    <br>
+     Did Smith Digital Limited agree to a cost share? No branch:<br>
+     <a class="govuk-link" href="cases/job-details/third-party.html">Has a third party agreed to a cost share? </a>    <br>
+     Has a third party agreed to a cost share? Yes branch:<br>
+     <a class="govuk-link" href="cases/job-details/third-party-details.html">Add third party details </a>    <br>
+     <a class="govuk-link" href="cases/job-details/third-party-telephone-email.html">Add third party contact details (select the type from the last page) </a>    <br>
+     Has a third party agreed to a cost share? N0 (is a large or medium) branch:<br>
+     <a class="govuk-link" href="cases/job-details/third-party-details.html">live-20/cases/job-details/unhappy-cost-share  </a>    <br>
+
+
+     <li>
+      Job details  <a class="govuk-link" href="cases/job-details/note.html">Job details: contact notes </a>
+     </li>
+
+
+  </ul>
+</div>
+
+{% endblock %}

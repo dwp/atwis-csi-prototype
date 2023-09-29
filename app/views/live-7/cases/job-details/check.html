@@ -1,0 +1,92 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="/live-7/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Task summary: job details</h2>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                          Have you spoken to Dereck Smith about whether Access to Work can contact their employer?
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{ data['job-deatils-contact']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">
+              Update<span class="govuk-visually-hidden">                   Have you spoken to Dereck Smith about whether Access to Work can contact their employer?</span>
+              </a>
+            </dd>
+          </div>
+
+{% if data['job-deatils-contact']=='No, I have not spoken to them'%}{% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+ Have you spoken to the employer about a cost share?
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{data['employer-cost-share']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="">
+                Update<span class="govuk-visually-hidden">  Have you spoken to the employer about a cost share?</span>
+              </a>
+            </dd>
+</div>{% endif %}
+
+
+
+
+
+        </dl>
+
+
+
+
+{% if data['job-deatils-contact']=='No, I have not spoken to them' or data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
+       <div class="govuk-inset-text">
+       <p> You need to contact Dereck Smith employer.  </p>
+
+       </div>
+{% endif %}
+
+<!-- {% if data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
+        <div class="govuk-inset-text">
+        <p> You need to contact Dereck Smith to employer.  </p>
+
+        </div>
+{% endif %} -->
+
+          <input type="hidden" name="appointee-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="appointee-cya" value="finished">
+            Return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

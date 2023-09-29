@@ -1,0 +1,106 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="add" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+<!--
+        <h1 class="govuk-heading-l"> John Smith's quote for cost per journey</h1>
+
+
+
+
+
+        <div class="govuk-inset-text">
+        £{{data['cost-per-journey']}}
+        </div> -->
+
+
+<div class="govuk-form-group">
+
+
+
+
+    <div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+    Why did you choose website or source quote?
+    </h1>
+  </legend>
+  <div id="waste-hint" class="govuk-hint">
+    Select all that apply.
+  </div>
+  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste">
+      Used them before
+      </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste">
+      Specialist support
+      </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+        Local taxi not on rate card
+      </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+        Accessible vehicle surcharge
+      </label>
+    </div>
+    <!-- <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+        Most cost effective
+      </label>
+    </div> -->
+  </div>
+</fieldset>
+</div>
+
+
+
+<div class="govuk-form-group ">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="cost-per-item-error">
+  What is other website or source?
+</label>
+</h1>
+    <!-- <div id="authentication-code-hint" class="govuk-hint">
+  Include any extra costs, like account fees and VAT.
+  </div> -->
+      <div class="govuk-input__wrapper">
+
+          <input class="govuk-input govuk-input" id="name" name="name" type="text" spellcheck="false">
+
+
+
+                  </div>
+    </div>    </div>
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

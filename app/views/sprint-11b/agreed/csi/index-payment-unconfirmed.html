@@ -1,0 +1,8 @@
+{% set phase = "payment-interview-not-confirmed" %}
+{% extends "./index-payment.html" %}
+
+{% block csiStatus %}
+<br>
+<p>You cannot start this case yet. You will be able to complete the payment tasks once the employer has
+  confirmed that the interview took place.</p>
+{% endblock %}

@@ -1,0 +1,194 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-18/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-18/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Is the payee in SOP?
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<!-- <br>
+
+<h2 class="govuk-heading-m">   Payee details from claim</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Payee name
+        </dt>
+        <dd class="govuk-summary-list__value">
+        Lime Limited
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Payee address
+        </dt>
+        <dd class="govuk-summary-list__value">
+        220 St Vincent Street<br>Glasgow<br>AB1 1AB
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Telephone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          01475741305
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          info@limelimited.com
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Name on bank account
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lime Limited
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          06-02-28
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          42473644
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+        </div>
+
+
+
+</dl> -->
+
+
+
+
+
+      <div class="govuk-form-group">
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          {% if case == 'dereck' %}
+          <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="Yes~dereck/claim-dereck#your-tasks" {{ checked("sop-find", "Yes") }}>
+          {% endif %}
+          {% if case == 'sonya' %}
+          <input class="govuk-radios__input" id="sop-find-1" name="sop-find" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("sop-find", "Yes") }}>
+          {% endif %}
+          <label class="govuk-label govuk-radios__label" for="sop-find-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sop-find-2" name="sop-find" type="radio" value="No~claim#your-tasks" {{ checked("sop-find", "No") }}>
+          <label class="govuk-label govuk-radios__label" for="sop-find-2">
+            No
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+    </div>
+    <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+     </div>
+   </div>
+
+
+      </main>
+      </div>
+
+
+
+
+
+
+
+{% endblock %}

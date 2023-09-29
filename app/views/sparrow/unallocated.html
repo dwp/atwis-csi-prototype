@@ -1,0 +1,359 @@
+{% extends "./claim/_BASE.html" %}
+{% set hideBanner = true %}
+
+{% if not phase %}
+{% set phase = "allocator" %}
+
+{% endif %}
+
+{% set Unallocated = true %}
+
+{% set unallocated = [
+  {
+
+    name: "Desmond Smith",
+    submitted: "27 February 2020 - 04:23",
+    interview: "1 November 2021",
+    status: "New"
+  },
+  {
+
+    name: "Sam Argentino",
+    submitted: "23 February 2020 - 13:23",
+    interview: "2 November 2021",
+    status: "Action needed"
+  }
+
+  ]
+  %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#priority">
+            Priority cases (0)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#other">
+            Other cases (5)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#csi">
+            CSI cases (0)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-year">
+            Documents
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="priority">
+        <div class="govuk-grid-row">
+         <div class="govuk-grid-column-one-quarter">
+             <form action="/unallocated/filters/priority" method="post" data-submitonce="">
+               <div id="unallocated-priority-apply-filter">
+
+
+
+
+
+
+ <button class="govuk-button" data-module="govuk-button">
+ Apply selected filters
+ </button>
+
+               </div>
+               <div class="govuk-!-padding-bottom-3">
+                 <a href="" class="govuk-link">Clear filters</a>
+               </div>
+               <div class="govuk-!-padding-bottom-3">
+               <label class="govuk-label" for="unallocated-priority-sort">
+                 Sort table by
+               </label>
+               <select class="select-inline govuk-select" id="unallocated-priority-sort-options" name="prioritySort">
+
+                   <option value="date_created" selected="">Date created</option>
+
+
+                   <option value="job_start">Job start date</option>
+
+               </select>
+               </div>
+
+
+
+ <div class="govuk-form-group">
+
+ <fieldset class="govuk-fieldset">
+
+ <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+ Priority Type
+
+ </legend>
+
+
+ <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+     <div class="govuk-checkboxes__item">
+       <input class="govuk-checkboxes__input" id="type" name="priority_type[]" type="checkbox" value="JOB_START">
+       <label class="govuk-label govuk-checkboxes__label" for="type">
+   Job start
+ </label>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+     <div class="govuk-checkboxes__item">
+       <input class="govuk-checkboxes__input" id="type-2" name="priority_type[]" type="checkbox" value="CEV">
+       <label class="govuk-label govuk-checkboxes__label" for="type-2">
+   CEV
+ </label>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+     <div class="govuk-checkboxes__item">
+       <input class="govuk-checkboxes__input" id="type-3" name="priority_type[]" type="checkbox" value="KICKSTART">
+       <label class="govuk-label govuk-checkboxes__label" for="type-3">
+   Kickstart
+ </label>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+     <div class="govuk-checkboxes__item">
+       <input class="govuk-checkboxes__input" id="type-4" name="priority_type[]" type="checkbox" value="YPGS">
+       <label class="govuk-label govuk-checkboxes__label" for="type-4">
+   YPGS
+ </label>
+
+     </div>
+
+
+
+
+ </div>
+
+
+ </fieldset>
+
+
+ </div>
+
+
+             </form>
+           </div>
+         <div>
+         <div class="govuk-grid-column-three-quarters">
+           <h2 class="govuk-heading-m">
+             Priority Cases
+           </h2>
+
+
+
+ <p class="govuk-body">There are sparrowly no Priority Cases</p></div></div></div>
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="other">
+        <h2 class="govuk-heading-m">Other cases</h2>
+        <table class="govuk-table" id="list-cases">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+            <!-- <th class="govuk-table__header">Specialism</th> -->
+            <th class="govuk-table__header">Case type</th>
+            <th class="govuk-table__header numeric">Date submitted</th>
+            <th class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <tr class="click-row govuk-table__row" data-caseid="23Q7MX" data-caselink="apply/23Q7MX">
+                <td class="govuk-table__cell">Terry jones</td>
+
+                    <!-- <td class="govuk-table__cell">Director</td> -->
+
+                <td class="govuk-table__cell">New application</td>
+                <td class="govuk-table__cell numeric">25 Nov 2021, 3:58pm</td>
+
+                  <td class="govuk-table__cell"><a href="/cases/apply/23Q7MX/case-management">View case</a></td>
+
+            </tr>
+
+            <tr class="click-row govuk-table__row" data-caseid="938RZ6" data-caselink="apply/938RZ6">
+                <td class="govuk-table__cell">Terry Rasping</td>
+
+                    <!-- <td class="govuk-table__cell">Director</td> -->
+
+                <td class="govuk-table__cell">New application</td>
+                <td class="govuk-table__cell numeric">25 Nov 2021, 4:04pm</td>
+
+                  <td class="govuk-table__cell"><a href="/cases/apply/938RZ6/case-management">View case</a></td>
+
+            </tr>
+
+            <tr class="click-row govuk-table__row" data-caseid="4ZGVZR" data-caselink="apply/4ZGVZR">
+                <td class="govuk-table__cell">Clive Jones</td>
+
+                    <!-- <td class="govuk-table__cell">Director</td> -->
+
+                <td class="govuk-table__cell">New application</td>
+                <td class="govuk-table__cell numeric">25 Nov 2021, 4:32pm</td>
+
+                  <td class="govuk-table__cell"><a href="/cases/apply/4ZGVZR/case-management">View case</a></td>
+
+            </tr>
+
+            <tr class="click-row govuk-table__row" data-caseid="13Y83K" data-caselink="apply/13Y83K">
+                <td class="govuk-table__cell">Simon Test</td>
+
+                    <!-- <td class="govuk-table__cell">Director</td> -->
+
+                <td class="govuk-table__cell">New application</td>
+                <td class="govuk-table__cell numeric">25 Nov 2021, 4:35pm</td>
+
+                  <td class="govuk-table__cell"><a href="/cases/apply/13Y83K/case-management">View case</a></td>
+
+            </tr>
+
+            <tr class="click-row govuk-table__row" data-caseid="NZ68ML" data-caselink="apply/NZ68ML">
+                <td class="govuk-table__cell">sad asdf</td>
+
+                    <!-- <td class="govuk-table__cell">Pan disability</td> -->
+
+                <td class="govuk-table__cell">New application</td>
+                <td class="govuk-table__cell numeric">25 Nov 2021, 4:39pm</td>
+
+                  <td class="govuk-table__cell"><a href="/cases/apply/NZ68ML/case-management">View case</a></td>
+
+            </tr>
+
+        </tbody>
+      </table>
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="csi">
+        <h2 class="govuk-heading-l">Past month</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Case manager</th>
+              <th scope="col" class="govuk-table__header">Cases opened</th>
+              <th scope="col" class="govuk-table__header">Cases closed</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">David Francis</td>
+              <td class="govuk-table__cell">98</td>
+              <td class="govuk-table__cell">95</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Paul Farmer</td>
+              <td class="govuk-table__cell">122</td>
+              <td class="govuk-table__cell">131</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Rita Patel</td>
+              <td class="govuk-table__cell">126</td>
+              <td class="govuk-table__cell">142</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+        <h2 class="govuk-heading-l">Past year</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Case manager</th>
+              <th scope="col" class="govuk-table__header">Cases opened</th>
+              <th scope="col" class="govuk-table__header">Cases closed</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">David Francis</td>
+              <td class="govuk-table__cell">1380</td>
+              <td class="govuk-table__cell">1472</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Paul Farmer</td>
+              <td class="govuk-table__cell">1129</td>
+              <td class="govuk-table__cell">1083</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Rita Patel</td>
+              <td class="govuk-table__cell">1539</td>
+              <td class="govuk-table__cell">1265</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

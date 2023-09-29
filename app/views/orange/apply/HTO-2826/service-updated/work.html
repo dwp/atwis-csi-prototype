@@ -1,0 +1,344 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+   How long have you been in your current job or role?
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="employed">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <form class="form" action="work-contact" method="post">
+
+  <div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  
+    <h1 class="govuk-fieldset__heading">
+      How long have you been in your current job or role?
+    </h1>
+  
+  </legend>
+  
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+    
+      
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="f-currentRoleDuration" name="currentRoleDuration" type="radio"  data-ga-question="How long have you been in your current job or role?" data-ga-answer="More than 6 weeks" aria-controls="conditional-f-currentRoleDuration" aria-expanded="true">
+          <label class="govuk-label govuk-radios__label" for="f-currentRoleDuration">
+        More than 6 weeks
+      </label>
+          
+        </div>
+        
+          <div class="govuk-radios__conditional" id="conditional-f-currentRoleDuration">
+            
+
+
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="startDateMoreThan6Weeks-hint">
+  
+  <legend class="govuk-fieldset__legend">
+  
+    Work start date
+  
+  </legend>
+  
+
+  <div id="startDateMoreThan6Weeks-hint" class="govuk-hint">
+    DD MM YYYY
+  </div>
+
+
+  <div class="govuk-date-input" id="startDateMoreThan6Weeks">
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateMoreThan6Weeksdd">
+          Day
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-startDateMoreThan6Weeksdd" name="startDateMoreThan6Weeksdd" type="text"  pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateMoreThan6Weeksmm">
+          Month
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-startDateMoreThan6Weeksmm" name="startDateMoreThan6Weeksmm" type="text"  pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateMoreThan6Weeksyyyy">
+          Year
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-4 
+        
+      " id="f-startDateMoreThan6Weeksyyyy" name="startDateMoreThan6Weeksyyyy" type="text"  pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+          </div>
+        
+
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="currentRoleDuration-2" name="currentRoleDuration" type="radio"  data-ga-question="How long have you been in your current job or role?" data-ga-answer="Less than 6 weeks" aria-controls="conditional-currentRoleDuration-2" aria-expanded="false">
+          <label class="govuk-label govuk-radios__label" for="currentRoleDuration-2">
+        Less than 6 weeks
+      </label>
+          
+        </div>
+        
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-currentRoleDuration-2">
+            
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="startDateLessThan6Weeks-hint">
+  
+  <legend class="govuk-fieldset__legend">
+  
+    Work start date
+  
+  </legend>
+  
+
+  <div id="startDateLessThan6Weeks-hint" class="govuk-hint">
+    DD MM YYYY
+  </div>
+
+
+  <div class="govuk-date-input" id="startDateLessThan6Weeks">
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateLessThan6Weeksdd">
+          Day
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-startDateLessThan6Weeksdd" name="startDateLessThan6Weeksdd" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateLessThan6Weeksmm">
+          Month
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-startDateLessThan6Weeksmm" name="startDateLessThan6Weeksmm" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateLessThan6Weeksyyyy">
+          Year
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-4 
+        
+      " id="f-startDateLessThan6Weeksyyyy" name="startDateLessThan6Weeksyyyy" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+          </div>
+        
+        
+      
+    
+      
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="currentRoleDuration-3" name="currentRoleDuration" type="radio"  data-ga-question="How long have you been in your current job or role?" data-ga-answer="You have not started yet" aria-controls="conditional-currentRoleDuration-3" aria-expanded="false">
+          <label class="govuk-label govuk-radios__label" for="currentRoleDuration-3">
+        You have not started yet
+      </label>
+          
+        </div>
+        
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-currentRoleDuration-3">
+            
+
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="startDateNotStarted-hint">
+  
+  <legend class="govuk-fieldset__legend">
+  
+    Work start date
+  
+  </legend>
+  
+
+  <div id="startDateNotStarted-hint" class="govuk-hint">
+    DD MM YYYY
+  </div>
+
+
+  <div class="govuk-date-input" id="startDateNotStarted">
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateNotStarteddd">
+          Day
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-startDateNotStarteddd" name="startDateNotStarteddd" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateNotStartedmm">
+          Month
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2 
+        
+      " id="f-startDateNotStartedmm" name="startDateNotStartedmm" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="f-startDateNotStartedyyyy">
+          Year
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-4 
+        
+      " id="f-startDateNotStartedyyyy" name="startDateNotStartedyyyy" type="text" pattern="[0-9]*" inputmode="numeric">
+      </div>
+    </div>
+  
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+          </div>
+        
+        
+      
+    
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label supplementary-question" for="f-daysPerWeek">
+    How many days a week do you usually work?
+  </label>
+
+<input class="govuk-input govuk-input--width-2" id="f-daysPerWeek" name="daysPerWeek" type="text" >
+</div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label supplementary-question" for="f-hoursPerWeek">
+    How many hours a week do you usually work?
+  </label>
+
+  
+  
+  <div id="f-hoursPerWeek-hint" class="govuk-hint">
+    If your hours change from week to week you can put a range, for example, between 35 and 40 hours a week
+  </div>
+
+<input class="govuk-input govuk-input--width-4" id="f-hoursPerWeek" name="hoursPerWeek" type="text"  aria-describedby="f-hoursPerWeek-hint">
+</div>
+    
+
+  
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        <h3 class="govuk-heading-s">Telephone</h3>
+        <p class="govuk-body">0800 169 0154</p>
+        <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+        <p class="govuk-body">Closed public holidays</p>
+        <h3 class="govuk-heading-s">Email</h3>
+        <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk"> dwponline.helpdesk@dwp.gov.uk</a></p>
+    </aside>
+
+      </div> </div>
+{% endblock %}

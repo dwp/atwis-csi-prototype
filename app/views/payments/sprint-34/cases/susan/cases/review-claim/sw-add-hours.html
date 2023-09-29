@@ -1,0 +1,76 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-34/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+
+<form action="matches-grant-multi-tab#your-tasks" method="post" novalidate>
+
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="ttw-claim-start-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Add details from claim
+                </h1>
+              </legend>
+
+              <label class="govuk-label govuk-label--m" for="sw-hours">
+                Number of hours support claimed
+              </label>
+              <div id="ttw-journeys-hint" class="govuk-hint">
+                <!-- For example, 502135326 -->
+              </div>
+              <input class="govuk-input govuk-input--width-10" id="sw-hours" name="sw-hours" type="text" aria-describedby="sw-hours-hint" value="{{data ['sw-hours'] }}">
+            </div>
+
+
+
+            </fieldset>
+          </div>
+
+
+
+
+
+
+    </div>
+    </div>
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

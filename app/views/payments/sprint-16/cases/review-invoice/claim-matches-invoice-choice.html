@@ -1,0 +1,153 @@
+
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-16/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/payments/sprint-16/cases/claim#your-tasks" method="post" novalidate>
+  <div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+
+
+
+
+
+<div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                          Select all items that appear on one invoice
+                        </h1>
+                      </legend>
+                      <div id="nationality-hint" class="govuk-hint">
+                        <!-- If you have dual nationality, select all options that are relevant to you. -->
+                      </div>
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+                          <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                            Jaws screen reader
+                          </label>
+                          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £499
+                          </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+                          <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                            Erganomic Keyboard
+                          </label>
+                          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £120
+                          </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+                          <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                            Mouse
+                          </label>
+                          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £40
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                  <!-- <p class="govuk-body">
+                     <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                   </p> -->
+
+                          <!-- <p class="govuk-body">
+                            Application details: -->
+                          <!-- </p>
+                          <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Element type
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          Specialist equipment
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Description
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          JAWS, Job Access With Speech
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Cost
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          £499
+                          </dd>
+                          </div>
+                          <br>
+
+                          </dl>
+                          <form action="/form-handler" method="post" novalidate>
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+ -->
+
+
+
+
+                                  <!-- <div class="govuk-form-group">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                    <h2 class="govuk-heading-m">
+                                      Does the claim match the invoice?
+                                    </h2>
+                                  </legend>
+                                      <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-1" name="grant-matches-invoice" type="radio" value="yes~claim#your-tasks" {{ checked("grant-matches-invoice", "Yes") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-1">
+                                            Yes
+                                          </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-2" name="grant-matches-invoice" type="radio" value="No~claim#your-tasks" {{ checked("grant-matches-invoice", "No") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-2">
+                                            No
+                                          </label>
+                                        </div>
+ -->
+                                    </div>
+                                  </div>
+
+
+                                       <button class="govuk-button" data-module="govuk-button">
+                                         Save and continue
+                                       </button>
+                                     </form>
+                                   </div>
+                                  </div>
+
+
+                                    </main>
+                                    </div>
+
+
+
+
+
+
+
+                                  {% endblock %}

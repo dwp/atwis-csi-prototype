@@ -1,0 +1,495 @@
+<h2 class="govuk-heading-l">Application details</h2>
+
+
+
+
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Version of questions
+   </dt>
+   <dd class="govuk-summary-list__value">
+     25.25.0-rc
+   </dd>
+ </div>
+</dl>
+
+
+
+
+
+            <!-- Sparrow apply journey for Personal details -->
+            <h3 class="govuk-heading-m">Personal details</h3>
+
+     {% include "../claim/_personal-details.html"%}
+   <!-- Sparrow apply journey for Personal details -->
+
+            <!-- Sparrow apply journey for Condition and Help Needed -->
+         <h3 class="govuk-heading-m">Condition and Help Needed</h3>
+
+             {% include "../claim/_condtion-help-needed.html"%}
+   <!-- Sparrow apply journey for Condition and Help Needed -->
+
+
+
+   <!-- Appointee -->
+   {% if data['appointee']%}
+  <h3 class="govuk-heading-m">Appointee</h3>
+
+               {% include "../claim/_appointee.html"%}
+     <!--  Appointee -->
+{% endif %}
+
+
+
+          <!-- Sparrow apply journey for How to contact -->
+         <h3 class="govuk-heading-m">How to contact</h3>
+
+
+                      {% include "../claim/_how-to-contact.html"%}
+            <!-- Sparrow apply journey for How to contact -->
+
+
+
+
+
+       <p></p>
+       <!-- Appointee -->
+       {% if data['benefits']%}
+      <h3 class="govuk-heading-m">Benefits</h3>
+
+                   {% include "../claim/_benefits.html"%}
+         <!--  Appointee -->
+    {% endif %}
+
+       <!-- Sparrow apply journey for Job details -->
+         <h3 class="govuk-heading-m">Employment details</h3>
+
+
+          {% include "../claim/_job-details.html"%}
+
+   <!-- Sparrow apply journey for Job details -->
+
+
+
+
+
+   <h3 class="govuk-heading-m">Specialist equipment</h3>
+
+
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you need equipment, adaptations or software to support you with your condition at work?
+</dt>
+<dd class="govuk-summary-list__value">
+Yes
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need equipment, adaptations or software to support you with your condition at work?</span>
+</a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you know what specialist equipment you need?
+</dt>
+<dd class="govuk-summary-list__value">
+Yes, I know what I need
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="/alpha-1h/equipment-adaptations-and-software/do-you-know-what-you-need">
+Change
+<span class="govuk-visually-hidden"> Do you know what specialist equipment you need?</span>
+</a>
+</dd>
+</div>
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+What type of specialist equipment do you need?
+</dt>
+<dd class="govuk-summary-list__value">
+jaws screen reader
+<br>
+
+<br>
+
+<br>
+</dd>
+<dd class="govuk-summary-list__actions">
+
+<a href="/alpha-1h/equipment-adaptations-and-software/summary-1">
+Change
+<span class="govuk-visually-hidden"> What type of specialist equipment do you need?</span>
+</a>
+
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+How will this equipment help you at work?
+</dt>
+<dd class="govuk-summary-list__value">
+
+
+
+I need Jaws to read out the content on a screen to me, as I'm unable to visual see the screen currently have to rely on others. I use a computer for 99% of my work.
+
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+<a href="/alpha-1h/equipment-adaptations-and-software/impact-of-not-having-it-1">
+Change
+<span class="govuk-visually-hidden"> How will this equipment help you at work?</span>
+</a>
+
+</dd>
+</div>
+</dl>
+
+   <h3 class="govuk-heading-m"> Mental health support</h3>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you need mental health support at work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need mental health support at work?</span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+
+<h3 class="govuk-heading-m">  Support workers</h3>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need a support worker at work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need a support worker at work? </span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+
+      <h2 class="govuk-heading-m">Travelling to and from work</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Does your condition mean that it's difficult for you to drive or get public transport to work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="/alpha-1h/travelling-to-and-from-work/screener">
+                      Change
+                      <span class="govuk-visually-hidden"> Does your condition mean that it's difficult for you to drive or get public transport to work?</span>
+                  </a>
+              </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  How do you get to work at the moment?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Taxi
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="/alpha-1h/travelling-to-and-from-work/how-do-you-get-to-work-at-the-moment">
+                      Change
+                      <span class="govuk-visually-hidden"> How do you get to work at the moment?</span>
+                  </a>
+              </dd>
+          </div>
+
+
+
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  What type of support do you need to travel to work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Taxi
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="/alpha-1h/travelling-to-and-from-work/what-support-do-you-need">
+                      Change
+                      <span class="govuk-visually-hidden"> What type of support do you need to travel to work?</span>
+                  </a>
+              </dd>
+          </div>
+
+
+
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  How will support to travel to and from work meet your needs?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  I can not drive myself independently anymore due my sight loss. No local public transports is available to take me to my workplace.
+
+I travel 2 times a day 5 days a week. Normal about 25 minutes drive.
+
+If I did not have this taxi I would not be able to get to the office and would be unable to do my job.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="/alpha-1h/travelling-to-and-from-work/taxi/work-how-would-it-meet-your-needs">
+                      Change
+                      <span class="govuk-visually-hidden"> How will support to travel to and from work meet your needs?</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  How many journeys will you need support for in a week?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  10  journeys per week
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="/alpha-1h/travelling-to-and-from-work/taxi/how-many-journeys">
+                      Change
+                      <span class="govuk-visually-hidden"> How many journeys will you need support for in a week?</span>
+                  </a>
+              </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Will your journeys to and from work be between your home and work addresses?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="alpha-1h/travelling-to-and-from-work/taxi/will-your-journeys-be-between-home-and-work">
+                      Change
+                      <span class="govuk-visually-hidden"> Will your journeys to and from work be between your home and work addresses?</span>
+                  </a>
+              </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Do you have quotes for the support you need to travel to work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Yes, I have quotes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="/alpha-1h/travelling-to-and-from-work/taxi/providing-quotes">
+                      Change
+                      <span class="govuk-visually-hidden"> Do you have quotes for the support you need to travel to work?</span>
+                  </a>
+              </dd>
+          </div>
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">First quote for taxi</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Taxi company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  ABC Taxies
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/alpha-1h/travelling-to-and-from-work/taxi/first-quote">
+                      Change<span class="govuk-visually-hidden"> Taxi company name</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Cost per journey
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  £ 10 per hour
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/alpha-1h/travelling-to-and-from-work/taxi/first-quote">
+                      Change<span class="govuk-visually-hidden"> Cost per hour</span>
+                  </a>
+              </dd>
+          </div>
+      </dl>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Second quote for taxi</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Taxi company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  123 Taxi
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/alpha-1h/travelling-to-and-from-work/taxi/second-quote">
+                      Change<span class="govuk-visually-hidden"> Taxi company name</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Cost per journey
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  £ 9.99 per hour
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/alpha-1h/travelling-to-and-from-work/taxi/second-quote">
+                      Change<span class="govuk-visually-hidden"> Cost per hour</span>
+                  </a>
+              </dd>
+          </div>
+      </dl>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Third quote for taxi</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Taxi company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Uber
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/alpha-1h/travelling-to-and-from-work/taxi/third-quote">
+                      Change<span class="govuk-visually-hidden"> Taxi company name</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Cost per journey
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  £ 15 per hour
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/alpha-1h/travelling-to-and-from-work/taxi/third-quote">
+                      Change<span class="govuk-visually-hidden"> Cost per hour</span>
+                  </a>
+              </dd>
+          </div>
+      </dl>
+
+
+
+<h3 class="govuk-heading-m">  Travelling during work</h3>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need support to travel to other places during your working day?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need support to travel to other places during your working day?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+<h3 class="govuk-heading-m">   Changes to your workplace</h3>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you would benefit from physical changes at your workplace?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you would benefit from physical changes at your workplace?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+<h3 class="govuk-heading-m">   Changes to your vehicle</h3>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need changes to the vehicle you use to travel to work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need changes to the vehicle you use to travel to work?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+<h3 class="govuk-heading-m">   Additional information </h3>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Is there anything else that you would like to tell us?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Is there anything else that you would like to tell us?  </span>
+</a>
+</dd>
+</div>
+</dl>

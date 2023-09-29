@@ -1,0 +1,37 @@
+{% extends "./atwis-case.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post" action="mark-as-complete?n={{ name }}">
+      <div class="govuk-form-group{{ ' govuk-form-group--error' if error }}">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Are you sure you have completely copied this application to DISC?</h1>
+          </legend>
+          <p>This will remove the application from ATWIS.</p>
+          {% if error %}
+          <span class="govuk-error-message">You must select an option</span>
+          {% endif %}
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="copied-yes" name="copied" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="copied-yes">Yes, remove this application from ATWIS.</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="copied-no" name="copied" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="copied-no">No, continue copying the application to DISC.</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+    </form>
+  </div>
+
+</div>
+{% endblock %}

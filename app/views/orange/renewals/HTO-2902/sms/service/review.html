@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers before sending your renewal application
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+  <a class="govuk-back-link" href="contact-details">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your renewal application</h1>
+
+      <form class="form" action="renewal-sent" method="post">
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Clinically extremely vulnerable
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxx
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> clinically extremely vulnerable status</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxx
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxx
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxx<br>
+              xxx<br>
+              xxx<br>
+              xxx xxx
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> home address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Unique reference number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxx
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> unique reference number</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxx
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              xxx
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> phone number</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+        <h2 class="govuk-heading-m">Declaration</h2>
+
+        <p class="govuk-body">By submitting this notification you are agreeing that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+         <li>the information in this renewal application is correct as far as you know</li>
+         <li>you’ll tell the Access to Work team about any changes to your condition or circumstances, for example if your place of work changes</li>
+       </ul>
+
+
+       <div class="govuk-warning-text">
+       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+       <strong class="govuk-warning-text__text">
+       <span class="govuk-warning-text__assistive">Warning</span>
+         It might be a criminal offence if you knowingly give false information or do not report anything that would affect your grant, for example if your condition improves or you change where you work.
+       </strong>
+      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Accept and send application</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        <h3 class="govuk-heading-s">Telephone</h3>
+        <p class="govuk-body">0800 169 0154</p>
+        <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+        <p class="govuk-body">Closed public holidays</p>
+        <h3 class="govuk-heading-s">Email</h3>
+        <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk"> dwponline.helpdesk@dwp.gov.uk</a></p>
+    </aside>
+
+      </div> </div>
+
+{% endblock %}

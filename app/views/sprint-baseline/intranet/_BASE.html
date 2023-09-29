@@ -1,0 +1,545 @@
+{% extends "layout_unbranded.html" %}
+{% set bodyClasses = "html not-front logged-in page-taxonomy page-taxonomy-term page-taxonomy-term- page-taxonomy-term-160490 panelized-page context-section" %}
+
+{% block head %}
+{{ super() }}
+﻿<STYLE type="text/css" media="all">
+@import url("/public/sass/intranet/system.base.css?q1abti");
+@import url("/public/sass/intranet/system.menus.css?q1abti");
+@import url("/public/sass/intranet/system.messages.css?q1abti");
+@import url("/public/sass/intranet/system.theme.css?q1abti");
+@import url("/public/sass/intranet/jquery.ui.core.css?q1abti");
+@import url("/public/sass/intranet/jquery.ui.theme.css?q1abti");
+@import url("/public/sass/intranet/jquery.ui.accordion.css?q1abti");
+@import url("/public/sass/intranet/opengraph-filter.css?q1abti");
+@import url("/public/sass/intranet/calendar_multiday.css?q1abti");
+@import url("/public/sass/intranet/comment.css?q1abti");
+@import url("/public/sass/intranet/date.css?q1abti");
+@import url("/public/sass/intranet/datepicker.1.7.css?q1abti");
+@import url("/public/sass/intranet/field.css?q1abti");
+@import url("/public/sass/intranet/field_hidden.css?q1abti");
+@import url("/public/sass/intranet/invotra-configuration-tracker.css?q1abti");
+@import url("/public/sass/intranet/invotra_entity_tracker.css?q1abti");
+@import url("/public/sass/intranet/invotra_opengraph.css?q1abti");
+@import url("/public/sass/intranet/node.css?q1abti");
+@import url("/public/sass/intranet/poll.css?q1abti");
+@import url("/public/sass/intranet/search.css?q1abti");
+@import url("/public/sass/intranet/user.css?q1abti");
+@import url("/public/sass/intranet/workflow_admin_ui.css?q1abti");
+@import url("/public/sass/intranet/extlink.css?q1abti");
+@import url("/public/sass/intranet/views.css?q1abti");
+@import url("/public/sass/intranet/ctools.css?q1abti");
+@import url("/public/sass/intranet/panels.css?q1abti");
+@import url("/public/sass/intranet/rate.css?q1abti");
+@import url("/public/sass/intranet/bryant.css?q1abti");
+@import url("/public/sass/intranet/onecol.css?q1abti");
+@import url("/public/sass/intranet/flag.css?q1abti");
+@import url("/public/sass/intranet/librefranklin-family.css?q1abti");
+@import url("/public/sass/intranet/font-awesome.min.css?q1abti");
+@import url("/public/sass/intranet/invotra-toolbar.css?q1abti");
+</STYLE>
+ <!--[if lte IE 9]>
+<style type="text/css" media="all">
+@import url("https://intranet.dwp.gov.uk/sites/all/modules/custom/invotra_toolbar/css/invotra-toolbar-ie.css?q1abti");
+</style>
+<![endif]-->
+<STYLE type="text/css" media="all">
+@import url("/public/sass/intranet/colors.css?q1abti");
+@import url("/public/sass/intranet/alpha-reset.css?q1abti");
+@import url("/public/sass/intranet/alpha-mobile.css?q1abti");
+@import url("/public/sass/intranet/alpha-alpha.css?q1abti");
+@import url("/public/sass/intranet/global.css?q1abti");
+@import url("/public/sass/intranet/global2.css?q1abti");
+@import url("/public/sass/intranet/global3.css?q1abti");
+@import url("/public/sass/intranet/global4.css?q1abti");
+@import url("/public/sass/intranet/global5.css?q1abti");
+@import url("/public/sass/intranet/global6.css?q1abti");
+@import url("/public/sass/intranet/global7.css?q1abti");
+@import url("/public/sass/intranet/global8.css?q1abti");
+@import url("/public/sass/intranet/responsive.css?q1abti");
+@import url("/public/sass/intranet/print.css?q1abti");
+@import url("/public/sass/intranet/font-sizes.css?q1abti");
+@import url("/public/sass/intranet/font-family.css?q1abti");
+@import url("/public/sass/intranet/custom-styles.css?q1abti");
+@import url("/public/sass/intranet/widget-styles.css?q1abti");
+</STYLE>
+
+<STYLE type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#mobile-bar #profile-mobile .profile-info{background-image:url(https://intranet.dwp.gov.uk/sites/default/files/dwp_%28310x174%29__00728F_mobile_background.png);background-size:contain;background-position:100% 0;}
+
+/*]]>*/-->
+</STYLE>
+ <!--[if lte IE 10]>
+<style type="text/css" media="all">
+@import url("/public/sass/intranet/ie.css?q1abti");
+</style>
+<![endif]--> <!--[if lte IE 8]>
+<style type="text/css" media="all">
+@import url("/public/sass/intranet/ie8.css?q1abti");
+</style>
+<![endif]--> <!--[if (lt IE 9)&(!IEMobile)]>
+<style type="text/css" media="all">
+@import url("/public/sass/intranet/invotra-base-alpha-default.css?q1abti");
+@import url("/public/sass/intranet/invotra-base-alpha-default-normal.css?q1abti");
+@import url("https://intranet.dwp.gov.uk/sites/all/themes/omega/alpha/css/grid/alpha_default/normal/alpha-default-normal-12.css?q1abti");
+@import url("https://intranet.dwp.gov.uk/sites/all/themes/omega/alpha/css/grid/alpha_default/normal/alpha-default-normal-16.css?q1abti");
+</style>
+<![endif]--> <!--[if gte IE 9]><!-->
+<STYLE type="text/css" media="all and (min-width: 960px) and (min-device-width: 960px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orient">
+@import url("/public/sass/intranet/invotra-base-alpha-default.css?q1abti");
+@import url("/public/sass/intranet/invotra-base-alpha-default-normal.css?q1abti");
+@import url("/public/sass/intranet/alpha-default-normal-12.css?q1abti");
+@import url("/public/sass/intranet/alpha-default-normal-16.css?q1abti");
+</STYLE>
+ <!--<![endif]-->
+<SCRIPT src="/public/sass/intranet/jquery.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery-extend-3.4.0.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.once.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/drupal.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.ui.core.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.ui.widget.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.cookie.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.form.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.ui.accordion.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra-accessibility.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/ajax.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_apps.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_entity_tracker.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_facets.mobile-sort-filter.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_input_filters.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_input_filters.ckeditor.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra-ipe-button.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_opengraph.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_panes.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_webform.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_media.ckeditor.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/group-accessibility.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/extlink.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.colorbox-min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/colorbox.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra-search.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/URI.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/progress.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/piwik.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.dotdotdot.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/flag.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_flag.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra-toolbar.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.menu-aim.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/moment.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.touchSwipe.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra-notifications.js" type="text/javascript"></SCRIPT>
+
+
+<SCRIPT src="/public/sass/intranet/invotra_lp.search_form.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_base_ie.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.autosize.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.uniform.min.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.multi-select.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/jquery.custom-scrollbar.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_base_functions.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra-base-aria.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_base_modal.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_base_resize.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_base_header.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_base.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/invotra_base_menu.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/bootstrap-alert.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT src="/public/sass/intranet/omega-mediaqueries.js" type="text/javascript"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"invotra_base","theme_token":"xjUX7SiRbpQ4EbshiEY4eCA08mabiqyLxRDnAAT-GVI","js":{"0":1,"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/ui\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/custom\/invotra_accessibility\/js\/invotra-accessibility.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/custom\/invotra_apps\/js\/invotra_apps.js":1,"sites\/all\/modules\/custom\/invotra_entity_tracker\/js\/invotra_entity_tracker.js":1,"sites\/all\/modules\/custom\/invotra_facets\/js\/invotra_facets.mobile-sort-filter.js":1,"sites\/all\/modules\/features\/invotra_input_filters\/js\/invotra_input_filters.js":1,"sites\/all\/modules\/features\/invotra_input_filters\/js\/invotra_input_filters.ckeditor.js":1,"sites\/all\/modules\/custom\/invotra_ipe\/js\/invotra-ipe-button.js":1,"sites\/all\/modules\/custom\/invotra_opengraph\/js\/invotra_opengraph.js":1,"sites\/all\/modules\/custom\/invotra_panes\/js\/invotra_panes.js":1,"sites\/all\/modules\/custom\/invotra_webform\/js\/invotra_webform.js":1,"sites\/all\/modules\/custom\/invotra_media\/js\/invotra_media.ckeditor.js":1,"sites\/all\/modules\/custom\/invotra_group\/js\/group-accessibility.js":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/custom\/invotra_search\/js\/invotra-search.js":1,"sites\/all\/libraries\/uri\/URI.min.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/piwik\/piwik.js":1,"sites\/all\/libraries\/jquery.dotdotdot\/src\/js\/jquery.dotdotdot.min.js":1,"sites\/all\/modules\/contrib\/flag\/theme\/flag.js":1,"sites\/all\/modules\/custom\/invotra_flag\/js\/invotra_flag.js":1,"sites\/all\/modules\/custom\/invotra_toolbar\/js\/invotra-toolbar.js":1,"sites\/all\/modules\/custom\/invotra_toolbar\/js\/jquery.menu-aim.js":1,"sites\/all\/libraries\/moment.js\/moment.min.js":1,"sites\/all\/libraries\/touch-swipe\/jquery.touchSwipe.min.js":1,"sites\/all\/modules\/custom\/invotra_notifications\/js\/invotra-notifications.js":1,"sites\/all\/modules\/custom\/invotra_subscriptions\/js\/invotra-subscriptions.js":1,"sites\/all\/modules\/custom\/invotra_lp\/js\/invotra_lp.search_form.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra_base_ie.js":1,"sites\/all\/themes\/invotra_base\/js\/jquery.autosize.js":1,"sites\/all\/themes\/invotra_base\/js\/jquery.uniform.min.js":1,"sites\/all\/themes\/invotra_base\/js\/jquery.multi-select.js":1,"sites\/all\/themes\/invotra_base\/js\/jquery.custom-scrollbar.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra_base_functions.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra-base-aria.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra_base_modal.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra_base_resize.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra_base_header.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra_base.js":1,"sites\/all\/themes\/invotra_base\/js\/invotra_base_menu.js":1,"sites\/all\/themes\/invotra_base\/js\/bootstrap-alert.js":1,"sites\/all\/themes\/omega\/omega\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/all\/modules\/contrib\/opengraph_filter\/theme\/opengraph-filter.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/field_hidden\/field_hidden.css":1,"sites\/all\/modules\/custom\/invotra_configuration_tracker\/css\/invotra-configuration-tracker.css":1,"sites\/all\/modules\/custom\/invotra_entity_tracker\/css\/invotra_entity_tracker.css":1,"sites\/all\/modules\/custom\/invotra_opengraph\/css\/invotra_opengraph.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/workflow\/workflow_admin_ui\/workflow_admin_ui.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/rate\/rate.css":1,"sites\/all\/modules\/custom\/invotra_panes\/plugins\/layouts\/bryant\/bryant.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/onecol\/onecol.css":1,"sites\/all\/modules\/contrib\/flag\/theme\/flag.css":1,"sites\/all\/libraries\/fonts\/librefranklin\/librefranklin-family.css":1,"sites\/all\/libraries\/fonts\/font-awesome\/css\/font-awesome.min.css":1,"sites\/all\/modules\/custom\/invotra_toolbar\/css\/invotra-toolbar.css":1,"sites\/all\/modules\/custom\/invotra_toolbar\/css\/invotra-toolbar-ie.css":1,"sites\/all\/themes\/invotra_base\/css\/colors.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-reset.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-mobile.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-alpha.css":1,"sites\/all\/themes\/invotra_base\/css\/global.css":1,"sites\/all\/themes\/invotra_base\/css\/global2.css":1,"sites\/all\/themes\/invotra_base\/css\/global3.css":1,"sites\/all\/themes\/invotra_base\/css\/global4.css":1,"sites\/all\/themes\/invotra_base\/css\/global5.css":1,"sites\/all\/themes\/invotra_base\/css\/global6.css":1,"sites\/all\/themes\/invotra_base\/css\/global7.css":1,"sites\/all\/themes\/invotra_base\/css\/global8.css":1,"sites\/all\/themes\/invotra_base\/css\/responsive.css":1,"sites\/all\/themes\/invotra_base\/css\/print.css":1,"public:\/\/\/branding\/font-sizes.css":1,"public:\/\/\/branding\/font-family.css":1,"public:\/\/\/branding\/custom-styles.css":1,"public:\/\/\/branding\/widget-styles.css":1,"0":1,"sites\/all\/themes\/invotra_base\/css\/ie.css":1,"sites\/all\/themes\/invotra_base\/css\/ie8.css":1,"ie::normal::sites\/all\/themes\/invotra_base\/css\/invotra-base-alpha-default.css":1,"ie::normal::sites\/all\/themes\/invotra_base\/css\/invotra-base-alpha-default-normal.css":1,"ie::normal::sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"ie::normal::sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-16.css":1,"normal::sites\/all\/themes\/invotra_base\/css\/invotra-base-alpha-default.css":1,"normal::sites\/all\/themes\/invotra_base\/css\/invotra-base-alpha-default-normal.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-16.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":false,"mobiledevicewidth":"480px"},"invotra_api_client":{"token":"WeMFHV9MPawPp5ZeSOBYDfqlwVI5nIS7NMaJuwPorg4","version":"0.3"},"urlIsAjaxTrusted":{"\/section\/operational-instructions\/customer-products\/access-work\/letters":true,"\/":true},"invotra_piwik_stats":{"site_section_hierarchy_tids":"122814-160485-160486-160490"},"extlink":{"extTarget":"_blank","extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)"},"piwik":{"trackMailto":1,"trackColorbox":1},"invotraLogo":"https:\/\/intranet.dwp.gov.uk\/sites\/default\/files\/DWP-Intranet-Logo-109x40_1.png","invotraMobileLogo":"https:\/\/intranet.dwp.gov.uk\/sites\/default\/files\/DWP-Intranet-Logo-BW-138x48-mobile_1.png","invotraFlagEntityType":"taxonomy_term","omega":{"layouts":{"primary":"normal","order":["normal"],"queries":{"normal":"all and (min-width: 960px) and (min-device-width: 960px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)"}}},"invotra":{"simple_edit":true},"invotraNotificationsInterval":60000,"tabNotifications":false,"desktopNotifications":false,"justChromeNotifications":true,"invotraSubscriptionsInterval":60000});
+//--><!]]>
+</SCRIPT>
+   <!--[if lt IE 9]><script src="/sites/all/themes/omega/omega/js/html5shiv.js"></script><![endif]-->
+
+{% endblock %}
+
+{% block main %}
+<DIV id="skip-link"><A class="element-invisible element-focusable" href="#">Skip
+to main content</A>   </DIV>
+<DIV class="page clearfix clean-header" id="page" style="background: rgb(233, 232, 232)">
+<DIV id="content-wrapper">
+<DIV class="region region-page-top" id="region-page-top">
+<DIV class="region-inner region-page-top-inner">
+<DIV id="invotra-toolbar-wrapper">
+<DIV id="invotra-toolbar">
+<DIV id="toolbar-skip-links">
+<DIV class="toolbar-skip-links-inner"><A class="element-invisible skip-to-navigation"
+href="#">
+                 Skip to main navigation                </A>
+      <A class="element-invisible" href="#">
+               Skip to main content              </A>           </DIV>
+<DIV id="toolbar-skip-tag"></DIV></DIV>
+<DIV id="toolbar-section">
+<DIV class="toolbar-section-inner "><!-- User profile menu -->
+<DIV id="invotra-profile-menu-wrapper">
+<DIV class="menu-with-search" id="invotra-profile-menu">
+<UL class="menu">
+  <LI class="first expanded people-amp-teams"><A class="people-amp-teams"
+  aria-haspopup="true" href="#">People
+  &amp; Teams<SPAN class="reserved-space" aria-hidden="true">People &amp;
+  Teams</SPAN> </A>
+  <UL class="menu">
+    <LI class="first leaf nth-1 find-people"><A class="find-people" href="#">Find
+    people<SPAN class="title">Locate a person in your
+    organisation</SPAN></A></LI>
+    <LI class="leaf  find-teams"><A class="find-teams" href="#">Find
+    teams<SPAN class="title">Locate a team within your
+    organisation</SPAN></A></LI>
+    <LI class="leaf nth-3 org-chart"><A class="org-chart" href="#">Org
+    chart<SPAN class="title">Navigate through your organisational
+    chart</SPAN></A></LI>
+    <LI class="last leaf nth-1 team-chart"><A class="team-chart" href="#">Team
+    chart<SPAN class="title">Navigate through your team
+  structure</SPAN></A></LI></UL></LI>
+  <LI class="collapsed content"><A class="content" href="#">Content<SPAN
+  class="reserved-space" aria-hidden="true">Content</SPAN> </A></LI>
+  <LI class="expanded locations"><A class="locations" aria-haspopup="true" href="#">Locations<SPAN
+  class="reserved-space" aria-hidden="true">Locations</SPAN> </A>
+  <UL class="menu">
+    <LI class="first last leaf nth-1 find-locations"><A class="find-locations"
+    href="#">Find
+    locations<SPAN class="title">Search for locations</SPAN></A></LI></UL></LI>
+  <LI class="last expanded productivity apps"><A class="productivity apps"
+  aria-haspopup="true" href="#">Apps<SPAN class="reserved-space"
+  aria-hidden="true">Apps</SPAN> </A>
+  <UL class="menu">
+    <LI class="first leaf nth-1 blogs"><A class="blogs" href="#">Blogs<SPAN
+    class="title">Discover and share blog entries</SPAN></A></LI>
+    <LI class="leaf  groups"><A class="groups" href="#">Groups<SPAN
+    class="title">Collaborate within groups</SPAN></A></LI>
+    <LI class="last leaf nth-3 message-wall"><A class="message-wall" href="#">Message
+    Wall<SPAN class="title">View and post
+messages</SPAN></A></LI></UL></LI></UL></DIV>
+<DIV class="block block-invotra-search-and-do block-search-lite block-invotra-search-and-do-search-lite odd block-without-title"
+id="search-block-toolbar">
+<DIV class="block-inner clearfix">
+<DIV class="content clearfix">
+<FORM class="autocomplete-search" id="invotra-search-lite-form" role="search"
+action="/section/operational-instructions/customer-products/access-work/letters"
+method="post" accept-charset="UTF-8">
+<DIV>
+<DIV class="form-item form-type-textfield form-item-keyword"><INPUT name="keyword" class="form-text" id="edit-keyword" aria-label="Enter a search term" type="text" size="60" maxlength="128" placeholder="Search" value="" autocomplete="off">
+</DIV><SPAN class="search-button"
+aria-hidden="true"></SPAN><INPUT name="op" class="form-submit" id="edit-submit" type="submit" value="Search"><INPUT name="form_build_id" type="hidden" value="form-APnwhvum0upzLr1BFe0a4lCuxgJ8pI-rbFj6OAE_mhY">
+<INPUT name="form_token" type="hidden" value="-3K6QvsdMkXzTLPpNVEGFmV30DxacsAvw6nHI7huHyI">
+<INPUT name="form_id" type="hidden" value="invotra_search_lite_form">
+<INPUT name="search_type" class="targeted-search-type" type="hidden" value="content">
+<DIV class="invotra-lp-search-suggestions form-wrapper" id="edit-suggestions"
+style="display: none;">
+<DIV class="item-list">
+<H3>Recent searches</H3>
+<UL class="invotra-lp-search-suggestion-recent">
+  <LI class="first"><A href="#">disc
+  </A></LI>
+  <LI><A href="#">disc
+  searchlight</A></LI>
+  <LI><A href="#">disc
+  interface</A></LI>
+  <LI><A href="#">disc</A></LI>
+  <LI class="last"><A href="#">glossary</A></LI></UL></DIV>
+<DIV class="item-list">
+<H3>Saved searches</H3>
+<UL class="invotra-lp-search-suggestion-saved invotra-lp-search-suggestion-no-text">
+  <LI class="first last">You have no saved searches</LI></UL></DIV></DIV>
+<DIV class="invotra-lp-search-search-for form-wrapper" id="edit-search-for"
+style="display: none;">
+<DIV class="item-list">
+<UL class="invotra-lp-search-suggestion-search">
+  <LI class="first"><A href="#"
+  data-search-type="people"><SPAN class="invotra-lp-search-text"></SPAN> in
+  <SPAN class="invotra-lp-search-title">People</SPAN> </A></LI>
+  <LI><A href="#"
+  data-search-type="teams"><SPAN class="invotra-lp-search-text"></SPAN> in <SPAN
+  class="invotra-lp-search-title">Teams</SPAN> </A></LI>
+  <LI><A href="#"
+  data-search-type="content"><SPAN class="invotra-lp-search-text"></SPAN> in
+  <SPAN class="invotra-lp-search-title">Content</SPAN> </A></LI>
+  <LI class="last"><A href="#"
+  data-search-type="locations"><SPAN class="invotra-lp-search-text"></SPAN> in
+  <SPAN class="invotra-lp-search-title">Locations</SPAN>
+</A></LI></UL></DIV></DIV></DIV></FORM></DIV></DIV></DIV></DIV>
+<DIV id="invotra-profile-toolbar-wrapper"><!-- Feeds -->
+
+<DIV id="toolbar-subscriptions">
+<UL class="menu">
+  <LI class="expanded"><A class="feeds-link" href="#">My
+  Feed<SPAN class="count" aria-label="new">NEW</SPAN></A>    </LI></UL></DIV><!-- Notifications -->
+
+<DIV id="toolbar-notifications">
+<UL class="menu">
+  <LI class="expanded" role="presentation"><A title="My notifications" class="notifications-link"
+  role="button" aria-expanded="false" aria-haspopup="true" aria-label="Open your notifications"
+  href="#"><SPAN
+  class="element-hidden">My notifications</SPAN>       </A>
+  <DIV class="notifications-wrapper"><SPAN class="ico"></SPAN>
+  <DIV class="clear"><A href="#">Clear
+  all</A>         </DIV>
+  <UL class="notifications menu" role="menu"></UL>
+  <DIV class="view-all-link"><A href="#">View
+  all</A>           </DIV></DIV></LI></UL></DIV><!-- User profile toolbar-->
+
+<DIV id="invotra-profile-toolbar">
+<UL class="menu" role="menu">
+  <LI class="expanded">
+  <DIV class="profile-info">
+  <DIV class="profile-info-name"><A class="profile-link" role="button"
+  aria-haspopup="true"
+  href="#"><SPAN
+  class="usrn">John Smith</SPAN></A><A class="profile-avatar" href="#"><SPAN
+  class="img"><IMG width="40" height="40" title="John Smith" role="link" alt="John Smith"
+  src="/public/sass/intranet/avatar.png"></SPAN></A>
+
+  <DIV class="ou-name">Health and Working Age</DIV></DIV></DIV>
+  <DIV class="profile-menu">
+  <UL class="menu">
+    <LI class="first last leaf profile-menu-my-feed profile-menu-tag"><A title=""
+    role="menuitem" href="#">My
+    feed</A></LI>
+    <LI class="profile-menu-my-apps profile-menu-tag tag">
+    <H3>My apps</H3></LI>
+    <LI class="first leaf"><A title="" role="menuitem" href="#">My
+    blogs</A></LI>
+    <LI class="leaf"><A title="" role="menuitem" href="#">My
+    groups</A></LI>
+    <LI class="last leaf"><A title="" role="menuitem" href="#">My
+    messages</A></LI>
+    <LI class="profile-menu-my-workplace profile-menu-tag tag">
+    <H3>My workplace</H3></LI>
+    <LI class="first leaf"><A title="" role="menuitem" href="#">Saved</A></LI>
+    <LI class="leaf"><A title="" role="menuitem" href="#">My
+    published content</A></LI>
+    <LI class="leaf"><A title="" role="menuitem" href="#">My
+    unpublished content</A></LI>
+    <LI class="leaf"><A title="" role="menuitem" href="#">My
+    comments</A></LI>
+    <LI class="leaf"><A title="" role="menuitem" href="#">Following</A></LI>
+    <LI class="last leaf"><A title="" role="menuitem" href="#">Rated</A></LI>
+    <LI class="profile-menu-advanced profile-menu-tag tag">
+    <H3>Advanced options</H3></LI>
+    <LI class="invotra-admin profile-menu-advanced"><A title="Access admin tools"
+    role="menuitem" href="#">Invotra
+    admin</A></LI></UL></DIV></LI></UL></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV><HEADER
+class="section section-header" id="section-header">
+<DIV class="zone-wrapper zone-menu-wrapper clearfix" id="zone-menu-wrapper">
+<DIV id="zone-menu-outer">
+<DIV class="zone zone-menu clearfix container-12" id="zone-menu">
+<DIV class="grid-12 region region-menu primary-menu-sticky quick-links" id="region-menu">
+<DIV class="region-inner region-menu-inner">
+<DIV id="menu-logo"><A href="/{{folder}}/" rel="home"><IMG
+title="" id="logo" alt="DWP Home" src="/public/sass/intranet/DWP-Intranet-Logo-109x40_1.png"></A></DIV>
+<DIV class="block block-panels-mini block-primary-menu block-panels-mini-primary-menu odd block-without-title"
+id="block-panels-mini-primary-menu">
+<DIV class="block-inner clearfix">
+<DIV class="content clearfix">
+<DIV class="panel-display panel-1col clearfix" id="mini-panel-primary_menu">
+<DIV class="panel-panel panel-col">
+<DIV>
+<DIV class="panel-pane pane-tree widget-branding-border widget-branding-font "
+id="block-system-main-menu">
+<DIV class="pane-content">
+<DIV class="item-list">
+<UL>
+  <LI class="working-in-dwp first"><A href="#">Working
+  in DWP</A></LI>
+  <LI class="active-parent operational-instructions"><A href="#">Operational
+  Instructions</A></LI>
+  <LI class="organisation last"><A href="#">Organisation</A></LI></UL></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class="block block-menu block-menu-quick-links block-menu-menu-quick-links even"
+id="block-menu-menu-quick-links">
+<UL role="menubar">
+  <LI class="first parent" role="presentation"><A class="block-title" id="quick-links-menu-button"
+  role="button" aria-haspopup="true" aria-controls="menu-quick-links" href="#">Useful
+  links</A>             <SPAN class="menu-icon"></SPAN>
+  <UL class="menu" id="menu-quick-links" role="menu" aria-labelledby="quick-links-menu-button">
+    <LI class="first leaf" role="none"><A title="A structured list of links reflecting the DWP Intranet navigation."
+    role="menuitem" href="#">DWP
+    Intranet site map</A></LI>
+    <LI class="leaf" role="none"><A title="" role="menuitem" href="#">DWP
+    Intranet Help</A></LI>
+    <LI class="leaf" role="none"><A title="" role="menuitem" href="#">People
+    Directory FAQs</A></LI>
+    <LI class="leaf" role="none"><A title="Most frequently asked questions about the new Intranet"
+    role="menuitem" href="#">New
+    Intranet FAQs</A></LI>
+    <LI class="leaf" role="none"><A title="Standards of conduct online." role="menuitem"
+    href="#">Intranet
+    Usage Standards</A></LI>
+    <LI class="leaf" role="none"><A title="Guidance on the DWP search engine"
+    role="menuitem" href="#">Using
+    the search engine</A></LI>
+    <LI class="leaf" role="none"><A title="" role="menuitem" href="#">How
+    to report a broken link/send page feedback</A></LI>
+    <LI class="last leaf" role="none"><A title="TechNow shortcut for IE users only"
+    role="menuitem"
+href="#">TechNow</A></LI></UL></LI></UL></DIV></DIV></DIV></DIV></DIV></DIV></HEADER><SECTION
+class="section section-content" id="section-content">
+<DIV class="zone-wrapper zone-content-wrapper clearfix" id="zone-content-wrapper">
+<DIV class="zone zone-content clearfix container-12" id="zone-content">
+<DIV class="grid-12" id="breadcrumb">
+<H2 class="element-invisible">You are here</H2>
+<DIV class="breadcrumb"><A href="#">Home</A> / <A
+href="#">Operational
+Instructions</A> / <A href="#">Customer
+Products</A> / <A href="#">Access
+to Work</A> / <SPAN class="last">{{title}}</SPAN></DIV></DIV>
+<DIV class="grid-12" id="entity-actions"><SPAN class="flag-wrapper flag-favourite-terms flag-favourite-terms-160490"><A
+title="" class="flag flag-action flag-link-toggle" role="button" aria-pressed="false"
+href="#"
+rel="nofollow">      Save      <SPAN class="flag-icon"></SPAN>     </A>
+<SPAN class="flag-throbber">&nbsp;</SPAN>     </SPAN> <A class="options-contextual-menu"
+href="#">Options</A></DIV>
+<DIV class="grid-12 region region-content" id="region-content">
+<DIV class="region-inner region-content-inner">
+<DIV id="main-content"></DIV>
+<H1 class="title" id="page-title">{{title}}</H1>
+<DIV class="block block-system block-main block-system-main odd block-without-title"
+id="block-system-main">
+<DIV class="block-inner clearfix">
+<DIV class="content clearfix">
+<DIV class="panel-display bryant clearfix ">
+<DIV class="bryant-container bryant-content-container clearfix">
+<DIV class="bryant-sidebar bryant-content-region panel-panel">
+<DIV class="bryant-sidebar-inner bryant-content-region-inner panel-panel-inner">
+<DIV class="panel-pane pane-root-navigation widget-branding-border widget-branding-font">
+<DIV class="pane-content">
+<DIV class="item-list">
+<UL class="invotra-root-navigation nav-tab-style">
+  <LI class="first last"><A href="#"><SPAN>Access
+  to Work</SPAN></A>
+  <DIV class="item-list">
+  <UL>
+    <LI class="first"><A href="#"><SPAN>Fact
+    and Process sheets</SPAN></A></LI>
+    <LI {% if title == "Forms" %}class="active" {% endif %}><A {% if title == "Forms" %}class="active"{% endif %} href="forms"><SPAN>Forms</SPAN></A></LI>
+    <LI class="{% if title == "Letters" %}active {% endif %}last"><A {% if title == "Letters" %}class="active"{% endif %} href="letters"><SPAN>Letters</SPAN></A></LI></UL></DIV></LI></UL></DIV></DIV></DIV></DIV></DIV>
+<DIV class="bryant-content bryant-content-region panel-panel">
+<DIV class="bryant-content-inner bryant-content-region-inner panel-panel-inner">
+<DIV class="panel-pane pane-simple-search-bar widget-branding-border widget-branding-font">
+<DIV class="pane-content">
+<FORM id="invotra-search-simple-search-bar-form-052ea737fa5694b4f2ac89c8fa29ee56"
+role="search" action="/section/operational-instructions/customer-products/access-work/letters"
+method="post" accept-charset="UTF-8">
+<DIV>
+<DIV
+class="form-item form-type-textfield form-item-keyword-simple-bar"><INPUT name="keyword_simple_bar" class="form-text" id="edit-keyword-simple-bar" type="text" size="60" maxlength="128" placeholder="">
+</DIV><SPAN class="search-button"
+aria-hidden="true"></SPAN><INPUT name="op" class="form-submit" id="edit-submit" type="submit" value="Search"><INPUT name="form_build_id" type="hidden" value="form-6W8bcrBBufTmc1uBf_cR8oE68H9jo9tQSSMoDNbWbEY">
+<INPUT name="form_token" type="hidden" value="pb-bP7gEBtuCHSIVf0ET36wpsaKYLmTbJlGgn-0KVLA">
+<INPUT name="form_id" type="hidden" value="invotra_search_simple_search_bar_form_052ea737fa5694b4f2ac89c8fa29ee56">
+</DIV></FORM></DIV></DIV>
+<DIV class="panel-separator"></DIV>
+<DIV class="panel-pane pane-entity-field-extra pane-taxonomy-term-description widget-branding-border widget-branding-font">
+<DIV class="pane-content">
+<DIV class="taxonomy-term-description">
+
+{% block intranet %}{% endblock %}
+
+</DIV></DIV></DIV></DIV></DIV></DIV></DIV><!-- /.bryant -->
+    </DIV></DIV></DIV></DIV></DIV></DIV></DIV></SECTION></DIV></DIV>
+<DIV class="footer-wrapper" id="footer-wrapper"><FOOTER class="section section-footer"
+id="section-footer">
+<DIV class="zone-wrapper zone-footer-wrapper clearfix" id="zone-footer-wrapper">
+<DIV class="zone zone-footer clearfix container-16" id="zone-footer">
+<DIV class="grid-12 region region-footer-first" id="region-footer-first">
+<DIV class="region-inner region-footer-first-inner">
+<DIV class="block block-block block-1 block-block-1 odd block-without-title" id="block-block-1">
+<DIV class="block-inner clearfix">
+<DIV class="content clearfix">
+<DIV class="zone zone-footer clearfix container-16">
+<DIV class="column-left" style="width: 314px; padding-bottom: 10px; padding-left: 5px;">
+<UL>
+  <LI
+  style="font-size: 22px; font-weight: bold; list-style-type: none;">Services
+  and information</LI></UL></DIV>
+<DIV class="column-left" style="width: 310px; padding-left: 5px; float: left;">
+<UL>
+  <LI style="list-style-type: none;"><A href="#">Accessibility</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Business
+  Continuity, Resilience<BR>and Emergency Response</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Contact
+  the Intranet Team</A></LI>
+  <LI style="list-style-type: none;"><A href="#"
+  target="_blank" rel="nofollow">DWP on GOV.UK</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Estates</A></LI>
+  <LI style="list-style-type: none;"><A href="#">FAQs</A></LI>
+  <LI style="list-style-type: none;"><A href="#" target="_blank"
+  rel="nofollow">Government Digital Service</A></LI></UL></DIV>
+<DIV class="column-center" style="width: 310px; padding-bottom: 55px; padding-left: 5px; float: left;">
+<UL>
+  <LI style="list-style-type: none;"><A href="#" target="_blank"
+  rel="nofollow">GOV.UK</A></LI>
+  <LI style="list-style-type: none;"><A href="#"
+  rel="nofollow">GOV.UK DWP Emergency Page</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Health
+  and Safety</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Intranet
+  Help</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Intranet
+  Site Map</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Security</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Security
+  Incident Referral</A></LI>
+  <LI style="list-style-type: none;"><A href="#">Usage
+  Standards</A></LI></UL></DIV>
+<DIV class="column-right" style="width: 310px; padding-bottom: 31px; padding-left: 5px; margin-top: -45px; float: left;">
+
+</DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV></FOOTER>
+<DIV id="invotra-toolbar-indicators"></DIV></DIV>
+<DIV class="region region-page-bottom" id="region-page-bottom">
+<DIV class="region-inner region-page-bottom-inner"></DIV></DIV>
+
+{% endblock %}

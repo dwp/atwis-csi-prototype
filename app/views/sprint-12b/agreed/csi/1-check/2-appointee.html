@@ -1,0 +1,212 @@
+{% if not link %}
+{% set link = "3" %}
+{% endif %}
+{% if appointeeChange %}{% set changeTitle = "Change" %}{% else %}{% set changeTitle = "Add" %}{% endif %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  changeTitle  + " appointee details for " + data['csi-info'][3]['firstname'] +  " " +  data['csi-info'][3]['surname']  + "" %}
+
+
+{% block csi %}
+{% if not appointeeChange and not contactCentre %}
+<p>Copy information for {{data['csi-info'][3]['firstname']}} {{data['csi-info'][3]['surname']}}’s appointee from Searchlight.</p>
+{% endif %}
+
+
+{% if not contactCentre %}
+
+{{ govukInput({
+  label: {
+    text: "Appointee name"
+  },
+  id: "appointee-name",
+  name: "appointee-name",
+  value: data['appointee-name'],
+  classes: "govuk-input--width-20"
+}) }}
+
+{% endif %}
+
+{% call govukFieldset({
+  legend: {
+    text: "",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: true
+  }
+}) %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    text: "",
+    classes: "text",
+    isPageHeading: true
+  }
+}) %}
+
+
+  {{ govukInput({
+    label: {
+      html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+    },
+    id: "address-line-1",
+    name: "appointee-address-line-1",
+    value: data['appointee-address-line-1'],
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+    },
+    id: "address-line-2",
+    name: "appointee-address-line-2",
+    value: data['appointee-address-line-2'],
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Town or city"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-town",
+    name: "appointee-address-town",
+    value: data['appointee-address-town'],
+    classes: "govuk-input--width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "County"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-county",
+    name: "appointee-address-county",
+    value: data['appointee-address-county'],
+    classes: "govuk-input--width-10"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Postcode"
+    },
+    classes: "govuk-input--width-10",
+    id: "address-postcode",
+    name: "appointee-address-postcode",
+    value: data['appointee-address-postcode'],
+    classes: "govuk-input--width-5"
+  }) }}
+
+{% endcall %}
+
+
+  {% set emailHtml %}
+  {{ govukInput({
+    id: "appointee-email",
+    name: "appointee-email",
+    value: data['appointee-email'],
+    type: "email",
+    classes: "govuk-!-width-two-thirds",
+    classes: "govuk-input--width-20",
+    label: {
+      text: "Email address"
+    },
+    attributes: {
+      spellcheck: "false"
+    }
+  }) }}
+  {% endset -%}
+
+  {% set telephoneHtml %}
+  {{ govukInput({
+    id: "appointee-contact-phone",
+    name: "appointee-contact-phone",
+    value: data['appointee-contact-phone'],
+    type: "tel",
+    classes: "govuk-!-width-two-thirds",
+    classes: "govuk-input--width-20",
+    label: {
+      text: "Telephone number"
+    }
+  }) }}
+  {% endset -%}
+
+  {% set textHtml %}
+  {{ govukInput({
+    id: "contact-by-text",
+    name: "appointee-contact-by-text",
+    value: data['appointee-contact-by-text'],
+    type: "tel",
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Mobile telephone number"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukCheckboxes({
+    name: "appointee-citizen",
+    fieldset: {
+      legend: {
+        text: "Contact details",
+        isPageHeading: true,
+        classes: "text"
+      }
+    },
+    hint: {
+      text: "Select all options that are available."
+    },
+    items: [
+      {
+        value: "email",
+        text: "Email",
+        checked: checked("['appointee-citizen']", "email"),
+        conditional: {
+          html: emailHtml
+        }
+      },
+      {
+        value: "phone",
+        text: "Telephone",
+        checked: checked("['appointee-citizen']", "phone"),
+        conditional: {
+          html: telephoneHtml
+        }
+      }
+    ]
+  }) }}
+
+
+
+{% endcall %}
+
+
+{% if contactCentre %}
+
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "appointee-details-contact-changed",
+  name: "appointee-details-contact-changed",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+{% elif appointeeChange %} <!-- trigger to set off event if we use this screen from the claim section -->
+{{ govukInput({
+  label: {
+    text: ""
+  },
+  id: "appointee-details-changed",
+  name: "appointee-details-changed",
+  value: "true",
+  classes: 'govuk-radios__conditional--hidden'
+}) }}
+
+{% endif %}
+
+{% endblock %}

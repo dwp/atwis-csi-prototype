@@ -1,0 +1,46 @@
+{% set link = "../claim" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "unhappy-phone-2" }] %}
+
+{% set title =  "[phone the appointee]" %}
+
+{% block csi %}
+
+
+<p>[Phone {{data['csi-info'][0]['name']}} on {{ data['csi-info'][0]['contact-by-phone'] }} to ask for more information.]</p>
+
+<p>[Use the spreadsheet to say what information you need]</p>
+
+<p>[Note that you are attempting to contact the applicant.]</p>
+
+<br>
+</br>
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+     name: "_contact",
+       fieldset: {
+         legend: {
+           text: "[Have you been able to contact the applicant?]",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes, I am talking to the applicant",
+           conditional: {
+             html: "<p>[you will continue to the claim tab to edit details]</p>"
+           }
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

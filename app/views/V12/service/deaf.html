@@ -1,0 +1,46 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+    <form id="form" method="post" action="paid-work">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        Do you need communication support because you are Deaf or hard of hearing?
+    </h1>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="deaf" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="deaf" type="radio" value="No" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- job_company_name -->
+
+    </form>
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+ <script>
+ $( "#terminal-1" ).click(function() {
+  $("form").attr("action", "paid-work")
+ });
+ $( "#terminal-2" ).click(function() {
+  $("form").attr("action", "condition")
+ });
+ </script>
+
+ {% endblock %}

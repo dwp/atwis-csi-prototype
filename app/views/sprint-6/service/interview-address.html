@@ -1,0 +1,57 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+		<form id="form" method="post" action="interview-length">
+
+		<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+				Your job interview
+		</h1>
+
+		<h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+				Where will your job interview take place?
+		</h2>
+
+    <fieldset class="govuk-fieldset">
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="company-address-line-one">
+            Building and street
+            <span class="govuk-visually-hidden">line 1 of 2</span>
+        </label>
+        <input class="govuk-input" id="company-address-line-one" name="company-address-line-one" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="company-address-line-two">
+            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+        </label>
+        <input class="govuk-input" id="company-address-line-two" name="company-address-line-two" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="company-address-town">
+            Town or city
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="company-address-town" name="company-address-town" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="company-address-county">
+            County
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="company-address-county" name="company-address-county" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="company-address-postcode">
+            Postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="company-address-postcode" name="company-address-postcode" type="text">
+        </div>
+
+    </fieldset>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- interview_date -->
+
+		</form>
+{% endblock %}

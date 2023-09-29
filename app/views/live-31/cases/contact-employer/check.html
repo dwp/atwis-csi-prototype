@@ -1,0 +1,280 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="{% if data['job-deatils-contact']=='They did not give permission'%}/live-31/cases/claim-not-eligible#your-tasks{% else %}/live-31/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case{% endif %}" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Task summary:  Get information from the employer</h2>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if not data['job-deatils-contact']=='They gave permission (apply)'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                      {% include  "./content/has-confirmed-whether-contact-employer.html" %}
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{ data['contact-employer'+ phase]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="index">
+              Update<span class="govuk-visually-hidden">     {% include  "./content/has-confirmed-whether-contact-employer.html" %}</span>
+              </a>
+            </dd>
+          </div>
+{% endif %}
+
+{% if data['job-deatils-contact']=='They gave permission' or data['job-deatils-contact']=='They gave permission (apply)'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                            {% include  "./content/have-you-contacted-employer.html" %}
+
+              </dt>
+              <dd class="govuk-summary-list__value">
+    {{ data['contact-employer'+ phase]}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-employment">
+                Update<span class="govuk-visually-hidden">    {% include  "./content/have-you-contacted-employer.html" %}</span>
+                </a>
+              </dd>
+            </div>
+{% endif %}
+
+
+
+
+{% if data['contact-employer'+ phase]=='Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+                  {% include  "./content/have-confirmed-job-details.html" %}
+
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{ data['employer-confirmed'+ phase]}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="index">
+    Update<span class="govuk-visually-hidden">            {% include  "./content/have-confirmed-job-details.html" %}</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+                  {% include  "./content/how-many-people-work.html" %}
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{ data['employer-size'+ phase]}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="index">
+    Update<span class="govuk-visually-hidden">      {% include  "./content/how-many-people-work.html" %}</span>
+    </a>
+  </dd>
+</div>
+{% if data['wpa']=='Yes'%}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+                  {% include  "./content/wpa.html" %}
+  </dt>
+  <dd class="govuk-summary-list__value">
+
+{{ data['employer-wpa-answer']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="index">
+    Update<span class="govuk-visually-hidden">      {% include  "./content/wpa.html" %}</span>
+    </a>
+  </dd>
+</div>
+
+
+
+
+{% endif %}
+{% if data['employer-size'+ phase]=='10 to 49 (small)' or data['employer-size'+ phase]=='1 to 9 (micro)'%}{% else %}
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                            {% include  "./content/agree-to-cost-share.html" %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+        {{ data['employer-cost-share'+ phase]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact-cost-share-agreement">
+              Update<span class="govuk-visually-hidden">      {% include  "./content/agree-to-cost-share.html" %}</span>
+              </a>
+            </dd>
+          </div>
+
+
+{% if data['employer-cost-share']=='No'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                            {% include  "./content/third-party-agreed.html" %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+        {{ data['third-party']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="third-party">
+              Update<span class="govuk-visually-hidden">        {% include  "./content/third-party-agreed.html" %}</span>
+              </a>
+            </dd>
+          </div>
+{% if data['third-party']=='Yes'%}
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+
+{% include  "./content/third-party-full-name.html" %}
+
+
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['third-party-name']}}
+</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="third-party-details#third-party-name">
+Update<span class="govuk-visually-hidden"> third party’s full name</span>
+</a>
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+
+Third party’s address
+
+
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['third-party-address-line-1']}}<br>
+{{data['third-party-address-line-2']}}{% if data['third-party-address-line-2']%}<br>{% endif %}
+{{data['third-party-address-town']}}{% if data['third-party-address-town']%}<br>{% endif %}
+{{data['third-party-address-county']}}{% if data['third-party-address-county']%}<br>{% endif %}
+{{data['third-party-address-postcode']}}
+</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="third-party-details#third-party-address-line-1">
+Update<span class="govuk-visually-hidden"> third party’s address</span>
+</a>
+</dd>
+</div>
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+
+
+Third party’s contact details
+
+
+
+</dt>
+<dd class="govuk-summary-list__value">
+{% for feature in data['third-party-contact'] %}
+<li>{{ feature }}</li>
+{% else %}
+<li>None </li>
+{% endfor %}
+</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="third-party-details#third-party-name">
+Update<span class="govuk-visually-hidden"> third party’s contact details</span>
+</a>
+</dd>
+</div>
+
+{% if 'email' in data['third-party-contact']%}
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Third party’s email
+
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['third-party-email']}}
+</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="third-party-telephone-email#third-party-email">
+Update<span class="govuk-visually-hidden"> third party’s contact details</span>
+</a>
+</dd>
+</div>
+{% endif %}
+
+{% if 'telephone' in data['third-party-contact']%}
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Third party’s telephone
+
+</dt>
+<dd class="govuk-summary-list__value">
+{{data['third-party-telephone']}}
+</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="third-party-telephone-email#third-party-telephone">
+Update<span class="govuk-visually-hidden"> third party’s contact details</span>
+</a>
+</dd>
+</div>
+{% endif %}
+
+{% endif %}
+
+
+
+
+{% endif %}
+{% endif %}
+{% endif %}
+
+
+        </dl>
+
+
+
+
+<!-- {% if data['job-deatils-contact']=='I have not spoken to them' %}
+       <div class="govuk-inset-text">
+       <p> You need to contact Dereck Smith. This will be added to your <strong>log contact with Dereck Smith</strong> task.  </p>
+
+       </div>
+{% endif %} -->
+
+<!-- {% if data['employer-cost-share']=='No, I have not spoken to the employer yet'%}
+        <div class="govuk-inset-text">
+        <p> You need to contact Dereck Smith to employer.  </p>
+
+        </div>
+{% endif %} -->
+
+          <input type="hidden" name="employment-contact" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="" value="">
+            Return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-26/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-26/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+What details need updating in SOP?
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+
+
+
+
+      <div class="govuk-form-group">
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sop-find-details-amend-1" name="sop-find-details-amend" type="radio" value="Add a new site code for an existing payee~sonya/claim-sonya#your-tasks" {{ checked("sop-find-details-amend", "Add a new site code for an existing payee") }}>
+          <label class="govuk-label govuk-radios__label" for="sop-find-details-amend-1">
+            Add new bank details for existing payee
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sop-find-details-amend-2" name="sop-find-details-amend" type="radio" value="Amend an existing payee~sonya/claim-sonya#your-tasks" {{ checked("sop-find-details-amend", "Amend an existing payee") }}>
+          <label class="govuk-label govuk-radios__label" for="sop-find-details-amend-2">
+            Amend an existing payee
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+    </div>
+    <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+     </div>
+   </div>
+
+
+      </main>
+      </div>
+
+
+
+
+
+
+
+{% endblock %}

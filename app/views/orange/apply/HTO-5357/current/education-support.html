@@ -1,0 +1,112 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+Education support
+{% endblock %}
+
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% if not hideback %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.go(-1)"
+}) }}
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="contact" method="post">
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="education-support-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Have you had any of these types of education support?
+      </h1>
+    </legend>
+    <div id="education-support-hint" class="govuk-hint">
+      This can be now, or in the past.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="education-support" name="education-support" type="checkbox" value="ehc-plan">
+        <label class="govuk-label govuk-checkboxes__label" for="education-support">
+        Education, Health and Care (EHC) Plan – England
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+        Personalised Learning Support Plan (PLSP) – Scotland
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+         Statement of Special Educational Need (SSEN) or Individual Development Plan   – Wales 
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+          None of these types of education support
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+        
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    
+  
+
+ <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        
+        <p class="govuk-body">You can contact us for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+    </ul>
+
+        <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm</p>
+    </aside>
+
+  </div> 
+
+  </div>
+
+{% endblock %}

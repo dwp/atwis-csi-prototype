@@ -1,0 +1,29 @@
+{% set link = "../../confirm/1" %}
+{% set interviewLink = "true" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Has the employer responded?" %}
+
+
+{% block csi %}
+
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+       idPrefix: "employer",
+       name: "employer",
+       fieldset: {
+      
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

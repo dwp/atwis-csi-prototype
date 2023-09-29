@@ -1,0 +1,101 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Check Searchlight</h2>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is there a record for Dereck Smith in Searchlight?
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+{{data['Searchligh']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="check-searchlight">
+                Change<span class="govuk-visually-hidden"> Is there a record for Dereck Smith in Searchlight?</span>
+              </a>
+            </dd>
+          </div>
+
+          {% if data['Searchligh']=='No'%}{% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+  Is Dereck Smith’s National Insurance number in Searchlight?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['found-nino']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="find-national-insurance-number">
+                Change<span class="govuk-visually-hidden"> Is Dereck Smith’s National Insurance number in Searchlight?</span>
+              </a>
+            </dd>
+          </div>
+
+  {% if data['found-nino']=='No'%}{% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+        Add Dereck Smith’s National Insurance number from Searchlight
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['national-insurance-number']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-national-insurance-number">
+                Change<span class="govuk-visually-hidden">   Add Dereck Smith’s National Insurance number from Searchlight</span>
+              </a>
+            </dd>
+          </div>
+
+
+{% endif %}
+          {% endif %}
+        </dl>
+
+
+
+
+
+
+{% if data['Searchligh']=='Yes and all the details match' and data['found-nino']=='Yes'%}{% else %}
+        <div class="govuk-inset-text">
+        <p>  This will be added to your 'Contact Dereck Smith' task.  </p>
+
+        </div>
+{% endif %}
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="" value="">
+            Return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

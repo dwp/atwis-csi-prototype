@@ -1,0 +1,36 @@
+{% set link = "3" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Send a confirmation text message" %}
+
+{% block csi %}
+
+<p>Open REACH and select the <strong>CSI confirmation</strong> template.</p>
+
+<p>Send the text message to 07192 838 482.</p>
+
+{{ govukRadios({
+    classes: "govuk-radios--inline",
+       idPrefix: "notifications",
+       name: "notifications",
+       fieldset: {
+         legend: {
+           text: "Have you sent the text message?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

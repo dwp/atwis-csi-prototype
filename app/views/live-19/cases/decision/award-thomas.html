@@ -1,0 +1,97 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+<form action="/live-19/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   {% include  "live-19/cases/decision/content/under-25.html" %}
+                 </h1>
+               </legend>
+
+
+               <table class="govuk-table">
+                                <caption class="govuk-table__caption govuk-table__caption--m">Summary</caption>
+                                <thead class="govuk-table__head">
+                                  <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Support type</th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Cost</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                  <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Support worker</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+    British Sign Language (BSL) interpreter </td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">
+    £16 per hour, total cost £12,960 </td>
+                                  </tr>
+
+                                  <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Support worker</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+  Note taker </td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">
+    £16 per hour, total cost £12,960 </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+
+
+
+
+                              <dl class="govuk-summary-list">
+                                                        <div class="govuk-summary-list__row">
+                                                        <dt class="govuk-summary-list__key">
+                                                        Total award
+                                                        </dt>
+                                                        <dd class="govuk-summary-list__value" style="text-align: right;">
+                                                      £24,960
+                                                        </dd>
+                                                        </div>
+
+
+                                                        </dl>
+<p>You have reviewed and approved these details. When you have confirmed the award summary, you will be able to send the award decision to Thomas King.</p>
+<p>If you have to make any changes to these details, you will need to return to the relevant task.</p>
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
+Confirm award summary
+           </button>
+<p><a href="/live-19/cases/thomas/cases/claim#business-case">I need to change some award details</a></p>
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

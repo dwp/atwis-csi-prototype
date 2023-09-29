@@ -1,0 +1,260 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  Access to Work prototypes: apply
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Apply prototypes</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to prototype home',
+    href: '/'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Navigation page for internal team use only. Not for development or usability sessions.
+  </strong>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+    <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-4668/index.html" class="govuk-link--no-visited-state">
+           HTO-4668: updated accessibility statement for 'new apply'<br><strong class="govuk-tag govuk-tag--blue">
+         Ready for dev
+        </strong>
+        </a>
+      </h2>
+      <p>To be copied across to new apply prototype when ready (team and training material versions).
+      </p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-5589/index.html" class="govuk-link--no-visited-state">
+           HTO-5589 and HTO-5588: Response times – 14 weeks to 12 weeks<br><strong class="govuk-tag govuk-tag--blue">
+         Ready for dev
+        </strong>
+        </a>
+      </h2>
+      <p>Service confirmation page and email – response times update from 14 weeks to 12 weeks. No changes to SMS.<br>
+      </p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-5357/index.html" class="govuk-link--no-visited-state">
+           HTO-5357: Iteration 3 of AtW Plus question<br><strong class="govuk-tag govuk-tag--yellow">
+         Draft
+        </strong>
+        </a>
+      </h2>
+      <p>Possible iteration of question to help reduce false positive responses for Access to Work Plus.<br>
+      </p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+   <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-4842/index.html" class="govuk-link--no-visited-state">
+           HTO-4842: Response times – 20 weeks to 14 weeks<br><strong class="govuk-tag govuk-tag--blue">
+         Ready for dev
+        </strong>
+        </a>
+      </h2>
+      <p>Service confirmation page and email – response times update from 20 weeks to 14 weeks. Response times sentence removed from SMS.<br>
+      </p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-4358/index.html" class="govuk-link--no-visited-state">
+           HTO-4358: Remove AtW Plus eligibility questions<br><strong class="govuk-tag govuk-tag--blue">
+         Ready for dev
+        </strong>
+        </a>
+      </h2>
+      <p>Remove AtW Plus eligibility questions on types of support and education support. <br>
+      </p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-4015/guidance/govuk-atw.html" class="govuk-link--no-visited-state">
+          HTO-4015: GOV.UK changes for new Apply journey<br><strong class="govuk-tag govuk-tag--red">
+        Experimental
+        </strong>
+        </a>
+      </h2>
+      <p>Updating content on GOV.UK guide to align with future Apply journey.</p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-4231/index.html" class="govuk-link--no-visited-state">
+          HTO-4231: Civil Service journey – update Remploy to Maximus<br><strong class="govuk-tag govuk-tag--green">
+         Live
+        </strong>
+        </a>
+      </h2>
+      <p>Updating link text and URLs for Remploy in Civil service journey outcome pages.<br>
+      <br>
+      Remploy (one of the MHSS providers) have changed their name to Maximus and have a new website. Old links are going to 404s.
+      </p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-4071/index.html" class="govuk-link--no-visited-state">
+         HTO-4071: AtW Plus (priority case) question iteration<br><strong class="govuk-tag govuk-tag--green">
+         Live
+        </strong>
+        </a>
+      </h2>
+      <p>Removing reference to AtW Plus. <br>
+      <br>
+      Adding eligibility criteria checboxes – to make it easier for users to answer question, based on information they have access to.
+      </p>
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+     <h2 class="govuk-heading-m">
+        <a href="/orange/apply/sla-changes/index.html" class="govuk-link--no-visited-state">
+          SLA changes: 12 weeks to 20 weeks<br><strong class="govuk-tag govuk-tag--green">
+         Live
+        </strong>
+        </a>
+      </h2>
+      <p>Changes to confirmation page, confirmation email and SMS.</p>
+  </h2>
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+     <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-3197/service/apply-cs-filtering1.html" class="govuk-link--no-visited-state">
+          HTO-3197: in-journey support content<br><strong class="govuk-tag govuk-tag--green">
+         Live
+        </strong>
+        </a>
+      </h2>
+      <p>Access to Work helpline details in column for live service. </p>
+  </h2>
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-2826/index.html" class="govuk-link--no-visited-state">
+          HTO-2826: Priority case question change <br><strong class="govuk-tag govuk-tag--green">
+         Live
+        </strong>
+        </a>
+      </h2>
+      <p>Access to Work Plus question added – replacing CEV, Kickstart and YPGS question.</p>
+  </h2>
+
+
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+ <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-2717/index.html" class="govuk-link--no-visited-state">
+          HTO-2717: GA cookie consent design and content<br><strong class="govuk-tag govuk-tag--green">
+         live
+        </strong>
+        </a>
+      </h2>
+      <p>Cookie consent for live apply service. </p>
+  </h2>
+
+
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+ <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-3065/index.html" class="govuk-link--no-visited-state">
+          HTO-3065: UR prototype for OGD iterations<br><strong class="govuk-tag govuk-tag--red">
+         Experimental
+        </strong>
+        </a>
+      </h2>
+      <p>UR version with iterations to hint text on some screens. </p>
+
+
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+ <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-2360-dev-ready/index.html" class="govuk-link--no-visited-state">
+          HTO-2360: dev ready prototype for OGD changes<br><strong class="govuk-tag govuk-tag--green">
+          Live
+        </strong>
+        </a>
+      </h2>
+      <p>Dev ready version for civil service filtering question added. </p>
+
+
+      <p>Affecting Application from 1 April 2022.</p>
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+     <h2 class="govuk-heading-m">
+        <a href="/orange/apply/HTO-2360/index.html" class="govuk-link--no-visited-state">
+          HTO-2360: UR prototype for OGD changes<br><strong class="govuk-tag govuk-tag--red">
+         Experimental
+        </strong>
+        </a>
+      </h2>
+      <p>UR version for civil service filtering question added. </p>
+
+
+      <p>Affecting Application from 1 April 2022.</p>
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

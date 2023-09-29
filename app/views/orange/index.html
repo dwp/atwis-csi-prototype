@@ -1,0 +1,78 @@
+{% extends "layout.html" %} {% set serviceName = "Access to Work live iterations prototypes" %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Access to Work live iterations prototype
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Team Orange prototypes</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    Navigation page for internal team use only. Not for development or usability sessions.
+  </strong>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+      <h2 class="govuk-heading-m">
+        <a href="/orange/prototype-nav/award-letter.html" class="govuk-link--no-visited-state">
+          Award letter templates for UR
+        </a>
+        <h2 class="govuk-heading-m">
+      <a href="/orange/renewals/index.html" class="govuk-link--no-visited-state">
+          Renewals service
+        </a>
+
+        <h2 class="govuk-heading-m">
+      <a href="/orange/apply/index.html" class="govuk-link--no-visited-state">
+         Apply service – live iterations
+        </a>
+
+        <h2 class="govuk-heading-m">
+      <a href="/orange/csi/index.html" class="govuk-link--no-visited-state">
+         CSI service
+        </a>
+
+        <h2 class="govuk-heading-m">
+      <a href="/orange/gov-form/index.html" class="govuk-link--no-visited-state">
+         GOV.UK Forms
+        </a>
+
+
+    </div>
+  </div>
+
+{% endblock %}

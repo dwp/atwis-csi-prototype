@@ -1,0 +1,61 @@
+{% if phase =="sonya"%}
+
+
+
+<ul class="app-task-list__items">
+
+  <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+  <a href="check-application/quotes/select" aria-describedby="job-status">
+   Choose quote: specialist equipment 2
+  </a>
+  </span>
+  {% if not data['chosen-quote-sae']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+  {% if data['chosen-quote-sae']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+   </li>
+
+   {% if not data['chosen-quote-sae']%}<li class="app-task-list__item">
+   <span class="app-task-list__task-name">
+
+   Specialist equipment details
+
+   </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+
+
+    </li>{% else %}
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="specialist-equipment" aria-describedby="job-status">
+Specialist equipment details
+</a>
+</span>
+{% if not data['element-decision'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if data['element-decision'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+ </li>{% endif %}
+
+
+{% else %}
+
+
+ <ul class="app-task-list__items">
+ <li class="app-task-list__item">
+ <span class="app-task-list__task-name">
+ <a href="specialist-equipment" aria-describedby="job-status">
+ Specialist equipment details
+ </a>
+ </span>
+ {% if not data['element-decision']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+ {% if data['element-decision']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
+
+  </li>{% endif %}
+<!-- <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+<a href="claim#your-tasks" aria-describedby="job-status">
+      Evidence for approval decision
+</a>
+  </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li> -->
+</ul>

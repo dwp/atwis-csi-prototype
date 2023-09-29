@@ -1,0 +1,226 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+   Does your condition make it harder for you to do your job?
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="help-with-travel">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <form class="form" action="job-status" method="post">
+
+  <div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  
+    <h1 class="govuk-fieldset__heading">
+      Does your condition make it harder for you to do your job?
+    </h1>
+  
+  </legend>
+  
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+    
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="f-jobHarder" name="jobHarder" type="radio" value="yes"  data-ga-question="Does your condition make it harder for you to do your job?" data-ga-answer="Yes" aria-controls="conditional-f-jobHarder" aria-expanded="false">
+          <label class="govuk-label govuk-radios__label" for="f-jobHarder">
+        Yes
+      </label>
+          
+        </div>
+        
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-jobHarder">
+            
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-fieldset__legend--s supplementary-question" for="f-harderHow">
+    Tell us how it is harder
+  </label>
+
+
+  <textarea class="govuk-textarea govuk-!-width-three-quarters" id="f-harderHow" name="harderHow" rows="5"></textarea>
+</div>
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s supplementary-question">
+  
+    Do you do anything to get around these problems at the moment?
+  
+  </legend>
+  
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+    
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="f-getAroundProblems" name="getAroundProblems" type="radio" value="yes" data-ga-question="Do you do anything to get around these problems at the moment?" data-ga-answer="Yes" aria-controls="conditional-f-getAroundProblems" aria-expanded="false">
+          <label class="govuk-label govuk-radios__label" for="f-getAroundProblems">
+        Yes
+      </label>
+          
+        </div>
+        
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-getAroundProblems">
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-fieldset__legend--s" for="f-problemSolutions">
+    Tell us what you do
+  </label>
+
+
+  <textarea class="govuk-textarea govuk-!-width-three-quarters" id="f-problemSolutions" name="problemSolutions" rows="5"></textarea>
+</div>
+
+
+          </div>
+    
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="getAroundProblems-2" name="getAroundProblems" type="radio" value="no" data-ga-question="Do you do anything to get around these problems at the moment?" data-ga-answer="No">
+          <label class="govuk-label govuk-radios__label" for="getAroundProblems-2">
+        No
+      </label>
+          
+        </div>
+        
+
+    
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+  
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s supplementary-question">
+  
+    Do you know what you need to help you with this?
+  
+  </legend>
+  
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+    
+
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="f-knowWhatWouldHelp" name="knowWhatWouldHelp" type="radio" value="yes" data-ga-question="Do you know what you need to help you with this?" data-ga-answer="Yes" aria-controls="conditional-f-knowWhatWouldHelp" aria-expanded="false">
+          <label class="govuk-label govuk-radios__label" for="f-knowWhatWouldHelp">
+        Yes
+      </label>
+          
+        </div>
+        
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-knowWhatWouldHelp">
+            
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-fieldset__legend--s supplementary-question" for="f-whatWouldHelp">
+    Tell us what would help you
+  </label>
+
+
+  <textarea class="govuk-textarea govuk-!-width-three-quarters" id="f-whatWouldHelp" name="whatWouldHelp" rows="5"></textarea>
+</div>
+
+
+          </div>
+
+        
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="knowWhatWouldHelp-2" name="knowWhatWouldHelp" type="radio" value="no"  data-ga-question="Do you know what you need to help you with this?" data-ga-answer="No">
+          <label class="govuk-label govuk-radios__label" for="knowWhatWouldHelp-2">
+        No
+      </label>
+          
+        </div>
+
+    
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+          </div>
+
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="jobHarder-2" name="jobHarder" type="radio" value="no" data-ga-question="Does your condition make it harder for you to do your job?" data-ga-answer="No">
+          <label class="govuk-label govuk-radios__label" for="jobHarder-2">
+        No
+      </label>
+          
+        </div>
+    
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+        <h3 class="govuk-heading-s">Telephone</h3>
+        <p class="govuk-body">0800 169 0154</p>
+        <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+        <p class="govuk-body">Closed public holidays</p>
+        <h3 class="govuk-heading-s">Email</h3>
+        <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk"> dwponline.helpdesk@dwp.gov.uk</a></p>
+    </aside>
+
+      </div> </div>
+{% endblock %}

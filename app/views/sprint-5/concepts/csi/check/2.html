@@ -1,0 +1,46 @@
+{% set link = "3" %}
+{% set personalDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "2-unhappy"}] %}
+
+{% block csi %}
+
+<h1 class="govuk-heading-xl">Check personal details</h1>
+
+<p>Use Searchlight to check if these details match.</p>
+
+
+
+{% include folder + "/" + subfolder + "/csi/_CLAIMDETAILS.html" %}
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       name: "personal",
+       fieldset: {
+         legend: {
+           text: "Do these details match?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+
+         }
+       ]
+     }) }}
+
+
+
+{% endblock %}

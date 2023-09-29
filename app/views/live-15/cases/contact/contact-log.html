@@ -1,0 +1,154 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+{% if not totalcontact %}
+  {% set totalcontact = 0 %}
+  {% endif %}
+
+
+
+  {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+   {% set contactindex = i %}
+    {% if data['_do_'+ contactindex]%}
+    {% set totalcontact = totalcontact + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+
+
+  <form action="/live-15/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+            You have added {{totalcontact}} contact
+              </h1>
+            </legend>
+          </fieldset>
+
+
+          {% if data['clear']=='No' %}{% else %}
+            {% include  "live-15/claim/notification-contact.html" %}{% endif %}
+
+
+            <!-- <p>Best times to contact Dereck Smith:</p>
+                <p>Between 8:30 am and 6pm Monday to Saturday. </p> -->
+
+<div class="govuk-form-group">
+  <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+
+
+
+{% for i in [1,2,3,4,5] -%}
+{% set contactindex = i  %}
+{% if data['_do_'+ contactindex] %}
+
+    <div class="hmrc-list-with-actions__item">
+      <dt class="hmrc-list-with-actions__name">
+      {{data['_do_'+ contactindex]}}
+      </dt>
+      <dt class="hmrc-list-with-actions__name">
+
+         {{ data['contact-date-day-'+ contactindex] }}
+     {% if (data['contact-date-month-'+ contactindex] =='01') or (data['contact-date-month-'+ contactindex] =='1') %} January {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='02') or (data['contact-date-month-'+ contactindex] =='2') %} February  {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='03') or (data['contact-date-month-'+ contactindex] =='3') %} March {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='04') or (data['contact-date-month-'+ contactindex] =='4') %} April {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='05') or (data['contact-date-month-'+ contactindex] =='5') %} May {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='06') or (data['contact-date-month-'+ contactindex] =='6') %} June {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='07') or (data['contact-date-month-'+ contactindex] =='7') %} July {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='08') or (data['contact-date-month-'+ contactindex] =='8') %} August {% endif%}
+     {% if (data['contact-date-month-'+ contactindex] =='09') or (data['contact-date-month-'+ contactindex] =='9') %} September {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='10' %} October {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='11'%} November {% endif%}
+     {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
+{{ data['contact-date-year-'+ contactindex] }}
+
+{{data['contact-time-'+ contactindex ] | lower}}
+      </dt>
+      <div class="hmrc-list-with-actions__actions">
+        <dd class="hmrc-list-with-actions__action">
+          <a class="govuk-link" href="{% if data['_do_'+ contactindex]=='Email'%}/live-15/cases/contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone'%}/live-15/cases/contact/{{contactindex}}/phone-log{% endif %}">
+            <span aria-hidden="true">View </span>
+            <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
+          </a>
+        </dd>
+      </div>
+    </div>
+
+{% endif %}
+{%- endfor %}
+
+
+  </dl>
+
+
+</div>
+<form method="post" novalidate action="">
+  <!-- <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
+        Do you need to log another contact now?
+      </legend>
+      <div id="add-another-hint" class="govuk-hint">
+
+      </div>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="
+          Yes~/live-15/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact">
+          <label class="govuk-label govuk-radios__label" for="add-another">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No~/live-15/cases/claim#your-tasks">
+          <label class="govuk-label govuk-radios__label" for="add-another-2">
+            No
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+  </div> -->
+
+  <button class="govuk-button" data-module="govuk-button">
+    Add another contact
+  </button>
+</form>
+
+
+
+
+
+          <p><a href="/live-15/cases/claim#your-tasks" class="govuk-link govuk-link--no-visited-state">Return to your tasks tab</a></p>
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

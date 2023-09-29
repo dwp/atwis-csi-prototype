@@ -1,0 +1,71 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    {% include  "./content/has-confirmed-whether-contact-employer.html" %}
+              </legend>
+
+              {% if  data['job-deatils-contact']=='They gave permission'%}{% else %}
+                  <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">Warning</span>
+              You must contact Dereck Smith for permission for Access to Work to communicate with their employer.
+              </strong>
+              </div>
+              {% endif %}
+              <div class="govuk-radios " data-module="govuk-radios">
+                <div class="govuk-radios__item govuk-radios--inline">
+                  <input class="govuk-radios__input" id="job-deatils-contact" name="job-deatils-contact" type="radio" value="They gave permission~/future/cases/contact-employer/contact-employment" {{ checked("job-deatils-contact", "They gave permission") }}>
+                  <label class="govuk-label govuk-radios__label" for="job-deatils-contact">
+                    They gave permission
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="job-deatils-contact-2" name="job-deatils-contact" type="radio" value="They did not give permission~/future/cases/contact-employer/unhappy-cost-share" {{ checked("job-deatils-contact", "They did not give permission") }}>
+                  <label class="govuk-label govuk-radios__label" for="job-deatils-contact-2">
+                    They did not give permission
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="job-deatils-contact-3" name="job-deatils-contact" type="radio" value="I have not spoken to them~/future/cases/contact-employer/check" {{ checked("job-deatils-contact", "I have not spoken to them") }}>
+                  <label class="govuk-label govuk-radios__label" for="job-deatils-contact-3">
+                I have not contacted 
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+    </div>
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

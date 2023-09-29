@@ -1,0 +1,28 @@
+{% extends folder + "/_BASE.html" %}
+
+{% set hideHelp = true  %}
+{% set backHidden = true %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+
+
+{% block service %}
+
+
+					<div class="govuk-panel govuk-panel--confirmation">
+						<h1 class="govuk-panel__title">
+							Application sent
+						</h1>
+						<h2 class="govuk-!-font-size-24">
+							The Access to Work team is now handling your application. Your reference is 5ZN0Z7
+						</h2>
+					</div>
+<br>
+					<h2 class="govuk-heading-m">What happens next</h2>
+					<div class="govuk-text govuk-!-margin-bottom-2">
+<p>An adviser will contact you within 2 working days telling you the decision about your application. If we agree to pay for your BSL interpreter or support worker, we will tell you what to do next.</p>
+            <p><a href="#" class="govuk-link">What did you think of this service?</a></p>
+          </div>
+{% endblock %}

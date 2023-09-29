@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+    Declaration
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Declaration</h1>
+
+      <form class="form" action="application-received" method="post">
+
+      <p class="govuk-body">
+        By sending this application you agree that:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the information in this application is correct as far as you know</li>
+        <li>you'll tell the Access to Work unit about any changes to your condition or circumstances, for example, if your place of work changes</li>
+        <li>you agree to the <a class="govuk-link" href="#">email terms</a></li>
+      </ul>
+
+
+        <button class="govuk-button" data-module="govuk-button">I agree - send my application</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+
+        <p class="govuk-body">You can contact us for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+    </ul>
+
+        <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm</p>
+    </aside>
+
+    </div>
+
+  </div>
+
+{% endblock %}

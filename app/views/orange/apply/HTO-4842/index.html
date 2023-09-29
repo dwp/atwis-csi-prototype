@@ -1,0 +1,91 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-4842 – Apply – Access to Work prototypes
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Apply prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to apply scenarios',
+    href: '/apply/index'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-4842: Response times change – 20 weeks to 14 weeks</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+     <p>
+        <a href="./application-received" class="govuk-link--no-visited-state">
+     Confirmation page - updated
+
+        </a>
+      <p>
+      <p>Last page of service with updated content.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+   <p>
+        <a href="./email" class="govuk-link--no-visited-state">
+       Confirmation email - updated </a>
+      <p>
+      <p>Confirmation email with updated content.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+       <p>
+        <a href="./sms" class="govuk-link--no-visited-state">
+       Confirmation SMS - updated
+
+        </a>
+      <p>
+      <p>Confirmation email with updated content.</p>
+      <p><strong>Please note:</strong> this is the SMS that applicants receive if they have stated in their application that they are already working. Applicants that have not started their job yet receive a different message.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

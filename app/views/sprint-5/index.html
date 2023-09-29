@@ -1,0 +1,112 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+          Sprint 5
+        <span class="govuk-caption-xl">Apply and ‘happy path’ amends, ’unhappy path’ concepts</span>
+
+{{ govukDetails({
+          summaryText: "Notes on this sprint",
+          html: '
+          <p>This sprint we:</p>
+
+          <ul class="govuk-list  govuk-list--bullet">
+              <li>tweaked the citizen-facing application to guide people out early who don’t have the support worker costs. We hope that this will result in fewer applications saying “don’t know” for support worker costs</li>
+              <li>added changes based on the testing in Harrow for sprint 4, such as detailed timeline, a more detailed searchlight journey, and refined content</li>
+              <li>played with vision ideas for the unhappy path, such as identifying individual fields that needed more information</li>
+<li>Added the add appointee journey to continue</li>
+          </ul>'
+
+                  }) }}
+
+
+
+
+  <h3 class="govuk-heading-m">CSI apply full journey</h3>
+   <br>
+  <ul class="govuk-list">
+      <li><a class="govuk-link" href="/{{folder}}/sprint-baseline/service/apply">CSI apply journey</a></li>
+  </ul>
+  <ul class="govuk-list govuk-list--bullet">
+    <h3 class="govuk-heading-s">Edits</h3>
+
+  <li><a class="govuk-link" href="/{{folder}}/sprint-baseline/service/have-total-cost">Interpreter cost</a>, <a class="govuk-link" href="/{{folder}}/sprint-baseline/service/have-total-cost-no">Kickout page</a>, <a class="govuk-link" href="/{{folder}}/sprint-baseline/service/total-cost">Support cost</a></li>
+
+</ul>
+
+<h3 class="govuk-heading-m">Agent journey: new application</h3>
+
+<ul class="govuk-list">
+    <li><a class="govuk-link" href="/{{folder}}/concepts/your-cases">Your cases</a></li>
+          <li><a class="govuk-link" href="/{{folder}}/concepts/csi/index">Your tasks</a> and  <a class="govuk-link" href="/{{folder}}/concepts/csi/claim">claim</a>
+      <ul class="govuk-list govuk-list--bullet">
+<li><a class="govuk-link" href="/{{folder}}/concepts/csi/check/0">Check on searchlight</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/check/0-unhappy">holder unhappy path</a> - proposed jump to company details as it's not possible to check other details</li>
+      <li> <a class="govuk-link" href="/{{folder}}/concepts/csi/check/1">check for appointee</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/check/appointee">add appointee details</a></li>
+      <li>Check <a class="govuk-link" href="/{{folder}}/concepts/csi/check/2">personal details</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/check/2-unhappy">personal details unhappy path</a> </li>
+      <li><a class="govuk-link" href="/{{folder}}/concepts/csi/check/3">company details</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/check/3-unhappy">company details unhappy path</a> </li>
+      <li><a class="govuk-link" href="/{{folder}}/concepts/csi/check/4">interview details</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/check/4-unhappy">interview unhappy path</a> </li>
+
+  <li>Unhappy path <a class="govuk-link" href="/{{folder}}/concepts/csi/fix/index">more information needed</a></li>
+          <li><a class="govuk-link" href="/{{folder}}/concepts/csi/send/1">Send email</a>, <a class="govuk-link" href="/{{folder}}/concepts/csi/send/2">copy claim details</a>, <a class="govuk-link" href="/{{folder}}/concepts/csi/send/3">create cover letter</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/send/4">print and send</a> (no unhappy paths)</li>
+</ul></li>
+      <li><a class="govuk-link" href="/{{folder}}/concepts/your-cases-waiting">Your cases (waiting)</a>, <a class="govuk-link" href="/{{folder}}/concepts/csi/index-waiting">case index (waiting)</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/claim-waiting">claim (waiting)</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Agent journey: same-day application only</h3>
+
+      <ul class="govuk-list">
+          <li><a class="govuk-link" href="/{{folder}}/concepts/your-cases-same-day">Your cases (same day)</a></li>
+                <li><a class="govuk-link" href="/{{folder}}/concepts/csi/index-same-day">Your tasks (same day)</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/claim-same-day">claim (same day)</a></li>
+            </ul>
+
+      <h3 class="govuk-heading-m">Agent journey: after interview</h3>
+
+      <ul class="govuk-list">
+      <li><a class="govuk-link" href="/{{folder}}/concepts/your-cases-interview">Your cases</a></li>
+      <li><a class="govuk-link" href="/{{folder}}/concepts/csi/index-interview">Your tasks</a>
+      <ul class="govuk-list govuk-list--bullet">
+            <li><a class="govuk-link" href="/{{folder}}/concepts/csi/contact/index">Contact employer</a></li>
+              <li>Email:
+      <a class="govuk-link" href="/{{folder}}/concepts/csi/contact/email/1">Send email</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/contact/email/1">success</a>
+      </li>
+        <li>Phone:
+      <a class="govuk-link" href="/{{folder}}/concepts/csi/contact/email/1">Contact employer</a>
+      </li>
+
+      <li>Update:<a class="govuk-link" href="/{{folder}}/concepts/csi/contact/update/1">Contact update</a>
+      </li>
+
+              <li><a class="govuk-link" href="/{{folder}}/concepts/csi/confirm/1">Confirm interview took place</a> </li>
+              <li><a class="govuk-link" href="/{{folder}}/concepts/csi/confirm/complete">Tasks complete</a></li>
+      </ul></li>
+      <li><a class="govuk-link" href="/{{folder}}/concepts/your-cases-empty">Your cases (empty)</a></li>
+
+      </ul>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

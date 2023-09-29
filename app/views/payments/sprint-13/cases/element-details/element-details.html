@@ -1,0 +1,140 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-13/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Check element amount
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+<br>
+                <table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header app-custom-class"></th>
+                      <th scope="col" class="govuk-table__header app-custom-class">Claim</th>
+                      <th scope="col" class="govuk-table__header app-custom-class">Grant award</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Claim elements</th>
+                      <td class="govuk-table__cell">Specialist equipment</td>
+                      <td class="govuk-table__cell">Specialist equipment</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Description</th>
+                      <td class="govuk-table__cell">JAWS, Job Access With Speech </td>
+                      <td class="govuk-table__cell">Jaws screen reader</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Cost</th>
+                      <td class="govuk-table__cell">£499</td>
+                      <td class="govuk-table__cell">£499</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <br>
+
+
+
+
+
+
+
+
+  <!-- <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-yes" name="grant-match-claim-yes" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-1">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="grant-match-claim-no" name="grant-match-claim-no" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="grant-match-claim-2">
+        No
+      </label> -->
+
+      <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 class="govuk-heading-m">
+          Does the claim match the grant award?
+        </h2>
+      </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="yes~claim#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+              <!-- <input class="govuk-radios__input" id="found-nino" name="found-nino" type="radio" value="Yes~./add-national-insurance-number" {{ checked("found-nino", "Yes") }}> -->
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~claim#your-tasks" {{ checked("grant-matches-claim", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+                No
+              </label>
+            </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

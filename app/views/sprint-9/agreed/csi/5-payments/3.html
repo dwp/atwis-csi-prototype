@@ -1,0 +1,21 @@
+{% set link = "4" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "Find the payee" %}
+
+
+{% block csi %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Postcode"
+  },
+  classes: "govuk-input--width-10",
+  id: "payee-search",
+  name: "payee-search"
+}) }}
+
+{% endblock %}

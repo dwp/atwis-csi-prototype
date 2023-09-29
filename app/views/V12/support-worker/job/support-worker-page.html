@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Support worker
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+              <form id="form" method="post" action="../contact-info/talk-phone">
+
+                <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                              Ask your BSL interpreter or support worker how much it will cost
+                            </h1>
+                          </legend>
+                          <p class="govuk-body">Ask the person who will help you to communicate at the interview what
+                          their total cost will be. Ask them to include:</p>
+
+                                <ul class="govuk-list govuk-list--bullet">
+                                  <li>their travel costs</li>
+                                  <li>administrative costs</li>
+                                  <li>VAT</li>
+                                </ul>
+
+                              <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
+                        </fieldset>
+                </div>
+
+                <details class="govuk-details" data-module="govuk-details">
+                          <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                              I don't know the total cost
+                            </span>
+                          </summary>
+                          <div class="govuk-details__text">
+                            You cannot make an application until you know how much your interpreter or support worker will cost.
+                            Ask them to tell you their total cost before sending your application.
+                          </div>
+                </details>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+        </div>
+      </div>
+    </main>
+	</div>
+
+	{% endblock %}

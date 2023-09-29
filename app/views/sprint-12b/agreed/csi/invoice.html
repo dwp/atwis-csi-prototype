@@ -1,0 +1,85 @@
+{% set page = "invoice" %}
+{% set claim = "true" %}
+
+{% if not phase %}
+{% set payments = 'true' %}
+{% set phase = "payment" %}
+{% endif %}
+{% set title = "Invoice details" %}
+
+{% if not contactCentre %}
+{% set contactCentre = "" %}
+{% endif %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIBASE.html" %}
+
+{% block csi %}
+
+{% if phase == "payment-adviser" %}
+{% set contactCentre = true %}
+{% endif %}
+
+<br>
+{% if not contactCentre and not payment %}
+<p class="govuk-body">You can change invoice details here after you have added it in the tasks.</p>
+{% else %}
+<!-- holder if needed for read only information -->
+{% endif %}
+
+
+{% macro defItem(key='', value='', money='', hideChange='') %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      {{key}}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {%if money %}
+      <p>{{value | toMoney }}</p>
+      {% else %}
+      <p>{{value}}</p>
+      {% endif %}
+    </dd>
+
+<dd class="govuk-summary-list__actions">
+{% if value and not hideChange and not contactCentre %}
+  <a class="govuk-link" href="invoice-details-change">
+    Change
+    <span class="govuk-visually-hidden"></span>
+  </a>
+  {% endif %}
+
+</dd>
+
+
+  </div>
+
+
+
+
+{% endmacro %}
+
+{% set dwpRef = "" %}
+{% if data['invoice-complete'] %}
+
+{% set dwpRef = "RSINV" +  data['invoice-reference'] | default(123456) | safe %}
+
+{% endif %}
+
+{% if not data["invoice-date-month"]  %}
+{% set date = "" %}
+{% else %}
+{% set date = data["invoice-date-day"] + " " + data["invoice-date-month"] | toMonth +  " " + data["invoice-date-year"]   %}
+{% endif %}
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  {{ defItem(key='DWP invoice reference', value=dwpRef, hideChange="true" ) }}
+  {{ defItem(key='Supplier invoice reference', value=data['invoice-reference'], hidechange=contactCentre) }}
+  {{ defItem(key='Invoice date', value=date, hidechange=contactCentre) }}
+  {{ defItem(key='Payee postcode', value=data['invoice-postcode'], hidechange=contactCentre) }}
+  {{ defItem(key='Payment amount', value=data['invoice-value'], money="true", hidechange=contactCentre) }}
+  {{ defItem(key='SOP supplier number', value=data['supplier-reference'], hidechange=contactCentre) }}
+
+
+</dl>
+
+
+{% endblock %}

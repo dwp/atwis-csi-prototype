@@ -1,0 +1,96 @@
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+Using this service to apply for Access to Work
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="other-jobs">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="condition" method="post">
+
+
+      <h1 class="govuk-heading-xl">Using this service to apply for Access to Work</h1>
+
+
+      <h2 class="govuk-heading-m">Civil service employment</h2>
+
+<p>Your employer will provide support instead of Access to Work.</p>
+     <div class="govuk-inset-text">
+      You will need to contact your employer so they can assess and arrange the support you need.
+      </div>
+<h2 class="govuk-heading-m">If you need mental health support</h2>
+<p>You can get mental health support through Access to Work for all types of jobs, including your civil service employment. </p>
+<p>You can apply for mental health support directly from <a rel="external" href="https://able-futures.co.uk/individuals">Able Futures</a> or <mark><a rel="external" href="https://atw.maximusuk.co.uk">Maximus</a></mark>.</p>
+
+<p>These providers will contact Access to Work on your behalf. You will not need to tell your employer.</p>
+
+
+
+     <!--
+     <h3 class="govuk-heading-s">Self-employment or other employment</h2>
+
+
+      <p>If your grant includes self-employment, or other non-civil service employment, you can <a href="https://design-system.service.gov.uk">renew part of your Access to Work grant</a>. </p>
+
+      <p>You will still need to contact your civil service employer to arrange any support you need for that employment.</p>
+
+      -->
+
+      <h2 class="govuk-heading-m">Other employment or self-employment</h2>
+
+      <p>You can still use this service to apply for Access to Work for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+         <li>self-employment</li>
+         <li>non-civil service employment</li>
+       </ul>
+
+
+
+
+
+      <button  class="govuk-button" data-module="govuk-button">Apply for Access to Work</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--visible">
+        <aside id="journey-sidebar" role="region">
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+
+        
+        <p class="govuk-body">You can contact us for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+    </ul>
+
+        <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm</p>
+    </aside>
+
+
+      </div> </div>
+
+{% endblock %}

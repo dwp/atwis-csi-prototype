@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="customer/contact">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+          Your support worker
+      </h1>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+          What is the total cost for the support worker you need?
+      </h2>
+
+    <div class="govuk-form-group">
+      <span id="national-insurance-number-hint" class="govuk-hint">
+        This total cost should include support worker costs, support worker travel costs, administrative costs and VAT.
+      </span>
+      <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="number" aria-describedby="approximate-cost-hint">
+    </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- customer_contact -->
+
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('cost', function(event) {
+          event.preventDefault();
+          var cost = document.getElementById('cost').value;
+          if (cost > 1) {
+            window.location = 'OW_MUCH';
+          } else {
+            window.location = 'AYE_ALREET';
+          }
+        })
+      </script>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

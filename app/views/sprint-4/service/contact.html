@@ -1,0 +1,119 @@
+{% extends folder + "/_BASE.html" %}
+
+{% block pageTitle %}
+  How would you like to be contacted?
+{% endblock %}
+
+{% block service %}
+
+
+
+            <form id="form" method="post" action="text-message">
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="contact-preferenceship-conditional-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+                        How would you like to be contacted?
+                      </h1>
+                    </legend>
+                    <p>We need to contact you to ask for more information or to confirm your application.
+                      Use an email address that you can check every day, such as a personal one.</p>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact-conditional-1" name="contact-preference" type="checkbox" value="Email" data-aria-controls="conditional-contact-preferenceship-conditional-1">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact-preferenceship-conditional-1">
+                          Email
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-preferenceship-conditional-1">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Email address
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                        </div>
+
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact-conditional-2" name="contact-preference" type="checkbox" value="Textphone" data-aria-controls="conditional-contact-preferenceship-conditional-2">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact-preferenceship-conditional-2">
+                          Textphone
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-preferenceship-conditional-2">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-phone">
+                            Phone number
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+                        </div>
+
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact-preferenceship-conditional-3" name="contact-preference" type="checkbox" value="NGT relay" data-aria-controls="conditional-contact-preferenceship-conditional-3">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact-preferenceship-conditional-3">
+                          NGT relay
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-preferenceship-conditional-3">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-ngt">
+                            NGT relay number
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-ngt" name="contact-by-ngt" type="tel">
+                        </div>
+
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+
+
+              <!--<form id="form" method="post" action="text-message">
+                <span id="changed-name-hint" class="govuk-hint"></span>
+
+                <div class="govuk-form-group">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="terminal-1">
+                        Email address
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+                      <label class="govuk-label govuk-radios__label" for="terminal-2">
+                        Textphone
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="terminal-3" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+                      <label class="govuk-label govuk-radios__label" for="terminal-3">
+                        NGT relay
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <script>
+                  document.getElementById('form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    if (document.getElementById('terminal-1').checked) {
+                      window.location = '../contact-info/text-message';
+                    } else if (document.getElementById('terminal-1').checked) {
+                      window.location = '../contact-info/text-message';
+                    } else {
+                        window.location = '../contact-info/text-message';
+                      }
+                    }
+                  })
+                </script>-->
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+          </form>
+
+	{% endblock %}

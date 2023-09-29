@@ -1,0 +1,175 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+<form action="/live-27/cases/claim#business-case" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   {% include  "live-27/cases/decision/content/under-25.html" %}
+                 </h1>
+               </legend>
+
+
+
+               <table class="govuk-table">
+                 <caption class="govuk-table__caption govuk-table__caption--m">Award summary</caption>
+                 <thead class="govuk-table__head">
+                   <tr class="govuk-table__row">
+                     <th scope="col" class="govuk-table__header">Support type</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric"style="text-align: center;" >Cost</th>
+                   </tr>
+                 </thead>
+                 {% if 'Specialist equipment' in data['elements']%}
+                 <tbody class="govuk-table__body">
+                   <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header">Specialist equipment</th>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type']}}</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item']}}</td>
+                   </tr>
+    {% if data['approve-2']=='true'%}
+                   <tbody class="govuk-table__body">
+                     <tr class="govuk-table__row">
+                       <th scope="row" class="govuk-table__header">Specialist equipment</th>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type-2']}}</td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item-2']}}</td>
+                     </tr>
+{% endif %}
+    {% if data['approve-3']=='true'%}
+                     <tbody class="govuk-table__body">
+                       <tr class="govuk-table__row">
+                         <th scope="row" class="govuk-table__header">Specialist equipment</th>
+                         <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type-3']}}</td>
+                         <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item-3']}}</td>
+                       </tr>
+{% endif %}{% endif %}
+
+ {% if 'Support worker' in data['elements']%}
+ <tbody class="govuk-table__body">
+   <tr class="govuk-table__row">
+     <th scope="row" class="govuk-table__header">Support worker</th>
+     <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sw-type']}}</td>
+     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-hr']}} per hour, total cost £12,960</td>
+   </tr>
+
+ {% endif %}
+                 </tbody>
+               </table>
+  <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Type
+
+      </dt>
+      <dd class="govuk-summary-list__value">
+      Specialist equipment
+
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+      </dd>
+    </div>
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Specialist equipment
+</dt>
+<dd class="govuk-summary-list__value">
+Jaws screen reader
+
+
+</dd>
+<dd class="govuk-summary-list__actions">
+
+
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Quote
+</dt>
+<dd class="govuk-summary-list__value">
+
+£499
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+
+
+</dd>
+</div>
+
+</dl> -->
+
+
+{% if data['approve-2']=='true' and not data['approve-3']%} {% set total = "998" %}{% else %}
+
+     {% if data['approve-3']=='true'%}
+{% if data['cost-per-item-3']=='1195' or data['cost-per-item-3']=='1195.00'%}{% set total = "2193" %}{% endif %}
+{% if data['cost-per-item-3']=='1349' or data['cost-per-item-3']=='1349.00'%}{% set total = "2347" %}{% endif %}
+{% if data['cost-per-item-3']=='1049' or data['cost-per-item-3']=='1049.00'%}{% set total = "2038" %}{% endif %}
+     {% endif %}
+
+     {% if data['approve-3']=='false'%}
+{% set total = "998" %}     {% endif %}
+
+        {% endif %}
+<dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Total award
+                          </dt>
+                          <dd class="govuk-summary-list__value" style="text-align: right;">
+                  £{{data['cost-per-item']}}
+                          </dd>
+                          </div>
+
+
+                          </dl>
+
+                          <p>By confirming, you are agreeing that Dereck Smith can receive all of the support in the award summary. </p>
+<p>Once you have confirmed the award summary, you will be able to send the award decision to Dereck Smith.</p>
+
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
+Confirm the award summary
+           </button>
+<p><a href="/live-27/cases/claim#business-case">I need to go back and change something </a></p>
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

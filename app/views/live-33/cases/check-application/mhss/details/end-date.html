@@ -1,0 +1,64 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-width-container">
+<form action="" method="post" novalidate>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+  <h1 class="govuk-heading-l">Current mental health support end date</h1>
+<p>Labour Market System (LMS) checks show that {% if phase == 'sonya'%}Sonya Corkery{% endif %}{% if phase == 'thomas'%}Thomas King{% endif %}{% if not phase%}Dereck Smith{% endif %} is currently receiving    {% for feature in data['mhss-support-check'] %}
+    {{ feature }}{% endfor %}.</p>
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="mhss-enddate-check-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+  Will {% if phase == 'sonya'%}Sonya Corkery{% endif %}{% if phase == 'thomas'%}Thomas King{% endif %}{% if not phase%}Dereck Smith{% endif %} be ending this support before the grant is awarded?
+      </h2>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mhss-enddate" name="mhss-enddate" type="radio" value="Yes, and they would like mental health support from Access to Work~support-service" {{ checked("mhss-enddate", "Yes, and they would like mental health support from Access to Work") }}>
+          <label class="govuk-label govuk-radios__label" for="mhss-enddate">
+            Yes, and they would like mental health support from Access to Work
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mhss-enddate-2" name="mhss-enddate" type="radio" value="Yes, but they will contact the mental health support service provider directly~/live-33/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("mhss-enddate", "Yes, but they will contact the mental health support service provider directly") }}>
+          <label class="govuk-label govuk-radios__label" for="mhss-enddate-2">
+        Yes, but they will contact the mental health support service provider directly
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mhss-enddate-3" name="mhss-enddate" type="radio" value="No~/live-33/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("mhss-enddate", "No") }}>
+          <label class="govuk-label govuk-radios__label" for="mhss-enddate-3">
+            No
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+
+{% endblock %}

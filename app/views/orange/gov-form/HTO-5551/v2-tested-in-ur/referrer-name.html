@@ -1,0 +1,95 @@
+{% extends "layout.html" %} {% set serviceName = "Access to Work Plus referral" %}
+
+{% block pageTitle %}
+   Referrer name
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<!-- <a class="govuk-back-link" href="work-contact">Back</a> -->
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+    {% if not data['workplace'] %}
+      <form class="form" action="./referrer-email" method="post">
+        {% endif %}
+
+      {% if data['workplace'] %}
+      <form class="form" action="./check" method="post">
+          {% endif %}
+
+    <h1 class="govuk-heading-l">
+      Referrer full name
+    </h1>
+
+<div id="referrer-name-hint" class="govuk-hint">
+    Make sure the person you are referring has sent their Access to Work application before you complete this form.
+  </div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="referrer-name">
+    {# Full name of referrer #}
+  </label>
+
+<input class="govuk-input govuk-!-width-one-half" id="referrer-name" name="referrer-name" type="text">
+</div>
+
+
+<button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </form>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Get help with this form
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <h3 class="govuk-heading-s">Phone</h3>
+      <p>Telephone: 0800 121 7479
+      <br>Textphone: 0800 121 7579
+      </p>
+      <p class="govuk-body">
+      <a class="govuk-link" href="https://www.gov.uk/call-charges" target="_blank" rel="noopener noreferrer">Find out about call charges</a>
+      </p>
+    <h3 class="govuk-heading-s">Online</h3>
+     <p class="govuk-body">
+      <a target="_blank" rel="noopener noreferrer" class="govuk-link" href="govuk/access-to-work-plus-referrals">Find out more about Access to Work Plus and other ways to contact us on GOV.UK (opens in new tab)</a>
+     </p>
+    {# <p class="govuk-body">You can read <a href="#">guidance about Access to Work Plus referrals on GOV.UK</a>.</p>
+    <p class="govuk-body">You can also contact Access to Work for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+  <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the Video Relay Service</a></li>
+    </ul> #}
+  </div>
+</details>
+
+  </div>
+{% endblock %}

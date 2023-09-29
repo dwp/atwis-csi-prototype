@@ -1,0 +1,80 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                Has a third party agreed to a cost share?
+                 </h2>
+               </legend>
+
+
+
+
+
+
+               <div class="govuk-radios govuk-radios--inline">
+                 <div class="govuk-radios__item ">
+                   <input class="govuk-radios__input" id="third-party" name="third-party" type="radio" value="Yes~/live-31/cases/job-details/third-party-details.html" {{ checked("third-party", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="third-party">
+                     Yes
+                   </label>
+                 </div>
+<!--
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="third-party-2" name="third-party" type="radio" value="  Yes and a third party agreed to a cost share~/live-31/cases/job-details/check.html" {{ checked("third-party", "No but a third party agreed to the cost share") }}>
+                   <label class="govuk-label govuk-radios__label" for="third-party-2">
+                      Yes and a third party agreed to a cost share
+                   </label>
+                 </div> -->
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="third-party-3" name="third-party" type="radio" value="No~/live-31/cases/job-details/{% if (data['employer-size']=='10 to 49 (small)') or (data['employer-size']=='1 to 9 (micro)') %}check{% else %}unhappy-cost-share{% endif %}" {{ checked("third-party", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="third-party-3">
+                     No
+                   </label>
+                 </div>
+
+
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

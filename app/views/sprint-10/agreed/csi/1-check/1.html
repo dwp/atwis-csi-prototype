@@ -1,0 +1,51 @@
+{% set link = "1-ni-number" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "unhappy-2"}] %}
+{% set title =  "Find applicant on Searchlight" %}
+
+
+{% block csi %}
+
+
+
+<p>Use Searchlight to find:</p>
+  <div class="govuk-inset-text">
+    {{data['csi-info'][1]['firstname']}} {{data['csi-info'][1]['surname']}}
+    <br>
+    {{ data['csi-info'][1]['dob-day'] | safe }} {{ data['csi-info'][1]['dob-month']| safe }}
+    {{ data['csi-info'][1]['dob-year'] | safe }}
+    <br>B2 8FG
+  </div>
+
+
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       name: "searchlight",
+       fieldset: {
+         legend: {
+           text: "Have you found " + data['csi-info'][1]['firstname'] +  " " +  data['csi-info'][1]['surname'] +  "?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+
+
+{% endblock %}

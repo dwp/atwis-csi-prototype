@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+
+{% block content %}
+
+	<div class="govuk-width-container">
+		<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<div class="govuk-panel govuk-panel--confirmation">
+						<h1 class="govuk-panel__title">
+							Application complete
+						</h1>
+						<h2 class="govuk-text">
+							Your application is now with the
+							Access to Work team
+						</h2>
+					</div>
+					
+					<h2 class="govuk-heading-m">What happens next</h2>
+					<div class="govuk-text govuk-!-margin-bottom-2">
+						<p>An adviser will contact you with a decision within 1 working day.</p>
+						<p>If we have agreed to pay for your communication support, you can go ahead and book your support worker for the interview, if you haven’t already.</p>
+					</div>
+					<a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+				</div>
+			</div>
+		</main>
+	</div>
+{% endblock %}

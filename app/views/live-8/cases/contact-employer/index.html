@@ -1,0 +1,132 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">
+
+                    Employment</h2>
+
+        <form action="" method="post" novalidate>
+
+
+
+
+
+
+
+
+        <h3 class="govuk-heading-m">Employment details</h3>
+
+
+
+  {% include "current/claim/_job-details.html"%}
+
+         <h2 class="govuk-heading-m">Condition and Help Needed</h2>
+
+    {% include "current/claim/_condtion-help-needed.html"%}
+
+<h2 class="govuk-heading-m">Dereck Smith contact details</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Telephone number
+      </dt>
+      <dd class="govuk-summary-list__value">
+        01234567890
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+      </dd>
+     </div>
+
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Email address
+      </dt>
+      <dd class="govuk-summary-list__value">
+        dereck@gmail.com
+      </dd>
+      <dd class="govuk-summary-list__actions">
+
+      </dd>
+    </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When are the best times to contact you?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Between 8:30 am and 6pm Monday to Saturday. 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+  </dl>
+
+{% if  data['job-deatils-contact']=='They gave permission'%}{% else %}
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+You must contact Dereck Smith for permission for Access to Work to communicate with their employer.
+</strong>
+</div>
+{% endif %}
+
+
+
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    {% include  "./content/has-confirmed-whether-contact-employer.html" %}
+              </legend>
+              <div class="govuk-radios " data-module="govuk-radios">
+                <div class="govuk-radios__item govuk-radios--inline">
+                  <input class="govuk-radios__input" id="job-deatils-contact" name="job-deatils-contact" type="radio" value="They gave permission~/current/cases/contact-employer/contact-employment" {{ checked("job-deatils-contact", "They gave permission") }}>
+                  <label class="govuk-label govuk-radios__label" for="job-deatils-contact">
+                    They gave permission
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="job-deatils-contact-2" name="job-deatils-contact" type="radio" value="They did not give permission~/current/cases/contact-employer/unhappy-cost-share" {{ checked("job-deatils-contact", "They did not give permission") }}>
+                  <label class="govuk-label govuk-radios__label" for="job-deatils-contact-2">
+                    They did not give permission
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="job-deatils-contact-3" name="job-deatils-contact" type="radio" value="I have not spoken to them~/current/cases/contact-employer/check" {{ checked("job-deatils-contact", "I have not spoken to them") }}>
+                  <label class="govuk-label govuk-radios__label" for="job-deatils-contact-3">
+                    I have not spoken to them
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+    </div>
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

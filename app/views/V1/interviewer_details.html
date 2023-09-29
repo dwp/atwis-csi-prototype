@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="cost">
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-4">
+        Interviewer question:
+    </h1>
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        We need some contact details for the interviewer?
+    </h2>
+
+    <details class="govuk-details">
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+        Why are we asking
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+      As we need to confirm interview details after the event, we need to know who to contact.
+    </div>
+    </details>
+
+    <span  class="govuk-hint">
+
+    </span>
+
+		<h4 class="govuk-heading-m govuk-!-margin-bottom-2">
+        Name
+    </h4>
+    <div class="govuk-form-group">
+      <input class="govuk-input govuk-input--width-11" id="interviewer-name" name="interviewer-name" type="text" aria-describedby="interviewer-name-hint">
+    </div>
+
+    <div class="govuk-form-group ">
+      <label class="govuk-label" for="telephone-number">
+        UK telephone number
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" aria-describedby="telephone-number-error" autocomplete="tel">
+    </div>
+	
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- cost -->
+
+    </form>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

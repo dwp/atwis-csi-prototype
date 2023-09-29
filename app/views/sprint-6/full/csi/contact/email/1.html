@@ -1,0 +1,50 @@
+{% set link = "../index" %}
+{% set interviewLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Email the employer" %}
+
+
+{% block csi %}
+
+
+
+
+<p>Send an email to Terry Gibson to check if {{data['csi-info'][0]['name']}} attended the interview at {{data['csi-info'][0]['company-name']}} on
+  {{data['csi-info'][0]['interview-date-day']}} {{data['csi-info'][0]['interview-date-month'] | toMonth }} with an interpreter or support worker.
+</p>
+<p>
+
+  {{ govukButton({
+    text: "Open new email",
+    classes: "govuk-button--secondary",
+    href: "mailto:" + data['csi-info'][0]['company-email-address']
+  }) }}
+
+<br>
+
+{{ govukRadios({
+
+    classes: "govuk-radios--inline",
+       idPrefix: "sent-email",
+       name: "sent-email",
+       fieldset: {
+         legend: {
+           text: "Have you sent the email?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+{% endblock %}

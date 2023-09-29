@@ -1,0 +1,44 @@
+{% set hideBanner = true %}
+{% set yourCases = true %}
+
+{% extends "./claim/_BASE.html" %}
+{% set user = "payment officer" %}
+
+
+
+
+
+
+{% block content %}
+
+{% include "./cases.html" %}
+
+{% endblock %}
+
+
+
+
+
+<!-- FOOTER -->
+
+<!-- {% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      html: urFooterLink ,
+
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+
+      ]
+    }
+  }) }}
+
+{% endblock %} -->

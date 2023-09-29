@@ -1,0 +1,80 @@
+{% set link = "2" %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "1-unhappy"}] %}
+{% set title =  "Check the evidence" %}
+
+
+{% block csi %}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    classes: "govuk-radios",
+         idPrefix: "claim-form",
+         name: "claim-form-signed",
+         fieldset: {
+           legend: {
+             text: "Is the claim form signed?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+         html: ""
+    },
+         items: [
+         {
+           id: "yes",
+           value: "yes",
+           checked: checked('claim-form', "yes"),
+           text: "Yes"
+         },
+           {
+             id: "no",
+             value: "no",
+             text: "No",
+             checked: checked('claim-form', "no"),
+             conditional: {
+               html: conditionalText
+             }
+           }
+         ]
+       }) }}
+<!--Second radio button set-->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+       {{ govukRadios({
+         classes: "govuk-radios",
+              idPrefix: "invoice",
+              name: "invoice-checked",
+              fieldset: {
+                legend: {
+                  text: "Is the invoice attached?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+              html: ""
+         },
+              items: [
+              {
+                id: "yes",
+                value: "yes",
+                checked: checked('invoice', "yes"),
+                text: "Yes"
+              },
+                {
+                  id: "no",
+                  value: "no",
+                  text: "No",
+                  checked: checked('invoice', "no"),
+                  conditional: {
+                    html: conditionalText
+                  }
+                }
+              ]
+            }) }}
+
+
+
+{% endblock %}

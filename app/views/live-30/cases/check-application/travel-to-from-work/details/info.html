@@ -1,0 +1,41 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/travel-to-from-work/details/approve-1" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-label-wrapper">
+
+Travel to and from work
+
+
+      </h1>
+<br>
+      <p>The following travel to work support in John Smith's application can now be assessed:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+        <li>Taxi</li>
+
+</ul>
+<p><a href="https://intranet.dwp.gov.uk/manual/access-work/travel-work-and-travel-work" target="_blank">Check travel to work and travel in Work guidance (open in new tab)</a>.</p>
+<p>You'll need to contact <a href="/current/cases/john/cases/contact/contact-details">John Smith</a> for a quote.</p>
+
+
+<button class="govuk-button" data-module="govuk-button">
+Continue
+</button>
+</form>
+
+
+</main>
+
+   {% endblock %}

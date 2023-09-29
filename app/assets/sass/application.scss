@@ -1,0 +1,105 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-navigation";
+@import "patterns/task-list";
+@import "patterns/task-list-new";
+@import "patterns/related-items";
+@import "components/nav";
+@import "components/masthead";
+@import "components/update-panel";
+@import "components/sub-tabs";
+@import "components/hmrc-add-to-list";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+@import "components/key-details";
+@import "components/timeline-moj";
+@import "components/smart-cards";
+
+
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.dwp-image {
+  display: block;
+  margin-left: auto;
+  margin-right: 100;
+  width: 10%;
+}
+#ad-helpline {
+    border-top: 3px solid #2ba197;
+    padding-top: 15px;
+}
+
+.table-clickable tbody tr:hover {
+  background-color: #F8F8F8;
+  cursor: pointer;
+}
+
+$selected-colour: #FFECC7;
+
+.table-clickable tbody tr.checked {
+  background-color: #FFECC7;
+}
+
+.table-clickable tbody tr.checked:hover {
+  background-color: darken(#FFECC7, 5%);
+}
+
+.table-clickable {
+
+  .multiple-choice--hod {
+/*   padding: 0.9em 0 0 1.05263em; */
+padding-left: 10px;
+  margin: 0;
+
+  }
+}
+
+.not-error {
+  border-color: #1d70b8 !important;
+}
+
+.prototype-email-table {
+	@include govuk-font($size: 19);
+	@include govuk-text-colour;
+	.prototype-email-table-row {
+		@include govuk-responsive-padding(4, 'top');
+		@include govuk-responsive-padding(2, 'right');
+		@include govuk-responsive-padding(4, 'bottom');
+		@include govuk-responsive-padding(2, 'left');
+		border: $govuk-border-colour 1px solid;
+		border-bottom: none;
+		&:last-of-type {
+			border-bottom: $govuk-border-colour 1px solid;
+		}
+	}
+	.prototype-email-table-descriptor {
+		color: $govuk-secondary-text-colour;
+		display: inline-block;
+		width: 7em;
+		text-align: right;
+		@include govuk-responsive-margin(2, 'right');
+	}
+	.prototype-email-content {
+		@include govuk-responsive-margin(4);
+		@include govuk-responsive-padding(2, 'top');
+		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+			sans-serif, Apple Color Emoji, Segoe UI Emoji !important;
+	}
+	.govuk-header__container {
+		background-color: black;
+		@include govuk-responsive-padding(4, 'left');
+		@include govuk-responsive-padding(4, 'right');
+		.govuk-header__link {
+			color: white;
+		}
+	}
+}

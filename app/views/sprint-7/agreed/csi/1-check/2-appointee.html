@@ -1,0 +1,172 @@
+{% set link = "3" %}
+
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Add appointee details for " + data['csi-info'][1]['firstname'] +  " " +  data['csi-info'][1]['surname']  + "" %}
+
+
+{% block csi %}
+
+<p>Copy information for{{data['csi-info'][1]['firstname']}} {{data['csi-info'][1]['surname']}}’s appointee from Searchlight.</p>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Appointee name"
+  },
+  id: "appointee-name",
+  name: "appointee-name"
+}) }}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    text: "",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: true
+  }
+}) %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+  legend: {
+    text: "",
+    classes: "text",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+    },
+    id: "address-line-1",
+    name: "address-line-1"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+    },
+    id: "address-line-2",
+    name: "address-line-2"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Town or city"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-town",
+    name: "address-town"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "County"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "address-county",
+    name: "address-county"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Postcode"
+    },
+    classes: "govuk-input--width-10",
+    id: "address-postcode",
+    name: "address-postcode"
+  }) }}
+
+{% endcall %}
+
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {% set emailHtml %}
+  {{ govukInput({
+    id: "appointee-email",
+    name: "appointee-email",
+    type: "email",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Email address"
+    },
+    attributes: {
+      spellcheck: "false"
+    }
+  }) }}
+  {% endset -%}
+
+  {% set phoneHtml %}
+  {{ govukInput({
+    id: "appointee-contact-phone",
+    name: "appointee-contact-phone",
+    type: "tel",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Phone number"
+    }
+  }) }}
+  {% endset -%}
+
+  {% set textHtml %}
+  {{ govukInput({
+    id: "contact-by-text",
+    name: "contact-by-text",
+    type: "tel",
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Mobile phone number"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukCheckboxes({
+    idPrefix: "citizenship-conditional",
+    name: "citizen",
+    fieldset: {
+      legend: {
+        text: "Contact details",
+        isPageHeading: true,
+        classes: "text"
+      }
+    },
+    hint: {
+      text: "Select all options that are available."
+    },
+    items: [
+      {
+        value: "email",
+        text: "Email",
+        conditional: {
+          html: emailHtml
+        }
+      },
+      {
+        value: "phone",
+        text: "Phone",
+        conditional: {
+          html: phoneHtml
+        }
+      }
+    ]
+  }) }}
+
+
+
+{% endcall %}
+<!--<ul class="govuk-list govuk-list--bullet">
+  <li>name of person</li>
+  <li>address (if there's residential or correspondence address it needs to be correspondence)</li>
+  <li>contact information (Searchlight has email, and several types of phone details, how much do we need to add?)</li>
+</ul>-->
+
+{% endblock %}

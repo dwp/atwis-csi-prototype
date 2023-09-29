@@ -1,0 +1,181 @@
+
+{% extends "layout.html" %} {% set serviceName = "Apply for Access to Work" %}
+
+{% block pageTitle %}
+  HTO-5357 index
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to apply scenarios',
+    href: "../index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-5357: AtW Plus iteration 3</h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+    <h3 class="govuk-heading-m">Draft versions for possibe future AtW Plus question</h3>
+
+    <p>
+      Example content and desings for a possible version 3 of the Access to Work Plus question. 
+        </p>
+
+        <p>
+         We can use these as a starting point if a question is needed for the apply service.
+        </p>
+
+        <p>
+         Fact check would be needed for any final version.
+        </p>
+
+      <p>
+        <a href="v3/application-type" class="govuk-link--no-visited-state">
+      Draft 1: Application type header with some context added</a>
+       </a>
+       <br><strong class="govuk-tag govuk-tag--yellow">
+        draft
+        </strong>
+        </p>
+
+        <p>
+        <a href="v3/application-type2" class="govuk-link--no-visited-state">
+      Draft 2: Slight iteration to draft 1 heading content </a>
+       </a>
+       <br><strong class="govuk-tag govuk-tag--yellow">
+         draft
+        </strong>
+        </p>
+
+
+        <p>
+        <a href="v3/application-type3-details" class="govuk-link--no-visited-state">
+      Draft 3: Details component added to draft 2 to include more details about pilot</a>
+       </a>
+       <br><strong class="govuk-tag govuk-tag--yellow">
+        draft
+        </strong>
+        </p>
+
+      <p>
+        <a href="v3/application-type4-inset" class="govuk-link--no-visited-state">
+      Draft 4: Inset text added to draft 2 to highlight pilot </a>
+       </a>
+       <br><strong class="govuk-tag govuk-tag--yellow">
+         draft
+        </strong>
+        </p>
+
+        <p>
+        <a href="v3/application-type5" class="govuk-link--no-visited-state">
+      Draft 5: Shorter version with question and hint text</a>
+       </a>
+       <br><strong class="govuk-tag govuk-tag--yellow">
+         draft
+        </strong>
+        </p>
+
+        <p>
+        <a href="v3/application-type6" class="govuk-link--no-visited-state">
+      Draft 6: Iteration of draft 5 with 'pilot scheme' added to H1 </a>
+       </a>
+       <br><strong class="govuk-tag govuk-tag--yellow">
+         draft
+        </strong>
+        </p>
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<h3 class="govuk-heading-m">Copy of current version in live</h3>
+
+<p>
+        <a href="current/are-you-a-civil-servant" class="govuk-link--no-visited-state">
+       Full service journey: current</a>
+       </a>
+        </p>
+
+        <p>
+        <a href="current/types-of-support" class="govuk-link--no-visited-state">
+       Types of support
+        </a>
+        </p>
+
+      <p>
+        <a href="current/education-support" class="govuk-link--no-visited-state">
+       Education support
+        </a>
+        </p>
+
+        <p>
+        <a href="current/review" class="govuk-link--no-visited-state">
+      Check your answers (review) page</a>
+       </a>
+        </p>
+
+<p>
+       See <a href="../HTO-4071/index" class="govuk-link--no-visited-state">
+       HTO-4071</a>
+       </a>
+        </p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h3 class="govuk-heading-m">Original question</h3>
+
+<p>
+        <a href="../HTO-2826/service-updated/application-type" class="govuk-link--no-visited-state">
+       Original AtW Plus question added to live service</a>
+       </a>
+        </p>
+
+<p>
+       See <a href="../HTO-2826/index" class="govuk-link--no-visited-state">
+       HTO-2826</a>
+       </a>
+        </p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    </div>
+  </div>
+
+{% endblock %}

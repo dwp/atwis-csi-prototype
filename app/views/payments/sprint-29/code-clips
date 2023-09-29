@@ -1,0 +1,651 @@
+{% if case == 'dereck' %}
+dereck
+{% endif %}
+
+
+
+{% if case == 'dereck' %}
+<h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">2. </span> Review invoice
+</h2>
+
+{% endif %}
+
+
+BOOLIAN binary output statment, derived form George Boul matches
+Use for radio buttons
+
+{% if data ['sop-find-details-amend'] == 'Yes' %}
+{% endif %}
+
+{% if data ['grant-matches-claim'] == 'Yes'%}
+
+{{data['-']}}
+
+
+{% if case == "sonya"%}
+
+<h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">3. </span>
+  Review payment
+</h2>
+
+{% endif %}
+
+
+<!-- £{{data['new-low-amount-1']}} -->
+
+
+
+
+{% if case == 'dereck' %}
+{% include  "./task-list.html" %}
+{% endif %}
+
+
+{% if case == 'dereck' %}
+{% include  "payments/sprint-29/cases/dereck/task-list/task-list-dereck.html" %}
+{% endif %}
+
+{% if case == 'sonya' %}
+{% include  "payments/sprint-29/cases/sonya/task-list/task-list-sonya.html" %}
+{% endif %}
+
+
+
+
+
+
+{% if case %}
+              {% for case in data['other-cases'] %}
+                  {{ case.name }}
+              {% endfor %}
+{% else %}
+              {% for case in data['priority-cases'] %}
+                  {{ case.name }}
+              {% endfor %}
+
+{% endif %}
+
+
+
+
+
+
+{% if not data['claims']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (3)
+          </a>
+        </li>
+{% endif %}
+
+
+{% if data['claims'] and not data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (4)
+          </a>
+        </li>
+{% endif %}
+
+
+{% if data['sop-supplier-number'] %}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (3)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#waiting">
+            Waiting for approval (1)
+          </a>
+        </li>
+
+{% endif %}
+
+
+
+{% if data['claims'] and not data ['sop-supplier-number']%}
+<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+  <a class="govuk-tabs__tab" href="#claims">
+    Claims (4)
+  </a>
+</li>
+{% endif %}
+
+{% if not data['claims'] and not data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#claims">
+            Claims (3)
+          </a>
+        </li>
+{% endif %}
+
+{% if data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#waiting">
+            Waiting for approval (1)
+          </a>
+        </li>
+{% endif %}
+
+{% if not data['claims'] and data ['sop-supplier-number']%}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#waiting">
+            Waiting for approval (1)
+          </a>
+        </li>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+
+<h2 class="govuk-heading-l">Case history</h2>
+
+
+  <!-- SEND PAYMENT -->
+
+  <!-- CHECK PAYMENT -->
+  <div class="moj-timeline">
+  <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Check payment and send for approval: completed</h2>
+      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+      </div>
+      <p class="moj-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:58am</time>
+      </p>
+      <div class="moj-timeline__description"></div>
+    </div>
+
+
+    <!-- REVIEW PAYMENT -->
+
+    <!-- ADD PAYEE DETAILS FROM SOP -->
+    <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Add details from SOP: completed</h2>
+        <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+        </div>
+        <p class="moj-timeline__date">
+        <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:54am</time>
+        </p>
+        <div class="moj-timeline__description"></div>
+      </div>
+
+
+      <!-- NO -->
+      <!-- FIND PAYEE IN SOP -->
+      <div class="moj-timeline__item">
+
+          <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Amend existing payee details: completed</h2>
+          <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+          </div>
+          <p class="moj-timeline__date">
+          <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:49am</time>
+          </p>
+          <div class="moj-timeline__description"></div>
+        </div>
+
+
+      <!-- FIND PAYEE IN SOP -->
+      <div class="moj-timeline__item">
+
+          <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Find payee in SOP: completed</h2>
+          <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+          </div>
+          <p class="moj-timeline__date">
+          <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:49am</time>
+          </p>
+          <div class="moj-timeline__description"></div>
+        </div>
+
+
+        <!-- ADD INVOICE DETAILS -->
+
+        <!-- ADD INVOICE NUMBERS -->
+        <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">{% if case == 'dereck' %}Invoice number: completed{% endif %}{% if case == 'sonya' %}Invoice numbers: completed{% endif %}</h2>
+            <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+            </div>
+            <p class="moj-timeline__date">
+            <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:42am</time>
+            </p>
+            <div class="moj-timeline__description"></div>
+          </div>
+
+
+          <!-- NO -->
+          <!-- CHECK INVOICES HAVE BEEN PAID -->
+          <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Review invoices: completed</h2>
+              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+              </div>
+              <p class="moj-timeline__date">
+              <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:32am</time>
+              </p>
+              <div class="moj-timeline__description"></div>
+            </div>
+
+
+          <!-- CHECK INVOICES HAVE BEEN PAID -->
+          <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Check invoices have been paid: completed</h2>
+              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+              </div>
+              <p class="moj-timeline__date">
+              <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:32am</time>
+              </p>
+              <div class="moj-timeline__description"></div>
+            </div>
+
+
+            <!-- REVIEW CLAIM AND INVOICES -->
+
+            <!-- NO -->
+            <!-- IPAD INVOICE REJECTED -->
+            <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Review rejected invoice Ipad Pro case: completed</h2>
+                <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                </div>
+                <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:23am</time>
+                </p>
+                <div class="moj-timeline__description"></div>
+              </div>
+
+
+            <!-- CHECK INVOICES ARE VALID -->
+            <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Check invoices are valid: completed</h2>
+                <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                </div>
+                <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:37am</time>
+                </p>
+                <div class="moj-timeline__description"></div>
+              </div>
+
+
+              <!-- NO -->
+              <!-- AMOUNT LOWER -->
+              <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Amount lower than grant award Ergonomic keyboard: completed</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__date">
+                  <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:23am</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+
+                <!-- NO -->
+                <!-- AMOUNT HIGHER -->
+                <div class="moj-timeline__item">
+
+                    <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Amount higher than grant award Jaws screen reader: completed</h2>
+                    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                    </div>
+                    <p class="moj-timeline__date">
+                    <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:23am</time>
+                    </p>
+                    <div class="moj-timeline__description"></div>
+                  </div>
+
+
+              <!-- CHECK CLAIM MATTCHES GRANT AWARD -->
+              <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Check claim matches grant award: completed</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__date">
+                  <time datetime="2019-06-07T12:32:00.000Z">21 March 2023, 8:22am</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+
+                <!-- IDENTITY CHECKS COMPLETE -->
+                <div class="moj-timeline__item">
+
+                    <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Identity checks completed</h2>
+                    <p class="moj-timeline__byline"></p>
+                    </div>
+                    <p class="moj-timeline__date">
+                    <time datetime="2019-06-07T12:32:00.000Z">4 March 2023, 1:15pm</time>
+                    </p>
+                    <div class="moj-timeline__description">Personal details match Searchlight</div>
+                  </div>
+
+
+                  <!-- DIGITAL CLAIM RRECIVED -->
+                  <div class="moj-timeline__item">
+
+                      <div class="moj-timeline__header">
+                      <h2 class="moj-timeline__title">Digital claim received</h2>
+                      <p class="moj-timeline__byline"></p>
+                      </div>
+                      <p class="moj-timeline__date">
+                      <time datetime="2019-06-07T12:32:00.000Z">4 March 2023, 1:15pm</time>
+                      </p>
+                      <div class="moj-timeline__description"></div>
+                    </div>
+
+
+                    <!-- GRANT AWARDED -->
+                    <div class="moj-timeline__item">
+
+                        <div class="moj-timeline__header">
+                        <h2 class="moj-timeline__title">Grant awarded</h2>
+                        <p class="moj-timeline__byline">by Mark Dawson</p>
+                        </div>
+                        <p class="moj-timeline__date">
+                        <time datetime="2019-06-07T12:32:00.000Z">14 January 2023, 1:24pm</time>
+                        </p>
+                        <div class="moj-timeline__description"></div>
+                      </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- sprint-29 -->
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- sprint-29 -->
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Case history</h2>
+
+<ol class="dwp-timeline">
+
+
+  {% if data['sop-approve']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check payment and send for approval: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:58am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['sop-add-supplier']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Add details from SOP: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:54am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['sop-find-details-confirm']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Amend existing payee details: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:49am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['sop-find']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Find payee in SOP: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:46am
+      </p>
+  </li>
+  {% endif %}
+
+
+
+  {% if data['invoice-number']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        {% if case == 'dereck' %}
+                    Invoice number: completed
+        {% endif %}
+        {% if case == 'sonya' %}
+                    Invoice numbers: completed
+        {% endif %}
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:42am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['invoice-saved']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Review invoices: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:32am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['paid-in-full']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check invoices have been paid: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:32am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['details-item-no-match-ipad']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Review rejected invoice Ipad Pro case: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:23am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['company-details']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check invoices are valid: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:37am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['claim-item-no-match-keyboard']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Amount lower than grant award Ergonomic keyboard: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:23am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['claim-item-no-match-jaws']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Amount higher than grant award Jaws screen reader: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:23am
+      </p>
+  </li>
+  {% endif %}
+
+
+  {% if data['grant-matches-claim']%}
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Check claim matches grant award: completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}
+      </p>
+      <p class="govuk-caption-m">
+        21 March 2023, 8:22am
+      </p>
+  </li>
+  {% endif %}
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Identity checks completed
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+        Personal details match Searchlight
+      </p>
+      <p class="govuk-caption-m" id="timeline-date">
+        4 March 2023, 1:51pm
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Digital claim received
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+      </p>
+      <p class="govuk-caption-m">
+        2 March 2023, 11:57am
+      </p>
+  </li>
+
+
+  <li class="dwp-timeline__entry">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Grant awarded
+      </h2>
+      <p class="govuk-caption-m govuk-!-margin-bottom-1">
+      </p>
+      <p class="govuk-caption-m">
+        14 January 2023, 13:24pm
+      </p>
+  </li>
+
+</ol>
+
+
+</div>
+</div>

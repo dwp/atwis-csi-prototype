@@ -1,0 +1,40 @@
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% if appointee %}{% set appointeeLink = "-appointee" %}{% else %}{% set appointeeLink = "" %}{% endif %}
+{% set paymentAdviserLink = true %}
+{% set link = "unhappy-phone-1" + appointeeLink %}
+{% set redirect = [{id : "email", page: "unhappy-email-1" + appointeeLink }, {id: "phone", page: link}] %}
+
+
+{% block csi %}
+<br>
+{% if appointee %}
+{% set headerText = "How do you want to contact the applicant's appointee?" %}
+{% else %}
+{% set headerText = "How do you want to contact the applicant?" %}
+{% endif %}
+
+{{ govukRadios({
+       idPrefix: "_do",
+       name: "_do",
+       fieldset: {
+         legend: {
+           text: headerText,
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--xl"
+         }
+       },
+       items: [
+         {
+           id: "email",
+           value: "email",
+           text: "Email"
+         },
+         {
+           id: "phone",
+           value: "phone",
+           text: "Telephone"
+         }
+       ]
+     }) }}
+<br>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% set link = "1-waiting" %}
+{% set paymentLink = true %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+{% set redirect = [{id : "yes", page: link }, {id: "no", page: "../index-payment"}] %}
+{% set title =  "Request missing evidence" %}
+
+
+{% block csi %}
+
+<p>Return the evidence to the applicant{% if appointee %}’s appointee{% endif %} and request the missing evidence.<br></br>
+Ask that they return by post both of the following:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>signed claim form</li>
+  <li>completed invoice</li>
+</ul>
+<br>
+<p>Send a cover note with the evidence to:
+
+
+<div class="govuk-inset-text">
+
+  {% if appointee %}
+  {{data['appointee-name'] | default(appointeeDetails.name) | safe }}<br>
+  {{appointeeDetails.address | safe }}
+  {% else %}
+  Thomas Brown <br>
+  14 Kings Road <br>
+  Birmingham <br>
+  Midlands  <br>
+  B1 1EQ
+  {% endif %}
+</div>
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+       name: "send-invoice-back",
+       fieldset: {
+         legend: {
+           text: "Have you sent the evidence back?",
+           isPageHeading: false,
+           classes: "govuk-fieldset__legend--m"
+         }
+       },
+       items: [
+         {
+           id: "yes",
+           value: "yes",
+           text: "Yes"
+         },
+         {
+           id: "no",
+           value: "no",
+           text: "No"
+         }
+       ]
+     }) }}
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="contact">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">
+        Who at the company can we contact after the interviews to check it went ahead?
+    </h1>
+    <span id="national-insurance-number-hint" class="govuk-hint">
+        We can't pay the support worker until we do this
+    </span>
+    <label class="govuk-label" for="more-detail">
+    Name
+    </label>
+    <div class="govuk-form-group govuk-!-margin-bottom-8">
+      <input class="govuk-input govuk-input--width-11" id="interviewer-name" name="interviewer-name" type="text" aria-describedby="interviewer-name-hint">
+    </div>
+
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+              How can we contact them?
+            </h2>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                Email
+            </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+                Phone
+            </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+            </div>
+
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- total_cost -->
+
+    </form>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,235 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+          Harrow testing
+        <span class="govuk-caption-xl"></span>
+
+<P>Prototype for testing 24 October. Concepts based on BSP/Winter Fuel task list</p>
+
+
+  <h3 class="govuk-heading-m">Scenario 1: new application</h3>
+
+  <ul class="govuk-list">
+      <li><a class="govuk-link" href="/{{folder}}/concepts/your-cases">Your cases</a></li>
+            <li><a class="govuk-link" href="/{{folder}}/concepts/csi/index">Your tasks</a>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Check <a class="govuk-link" href="/{{folder}}/concepts/csi/appointee/1">for appointee</a>
+  <li>Check <!--<a class="govuk-link" href="/{{folder}}/concepts/csi/check/1">personal details</a>,--> <!--<a class="govuk-link" href="/{{folder}}/concepts/csi/check/2">contact details</a>--> <a class="govuk-link" href="/{{folder}}/concepts/csi/check/3">interview details</a><!-- and <a class="govuk-link" href="/{{folder}}/concepts/csi/check/4">employer details</a> --><!-- and <a class="govuk-link" href="/{{folder}}/concepts/csi/check/complete">section complete</a> --> </li>
+    <!--<li><a class="govuk-link" href="/{{folder}}/concepts/csi/decision/1">Approve or reject application</a> --><!-- and <a class="govuk-link" href="/{{folder}}/concepts/csi/decision/complete">section complete</a> --> </li>
+      <li><a class="govuk-link" href="/{{folder}}/concepts/csi/send/1">Send email</a>, <a class="govuk-link" href="/{{folder}}/concepts/csi/send/2">notification</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/send/3">claim with cover letter</a></li>
+      <li><a class="govuk-link" href="/{{folder}}/concepts/csi/send/complete">Tasks complete</a></li>
+<li><a class="govuk-link" href="/{{folder}}/concepts/your-cases-waiting">Your cases (waiting)</a>, <a class="govuk-link" href="/{{folder}}/concepts/csi/index-waiting">case index (waiting)</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/claim-waiting">claim (waiting)</a></li>
+</ul>
+<h3 class="govuk-heading-m">Scenario 2: after interview</h3>
+
+<ul class="govuk-list">
+<li><a class="govuk-link" href="/{{folder}}/concepts/your-cases-interview">Your cases</a></li>
+<li><a class="govuk-link" href="/{{folder}}/concepts/csi/index-interview">Your tasks</a>
+<ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="/{{folder}}/concepts/csi/contact/index">Contact employer</a></li>
+          <li>Email:
+  <a class="govuk-link" href="/{{folder}}/concepts/csi/contact/email/1">Send email</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/contact/email/1">success</a>
+</li>
+    <li>Phone:
+<a class="govuk-link" href="/{{folder}}/concepts/csi/contact/email/1">Contact employer</a>
+</li>
+
+<li>Update:<a class="govuk-link" href="/{{folder}}/concepts/csi/contact/update/1">Contact update</a>
+</li>
+
+          <li><a class="govuk-link" href="/{{folder}}/concepts/csi/confirm/1">Confirm interview took place</a> </li>
+          <li><a class="govuk-link" href="/{{folder}}/concepts/csi/confirm/complete">Tasks complete</a></li>
+</ul></li>
+<li><a class="govuk-link" href="/{{folder}}/concepts/your-cases-empty">Your cases (empty)</a></li>
+
+</ul>
+<h3 class="govuk-heading-m">Other screens</h3>
+
+<ul class="govuk-list">
+            <li><a class="govuk-link" href="/{{folder}}/concepts/csi/claim">Claim</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/claim-interview">link after interview</a></li>
+          <li><a class="govuk-link" href="/{{folder}}/concepts/csi/evidence">Evidence</a> and <a class="govuk-link" href="/{{folder}}/concepts/csi/evidence-interview">link after interview</a></li>
+          </ul>
+
+
+          <h3 class="govuk-heading-m">More general concepts</h3>
+
+  <ul class="govuk-list">
+            <li><a class="govuk-link" href="/{{folder}}/concepts/1">Contact first</a></li>
+            <li><a class="govuk-link" href="/{{folder}}/concepts/2">Task list first</a></li>
+
+          </ul>
+
+  <h3 class="govuk-heading-m">Other journeys</h3>
+      <ul class="govuk-list">
+                <li><a class="govuk-link" href="/{{folder}}/atwis/your-cases">ATWIS screens</a></li>
+
+              </ul>
+
+
+
+
+      {{ govukDetails({
+        summaryText: "List of all screens in journey",
+        html:
+'
+<h3 class="govuk-heading-m">Citizen-facing</h3>
+
+<ul class="govuk-list">
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/apply">Guidance</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/have-total-cost">(NEW) Have total cost?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/have-total-cost-no">(NEW - kickout) Need to get total cost</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/your-name">What is your name?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/dob">Date of birth</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_age">(kickout) Cannot help - age</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/address">Address</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/deaf">Deaf</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/condition">(IF NOT DEAF) Condition</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/paid-work">Paid work</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_paid">(kickout) Cannot help - not paid work</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-date">Interview date</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/sorry/cant_help_date">(kickout) Cannot help - in the past</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-company-name">What is the name of the company your job interview is with?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-address">Where will your job interview take place?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interview-length">How long is the interview expected to last?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/interviewer-details">Who can we contact at the company?</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/support-worker-page">What is the total cost of the BSL interpreter or support worker that you need at the interview?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/contact">How would you like to be contacted?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/text-message">Do you want to receive text messages with updates about your application?</a>
+          </li>
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/mobile-phone-number">What is your mobile phone number?</a>
+          </li>
+
+
+
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/check-your-answers">Check your answers</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/confirmation">Confirmation</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/' + folder + '/service/timed-out">Timed out</a>
+          </li>
+        </ul>
+
+        <p>After the service</p>
+        <ul class="govuk-list">
+
+                  <li>
+                    <a class="govuk-link" href="/' + folder + '/service/confirmation-phone">SMS confirmation</a>
+                  </li>
+                  </ul>
+
+        <h3 class="govuk-heading-m">ATWIS</h3>
+        <ul class="govuk-list">
+
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/your-cases">Your cases</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/search">Search</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/unallocated">Unallocated</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/case-csi">CSI case</a> with option to update to DiSC (and <a class="govuk-link" href="/' + folder + '/atwis/case">New application</a>)</li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/your-cases-update">Updated after moving to DiSCC</a></li>
+                  <li><a class="govuk-link" href="/' + folder + '/atwis/case-csi-disc">CSI case after copied to DiSC</a></li>
+
+
+                              </ul>
+
+
+
+'          }) }}
+
+
+{{ govukDetails({
+  summaryText: "Other versions",
+  html:
+' <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="gathering-info">Apply Questions Work and Condition Example 1</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="atw-example-2/difficult-tasks">Apply Questions Work and Condition Example 2</a>
+    </li>
+    <li>
+      <a class="govuk-link" <a href="support-worker/job/support-worker-page">Communication support at Interview</a>
+    </li>
+
+  <li>
+    <a class="govuk-link" href="/' + folder + '/service/alternative-contact">Alternative contact</a>
+  </li>
+</ul>
+
+'       | safe    }) }}
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

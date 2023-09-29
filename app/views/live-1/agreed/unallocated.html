@@ -1,0 +1,996 @@
+{% extends "./_BASE.html" %}
+{% set hideBanner = true %}
+
+{% if not phase %}
+{% set phase = "allocator" %}
+
+{% endif %}
+
+{% set Unallocated = true %}
+
+{% set unallocated = [
+  {
+
+    name: "Desmond Smith",
+    submitted: "27 February 2020 - 04:23",
+    interview: "1 November 2021",
+    status: "New"
+  },
+  {
+
+    name: "Sam Argentino",
+    submitted: "23 February 2020 - 13:23",
+    interview: "2 November 2021",
+    status: "Action needed"
+  }
+
+  ]
+  %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+
+  {% if payments %}
+      Unallocated
+  {% else %}
+      Unallocated
+
+{% endif  %}
+
+
+    </h1>
+
+    {% if empty %}
+    {% if payments %}
+    <p>There are currently no approved cases ready for payment processing.</p>
+    {% else %}
+    <p>There are currently no unallocated Communication Support at Interview cases.</p>
+    {% endif %}
+
+    {% else %}
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#csi">
+            CSI cases (000)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#priority">
+            Priority cases (000)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#other">
+            Other cases (000)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#documents">
+            Documents (000)
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="csi">
+        <h2 class="govuk-heading-l">CSI cases</h2>
+        <table class="govuk-table">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header">Name</th>
+                  <th class="govuk-table__header">Date submitted</th>
+                  <th class="govuk-table__header">Interview date</th>
+                  <th class="govuk-table__header">Status</th>
+                  <th class="govuk-table__header">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+      {% if not data['payment-allocated'] %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</td>
+
+                  <td class="govuk-table__cell">{{data['csi-info'][3]['submission-date']}}</td>
+                  <td class="govuk-table__cell">{{ data['csi-info'][3]['interview-date-day'] }} {{ data['csi-info'][3]['interview-date-month'] | toMonth }} {{ data['csi-info'][3]['interview-date-year'] }}</td>
+
+                  <td class="govuk-table__cell">{% if payments %}Ready{% else %}New{% endif %}</td>
+                  <td class="govuk-table__cell"><a href="csi/index{% if payments %}-payment-unallocated{% else %}-allocator{% endif %}">Go to case</a></td>
+                </tr>
+        {% endif %}
+                {% for case in unallocated %}
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{ case.name }}</td>
+                    <td class="govuk-table__cell">{{ case.submitted }}</td>
+                    <td class="govuk-table__cell">{{ case.interview }}</td>
+                    <td class="govuk-table__cell">{% if payments and case.status == 'New' %}Ready{% else %}{{ case.status }}{% endif %}</td>
+                    <td class="govuk-table__cell"><a href="#">Go to case</a></td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+      </div>
+
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="priority">
+        <h2 class="govuk-heading-l">Priority cases </h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Case manager</th>
+              <th scope="col" class="govuk-table__header">Cases opened</th>
+              <th scope="col" class="govuk-table__header">Cases closed</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">David Francis</td>
+              <td class="govuk-table__cell">24</td>
+              <td class="govuk-table__cell">18</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Paul Farmer</td>
+              <td class="govuk-table__cell">16</td>
+              <td class="govuk-table__cell">20</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Rita Patel</td>
+              <td class="govuk-table__cell">24</td>
+              <td class="govuk-table__cell">27</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="other">
+        <h2 class="govuk-heading-l">Other cases</h2>
+
+        <div class="column-full">
+
+        <div class="govuk-body govuk-!-font-size-19">
+          Showing <span class="govuk-!-font-weight-bold">51</span> to <span class="govuk-!-font-weight-bold">100</span> of <span class="govuk-!-font-weight-bold">570</span> cases.
+        </div>
+
+
+              <table class="govuk-table" id="list-cases">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header">Name</th>
+                    <th class="govuk-table__header">Specialism</th>
+                    <th class="govuk-table__header">Case type</th>
+                    <th class="govuk-table__header numeric">Date submitted</th>
+                    <th class="govuk-table__header">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cbf26dd60fcc73a5fdaa252">
+          <td class="govuk-table__cell">Jon Test</td>
+          <td class="govuk-table__cell">Deaf</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">23 Apr 2019, 3:53pm</td>
+          <td class="govuk-table__cell"><a href="#5cbf26dd60fcc73a5fdaa252">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cbf26e660fcc73a5fdaa255">
+          <td class="govuk-table__cell">Dougiee Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">23 Apr 2019, 3:53pm</td>
+          <td class="govuk-table__cell"><a href="#5cbf26e660fcc73a5fdaa255">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cbf2d1260fcc73a5fdaa25e">
+          <td class="govuk-table__cell">test now</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">23 Apr 2019, 4:19pm</td>
+          <td class="govuk-table__cell"><a href="#5cbf2d1260fcc73a5fdaa25e">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cbf2e8c60fcc73a5fdaa261">
+          <td class="govuk-table__cell">test now</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">23 Apr 2019, 4:26pm</td>
+          <td class="govuk-table__cell"><a href="#5cbf2e8c60fcc73a5fdaa261">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc1921d3c55d339e319c5c1">
+          <td class="govuk-table__cell">asccs csa</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">25 Apr 2019, 11:55am</td>
+          <td class="govuk-table__cell"><a href="#5cc1921d3c55d339e319c5c1">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc2da7cde5cdc3a12bccafc">
+          <td class="govuk-table__cell">csac acsa</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">26 Apr 2019, 11:16am</td>
+          <td class="govuk-table__cell"><a href="#5cc2da7cde5cdc3a12bccafc">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc2f42bde5cdc3a12bccb02">
+          <td class="govuk-table__cell">test noq</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">26 Apr 2019, 1:06pm</td>
+          <td class="govuk-table__cell"><a href="#5cc2f42bde5cdc3a12bccb02">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc71d3045171b3a96339451">
+          <td class="govuk-table__cell">Dr David Pen</td>
+          <td class="govuk-table__cell">Visually impaired</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">29 Apr 2019, 4:50pm</td>
+          <td class="govuk-table__cell"><a href="#5cc71d3045171b3a96339451">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc84b80a055f93a98b10eb9">
+          <td class="govuk-table__cell">test n</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">30 Apr 2019, 2:20pm</td>
+          <td class="govuk-table__cell"><a href="#5cc84b80a055f93a98b10eb9">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc85f83a055f93a98b10ebc">
+          <td class="govuk-table__cell">test now</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">30 Apr 2019, 3:45pm</td>
+          <td class="govuk-table__cell"><a href="#5cc85f83a055f93a98b10ebc">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc86cb9a055f93a98b10ebf">
+          <td class="govuk-table__cell">Automation Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">30 Apr 2019, 4:41pm</td>
+          <td class="govuk-table__cell"><a href="#5cc86cb9a055f93a98b10ebf">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc86d25a055f93a98b10ec2">
+          <td class="govuk-table__cell">q a</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">30 Apr 2019, 4:43pm</td>
+          <td class="govuk-table__cell"><a href="#5cc86d25a055f93a98b10ec2">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc86f2aa055f93a98b10ec6">
+          <td class="govuk-table__cell">Chris1197 Hull</td>
+          <td class="govuk-table__cell">Deaf</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">30 Apr 2019, 4:52pm</td>
+          <td class="govuk-table__cell"><a href="#5cc86f2aa055f93a98b10ec6">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9554cd0622840443c8a96">
+          <td class="govuk-table__cell">Automation Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:14am</td>
+          <td class="govuk-table__cell"><a href="#5cc9554cd0622840443c8a96">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc95555d0622840443c8a99">
+          <td class="govuk-table__cell">Automation Testing</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:14am</td>
+          <td class="govuk-table__cell"><a href="#5cc95555d0622840443c8a99">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9555dd0622840443c8a9c">
+          <td class="govuk-table__cell">Auto Test Tester</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:14am</td>
+          <td class="govuk-table__cell"><a href="#5cc9555dd0622840443c8a9c">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc95565d0622840443c8a9f">
+          <td class="govuk-table__cell">Alexis Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:14am</td>
+          <td class="govuk-table__cell"><a href="#5cc95565d0622840443c8a9f">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9556dd0622840443c8aa2">
+          <td class="govuk-table__cell">Mike Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:14am</td>
+          <td class="govuk-table__cell"><a href="#5cc9556dd0622840443c8aa2">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9557ed0622840443c8aa8">
+          <td class="govuk-table__cell">Jon Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:14am</td>
+          <td class="govuk-table__cell"><a href="#5cc9557ed0622840443c8aa8">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc95586d0622840443c8aab">
+          <td class="govuk-table__cell">Dougiee Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:15am</td>
+          <td class="govuk-table__cell"><a href="#5cc95586d0622840443c8aab">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9558ed0622840443c8aae">
+          <td class="govuk-table__cell">Ritz Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:15am</td>
+          <td class="govuk-table__cell"><a href="#5cc9558ed0622840443c8aae">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc95597d0622840443c8ab1">
+          <td class="govuk-table__cell">A utomation Test</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">Renewal</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 9:15am</td>
+          <td class="govuk-table__cell"><a href="#5cc95597d0622840443c8ab1">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc96878d0622840443c8ab8">
+          <td class="govuk-table__cell">q b</td>
+          <td class="govuk-table__cell">Hidden impairments</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 10:35am</td>
+          <td class="govuk-table__cell"><a href="#5cc96878d0622840443c8ab8">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc969dbd0622840443c8abc">
+          <td class="govuk-table__cell">John Smith North</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 10:41am</td>
+          <td class="govuk-table__cell"><a href="#5cc969dbd0622840443c8abc">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc96c26d0622840443c8abf">
+          <td class="govuk-table__cell">Test ok</td>
+          <td class="govuk-table__cell">Large employer</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 10:51am</td>
+          <td class="govuk-table__cell"><a href="#5cc96c26d0622840443c8abf">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc96faad0622840443c8ac3">
+          <td class="govuk-table__cell">test tester</td>
+          <td class="govuk-table__cell">Hidden impairments</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 11:06am</td>
+          <td class="govuk-table__cell"><a href="#5cc96faad0622840443c8ac3">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc97257d0622840443c8ac7">
+          <td class="govuk-table__cell">Mr IE IETest</td>
+          <td class="govuk-table__cell">Deaf</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 11:17am</td>
+          <td class="govuk-table__cell"><a href="#5cc97257d0622840443c8ac7">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc97946d0622840443c8acb">
+          <td class="govuk-table__cell">RNIB RNIB-QATEST</td>
+          <td class="govuk-table__cell">Visually impaired</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 11:47am</td>
+          <td class="govuk-table__cell"><a href="#5cc97946d0622840443c8acb">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc979abd0622840443c8ace">
+          <td class="govuk-table__cell">test tester</td>
+          <td class="govuk-table__cell">Large employer</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 11:49am</td>
+          <td class="govuk-table__cell"><a href="#5cc979abd0622840443c8ace">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc97a19d0622840443c8ad1">
+          <td class="govuk-table__cell">q b</td>
+          <td class="govuk-table__cell">Hidden impairments</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 11:51am</td>
+          <td class="govuk-table__cell"><a href="#5cc97a19d0622840443c8ad1">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc97c75d0622840443c8ad5">
+          <td class="govuk-table__cell">Surfacepro Surface-Pro-IE</td>
+          <td class="govuk-table__cell">Visually impaired</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 12:01pm</td>
+          <td class="govuk-table__cell"><a href="#5cc97c75d0622840443c8ad5">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9800dd0622840443c8ad9">
+          <td class="govuk-table__cell">SurfacePro SurfacePro</td>
+          <td class="govuk-table__cell">Visually impaired</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 12:16pm</td>
+          <td class="govuk-table__cell"><a href="#5cc9800dd0622840443c8ad9">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc997fdd0622840443c8add">
+          <td class="govuk-table__cell">John Smith North</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 1:58pm</td>
+          <td class="govuk-table__cell"><a href="#5cc997fdd0622840443c8add">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc99813d0622840443c8ae1">
+          <td class="govuk-table__cell">A'abbey test</td>
+          <td class="govuk-table__cell">Large employer</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 1:58pm</td>
+          <td class="govuk-table__cell"><a href="#5cc99813d0622840443c8ae1">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9b037d0622840443c8ae6">
+          <td class="govuk-table__cell">t a</td>
+          <td class="govuk-table__cell">Hidden impairments</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 3:41pm</td>
+          <td class="govuk-table__cell"><a href="#5cc9b037d0622840443c8ae6">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9c1d2d0622840443c8aee">
+          <td class="govuk-table__cell">ttest tetser</td>
+          <td class="govuk-table__cell">Hidden impairments</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 4:57pm</td>
+          <td class="govuk-table__cell"><a href="#5cc9c1d2d0622840443c8aee">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5cc9cef9d0622840443c8af6">
+          <td class="govuk-table__cell">test tester</td>
+          <td class="govuk-table__cell">Hidden impairments</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">1 May 2019, 5:53pm</td>
+          <td class="govuk-table__cell"><a href="#5cc9cef9d0622840443c8af6">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccace95a8238639ff41586c">
+          <td class="govuk-table__cell">John Smith North</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:03pm</td>
+          <td class="govuk-table__cell"><a href="#5ccace95a8238639ff41586c">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacec0a8238639ff415870">
+          <td class="govuk-table__cell">Christ john West</td>
+          <td class="govuk-table__cell">Deaf</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:04pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacec0a8238639ff415870">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccaced6a8238639ff415874">
+          <td class="govuk-table__cell">Adam lambert Jones</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:04pm</td>
+          <td class="govuk-table__cell"><a href="#5ccaced6a8238639ff415874">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccaceeba8238639ff415878">
+          <td class="govuk-table__cell">Phil appple Teste</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:05pm</td>
+          <td class="govuk-table__cell"><a href="#5ccaceeba8238639ff415878">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf01a8238639ff41587c">
+          <td class="govuk-table__cell">Lisa urn South</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:05pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf01a8238639ff41587c">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf16a8238639ff415880">
+          <td class="govuk-table__cell">eddie barn Test</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:05pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf16a8238639ff415880">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf2ba8238639ff415884">
+          <td class="govuk-table__cell">Adam run Test</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:06pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf2ba8238639ff415884">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf41a8238639ff415888">
+          <td class="govuk-table__cell">Apple run Timmy</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:06pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf41a8238639ff415888">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf56a8238639ff41588c">
+          <td class="govuk-table__cell">Pihu Running Test</td>
+          <td class="govuk-table__cell">Pan disability</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:07pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf56a8238639ff41588c">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf6ba8238639ff415890">
+          <td class="govuk-table__cell">A'abbey test</td>
+          <td class="govuk-table__cell">Large employer</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:07pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf6ba8238639ff415890">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf81a8238639ff415894">
+          <td class="govuk-table__cell">Automation Test</td>
+          <td class="govuk-table__cell">Visually impaired</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:07pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf81a8238639ff415894">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacf96a8238639ff415898">
+          <td class="govuk-table__cell">tester a Test</td>
+          <td class="govuk-table__cell">Hidden impairments</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:08pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacf96a8238639ff415898">View case</a></td>
+        </tr>
+
+
+                    <tr class="click-row govuk-table__row" data-caseid="5ccacfc0a8238639ff4158a0">
+          <td class="govuk-table__cell">Eddie Lock</td>
+          <td class="govuk-table__cell">Deaf</td>
+          <td class="govuk-table__cell">New application</td>
+          <td class="govuk-table__cell numeric">2 May 2019, 12:08pm</td>
+          <td class="govuk-table__cell"><a href="#5ccacfc0a8238639ff4158a0">View case</a></td>
+        </tr>
+
+
+                </tbody>
+              </table>
+
+
+
+              <nav class="page-numbers-container govuk-body govuk-!-font-size-19" aria-label="Pagination">
+
+                <div class="previous">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" rel="previous">
+                    Previous <span class="hidden-mobile">page</span></a>
+                </div>
+
+
+                <div class="next">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" rel="next">
+                    Next <span class="hidden-mobile">page</span></a>
+                </div>
+
+                <div class="pagination"><ul class="list-inline">
+
+
+
+                  <li><a href="#" class="govuk-link govuk-link--no-visited-state"><span class="visuallyhidden">Page </span>1</a></li>
+
+
+                  <li class="active"><a href="#" class="govuk-link govuk-link--no-visited-state"><span class="visuallyhidden">Page </span>2</a></li>
+
+
+                  <li><a href="#" class="govuk-link govuk-link--no-visited-state"><span class="visuallyhidden">Page </span>3</a></li>
+
+
+
+
+                  <li>…</li>
+
+
+
+                  <li><a href="#" class="govuk-link govuk-link--no-visited-state"><span class="visuallyhidden">Page </span>12</a></li>
+
+                </ul></div>
+              </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="documents">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+
+
+
+
+
+
+        <div class="moj-filter">
+
+
+
+            <div class="moj-filter__options">
+  <form class="form" action="" method="post" >
+              <button class="govuk-button" data-module="govuk-button">
+                Apply selected filters
+              </button>
+  <p><a class="govuk-link govuk-link--no-visited-state" href="unallocated#documents">Clear filters</a></p>
+
+
+
+
+
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+                    Document type
+
+                  </legend>
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+
+
+                    {% include "./filter/include/document-types-2.html" %}
+
+                </fieldset>
+
+                  <br>
+
+                  <a class="govuk-link app-c-back-to-top dont-print" href="#top" >
+        <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>
+        Back to top
+    </a>
+
+
+    </div>    </div>    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Document</h2>
+
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Name</th>
+                  <th scope="col" class="govuk-table__header">Document type</th>
+                  <th scope="col" class="govuk-table__header">From reference</th>
+                  <th scope="col" class="govuk-table__header">Date scanned</th>
+                  <th scope="col" class="govuk-table__header">Action</th>
+                </tr>
+              </thead>
+
+
+
+
+
+              <tbody class="govuk-table__body">
+
+  {% if data['type']%}
+  {% if 'CSI' in data['type'] %}<tr class="govuk-table__row">
+                  <td class="govuk-table__cell">David Francis</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>{% endif %}
+
+                {% if 'Support worker' in data['type'] %}<tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Paul Farmer</td>
+                  <td class="govuk-table__cell">Support worker</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>{% endif %}
+
+                {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Rita Patel</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>{% endif %}
+
+              {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">John Smith</td>
+                  <td class="govuk-table__cell">Support worker (Welsh)</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>{% endif %}
+
+              {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Brian Richardsons</td>
+                      <td class="govuk-table__cell">Support worker (Welsh)</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                      </tr>{% endif %}
+
+
+              {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">John Johnson</td>
+                        <td class="govuk-table__cell">CSI</td>
+                        <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                      </tr>{% endif %}
+                      {% if 'CSI' in data['type'] %}<tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">David Francis</td>
+                                        <td class="govuk-table__cell">CSI</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                      </tr>{% endif %}
+
+                                      {% if 'Support worker' in data['type'] %}<tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">Paul Farmer</td>
+                                        <td class="govuk-table__cell">Support worker</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                      </tr>{% endif %}
+
+                                      {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">Rita Patel</td>
+                                        <td class="govuk-table__cell">CSI</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                      </tr>{% endif %}
+
+                                    {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">John Smith</td>
+                                        <td class="govuk-table__cell">Support worker (Welsh)</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                        </tr>{% endif %}
+
+                                    {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell">Brian Richardsons</td>
+                                            <td class="govuk-table__cell">Support worker (Welsh)</td>
+                                            <td class="govuk-table__cell">0</td>
+                                            <td class="govuk-table__cell">0</td>
+                                              <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                            </tr>{% endif %}
+
+
+                                    {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                                              <td class="govuk-table__cell">John Johnson</td>
+                                              <td class="govuk-table__cell">CSI</td>
+                                              <td class="govuk-table__cell">0</td>
+                                              <td class="govuk-table__cell">0</td>
+                                              <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                            </tr>{% endif %}
+  {% else %}
+
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">David Francis</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Paul Farmer</td>
+                  <td class="govuk-table__cell">Support worker</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Rita Patel</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">John Smith</td>
+                  <td class="govuk-table__cell">Support worker (Welsh)</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Brian Richardsons</td>
+                    <td class="govuk-table__cell">Support worker (Welsh)</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">John Johnson</td>
+                    <td class="govuk-table__cell">CSI</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">CSI</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">Support worker</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">CSI</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">John Smith</td>
+                    <td class="govuk-table__cell">Support worker (Welsh)</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Brian Richardsons</td>
+                      <td class="govuk-table__cell">Support worker (Welsh)</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">John Johnson</td>
+                      <td class="govuk-table__cell">CSI</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                    </tr>
+
+  {% endif %}
+              </tbody>
+            </table>
+         </div>
+
+
+        </div>
+
+
+{% endif %}
+
+{% if not payments %}
+
+
+
+
+
+
+
+
+
+    </div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+
+{% block content %}
+
+	<div class="govuk-width-container">
+		<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<div class="govuk-panel govuk-panel--confirmation">
+						<h1 class="govuk-panel__title">
+							Application Success.
+						</h1>
+					
+						<div class="govuk-panel__body">
+							Your reference number
+							<br><strong>HDJ2123F</strong>
+
+						<h2 class='govuk-panel__body govuk-!-margin-bottom-2'>
+								You have been approved for CSI subject to us confirming the interview took place and receiving billing information.
+						</h2>	
+						</div>
+					</div>
+					<h2 class="govuk-heading-m">You will need the above reference number to claim the support</h2>
+					
+					<h2 class="govuk-heading-m">What happens next</h2>
+	
+					<p class="govuk-body">
+						If you haven't already, you need to book the required support worker for the interview. 
+					</p>
+					<p class="govuk-body">
+						Once the interview is complete, either:
+						<ul class="govuk-list govuk-list--bullet">
+							<li>you pay the support worker and claim back the money (you will need a receipt)</li>
+							<li>the support worker can claim the money direct via an invoice (they will require the reference above)</li>
+						</ul>
+					<p class="govuk-body">
+						<a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+					</p>
+				</div>
+			</div>
+		</main>
+	</div>
+{% endblock %}

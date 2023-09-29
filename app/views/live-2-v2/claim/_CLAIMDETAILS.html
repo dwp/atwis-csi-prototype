@@ -1,0 +1,1053 @@
+
+
+
+{% if claim %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#application-summary">
+        Application summary
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#your-tasks">
+        Your tasks
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#citizen-details">
+      Application details
+      </a>
+    </li>
+
+
+
+  </ul>
+  <div class="govuk-tabs__panel" id="application-summary">
+
+
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-l">Application summary</h2>
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Prioity
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Prioity type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Clinically extremely vulnerable  (CEV)
+            </dd>
+          </div>
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}
+        </dd>
+      </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Unique reference number (URN)
+      </dt>
+      <dd class="govuk-summary-list__value">
+        123456789
+      </dd>
+    </div>
+
+    <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Application refrence
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+      </dd>
+    </div> -->
+
+  </dl>
+
+
+
+<!-- <h3 class="govuk-heading-m">Application details</h3> -->
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Date Submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 November 2021, 10:09am
+        </dd>
+      </div> -->
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 November 2021 11:57
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          RMPX30
+        </dd>
+      </div>
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version of questions
+        </dt>
+        <dd class="govuk-summary-list__value">
+        25.25.0-rc
+        </dd>
+      </div> -->
+
+    </dl>
+
+
+    </div>
+
+
+ <div class="govuk-grid-column-one-third">
+   <!-- <div class="update-panel">
+       <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
+       <form action="/cases/apply/RMPX30/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+         <div class="govuk-form-group form-group-compound">
+           <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
+             <option value="" data-name=""></option>
+
+
+
+
+
+
+
+                   <option value="4" data-name="Aaron">Aaron</option>
+
+
+
+
+
+                   <option value="36" data-name="Adviser">Adviser</option>
+
+
+
+
+
+                   <option value="37" data-name="Case Team Lead">Case Team Lead</option>
+
+
+
+
+
+                   <option value="35" data-name="FRM">FRM</option>
+
+
+
+
+
+                   <option value="38" data-name="Payment Officer">Payment Officer</option>
+
+
+
+
+
+                   <option value="39" data-name="Payment Team Lead" selected="selected">Payment Team Lead</option>
+
+
+
+
+
+                   <option value="40" data-name="Quality">Quality</option>
+
+
+
+
+
+                   <option value="42" data-name="Quality1">Quality1</option>
+
+
+
+
+
+                   <option value="5" data-name="Shannon White">Shannon White</option>
+
+
+
+
+
+                   <option value="34" data-name="Telephony Agent">Telephony Agent</option>
+
+
+
+           </select>
+         </div>
+         <div>
+           <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+         </div>
+       </form>
+     </div> -->
+     <div class="update-panel govuk-form-group">
+        <h3 id="update-specialism-heading" class="govuk-heading-m">Update specialism</h3>
+        <form action="/cases/apply/RMPX30/update-specialism" method="post" class="form" id="form-update-specialism" autocomplete="off" data-submitonce="">
+            <div class="govuk-form-group form-group-compound">
+            <select class="govuk-select" id="specialismId" name="specialism" aria-labelledby="update-specialism-heading">
+
+
+                    <option value="self_employed" data-name="Self-employed">
+                Self-employed
+                </option>
+
+                    <option value="director" data-name="Director">
+                Director
+                </option>
+
+                    <option value="hidden" data-name="Hidden impairments">
+                Hidden impairments
+                </option>
+
+                    <option value="large_employer" data-name="Large employer">
+                Large employer
+                </option>
+
+                    <option value="deaf" data-name="Deaf">
+                Deaf
+                </option>
+
+                    <option value="visual" data-name="Visually impaired">
+                Visually impaired
+                </option>
+
+                    <option value="unknown" data-name="Pan disability" selected="">
+                Pan disability
+                </option>
+
+            </select>
+            </div>
+            <div>
+            <input type="submit" class="govuk-button" id="submitButtonSpecialism" value="Save">
+            </div>
+        </form>
+    </div>
+   </div>
+</div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+ <h2 class="govuk-heading-l">Application details</h2>
+
+
+
+
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Version of questions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      25.25.0-rc
+    </dd>
+  </div>
+</dl>
+
+
+
+
+
+
+             <h3 class="govuk-heading-m">Personal details</h3>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Full name
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if not data['first-name']%}  Dereck Smith{% else %}{{data['first-name']}} {{data['last-name']}}{% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="details/name">
+                  Change<span class="govuk-visually-hidden">  Full name </span>
+                </a>
+              </dd>
+            </div>
+        {% if data['national-insurance-number']%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              National insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{data['national-insurance-number']| upper }}
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nino-searchlight/add-national-insurance-number">
+                  Change<span class="govuk-visually-hidden">  National insurance number  </span>
+                </a>
+              </dd>
+            </div>
+        {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1 October 1978
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="details/date-of-birth">
+                  Change<span class="govuk-visually-hidden"> Date of birth</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="details/personal-address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
+
+
+          <h3 class="govuk-heading-m">Contact details</h3>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who do you want to be contacted about your condition, award or application?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Yourself </p>
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">   Who do you want to be contacted about your condition, award or application?</span>
+              </a>
+            </dd>
+          </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                How do you want to be contacted?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+  <li>Phone call</li>
+  <li>    Email</li>
+
+</ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">   How do you want to be contacted?</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
+        <p></p>
+          <h3 class="govuk-heading-m">Employment status</h3>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your employment status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+        Employee
+        </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> Your employment status</span>
+            </a>
+          </dd>
+        </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Your job title
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+                  QA Engineer
+                </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Your job title</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Your employer
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+          DWP Digital
+
+            </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Your employer</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+                  DWP Digital<br>
+
+
+                  High Street<br>
+
+
+                  Newcastle<br>
+
+
+                  Tyneside<br>
+N11 4LQ
+</ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="details/employment-address">
+                  Change<span class="govuk-visually-hidden"> Address</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
+
+
+
+
+          <h3 class="govuk-heading-m">Work Contact Details</h3>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Their name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+        Nadia Nsqjfymv Johnson
+        </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> Their name</span>
+            </a>
+          </dd>
+        </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+                  nadia.nsqjfymv.johnson@mail.co.uk
+                </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Email address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Telephone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+          07168073520
+
+            </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">     Email address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+
+
+          <h3 class="govuk-heading-m">Working Pattern</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          How long have you been in your current job or role?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+        More than 6 weeks
+        </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> How long have you been in your current job or role?</span>
+            </a>
+          </dd>
+        </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              Work start date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+                  Novmeber 1978
+                </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> Work start date</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+              How many days a week do you usually work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list govuk-list--bullet">
+          35
+
+            </ul>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> How many days a week do you usually work?s</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+
+                    <h3 class="govuk-heading-m">Condition and Help Needed</h3>
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                    Primary medical condition
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list govuk-list--bullet">
+                    Visual impairments
+                    </ul>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> Primary medical condition</span>
+                        </a>
+                      </dd>
+                    </div>
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                  What are your conditions or disabilities?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                  I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.
+                  </ul>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> What are your conditions or disabilities?</span>
+                      </a>
+                    </dd>
+                  </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Do you want some help to get to work?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                            Yes
+                          </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Do you want some help to get to work?</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Does your condition make it harder for you to do your job?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                    Yes
+
+                      </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Does your condition make it harder for you to do your job?</span>
+                          </a>
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <h3 class="govuk-heading-m">Effect of condition on Job</h3>
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                  How is it harder?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                  Can't do my job
+                  </ul>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> How is it harder?</span>
+                      </a>
+                    </dd>
+                  </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                      Do you do anything to get around these problems at the moment?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                            Yes
+                          </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Do you do anything to get around these problems at the moment?</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        What do you do?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+              I currently pay for taxis to get to work. I also ask colleagues to read thing out aloud and describe them to me on video calls and in person.
+
+                      </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> What do you do?</span>
+                          </a>
+                        </dd>
+                      </div>
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                  Do you know what you need to help you with this?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                            Yes
+                          </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Do you know what you need to help you with this?</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                      What would help you?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                          This is the help I need
+                          </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> What would help you?</span>
+                          </a>
+                        </dd>
+                      </div>
+
+                    </dl>
+
+
+                    <h3 class="govuk-heading-m">Condition and Help Needed</h3>
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                  What are your conditions or disabilities?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                  I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes.
+                  </ul>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> What are your conditions or disabilities?</span>
+                      </a>
+                    </dd>
+                  </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Do you want some help to get to work?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                            Yes
+                          </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Do you want some help to get to work?</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                        Does your condition make it harder for you to do your job?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                    Yes
+
+                      </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Does your condition make it harder for you to do your job?</span>
+                          </a>
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <h3 class="govuk-heading-m">Effect of condition on Travel to and from work</h3>
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                  How do you get to work at the moment?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <ul class="govuk-list govuk-list--bullet">
+                  Car, lift or taxi
+                  </ul>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> Effect of condition on Travel to and from work</span>
+                      </a>
+                    </dd>
+                  </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                      Why can't you carry on using your car, getting a lift or a taxi?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                            Can't continue travelling by car, lift or taxi
+                          </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Why can't you carry on using your car, getting a lift or a taxi?</span>
+                          </a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                      How often does your work travel include using your car, getting a lift or a taxi?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                  5 times a week
+
+                      </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> How often does your work travel include using your car, getting a lift or a taxi?</span>
+                          </a>
+                        </dd>
+                      </div>
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                  Is it impossible for you to get to and from work using any of these?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <ul class="govuk-list govuk-list--bullet">
+                            No, you could use all of these
+                          </ul>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                            Change<span class="govuk-visually-hidden"> Is it impossible for you to get to and from work using any of these?</span>
+                          </a>
+                        </dd>
+                      </div>
+
+
+
+                    </dl>
+
+
+
+  </div>    </div>    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Your tasks</h2>
+
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+
+{% if data['national-insurance-number']%} <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 9 sections.</p>{% else %}
+          <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p>{% endif %}
+
+          <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">1. </span> To do
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="  {% if data['national-insurance-number']%}./nino-searchlight/add-national-insurance-number{% else %}./nino-searchlight/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                      Add national insurance number from searchlight
+                    </a>
+                  </span>
+                  {% if data['national-insurance-number']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                  <a href="#" aria-describedby="Check-for-appointee">
+                      Check for appointee
+                     </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="eligibility-status">
+                    Check eligibility
+                    </a>
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li>
+          </ul>
+          </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">2. </span> Check application
+              </h2>
+              <ul class="app-task-list__items">
+
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              {% if data['appointee']%}    <a href="#" aria-describedby="read-declaration-status">{% endif %}
+                  Check personal details
+            {% if data['appointee']%}      </a>{% endif %}
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              {% if data['appointee']%}    <a href="#" aria-describedby="read-declaration-status">{% endif %}
+                  Check employer details
+              {% if data['appointee']%}    </a>{% endif %}
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
+            </li>
+          </ul>
+          </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">3. </span> Prepare
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                {% if data['appointee']%}      <a href="#" aria-describedby="company-information-status">{% endif %}
+                      Elements
+                  {% if data['appointee']%}    </a>{% endif %}
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                {% if data['appointee']%}      <a href="#" aria-describedby="list-convictions-status">{% endif %}
+                      Job details
+                  {% if data['appointee']%}    </a>{% endif %}
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
+                </li>
+                <!-- <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="contact-details-status">
+                      Options
+                    </a>
+                  </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+                </li> -->
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                  {% if data['appointee']%}  <a href="#" aria-describedby="list-convictions-status">{% endif %}
+                      Workplace assesment
+                  {% if data['appointee']%}    </a>{% endif %}
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    {% if data['appointee']%}  <a href="#" aria-describedby="list-convictions-status">{% endif %}
+                      Business case
+                  {% if data['appointee']%}    </a>{% endif %}
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if data['appointee']%}Not started{% else %}Cannot start yet{% endif %}</strong>
+                </li>
+
+
+
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">4. </span> Grant decision
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    Submit decision
+                  </span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Past year</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+{% endif %}

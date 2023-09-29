@@ -1,0 +1,26 @@
+{% if not link %}
+{% set link = "2" %}
+{% endif %}
+{% extends folder + "/" + subfolder + "/csi/_CSIQUESTION.html" %}
+
+{% set title =  "Add National Insurance number" %}
+
+
+{% block csi %}
+
+<p>Copy and paste {{data['csi-info'][1]['firstname']}} {{data['csi-info'][1]['surname']}}'s National Insurance number from Searchlight.</p>
+
+
+{{ govukInput({
+  label: {
+    text: "National Insurance number"
+  },
+  hint: { text: "" },
+  id: "ni-number",
+  name: "ni-number",
+  value: data['ni-number'],
+  classes: "govuk-input--width-10"
+}) }}
+
+
+{% endblock %}

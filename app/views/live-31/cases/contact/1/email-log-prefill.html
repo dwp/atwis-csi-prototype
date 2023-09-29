@@ -1,0 +1,78 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="javascript:history.go(-1)" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+  <div class="govuk-form-group">
+    <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+Email sent on  22 April 2023 at 1pm.
+
+
+    </label>
+    </h2>
+<p>By Jane Doe to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
+<p>
+{{data['job-detail-discussion-'+ number]}}
+</p>
+
+</div>
+<p>About: </p>
+
+  <ul class="govuk-list govuk-list--bullet">
+
+      <li>Health condition or disability</li>
+
+  </ul>
+<!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
+<!-- {% include  "live-31/claim/notification-contact.html" %} -->
+     <br>
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+             Return
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

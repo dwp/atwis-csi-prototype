@@ -1,0 +1,28 @@
+{% extends folder + "/_BASE.html" %}
+{% block service %}
+
+        <form id="form" method="post" action="dob">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+            Personal details
+        </h1>
+
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-4">
+            What is your name?
+        </h2>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="first-name">
+                First name
+            </label>
+            <input class="govuk-input govuk-!-margin-bottom-4" id="first-name" name="first-name" type="text" autocomplete="name" spellcheck="false">
+            <label class="govuk-label" for="last-name">
+                Last name
+            </label>
+            <input class="govuk-input" id="last-name" name="last-name" type="text" autocomplete="name" spellcheck="false">
+        </div>
+        <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- customer/address -->
+
+        </form>
+
+{% endblock %}
