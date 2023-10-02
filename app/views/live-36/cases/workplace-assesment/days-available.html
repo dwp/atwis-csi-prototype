@@ -1,0 +1,131 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="address-of-wpa" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="availability-wpa">
+              When is Derek Smith available for a workplace assessment in the next 8
+weekdays?
+              </label>
+            </h2>
+        <p>Provide details of Derek Smith’s availability for a workplace assessment between 8am and 6pm
+on the following days:</p>
+
+
+<ul id="future-dates" class="govuk-list govuk-list--bullet"></ul>
+  <script>
+    const today = new Date();
+    let days = 0;
+    let futureDate = new Date();
+    const dateList = [];
+
+    // Add 8 weekdays to today's date
+    while (days < 8) {
+      futureDate.setDate(futureDate.getDate() + 1);
+      const day = futureDate.getDay();
+      if (day !== 0 && day !== 6) {
+        days++;
+        dateList.push(new Date(futureDate));
+      }
+    }
+
+    // Display the future dates on the HTML page
+    const list = dateList
+      .map(
+        date =>
+          `<li>${date.toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+          })}</li>`
+      )
+      .join("");
+    document.getElementById("future-dates").innerHTML = list;
+  </script>
+
+
+<p>Allow 90 minutes for an assessment.</p>
+
+            <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa" rows="5" aria-describedby="availability-wpa-hint"></textarea>
+          </div>
+          {% if 'No' in data['others-wpa']%}
+          <p>Derek Smith does not want anyone else to be at the workplace assessment</p>{% endif %}
+
+          {% if 'portugal' in data['others-wpa']%}
+          <p>Dereck Smith has requested a third party at the WPA.</p>
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-2">
+              When is the third party available for a workplace assessment in the next 8
+              weekdays?
+
+
+
+              </label>
+            </h2>
+            <div id="availability-wpa-hint" class="govuk-hint">
+              Include names and availability on non-working days/out of working hours if
+          appropriate.
+            </div>
+
+            <div class="govuk-form-group">
+          </div>
+            <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa-2" rows="5" aria-describedby="availability-wpa-hint"></textarea>
+          </div>
+
+          {% endif %}
+
+          {% if 'france' in data['others-wpa']%}
+          <p>Dereck Smith has requested someone from Smith Digital Limited at the WPA.</p>
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-3">
+
+
+                When is the someone from Smith Digital Limited available for a workplace assessment in the next 8
+                weekdays?
+              </label>
+            </h2>
+            <div id="availability-wpa-hint" class="govuk-hint">
+              Include names and availability on non-working days/out of working hours if
+          appropriate.
+            </div>
+
+            <div class="govuk-form-group">
+          </div>
+            <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa-3" rows="5" aria-describedby="availability-wpa-hint"></textarea>
+          </div>
+
+          {% endif %}
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}
