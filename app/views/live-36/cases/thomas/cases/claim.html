@@ -1,0 +1,20 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+{% set phase = "thomas" %}
+{% set case = 'other-cases-2'%}
+
+{% if data['exceptions']=='No'%}
+{% set phase = "notEligible" %}{% endif %}
+
+{% extends   "live-36/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+{% include  "live-36/claim/_CLAIMDETAILS.html" %}
+
+{% endblock %}
