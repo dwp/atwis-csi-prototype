@@ -21,7 +21,7 @@ module.exports = {
 
 'ttw-match' : "",
 'claim-item' : "",
-
+'sw-match' : "",
 
   'claims' : "",
 'benefits' : "",
