@@ -11,7 +11,6 @@
 
 
 
-
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
 
 {% if case == 'susan' %}
@@ -184,7 +183,7 @@ British Sign Language (BSL) interpreter
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Support provider
           </dt>
@@ -193,7 +192,7 @@ Lisa signs
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
+          </div> -->
 
 
         <div class="govuk-summary-list__row">
@@ -971,6 +970,8 @@ Total of items selected
       Check the hourly rate, number of hours and support provider.
     </div>
 
+
+
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="grant-matches-claim-sw-5" name="sw-match" type="checkbox" value="Yes" data-behaviour="exclusive" {{ checked("sw-match", "Yes") }}>
       <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-sw-5">
@@ -980,6 +981,7 @@ Total of items selected
 
     <div class="govuk-checkboxes__divider">or</div>
 
+
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="grant-matches-claim-sw-1" name="sw-match" type="checkbox" value="amounts" {{ checked("sw-match", "amounts") }}>
@@ -988,11 +990,20 @@ Total of items selected
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="grant-matches-claim-sw-2" name="sw-match" type="checkbox" value="journeys" {{ checked("sw-match", "journeys") }}>
+        <input class="govuk-checkboxes__input" id="grant-matches-claim-sw-2" name="sw-match" type="checkbox" value="hours-more" {{ checked("sw-match", "hours-more") }}>
         <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-sw-2">
-          Number of hours do not match
+          Number of hours claimed more than grant award
         </label>
       </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="grant-matches-claim-sw-3" name="sw-match" type="checkbox" value="hours-less" {{ checked("sw-match", "hours-less") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-sw-2">
+          Number of hours claimed less than grant award
+        </label>
+      </div>
+
+
+
       <!-- <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="grant-matches-claim-sw-3" name="sw-match" type="checkbox" value="addresses" {{ checked("sw-match", "addresses") }}>
         <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-sw-3">
