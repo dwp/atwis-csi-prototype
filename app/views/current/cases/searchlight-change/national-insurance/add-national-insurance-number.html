@@ -7,7 +7,7 @@
 {% block csi %}
 <br>
 
-<form action="/current/cases/claim#checks" method="post" novalidate>
+<form action="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#checks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -38,13 +38,13 @@
   <div id="national-insurance-number-hint" class="govuk-hint">
 
   </div>
-  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number-change" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" >
+  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number-change" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value="AB 12 34 56 C">
 </div>
 </fieldset>
 </div>
 
 <button class="govuk-button" data-module="govuk-button" >
-  Add to application details
+  Save and continue
 </button>
 </form>
 </div>
