@@ -7,7 +7,7 @@
 {% block csi %}
 <br>
 
-<form action="/current/cases/claim#checks" method="post" novalidate>
+<form action="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#checks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
