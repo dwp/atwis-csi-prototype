@@ -12,7 +12,7 @@
 
 
 
-        <form action="/payments/current/cases/susan/cases/review-claim-no-match/amount-low-no-match-check" method="post" novalidate>
+<form action="/payments/current/cases/susan/claim-susan#your-tasks" method="post" novalidate>
 
           <div class="govuk-width-container">
             <main class="govuk-main-wrapper">
@@ -31,11 +31,12 @@
             British Sign Language (BSL) interpreter
             </h2>
 
+            <p class="govuk-body">You entered {{data['sw-hours']}} hours for this claim. </p>
 
             <p class="govuk-body">The maximum amont of hours you can pay for this claim is: </p>
 
           <div class="govuk-inset-text">
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">{{data['sw-hours']}} hours </p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">22 hours </p>
         </div>
 
 
@@ -50,14 +51,14 @@
                         </legend>
                             <div class="govuk-radios" data-module="govuk-radios">
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="amount-low-no-match-check-1" name="amount-low-no-match-check" type="radio" value="Yes" {{ checked("amount-low-no-match-check", "Yes") }}>
-                                <label class="govuk-label govuk-radios__label" for="amount-low-no-match-check-1">
-                                  Yes
+                                <input class="govuk-radios__input" id="sw-hours-more-1" name="sw-hours-more" type="radio" value="Yes" {{ checked("sw-hours-more", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="sw-hours-more-1">
+                                  Yes, pay only 22 hours
                                 </label>
                               </div>
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="amount-low-no-match-check-2" name="amount-low-no-match-check" type="radio" value="No" {{ checked("amount-low-no-match-check", "No") }}>
-                                <label class="govuk-label govuk-radios__label" for="amount-low-no-match-check-2">
+                                <input class="govuk-radios__input" id="sw-hours-more-2" name="sw-hours-more" type="radio" value="No" {{ checked("sw-hours-more", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="sw-hours-more-2">
                                   No, reject this claim
                                 </label>
                               </div>
