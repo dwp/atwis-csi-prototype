@@ -180,77 +180,166 @@
 
 
 <!-- SW HOURS AND AMOUNT NO PATHS -->
+<!-- SW HOURS AND AMOUNT NO PATHS -->
+<!-- SW HOURS AND AMOUNT NO PATHS -->
+<!-- SW HOURS AND AMOUNT NO PATHS -->
+<!-- SW HOURS AND AMOUNT NO PATHS -->
 
-{% if case == 'susan' and 'hours-less' in data ['sw-match'] %}
+<!-- {% if case == 'susan' and 'hours-more' in data ['sw-match'] %}
 
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
 
+                                            <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
 
-<li class="app-task-list__item">
-  <span class="app-task-list__task-name">
+                            Hours claimed are more than grant award
+                            </a>
+                            </span>
 
-                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
-
-                Hours claimed are more than grant award
-                </a>
-                </span>
-
-                <!-- {% if not data['sw-match']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %} -->
-                {% if data['sw-match'] and not data ['sw-hours-more']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                {% if data['sw-hours-more'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
-
-
+                            {% if data['sw-match'] and not data ['sw-hours-more']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                            {% if data['sw-hours-more'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
 {% endif  %}
 
+{% if case == 'susan' and 'hours-less' in data ['sw-match'] %}
 
-{% if case == 'susan' and 'hours-more' in data ['sw-match'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
 
+                                            <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-less-no-match-tab#your-tasks" aria-describedby="claim-completed">
 
+                            Hours claimed are less than grant award
+                            </a>
+                            </span>
 
-<li class="app-task-list__item">
-  <span class="app-task-list__task-name">
-
-                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-less-no-match-tab#your-tasks" aria-describedby="claim-completed">
-
-                Hours claimed are less than grant award
-                </a>
-                </span>
-
-                                  <!-- {% if not data['sw-match']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %} -->
-                                  {% if data['sw-match'] and not data ['sw-hours-less']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                                  {% if data['sw-hours-less'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
-
-
+                                              {% if data['sw-match'] and not data ['sw-hours-less']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                              {% if data['sw-hours-less'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
 {% endif  %}
 
 {% if case == 'susan' and 'amounts' in data ['sw-match'] %}
 
+{% if 'hours-less' in data ['sw-match'] %}
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
 
 
-<li class="app-task-list__item">
-  <span class="app-task-list__task-name">
 
+                                          {% if data ['sw-hours-less']%}
+                                          <a href="/payments/current/cases/susan/review-claim-no-match/sw-amount-no-match-tab#your-tasks" aria-describedby="claim-completed">
+                                          {% endif  %}
 
+                          Hourly rate does not match grant award
+                          </a>
+                          </span>
 
-                                {% if data ['sw-hours-less'] or data['sw-hours-more'] %}
-                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-amount-no-match-enter-tab#your-tasks" aria-describedby="claim-completed">
-                                {% endif  %}
-
-                Hourly rate does not match grant award
-                </a>
-                </span>
-
-                                  {% if not data['sw-hours-less'] or not data['sw-hours-more'] %}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                                  {% if data['sw-hours-less'] or data['sw-hours-more'] and not data ['sw-new-amount'] %}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                                  {% if data['sw-new-amount'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                                            {% if not data['sw-hours-less']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                                            {% if data['sw-hours-less'] and not data ['sw-new-amount'] %}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                            {% if data['sw-new-amount'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
 
 
 {% endif  %}
 
+{% if 'hours-more' in data ['sw-match'] %}
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+
+
+
+                                          {% if data ['sw-hours-more']%}
+                                          <a href="/payments/current/cases/susan/review-claim-no-match/sw-amount-no-match-tab#your-tasks" aria-describedby="claim-completed">
+                                          {% endif  %}
+
+                          Hourly rate does not match grant award
+                          </a>
+                          </span>
+
+                                            {% if not data['sw-hours-more']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                                            {% if data['sw-hours-more'] and not data ['sw-new-amount'] %}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                            {% if data['sw-new-amount'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+
+
+{% endif  %}
+
+{% endif  %} -->
+
+{% if case == 'susan'%}
+{% if 'No-hours' in data ['sw-match']%}
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+
+                                                  <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-less-no-match-tab#your-tasks" aria-describedby="claim-completed">
+
+                                  Hours claimed do not match grant award
+                                  </a>
+                                  </span>
+
+                                  {% if not data['sw-match']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                                  {% if data['sw-match'] and not data ['sw-hours-less']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                  {% if data['sw-hours-less'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+{% endif  %}
+
+{% if 'No-hours' in data ['sw-match']%}
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+
+                                {% if data ['sw-hours-less']%}
+                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-amount-no-match-ease-tab#your-tasks" aria-describedby="claim-completed">
+                                {% endif  %}
+
+
+                            Hourly rate does not match grant award
+                            </a>
+                            </span>
+
+
+                                  {% if not data['sw-hours-less']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                                  {% if data['sw-hours-less'] and not data ['easement'] %}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                  {% if data['easement'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+{% endif  %}
+
+{% if 'No-amount' in data ['sw-match']%}
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+
+                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-amount-no-match-ease-tab#your-tasks" aria-describedby="claim-completed">
+
+
+                            Hourly rate does not match grant award
+                            </a>
+                            </span>
+
+                                  <!-- {% if not data['sw-match']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %} -->
+                                  {% if data['sw-match'] and not data ['easement'] %}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                  {% if data['easement'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+{% endif  %}
+
+{% endif  %}
+
+
 
                                                   </li>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -463,8 +552,7 @@
 {% if case == 'susan' %}
 
 
-{% if data ['sw-new-amount'] %}
-
+{% if data['easement'] %}
               <a href="/payments/current/cases/susan/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
@@ -472,14 +560,57 @@
               </a>
               </span>
 
-              {% if not data['sw-new-amount']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-              {% if data['sw-new-amount'] and not data ['company-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+              {% if not data['easement']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+              {% if data['easement'] and not data ['company-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
               {% if data['company-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
               <li>
 
 
 {% endif %}
+
+
+
+
+
+<!-- SW REJECTED INVOICE NO PATHS -->
+<!-- SW REJECTED INVOICE NO PATHS -->
+<!-- SW REJECTED INVOICE NO PATHS -->
+<!-- SW REJECTED INVOICE NO PATHS -->
+<!-- SW REJECTED INVOICE NO PATHS -->
+
+
+{% if case == 'susan' and data ['company-details'] == 'Yes'%}
+
+
+
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+                                {% if data ['company-details']%}
+                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
+                                {% endif  %}
+
+                Review rejected invoice: British Sign Language (BSL) interpreter
+                </a>
+                </span>
+
+                <!-- {% if not data['sw-match']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %} -->
+                {% if data['sw-match'] and not data ['sw-hours-more']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['sw-hours-more'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+
+
+{% endif  %}
+
+
+
+
+
+
+
+
+
 
 
 

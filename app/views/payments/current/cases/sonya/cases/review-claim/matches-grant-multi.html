@@ -104,7 +104,6 @@ Claim end date
 
 
 
-
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Hours of support claimed
@@ -120,6 +119,41 @@ Claim end date
 
         </dd>
         </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total of support claimed
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £{{data['sw-amount']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
+            Update
+                    <span class="govuk-visually-hidden"> - </span>
+          </a> -->
+
+        </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Average hourly rate
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £18.50
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
+            Update
+                    <span class="govuk-visually-hidden"> - </span>
+          </a> -->
+
+        </dd>
+        </div>
+
 
         <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -954,10 +988,56 @@ Total of items selected
 
 
 
-
-
-
 {% if case == 'susan' %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h2 class="govuk-fieldset__heading">
+        Does the claim match the grant award?
+      </h1>
+
+    </legend>
+
+    <div id="countries-hint" class="govuk-hint">
+      Check the hourly rate, number of hours and support provider.
+    </div>
+
+
+
+        <div class="govuk-radios" data-module="govuk-radios">
+
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="grant-matches-claim-sw-6" name="sw-match" type="radio" value="Yes" {{ checked("grant-matches-claim", "Yes") }}>
+<label class="govuk-label govuk-radios__label" for="grant-matches-claim-sw-6">
+Yes
+</label>
+</div>
+
+<!-- <div class="govuk-radios__divider">or</div> -->
+
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="grant-matches-claim-sw-7" name="sw-match" type="radio" value="No-hours" {{ checked("sw-match", "No-hours") }}>
+<label class="govuk-label govuk-radios__label" for="grant-matches-claim-sw-7">
+No hours and amount do not match
+</label>
+</div>
+
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="grant-matches-claim-sw-8" name="sw-match" type="radio" value="No-amount" {{ checked("sw-match", "No-amount") }}>
+<label class="govuk-label govuk-radios__label" for="grant-matches-claim-sw-8">
+No amount does not match
+</label>
+</div>
+
+</div>
+</fieldset>
+</div>
+
+{% endif %}
+
+
+<!-- {% if case == 'susan' %}
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
@@ -1004,19 +1084,13 @@ Total of items selected
 
 
 
-      <!-- <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="grant-matches-claim-sw-3" name="sw-match" type="checkbox" value="addresses" {{ checked("sw-match", "addresses") }}>
-        <label class="govuk-label govuk-checkboxes__label" for="grant-matches-claim-sw-3">
-          Support provider does not match
-        </label>
-      </div> -->
 
 
     </div>
   </fieldset>
 </div>
 
-{% endif %}
+{% endif %} -->
 
 
 {% if case == 'paul' %}
