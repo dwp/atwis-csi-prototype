@@ -1,5 +1,19 @@
 
-<ul class="app-task-list__items">
+
+          {% if totalAward > 10000 %}
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              <a href="/current/cases/decision/approval" aria-describedby="job-status">  Approval</a>
+              </span>
+              {% if not data['approval'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+            {% if data['approval'+ phase]=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+            </li>
+          {% endif %}
+
+
+
+        {% if totalAward < 10000 %}  <ul class="app-task-list__items">      {% endif %}
 
   <li class="app-task-list__item">
   <span class="app-task-list__task-name">
