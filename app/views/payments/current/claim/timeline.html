@@ -110,6 +110,7 @@
             <h2 class="moj-timeline__title">{% if case == 'dereck' %}Invoice number{% else %}Invoice numbers{% endif %}</h2>
             <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
             </div>
+            <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
             <p class="moj-timeline__description">
             <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
             </p>
@@ -213,6 +214,62 @@
                     <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
                     </p>
                   </div> -->
+
+
+
+
+
+
+<!-- SW HOURS AND AMOUNT NO PATHS -->
+
+{% if data['sw-new-amount'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hourly rate does not match grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description">£{{data['sw-new-amount']}} New total amount entered</div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+{% if data['sw-hours-more'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hours claimed are more than grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+{% if data['sw-hours-less'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hours claimed are less than grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description">{{data['sw-low-hours']}} hours entered from claim</div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+
+
+
+
 
 
               <!-- CHECK CLAIM MATTCHES GRANT AWARD -->
