@@ -31,7 +31,8 @@
             British Sign Language (BSL) interpreter
             </h2>
 
-            <p class="govuk-body">You entered {{data['sw-hours']}} hours for this claim. </p>
+            <!-- <p class="govuk-body">number of hours claimed {{data['sw-hours']}} . </p> -->
+            <p class="govuk-body">{{data['sw-hours']}} hours claimed. </p>
 
             <p class="govuk-body">The maximum amont of hours you can pay for this claim is: </p>
 
@@ -46,14 +47,14 @@
                       <div class="govuk-form-group">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                           <h2 class="govuk-heading-m">
-                            Do you want to pay this claim?
+                            Do you want to pay 22 hours for this claim?
                           </h2>
                         </legend>
                             <div class="govuk-radios" data-module="govuk-radios">
                               <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="sw-hours-more-1" name="sw-hours-more" type="radio" value="Yes" {{ checked("sw-hours-more", "Yes") }}>
                                 <label class="govuk-label govuk-radios__label" for="sw-hours-more-1">
-                                  Yes, pay only 22 hours
+                                  Yes
                                 </label>
                               </div>
                               <div class="govuk-radios__item">
