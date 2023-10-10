@@ -57,10 +57,12 @@
 
 
             <p class="govuk-body">
-              You may pay over the grant award amount for this claim due to easements in place
+              You may pay over the grant award amount.
+              <!-- due to easements in place -->
             </p>
             <p class="govuk-body">
-              amount to pay on this claim:
+              Cost of this claim:
+              <!-- Amount to pay on this claim: -->
             </p>
 
 
@@ -68,7 +70,7 @@
 
 
           <div class="govuk-inset-text">
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">£621.60</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">£{{data['sw-amount']}}</p>
         </div>
 
         <!-- <p class="govuk-body">The maximum amount we will pay for each hour of support on this claim is £18.50, £592.00 in total for this claim.</p> -->
@@ -79,7 +81,11 @@
                       <div class="govuk-form-group">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                           <h2 class="govuk-heading-m">
-                            Is the amount to pay correct?
+                            <!-- Is the amount to pay correct?
+                            Do you want to pay? -->
+
+                            <!-- Approve amount to pay? -->
+                            Do you want to pay £{{data['sw-amount']}} for this claim?
                           </h2>
                         </legend>
                             <div class="govuk-radios" data-module="govuk-radios">
@@ -111,7 +117,7 @@
 
           </div>
                    <button class="govuk-button" data-module="govuk-button">
-                     Save amount to pay
+                     Save and continue
                    </button>
                  </form>
                </div>
