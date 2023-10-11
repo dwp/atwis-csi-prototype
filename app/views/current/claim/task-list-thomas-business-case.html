@@ -201,8 +201,10 @@ data['wpa'+ phase]  %}
 
 
       </ul>{% endif %}
-      {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}
 
+    {% if data['approve-1']=='true' and data['approve-2']=='true'%}  {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
+    {% if data['approve-1']=='true' and data['approve-2']=='false'%}  {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+    {% if data['approve-1']=='false' and data['approve-2']=='true'%}  {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}{% endif %}
 {% if totalAward < 10000 %}
       <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
@@ -214,7 +216,7 @@ data['wpa'+ phase]  %}
       <h2 class="govuk-heading--m">Award is over approval limits</h2>
 
       <p>You will need to get approval from a appropriate approver.  </p>
-<div class="govuk-inset-text">Total award £{{totalAward}}</div>
+<div class="govuk-inset-text">Total award £{{totalAward}} <br><br>Check <a href="" target="_blank">approval guidance (opens in new tab)</a>.</div>
     <br>
 {% endif %}
 

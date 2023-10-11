@@ -35,37 +35,78 @@
                    <tr class="govuk-table__row">
                      <th scope="col" class="govuk-table__header">Support type</th>
                      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
-                     <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Cost</th>
                      <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Start date</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Cost</th>
                                   </tr>
                                 </thead>
                                 <tbody class="govuk-table__body">
                                   <tr class="govuk-table__row">
                                     <th scope="row" class="govuk-table__header">Support worker</th>
                                     <td class="govuk-table__cell govuk-table__cell--numeric">
-    British Sign Language (BSL) interpreter <br>5 hours of support per week for 3 years</td>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric" >
-  {{data['chosen-quote-thomas']}}</td>
+    British Sign Language (BSL) interpreter <br>  £{{data['chosen-quote-thomas']}} per hour<br>5 hours of support per week for 3 years</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric" >
+      {% if data['grant-award-date']=='Another date'%}
+
+      {{data['sw-start-date-day']}}
+
+      {% if (data['sw-start-date-month'] =='01') or (data['sw-start-date-month'] =='1') %} January {% endif%}
+      {% if (data['sw-start-date-month'] =='02') or (data['sw-start-date-month'] =='2') %} February  {% endif%}
+      {% if (data['sw-start-date-month'] =='03') or (data['sw-start-date-month'] =='3') %} March {% endif%}
+      {% if (data['sw-start-date-month'] =='04') or (data['sw-start-date-month'] =='4') %} June {% endif%}
+      {% if (data['sw-start-date-month'] =='05') or (data['sw-start-date-month'] =='5') %} May {% endif%}
+      {% if (data['sw-start-date-month'] =='06') or (data['sw-start-date-month'] =='6') %} June {% endif%}
+      {% if (data['sw-start-date-month'] =='07') or (data['sw-start-date-month'] =='7') %} July {% endif%}
+      {% if (data['sw-start-date-month'] =='08') or (data['sw-start-date-month'] =='8') %} August {% endif%}
+      {% if (data['sw-start-date-month'] =='09') or (data['sw-start-date-month'] =='9') %} September {% endif%}
+      {% if data['sw-start-date-month'] =='10' %} October {% endif%}
+      {% if data['sw-start-date-month'] =='11'%} November {% endif%}
+      {% if data['sw-start-date-month'] =='12' %} December {% endif%}
+
+
+      {{data['sw-start-date-year']}}
+      {% else %}
+        <script>
+        // Get the current date
+             var now = new Date();
+             var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+             // Write the date to the HTML page
+             document.write(date);
+           </script>{% endif %}
+  </td>
+  <td class="govuk-table__cell govuk-table__cell--numeric" >
+
+
+  {% if data['approve-1']=='true' %}  {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+
+
+  £{{totalAward}}</td>
+
+                                  </tr>
+
+                                  <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Support worker</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+  Notetaker<br>  £{{data['chosen-quote-thomas-2']}} per hour<br>5 hours of support per week for 3 years </td>
   <td class="govuk-table__cell govuk-table__cell--numeric" >
     {% if data['grant-award-date']=='Another date'%}
 
-    {{data['sw-start-date-day']}}
+    {{data['sw-start-date-2-day']}}
 
-    {% if (data['sw-start-date-month'] =='01') or (data['sw-start-date-month'] =='1') %} January {% endif%}
-    {% if (data['sw-start-date-month'] =='02') or (data['sw-start-date-month'] =='2') %} February  {% endif%}
-    {% if (data['sw-start-date-month'] =='03') or (data['sw-start-date-month'] =='3') %} March {% endif%}
-    {% if (data['sw-start-date-month'] =='04') or (data['sw-start-date-month'] =='4') %} June {% endif%}
-    {% if (data['sw-start-date-month'] =='05') or (data['sw-start-date-month'] =='5') %} May {% endif%}
-    {% if (data['sw-start-date-month'] =='06') or (data['sw-start-date-month'] =='6') %} June {% endif%}
-    {% if (data['sw-start-date-month'] =='07') or (data['sw-start-date-month'] =='7') %} July {% endif%}
-    {% if (data['sw-start-date-month'] =='08') or (data['sw-start-date-month'] =='8') %} August {% endif%}
-    {% if (data['sw-start-date-month'] =='09') or (data['sw-start-date-month'] =='9') %} September {% endif%}
-    {% if data['sw-start-date-month'] =='10' %} October {% endif%}
-    {% if data['sw-start-date-month'] =='11'%} November {% endif%}
-    {% if data['sw-start-date-month'] =='12' %} December {% endif%}
+    {% if (data['sw-start-date-2-month'] =='01') or (data['sw-start-date-2-month'] =='1') %} January {% endif%}
+    {% if (data['sw-start-date-2-month'] =='02') or (data['sw-start-date-2-month'] =='2') %} February  {% endif%}
+    {% if (data['sw-start-date-2-month'] =='03') or (data['sw-start-date-2-month'] =='3') %} March {% endif%}
+    {% if (data['sw-start-date-2-month'] =='04') or (data['sw-start-date-2-month'] =='4') %} June {% endif%}
+    {% if (data['sw-start-date-2-month'] =='05') or (data['sw-start-date-2-month'] =='5') %} May {% endif%}
+    {% if (data['sw-start-date-2-month'] =='06') or (data['sw-start-date-2-month'] =='6') %} June {% endif%}
+    {% if (data['sw-start-date-2-month'] =='07') or (data['sw-start-date-2-month'] =='7') %} July {% endif%}
+    {% if (data['sw-start-date-2-month'] =='08') or (data['sw-start-date-2-month'] =='8') %} August {% endif%}
+    {% if (data['sw-start-date-2-month'] =='09') or (data['sw-start-date-2-month'] =='9') %} September {% endif%}
+    {% if data['sw-start-date-2-month'] =='10' %} October {% endif%}
+    {% if data['sw-start-date-2-month'] =='11'%} November {% endif%}
+    {% if data['sw-start-date-2-month'] =='12' %} December {% endif%}
 
 
-    {{data['sw-start-date-year']}}
+    {{data['sw-start-date-2-year']}}
     {% else %}
       <script>
       // Get the current date
@@ -75,66 +116,24 @@
            document.write(date);
          </script>{% endif %}
 </td>
-                                  </tr>
-
-                                  <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">Support worker</th>
-                                    <td class="govuk-table__cell govuk-table__cell--numeric">
-  Notetaker<br>5 hours of support per week for 3 years </td>
                                     <td class="govuk-table__cell govuk-table__cell--numeric" >
-                                      {{data['chosen-quote-thomas-2']}} </td>
-                                      <td class="govuk-table__cell govuk-table__cell--numeric" >
-                                        {% if data['grant-award-date']=='Another date'%}
+                                      {% if data['approve-2']=='true' %}  {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}{% endif %}
+                                    £{{totalAward}}</td>
 
-                                        {{data['sw-start-date-2-day']}}
-
-                                        {% if (data['sw-start-date-2-month'] =='01') or (data['sw-start-date-2-month'] =='1') %} January {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='02') or (data['sw-start-date-2-month'] =='2') %} February  {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='03') or (data['sw-start-date-2-month'] =='3') %} March {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='04') or (data['sw-start-date-2-month'] =='4') %} June {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='05') or (data['sw-start-date-2-month'] =='5') %} May {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='06') or (data['sw-start-date-2-month'] =='6') %} June {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='07') or (data['sw-start-date-2-month'] =='7') %} July {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='08') or (data['sw-start-date-2-month'] =='8') %} August {% endif%}
-                                        {% if (data['sw-start-date-2-month'] =='09') or (data['sw-start-date-2-month'] =='9') %} September {% endif%}
-                                        {% if data['sw-start-date-2-month'] =='10' %} October {% endif%}
-                                        {% if data['sw-start-date-2-month'] =='11'%} November {% endif%}
-                                        {% if data['sw-start-date-2-month'] =='12' %} December {% endif%}
-
-
-                                        {{data['sw-start-date-2-year']}}
-                                        {% else %}
-                                          <script>
-                                          // Get the current date
-                                               var now = new Date();
-                                               var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-                                               // Write the date to the HTML page
-                                               document.write(date);
-                                             </script>{% endif %}
-                                    </td>
                                   </tr>
 
 
 
-{% if data['cost-per-hr']%}  <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Support worker</th>
-    <td class="govuk-table__cell govuk-table__cell--numeric">
-  {{data['sw-type']}}  </td>
-    <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">
-      {{data['chosen-quote-thomas-2']}} </td>
-  </tr>{% endif %}
-  <table class="govuk-table">
-  <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> Total award </th>
+      <th scope="row" class="govuk-table__header"> <div class="govuk-!-padding-bottom-9"></div>Total award </th>
       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
-      <td class="govuk-table__cell govuk-table__cell--numeric" >
-{% if data['chosen-quote-thomas']=='£15 per hour, total cost £10,800' and data['chosen-quote-thomas-2']=='£15 per hour, total cost £10,800'%}£21,600{% endif %}
+    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+       <td class="govuk-table__cell govuk-table__cell--numeric"><div class="govuk-!-padding-bottom-9"></div>
+         {% if data['approve-1']=='true' and data['approve-2']=='true'%}  {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
+      {% if data['approve-1']=='true' and data['approve-2']=='false'%}  {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+      {% if data['approve-1']=='false' and data['approve-2']=='true'%}  {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}{% endif %}
+      £{{totalAward}}</td>
 
-{% if data['chosen-quote-thomas']=='£15 per hour, total cost £10,800' and  data['chosen-quote-thomas-2']=='£16 per hour, total cost £11,520'%}£22,320{% endif %}
-{% if data['chosen-quote-thomas-2']=='£15 per hour, total cost £10,800' and  data['chosen-quote-thomas']=='£16 per hour, total cost £11,520'%}£22,320{% endif %}
-{% if data['chosen-quote-thomas-2']=='£16 per hour, total cost £11,520' and  data['chosen-quote-thomas']=='£16 per hour, total cost £11,520'%}£23,040{% endif %}
-</td>
   </tr>
 
 
