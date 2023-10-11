@@ -201,29 +201,29 @@ data['wpa'+ phase]  %}
 
 
       </ul>{% endif %}
-{% if 'Mental health support' in data['elements']%}
-{% if (data['mhss-support']=='Yes' and data['mhss-referral']) or (data['mhss-support']=='No') and data['chosen-quote-thomas']%}
-<h2 class="govuk-heading--m">Award is under approval limits</h2>
 
-<p>You do not need to send this award to anyone else for approval. </p>
-
-<br>
-{% endif %}
-{% else %}
-{% if data['chosen-quote-thomas']%}
+    {% if data['approve-1']=='true' and data['approve-2']=='true'%}  {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
+    {% if data['approve-1']=='true' and data['approve-2']=='false'%}  {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+    {% if data['approve-1']=='false' and data['approve-2']=='true'%}  {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}{% endif %}
+{% if totalAward < 10000 %}
       <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
       <p>You do not need to send this award to anyone else for approval. </p>
 
     <br>
 {% endif %}
+{% if totalAward > 10000 %}
+      <h2 class="govuk-heading--m">Award is over approval limits</h2>
+
+      <p>You will need to get approval from a appropriate approver.  </p>
+<div class="govuk-inset-text">Total award £{{totalAward}} <br><br>Check <a href="" target="_blank">approval guidance (opens in new tab)</a>.</div>
+    <br>
 {% endif %}
 
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">5. </span> Award decision
           </h2>
-
 
 
 
