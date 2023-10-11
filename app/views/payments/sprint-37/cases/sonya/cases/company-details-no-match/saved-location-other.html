@@ -1,9 +1,9 @@
+{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set view = "tab" %}
 
-{% extends   "payments/sprint-38/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/sprint-37/claim/_CSIBASE.html" %}
 
 {% block csi %}
 
@@ -11,7 +11,7 @@
 
 
 
-<form action="/payments/sprint-38/cases/sonya/cases/review-claim-no-match/amount-low-no-match-check" method="post" novalidate>
+<form action="/payments/sprint-37/cases/sonya/cases/company-details-no-match/rejected-invoice-ipad-check" method="post" novalidate>
 
 
 
@@ -23,11 +23,13 @@
 
 
         <h1 class="govuk-heading-l">
-British Sign Language (BSL) interpreter
+Where did you save the replacment invoice?
         </h1>
 
+
+
         <p class="govuk-body">
-As the hours claimed for this support are different than the grant award, enter the hours claimed from the invoice.
+Add a short note to help other payment officers find the replacment invice for the Ipad Pro case.
         </p>
 
 
@@ -35,16 +37,16 @@ As the hours claimed for this support are different than the grant award, enter 
 
         <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-Enter hours of support given
+<!-- Enter the amount to pay -->
         </legend>
         <div id="dob-hint" class="govuk-hint">
 
         </div>
         <div class="govuk-form-group">
-        <label class="govuk-label" for="new-low-amount">
+        <label class="govuk-label" for="new-invoice-location">
 
         </label>
-        <input class="govuk-input govuk-input--width-10" id="new-low-amount-1" name="new-low-amount-1" type="text" autocomplete="address-line1">
+        <input class="govuk-input govuk-input--width-30" id="new-invoice-location-1" name="new-invoice-location-1" type="text" autocomplete="address-line1">
         </div>
         </fieldset>
 

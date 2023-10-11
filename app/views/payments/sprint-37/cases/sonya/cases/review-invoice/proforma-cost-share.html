@@ -1,0 +1,98 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-37/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-37/cases/claim#your-tasks" method="post" novalidate>
+
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h2 class="govuk-fieldset__heading">
+Has cost shae been paid?
+    </h2>
+    {% if case == 'sonya' and not data ['sop-site-code'] %}
+    <div class="govuk-inset-text">
+      {{ data['payee-name'] }}
+    </div>
+    {% else %}
+    <div class="govuk-inset-text">
+      {{ data['payee-name-1'] }}
+    </div>
+    {% endif %}
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              Check with the supplier if cost share has been paid for this invoice.
+                </div>
+
+
+
+
+
+
+
+      <div class="govuk-form-group">
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          {% if case == 'sonya' %}
+          <input class="govuk-radios__input" id="proforma-cost-share-1" name="proforma-cost-share" type="radio" value="Yes~sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" {{ checked("proforma-cost-share", "Yes") }}>
+          {% endif %}
+
+          <label class="govuk-label govuk-radios__label" for="proforma-cost-share-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="proforma-cost-share-2" name="proforma-cost-share" type="radio" value="No~review-payment/sop-find-no" {{ checked("proforma-cost-share", "No") }}>
+          <label class="govuk-label govuk-radios__label" for="proforma-cost-share-2">
+            No
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+    </div>
+    <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+     </div>
+   </div>
+
+
+      </main>
+      </div>
+
+
+
+
+
+
+
+{% endblock %}
