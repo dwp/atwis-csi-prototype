@@ -52,6 +52,9 @@
             {% if case == 'nina' %}
             <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~sonya/cases/company-details-no-match/select-company-details-no-match" {{ checked("company-details", "Yes") }}>
             {% endif %}
+            {% if case == 'susan' %}
+            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~susan/claim-susan#your-tasks" {{ checked("company-details", "Yes") }}>
+            {% endif %}
 
             <label class="govuk-label govuk-radios__label" for="company-details-1">
               Yes
@@ -74,7 +77,7 @@
 <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~paul/claim-paul#your-tasks" {{ checked("company-details", "Yes") }}>
 {% endif %}
 {% if case == 'susan' %}
-<input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~susan/claim-susan#your-tasks" {{ checked("company-details", "Yes") }}>
+<input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="No~susan/claim-susan#your-tasks" {{ checked("company-details", "No") }}>
 {% endif %}
 
             <label class="govuk-label govuk-radios__label" for="company-details-2">

@@ -65,7 +65,12 @@
                           £296.00
                 {% endif %}
                 {% if case == 'susan' %}
-                          £592.00
+                {% if data['sw-amount'] %}
+                                  £{{data['sw-amount']}}
+                {% else %}
+                                  £592.00
+                {% endif %}
+
                 {% endif %}
 
               </strong>

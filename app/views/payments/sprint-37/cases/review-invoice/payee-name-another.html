@@ -1,0 +1,84 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-37/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<!-- <form action="/payments/sprint-37/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-37/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h2 class="govuk-fieldset__heading">
+Summary of payees
+        </h2>
+
+
+        <br>
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Payee 1
+        </dt>
+        <dd class="govuk-summary-list__value">
+{{data['payee-name']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+<!-- Change
+        <span class="govuk-visually-hidden"> name</span> -->
+        </a>
+        </dd>
+        </div>
+        </dl>
+
+
+        </fieldset>
+        </div>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add another payee
+        </button>
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+Save amount to pay
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1238,17 +1238,18 @@
                   Hours of support
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['sw-hours']}}
+                  32
+                  <!-- {{data['sw-hours']}} -->
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Cost per hour
+                  Hourly rate
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £18.50
+                  £26.88
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
@@ -1258,7 +1259,11 @@
                   Claim total
                 </dt>
                 <dd class="govuk-summary-list__value">
+{% if data['sw-amount'] %}
+                  £{{data['sw-amount']}}
+{% else %}
                   £592.00
+{% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
@@ -1320,7 +1325,12 @@
                   Total amount to pay
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £592.00
+                  {% if data['sw-amount'] %}
+                                    £{{data['sw-amount']}}
+                  {% else %}
+                                    £592.00
+                  {% endif %}
+
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>

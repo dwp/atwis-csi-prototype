@@ -15,6 +15,13 @@
   <div class="moj-timeline">
 
 
+
+
+
+
+
+
+
   <!-- CHECK PAYMENT -->
 {% if data['sop-approve-button']%}
 
@@ -36,7 +43,52 @@
       <div class="moj-timeline__description">£296.00 Paid on this claim</div>
       {% endif %}
       {% if case == 'susan' %}
-      <div class="moj-timeline__description">£592.00 Paid on this claim</div>
+      <div class="moj-timeline__description">{% if data['sw-amount'] %}
+                        £{{data['sw-amount']}}
+      {% else %}
+                        £592.00
+      {% endif %}
+ Paid on this claim</div>
+ <div class="moj-timeline__description">
+
+Claim period:
+
+ {{data['sw-claim-start-day']}}
+
+ {% if (data['sw-claim-start-month'] =='01') or (data['sw-claim-start-month'] =='1') %} January {% endif%}
+ {% if (data['sw-claim-start-month'] =='02') or (data['sw-claim-start-month'] =='2') %} February  {% endif%}
+ {% if (data['sw-claim-start-month'] =='03') or (data['sw-claim-start-month'] =='3') %} March {% endif%}
+ {% if (data['sw-claim-start-month'] =='04') or (data['sw-claim-start-month'] =='4') %} April {% endif%}
+ {% if (data['sw-claim-start-month'] =='05') or (data['sw-claim-start-month'] =='5') %} May {% endif%}
+ {% if (data['sw-claim-start-month'] =='06') or (data['sw-claim-start-month'] =='6') %} June {% endif%}
+ {% if (data['sw-claim-start-month'] =='07') or (data['sw-claim-start-month'] =='7') %} July {% endif%}
+ {% if (data['sw-claim-start-month'] =='08') or (data['sw-claim-start-month'] =='8') %} August {% endif%}
+ {% if (data['sw-claim-start-month'] =='09') or (data['sw-claim-start-month'] =='9') %} September {% endif%}
+ {% if data['sw-claim-start-month'] =='10' %} October {% endif%}
+ {% if data['sw-claim-start-month'] =='11'%} November {% endif%}
+ {% if data['sw-claim-start-month'] =='12' %} December {% endif%}
+
+ {{data['sw-claim-start-year']}}
+
+to
+
+ {{data['sw-claim-end-day']}}
+
+ {% if (data['sw-claim-end-month'] =='01') or (data['sw-claim-end-month'] =='1') %} January {% endif%}
+ {% if (data['sw-claim-end-month'] =='02') or (data['sw-claim-end-month'] =='2') %} February  {% endif%}
+ {% if (data['sw-claim-end-month'] =='03') or (data['sw-claim-end-month'] =='3') %} March {% endif%}
+ {% if (data['sw-claim-end-month'] =='04') or (data['sw-claim-end-month'] =='4') %} April {% endif%}
+ {% if (data['sw-claim-end-month'] =='05') or (data['sw-claim-end-month'] =='5') %} May {% endif%}
+ {% if (data['sw-claim-end-month'] =='06') or (data['sw-claim-end-month'] =='6') %} June {% endif%}
+ {% if (data['sw-claim-end-month'] =='07') or (data['sw-claim-end-month'] =='7') %} July {% endif%}
+ {% if (data['sw-claim-end-month'] =='08') or (data['sw-claim-end-month'] =='8') %} August {% endif%}
+ {% if (data['sw-claim-end-month'] =='09') or (data['sw-claim-end-month'] =='9') %} September {% endif%}
+ {% if data['sw-claim-end-month'] =='10' %} October {% endif%}
+ {% if data['sw-claim-end-month'] =='11'%} November {% endif%}
+ {% if data['sw-claim-end-month'] =='12' %} December {% endif%}
+
+ {{data['sw-claim-end-year']}}</div>
+
       {% endif %}
 
       <p class="moj-timeline__description">
@@ -110,6 +162,7 @@
             <h2 class="moj-timeline__title">{% if case == 'dereck' %}Invoice number{% else %}Invoice numbers{% endif %}</h2>
             <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
             </div>
+            <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
             <p class="moj-timeline__description">
             <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
             </p>
@@ -213,6 +266,62 @@
                     <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
                     </p>
                   </div> -->
+
+
+
+
+
+
+<!-- SW HOURS AND AMOUNT NO PATHS -->
+
+{% if data['sw-amount'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hourly rate does not match grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description">£{{data['sw-amount']}} New total amount entered</div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+{% if data['sw-hours'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hours claimed are more than grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+{% if data['sw-hours-less'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hours claimed are less than grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description">{{data['sw-low-hours']}} hours entered from claim</div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+
+
+
+
 
 
               <!-- CHECK CLAIM MATTCHES GRANT AWARD -->
