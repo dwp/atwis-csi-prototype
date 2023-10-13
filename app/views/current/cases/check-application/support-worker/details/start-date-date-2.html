@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="" method="post" novalidate>
+<form action="selected-quote-1-2" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -26,7 +26,7 @@
                 For example, 27 3 2024
               </div>
               <div class="govuk-inset-text">
-            Taxi
+        {% if phase == "thomas" %} Note taker{% endif %}   {% if phase == "john" %}Taxi{% endif %}
               </div>
               <div class="govuk-date-input" id="sw-start-date-2">
                 <div class="govuk-date-input__item">
