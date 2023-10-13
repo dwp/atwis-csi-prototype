@@ -32,7 +32,8 @@
                <table class="govuk-table">
                  <caption class="govuk-table__caption govuk-table__caption--m">Award summary</caption>
                  <thead class="govuk-table__head">
-                   <tr class="govuk-table__row">
+                    {% if data['approve-1']=='true' %}
+                     <tr class="govuk-table__row">
                      <th scope="col" class="govuk-table__header">Support type</th>
                      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
                      <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Start date</th>
@@ -40,6 +41,7 @@
                                   </tr>
                                 </thead>
                                 <tbody class="govuk-table__body">
+
                                   <tr class="govuk-table__row">
                                     <th scope="row" class="govuk-table__header">Support worker</th>
                                     <td class="govuk-table__cell govuk-table__cell--numeric">
@@ -73,6 +75,10 @@
              document.write(date);
            </script>{% endif %}
   </td>
+
+
+
+
   <td class="govuk-table__cell govuk-table__cell--numeric" >
 
 
@@ -80,8 +86,8 @@
 
 
   £{{totalAward}}</td>
-
-                                  </tr>
+{% endif %}
+    {% if data['approve-2']=='true' %}                                </tr>
 
                                   <tr class="govuk-table__row">
                                     <th scope="row" class="govuk-table__header">Support worker</th>
@@ -120,7 +126,7 @@
                                       {% if data['approve-2']=='true' %}  {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}{% endif %}
                                     £{{totalAward}}</td>
 
-                                  </tr>
+                                  </tr>{% endif %}
 
 
 
@@ -153,8 +159,8 @@
            <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
 Confirm award summary
            </button>
-<p><a href="/current/cases/thomas/cases/claim#business-case">I need to change some award details</a></p>
-
+<p><a href="/current/cases/thomas/cases/claim#business-case">I need to change some business case details</a></p>
+<p><a href="/current/cases/thomas/cases/claim#citizen-details">I need to change some application  details</a></p>
          </form>
        </div>
      </div>
