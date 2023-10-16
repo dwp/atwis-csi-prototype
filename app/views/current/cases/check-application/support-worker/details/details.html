@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="{% if data['wpa']=='Yes'%}from{% else %}approve-new{% endif %}" method="post" novalidate>
+<form action="javascript:history.go(-1)" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -15,7 +15,7 @@
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">British Sign Language (BSL) interpreter</h1>
-<p>I need to make <a href="#">changes to application details</a>.</p>
+<p>I need to make <a href="/current/cases/thomas/cases/check-application/support-worker/details/edit#sw2">changes to application details</a>.</p>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -83,12 +83,10 @@ Where is the quote from?
           {% endif %}
           </dl>
 
-          <h2 class="govuk-heading-m">Now send your application</h2>
-          <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-          <form action="/form-handler" method="post" novalidate>
+
             <input type="hidden" name="answers-checked" value="true">
             <button class="govuk-button" data-module="govuk-button">
-              Accept and send
+              Return to support worker
             </button>
           </form>
         </div>
