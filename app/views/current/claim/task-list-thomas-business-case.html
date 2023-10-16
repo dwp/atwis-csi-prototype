@@ -214,9 +214,16 @@ data['wpa'+ phase]  %}
 {% endif %}
 {% if totalAward > 10000 %}
       <h2 class="govuk-heading--m">Award is over approval limits</h2>
+<script>
+  const nunjucks = require('nunjucks');
+  const env = new nunjucks.Enviroment();
 
+  env.addFilter('formatNumber'), function (value) {
+    return value.toLocaleString();
+  });
+  </script>
       <p>You will need to get approval from a appropriate approver.  </p>
-<div class="govuk-inset-text">Total award £{{totalAward}} <br><br>Check <a href="" target="_blank">approval guidance (opens in new tab)</a>.</div>
+<div class="govuk-inset-text">Total award £{{totalAward }} <br><br>Check <a href="" target="_blank">approval guidance (opens in new tab)</a>.</div>
     <br>
 {% endif %}
 
