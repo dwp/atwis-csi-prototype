@@ -98,13 +98,13 @@ How many hours per week do you need this support at work?
 </dt>
 <dd class="govuk-summary-list__value">
 
-5 hours per week<br>
+{% if data['support-worker-hour-per-week']%}{{data['support-worker-hour-per-week']}}{% else %}5{% endif %} hours per week<br>
 Works 37 hours per week
 </dd>
 
 <dd class="govuk-summary-list__actions">
 
-<a href="#">
+<a href="/current/cases/thomas/cases/check-application/support-worker/details/hours-per-week">
 {% if edit == 'true' %}Update{% endif %}
 <span class="govuk-visually-hidden"> How many hours per week do you need this support at work?</span>
 </a>
