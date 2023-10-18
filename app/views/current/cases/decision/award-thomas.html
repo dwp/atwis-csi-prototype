@@ -142,12 +142,26 @@
     <td class="govuk-table__cell govuk-table__cell--numeric"></td>
        <td class="govuk-table__cell govuk-table__cell--numeric"><div class="govuk-!-padding-bottom-9"></div>
          {% if data['approve-1']=='true' and data['approve-2']=='true'%}
-         {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}
+
+         {% if data['support-worker-hour-per-week']%}
+         {% set totalAward =  (((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4))  * 156  %}
+         {% else %}
+         {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
          {% endif %}
 
 
-      {% if data['approve-1']=='true' and data['approve-2']=='false'%}  {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
-      {% if data['approve-1']=='false' and data['approve-2']=='true'%}  {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}{% endif %}
+      {% if data['approve-1']=='true' and data['approve-2']=='false'%}
+      {% if data['support-worker-hour-per-week']%}
+      {% set totalAward =  ((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4)  * 156  %}
+
+      {% else %}
+      {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+      {% endif %}
+
+
+      {% if data['approve-1']=='false' and data['approve-2']=='true'%}
+      {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}
+      {% endif %}
       £{{totalAward}}</td>
 
   </tr>
