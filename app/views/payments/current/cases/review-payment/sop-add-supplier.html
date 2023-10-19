@@ -57,11 +57,29 @@
 
 {% if case == 'sonya' and not data ['sop-site-code'] %}
 
-  <div class="govuk-form-group">
-    <div class="govuk-inset-text">
-      Payee name: {{ data['payee-name'] }}
-    </div>
 
+{% if 'No' in data['paid-in-full']%}
+
+              <div class="govuk-form-group">
+                <div class="govuk-inset-text">
+                  Payee name: {{ data['payee-name'] }}
+                </div>
+
+
+{% else %}
+
+              <br>
+              <label class="govuk-label govuk-label--m" for="sop-payee-name">
+              Payee name
+              </label>
+              <div id="sop-payee-name-hint" class="govuk-hint">
+              <!-- For example, 502135326 -->
+              </div>
+              <input class="govuk-input govuk-input--width-10" id="sop-payee-name" name="sop-payee-name" type="text" aria-describedby="invoice-number-hint" value="{{data ['sop-payee-name'] }}">
+              <div class="govuk-form-group">
+              <br>
+
+{% endif %}
 
 
               <label class="govuk-label govuk-label--m" for="sop-supplier-number">

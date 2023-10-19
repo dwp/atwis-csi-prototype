@@ -45,7 +45,18 @@ Check claim matches grant award
 <br>
 
 
-{% if 'bsl' in data['claim-item-1'] %}
+
+
+
+<!-- SUPPORT WORKER -->
+<!-- SUPPORT WORKER -->
+<!-- SUPPORT WORKER -->
+<!-- SUPPORT WORKER -->
+<!-- SUPPORT WORKER -->
+
+
+{% if case == 'susan' %}
+{% if 'bsl' in data ['claim-item-1'] %}
 
 <h2 class="govuk-heading-m">Details entered from claim</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -277,6 +288,20 @@ Hourly rate awarded
 </dl>
 
 {% endif %}
+{% endif %}
+
+
+
+
+
+
+
+
+<!-- TRAVEL TO WORK -->
+<!-- TRAVEL TO WORK -->
+<!-- TRAVEL TO WORK -->
+<!-- TRAVEL TO WORK -->
+<!-- TRAVEL TO WORK -->
 
 
 {% if 'taxi' in data['claim-item'] %}
@@ -487,6 +512,22 @@ Award for each journey
 </dl>
 
 {% endif %}
+
+
+
+
+
+
+
+
+
+
+<!-- SPECIALIST AIDS AND EQUIPMENT -->
+<!-- SPECIALIST AIDS AND EQUIPMENT -->
+<!-- SPECIALIST AIDS AND EQUIPMENT -->
+<!-- SPECIALIST AIDS AND EQUIPMENT -->
+<!-- SPECIALIST AIDS AND EQUIPMENT -->
+
 
 
 
@@ -1146,77 +1187,116 @@ No,
 
 
 <!-- ADD OTHER CASES -->
+
+
+
+
 {% if case == 'dereck'%}
 
+                        <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h2 class="govuk-heading-m">
 
-      <div class="govuk-form-group">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h2 class="govuk-heading-m">
+                          Do the amounts on the claim form and invoices match the grant award?
+                          </h2>
 
-        Do the amounts on the claim form and invoices match the grant award?
-        </h2>
-
-        <!-- HINT TEXT -->
-        <div id="countries-hint" class="govuk-hint">
-         <!-- Check the amounts claimed, number of jourenys and addresses. -->
-        </div>
-
-<!-- CLAIM FORM LINK -->
-
-
-{% if case == 'sonya' %}
-          <p class="govuk-body">   <a class="govuk-link" href="/public/images/S5-Sonya-Corkey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
-{% endif %}
-{% if case == 'james' %}
-          <p class="govuk-body">   <a class="govuk-link" href="/public/images/S6-James-McCarthey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
-{% endif %}
-{% if case == 'nina' %}
-          <p class="govuk-body">   <a class="govuk-link" href="/public/images/S6-Nina-West-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></p>
-{% endif %}
+                          <!-- HINT TEXT -->
+                          <div id="countries-hint" class="govuk-hint">
+                           <!-- Check the amounts claimed, number of jourenys and addresses. -->
+                          </div>
 
 
 
 
+                        </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~{{case}}/claim-{{case}}#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
+                    Yes
+                  </label>
+                  </div>
 
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~{{case}}/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+                    No
+                  </label>
+                  </div>
 
-
-
-<!-- RADIO BUTTONS -->
-
-      </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-
-            <div class="govuk-radios__item">
-{% if case == 'dereck' %}
-              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~dereck/claim-dereck#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
-{% endif %}
-
-{% if case == 'sonya' %}
-              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
-{% endif %}
-{% if case == 'james' %}
-              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~jamesm/claim-jamesm#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
-{% endif %}
-{% if case == 'nina' %}
-              <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~nina/claim-nina#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
 {% endif %}
 
 
-<label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
-  Yes
-</label>
-</div>
 
-<div class="govuk-radios__item">
-<input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~sonya/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "No") }}>
-<label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
-  No
-</label>
-</div>
+{% if case == 'sonya'%}
+
+                        <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h2 class="govuk-heading-m">
+
+                          Do the amounts on the claim form and invoices match the grant award?
+                          </h2>
+
+                          <!-- HINT TEXT -->
+                          <div id="countries-hint" class="govuk-hint">
+                           <!-- Check the amounts claimed, number of jourenys and addresses. -->
+                          </div>
 
 
-            {% endif %}
 
+
+                        </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~{{case}}/claim-{{case}}#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
+                    Yes
+                  </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~{{case}}/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+                    No
+                  </label>
+                  </div>
+
+{% endif %}
+
+{% if case == 'nina'%}
+
+                        <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h2 class="govuk-heading-m">
+
+                          Do the amounts on the claim form and invoices match the grant award?
+                          </h2>
+
+                          <!-- HINT TEXT -->
+                          <div id="countries-hint" class="govuk-hint">
+                           <!-- Check the amounts claimed, number of jourenys and addresses. -->
+                          </div>
+
+
+
+
+                        </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="grant-matches-claim-1" name="grant-matches-claim" type="radio" value="Yes~{{case}}/claim-{{case}}#your-tasks" {{ checked("grant-matches-claim", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="grant-matches-claim-1">
+                    Yes
+                  </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~{{case}}/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
+                    No
+                  </label>
+                  </div>
+
+{% endif %}
 
 
 

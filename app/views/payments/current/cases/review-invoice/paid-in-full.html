@@ -43,25 +43,7 @@
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-{% if case == 'dereck' %}
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="Yes~dereck/claim-dereck#your-tasks" {{ checked("paid-in-full", "Yes") }}>
-{% endif %}
-{% if case == 'sonya' %}
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("paid-in-full", "Yes") }}>
-{% endif %}
-{% if case == 'james' %}
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="Yes~jamesm/claim-jamesm#your-tasks" {{ checked("paid-in-full", "Yes") }}>
-{% endif %}
-{% if case == 'nina' %}
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="Yes~nina/claim-nina#your-tasks" {{ checked("paid-in-full", "Yes") }}>
-{% endif %}
-{% if case == 'paul' %}
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="Yes~paul/claim-paul#your-tasks" {{ checked("paid-in-full", "Yes") }}>
-{% endif %}
-{% if case == 'susan' %}
-            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="Yes~susan/claim-susan#your-tasks" {{ checked("paid-in-full", "Yes") }}>
-{% endif %}
-
+            <input class="govuk-radios__input" id="paid-in-full-1" name="paid-in-full" type="radio" value="Yes~{{case}}/claim-{{case}}#your-tasks" {{ checked("paid-in-full", "Yes") }}>
 
             <label class="govuk-label govuk-radios__label" for="paid-in-full-1">
               Yes
