@@ -1,0 +1,56 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="grant-award-date-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+    When does this support need to start?
+          </h1>
+        </legend>
+
+        <div class="govuk-inset-text">
+    {% if phase == 'john'%}Taxi{% endif %}{% if phase == 'thomas'%}British Sign Language (BSL) interpreter {% endif %}
+        </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="grant-award-date" name="grant-award-date" type="radio" value="Grant award date~selected-quote">
+            <label class="govuk-label govuk-radios__label" for="grant-award-date">
+        Grant award date
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="grant-award-date-2" name="grant-award-date" type="radio" value="Another date~start-date-date~start-date-date">
+            <label class="govuk-label govuk-radios__label" for="grant-award-date-2">
+      Another date
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+                   <button class="govuk-button" data-module="govuk-button">
+                   Save and continue
+                   </button>
+
+                   </form>
+
+
+                   </main>
+                 </div>
+
+
+               {% endblock %}

@@ -1,0 +1,211 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-37/cases/{% if phase %}{{phase}}/cases/{% endif %}complete" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   {% include  "./content/ons.html" %}
+                 </h1>
+               </legend>
+
+<p>The citizen’s health condition or disability information needs to be categorised so it can be used for Access to Work statistics.</p>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+
+            Health condition or disability
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+                      {% if case =='other-cases' %}
+                      {% for case in data['other-cases'] %}
+                      {{ case.condition }}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if case =='other-cases-2' %}
+                      {% for case in data['other-cases-2'] %}
+                      {{ case.condition }}
+                      {% endfor %}
+                      {% endif %}
+
+                                            {% if case =='other-cases-4' %}
+                                            {% for case in data['other-cases'] %}
+                                            {{ case.condition }}
+                                            {% endfor %}
+                                            {% endif %}
+
+                                            {% if case =='other-cases-3' %}
+                                            {% for case in data['other-cases'] %}
+                                            {{ case.condition }}
+                                            {% endfor %}
+                                            {% endif %}
+                      {% if not case %}
+                      {% for case in data['priority-cases'] %}
+                      {{ case.condition }}
+                      {% endfor %}
+                      {% endif %}
+
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+
+
+          </dd>
+        </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+
+          How does your condition or disability affect you at work?
+
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+                    {% if case =='other-cases' %}
+                    {% for case in data['other-cases'] %}
+                    {{ case.conditiondetails }}
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if case =='other-cases-2' %}
+                    {% for case in data['other-cases-2'] %}
+                    {{ case.conditiondetails }}
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if case =='other-cases-3' %}
+                    {% for case in data['other-cases'] %}
+                    {{ case.conditiondetails }}
+                    {% endfor %}
+                    {% endif %}
+
+
+                    {% if case =='other-cases-4' %}
+                    {% for case in data['other-cases'] %}
+
+                    I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. This vision loss has also triggered anxiety. This has progressed where I am unable to drive or use public transport anymore. I already have Jaws screen reader and just need help with getting to and from work.
+
+                    {% endfor %}
+                    {% endif %}
+                    {% if not case %}
+                    {% for case in data['priority-cases'] %}
+                    {{ case.conditiondetails }}
+                    {% endfor %}
+                    {% endif %}
+
+
+          <br>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+
+
+        </dd>
+      </div>
+    </dl>
+
+
+<h2 class="govuk-heading--m">Select the category that best describes the citizen’s health conditions or
+disabilities.</h2>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Primary health condition or disability category that the citizen requires the most support for at
+  work.
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="" selected="">Not selected</option>
+
+    <option value="Problems or disabilities with arms or hands">Problems or disabilities with arms or hands</option>
+    <option value="Problems or disabilities with legs or feet">Problems or disabilities with legs or feet</option>
+    <option value="Problems or disabilities with back or neck">Problems or disabilities with back or neck</option>
+    <option value="Stomach, liver, kidney or digestion">Stomach, liver, kidney or digestion</option>
+    <option value="Heart, blood, blood pressure or circulation">Heart, blood, blood pressure or circulation</option>
+    <option value="Chest or breathing">Chest or breathing</option>
+    <option value="Skin conditions and severe disfigurement">Skin conditions and severe disfigurement</option>
+    <option value="Deaf or hard of hearing">Deaf or hard of hearing</option>
+    <option value="Difficulty in seeing">Difficulty in seeing</option>
+    <option value="Difficulty in speaking">Difficulty in speaking</option>
+    <option value="comments">Learning disability</option>
+    <option value="comments">Progressive illness</option>
+    <option value="comments">Epilepsy</option>
+    <option value="comments">Diabetes</option>
+    <option value="comments">Autism</option>
+    <option value="comments">Mental health condition</option>
+    <option value="comments">Cerebral Palsy</option>
+    <option value="comments">Spina Bifida</option>
+    <option value="comments">Other</option>
+  </select>
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort">
+    Other health condition or disability category (optional)
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="" selected="">Not selected</option>
+
+    <option value="Problems or disabilities with arms or hands">Problems or disabilities with arms or hands</option>
+    <option value="Problems or disabilities with legs or feet">Problems or disabilities with legs or feet</option>
+    <option value="Problems or disabilities with back or neck">Problems or disabilities with back or neck</option>
+    <option value="Stomach, liver, kidney or digestion">Stomach, liver, kidney or digestion</option>
+    <option value="Heart, blood, blood pressure or circulation">Heart, blood, blood pressure or circulation</option>
+    <option value="Chest or breathing">Chest or breathing</option>
+    <option value="Skin conditions and severe disfigurement">Skin conditions and severe disfigurement</option>
+    <option value="Deaf or hard of hearing">Deaf or hard of hearing</option>
+    <option value="Difficulty in seeing">Difficulty in seeing</option>
+    <option value="Difficulty in speaking">Difficulty in speaking</option>
+    <option value="comments">Learning disability</option>
+    <option value="comments">Progressive illness</option>
+    <option value="comments">Epilepsy</option>
+    <option value="comments">Diabetes</option>
+    <option value="comments">Autism</option>
+    <option value="comments">Mental health condition</option>
+    <option value="comments">Cerebral Palsy</option>
+    <option value="comments">Spina Bifida</option>
+    <option value="comments">Other</option>
+  </select>
+</div>
+</div>
+           <button class="govuk-button" data-module="govuk-button" name="award" value="complete">
+Save and complete application
+           </button>
+
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

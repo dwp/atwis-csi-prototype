@@ -1,0 +1,232 @@
+<h1 class="govuk-heading-l">Application details</h1>
+
+
+
+
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+
+ <div class="govuk-summary-list__row">
+   <dt class="govuk-summary-list__key">
+     Version of questions
+   </dt>
+   <dd class="govuk-summary-list__value">
+     25.25.0-rc
+   </dd>
+ </div>
+</dl>
+
+
+
+
+
+<!-- Sparrow apply journey for Personal details -->
+<h2 class="govuk-heading-m">Personal details</h2>
+
+{% include "../claim/_personal-details.html"%}
+<!-- Sparrow apply journey for Personal details -->
+
+<!-- Sparrow apply journey for Condition and Help Needed -->
+<h2 class="govuk-heading-m">Health conditions and disabilties</h2>
+
+{% include "../claim/_condtion-help-needed.html"%}
+<!-- Sparrow apply journey for Condition and Help Needed -->
+
+
+
+<!-- Appointee -->
+{% if data['appointee']%}
+<h2 class="govuk-heading-m">Appointee</h2>
+
+{% include "../claim/_appointee.html"%}
+<!--  Appointee -->
+{% endif %}
+
+
+
+<!-- Sparrow apply journey for How to contact -->
+<h2 class="govuk-heading-m">How to contact</h2>
+
+
+{% include "../claim/_how-to-contact.html"%}
+<!-- Sparrow apply journey for How to contact -->
+
+
+
+
+
+<p></p>
+<!-- Appointee -->
+{% if data['benefits']%}
+<h2 class="govuk-heading-m">Benefits</h2>
+
+{% include "../claim/_benefits.html"%}
+<!--  Appointee -->
+{% endif %}
+
+<!-- Sparrow apply journey for Job details -->
+<h2 class="govuk-heading-m">Employment details</h2>
+
+
+{% include "../claim/_job-details.html"%}
+
+<!-- Sparrow apply journey for Job details -->
+
+
+
+<!-- Sparrow apply journey for SAE -->
+<h2 class="govuk-heading-m">Specialist equipment</h2>
+
+{% include "../claim/_sae.html"%}
+<!-- Sparrow apply journey for SAE -->
+
+<!-- Sparrow apply journey for SAE quote-->
+<h2 class="govuk-heading-m">Quote for the cost of support</h2>
+
+{% include "../claim/_quote-sae-1.html"%}
+<!-- Sparrow apply journey for SAE quote-->
+
+
+<h2 class="govuk-heading-m"> Mental health support</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Do you need mental health support at work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Do you need mental health support at work?</span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+
+<h2 class="govuk-heading-m">  Support workers</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need a support worker at work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need a support worker at work? </span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+
+<h2 class="govuk-heading-m">Travelling to and from work</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that it's difficult for you to drive or get public transport to work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="/alpha-1h/travelling-to-and-from-work/screener">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that it's difficult for you to drive or get public transport to work?</span>
+</a>
+</dd>
+</div>
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m">  Travelling during work</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need support to travel to other places during your working day?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need support to travel to other places during your working day?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+<h2 class="govuk-heading-m">   Changes to your workplace</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you would benefit from physical changes at your workplace?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you would benefit from physical changes at your workplace?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+<h2 class="govuk-heading-m">   Changes to your vehicle</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Does your condition mean that you need changes to the vehicle you use to travel to work?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Does your condition mean that you need changes to the vehicle you use to travel to work?  </span>
+</a>
+</dd>
+</div>
+</dl>
+
+
+<h2 class="govuk-heading-m">   Additional information </h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Is there anything else that you would like to tell us?
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+<dd class="govuk-summary-list__actions">
+<a href="#">
+Change
+<span class="govuk-visually-hidden"> Is there anything else that you would like to tell us?  </span>
+</a>
+</dd>
+</div>
+</dl>
