@@ -1,0 +1,87 @@
+{% extends "layout-contact.html" %}
+
+{% block pageTitle %}
+Details of the person we should contact at {{ data['employer-name-'+ number] | capitalize }} – Access to Work – GOV.UK
+{% endblock %}
+
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/alpha-1i/your-job-and-employer/{{number}}/employment/permission" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="workplace-contact">
+          Details of the person we should contact at {{ data['employer-name-'+ number] | capitalize }}
+        </label>
+        </h1>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <p>This should be a person that can confirm you work there, like a manager or an HR representative.</p>
+          <p>If you need mental health support from Access to Work, we do not need to contact anyone at your workplace about this.</p>
+
+        <div class="govuk-!-padding-bottom-1"></div>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="workplace-name">
+            Their full name
+          </label>
+          <input class="govuk-input" id="workplace-name" name="workplace-name" type="text" value="{{ data['workplace-name'] }}"></div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="role-name">
+            Their job title
+          </label>
+          <input class="govuk-input" id="role-name" name="role-name" type="text" value="{{ data['role-name'] }}"></div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="workplace-email">
+            Their email address
+          </label>
+          <input class="govuk-input" id="workplace-email" name="workplace-email" type="email" spellcheck="false"
+                 aria-describedby="workplace-email-hint" autocomplete="email" value="{{ data['workplace-email'] }}">
+
+          <div class="govuk-!-padding-bottom-6"></div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="workplace-phone">
+            Their UK telephone number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="workplace-phone" name="workplace-phone" type="tel"
+                 autocomplete="tel" value="{{ data['workplace-phone'] }}"></div>
+
+      </div>
+
+        <div class="govuk-!-padding-bottom-1"></div>
+
+      <form class="form" action="/url/of/next/page" method="post">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+        
+
+      </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+</div>
+
+  </div>
+
+{% endblock %}

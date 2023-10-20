@@ -1,0 +1,113 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                   Is Derek Smith available for a workplace assessment on any of the next 8
+   weekdays?
+                 </h2>
+               </legend>
+
+
+
+
+               <p>Consider weekdays up to and including <span id="future-date"></span>. Exclude public holidays.
+Assessments can:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>
+take place between 8am and 6pm
+</li>
+<li>
+last up to 90 minutes
+</li>
+</ul>
+
+
+
+<script>
+//get todays Date
+var today = new Date();
+var days = 0;
+var futureDate = new Date();
+
+//Add 8 weekdays to todays Date
+while (days < 8) {
+  futureDate.setDate(futureDate.getDate() + 1);
+  var day = futureDate.getDay();
+  if (day !== 0 && day !== 6) {
+    days++;
+}
+}
+
+//formate
+var options = { day: 'numeric', month: 'long', year: 'numeric'
+};
+var formattedDate = futureDate.toLocaleDateString('en-GB', options);
+
+// Display the future date on the page
+document.getElementById("future-date").innerHTML =
+formattedDate;
+</script>
+
+
+
+
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="Yes~others" {{ checked("wpa-availability", "Yes") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa-availability">
+                    Yes
+                   </label>
+                 </div>
+                  <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="No" {{ checked("wpa-availability", "No") }}>
+                 <label class="govuk-label govuk-radios__label" for="wpa-availability">
+                  No
+                 </label>
+               </div>
+
+
+               <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="I’m waiting for an answer~/live-37/cases/claim#your-tasks" {{ checked("wpa-availability", "I’m waiting for an answer") }}>
+              <label class="govuk-label govuk-radios__label" for="wpa-availability">
+            I’m waiting for an answer
+              </label>
+            </div>
+
+                 </fieldset>
+               </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}
