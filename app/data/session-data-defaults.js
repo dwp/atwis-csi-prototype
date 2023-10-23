@@ -24,6 +24,7 @@ module.exports = {
 'sw-match' : "",
 'paid-in-full' : "",
 'company-details' : "",
+'additional-cost' : "",
 
 
   'claims' : "",
