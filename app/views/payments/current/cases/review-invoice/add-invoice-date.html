@@ -54,9 +54,12 @@
                   {% endif %}
                 </label>
               </h1>
+
+              {% if 'No' in data['paid-in-full'] %}
               <div class="govuk-inset-text">
                 {{ data['payee-name'] }}
               </div>
+              {% endif %}
 
               <div id="with-hint-hint" class="govuk-hint">
                 {% if case == 'paul' %}
