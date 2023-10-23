@@ -22,7 +22,8 @@ module.exports = {
 'ttw-match' : "",
 'claim-item' : "",
 'sw-match' : "",
-
+'job-deatils-check' : "No",
+'condition-check' : "No",
   'claims' : "",
 'benefits' : "",
 'priority' : "",

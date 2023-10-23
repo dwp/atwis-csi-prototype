@@ -47,15 +47,31 @@
             Type of workplace assessment
         </a>
           </span>
-          {% if data['wpa']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-        {% if data['wpa-type']=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
-        {% if data['wpa-availability']=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
-        {% if data['wpa-availability']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-            {% if not data['wpa-type']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+          {% if data['wpa-type']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+          {% if data['wpa-type']=='Virtual'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+          {% if data['wpa-type']=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+          {% if not data['wpa-type']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
           </li>
     {% endif %}
 
+    {% if data['wpa-type']%}
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+          <a href="{% if data['']%}/current/cases/workplace-assesment/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
+              Availability of workplace assessment
+          </a>
+            </span>
+            {% if data['']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+            {% if data['wpa-4-weeks']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> Waiting for date </strong>{% endif %}
+          {% if data['wpa-4-weeks']=='No'%}
+          {% if data['wpa-pause']=='No'%}<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
+          {% if data['wpa-pause']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> abc</strong>{% endif %}
+{% endif %}
 
+
+            {% if not data['wpa-availability']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+            </li>
+      {% endif %}
     <li>
 
 

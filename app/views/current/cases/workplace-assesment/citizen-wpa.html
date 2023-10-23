@@ -7,7 +7,7 @@
 {% block csi %}
 
 
-<form action="" method="post" novalidate>
+<form action="/current/cases/claim#business-case" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -54,26 +54,26 @@ Get permission to contact their employmer as Dereck Smith did not give permissio
 
                <div class="govuk-radios ">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-type" name="wpa-type" type="radio" value="Face-to-face~availability" {{ checked("wpa-type", "Face-to-face") }}>
+                   <input class="govuk-radios__input" id="wpa-type" name="wpa-type" type="radio" value="Face-to-face" {{ checked("wpa-type", "Face-to-face") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-type">
                      Face-to-face
                    </label>
                  </div>
                   <div class="govuk-radios__item">
-                 <input class="govuk-radios__input" id="wpa-type" name="wpa-type" type="radio" value="Virtual~availability" {{ checked("wpa-type", "Virtual") }}>
+                 <input class="govuk-radios__input" id="wpa-type" name="wpa-type" type="radio" value="Virtual" {{ checked("wpa-type", "Virtual") }}>
                  <label class="govuk-label govuk-radios__label" for="wpa-type">
                    Virtual
                  </label>
                </div>
 
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="They do not want a workplace assessment~/current/cases/claim#your-tasks" {{ checked("wpa-type", "They do not want a workplace assessment") }}>
+                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="They do not want a workplace assessment" {{ checked("wpa-type", "They do not want a workplace assessment") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-type-2">
                      They do not want a workplace assessment
                    </label>
                  </div>
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="I have not discussed it with them yet~/current/cases/claim#business-case" {{ checked("wpa-type", "I have not discussed it with them yet") }}>
+                   <input class="govuk-radios__input" id="wpa-type-2" name="wpa-type" type="radio" value="I have not discussed it with them yet" {{ checked("wpa-type", "I have not discussed it with them yet") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-type-2">
                      I have not discussed it with them yet
                    </label>
