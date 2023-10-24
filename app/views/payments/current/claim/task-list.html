@@ -545,6 +545,7 @@
 
 
 {% if case == 'susan'%}
+
 </ul>
 </li>
 
@@ -569,7 +570,10 @@ Additional costs
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 
+                  {% if data ['company-details'] %}
                   <a href="/payments/current/cases/susan/additional-costs/select-cost-types-tab#your-tasks" aria-describedby="claim-completed">
+                  {% else  %}
+                  {% endif  %}
 
                   Select additional costs
 </a>
@@ -657,7 +661,7 @@ Additional costs
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 
-                  {% if data ['sw-food-amount'] %}
+                  {% if data ['sw-food-day-amount'] %}
                   <a href="/payments/current/cases/susan/additional-costs/sw-food-check-tab#your-tasks" aria-describedby="claim-completed">
                   {% else  %}
                   <a href="/payments/current/cases/susan/additional-costs/sw-food-award-tab#your-tasks" aria-describedby="claim-completed">
@@ -668,8 +672,8 @@ Additional costs
 </span>
 
                   {% if not data['sw-accomodation-amount']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                  {% if data['sw-accomodation-amount'] and not data ['sw-food-amount']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                  {% if data['sw-food-amount'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                  {% if data['sw-accomodation-amount'] and not data ['sw-food-day-amount']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                  {% if data['sw-food-day-amount'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
 {% endif  %}
 
@@ -978,7 +982,7 @@ Add invoice details
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
 
-              {% if data['sw-food-amount'] %}
+              {% if data['sw-food-day-amount'] %}
               <a href="/payments/current/cases/susan/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
                 {% endif %}
@@ -986,8 +990,8 @@ Add invoice details
                 Add invoice numbers
 
                 </span>
-                {% if not data['sw-food-amount']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                {% if data['sw-food-amount'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if not data['sw-food-day-amount']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                {% if data['sw-food-day-amount'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                 {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
                 <!-- {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
