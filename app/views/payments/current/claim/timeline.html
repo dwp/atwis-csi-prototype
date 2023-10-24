@@ -196,48 +196,58 @@ to
 
 {% if data['sw-travel-number']%}
 
-          <div class="moj-timeline__item">
+<div class="moj-timeline__item">
 
-              <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Additional costs: travel</h2>
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: travel</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£{{data['sw-travel-amount']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
 
-              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-              </div>
-              <div class="moj-timeline__description">£{{data['sw-travel-amount']}}</div>
-              <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
-              </p>
-              <div class="moj-timeline__description"></div>
-            </div>
+
+
+
+
+
+
 {% endif %}
 
 {% if data['sw-accomodation-number']%}
 
-          <div class="moj-timeline__item">
+<div class="moj-timeline__item">
 
-              <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Additional costs: accomodation</h2>
-              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-              </div>
-              <div class="moj-timeline__description">£{{data['sw-accomodation-amount']}}</div>
-              <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
-              </p>
-              <div class="moj-timeline__description"></div>
-            </div>
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: accomodation</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£{{data['sw-accomodation-amount']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
 {% endif %}
 
-{% if data['sw-food-number']%}
+{% if data['sw-food-day-amount']%}
+<div class="moj-timeline__item">
 
-          <div class="moj-timeline__item">
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: food</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£55.74</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
 
-              <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Additional costs: food</h2>
-              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-              </div>
-              <div class="moj-timeline__description">£55.74</div>
-              <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
-              </p>
-              <div class="moj-timeline__description"></div>
-            </div>
 {% endif %}
 
 
