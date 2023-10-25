@@ -58,234 +58,234 @@ Check claim matches grant award
 {% if case == 'susan' %}
 {% if 'bsl' in data ['claim-item-1'] %}
 
-<h2 class="govuk-heading-m">Details entered from claim</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <h2 class="govuk-heading-m">Details entered from claim</h2>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Claim start date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sw-claim-start-day']}}
+                                  <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                        Claim start date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    {{data['sw-claim-start-day']}}
 
-            {% if (data['sw-claim-start-month'] =='01') or (data['sw-claim-start-month'] =='1') %} January {% endif%}
-            {% if (data['sw-claim-start-month'] =='02') or (data['sw-claim-start-month'] =='2') %} February  {% endif%}
-            {% if (data['sw-claim-start-month'] =='03') or (data['sw-claim-start-month'] =='3') %} March {% endif%}
-            {% if (data['sw-claim-start-month'] =='04') or (data['sw-claim-start-month'] =='4') %} April {% endif%}
-            {% if (data['sw-claim-start-month'] =='05') or (data['sw-claim-start-month'] =='5') %} May {% endif%}
-            {% if (data['sw-claim-start-month'] =='06') or (data['sw-claim-start-month'] =='6') %} June {% endif%}
-            {% if (data['sw-claim-start-month'] =='07') or (data['sw-claim-start-month'] =='7') %} July {% endif%}
-            {% if (data['sw-claim-start-month'] =='08') or (data['sw-claim-start-month'] =='8') %} August {% endif%}
-            {% if (data['sw-claim-start-month'] =='09') or (data['sw-claim-start-month'] =='9') %} September {% endif%}
-            {% if data['sw-claim-start-month'] =='10' %} October {% endif%}
-            {% if data['sw-claim-start-month'] =='11'%} November {% endif%}
-            {% if data['sw-claim-start-month'] =='12' %} December {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='01') or (data['sw-claim-start-month'] =='1') %} January {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='02') or (data['sw-claim-start-month'] =='2') %} February  {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='03') or (data['sw-claim-start-month'] =='3') %} March {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='04') or (data['sw-claim-start-month'] =='4') %} April {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='05') or (data['sw-claim-start-month'] =='5') %} May {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='06') or (data['sw-claim-start-month'] =='6') %} June {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='07') or (data['sw-claim-start-month'] =='7') %} July {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='08') or (data['sw-claim-start-month'] =='8') %} August {% endif%}
+                                    {% if (data['sw-claim-start-month'] =='09') or (data['sw-claim-start-month'] =='9') %} September {% endif%}
+                                    {% if data['sw-claim-start-month'] =='10' %} October {% endif%}
+                                    {% if data['sw-claim-start-month'] =='11'%} November {% endif%}
+                                    {% if data['sw-claim-start-month'] =='12' %} December {% endif%}
 
-            {{data['sw-claim-start-year']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Claim end date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['sw-claim-end-day']}}
+                                    {{data['sw-claim-start-year']}}
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                  </dd>
+                                  </div>
+                                  <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                        Claim end date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    {{data['sw-claim-end-day']}}
 
-            {% if (data['sw-claim-end-month'] =='01') or (data['sw-claim-end-month'] =='1') %} January {% endif%}
-            {% if (data['sw-claim-end-month'] =='02') or (data['sw-claim-end-month'] =='2') %} February  {% endif%}
-            {% if (data['sw-claim-end-month'] =='03') or (data['sw-claim-end-month'] =='3') %} March {% endif%}
-            {% if (data['sw-claim-end-month'] =='04') or (data['sw-claim-end-month'] =='4') %} April {% endif%}
-            {% if (data['sw-claim-end-month'] =='05') or (data['sw-claim-end-month'] =='5') %} May {% endif%}
-            {% if (data['sw-claim-end-month'] =='06') or (data['sw-claim-end-month'] =='6') %} June {% endif%}
-            {% if (data['sw-claim-end-month'] =='07') or (data['sw-claim-end-month'] =='7') %} July {% endif%}
-            {% if (data['sw-claim-end-month'] =='08') or (data['sw-claim-end-month'] =='8') %} August {% endif%}
-            {% if (data['sw-claim-end-month'] =='09') or (data['sw-claim-end-month'] =='9') %} September {% endif%}
-            {% if data['sw-claim-end-month'] =='10' %} October {% endif%}
-            {% if data['sw-claim-end-month'] =='11'%} November {% endif%}
-            {% if data['sw-claim-end-month'] =='12' %} December {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='01') or (data['sw-claim-end-month'] =='1') %} January {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='02') or (data['sw-claim-end-month'] =='2') %} February  {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='03') or (data['sw-claim-end-month'] =='3') %} March {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='04') or (data['sw-claim-end-month'] =='4') %} April {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='05') or (data['sw-claim-end-month'] =='5') %} May {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='06') or (data['sw-claim-end-month'] =='6') %} June {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='07') or (data['sw-claim-end-month'] =='7') %} July {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='08') or (data['sw-claim-end-month'] =='8') %} August {% endif%}
+                                    {% if (data['sw-claim-end-month'] =='09') or (data['sw-claim-end-month'] =='9') %} September {% endif%}
+                                    {% if data['sw-claim-end-month'] =='10' %} October {% endif%}
+                                    {% if data['sw-claim-end-month'] =='11'%} November {% endif%}
+                                    {% if data['sw-claim-end-month'] =='12' %} December {% endif%}
 
-            {{data['sw-claim-end-year']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-
-
+                                    {{data['sw-claim-end-year']}}
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                  </dd>
+                                  </div>
 
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Hours of support claimed
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{data['sw-hours']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
-            Update
-                    <span class="govuk-visually-hidden"> - </span>
-          </a> -->
-
-        </dd>
-        </div>
 
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Total amount claimed
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £{{data['sw-amount']}}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
-            Update
-                    <span class="govuk-visually-hidden"> - </span>
-          </a> -->
+                                <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Hours of support claimed
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {{data['sw-hours']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
+                                    Update
+                                            <span class="govuk-visually-hidden"> - </span>
+                                  </a> -->
 
-        </dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Average hourly rate
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £18.50
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
-            Update
-                    <span class="govuk-visually-hidden"> - </span>
-          </a> -->
-
-        </dd>
-        </div>
+                                </dd>
+                                </div>
 
 
-        <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Allowance per journey?
-        </dt>
-        <dd class="govuk-summary-list__value">
-£18.50 %
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div> -->
+                                <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Total amount claimed
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  £{{data['sw-amount']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
+                                    Update
+                                            <span class="govuk-visually-hidden"> - </span>
+                                  </a> -->
 
-</dl>
-
-<br>
-
-<h2 class="govuk-heading-m">Grant award details</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Grant start date
-          </dt>
-          <dd class="govuk-summary-list__value">
-1 February 2023
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Grant end date
-          </dt>
-          <dd class="govuk-summary-list__value">
-31 January 2025
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                                </dd>
+                                </div>
 
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Element
-          </dt>
-          <dd class="govuk-summary-list__value">
-Support Worker
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                                <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Average hourly rate
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  £18.50
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
+                                    Update
+                                            <span class="govuk-visually-hidden"> - </span>
+                                  </a> -->
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-British Sign Language (BSL) interpreter
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-
-          <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Support provider
-          </dt>
-          <dd class="govuk-summary-list__value">
-Lisa signs
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div> -->
+                                </dd>
+                                </div>
 
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Hours of support a week
-        </dt>
-        <dd class="govuk-summary-list__value">
-8
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
+                                <!-- <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                        Allowance per journey?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                        £18.50 %
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                </dd>
+                                </div> -->
 
-        <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-amount before deductions
-        </dt>
-        <dd class="govuk-summary-list__value">
-£20.50
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
+                        </dl>
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Public transport deductions
-        </dt>
-        <dd class="govuk-summary-list__value">
-£2.00
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div> -->
+                        <br>
+
+                        <h2 class="govuk-heading-m">Grant award details</h2>
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                                  <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                        Grant start date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                        1 February 2023
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                  </dd>
+                                  </div>
+                                  <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                        Grant end date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                        31 January 2025
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                  </dd>
+                                  </div>
 
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Hourly rate awarded
-        </dt>
-        <dd class="govuk-summary-list__value">
-£18.50
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
+                                  <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                        Element
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                        Support Worker
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                  </dd>
+                                  </div>
 
-</dl>
+                                  <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                        Description
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                        British Sign Language (BSL) interpreter
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                  </dd>
+                                  </div>
+
+                                  <!-- <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                        Support provider
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                        Lisa signs
+                                  </dd>
+                                  <dd class="govuk-summary-list__actions">
+                                  </dd>
+                                  </div> -->
+
+
+                                <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                        Hours of support a week
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                        8
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                </dd>
+                                </div>
+
+                                <!-- <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                        amount before deductions
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                        £20.50
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                </dd>
+                                </div>
+
+                                <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                        Public transport deductions
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                        £2.00
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                </dd>
+                                </div> -->
+
+
+                                <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                        Hourly rate awarded
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                        £18.50
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                </dd>
+                                </div>
+
+                        </dl>
 
 {% endif %}
 {% endif %}
@@ -302,214 +302,216 @@ Hourly rate awarded
 <!-- TRAVEL TO WORK -->
 <!-- TRAVEL TO WORK -->
 <!-- TRAVEL TO WORK -->
+
+
 
 
 {% if 'taxi' in data['claim-item'] %}
-{% else %}
-<!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
-{% endif %}
+                              {% else %}
+                              <!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+                              {% endif %}
 
-{% if 'taxi' in data['claim-item'] %}
+                              {% if 'taxi' in data['claim-item'] %}
 
-<h2 class="govuk-heading-m">Details entered from claim form</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                              <h2 class="govuk-heading-m">Details entered from claim form</h2>
+                                      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Claim start date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['ttw-claim-start-day']}}
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                              Claim start date
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                          {{data['ttw-claim-start-day']}}
 
-            {% if (data['ttw-claim-start-month'] =='01') or (data['ttw-claim-start-month'] =='1') %} January {% endif%}
-            {% if (data['ttw-claim-start-month'] =='02') or (data['ttw-claim-start-month'] =='2') %} February  {% endif%}
-            {% if (data['ttw-claim-start-month'] =='03') or (data['ttw-claim-start-month'] =='3') %} March {% endif%}
-            {% if (data['ttw-claim-start-month'] =='04') or (data['ttw-claim-start-month'] =='4') %} June {% endif%}
-            {% if (data['ttw-claim-start-month'] =='05') or (data['ttw-claim-start-month'] =='5') %} May {% endif%}
-            {% if (data['ttw-claim-start-month'] =='06') or (data['ttw-claim-start-month'] =='6') %} June {% endif%}
-            {% if (data['ttw-claim-start-month'] =='07') or (data['ttw-claim-start-month'] =='7') %} July {% endif%}
-            {% if (data['ttw-claim-start-month'] =='08') or (data['ttw-claim-start-month'] =='8') %} August {% endif%}
-            {% if (data['ttw-claim-start-month'] =='09') or (data['ttw-claim-start-month'] =='9') %} September {% endif%}
-            {% if data['ttw-claim-start-month'] =='10' %} October {% endif%}
-            {% if data['ttw-claim-start-month'] =='11'%} November {% endif%}
-            {% if data['ttw-claim-start-month'] =='12' %} December {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='01') or (data['ttw-claim-start-month'] =='1') %} January {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='02') or (data['ttw-claim-start-month'] =='2') %} February  {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='03') or (data['ttw-claim-start-month'] =='3') %} March {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='04') or (data['ttw-claim-start-month'] =='4') %} June {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='05') or (data['ttw-claim-start-month'] =='5') %} May {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='06') or (data['ttw-claim-start-month'] =='6') %} June {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='07') or (data['ttw-claim-start-month'] =='7') %} July {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='08') or (data['ttw-claim-start-month'] =='8') %} August {% endif%}
+                                          {% if (data['ttw-claim-start-month'] =='09') or (data['ttw-claim-start-month'] =='9') %} September {% endif%}
+                                          {% if data['ttw-claim-start-month'] =='10' %} October {% endif%}
+                                          {% if data['ttw-claim-start-month'] =='11'%} November {% endif%}
+                                          {% if data['ttw-claim-start-month'] =='12' %} December {% endif%}
 
-            {{data['ttw-claim-start-year']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Claim end date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{data['ttw-claim-end-day']}}
+                                          {{data['ttw-claim-start-year']}}
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                              Claim end date
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                          {{data['ttw-claim-end-day']}}
 
-            {% if (data['ttw-claim-end-month'] =='01') or (data['ttw-claim-end-month'] =='1') %} January {% endif%}
-            {% if (data['ttw-claim-end-month'] =='02') or (data['ttw-claim-end-month'] =='2') %} February  {% endif%}
-            {% if (data['ttw-claim-end-month'] =='03') or (data['ttw-claim-end-month'] =='3') %} March {% endif%}
-            {% if (data['ttw-claim-end-month'] =='04') or (data['ttw-claim-end-month'] =='4') %} April {% endif%}
-            {% if (data['ttw-claim-end-month'] =='05') or (data['ttw-claim-end-month'] =='5') %} May {% endif%}
-            {% if (data['ttw-claim-end-month'] =='06') or (data['ttw-claim-end-month'] =='6') %} June {% endif%}
-            {% if (data['ttw-claim-end-month'] =='07') or (data['ttw-claim-end-month'] =='7') %} July {% endif%}
-            {% if (data['ttw-claim-end-month'] =='08') or (data['ttw-claim-end-month'] =='8') %} August {% endif%}
-            {% if (data['ttw-claim-end-month'] =='09') or (data['ttw-claim-end-month'] =='9') %} September {% endif%}
-            {% if data['ttw-claim-end-month'] =='10' %} October {% endif%}
-            {% if data['ttw-claim-end-month'] =='11'%} November {% endif%}
-            {% if data['ttw-claim-end-month'] =='12' %} December {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='01') or (data['ttw-claim-end-month'] =='1') %} January {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='02') or (data['ttw-claim-end-month'] =='2') %} February  {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='03') or (data['ttw-claim-end-month'] =='3') %} March {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='04') or (data['ttw-claim-end-month'] =='4') %} April {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='05') or (data['ttw-claim-end-month'] =='5') %} May {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='06') or (data['ttw-claim-end-month'] =='6') %} June {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='07') or (data['ttw-claim-end-month'] =='7') %} July {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='08') or (data['ttw-claim-end-month'] =='8') %} August {% endif%}
+                                          {% if (data['ttw-claim-end-month'] =='09') or (data['ttw-claim-end-month'] =='9') %} September {% endif%}
+                                          {% if data['ttw-claim-end-month'] =='10' %} October {% endif%}
+                                          {% if data['ttw-claim-end-month'] =='11'%} November {% endif%}
+                                          {% if data['ttw-claim-end-month'] =='12' %} December {% endif%}
 
-            {{data['ttw-claim-end-year']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-
-
+                                          {{data['ttw-claim-end-year']}}
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
 
 
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Average journeys a week claimed
-        </dt>
-        <dd class="govuk-summary-list__value">
-          2
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
-
-        <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Allowance per journey?
-        </dt>
-        <dd class="govuk-summary-list__value">
-£18.50 %
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div> -->
-
-</dl>
-
-<br>
-
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Grant start date
-          </dt>
-          <dd class="govuk-summary-list__value">
-1 February 2023
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Grant end date
-          </dt>
-          <dd class="govuk-summary-list__value">
-31 January 2025
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
 
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Element
-          </dt>
-          <dd class="govuk-summary-list__value">
-Travel to work
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                                      <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                                        Average journeys a week claimed
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                                        2
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                      </dd>
+                                      </div>
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Taxi
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                                      <!-- <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                              Allowance per journey?
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                              £18.50 %
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                      </dd>
+                                      </div> -->
 
+                              </dl>
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-  Home address
-          </dt>
-          <dd class="govuk-summary-list__value">
-14 Herst street, Lincoln, LN2 3BB
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                              <br>
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-  Work address
-          </dt>
-          <dd class="govuk-summary-list__value">
-  Unit 18b Riding industrial estate, Lincoln, LN14 6RN
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                                      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Journeys a week
-        </dt>
-        <dd class="govuk-summary-list__value">
-2
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
-
-        <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-amount before deductions
-        </dt>
-        <dd class="govuk-summary-list__value">
-£20.50
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Public transport deductions
-        </dt>
-        <dd class="govuk-summary-list__value">
-£2.00
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div> -->
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                              Grant start date
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                              1 February 2023
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                              Grant end date
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                              31 January 2025
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
 
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Award for each journey
-        </dt>
-        <dd class="govuk-summary-list__value">
-£18.50
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                              Element
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                              Travel to work
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
 
-</dl>
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                              Description
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                              Taxi
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
+
+
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                Home address
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                              14 Herst street, Lincoln, LN2 3BB
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
+
+                                        <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                Work address
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                Unit 18b Riding industrial estate, Lincoln, LN14 6RN
+                                        </dd>
+                                        <dd class="govuk-summary-list__actions">
+                                        </dd>
+                                        </div>
+
+                                      <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                              Journeys a week
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                              2
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                      </dd>
+                                      </div>
+
+                                      <!-- <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                              amount before deductions
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                              £20.50
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                      </dd>
+                                      </div>
+
+                                      <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                              Public transport deductions
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                              £2.00
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                      </dd>
+                                      </div> -->
+
+
+                                      <div class="govuk-summary-list__row">
+                                      <dt class="govuk-summary-list__key">
+                              Award for each journey
+                                      </dt>
+                                      <dd class="govuk-summary-list__value">
+                              £18.50
+                                      </dd>
+                                      <dd class="govuk-summary-list__actions">
+                                      </dd>
+                                      </div>
+
+                              </dl>
 
 {% endif %}
 
@@ -729,7 +731,7 @@ Yes
 Award amount
         </dt>
         <dd class="govuk-summary-list__value">
-£80.49
+£80
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -951,6 +953,9 @@ Total of items selected
 </div>
 {% endif %}
 
+
+
+
 {% if case == 'sonya' %}
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 <div class="govuk-summary-list__row">
@@ -958,9 +963,27 @@ Total of items selected
 Total of items selected
 </dt>
 <dd class="govuk-summary-list__value">
-£1260.35
+
+
+{% if 'Jaws screen reader' in data['claim-item'] and 'ZoomText Professional License' in data['claim-item'] and 'Ipad Pro case' in data['claim-item'] and 'Ergonomic Keyboard' in data['claim-item'] and 'Ergonomic mouse' in data['claim-item']%}
+£1259.37
+{% else %}
+£1330.13
+{% endif %}
+
+
+
+
+
+
 </div>
 {% endif %}
+
+
+
+
+
+
 
 {% if case == 'james' %}
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -1255,7 +1278,7 @@ No,
                   </div>
 
                   <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~{{case}}/cases/review-claim-no-match/select-claim-items-no-match" {{ checked("grant-matches-claim", "No") }}>
+                  <input class="govuk-radios__input" id="grant-matches-claim-2" name="grant-matches-claim" type="radio" value="No~{{case}}/cases/review-claim-no-match/select-claim-items-no-match-tab#your-tasks" {{ checked("grant-matches-claim", "No") }}>
                   <label class="govuk-label govuk-radios__label" for="grant-matches-claim-2">
                     No
                   </label>
