@@ -661,11 +661,17 @@ Additional costs
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 
-                  {% if data ['sw-food-amount'] %}
-                  <a href="/payments/current/cases/susan/additional-costs/sw-food-check-tab#your-tasks" aria-describedby="claim-completed">
-                  {% else  %}
-                  <a href="/payments/current/cases/susan/additional-costs/sw-food-award-tab#your-tasks" aria-describedby="claim-completed">
-                  {% endif  %}
+          {% if not data ['sw-accomodation-amount']%}
+          {% endif  %}
+          {% if data ['sw-accomodation-amount'] and not data ['sw-food-day-amount']%}
+          <a href="/payments/current/cases/susan/additional-costs/sw-food-award-tab#your-tasks" aria-describedby="claim-completed">
+          {% endif  %}
+          {% if data['sw-food-day-amount'] %}
+          <a href="/payments/current/cases/susan/additional-costs/sw-food-check-tab#your-tasks" aria-describedby="claim-completed">
+          {% endif  %}
+
+
+
 
                   Additional costs: food
 </a>
