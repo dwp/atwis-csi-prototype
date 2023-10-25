@@ -58,14 +58,14 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
           <a href="{% if data['']%}/current/cases/workplace-assesment/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
-              Availability of workplace assessment
+              Availability for workplace assessment
           </a>
             </span>
             {% if data['']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-            {% if data['wpa-4-weeks']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> Waiting for date </strong>{% endif %}
+            {% if data['wpa-4-weeks']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold </strong>{% endif %}
           {% if data['wpa-4-weeks']=='No'%}
           {% if data['wpa-pause']=='No'%}<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
-          {% if data['wpa-pause']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> abc</strong>{% endif %}
+          {% if data['wpa-pause']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold</strong>{% endif %}
 {% endif %}
 
 

@@ -42,7 +42,7 @@
   {% if phase == "notEligible"  %}
 {% include  "../claim/notification.html" %}
 {% endif %}
-
+<!--
 {% if data['wpa-pause']=='Yes'%}<div class="govuk-notification-banner" role="region"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
@@ -74,7 +74,7 @@ data-module="govuk-notification-banner">
 </p>
 </div>
 </div>
-{% endif %}
+{% endif %} -->
 
  <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
@@ -260,7 +260,7 @@ data-module="govuk-notification-banner">
     {% else %}
   {% endif %}
 
-  {% if data['wpa-4-weeks']=='Yes'%}
+  <!-- {% if data['wpa-4-weeks']=='Yes'%}
   <div class="govuk-notification-banner" role="region"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
@@ -291,7 +291,7 @@ data-module="govuk-notification-banner">
       <a class="govuk-notification-banner__link" href="#">View application</a>.
     </p>
   </div>
-</div>{% endif %}
+</div>{% endif %} -->
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -555,7 +555,7 @@ data-module="govuk-notification-banner">
     {% include  "./notification.html" %}
       {% else %}
     {% endif %}
-  {% if data['wpa-4-weeks']=='Yes'%}
+  <!-- {% if data['wpa-4-weeks']=='Yes'%}
   <div class="govuk-notification-banner" role="region"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
@@ -586,7 +586,7 @@ data-module="govuk-notification-banner">
       <a class="govuk-notification-banner__link" href="#">View application</a>.
     </p>
   </div>
-</div>{% endif %}
+</div>{% endif %} -->
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Checks</h2>
@@ -625,7 +625,7 @@ data-module="govuk-notification-banner">
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
-    {% if data['wpa-4-weeks']=='Yes'%}
+    <!-- {% if data['wpa-4-weeks']=='Yes'%}
     <div class="govuk-notification-banner" role="region"
     aria-labelledby="govuk-notification-banner-title"
     data-module="govuk-notification-banner">
@@ -656,7 +656,7 @@ data-module="govuk-notification-banner">
       <a class="govuk-notification-banner__link" href="#">View application</a>.
     </p>
   </div>
-</div>{% endif %}
+</div>{% endif %} -->
   {% if case =='other-cases' %}
     {% include  "./task-list-sonya-application.html" %}{% endif %}
 
@@ -680,7 +680,7 @@ data-module="govuk-notification-banner">
 
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
-  {% if data['wpa-4-weeks']=='Yes'%}
+  <!-- {% if data['wpa-4-weeks']=='Yes'%}
   <div class="govuk-notification-banner" role="region"
   aria-labelledby="govuk-notification-banner-title"
   data-module="govuk-notification-banner">
@@ -711,7 +711,7 @@ data-module="govuk-notification-banner">
       <a class="govuk-notification-banner__link" href="#">View application</a>.
     </p>
   </div>
-</div>{% endif %}
+</div>{% endif %} -->
   {% if case =='other-cases-2' %}
   {% include  "./task-list-thomas-business-case.html" %}{% endif %}
 
