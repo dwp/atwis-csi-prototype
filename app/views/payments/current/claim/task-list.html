@@ -149,15 +149,16 @@
                       <a href="/payments/current/cases/jamesm/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
-{% if case == 'sonya' and not data['claim-item'] %}
-                <a href="/payments/current/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+{% if case == 'sonya'%}
+                        {% if not data['grant-matches-claim'] %}
+                                        <a href="/payments/current/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                        {% endif %}
+
+                        {% if data['grant-matches-claim'] %}
+                                        <a href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">
+                        {% endif %}
 {% endif %}
 
-{% if case == 'sonya' and data['claim-item'] %}
-                <a href="/payments/current/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
-                <!-- <a href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi" aria-describedby="claim-completed"> -->
-
-{% endif %}
 
 {% if case == 'dereck' %}
                 <a href="/payments/current/cases/dereck/cases/review-claim/matches-grant-multi-tab#your-tasks" aria-describedby="claim-completed">
@@ -268,11 +269,11 @@
 
 
 
-<!-- SAE CLAIM OT MATCH GRANT -->
-<!-- SAE CLAIM OT MATCH GRANT -->
-<!-- SAE CLAIM OT MATCH GRANT -->
-<!-- SAE CLAIM OT MATCH GRANT -->
-<!-- SAE CLAIM OT MATCH GRANT -->
+<!-- SAE CLAIM NOT MATCH GRANT -->
+<!-- SAE CLAIM NOT MATCH GRANT -->
+<!-- SAE CLAIM NOT MATCH GRANT -->
+<!-- SAE CLAIM NOT MATCH GRANT -->
+<!-- SAE CLAIM NOT MATCH GRANT -->
 
 
 
@@ -285,10 +286,10 @@
                       <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
 {% if not data ['claim-item-no-match-jaws'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/jaws-item-no-match" aria-describedby="company-information-completed">
+                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/jaws-item-no-match-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if data ['claim-item-no-match-jaws'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-high-no-match-check" aria-describedby="company-information-completed">
+                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-high-no-match-check-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                                                   Jaws screen reader
@@ -305,10 +306,10 @@
                       <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
 {% if not data ['claim-item-no-match-keyboard'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match" aria-describedby="company-information-completed">
+                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if data ['claim-item-no-match-keyboard'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match-check" aria-describedby="company-information-completed">
+                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match-check-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                                                   Ergonomic keyboard
@@ -496,7 +497,9 @@
 
 {% endif %}
 
-{% if case == 'susan' and 'amounts' in data ['sw-match'] or 'hours' in data ['sw-match'] %}
+{% if case == 'susan' %}
+{% if 'amounts' in data ['sw-match'] or 'hours' in data ['sw-match'] %}
+
                       {% if data['easement'] %}
                                     <a href="/payments/current/cases/susan/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
                       {% endif %}
@@ -527,6 +530,7 @@
                                     {% if data['company-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
                                     <li>
+                      {% endif %}
                       {% endif %}
 
 
