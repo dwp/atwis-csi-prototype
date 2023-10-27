@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 {% block csi %}
@@ -143,20 +143,20 @@ Cost
                   </h2>
                 </legend>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="details-item-no-match-ipad-1" name="details-item-no-match-ipad" type="radio" value="Yes item amount is the same~saved-location" {{ checked("details-item-no-match-ipad", "Yes item amount is the same") }}>
+                    <input class="govuk-radios__input" id="details-item-no-match-ipad-1" name="details-item-no-match-ipad" type="radio" value="Yes item amount is the same~saved-location-tab#your-tasks" {{ checked("details-item-no-match-ipad", "Yes item amount is the same") }}>
                     <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-1">
                       Yes, the amount is the same
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="details-item-no-match-ipad-2" name="details-item-no-match-ipad" type="radio" value="No item amount is different~rejected-invoice-ipad-amount" {{ checked("details-item-no-match-ipad", "No item amount is different") }}>
+                    <input class="govuk-radios__input" id="details-item-no-match-ipad-2" name="details-item-no-match-ipad" type="radio" value="No item amount is different~rejected-invoice-ipad-amount-tab#your-tasks" {{ checked("details-item-no-match-ipad", "No item amount is different") }}>
                     <label class="govuk-label govuk-radios__label" for="details-item-no-match-ipad-2">
                       No, the amount is different
                     </label>
                   </div>
                   <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="details-item-no-match-ipad-3" name="details-item-no-match-ipad" type="radio" value="I have not recived a replacment invoice~rejected-invoice-ipad-close" {{ checked("details-item-no-match-ipad", "I have not recived a replacment invoice") }}>
+                    <input class="govuk-radios__input" id="details-item-no-match-ipad-3" name="details-item-no-match-ipad" type="radio" value="I have not recived a replacment invoice~rejected-invoice-ipad-close-tab#your-tasks" {{ checked("details-item-no-match-ipad", "I have not recived a replacment invoice") }}>
                     <label class="govuk-label govuk-radios__label" for="details-item-no-match-ipad-3">
                       I have not received a valid replacement invoice
                     </label>

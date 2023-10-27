@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 
@@ -17,7 +17,7 @@
 <form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
 {% endif %}
 {% if case == 'sonya' %}
-<form action="/payments/current/cases/sonya/cases/company-details-no-match/contact-company-details-no-match" method="post" novalidate>
+<form action="/payments/current/cases/sonya/cases/company-details-no-match/contact-company-details-no-match-tab#your-tasks" method="post" novalidate>
 {% endif %}
   <div class="govuk-width-container">
 

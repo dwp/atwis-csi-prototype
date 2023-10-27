@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 {% block csi %}
@@ -51,13 +51,13 @@ Amount on invoice is the same: Ipad Pro case
                       </h2>
                     </legend>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~cases/company-details-no-match/rejected-invoice-ipad-check" {{ checked("invoice-saved", "Yes") }}>
+                        <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks" {{ checked("invoice-saved", "Yes") }}>
                         <label class="govuk-label govuk-radios__label" for="invoice-saved-1">
                           Yes
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="invoice-saved-2" name="invoice-saved" type="radio" value="No~cases/company-details-no-match/saved-location-other" {{ checked("invoice-saved", "No") }}>
+                        <input class="govuk-radios__input" id="invoice-saved-2" name="invoice-saved" type="radio" value="No~cases/company-details-no-match/saved-location-other-tab#your-tasks" {{ checked("invoice-saved", "No") }}>
                         <label class="govuk-label govuk-radios__label" for="invoice-saved-2">
                           No
                         </label>

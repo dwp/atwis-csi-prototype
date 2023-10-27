@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 {% block csi %}
 
@@ -11,7 +11,7 @@
 
 
 
-<form action="/payments/current/cases/sonya/cases/company-details-no-match/saved-location" method="post" novalidate>
+<form action="/payments/current/cases/sonya/cases/company-details-no-match/saved-location-tab#your-tasks" method="post" novalidate>
 
 
 
