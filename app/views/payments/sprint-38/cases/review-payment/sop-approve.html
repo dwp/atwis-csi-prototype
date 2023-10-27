@@ -1249,7 +1249,7 @@
                   Hourly rate
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £21.50
+                  £26.88
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
@@ -1260,9 +1260,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
 {% if data['sw-amount'] %}
-                  <!-- £{{data['sw-amount']}} -->
-
-                £688
+                  £{{data['sw-amount']}}
 {% else %}
                   £592.00
 {% endif %}
@@ -1328,7 +1326,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if data['sw-amount'] %}
-                                    £688
+                                    £{{data['sw-amount']}}
                   {% else %}
                                     £592.00
                   {% endif %}
