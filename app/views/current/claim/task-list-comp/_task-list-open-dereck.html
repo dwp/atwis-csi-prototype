@@ -61,9 +61,13 @@
               Availability for workplace assessment
           </a>
             </span>
+            {% if data['address-of-wpa']%}<strong class="govuk-tag app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
+
             {% if data['']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
             {% if data['wpa-4-weeks']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold </strong>{% endif %}
           {% if data['wpa-4-weeks']=='No'%}
+
+
           {% if data['wpa-pause']=='No'%}<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
           {% if data['wpa-pause']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold</strong>{% endif %}
 {% endif %}
