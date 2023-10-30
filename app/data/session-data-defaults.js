@@ -24,6 +24,11 @@ module.exports = {
 'sw-match' : "",
 'job-deatils-check' : "No",
 'condition-check' : "No",
+'paid-in-full' : "",
+'company-details' : "",
+'additional-cost' : "",
+
+
   'claims' : "",
 'benefits' : "",
 'priority' : "",

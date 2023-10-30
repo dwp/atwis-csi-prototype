@@ -43,13 +43,10 @@
       <div class="moj-timeline__description">£296.00 Paid on this claim</div>
       {% endif %}
       {% if case == 'susan' %}
-      <div class="moj-timeline__description">{% if data['sw-amount'] %}
-                        £688
-      {% else %}
-                        £592.00
-      {% endif %}
- Paid on this claim</div>
- <div class="moj-timeline__description">
+      <div class="moj-timeline__description">£971.04 Paid on this claim
+        <br>
+Paid to: {{data ['sop-payee-name'] }}
+<br>
 
 Claim period:
 
@@ -138,7 +135,7 @@ to
 
 
       <!-- FIND PAYEE IN SOP -->
-{% if data['sop-find']%}
+<!-- {% if data['sop-find']%}
       <div class="moj-timeline__item">
 
           <div class="moj-timeline__header">
@@ -150,7 +147,7 @@ to
           </p>
           <div class="moj-timeline__description"></div>
         </div>
-{% endif %}
+{% endif %} -->
 
         <!-- ADD INVOICE DETAILS -->
 
@@ -183,6 +180,82 @@ to
               </p>
               <div class="moj-timeline__description">£530.64 removed from calculation</div>
             </div> -->
+
+
+
+
+
+
+
+
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+
+
+{% if data['sw-travel-number']%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: travel</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£{{data['sw-travel-amount']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+
+
+
+
+
+
+{% endif %}
+
+{% if data['sw-accomodation-number']%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: accomodation</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£{{data['sw-accomodation-amount']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+{% endif %}
+
+{% if data['sw-food-day-amount']%}
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: food</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£55.74</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+{% endif %}
+
+
+
+
+
+
 
 
           <!-- CHECK INVOICES HAVE BEEN PAID -->
@@ -220,8 +293,15 @@ to
               </div> -->
 
 
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+
             <!-- CHECK INVOICES ARE VALID -->
-{% if data['company-details']%}
+<!-- {% if data['company-details']%}
+>>>>>>> sprint-archiving
             <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
@@ -233,7 +313,7 @@ to
                 </p>
                 <div class="moj-timeline__description"></div>
               </div>
-{% endif %}
+{% endif %} -->
 
 
               <!-- NO -->
@@ -274,7 +354,7 @@ to
 
 <!-- SW HOURS AND AMOUNT NO PATHS -->
 
-{% if data['sw-amount'] %}
+{% if data['sw-amount-1'] %}
               <div class="moj-timeline__item">
                   <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Hourly rate does not match grant award</h2>
@@ -287,9 +367,8 @@ to
                   </p>
                   <div class="moj-timeline__description"></div>
                 </div>
-
 {% endif %}
-{% if data['sw-hours'] %}
+{% if data['sw-hours-1'] %}
               <div class="moj-timeline__item">
                   <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Hours claimed are more than grant award</h2>
@@ -303,7 +382,7 @@ to
                 </div>
 
 {% endif %}
-{% if data['sw-hours-less'] %}
+{% if data['sw-hours-less-1'] %}
               <div class="moj-timeline__item">
                   <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Hours claimed are less than grant award</h2>
@@ -342,12 +421,11 @@ to
 
 
 
-{% if data['sw-claim-start-day']%}
+<!-- {% if data['sw-claim-start-day']%}
 <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
     <h2 class="moj-timeline__title">Add claim details</h2>
-    <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
     <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
     </div>
     <p class="moj-timeline__description">
@@ -355,7 +433,7 @@ to
     </p>
     <div class="moj-timeline__description"></div>
   </div>
-{% endif %}
+{% endif %} -->
 
 
 {% if data['ttw-claim-start-day']%}
