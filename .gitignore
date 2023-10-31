@@ -1,3 +1,7 @@
 node_modules/
 .DS_Store
 .idea
+public/stylesheets/dwp.css
+public/stylesheets/application.css
+public/stylesheets/application-ie8.css
+lib/extensions/_extensions.scss
