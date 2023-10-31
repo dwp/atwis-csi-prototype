@@ -22,6 +22,8 @@ module.exports = {
 'ttw-match' : "",
 'claim-item' : "",
 'sw-match' : "",
+'job-deatils-check' : "No",
+'condition-check' : "No",
 'paid-in-full' : "",
 'company-details' : "",
 'additional-cost' : "",
