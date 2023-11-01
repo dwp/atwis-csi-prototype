@@ -533,56 +533,14 @@ Check claim matches grant award
 
 
 
-{% if case == 'dereck' %}
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Jaws screen reader
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Element
-          </dt>
-          <dd class="govuk-summary-list__value">
-Specialist equipment
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Cost share
-          </dt>
-          <dd class="govuk-summary-list__value">
-Yes
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
 
 
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Award amount
-        </dt>
-        <dd class="govuk-summary-list__value">
-£499
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
-</dl>
-{% endif %}
+
+
+
+
+
 
 
 
@@ -611,7 +569,7 @@ Specialist equipment
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Cost share
           </dt>
@@ -620,9 +578,7 @@ Yes
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
-
-
+          </div> -->
 
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -663,7 +619,7 @@ Specialist equipment
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Cost share
           </dt>
@@ -672,7 +628,7 @@ Yes
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
+          </div> -->
 
 
         <div class="govuk-summary-list__row">
@@ -714,7 +670,7 @@ Specialist equipment
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Cost share
           </dt>
@@ -723,7 +679,7 @@ Yes
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
+          </div> -->
 
 
         <div class="govuk-summary-list__row">
@@ -731,7 +687,106 @@ Yes
 Award amount
         </dt>
         <dd class="govuk-summary-list__value">
-£80
+£80.00
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+{% if 'Foot rest' in data['claim-item'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Foot rest
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div> -->
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£24.00
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+{% if 'Sit stand desk' in data['claim-item'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Sit stand desk
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div> -->
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£230.00
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -765,7 +820,7 @@ Specialist equipment
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Cost share
           </dt>
@@ -774,7 +829,7 @@ Yes
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
+          </div> -->
 
 
         <div class="govuk-summary-list__row">
@@ -798,7 +853,7 @@ Award amount
 Description
           </dt>
           <dd class="govuk-summary-list__value">
-Ergonomic keyboard
+Ergonomic keyboard (home)
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -815,7 +870,7 @@ Specialist equipment
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Cost share
           </dt>
@@ -824,7 +879,7 @@ No
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
+          </div> -->
 
 
         <div class="govuk-summary-list__row">
@@ -866,7 +921,7 @@ Specialist equipment
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Cost share
           </dt>
@@ -875,7 +930,7 @@ Yes
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
+          </div> -->
 
 
         <div class="govuk-summary-list__row">
@@ -917,7 +972,7 @@ Specialist equipment
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
 Cost share
           </dt>
@@ -926,8 +981,7 @@ Yes
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
-          </div>
-
+          </div> -->
 
         <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -942,6 +996,106 @@ Award amount
 </dl>
 {% endif %}
 
+{% if 'Desk magnifier' in data['claim-item'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Desk magnifier
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div> -->
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£31.70
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
+{% if 'Laptop stand' in data['claim-item'] %}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+Laptop stand
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Element
+          </dt>
+          <dd class="govuk-summary-list__value">
+Specialist equipment
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div>
+
+          <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost share
+          </dt>
+          <dd class="govuk-summary-list__value">
+Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+          </div> -->
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Award amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+£19.99
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+        </div>
+</dl>
+{% endif %}
+
+
 {% if case == 'dereck' %}
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 <div class="govuk-summary-list__row">
@@ -949,7 +1103,7 @@ Award amount
 Total of items selected
 </dt>
 <dd class="govuk-summary-list__value">
-£499
+£1234.91
 </div>
 {% endif %}
 

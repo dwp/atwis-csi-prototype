@@ -62,6 +62,15 @@ Select all items that appear on the claim form
           <p>Ipad Pro case</p>
           {% endif %}
 
+          {% if 'Foot rest' in data['claim-item'] %}
+          <p>Foot rest</p>
+          {% endif %}
+
+
+          {% if 'Sit stand desk' in data['claim-item'] %}
+          <p>Sit stand desk</p>
+          {% endif %}
+
 
           {% if 'Ergonomic Keyboard' in data['claim-item'] %}
           <p>Ergonomic keyboard</p>
@@ -82,9 +91,26 @@ Select all items that appear on the claim form
           {% endif %}
 
 
+          {% if 'Desk magnifier' in data['claim-item'] %}
+          <p>Desk magnifier</p>
+          {% endif %}
+
+
+          {% if 'Laptop stand' in data['claim-item'] %}
+          <p>Laptop stand</p>
+          {% endif %}
+
+
         </dd>
         <dd class="govuk-summary-list__actions">
+{% if case == 'dereck' %}
+        <a class="govuk-link" href="/payments/current/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks">
+{% endif %}
+{% if case == 'sonay' %}
         <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks">
+{% endif %}
+
+
 Change
         <span class="govuk-visually-hidden"> name</span>
         </a>
@@ -102,7 +128,13 @@ Do the amounts on the claim form and invoices match the grant award?
 
         </dd>
         <dd class="govuk-summary-list__actions">
+{% if case == 'dereck' %}
+          <a class="govuk-link" href="/payments/current/cases/dereck/cases/review-claim/matches-grant-multi-tab#your-tasks">
+{% endif %}
+{% if case == 'sonya' %}
           <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi-tab#your-tasks">
+{% endif %}
+
 Change
         <span class="govuk-visually-hidden"> address</span>
         </a>
@@ -116,7 +148,8 @@ Change
 <dt class="govuk-summary-list__key">
 Which items do not match the grant award?</dt>
 <dd class="govuk-summary-list__value">
-  {% if 'Jaws screen reader' in data['claim-item'] %}
+
+  {% if 'Jaws screen reader' in data['claim-item-no-match'] %}
   <p>Jaws screen reader</p>
   {% endif %}
 
@@ -128,6 +161,15 @@ Which items do not match the grant award?</dt>
 
   {% if 'Ipad Pro case' in data['claim-item-no-match'] %}
   <p>Ipad Pro case</p>
+  {% endif %}
+
+  {% if 'Foot rest' in data['claim-item-no-match'] %}
+  <p>Foot rest</p>
+  {% endif %}
+
+
+  {% if 'Sit stand desk' in data['claim-item-no-match'] %}
+  <p>Sit stand desk</p>
   {% endif %}
 
 
@@ -148,6 +190,17 @@ Which items do not match the grant award?</dt>
   {% if 'Ergonomic mouse' in data['claim-item-no-match'] %}
   <p>Ergonomic mouse</p>
   {% endif %}
+
+
+  {% if 'Desk magnifier' in data['claim-item-no-match'] %}
+  <p>Desk magnifier</p>
+  {% endif %}
+
+
+  {% if 'Laptop stand' in data['claim-item-no-match'] %}
+  <p>Laptop stand</p>
+  {% endif %}
+
 
 </dd>
 <dd class="govuk-summary-list__actions">

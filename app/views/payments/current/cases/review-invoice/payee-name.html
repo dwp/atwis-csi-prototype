@@ -13,8 +13,10 @@
 
 
 
-{% if case == 'dereck' %}
-<form action="/payments/current/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
+{% if case == 'dereck' and not data ['payee-name'] %}
+<form action="/payments/current/cases/dereck/cases/review-invoice/proforma-select-item-tab#your-tasks" method="post" novalidate>
+{% else %}
+<form action="/payments/current/cases/dereck/cases/review-invoice/proforma-select-item-2-tab#your-tasks" method="post" novalidate>
 {% endif %}
 
 
@@ -46,7 +48,7 @@
 
 
           <!-- PAYEE 1 -->
-{% if case == 'sonya'%}
+{% if case == 'sonya' or case == 'dereck' %}
 
           {% if not data ['payee-name'] %}
           <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="50">

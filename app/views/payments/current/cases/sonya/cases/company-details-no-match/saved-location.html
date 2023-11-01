@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 {% block csi %}
@@ -13,7 +13,7 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+<form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -29,11 +29,25 @@
 
     <h2 class="govuk-fieldset__heading">
 {% if 'Yes item amount is the same' in data ['details-item-no-match-ipad']%}
-Replacment invoice: Ipad Pro case
+Replacment invoice:
+{% if case == 'sonya' %}
+ Ipad Pro case
+ {% endif %}
+ {% if case == 'dereck' %}
+  Jaws screen reader
+  {% endif %}
+
 {% endif %}
 
 {% if 'No item amount is different' in data ['details-item-no-match-ipad']%}
-Amount on invoice is the same: Ipad Pro case
+Amount on invoice is the same:
+{% if case == 'sonya' %}
+ Ipad Pro case
+ {% endif %}
+ {% if case == 'dereck' %}
+  Jaws screen reader
+  {% endif %}
+
 {% endif %}
 
     </h2>
@@ -43,6 +57,8 @@ Amount on invoice is the same: Ipad Pro case
               <!-- secondary text -->
                 </div>
 
+{% if case == 'dereck' %}
+
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -51,18 +67,43 @@ Amount on invoice is the same: Ipad Pro case
                       </h2>
                     </legend>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~cases/company-details-no-match/rejected-invoice-ipad-check" {{ checked("invoice-saved", "Yes") }}>
+                        <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~dereck/cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks" {{ checked("invoice-saved", "Yes") }}>
                         <label class="govuk-label govuk-radios__label" for="invoice-saved-1">
                           Yes
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="invoice-saved-2" name="invoice-saved" type="radio" value="No~cases/company-details-no-match/saved-location-other" {{ checked("invoice-saved", "No") }}>
+                        <input class="govuk-radios__input" id="invoice-saved-2" name="invoice-saved" type="radio" value="No~dereck/cases/company-details-no-match/saved-location-other-tab#your-tasks" {{ checked("invoice-saved", "No") }}>
                         <label class="govuk-label govuk-radios__label" for="invoice-saved-2">
                           No
                         </label>
                       </div>
                     </div>
+{% endif %}
+
+{% if case == 'sonya' %}
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h2 class="govuk-heading-m">
+                        Did you save the replacement invoice in SharePoint?
+                      </h2>
+                    </legend>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~sonya/cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks" {{ checked("invoice-saved", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="invoice-saved-1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="invoice-saved-2" name="invoice-saved" type="radio" value="No~sonya/cases/company-details-no-match/saved-location-other-tab#your-tasks" {{ checked("invoice-saved", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="invoice-saved-2">
+                          No
+                        </label>
+                      </div>
+                    </div>
+{% endif %}
 
 
 

@@ -21,10 +21,11 @@ module.exports = {
 
 'ttw-match' : "",
 'claim-item' : "",
-'sw-match' : "",
+'grant-matches-claim-sw' : "",
 'paid-in-full' : "",
 'company-details' : "",
 'additional-cost' : "",
+'details-item-no-match-ipad' : "",
 
 
   'claims' : "",
