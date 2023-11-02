@@ -687,11 +687,11 @@ Use for radio buttons
 
 
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
       {% if not data ['sw-claim-start-day']%}
       {% endif %}
       {% if data ['sw-claim-start-day'] and not data ['sw-match']%}
-      <a href="/payments/current/cases/susan/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+      <a href="/payments/current/cases/thomas/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
       {% endif %}
       {% if data['sw-match'] %}
       <a href="/payments/current/cases/sonya/cases/review-claim/match-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">

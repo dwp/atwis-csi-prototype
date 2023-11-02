@@ -75,8 +75,9 @@
                 {% if case == 'paul' %}
                           £296.00
                 {% endif %}
-                {% if case == 'susan' %}
-                                  £971.04
+                {% if case == 'thomas' %}
+                                  <!-- £971.04 -->
+                                  £600
 
                 {% endif %}
 
@@ -108,6 +109,15 @@
         </div>
       </div>
 
+
+
+
+{% if case == 'thomas'%}
+      <input type="hidden" id="thomas" name="thomas" value="Yes">
+{% endif %}
+{% if case == 'sonya'%}
+      <input type="hidden" id="sonya" name="sonya" value="Yes">
+{% endif %}
 
 
 
