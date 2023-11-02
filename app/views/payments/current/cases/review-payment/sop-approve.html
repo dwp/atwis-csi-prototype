@@ -1728,7 +1728,7 @@
             Cost per journey
           </dt>
           <dd class="govuk-summary-list__value">
-            £18.50
+            £30
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -1810,7 +1810,7 @@
       {% endif %}
 
 
-      {% if case == 'susan' %}
+      {% if case == 'thomas' %}
 
 
       <br>
@@ -1933,7 +1933,7 @@
                   Hours of support
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  32
+                  20
                   <!-- {{data['sw-hours']}} -->
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -1944,7 +1944,7 @@
                   Hourly rate
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £18.50
+                  £30
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
@@ -1954,21 +1954,24 @@
                   Claim total
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £592.00
+                  £600
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
               </div>
+
+{% if data ['additional-costs-scenario']%}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Total additional costs
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £379.04
+                  £600
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
               </div>
+{% endif %}
 
             </dl>
 
@@ -2027,7 +2030,7 @@
                   Total amount to pay
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £971.04
+                  £600
 
                 </dd>
                 <dd class="govuk-summary-list__actions">

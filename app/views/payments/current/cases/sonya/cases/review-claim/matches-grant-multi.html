@@ -13,8 +13,8 @@
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
 
-{% if case == 'susan' %}
-<form action="/payments/current/cases/susan/claim-susan#your-tasks" method="post" novalidate>
+{% if case == 'thomas' %}
+<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
 {% else %}
 <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
 {% endif %}
@@ -55,7 +55,7 @@ Check claim matches grant award
 <!-- SUPPORT WORKER -->
 
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
 {% if 'bsl' in data ['claim-item-1'] %}
 
                         <h2 class="govuk-heading-m">Details entered from claim</h2>
@@ -154,7 +154,7 @@ Check claim matches grant award
                                   Average hourly rate
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                  £18.50
+                                  £30
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <!-- <a class="govuk-link" href="sw-add-hours-tab#your-tasks">
@@ -171,7 +171,7 @@ Check claim matches grant award
                         Allowance per journey?
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                        £18.50 %
+                        £30 %
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                 </dd>
@@ -245,7 +245,7 @@ Check claim matches grant award
                         Hours of support a week
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                        8
+                        5
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                 </dd>
@@ -279,7 +279,7 @@ Check claim matches grant award
                         Hourly rate awarded
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                        £18.50
+                        £30
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                 </dd>
@@ -387,7 +387,7 @@ Check claim matches grant award
                               Allowance per journey?
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                              £18.50 %
+                              £30 %
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
                                       </dd>
@@ -505,7 +505,7 @@ Check claim matches grant award
                               Award for each journey
                                       </dt>
                                       <dd class="govuk-summary-list__value">
-                              £18.50
+                              £30
                                       </dd>
                                       <dd class="govuk-summary-list__actions">
                                       </dd>
@@ -1206,7 +1206,7 @@ Total of items selected
 
 
 
-<!-- {% if case == 'susan' %}
+<!-- {% if case == 'thomas' %}
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
@@ -1262,7 +1262,7 @@ No,
 {% endif %} -->
 
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="countries-hint">

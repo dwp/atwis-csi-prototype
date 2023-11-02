@@ -74,7 +74,7 @@
 
 
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
 
 
                   <li class="app-task-list__item">
@@ -84,9 +84,9 @@
 
 
                   {% if data['sw-claim-start-day'] %}
-                  <a href="/payments/current/cases/susan/cases/review-claim/sw-claim-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/current/cases/thomas/cases/review-claim/sw-claim-tab#your-tasks" aria-describedby="claim-completed">
                   {% else %}
-                  <a href="/payments/current/cases/susan/cases/review-claim/sw-add-date-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/current/cases/thomas/cases/review-claim/sw-add-date-tab#your-tasks" aria-describedby="claim-completed">
                   {% endif %}
 
 
@@ -129,8 +129,8 @@
 
 
 <!-- SW - GRANT MATCHES CLAIM -->
-{% if case == 'susan' and data['claim-item-1'] %}
-                    <a href="/payments/current/cases/susan/cases/review-claim/matches-grant-multi-tab#your-tasks" aria-describedby="claim-completed">
+{% if case == 'thomas' and data['claim-item-1'] %}
+                    <a href="/payments/current/cases/thomas/cases/review-claim/matches-grant-multi-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
 
@@ -179,7 +179,7 @@
                   </a>
                   </span>
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
                   {% if not data['sw-claim-start-day']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
                   {% if data['sw-claim-start-day'] and not data ['grant-matches-claim-sw']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                   {% if data['grant-matches-claim-sw'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
@@ -229,13 +229,13 @@
 
 
 
-{% if case == 'susan'%}
+{% if case == 'thomas'%}
 {% if 'hours' in data ['grant-matches-claim-sw']%}
 
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
 
-                                                  <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
+                                                  <a href="/payments/current/cases/thomas/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
 
                                   Review number of hours claimed
                                   </a>
@@ -253,7 +253,7 @@
                     <span class="app-task-list__task-name">
 
                                 {% if data ['sw-hours-more']%}
-                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-amount-no-match-ease-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/current/cases/thomas/review-claim-no-match/sw-amount-no-match-ease-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
 
 
@@ -580,7 +580,7 @@
 
 {% endif %}
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 
@@ -589,7 +589,7 @@
 
 
                       {% if data['easement'] %}
-                                    <a href="/payments/current/cases/susan/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+                                    <a href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
                       {% endif %}
 
                                       Check invoices are valid
@@ -606,7 +606,7 @@
 
 
                       {% if 'Yes' in data ['grant-matches-claim-sw']  %}
-                                    <a href="/payments/current/cases/susan/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+                                    <a href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
                                       {% endif %}
 
                                       Check invoices are valid
@@ -635,8 +635,9 @@
 <!-- SW ADDITIONAL COSTS -->
 
 
+{% if case == 'thomas' and data ['additional-costs-scenario']%}
 
-{% if case == 'susan'%}
+{% if case == 'thomas'%}
 
 </ul>
 </li>
@@ -650,20 +651,19 @@ Additional costs
 </h2>
 
 
-<!-- 2 Check invoice matches claim FORM-->
 
 <ul class="app-task-list__items">
 
   {% endif  %}
 
 
-{% if case == 'susan'%}
+{% if case == 'thomas'%}
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 
                   {% if data ['company-details'] %}
-                  <a href="/payments/current/cases/susan/additional-costs/select-cost-types-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/current/cases/thomas/additional-costs/select-cost-types-tab#your-tasks" aria-describedby="claim-completed">
                   {% else  %}
                   {% endif  %}
 
@@ -685,15 +685,15 @@ Additional costs
 <!-- SW ADDITIONAL COSTS TRAVEL -->
 
 
-{% if case == 'susan' and 'support worker travel' in data ['additional-cost'] %}
+{% if case == 'thomas' and 'support worker travel' in data ['additional-cost'] %}
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 
                   {% if data ['sw-travel-amount'] %}
-                  <a href="/payments/current/cases/susan/additional-costs/sw-travel-check-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/current/cases/thomas/additional-costs/sw-travel-check-tab#your-tasks" aria-describedby="claim-completed">
                   {% else  %}
-                  <a href="/payments/current/cases/susan/additional-costs/sw-travel-award-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/current/cases/thomas/additional-costs/sw-travel-award-tab#your-tasks" aria-describedby="claim-completed">
                   {% endif  %}
 
                   Additional costs: travel
@@ -718,15 +718,15 @@ Additional costs
 
 
 
-{% if case == 'susan' and 'support worker accomodation' in data ['additional-cost'] %}
+{% if case == 'thomas' and 'support worker accomodation' in data ['additional-cost'] %}
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 
                   {% if data ['sw-accomodation-amount'] %}
-                  <a href="/payments/current/cases/susan/additional-costs/sw-accomodation-check-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/current/cases/thomas/additional-costs/sw-accomodation-check-tab#your-tasks" aria-describedby="claim-completed">
                   {% else  %}
-                  <a href="/payments/current/cases/susan/additional-costs/sw-accomodation-award-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/current/cases/thomas/additional-costs/sw-accomodation-award-tab#your-tasks" aria-describedby="claim-completed">
                   {% endif  %}
 
                   Additional costs: accommodation
@@ -748,7 +748,7 @@ Additional costs
 
 
 
-{% if case == 'susan' and 'support worker food' in data ['additional-cost'] %}
+{% if case == 'thomas' and 'support worker food' in data ['additional-cost'] %}
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
@@ -756,10 +756,10 @@ Additional costs
           {% if not data ['sw-accomodation-amount']%}
           {% endif  %}
           {% if data ['sw-accomodation-amount'] and not data ['sw-food-day-amount']%}
-          <a href="/payments/current/cases/susan/additional-costs/sw-food-award-tab#your-tasks" aria-describedby="claim-completed">
+          <a href="/payments/current/cases/thomas/additional-costs/sw-food-award-tab#your-tasks" aria-describedby="claim-completed">
           {% endif  %}
           {% if data['sw-food-day-amount'] %}
-          <a href="/payments/current/cases/susan/additional-costs/sw-food-check-tab#your-tasks" aria-describedby="claim-completed">
+          <a href="/payments/current/cases/thomas/additional-costs/sw-food-check-tab#your-tasks" aria-describedby="claim-completed">
           {% endif  %}
 
 
@@ -775,6 +775,7 @@ Additional costs
 
 {% endif  %}
 
+{% endif  %}
 
 
 
@@ -786,8 +787,8 @@ Additional costs
 <!-- SW REJECTED INVOICE NO PATHS -->
 <!-- SW REJECTED INVOICE NO PATHS -->
 
-
-{% if case == 'susan' and data ['company-details'] == 'Yes'%}
+{% if case == 'thomas' and not data ['additional-costs-scenario']%}
+{% if data ['company-details'] == 'Yes'%}
 
 
 
@@ -795,7 +796,7 @@ Additional costs
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
                                 {% if data ['company-details']%}
-                                <a href="/payments/current/cases/susan/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/current/cases/thomas/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
 
                 Review rejected invoice: British Sign Language (BSL) interpreter
@@ -808,6 +809,7 @@ Additional costs
 
 
 
+{% endif  %}
 {% endif  %}
 
 
@@ -1233,26 +1235,46 @@ Add invoice details
 
 
 
-{% if case == 'susan' %}
+<!-- SW ADD INVOICE NUMBER ADDITIONAL COSTS -->
+
+
+{% if case == 'thomas' and data ['additional-costs-scenario']%}
+                <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+
+                  {% if data['sw-food-day-amount'] %}
+                  <a href="/payments/current/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+                    {% else %}
+                    {% endif %}
+
+                    Add invoice numbers
+
+                    </span>
+                    {% if not data['sw-food-day-amount']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                    {% if data['sw-food-day-amount'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                    {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+{% endif %}
+
+
+
+{% if case == 'thomas' and not data ['additional-costs-scenario']%}
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
 
-              {% if data['sw-food-day-amount'] %}
-              <a href="/payments/current/cases/susan/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+              {% if data['company-details'] %}
+              <a href="/payments/current/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
                 {% endif %}
 
                 Add invoice numbers
 
                 </span>
-                {% if not data['sw-food-day-amount']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                {% if data['sw-food-day-amount'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
-                <!-- {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
                 {% if data['company-details'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %} -->
+                {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
 {% endif %}
 
@@ -1351,8 +1373,8 @@ Add invoice details
                 {% if case == 'paul' and data['invoice-number-1'] %}
                 <a href="/payments/current/cases/paul/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
-                {% if case == 'susan' and data['invoice-number-1'] %}
-                <a href="/payments/current/cases/susan/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                {% if case == 'thomas' and data['invoice-number-1'] %}
+                <a href="/payments/current/cases/thomas/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
                 Find and add payee from SOP
@@ -1513,8 +1535,8 @@ Add invoice details
 {% if case == 'paul' and data['sop-supplier-number'] %}
             <a href="/payments/current/cases/paul/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
-{% if case == 'susan' and data['sop-supplier-number-1'] %}
-            <a href="/payments/current/cases/susan/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
+{% if case == 'thomas' and data['sop-supplier-number-1'] %}
+            <a href="/payments/current/cases/thomas/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                 Check payment and send for processing

@@ -12,7 +12,7 @@
 
 
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
         {% if data ['sw-check']%}
         <form action="sw-claim-tab#your-tasks" method="post" novalidate>
         {% endif %}
@@ -44,7 +44,7 @@
                         <!-- If you have dual nationality, select all options that are relevant to you. -->
                       </div>
 
-{% if case == 'susan' %}
+{% if case == 'thomas' %}
 
 <div class="govuk-checkboxes__item">
   <input class="govuk-checkboxes__input" id="claim-item-8" name="claim-item-1" type="checkbox" value="bsl" {{ checked("claim-item-1", "bsl") }}>
@@ -60,7 +60,7 @@
   </label>
 </div>
 
-<div class="govuk-checkboxes__item">
+<!-- <div class="govuk-checkboxes__item">
   <input class="govuk-checkboxes__input" id="claim-item-10" name="claim-item-1" type="checkbox" value="coach" {{ checked("claim-item-1", "coach") }}>
   <label class="govuk-label govuk-checkboxes__label" for="claim-item-10">
     Job Coach
@@ -72,7 +72,7 @@
   <label class="govuk-label govuk-checkboxes__label" for="claim-item-11">
     Note taker
   </label>
-</div>
+</div> -->
 
 <div class="govuk-checkboxes__divider">or</div>
 

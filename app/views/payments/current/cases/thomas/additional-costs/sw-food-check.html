@@ -1,0 +1,160 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h2 class="govuk-fieldset__heading">
+Check your answers
+        </h2>
+
+        <div class="govuk-inset-text">
+        Additional costs: food
+        </div>
+
+        <br>
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Number of meals (Daytime)
+          </dt>
+          <dd class="govuk-summary-list__value">
+  {{data['sw-day-food-number']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-number-tab#your-tasks">
+  Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a>
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+  Cost of meals (daytime)
+          </dt>
+          <dd class="govuk-summary-list__value">
+  £{{data['sw-food-day-amount']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
+  Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a>
+          </dd>
+          </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Number of meals (Overnight)
+        </dt>
+        <dd class="govuk-summary-list__value">
+{{data['sw-night-food-number']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-number-tab#your-tasks">
+Change
+        <span class="govuk-visually-hidden"> address</span>
+        </a>
+        </dd>
+        </div>
+
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+Cost of meals (Overnight)
+      </dt>
+      <dd class="govuk-summary-list__value">
+£{{data['sw-food-night-amount']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
+Change
+      <span class="govuk-visually-hidden"> address</span>
+      </a>
+      </dd>
+      </div>
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Total amount to pay
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          <ul class="govuk-list">
+
+£55.74
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
+Change
+        <span class="govuk-visually-hidden"> claim support type</span>
+        </a>
+        </dd>
+        </div>
+
+
+
+
+
+<input type="hidden" id="sw-food-check" name="sw-food-check" value="1">
+
+        </fieldset>
+        </div>
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
