@@ -1,7 +1,8 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
+
 
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
@@ -11,8 +12,13 @@
 
 
 
-
+{% if case == 'dereck' %}
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'sonya' %}
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+{% endif %}
+
 
 
 
@@ -75,6 +81,28 @@
                         </div>
 {% endif %}
 
+{% if 'Foot rest' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-9" name="paid-in-full-select" type="checkbox" value="Foot rest" {{ checked("paid-in-full-select", "Foot rest") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-9">
+                            Foot rest
+                          </label>
+                        </div>
+{% endif %}
+
+
+{% if 'Sit stand desk' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-10" name="paid-in-full-select" type="checkbox" value="Sit stand desk" {{ checked("paid-in-full-select", "Sit stand desk") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-10">
+                            Sit stand desk
+                          </label>
+                        </div>
+{% endif %}
+
+
+
+
 
 {% if 'Ergonomic Keyboard' in data['claim-item'] %}
                         <div class="govuk-checkboxes__item">
@@ -90,15 +118,15 @@
 
 
 {% if 'Ergonomic Keyboard home' in data['claim-item'] %}
-<div class="govuk-checkboxes__item">
-  <input class="govuk-checkboxes__input" id="paid-in-full-select-5" name="paid-in-full-select" type="checkbox" value="Ergonomic Keyboard home" {{ checked("paid-in-full-select", "Ergonomic Keyboard home") }}>
-  <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-5">
-    Ergonomic Keyboard
-  </label>
-  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-    £110
-  </div> -->
-</div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-5" name="paid-in-full-select" type="checkbox" value="Ergonomic Keyboard home" {{ checked("paid-in-full-select", "Ergonomic Keyboard home") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-5">
+                            Ergonomic Keyboard
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
+                        </div>
 {% endif %}
 
 
@@ -127,6 +155,26 @@
                           </div> -->
                         </div>
 {% endif %}
+
+{% if 'Desk magnifier' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-8" name="paid-in-full-select" type="checkbox" value="Desk magnifier" {{ checked("paid-in-full-select", "Desk magnifier") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-8">
+                            Desk magnifier
+                          </label>
+                        </div>
+{% endif %}
+
+
+{% if 'Laptop stand' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-11" name="paid-in-full-select" type="checkbox" value="Laptop stand" {{ checked("paid-in-full-select", "Laptop stand") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-11">
+                            Laptop stand
+                          </label>
+                        </div>
+{% endif %}
+
 
 
                       </div>
