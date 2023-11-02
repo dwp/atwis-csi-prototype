@@ -1305,7 +1305,7 @@ Add invoice details
                 <ul class="app-task-list__items">
 
 
-{% if case == 'sonya' and data['payee-name'] %}
+{% if case == 'sonya' or case == 'dereck' and data['payee-name'] %}
 
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
@@ -1313,6 +1313,11 @@ Add invoice details
                       <a href="/payments/current/cases/sonya/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
                       <a href="/payments/current/cases/sonya/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
+                {% endif %}
+                {% if case == 'dereck' and not data['sop-site-code'] %}
+                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                {% else %}
+                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
                 Payee 1: find and add details from SOP
@@ -1376,7 +1381,7 @@ Add invoice details
 {% endif %}
 
 
-{% if case == 'sonya' and data['payee-name-1'] %}
+{% if case == 'sonya' or case == 'dereck' and data['payee-name-1'] %}
 
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
@@ -1384,6 +1389,11 @@ Add invoice details
                       <a href="/payments/current/cases/sonya/cases/review-payment/sop-find-2-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
                       <a href="/payments/current/cases/sonya/cases/review-payment/sop-payee-2-check-tab#your-tasks" aria-describedby="company-information-completed">
+                {% endif %}
+                {% if case == 'dereck' and not data['sop-site-code-1'] %}
+                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-2-tab#your-tasks" aria-describedby="company-information-completed">
+                {% else %}
+                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-payee-2-check-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
                 Payee 2: find and add payee from SOP

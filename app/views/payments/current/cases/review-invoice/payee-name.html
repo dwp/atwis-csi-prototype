@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% set view = "tab" %}
 
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
@@ -78,12 +78,20 @@
                     <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="50">
                       <div class="govuk-form-group">
                         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
-
+{% if case == 'sonya' %}
                           {% if 'ZoomText Professional License' in data['paid-in-full-select'] %}
                           Add bank account name from claim
                           {% else %}
                             Add payee name
                             {% endif %}
+{% endif %}
+{% if case == 'dereck' %}
+                          {% if 'Office chair' in data['paid-in-full-select'] %}
+                          Add bank account name from claim
+                          {% else %}
+                            Add payee name
+                            {% endif %}
+{% endif %}
 
                           </label>
                         </h1>

@@ -37,7 +37,7 @@ Is the payee in SOP?
     </h2>
 
 
-    {% if case == 'sonya' %}
+    {% if case == 'sonya' or case == 'dereck'%}
     {% if 'No' in data['paid-in-full'] and not data ['sop-site-code']%}
 
     <div class="govuk-inset-text">
