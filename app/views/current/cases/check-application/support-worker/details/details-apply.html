@@ -14,12 +14,31 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">British Sign Language (BSL) interpreter</h1>
-<p>I need to make <a href="/current/cases/thomas/cases/check-application/support-worker/details/edit#sw2">changes to application details</a>.</p>
+        <h1 class="govuk-heading-l">    {{data['sw-type']}}</h1>
+
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Which type of support worker does {% if phase == "thomas" %}Thomas King{% else %}Dereck Smith{% endif %} need?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['sw-type']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-            Add this support worker to the award?
+
+    Add this support worker to the award?
+
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['approve-1']=='true'%}
@@ -27,7 +46,7 @@ Yes
               {% else %}No  {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="approve-1">
+                <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> name</span>
                 </a>
               </dd>
@@ -38,23 +57,21 @@ Yes
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
 
-
-                When does this support need to start?
-
+  When does this support need to start?
 
               </dt>
               <dd class="govuk-summary-list__value">
       {{data['sw-grant-award-date']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="award-start-1">
-                  Change<span class="govuk-visually-hidden"> </span>
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-            Quote for support worker
+              Quote for the cost of support worker
               </dt>
               <dd class="govuk-summary-list__value">
             {{data['quotes-check']}}<br>
@@ -62,27 +79,11 @@ Yes
           £{{data['addtional-cost']}}{% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="selected-quote">
+                <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> customer reference</span>
                 </a>
               </dd>
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-
-          Do you want to add additional costs?
-
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['additional']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="selected-quote">
-                  Change<span class="govuk-visually-hidden"> address</span>
-                </a>
-              </dd>
-            </div>
-
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
 
@@ -93,29 +94,30 @@ Where is the quote from?
                 {{data['quotes-choose']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="selected-quote">
+                <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div>
-            {% else %}
+          {% endif %}
 
+            {% if data['approve-1']=='false'%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
 
-        Reason for not awarding this support worker?
+            What is the reason for not awarding this support worker?
+
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['not-awarding-details']}}
+              {{data['more-detail']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="selected-quote">
-                  Change<span class="govuk-visually-hidden"> address</span>
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
                 </a>
               </dd>
             </div>
-
-          {% endif %}
+            {% endif %}
           </dl>
 
 

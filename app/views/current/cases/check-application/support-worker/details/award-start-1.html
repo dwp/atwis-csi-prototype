@@ -27,13 +27,13 @@ British Sign Language (BSL) interpreter
         </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sw-grant-award-date" name="sw-grant-award-date" type="radio" value="Date of the decision~selected-quote">
+            <input class="govuk-radios__input" id="sw-grant-award-date" name="sw-grant-award-date" type="radio" value="Date of the decision~selected-quote" {{ checked("sw-grant-award-date", "Date of the decision") }}>
             <label class="govuk-label govuk-radios__label" for="sw-grant-award-date">
           Date of the decision
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sw-grant-award-date-2" name="sw-grant-award-date" type="radio" value="Another date~start-date-date-1">
+            <input class="govuk-radios__input" id="sw-grant-award-date-2" name="sw-grant-award-date" type="radio" value="Another date~start-date-date-1" {{ checked("sw-grant-award-date", "Another date") }}>
             <label class="govuk-label govuk-radios__label" for="sw-grant-award-date-2">
       Another date
             </label>
