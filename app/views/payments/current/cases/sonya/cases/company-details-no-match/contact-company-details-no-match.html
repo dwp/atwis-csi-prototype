@@ -1,20 +1,23 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 {% block csi %}
 <br>
 
 
-
-
-<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+{% if case == 'dereck' %}
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'sonya' %}
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
-<!-- <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate> -->
+{% endif %}
+
+
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper">

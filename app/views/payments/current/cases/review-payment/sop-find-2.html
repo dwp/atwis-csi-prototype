@@ -59,6 +59,10 @@ Is the payee in SOP?
       <div class="govuk-form-group">
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
+          {% if case == 'dereck' %}
+          <input class="govuk-radios__input" id="sop-find-1-1" name="sop-find-1" type="radio" value="Yes~dereck/cases/review-payment/sop-find-yes-2-tab" {{ checked("sop-find-1", "Yes") }}>
+          {% endif %}
+
           {% if case == 'sonya' %}
           <input class="govuk-radios__input" id="sop-find-1-1" name="sop-find-1" type="radio" value="Yes~sonya/cases/review-payment/sop-find-yes-2-tab" {{ checked("sop-find-1", "Yes") }}>
           {% endif %}

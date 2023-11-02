@@ -45,6 +45,18 @@
 
 <br>
 
+
+
+
+
+
+<!-- SEA SONYA -->
+<!-- SEA SONYA -->
+<!-- SEA SONYA -->
+<!-- SEA SONYA -->
+<!-- SEA SONYA -->
+
+
 {% if case == 'sonya' %}
 
 
@@ -613,8 +625,340 @@
  <br>
 
 
-{% else %}
+ {% endif %}
 
+
+
+{% if case == 'dereck' %}
+
+<!-- SINGLE PAYMENT -->
+<!-- SINGLE PAYMENT -->
+<!-- SINGLE PAYMENT -->
+<!-- SINGLE PAYMENT -->
+<!-- SINGLE PAYMENT -->
+
+
+      <!-- <h2 class="govuk-heading-m">Payment calculation</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Jaws screen reader
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £499
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim total
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £499
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total amount to pay
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £499
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl> -->
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Payee 1</h2>
+
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Payee name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['payee-name']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+                <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+                </a>
+              </dd>
+            </div>
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Site code
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['sop-site-code']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                SOP supplier number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['sop-supplier-number']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Invoice number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['invoice-number']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                </a>
+              </dd>
+            </div>
+      <br>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Foot rest
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £24
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Sit stand desk
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £230
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Office chair
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £282.90
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Desk magnifier
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £31.70
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    </a>
+                  </dd>
+                </div>
+
+
+
+                    <br>
+                    <br>
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Total amount to pay
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <p class="govuk-body govuk-!-font-weight-bold">£568.60</p>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                        </a>
+                      </dd>
+                    </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <br>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Payee 2</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Payee name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['payee-name-1']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+                  <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Site code
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['sop-site-code-1']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                SOP supplier number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['sop-supplier-number-1']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Invoice number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['invoice-number-1']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                </a>
+              </dd>
+            </div>
+      <br>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Jaws screen reader
+        </dt>
+        <dd class="govuk-summary-list__value">
+            £400
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+          </a>
+        </dd>
+      </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Ergonomic keyboard
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      £110
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Ergonomic mouse
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £40.22
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Laptop stand
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £19.99
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    </a>
+                  </dd>
+                </div>
+
+
+      <br>
+                    <br>
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Total amount to pay
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                      <p class="govuk-body govuk-!-font-weight-bold">£570.21</p>
+
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                        </a>
+                      </dd>
+                    </div>
+
+
+          </dl>
+        </div>
+      </div>
+
+
+      <br>
+
+
+
+
+{% endif %}
+
+
+
+
+<!-- SCENARIO 1 -->
+<!-- SCENARIO 1 -->
+<!-- SCENARIO 1 -->
+<!-- JAMES MCCARTHY -->
+{% if case == 'james' %}
 
 <br>
 <h2 class="govuk-heading-m">Payee details</h2>
@@ -675,60 +1019,6 @@
           </dd>
         </div>
       </dl>
-{% endif %}
-
-{% if case == 'dereck' %}
-
-      <h2 class="govuk-heading-m">Payment calculation</h2>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Jaws screen reader
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £499
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Claim total
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £499
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-
-      </dl>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Total amount to pay
-          </dt>
-          <dd class="govuk-summary-list__value">
-            £499
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-        </div>
-      </dl>
-
-{% endif %}
-
-
-
-
-<!-- SCENARIO 1 -->
-<!-- SCENARIO 1 -->
-<!-- SCENARIO 1 -->
-<!-- JAMES MCCARTHY -->
-{% if case == 'james' %}
-
 
       <h2 class="govuk-heading-m">Payment calculation</h2>
 
@@ -1004,6 +1294,65 @@
 <!-- NINA WEST -->
 {% if case == 'nina' %}
 
+<br>
+<h2 class="govuk-heading-m">Payee details</h2>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payee name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sop-payee-name']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Site code
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sop-site-code-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            SOP supplier number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sop-supplier-number-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+                        Invoice numbers
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['invoice-number-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a> -->
+          </dd>
+        </div>
+      </dl>
 
       <h2 class="govuk-heading-m">Payment calculation</h2>
 
@@ -1247,6 +1596,66 @@
 <!-- NINA WEST -->
 {% if case == 'paul' %}
 
+<br>
+<h2 class="govuk-heading-m">Payee details</h2>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payee name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sop-payee-name']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Site code
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sop-site-code-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            SOP supplier number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sop-supplier-number-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+                        Invoice numbers
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['invoice-number-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a> -->
+          </dd>
+        </div>
+      </dl>
+
 
       <h2 class="govuk-heading-m">Payment calculation</h2>
 
@@ -1403,6 +1812,66 @@
 
       {% if case == 'susan' %}
 
+
+      <br>
+      <h2 class="govuk-heading-m">Payee details</h2>
+
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Payee name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['sop-payee-name']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!-- <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a> -->
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Site code
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['sop-site-code-1']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!-- <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                  </a> -->
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  SOP supplier number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['sop-supplier-number-1']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!-- <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> address</span>
+                  </a> -->
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                              Invoice numbers
+
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['invoice-number-1']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <!-- <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> contact details</span>
+                  </a> -->
+                </dd>
+              </div>
+            </dl>
 
             <h2 class="govuk-heading-m">Payment calculation</h2>
 

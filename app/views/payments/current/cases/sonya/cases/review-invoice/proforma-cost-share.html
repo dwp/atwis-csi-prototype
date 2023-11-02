@@ -35,7 +35,7 @@
     <h2 class="govuk-fieldset__heading">
 Has cost share been paid?
     </h2>
-    {% if case == 'sonya' and not data ['sop-site-code'] %}
+    {% if case == 'sonya' or case == 'dereck' and not data ['sop-site-code'] %}
     <div class="govuk-inset-text">
       {{ data['payee-name'] }}
     </div>
@@ -61,6 +61,9 @@ Has cost share been paid?
         <div class="govuk-radios__item">
           {% if case == 'sonya' %}
           <input class="govuk-radios__input" id="proforma-cost-share-1" name="proforma-cost-share" type="radio" value="Yes~sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" {{ checked("proforma-cost-share", "Yes") }}>
+          {% endif %}
+          {% if case == 'dereck' %}
+          <input class="govuk-radios__input" id="proforma-cost-share-1" name="proforma-cost-share" type="radio" value="Yes~dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" {{ checked("proforma-cost-share", "Yes") }}>
           {% endif %}
 
           <label class="govuk-label govuk-radios__label" for="proforma-cost-share-1">
