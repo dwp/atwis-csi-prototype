@@ -1,0 +1,63 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="../cases/claim#citizen-details" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                Address
+                </h1>
+              </legend>
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="employment-address-line-1">
+                    Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+                  </label>
+                  <input class="govuk-input" id="employment-address-line-1" name="employment-address-line-1" type="text" autocomplete="employment-address-line1" value="Smith Digital Limited"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="employment-address-line-2">
+                    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                  </label>
+                  <input class="govuk-input" id="employment-address-line-2" name="employment-address-line-2" type="text" autocomplete="employment-address-line2"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="employment-address-town">
+                    Town or city
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="employment-address-town" name="employment-address-town" type="text" autocomplete="employment-address-level2" value="Newcastle"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="employment-address-county">
+                    County
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="employment-address-county" name="employment-address-county" type="text" value="Tyneside"></div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="employment-address-postcode">
+                    Postcode
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="employment-address-postcode" name="employment-address-postcode" type="text" autocomplete="postal-code" value="N11 4LQ "></div>
+
+              </fieldset>
+</div>
+<!-- <div class="govuk-inset-text">
+text</div> -->
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+      </div>
+    </div>
+</main>
+
+{% endblock %}

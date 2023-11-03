@@ -1,0 +1,69 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-width-container">
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+  <h1 class="govuk-heading-l">Mental health support service referral form</h1>
+<p>To complete the referral, you must:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>complete the <a href="#">referral form (opens in a new tab)</a></li>
+    <li>email the referral form securely to {% if data['mhss-support-change'] %}{{data['mhss-support-change']}} {% else %}Able Futures{% endif %} at <a href="mailto:accesstowork@ingeus.co.uk" target="_blank">accesstowork@ingeus.co.uk</a> - you must be <a href="https://intranet.dwp.gov.uk/page/secure-email-sem-boarding-process" target="_blank">signed up to send secure emails (opens in a new tab)</a></li>
+      <li>save the sent email, a copy of the referral form and any attachments in <a href="https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH" target="_blank">Sharepoint (opens in a new tab)</a></li>
+  </ul>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="mhss-referral-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+  Which tasks have you completed?
+      </h2>
+    </legend>
+    <div id="mhss-referral-hint" class="govuk-hint">
+      Select all that apply.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="mhss-referral" name="mhss-referral" type="checkbox" value="Completed referral form" {{ checked("mhss-referral", "Completed referral form") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="mhss-referral">
+        Completed referral form
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="mhss-referral-2" name="mhss-referral" type="checkbox" value="Sent referral to Able Futures" {{ checked("mhss-referral", "Sent referral to Able Futures") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="mhss-referral-2">
+        Sent referral to {% if data['mhss-support-change'] %}{{data['mhss-support-change']}} {% else %}Able Futures{% endif %}
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="mhss-referral-3" name="mhss-referral" type="checkbox" value="Saved copies to Sharepoint" {{ checked("mhss-referral", "Saved copies to Sharepoint") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="mhss-referral-3">
+        Saved copies to Sharepoint
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+
+{% endblock %}
