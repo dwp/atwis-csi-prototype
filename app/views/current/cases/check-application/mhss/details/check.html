@@ -31,7 +31,7 @@
 {{data['mhss-support']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/current/cases/thomas/cases/check-application/mhss/details/mental-health-support">
+              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/mhss/details/mental-health-support">
                 Update<span class="govuk-visually-hidden">
 Does Thomas King want mental health support at work?
 </span>
@@ -53,14 +53,14 @@ Does Thomas King want mental health support at work?
 {% if data['mhss-support-change'] %}{{data['mhss-support-change']}} {% else %}Able Futures{% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="/current/cases/thomas/cases/check-application/mhss/details/support-service">
+      <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/mhss/details/support-service">
         Update<span class="govuk-visually-hidden">
 Mental health support service
 </span>
       </a>
     </dd>
   </div>
-  
+
 
 
 
@@ -82,7 +82,7 @@ Mental health support service
               {% endfor %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/thomas/cases/check-application/mhss/details/referral-form">
+    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/mhss/details/referral-form">
       Update<span class="govuk-visually-hidden">
 Which tasks have you completed?
 </span>

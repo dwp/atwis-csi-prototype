@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="approve-new" method="post" novalidate>
+<form action="" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -15,27 +15,27 @@
       <div class="govuk-grid-column-two-thirds">
 
         <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
+      <fieldset class="govuk-fieldset" aria-describedby="sw-grant-award-date-2-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-          {% include "current/cases/check-application/support-worker/details/content/how-type-support-worker-identified.html" %} 
+    When does this support need to start?
           </h1>
         </legend>
 
         <div class="govuk-inset-text">
-      {{ data['sw-type']}}
+{{ data['sw-type']}}
         </div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae" name="from-sae" type="radio" value="Yes">
-            <label class="govuk-label govuk-radios__label" for="from-sae">
-            Workplace assessment report
+            <input class="govuk-radios__input" id="sw-grant-award-date-2" name="sw-grant-award-date-2" type="radio" value="Date of the decision~temp-perm">
+            <label class="govuk-label govuk-radios__label" for="sw-grant-award-date-2">
+          Date of the decision
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae-2" name="from-sae" type="radio" value="No">
-            <label class="govuk-label govuk-radios__label" for="from-sae-2">
-        {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
+            <input class="govuk-radios__input" id="sw-grant-award-date-2-2" name="sw-grant-award-date-2" type="radio" value="Another date~start-date-date-2">
+            <label class="govuk-label govuk-radios__label" for="sw-grant-award-date-2-2">
+      Another date
             </label>
           </div>
         </div>

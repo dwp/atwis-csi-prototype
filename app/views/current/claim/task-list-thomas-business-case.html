@@ -223,6 +223,10 @@ data['wpa'+ phase]  %}
    {% if data['approve-1']=='false' and data['approve-2']=='true'%}
    {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}
    {% endif %}
+
+   {% if data['approve-1']=='true' and not data['approve-2']%}
+   {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}
+   {% endif %}
 {% if totalAward < 10000 %}
       <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
@@ -230,6 +234,7 @@ data['wpa'+ phase]  %}
 
     <br>
 {% endif %}
+
 {% if totalAward > 10000 %}
       <h2 class="govuk-heading--m">Award is over approval limits</h2>
 <script>
