@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 
@@ -47,7 +47,12 @@ Have you received confirmation that the payee has been set up or amended in SOP?
       <div class="govuk-form-group">
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="sop-find-details-confirm-1" name="sop-find-details-confirm" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("sop-find-details-confirm", "yes") }}>
+          {% if case == 'sonya'%}
+        <input class="govuk-radios__input" id="sop-find-details-confirm-1" name="sop-find-details-confirm" type="radio" value="Yes~sonya/claim-sonya#your-tasks" {{ checked("sop-find-details-confirm", "yes") }}>
+        {% endif %}
+        {% if case == 'thomas'%}
+        <input class="govuk-radios__input" id="sop-find-details-confirm-1" name="sop-find-details-confirm" type="radio" value="Yes~thomas/cases/review-payment/sop-find-yes-tab#your-tasks" {{ checked("sop-find-details-confirm", "yes") }}>
+        {% endif %}
           <label class="govuk-label govuk-radios__label" for="sop-find-details-confirm-1">
             Yes
           </label>
