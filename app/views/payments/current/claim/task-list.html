@@ -588,7 +588,7 @@
 {% if 'amounts' in data ['grant-matches-claim-sw'] or 'hours' in data ['grant-matches-claim-sw']%}
 
 
-                      {% if data['easement'] %}
+                      <!-- {% if data['easement'] %}
                                     <a href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
                       {% endif %}
 
@@ -600,7 +600,22 @@
                                     {% if data['easement'] and not data ['company-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                                     {% if data['company-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
-                                    <li>
+                                    <li> -->
+
+                                    {% if data['sw-hours-more'] %}
+                                                  <a href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+                                    {% endif %}
+
+                                                    Check invoices are valid
+                                                  </a>
+                                                  </span>
+
+                                                  {% if not data['sw-hours-more']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                                                  {% if data['sw-hours-more'] and not data ['company-details']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                                  {% if data['company-details'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+                                                  <li>
+
 {% else %}
 
 
