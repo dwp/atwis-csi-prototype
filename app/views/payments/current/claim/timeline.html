@@ -30,6 +30,12 @@
       <h2 class="moj-timeline__title">Check payment and send for approval</h2>
       <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
       </div>
+      {% if case == 'dereck' %}
+      <div class="moj-timeline__description">
+        <p>£568.60 Paid to {{data['payee-name']}}</p>
+        <p>£570.21 Paid to {{data['payee-name-1']}}</p>
+      </div>
+      {% endif %}
       {% if case == 'sonya' %}
       <div class="moj-timeline__description">£729.71 Paid on this claim</div>
       {% endif %}
@@ -97,7 +103,29 @@ to
 
 
 
-    <!-- REVIEW PAYMENT -->
+<!-- REVIEW PAYMENT -->
+
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+
+<!-- {% if data['sop-add-supplier']%}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Add details from SOP</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:54am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+{% endif %} -->
+
+
+
 
     <!-- ADD PAYEE DETAILS FROM SOP -->
 {% if data['sop-add-supplier']%}
@@ -151,12 +179,16 @@ to
 
         <!-- ADD INVOICE DETAILS -->
 
+
+
         <!-- ADD INVOICE NUMBERS -->
-{% if data ['invoice-number'] or data ['invoice-number-1']%}
+
+        {% if case == 'dereck' and data ['invoice-number-1']%}
+
         <div class="moj-timeline__item">
 
             <div class="moj-timeline__header">
-            <h2 class="moj-timeline__title">{% if case == 'dereck' %}Invoice number{% else %}Invoice numbers{% endif %}</h2>
+              <h2 class="moj-timeline__title">Payee 1: invoice numbers</h2>
             <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
             </div>
             <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
@@ -165,8 +197,36 @@ to
             </p>
             <div class="moj-timeline__description"></div>
           </div>
-{% endif %}
 
+          <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Payee 2: invoice numbers</h2>
+              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+              </div>
+              <div class="moj-timeline__description">{{data['invoice-number']}}</div>
+              <p class="moj-timeline__description">
+              <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
+              </p>
+              <div class="moj-timeline__description"></div>
+            </div>
+
+{%else%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">{% if case == 'dereck' %}Invoice number{% else %}Invoice numbers{% endif %}</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+{%endif%}
           <!-- NO -->
           <!-- CHECK INVOICES HAVE BEEN PAID -->
           <!-- <div class="moj-timeline__item">
@@ -259,7 +319,7 @@ to
 
 
           <!-- CHECK INVOICES HAVE BEEN PAID -->
-{% if data['paid-in-full']%}
+<!-- {% if data['paid-in-full']%}
 
           <div class="moj-timeline__item">
 
@@ -272,13 +332,19 @@ to
               </p>
               <div class="moj-timeline__description"></div>
             </div>
-{% endif %}
+{% endif %} -->
 
-            <!-- REVIEW CLAIM AND INVOICES -->
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
 
-            <!-- NO -->
-            <!-- IPAD INVOICE REJECTED -->
-            <!-- <div class="moj-timeline__item">
+
+<!-- IPAD INVOICE REJECTED -->
+{% if case == 'sonya' and data['invoice-saved']%}
+<!-- {{data['invoice-deadline-day']}} -->
+            <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
                 <h2 class="moj-timeline__title">Review rejected invoice Ipad Pro case</h2>
@@ -290,7 +356,27 @@ to
                 <p class="moj-timeline__description">
                 <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
                 </p>
-              </div> -->
+              </div>
+{% endif %}
+
+
+<!-- JAWS INVOICE REJECTED -->
+{% if case == 'dereck' and data['invoice-saved']%}
+              <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Review rejected invoice Jaws screen reader case</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description">£400 new invoice submitted</div>
+
+                  <div class="moj-timeline__description"><a class="govuk-link" href="cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks">View details</a></div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
+                  </p>
+                </div>
+{% endif %}
+
 
 
 <!-- CHECK INVOICES ARE VALID -->
