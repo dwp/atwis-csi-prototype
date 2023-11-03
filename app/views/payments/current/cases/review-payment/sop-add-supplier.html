@@ -31,8 +31,8 @@
 {% if case == 'paul' %}
 <form action="/payments/current/cases/paul/claim-paul#your-tasks" method="post" novalidate>
 {% endif %}
-{% if case == 'susan' %}
-<form action="/payments/current/cases/susan/claim-susan#your-tasks" method="post" novalidate>
+{% if case == 'thomas' %}
+<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
 {% endif %}
 
 
@@ -55,7 +55,7 @@
   </legend>
 
 
-{% if case == 'sonya' and not data ['sop-site-code'] %}
+{% if case == 'sonya' or case == 'dereck' and not data ['sop-site-code'] %}
 
 
 {% if 'No' in data['paid-in-full']%}

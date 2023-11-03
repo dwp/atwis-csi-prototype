@@ -1,6 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
@@ -41,10 +42,10 @@
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             {% if case == 'dereck' %}
-            <input class="govuk-radios__input" id="company-details-2" name="company-details" type="radio" value="No~dereck/claim-dereck#your-tasks" {{ checked("company-details", "No") }}>
+            <input class="govuk-radios__input" id="company-details-2" name="company-details" type="radio" value="Yes~dereck/cases/company-details-no-match/select-company-details-no-match-tab" {{ checked("company-details", "Yes") }}>
             {% endif %}
             {% if case == 'sonya' %}
-            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~sonya/cases/company-details-no-match/select-company-details-no-match" {{ checked("company-details", "Yes") }}>
+            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~sonya/cases/company-details-no-match/select-company-details-no-match-tab" {{ checked("company-details", "Yes") }}>
             {% endif %}
             {% if case == 'james' %}
             <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~sonya/cases/company-details-no-match/select-company-details-no-match" {{ checked("company-details", "Yes") }}>
@@ -52,8 +53,8 @@
             {% if case == 'nina' %}
             <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~sonya/cases/company-details-no-match/select-company-details-no-match" {{ checked("company-details", "Yes") }}>
             {% endif %}
-            {% if case == 'susan' %}
-            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~susan/claim-susan#your-tasks" {{ checked("company-details", "Yes") }}>
+            {% if case == 'thomas' %}
+            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~thomas/claim-thomas#your-tasks" {{ checked("company-details", "Yes") }}>
             {% endif %}
 
             <label class="govuk-label govuk-radios__label" for="company-details-1">
@@ -62,7 +63,7 @@
           </div>
           <div class="govuk-radios__item">
 {% if case == 'dereck' %}
-            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~dereck/claim-dereck#your-tasks" {{ checked("company-details", "Yes") }}>
+            <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="No~dereck/claim-dereck#your-tasks" {{ checked("company-details", "No") }}>
 {% endif %}
 {% if case == 'sonya' %}
             <input class="govuk-radios__input" id="company-details-2" name="company-details" type="radio" value="No~sonya/claim-sonya#your-tasks" {{ checked("company-details", "No") }}>
@@ -76,8 +77,8 @@
 {% if case == 'paul' %}
 <input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="Yes~paul/claim-paul#your-tasks" {{ checked("company-details", "Yes") }}>
 {% endif %}
-{% if case == 'susan' %}
-<input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="No~susan/claim-susan#your-tasks" {{ checked("company-details", "No") }}>
+{% if case == 'thomas' %}
+<input class="govuk-radios__input" id="company-details-1" name="company-details" type="radio" value="No~thomas/claim-thomas#your-tasks" {{ checked("company-details", "No") }}>
 {% endif %}
 
             <label class="govuk-label govuk-radios__label" for="company-details-2">

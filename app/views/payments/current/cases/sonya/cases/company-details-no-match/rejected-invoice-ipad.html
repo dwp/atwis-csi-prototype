@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 {% block csi %}
@@ -11,10 +11,17 @@
 
 
 <!-- HIDDED VALUE -->
+{% if case == 'sonya' %}
 <input type="hidden" id="rejected-invoice-ipad" name="rejected-invoice-ipad" value="rejected-invoice-ipad">
+{% endif %}
+{% if case == 'dereck' %}
+<input type="hidden" id="rejected-invoice-jaws" name="rejected-invoice-jaws" value="rejected-invoice-jaws">
+{% endif %}
 
-<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="amount-high-no-match" method="post" novalidate>
+
+
+
+<form action="/payments/current/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -28,8 +35,16 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
+
+
     <h1 class="govuk-fieldset__heading">
-Ipad Pro case: invoice rejected
+      {% if case == 'dereck' %}
+      Jaws screen reader: invoice rejected
+      {% endif %}
+      {% if case == 'sonya' %}
+      Ipad Pro case: invoice rejected
+      {% endif %}
+
     </h1>
 
   </legend>
@@ -59,46 +74,90 @@ The replacement invoice deadline date for this item is
 </div>
 
 <br>
-<h2 class="govuk-heading-m">Claim details</h2>
+
+{% if case == 'dereck' %}
+                <h2 class="govuk-heading-m">Claim details</h2>
 
 
-<!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Description
-          </dt>
-          <dd class="govuk-summary-list__value">
-Ipad Pro case
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                Description
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                Jaws screen reader
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          </dd>
+                          </div>
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-Element
-          </dt>
-          <dd class="govuk-summary-list__value">
-Specialist equipment
-          </dd>
-          <dd class="govuk-summary-list__actions">
-          </dd>
-          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                Element
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                Specialist equipment
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          </dd>
+                          </div>
 
-        <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-Cost
-        </dt>
-        <dd class="govuk-summary-list__value">
-£80
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-        </div>
-</dl>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                Cost
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                £499
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                        </dd>
+                        </div>
+                </dl>
+{% endif %}
 
+{% if case == 'sonya' %}
+                <h2 class="govuk-heading-m">Claim details</h2>
+
+
+                <!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                Description
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                Ipad Pro case
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          </dd>
+                          </div>
+
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                Element
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                Specialist equipment
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          </dd>
+                          </div>
+
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                Cost
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                £80
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                        </dd>
+                        </div>
+                </dl>
+{% endif %}
 
                 <br>
 
@@ -134,6 +193,7 @@ Cost
 
 
 
+{% if case == 'sonya' %}
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
@@ -143,24 +203,59 @@ Cost
                   </h2>
                 </legend>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="details-item-no-match-ipad-1" name="details-item-no-match-ipad" type="radio" value="Yes item amount is the same~saved-location" {{ checked("details-item-no-match-ipad", "Yes item amount is the same") }}>
-                    <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-1">
+                    <input class="govuk-radios__input" id="details-item-no-match-ipad-1" name="details-item-no-match-ipad" type="radio" value="Yes item amount is the same~sonya/cases/company-details-no-match/saved-location-tab#your-tasks" {{ checked("details-item-no-match-ipad", "Yes item amount is the same") }}>
+                    <label class="govuk-label govuk-radios__label" for="claim-item-no-match-ipad-1">
                       Yes, the amount is the same
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="details-item-no-match-ipad-2" name="details-item-no-match-ipad" type="radio" value="No item amount is different~rejected-invoice-ipad-amount" {{ checked("details-item-no-match-ipad", "No item amount is different") }}>
+                    <input class="govuk-radios__input" id="details-item-no-match-ipad-2" name="details-item-no-match-ipad" type="radio" value="No item amount is different~sonya/cases/company-details-no-match/rejected-invoice-ipad-amount-tab#your-tasks" {{ checked("details-item-no-match-ipad", "No item amount is different") }}>
                     <label class="govuk-label govuk-radios__label" for="details-item-no-match-ipad-2">
                       No, the amount is different
                     </label>
                   </div>
                   <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="details-item-no-match-ipad-3" name="details-item-no-match-ipad" type="radio" value="I have not recived a replacment invoice~rejected-invoice-ipad-close" {{ checked("details-item-no-match-ipad", "I have not recived a replacment invoice") }}>
+                    <input class="govuk-radios__input" id="details-item-no-match-ipad-3" name="details-item-no-match-ipad" type="radio" value="I have not recived a replacment invoice~sonya/cases/company-details-no-match/rejected-invoice-ipad-close-tab#your-tasks" {{ checked("details-item-no-match-ipad", "I have not recived a replacment invoice") }}>
                     <label class="govuk-label govuk-radios__label" for="details-item-no-match-ipad-3">
                       I have not received a valid replacement invoice
                     </label>
           </div>
+
+{% endif %}
+
+{% if case == 'dereck' %}
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h2 class="govuk-heading-m">
+                    Is the amount on the replacement invoice the same?
+                  </h2>
+                </legend>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="details-item-no-match-jaws-1" name="details-item-no-match-jaws" type="radio" value="Yes item amount is the same~dereck/cases/company-details-no-match/saved-location-tab#your-tasks" {{ checked("details-item-no-match-jaws", "Yes item amount is the same") }}>
+                    <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-1">
+                      Yes, the amount is the same
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="details-item-no-match-jaws-2" name="details-item-no-match-jaws" type="radio" value="No item amount is different~dereck/cases/company-details-no-match/rejected-invoice-ipad-amount-tab#your-tasks" {{ checked("details-item-no-match-jaws", "No item amount is different") }}>
+                    <label class="govuk-label govuk-radios__label" for="details-item-no-match-jaws-2">
+                      No, the amount is different
+                    </label>
+                  </div>
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="details-item-no-match-jaws-3" name="details-item-no-match-jaws" type="radio" value="I have not recived a replacment invoice~dereck/cases/company-details-no-match/rejected-invoice-ipad-close-tab#your-tasks" {{ checked("details-item-no-match-jaws", "I have not recived a replacment invoice") }}>
+                    <label class="govuk-label govuk-radios__label" for="details-item-no-match-jaws-3">
+                      I have not received a valid replacement invoice
+                    </label>
+          </div>
+
+{% endif %}
+
+
 
         </div>
       </div>

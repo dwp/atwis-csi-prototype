@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% set view = "tab" %}
 
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
@@ -27,8 +27,8 @@
 {% if case == 'paul' %}
 <form action="/payments/current/cases/paul/claim-paul#your-tasks" method="post" novalidate>
 {% endif %}
-{% if case == 'susan' %}
-<form action="/payments/current/cases/susan/claim-susan#your-tasks" method="post" novalidate>
+{% if case == 'thomas' %}
+<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
 {% endif %}
 
 
@@ -42,7 +42,7 @@
 
 
 
-{% if case == 'sonya' and not data ['invoice-number'] %}
+{% if case == 'sonya' or case == 'dereck' and not data ['invoice-number'] %}
 
           <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="150">
             <div class="govuk-form-group">
@@ -91,9 +91,12 @@
         {% endif %}
       </label>
     </h1>
-    <!-- <div class="govuk-inset-text">
+{% if case == 'sonya' or case == 'dereck'%}
+    <div class="govuk-inset-text">
       {{ data['payee-name-1'] }}
-    </div> -->
+    </div>
+{% endif %}
+
     <div id="with-hint-hint" class="govuk-hint">
       {% if case == 'paul' %}
       Separate invoice numbers with commas. Leave blank if the invoices or receipts do not have individual reference numbers.)

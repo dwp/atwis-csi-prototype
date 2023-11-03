@@ -1,9 +1,9 @@
-{% set case = "sonya" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
+{% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
 
@@ -14,10 +14,10 @@
 
 
 {% if case == 'dereck' %}
-<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+<form action="/payments/current/cases/dereck/cases/company-details-no-match/contact-company-details-no-match-tab#your-tasks" method="post" novalidate>
 {% endif %}
 {% if case == 'sonya' %}
-<form action="/payments/current/cases/sonya/cases/company-details-no-match/contact-company-details-no-match" method="post" novalidate>
+<form action="/payments/current/cases/sonya/cases/company-details-no-match/contact-company-details-no-match-tab#your-tasks" method="post" novalidate>
 {% endif %}
   <div class="govuk-width-container">
 
@@ -80,6 +80,32 @@
                         </div>
 {% endif %}
 
+{% if 'Foot rest' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="details-item-no-match-7" name="details-item-no-match" type="checkbox" value="Foot rest" {{ checked("details-item-no-match", "Foot rest") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="details-item-no-match-7">
+                            Ergonomic Keyboard
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
+                        </div>
+
+{% endif %}
+
+{% if 'Sit stand desk' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="details-item-no-match-8" name="details-item-no-match" type="checkbox" value="Sit stand desk" {{ checked("details-item-no-match", "Sit stand desk") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="details-item-no-match-8">
+                            Sit stand desk
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
+                        </div>
+
+{% endif %}
+
 
 {% if 'Ergonomic Keyboard' in data['claim-item'] %}
                         <div class="govuk-checkboxes__item">
@@ -118,6 +144,33 @@
                           </div> -->
                         </div>
 {% endif %}
+
+{% if 'Desk magnifier' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="details-item-no-match-9" name="details-item-no-match" type="checkbox" value="Desk magnifier" {{ checked("details-item-no-match", "Desk magnifier") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="details-item-no-match-9">
+                            Desk magnifier
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £40
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Laptop stand' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="details-item-no-match-10" name="details-item-no-match" type="checkbox" value="Laptop stand" {{ checked("details-item-no-match", "Laptop stand") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="details-item-no-match-10">
+                            Laptop stand
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £40
+                          </div> -->
+                        </div>
+{% endif %}
+
+
 
 
                       </div>

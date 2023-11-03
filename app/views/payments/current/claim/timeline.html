@@ -42,8 +42,8 @@
       {% if case == 'paul' %}
       <div class="moj-timeline__description">£296.00 Paid on this claim</div>
       {% endif %}
-      {% if case == 'susan' %}
-      <div class="moj-timeline__description">£971.04 Paid on this claim
+      {% if case == 'thomas' %}
+      <div class="moj-timeline__description">£600 Paid on this claim
         <br>
 Paid to: {{data ['sop-payee-name'] }}
 <br>
@@ -301,7 +301,6 @@ to
 
             <!-- CHECK INVOICES ARE VALID -->
 <!-- {% if data['company-details']%}
->>>>>>> sprint-archiving
             <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
@@ -354,7 +353,7 @@ to
 
 <!-- SW HOURS AND AMOUNT NO PATHS -->
 
-{% if data['sw-amount-1'] %}
+{% if data['sw-amount-more'] %}
               <div class="moj-timeline__item">
                   <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Hourly rate does not match grant award</h2>
@@ -368,7 +367,7 @@ to
                   <div class="moj-timeline__description"></div>
                 </div>
 {% endif %}
-{% if data['sw-hours-1'] %}
+{% if data['sw-hours-more'] %}
               <div class="moj-timeline__item">
                   <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Hours claimed are more than grant award</h2>
@@ -382,7 +381,7 @@ to
                 </div>
 
 {% endif %}
-{% if data['sw-hours-less-1'] %}
+{% if data['sw-hours-less'] %}
               <div class="moj-timeline__item">
                   <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Hours claimed are less than grant award</h2>
@@ -404,7 +403,7 @@ to
 
 
               <!-- CHECK CLAIM MATTCHES GRANT AWARD -->
-{% if data['grant-matches-claim'] or data ['ttw-match'] or data ['sw-match']%}
+{% if data['grant-matches-claim'] or data ['ttw-match'] or data ['grant-matches-claim-sw']%}
               <div class="moj-timeline__item">
 
                   <div class="moj-timeline__header">

@@ -39,9 +39,20 @@
 
 
               <br><strong>
-                {% if case == 'dereck' %}
+                <!-- {% if case == 'dereck' %}
                           £499
+                {% endif %} -->
+
+                {% if case == 'dereck' %}
+                {% if case == 'dereck' and data ['payee-name-1']%}
+                                £568.60
+                                <br>
+                                £570.21
+                {% else %}
+                                £1249.64
                 {% endif %}
+                {% endif %}
+
 
 {% if case == 'sonya' %}
 {% if case == 'sonya' and data ['payee-name-1']%}
@@ -64,8 +75,9 @@
                 {% if case == 'paul' %}
                           £296.00
                 {% endif %}
-                {% if case == 'susan' %}
-                                  £971.04
+                {% if case == 'thomas' %}
+                                  <!-- £971.04 -->
+                                  £600
 
                 {% endif %}
 
@@ -97,6 +109,15 @@
         </div>
       </div>
 
+
+
+
+{% if case == 'thomas'%}
+      <input type="hidden" id="thomas" name="thomas" value="Yes">
+{% endif %}
+{% if case == 'dereck'%}
+      <input type="hidden" id="dereck" name="dereck" value="Yes">
+{% endif %}
 
 
 
