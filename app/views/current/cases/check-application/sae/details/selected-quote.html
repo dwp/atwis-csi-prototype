@@ -56,19 +56,26 @@ Total cost
             </fieldset>
     </div>
 
-{% if  phase %}
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-        Where is the quote from?
+    Where is the quote from?
           </h1>
         </legend>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose" type="radio" value="John Smith" {{ checked("quotes-choose", "John Smith") }}>
+          <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose" type="radio" value="Dereck Smith" {{ checked("quotes-choose", "Dereck Smith") }}>
           <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
 
           Dereck Smith
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose" type="radio" value="Workplace assessment" {{ checked("quotes-choose", "Workplace assessment") }}>
+          <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
+
+        Workplace assessment
           </label>
         </div>
         <div class="govuk-radios__item">
@@ -79,7 +86,7 @@ Total cost
         </div>
 
       </fieldset>
-    </div>{% endif %}
+    </div>
 
    <button class="govuk-button" data-module="govuk-button">
      Save and continue

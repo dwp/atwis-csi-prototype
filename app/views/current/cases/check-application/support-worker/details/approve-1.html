@@ -18,7 +18,8 @@
 <fieldset class="govuk-fieldset" aria-describedby="approve-1-hint">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <h1 class="govuk-fieldset__heading">
-Support worker 1: Do you want to add this support worker to {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}'s award?
+
+Add this support worker to the award?
 
 
     </h1>
@@ -26,17 +27,17 @@ Support worker 1: Do you want to add this support worker to {% if case =='other-
   <div class="govuk-inset-text">
   British Sign Language (BSL) interpreter
   </div>
-  <div class="govuk-radios " data-module="govuk-radios">
+  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="approve-1" name="approve-1" type="radio" value="true~award-start-1">
+      <input class="govuk-radios__input" id="approve-1" name="approve-1" type="radio" value="true~award-start-1" {{ checked("approve-1", "true") }}>
       <label class="govuk-label govuk-radios__label" for="approve-1">
-        Yes, add to the award
+        Yes
       </label>
     </div>
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="approve-1-2" name="approve-1" type="radio" value="false~not-needed">
+      <input class="govuk-radios__input" id="approve-1-2" name="approve-1" type="radio" value="false~not-needed-1" {{ checked("approve-1", "false") }}>
       <label class="govuk-label govuk-radios__label" for="approve-1-2">
-        No, do not add to the award
+        No
       </label>
     </div>
   </div>
