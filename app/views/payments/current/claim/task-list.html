@@ -1499,6 +1499,9 @@ Add invoice details
                 {% if case == 'paul' and data['sop-find'] %}
                 <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
+                {% if case == 'thomas' and data['sop-find'] %}
+                <a href="/payments/current/cases/thomas/cases/review-payment/sop-find-details-confirm-tab#your-tasks" aria-describedby="company-information-completed">
+                {% endif %}
 
                 Confirm payee is in SOP
 
@@ -1550,7 +1553,7 @@ Add invoice details
 {% if case == 'paul' and data['sop-supplier-number'] %}
             <a href="/payments/current/cases/paul/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
-{% if case == 'thomas' and data['sop-supplier-number-1'] %}
+{% if case == 'thomas' and data['sop-supplier-number-1'] or data ['sop-find-details-confirm'] %}
             <a href="/payments/current/cases/thomas/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
