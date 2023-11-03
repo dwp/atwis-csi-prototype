@@ -1,0 +1,82 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set edit = 'true' %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <div class="govuk-form-group">
+
+        <form class="form" action="edit" method="post">
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is the address of Smith Digital Limited?
+              </h1>
+            </legend>
+
+            <div class="govuk-!-padding-bottom-4"></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="workplace-address-line-1">
+                Address line 1
+              </label>
+              <input class="govuk-input" id="workplace-address-line-1" name="workplace-address-line-1" type="text" autocomplete="workplace-address-line1" value='{% if not data['workplace-address-line-1']%}220 St Vincent Street{% else %}{{data['workplace-address-line-1']}}{% endif  %}'></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="workplace-address-line-2">
+                Address line 2 (optional)
+              </label>
+              <input class="govuk-input" id="workplace-address-line-2" name="workplace-address-line-2" type="text" autocomplete="workplace-address-line2" value=''></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="workplace-address-town">
+                Town or city
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="workplace-address-town" name="workplace-address-town" type="text" autocomplete="workplace-address-level2" value='{% if not data['workplace-address-line-town']%}London{% else %}{{data['workplace-address-line-town']}}{% endif %}'></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="workplace-address-county">
+                County (optional)
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="workplace-address-county" name="workplace-address-county" type="text"></div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="workplace-address-postcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="workplace-address-postcode" name="workplace-address-postcode" type="text" autocomplete="workplace-postal-code" value='{% if not data['workplace-address-postcode']%}AB1 1AB{% else %}{{data['workplace-address-postcode']}}{% endif %}'></div>
+
+          </fieldset>
+
+          <div class="govuk-!-padding-bottom-7"></div>
+          <input type="hidden" name="employment-workplace-address-manual-true" value="true">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+
+
+        <div class="govuk-grid-column-one-third">
+
+    </form>
+  </div>
+
+  </div>
+
+  </div>
+  <div class="govuk-grid-column-one-third">
+
+
+  </div>
+</div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+    <strong> Details from {% if phase =='sonya'%}{{data['condition-check-updatesonya'+ detailshealthindex]}}{% endif %}  {% if phase =='thomas'%}Thomas King{% endif %}   {% if not phase %}{{data['condition-check-update'+ detailshealthindex]}}{% endif %}</strong>
+  </dt>
+
+  <dt class="govuk-summary-list__value govuk-!-font-weight-regular hmrc-summary_value">
+{% if phase =='sonya'%}{{data['more-detailsonya'+ detailshealthindex]}}{% endif %}
+{% if phase =='thomas'%}{{data['more-detailthomas'+ detailshealthindex]}}{% endif%}
+{% if not phase %}{{data['more-detail'+ detailshealthindex]}}{% endif%}
+  </dt>
+
+
+  <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+    <ul class="govuk-summary-list__actions-list">
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="condition-help-needed/details/{{detailshealthindex}}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> </span></a>
+      </li>
+      <li class="govuk-summary-list__actions-list-item">
+        <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden"> </span></a>
+      </li>
+    </ul>
+  </dd>
+</div>
