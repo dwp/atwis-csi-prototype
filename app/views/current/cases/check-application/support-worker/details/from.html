@@ -18,24 +18,24 @@
       <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-          {% include "current/cases/check-application/support-worker/details/content/how-type-support-worker-identified.html" %} 
+          {% include "current/cases/check-application/support-worker/details/content/how-type-support-worker-identified.html" %}
           </h1>
         </legend>
 
         <div class="govuk-inset-text">
       {{ data['sw-type']}}
         </div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae" name="from-sae" type="radio" value="Yes">
+            <input class="govuk-radios__input" id="from-sae" name="from-sae" type="radio" value="From the workplace assessment report">
             <label class="govuk-label govuk-radios__label" for="from-sae">
-            Workplace assessment report
+            From the workplace assessment report
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae-2" name="from-sae" type="radio" value="No">
+            <input class="govuk-radios__input" id="from-sae-2" name="from-sae" type="radio" value="From {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}">
             <label class="govuk-label govuk-radios__label" for="from-sae-2">
-        {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
+        From {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
             </label>
           </div>
         </div>
