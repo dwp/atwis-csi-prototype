@@ -101,7 +101,8 @@ Support worker provider
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="quotes-choose-1" name="quotes-choose" type="radio" value="Thomas King">
                       <label class="govuk-label govuk-radios__label" for="quotes-choose-1">
-Thomas King
+{% if not phase %}Dereck Smith{% endif %}
+{% if phase=='thomas'%}Thomas King{% endif %}
                       </label>
                     </div>
                     {% if data['wpa']=='Yes'%}
