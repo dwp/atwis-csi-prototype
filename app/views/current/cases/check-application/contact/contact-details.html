@@ -72,7 +72,7 @@
           Who should we contact about your application?
         </dt>
         <dd class="govuk-summary-list__value">
-        {% if phase == "john" %}John Smith{% endif %}  {% if phase == 'thomas'%}Thomas King{% endif %}{% if phase == "arlo" %}Arlo Spinka{% endif %}
+        {% if phase == "john" %}John Smith{% endif %}  {% if phase == 'thomas'%}Thomas King{% endif %}{% if phase == "arlo" %}Arlo Spinka{% endif %}{% if not phase%}Dereck Smith {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -135,7 +135,7 @@
           Email
         </dt>
         <dd class="govuk-summary-list__value">
-          {{phase}}@gmail.com
+        {% if not phase%}dereck{% else %}  {{phase}}{% endif %}@gmail.com
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
