@@ -166,7 +166,23 @@ data-module="govuk-notification-banner">
           Date submitted
         </dt>
         <dd class="govuk-summary-list__value">
-          2 January 2023, 11:57am
+        <script>  var now = new Date();
+          var pastDate = new Date(now);
+          pastDate.setDate(now.getDate() - 60);
+
+          var formattedDate = pastDate.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+          });
+
+          var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true
+          });
+
+          document.write(formattedDate + ' at 3:00 pm');</script>
         </dd>
       </div>
       <div class="govuk-summary-list__row">

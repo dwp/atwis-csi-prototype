@@ -191,7 +191,26 @@
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
               <td class="govuk-table__cell">New application</td>
               <td class="govuk-table__cell">Job start </td>
-              <td class="govuk-table__cell">2 August 2023  11:57</td>
+              <td class="govuk-table__cell"><script>
+                // Get date
+                    var now = new Date();
+                    var pastDate = new Date(now);
+                    pastDate.setDate(now.getDate() - 60);
+
+                    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                    });
+
+                    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true
+                    });
+
+                    document.write(formattedDate + ', 3:00 pm');
+                   </script></td>
               <!-- <td class="govuk-table__cell">Not started in progress On hold</td> -->
               <td class="govuk-table__cell"><a href="cases/claim{% if phase == "allocator"%}-allocator{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to case</a></td>
             </tr>
