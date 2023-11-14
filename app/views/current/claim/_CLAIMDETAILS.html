@@ -343,7 +343,7 @@ data ['appointee']
 
         <div class="govuk-grid-column-two-thirds">
 
-        <p><a href="/current/cases/{{phase}}/cases/contact/contact-details">View contact details</a></p>
+        <p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
 
 
 
