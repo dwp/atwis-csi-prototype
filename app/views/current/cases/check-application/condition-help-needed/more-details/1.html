@@ -60,11 +60,12 @@
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper">
       <label class="govuk-label govuk-label--m" for="with-hint">
-      More details about {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}’s health condition or disability
+      More details about {% if phase == "sonya" %}Sonya Corkery{% endif %}{% if phase == "thomas" %}Thomas King{% endif %}
+      {% if not phase%}Dereck Smith{% endif %}’s health condition or disability
       </label>
     </h2>
 
-    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="more-detail{{phase}}{{number}}" rows="5" aria-describedby="with-hint-info with-hint-hint">{{data['more-detail' + number]}}</textarea>
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="condition-check-update{{phase}}{{number}}" rows="5" aria-describedby="with-hint-info with-hint-hint">{{data['more-detail' + number]}}</textarea>
   </div>
 
   <div id="with-hint-info" class="govuk-hint govuk-character-count__message">

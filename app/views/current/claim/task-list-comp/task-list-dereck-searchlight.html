@@ -21,15 +21,10 @@
 
 
 
-{% if data['Searchligh']=='No'%}
-
-{% else %}
 
 
-{% if 
 
-
-data ['appointee']
+{% if data ['appointee']
 
 %}
 
@@ -37,7 +32,7 @@ data ['appointee']
                 {% else %}
                 <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing appointee task.</div>
         {% endif %}
-        {% endif %}
+
 
 
 {% if data['changeaddressline1'] %}{% include "current/claim/task-list-comp/searchlight-update.html"%}{% else %}

@@ -38,9 +38,13 @@
       {%- endfor %}
 
 {% endif %}
+
+
+
+
 <div class="govuk-width-container">
 
-  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% else %}{% endif %}check-application/condition-help-needed/details/{{totalhealthdetails + 1}}" method="post" novalidate>
+  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% else %}{% endif %}check-application/condition-help-needed/more-details/{{totalhealthdetails + 1}}" method="post" novalidate>
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -58,7 +62,7 @@
 {% if not totalhealthdetails == 0 %}
     <h2 class="govuk-heading-m">
 
-                    Updated details</h2>
+                    More details added</h2>
                     <div class="govuk-form-group">
                       <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
 {% endif %}
@@ -71,7 +75,7 @@
     {% set detailshealthindex = i  %}
     {% if data['condition-check-updatesonya'+ detailshealthindex] %}
 
-        {% include "current/cases/check-application/condition-help-needed/more-details.html"%}
+        {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
 
     {% endif %}  {%- endfor %}{% else %}
 
@@ -89,7 +93,7 @@
     {% set detailshealthindex = i  %}
     {% if data['condition-check-update'+ detailshealthindex] %}
 
-        {% include "current/cases/check-application/condition-help-needed/more-details.html"%}
+            {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
 
     {% endif %}  {%- endfor %}
 {% endif %}

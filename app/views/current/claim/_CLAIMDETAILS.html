@@ -82,15 +82,7 @@ data-module="govuk-notification-banner">
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <dl class="govuk-summary-list govuk-summary-list--no-border">
 
-    {% if case == "priority-cases"  %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Priority type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Clinically extremely vulnerable  (CEV)
-            </dd>
-          </div>{% endif %}
+
   <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Full name
@@ -190,7 +182,7 @@ data-module="govuk-notification-banner">
           Application reference
         </dt>
         <dd class="govuk-summary-list__value">
-          RMPX3{% if phase == "sonya"  %}0{% endif %}{% if phase == "thomas"  %}2{% endif %}{% if phase == "dereck"  %}0{% endif %}{% if phase == "arlo"  %}5{% endif %}
+          RMPX3{% if phase == "sonya"  %}0{% endif %}{% if phase == "thomas"  %}2{% endif %}{% if not phase   %}0{% endif %}{% if phase == "arlo"  %}5{% endif %}
         </dd>
       </div>
 
@@ -308,7 +300,19 @@ data-module="govuk-notification-banner">
     </p>
   </div>
 </div>{% endif %} -->
+<h1 class="govuk-heading-l">
+Contact
+</h1>{% if
 
+
+data ['appointee']
+
+%}
+
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing appointee task.</div>
+        {% endif %}
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
@@ -338,9 +342,7 @@ data-module="govuk-notification-banner">
 
 
         <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">
-      Contact
-    </h1>
+
         <p><a href="/current/cases/{{phase}}/cases/contact/contact-details">View contact details</a></p>
 
 
