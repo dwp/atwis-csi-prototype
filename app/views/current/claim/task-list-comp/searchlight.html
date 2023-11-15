@@ -87,7 +87,7 @@
                 <a href="{% if data['searchlight-correct']%}/current/cases/update/check{% else %}/current/cases/update{% endif %}">    Update personal details</a>
               </span>
               {% if data['searchlight-correct']=='Yes' or data['searchlight-correct']=='No' %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-              {% if data['searchlight-correct']=='I need to contact Dereck Smith to confirm'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}
+              {% if data['searchlight-correct']=='I need to contact Dereck Smith to confirm'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">Contact needed</strong>{% endif %}
               {% if not data['searchlight-correct']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
             </li>
 
