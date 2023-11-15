@@ -200,7 +200,7 @@
                                    </legend>
 
 
-                                <div id="event-name-hint" class="govuk-hint">You should add all items suggested by {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} or {% if data['wpa']=='Yes'%}the workplace assessment report{% endif %}.</div>
+                                <div id="event-name-hint" class="govuk-hint">You should add all items suggested {% if data['wpa']=='Yes'%}in the workplace assessment and{% endif %} by {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}</div>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
                                        <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{% if data['sae-item-type-2']%}3{% else %}1{% endif %}/type.html" >
