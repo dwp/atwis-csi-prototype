@@ -16,25 +16,10 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h2 class="govuk-heading-l">Task summary:  Type of workplace assessment</h2>
+        <h2 class="govuk-heading-l">Task summary:   availability for workplace assessment</h2>
 
 
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-{% include "./content/type.html"%}
-
-            </dt>
-            <dd class="govuk-summary-list__value">
-{{ data['wpa-type']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
-              Update<span class="govuk-visually-hidden">     {% include "./content/type.html"%}      </span>
-              </a>
-            </dd>
-          </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -96,7 +81,7 @@ Where will Dereck Smith be for the workplace assessment?
             </dd>
           </div>
 
-{% if data['address-of-wpa'] %}
+{% if data['address-of-wpa'] =='other'%}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
 Address of the workplace assessment
@@ -107,6 +92,8 @@ Address of the workplace assessment
     {{data['address-wpa-town']}}<br>
     {{data['address-wpa-county']}}<br>
     {{data['address-wpa-postcode']}}
+
+
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="">
