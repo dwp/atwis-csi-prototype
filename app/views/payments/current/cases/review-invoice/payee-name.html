@@ -57,10 +57,10 @@
                   Add payee name
                 </label>
               </h1>
-              <div id="with-hint-hint" class="govuk-hint">
+              <!-- <div id="with-hint-hint" class="govuk-hint">
                 If there is more than one payee, you will be able to add them from the task list after this one.
 
-              </div>
+              </div> -->
               <textarea class="govuk-textarea govuk-js-character-count" id="payee-name" name="payee-name" rows="1" aria-describedby="with-hint-info with-hint-hint">{{ data['payee-name'] }}</textarea>
             </div>
             <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
@@ -80,14 +80,14 @@
                         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
 {% if case == 'sonya' %}
                           {% if 'ZoomText Professional License' in data['paid-in-full-select'] %}
-                          Add bank account name from claim
+                          Add name on bank account from claim
                           {% else %}
                             Add payee name
                             {% endif %}
 {% endif %}
 {% if case == 'dereck' %}
                           {% if 'Office chair' in data['paid-in-full-select'] %}
-                          Add bank account name from claim
+                          Add name on bank account from claim
                           {% else %}
                             Add payee name
                             {% endif %}
