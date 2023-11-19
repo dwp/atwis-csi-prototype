@@ -21,7 +21,7 @@
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="availability-wpa">
-              When is Derek Smith available for a workplace assessment in the next 8
+              When is Derek Smith available for a workplace assessment in the next {% if data['wpa-type']=='Face-to-face'%}10 {% else %}8{% endif %}
 weekdays?
               </label>
             </h2>
@@ -37,7 +37,7 @@ on the following days:</p>
     const dateList = [];
 
     // Add 8 weekdays to today's date
-    while (days < 8) {
+      {% if data['wpa-type']=='Face-to-face'%}while (days < 10){% else %}while (days < 8){% endif %}  {
       futureDate.setDate(futureDate.getDate() + 1);
       const day = futureDate.getDay();
       if (day !== 0 && day !== 6) {

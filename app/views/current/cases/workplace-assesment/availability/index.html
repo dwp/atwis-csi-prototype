@@ -39,7 +39,7 @@ Is {% if phase == "john" %}John Smith{% endif %}{% if phase == "sonya" %}Sonya C
                    const dateList = [];
 
                    // Add 8 weekdays to today's date
-                   while (days < 8) {
+                {% if data['wpa-type']=='Face-to-face'%}while (days < 10){% else %}while (days < 8){% endif %} {
                      futureDate.setDate(futureDate.getDate() + 1);
                      const day = futureDate.getDay();
                      if (day !== 0 && day !== 6) {
@@ -95,7 +95,7 @@ formattedDate;
 
                <div class="govuk-radios ">
                  <div class="govuk-radios__item">
-                   <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="Yes~others" {{ checked("wpa-availability", "Yes") }}>
+                   <input class="govuk-radios__input" id="wpa-availability" name="wpa-availability" type="radio" value="Yes~/current/cases/workplace-assesment/availability/others" {{ checked("wpa-availability", "Yes") }}>
                    <label class="govuk-label govuk-radios__label" for="wpa-availability">
                     Yes
                    </label>
