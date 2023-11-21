@@ -25,7 +25,13 @@
           {% endfor %}
           {% endif %}
 
-          {% if case =='other-cases-3' or 'other-cases-4'%}
+          {% if case == 'other-cases-4'%}
+          {% for case in data['other-cases-3'] %}
+          {{ case.condition }}
+          {% endfor %}
+          {% endif %}
+          
+          {% if case =='other-cases-3' %}
           {% for case in data['other-cases-3'] %}
           {{ case.condition }}
           {% endfor %}

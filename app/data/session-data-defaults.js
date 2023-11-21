@@ -97,9 +97,9 @@ module.exports = {
   'unallocated-cases': [{
     'name': 'Dereck Smith',
     'specialism': 'Large business',
-    'type': 'Renewal',
+    'type': 'New application',
     'priority' : "true",
-    'date': '4 October 2021 13:23'
+    'date': '4 October 2023, 13:23'
   }, {
     'name': 'Maximillia Erdman',
     'specialism': 'Pan disability',
@@ -160,14 +160,14 @@ module.exports = {
 
   'priority-cases': [{
     'name': 'Dereck Smith',
-    'condition': 'macular oedema',
+    'condition': 'Macular oedema',
     'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
     'ref': 'RMPX30',
     'case': 'Priority',
     'job-deatils-contact' : "They gave permission (apply)",
     'type': 'New Application',
     'priority' : "true",
-    'date': '4 October 2021 13:23'
+    'date': '4 October 2023, 13:23'
 
   }],
 
