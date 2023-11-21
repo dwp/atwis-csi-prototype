@@ -1,7 +1,9 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -28,7 +30,7 @@
 
 
                    <div class="govuk-inset-text">
-                 {{data['sae-item-type']}}
+                 {{data['sae-item-type'+ number]}}
                    </div>
                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
                    <button class="govuk-button" data-module="govuk-button">

@@ -82,15 +82,7 @@ data-module="govuk-notification-banner">
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <dl class="govuk-summary-list govuk-summary-list--no-border">
 
-    {% if case == "priority-cases"  %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Priority type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Clinically extremely vulnerable  (CEV)
-            </dd>
-          </div>{% endif %}
+
   <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Full name
@@ -166,7 +158,23 @@ data-module="govuk-notification-banner">
           Date submitted
         </dt>
         <dd class="govuk-summary-list__value">
-          2 January 2023, 11:57am
+        <script>  var now = new Date();
+          var pastDate = new Date(now);
+          pastDate.setDate(now.getDate() - 60);
+
+          var formattedDate = pastDate.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+          });
+
+          var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true
+          });
+
+          document.write(formattedDate + ' at 3:00 pm');</script>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -174,7 +182,7 @@ data-module="govuk-notification-banner">
           Application reference
         </dt>
         <dd class="govuk-summary-list__value">
-          RMPX3{% if phase == "sonya"  %}0{% endif %}{% if phase == "thomas"  %}2{% endif %}{% if phase == "dereck"  %}0{% endif %}{% if phase == "arlo"  %}5{% endif %}
+          RMPX3{% if phase == "sonya"  %}0{% endif %}{% if phase == "thomas"  %}2{% endif %}{% if not phase   %}0{% endif %}{% if phase == "arlo"  %}5{% endif %}
         </dd>
       </div>
 
@@ -240,10 +248,10 @@ data-module="govuk-notification-banner">
    </script>
 
 </div></div>
-{% if phase == "arlo"  %}{% include  "../claim/timeline-john.html" %}{% endif %}
-{% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% endif %}
-{% if phase == "thomas"  %}{% include  "../claim/timeline-thomas-new.html" %}</div></div>{% endif %}
-{% if not phase %}{% include  "../claim/timeline-dereck-new.html" %}{% endif %}
+{% if phase == "arlo"  %}{% include  "../claim/timelines/timeline-john.html" %}{% endif %}
+{% if phase == "sonya"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
+{% if phase == "thomas"  %}{% include  "../claim/timelines/timeline-thomas-new.html" %}</div></div>{% endif %}
+{% if not phase %}{% include  "../claim/timelines/timeline-dereck.html" %}{% endif %}
 </div>
 
 
@@ -292,7 +300,19 @@ data-module="govuk-notification-banner">
     </p>
   </div>
 </div>{% endif %} -->
+<h1 class="govuk-heading-l">
+Contact
+</h1>{% if
 
+
+data ['appointee']
+
+%}
+
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing appointee task.</div>
+        {% endif %}
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
@@ -322,10 +342,8 @@ data-module="govuk-notification-banner">
 
 
         <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">
-      Contact
-    </h1>
-        <p><a href="/current/cases/{{phase}}/cases/contact/contact-details">View contact details</a></p>
+
+        <p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
 
 
 

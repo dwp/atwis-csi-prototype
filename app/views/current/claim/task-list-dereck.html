@@ -83,7 +83,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 {% else %}
 
 
-{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+{% if data['Searchligh'] and
 data ['elements']
 and
 data ['condition-check']
@@ -101,7 +101,7 @@ data ['benefits']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing all Searchlight checks.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing appointee task.</div>
         {% endif %}
         {% endif %}
 
@@ -114,7 +114,7 @@ data ['benefits']
 
 
 
-  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+  {% if data['Searchligh'] and
     data ['elements-task']
     and
     data ['condition-check']

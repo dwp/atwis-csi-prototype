@@ -43,10 +43,11 @@
   {% if data['wpa']=='Yes'%}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-        <a href="{% if data['wpa-type']%}/current/cases/workplace-assesment/check{% else %}/current/cases/workplace-assesment/citizen-wpa{% endif %}" aria-describedby="job-status">
+        <a href="{% if data['wpa-type']%}/current/cases/workplace-assesment/type/check{% else %}/current/cases/workplace-assesment/type{% endif %}" aria-describedby="job-status">
             Type of workplace assessment
         </a>
           </span>
+                    {% if data['wpa-type']=='They do not want a workplace assessment'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
           {% if data['wpa-type']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
           {% if data['wpa-type']=='Virtual'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
           {% if data['wpa-type']=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
@@ -54,10 +55,10 @@
           </li>
     {% endif %}
 
-    {% if data['wpa-type']%}
+    {% if data['wpa-type']=='Virtual' or data['wpa-type']=='Face-to-face'%}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-          <a href="{% if data['']%}/current/cases/workplace-assesment/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
+          <a href="{% if data['address-of-wpa']%}/current/cases/workplace-assesment/availability/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
               Availability for workplace assessment
           </a>
             </span>
@@ -66,8 +67,6 @@
             {% if data['']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
             {% if data['wpa-4-weeks']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold </strong>{% endif %}
           {% if data['wpa-4-weeks']=='No'%}
-
-
           {% if data['wpa-pause']=='No'%}<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
           {% if data['wpa-pause']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold</strong>{% endif %}
 {% endif %}
@@ -77,65 +76,26 @@
             </li>
       {% endif %}
     <li>
+      <li>
 
 
-{% if not data['wpa']%}
-        <li class="app-task-list__item">
-        <span class="app-task-list__task-name">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+      <a href="
+      {% if data ['job-deatils-contact']=='They gave permission (apply)'%}
+      {% if data ['employer-sector']%}/current/cases/job-details/check{% else %}/current/cases/job-details/employment-sector{% endif %}
+      {% else %}
+      {% if data ['job-deatils-contact']%}/current/cases/job-details/check{% else %}/current/cases/contact-employer{% endif %}
+      {% endif %}
+      " aria-describedby="job-status">
 
-                Add information about the employer
-
-        </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
-{% else %}
-
-
-
-
-{% if data['wpa']=='No'%}
-<li>
-
-
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-<a href="
-{% if data ['job-deatils-contact']=='They gave permission (apply)'%}
-{% if data ['employer-sector']%}/current/cases/job-details/check{% else %}/current/cases/job-details/employment-sector{% endif %}
-{% else %}
-{% if data ['job-deatils-contact']%}/current/cases/job-details/check{% else %}/current/cases/contact-employer{% endif %}
-{% endif %}
-" aria-describedby="job-status">
-
-    Add information about the employer
-</a>
-      </span>
-{% if data['employer-sector']=='Yes' and data['employer-sector-type'] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% if not data['employer-sector']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-{% if data ['employer-sector']=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
-</li>
-{% else %}
-
-{% if data['address-of-wpa']%}
-<li>
-
-
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-<a href="
-{% if data ['job-deatils-contact']=='They gave permission (apply)'%}
-{% if data ['employer-sector']%}/current/cases/job-details/check{% else %}/current/cases/job-details/employment-sector{% endif %}
-{% else %}
-{% if data ['job-deatils-contact']%}/current/cases/job-details/check{% else %}/current/cases/contact-employer{% endif %}
-{% endif %}
-" aria-describedby="job-status">
-
-    Add information about the employer
-</a>
-      </span>
-{% if data['employer-sector']=='Yes' and data['employer-sector-type'] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% if not data['employer-sector']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-{% if data ['employer-sector']=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
-</li>
+          Add information about the employer
+      </a>
+            </span>
+      {% if data['employer-sector']=='Yes' and data['employer-sector-type'] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+      {% if not data['employer-sector']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+      {% if data ['employer-sector']=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+      </li>
 
 
 
@@ -143,7 +103,17 @@
 
 
 
-{% if data['wpa']=='Yes' and  data['employer-size'] and data['employer-sector-type']%}
+
+
+
+
+
+
+
+
+
+
+{% if data['wpa']=='Yes' and  data['employer-size'] and data['employer-sector-type'] and data['address-of-wpa']%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
           <a href="{% if data['referral-form']%}/current/cases/workplace-assesment/check-referral-form{% else %}/current/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
@@ -175,19 +145,8 @@
 
 
 
-{% else %}
-<li class="app-task-list__item">
-<span class="app-task-list__task-name">
-
-        Add information about the employer
-
-</span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
 
-{% endif %}
-{% endif %}
-{% endif %}
 
 
 
