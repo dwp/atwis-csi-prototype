@@ -1,7 +1,9 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -22,17 +24,17 @@
           </h1>
         </legend>
         <div class="govuk-inset-text">
-      {{data['sae-item-type']}}
+      {{data['sae-item-type'+ number]}}
         </div>
-        <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="approve" name="approve" type="radio" value="true~selected-quote">
+            <input class="govuk-radios__input" id="approve" name="approve{{number}}" type="radio" value="true~selected-quote">
             <label class="govuk-label govuk-radios__label" for="approve">
             Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="approve-2" name="approve" type="radio" value="false~not-needed">
+            <input class="govuk-radios__input" id="approve-2" name="approve{{number}}" type="radio" value="false~not-needed-adding">
             <label class="govuk-label govuk-radios__label" for="approve-2">
               No
             </label>

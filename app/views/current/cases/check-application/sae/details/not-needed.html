@@ -1,7 +1,9 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -39,7 +41,7 @@
 
 
                            </div>
-          
+
                    </form>
 
 

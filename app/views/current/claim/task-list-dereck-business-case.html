@@ -208,31 +208,8 @@ data ['benefits']
         </li>
 
 
-        {% if data['approve-2']=='true'%}
-                <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                <a href="specialist-equipment/index-2" aria-describedby="job-status">
-                  Confirm details for specialist equipment 2
-                </a>
-                </span>
-                {% if not data['social-domestic-2']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-                {% if data['social-domestic-2']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
-                 </li>
-        {% endif %}
 
-        {% if data['approve-3']=='true'%}
-                <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                <a href="specialist-equipment/index-3" aria-describedby="job-status">
-                  Confirm details for specialist equipment 3
-                </a>
-                </span>
-                {% if not data['social-domestic-3']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
-                {% if data['social-domestic-3']%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
-
-                 </li>
-        {% endif %}
 
         {% endif %}
 
@@ -279,7 +256,7 @@ data ['benefits']
 </ul>
 
 
-      {% if data['medical'] or data['sw-add']=='No'%}
+      {% if data['sae-add']=='No'%}
             <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
             <p>You do not need to send this award to anyone else for approval. </p>
@@ -293,7 +270,7 @@ data ['benefits']
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">5. </span> Award decision
           </h2>
-          {% if data['medical'] or data['sw-add']=='No'%}
+          {% if data['sae-add']=='No'%}
             {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}
           {% else %}
           <ul class="app-task-list__items">

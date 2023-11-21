@@ -1,7 +1,9 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -23,7 +25,7 @@
 <div id="event-name-hint" class="govuk-hint">Give the name of one item. You will have the option to add more.</div>
 
 
-            <input class="govuk-input" id="sae-item-type" name="sae-item-type" type="text" spellcheck="false" autocomplete="name">
+            <input class="govuk-input" id="sae-item-type" name="sae-item-type{{number}}" type="text" spellcheck="false" autocomplete="name">
 
             </div>
 
