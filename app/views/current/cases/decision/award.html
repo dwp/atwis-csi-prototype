@@ -1,7 +1,9 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
 {% extends folder + "/claim/_CSIBASE.html" %}
 
 {% block csi %}
@@ -40,117 +42,101 @@
                    </tr>
                  </thead>
                  {% if 'Specialist equipment' in data['elements']%}
-                 <tbody class="govuk-table__body">
+              {% if data['approve1']=='true'%}     <tbody class="govuk-table__body">
                    <tr class="govuk-table__row">
                      <th scope="row" class="govuk-table__header">Specialist equipment</th>
-                     <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type']}}</td>
-                     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item']}}</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type1']}}</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item1']}}</td>{% endif %}
                    </tr>
-    {% if data['approve-2']=='true'%}
+    {% if data['approve2']=='true'%}
                    <tbody class="govuk-table__body">
                      <tr class="govuk-table__row">
                        <th scope="row" class="govuk-table__header">Specialist equipment</th>
-                       <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type-2']}}</td>
-                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item-2']}}</td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type2']}}</td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item2']}}</td>
                      </tr>
 {% endif %}
-    {% if data['approve-3']=='true'%}
+    {% if data['approve3']=='true'%}
                      <tbody class="govuk-table__body">
                        <tr class="govuk-table__row">
                          <th scope="row" class="govuk-table__header">Specialist equipment</th>
-                         <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type-3']}}</td>
-                         <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item-3']}}</td>
+                         <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sae-item-type3']}}</td>
+                         <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item3']}}</td>
                        </tr>
 {% endif %}{% endif %}
 
- {% if 'Support worker' in data['elements']%}
- <tbody class="govuk-table__body">
-   <tr class="govuk-table__row">
-     <th scope="row" class="govuk-table__header">Support worker</th>
-     <td class="govuk-table__cell govuk-table__cell--numeric">{{data['sw-type']}}</td>
-     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-hr']}} per hour, total cost £12,960</td>
-   </tr>
 
- {% endif %}
                  </tbody>
                </table>
-  <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-      Type
-
-      </dt>
-      <dd class="govuk-summary-list__value">
-      Specialist equipment
-
-      </dd>
-      <dd class="govuk-summary-list__actions">
-
-      </dd>
-    </div>
 
 
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Specialist equipment
-</dt>
-<dd class="govuk-summary-list__value">
-Jaws screen reader
+{% if data['approve1']=='true' and not data['approve2'] and not data['approve3'] %}
+{% set totalsae =  data['cost-per-item1'] | int   %}{% endif %}
 
+{% if data['approve1']=='true' and data['approve2']=='true' and not data['approve3'] %}
+{% set totalsae =  data['cost-per-item1'] | int +  data['cost-per-item2'] | int%}{% endif %}
 
-</dd>
-<dd class="govuk-summary-list__actions">
+{% if data['approve1']=='true' and data['approve-2']=='true' and  data['approve-3']=='true' %}
+{% set totalsae =  data['cost-per-item1'] | int +  data['cost-per-item2'] | int +  data['cost-per-item-3'] | int%}{% endif %}
 
+{% if data['approve1']=='false' and data['approve2']=='true' and not data['approve3'] %}
+{% set totalsae =  data['cost-per-item2'] | int%}{% endif %}
 
-</dd>
-</div>
+{% if data['approve1']=='false' and data['approve-2']=='false' and  data['approve-3']=='true' %}
+{% set totalsae =  data['cost-per-item-3'] | int%}{% endif %}
 
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Quote
-</dt>
-<dd class="govuk-summary-list__value">
-
-£499
-<br>
-</dd>
-
-<dd class="govuk-summary-list__actions">
+{% if data['approve1']=='true' and data['approve2']=='false' and not data['approve3'] %}
+{% set totalsae =  data['cost-per-item2'] | int%}{% endif %}
 
 
 
-</dd>
-</div>
 
-</dl> -->
+{% if  ((data['social-domestic-1']=='Yes') or (data['social-domestic-2']=='Yes'))%}
+<dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                      Total social and domestic contribution: 2 days
+                          </dt>
+                          <dd class="govuk-summary-list__value" style="text-align: right;">
+            {% if  data['social-domestic-1']=='Yes' %}  {{data['sae-item-type1']}}
+
+{% set totalsd =  (2/7 * data['cost-per-item1'] )| round(2, 'ceil') %}
 
 
-{% if data['approve-2']=='true' and not data['approve-3']%} {% set total = "998" %}{% else %}
+            {% endif %}
+              {% if  data['social-domestic-2']=='Yes' %} <br>{{data['sae-item-type2']}}{% endif %}
+                          </dd>
+                          <dd class="govuk-summary-list__value" style="text-align: right;">
+                  £-{{totalsd}}
+                          </dd>
+                          </div>
 
-     {% if data['approve-3']=='true'%}
-{% if data['cost-per-item-3']=='1195' or data['cost-per-item-3']=='1195.00'%}{% set total = "2193" %}{% endif %}
-{% if data['cost-per-item-3']=='1349' or data['cost-per-item-3']=='1349.00'%}{% set total = "2347" %}{% endif %}
-{% if data['cost-per-item-3']=='1049' or data['cost-per-item-3']=='1049.00'%}{% set total = "2038" %}{% endif %}
-     {% endif %}
 
-     {% if data['approve-3']=='false'%}
-{% set total = "998" %}     {% endif %}
+                          </dl>{% endif %}
 
-        {% endif %}
+
 <dl class="govuk-summary-list">
                           <div class="govuk-summary-list__row">
                           <dt class="govuk-summary-list__key">
                           Total award
                           </dt>
                           <dd class="govuk-summary-list__value" style="text-align: right;">
-                  £{{data['cost-per-item']}}
+{% if  ((data['employer-size']=='50 to 249 (medium)') or  (data['employer-size']=='250 or more (large)')) %}
+                  £{% set totalaward =  totalsae - 500 %}
+                  {% if totalaward < 0 %}
+                  0
+                  {% else %}
+                  {{totalaward}}{% endif %}
+{% else %}
+                    £  {% set total =  totalsae - totalsd %}
+                  {% if not totalsd %}{{totalsae}}{% else %}  {{total}} {% endif %}{% endif %}
                           </dd>
                           </div>
 
 
                           </dl>
 
-                          <p>By confirming, you are agreeing that Dereck Smith can receive all of the support in the award summary. </p>
+<p>By confirming, you are agreeing that Dereck Smith can receive all of the support in the award summary. </p>
 <p>Once you have confirmed the award summary, you will be able to send the award decision to Dereck Smith.</p>
 
 

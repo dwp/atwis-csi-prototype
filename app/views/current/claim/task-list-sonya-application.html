@@ -15,7 +15,7 @@
 <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
-Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %}
+
 </a>
 </p>
 
@@ -28,7 +28,7 @@ Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{d
 {% else %}
 
 
-{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+{% if data['Searchligh'] and
 
 
 data ['appointee']
@@ -38,7 +38,7 @@ data ['benefits']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing all Searchlight checks.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing appointee task.</div>
         {% endif %}
         {% endif %}
 
@@ -55,9 +55,16 @@ Summary of support requested by
 
 
 </h2>
-<p>Sonya Corkery needs <strong>Specialist equipment</strong> and <strong>Mental health support</strong> support and has given details.
+<p>Sonya Corkery does not know if they need:
+  </p>
 
-</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+           <li>Specialist equipment</li>
+           <li>Mental health support </li>
+    </ul>
+
+
 <p>Sonya Corkery does not need:
   </p>
   <ul class="govuk-list govuk-list--bullet">

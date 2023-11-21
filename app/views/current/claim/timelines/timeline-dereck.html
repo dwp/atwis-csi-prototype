@@ -1,0 +1,411 @@
+{% set monthAndYear = "November 2023" %}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Case history</h2>
+        <div class="moj-timeline">
+
+
+{% if data['wpa']%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title"> Confirm whether workplace assessment is needed task </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+</p>
+
+
+</div>
+{% endif %}
+
+
+
+ {% if data['condition-check']%}
+ <div class="moj-timeline__item">
+ <div class="moj-timeline__header">
+   <h2 class="moj-timeline__title">  Health condition or disability task </h2>
+   <p class="moj-timeline__byline">by John Goldsmith </p>
+ </div>
+ {% if data['condition-check']=='Yes'%}<br> <p>Contact needed for more information. </p>{% endif %}
+ <p class="moj-timeline__date">
+   <time datetime="2023-06-06T09:12:00.000Z"><script>
+     // Get the current date and time
+          var now = new Date();
+          var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+          var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+          // Write the date and time to the HTML page
+          document.write(date + ' at ' + time);
+        </script></time>
+ </p>
+
+
+ </div>
+ {% endif %}
+
+
+
+{% if data['searchlight-cis500']=='Yes' or data['cis500']=='Yes'%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title">  CIS500 task </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+</p>
+
+
+</div>
+{% endif %}
+{% if data['searchlight-correct']%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title">  Update personal details  task </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+
+
+
+</div>
+{% endif %}
+
+{% if data['benefits-change']%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title"> Check benefits task </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+</p>
+
+
+</div>
+{% endif %}
+{% if data['appointee-change']%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title"> Check appointee task </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+</p>
+
+
+</div>
+{% endif %}
+{% if data['Searchligh-change']%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title"> Check personal details and add National Insurance number task </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+</p>
+
+
+</div>
+{% endif %}
+
+{% if data['changeaddressline1']%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title"> Personal details update </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+</p>
+
+<div class="moj-timeline__description">
+
+      <p>Address line 1: <strong>72 Guild Street</strong> changed to <strong>{{data['changeaddressline1']}}</strong></p>
+      <!-- <p>Address line 2: <strong>72 Guild Street</strong> changed to <strong>{{data['changeaddressline1']}}</strong></p>
+      <p>Town or city: <strong>London</strong> changed to <strong>{{data['changeaddressline1']}}</strong></p>
+      <p>County: <strong>72 Guild Street</strong> changed to <strong>{{data['changeaddressline1']}}</strong></p>
+      <p>Postcode: <strong>AB1 1BA</strong> changed to <strong>{{data['changeaddressline1']}}</strong></p> -->
+
+
+
+    </div>
+</div>
+{% endif %}
+{% if data['first-name']%}
+<div class="moj-timeline__item">
+<div class="moj-timeline__header">
+  <h2 class="moj-timeline__title"> Personal details update </h2>
+  <p class="moj-timeline__byline">by John Goldsmith </p>
+</div>
+
+<p class="moj-timeline__date">
+  <time datetime="2023-06-06T09:12:00.000Z"><script>
+    // Get the current date and time
+         var now = new Date();
+         var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+         var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         // Write the date and time to the HTML page
+         document.write(date + ' at ' + time);
+       </script></time>
+</p>
+
+<div class="moj-timeline__description">
+      <p> <strong>Dereck Smith</strong> changed to <strong>John Smiths</strong></p>
+
+    </div>
+</div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+{% if data['benefits']%}
+
+         <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Check benefits task </h2>
+              <p class="moj-timeline__byline">by Jane Doe</p>
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2023-06-06T09:12:00.000Z"><script>
+                // Get the current date and time
+                     var now = new Date();
+                     var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                     var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                     // Write the date and time to the HTML page
+                     document.write(date + ' at ' + time);
+                   </script></time>
+            </p>
+
+
+
+          </div>{% endif %}
+          {% if data['appointee']%}
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Check appointee task </h2>
+              <p class="moj-timeline__byline">by John Goldsmith</p>
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2023-06-06T09:12:00.000Z"><script>
+                // Get the current date and time
+                     var now = new Date();
+                     var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                     var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                     // Write the date and time to the HTML page
+                     document.write(date + ' at ' + time);
+                   </script></time>
+            </p>
+
+
+
+          </div>{% endif %}
+
+{% if data['Searchligh']%}
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Check personal details and add National Insurance number task </h2>
+              <p class="moj-timeline__byline">by John Goldsmith</p>
+            </div>
+
+{% if data['Searchligh']=='No'%}  <br>
+  <p>Personal details for Dereck Smith are not in Searchlight. Contact needed. </p>{% endif %}
+
+
+            <p class="moj-timeline__date">
+              <time datetime="2023-06-06T09:12:00.000Z">
+                <script>
+                // Get the current date and time
+                     var now = new Date();
+                     var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                     var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                     // Write the date and time to the HTML page
+                     document.write(date + ' at ' + time);
+                   </script></time>
+            </p>
+
+
+
+          </div> {% endif %}
+
+          <!-- <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Application allocated to John Goldsmith</h2>
+              <p class="moj-timeline__byline">by Al O'Cator</p>
+            </div>
+            <p class="moj-timeline__date">
+              <time datetime="2023-05-28T10:15:00.000Z">20 October 2023 at 10:15am</time>
+            </p>
+          </div> -->
+          <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Application allocated to John Goldsmith  </h2>
+            <p class="moj-timeline__byline">by Al O'Cator </p>
+          </div>
+
+          <p class="moj-timeline__date">
+            <time datetime="2023-06-06T09:12:00.000Z"><script>
+              // Get the current date and time
+                   var now = new Date();
+                   var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                   var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                   // Write the date and time to the HTML page
+                   document.write(date + ' at 9:15 am');
+                 </script></time>
+          </p>
+
+
+
+        </div>
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Application received</h2>
+              <p class="moj-timeline__byline"></p>
+            </div>
+            <p class="moj-timeline__date">
+              <time datetime="2023-05-28T10:15:00.000Z"><script>
+                // Get date
+                    var now = new Date();
+                    var pastDate = new Date(now);
+                    pastDate.setDate(now.getDate() - 60);
+
+                    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                    });
+
+                    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true
+                    });
+
+                    document.write(formattedDate + ' at 3:00 pm');
+                   </script></time>
+            </p>
+          </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <script>
+  const months = ["January","February","March","July","May","June","July","August","September","October","November","December"];
+
+  const d = new Date();
+  let month = months[d.getMonth()];
+  document.getElementById("day").innerHTML = d.getDate();
+  document.getElementById("month").innerHTML = month;
+  document.getElementById("year").innerHTML = d.getFullYear();
+  </script>
+<!-- <ol class="dwp-timeline">
+{% macro timeline(title="", allocation="", stage="", date="1 "  + monthAndYear +  " at 4:30pm" ) %}
+        <li class="dwp-timeline__entry">
+          <h3  style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">{{title}}  </h3>
+
+          <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">{% if stage == "payment" %}Rich Silver{% elif stage == "allocator" %}Al O'Cator{% elif stage == "unallocated"%}{% else %}John Goldsmith{%endif %} {% if allocation %}to {{allocation}}{% endif %}</span>
+<span class="dwp-timeline__date">{{date}}</span>
+          </p>
+</li>
+{% endmacro %} -->
