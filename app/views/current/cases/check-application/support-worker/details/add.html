@@ -4,6 +4,23 @@
 
 {% extends folder + "/claim/_CSIBASE.html" %}
 
+{% if phase == 'thomas'%}
+{% set totalSw =  + 1 %}
+{% endif %}
+
+{% if data['sw-type']  %}
+{% set totalSw = totalSw + 1 %}
+{% endif %}
+
+
+{% for i in [1,2,3,4] -%}
+   {% set index = i %}
+    {% if data['sae-item-type'+ index]%}
+    {% set totalSw = totalSw + 1 %}
+  {% endif %}
+
+
+    {%- endfor %}
 {% block csi %}
 
 
@@ -13,30 +30,62 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <fieldset class="govuk-fieldset">
+       <h1 class="govuk-heading-l">
+       Total support worker: {{totalSw}}
+       </h1>
+          </fieldset>
+
+
+
+
+          {% if data['sw-type']%}
+                      <fieldset class="govuk-fieldset">
+                <h2 class="govuk-heading-m">
+
+                        Support worker you have added</h2>
+
+
+
+
+
+                        <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                              {{data['sw-type']}}
+                            </dt>
+
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+                              {% if data['approve-1']=='true'%}Added to award{% endif %}
+                                {% if data['approve-1']=='false'%}Not added to award{% endif %}
+                            </dt>
+
+
+                            <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                              <ul class="govuk-summary-list__actions-list">
+                                <li class="govuk-summary-list__actions-list-item">
+                                  <a class="govuk-link" href="{% if not phase %}details-apply{% else %}details{% endif %}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+                                </li>
+                                <li class="govuk-summary-list__actions-list-item">
+                                  <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+                                </li>
+                              </ul>
+                            </dd>
+                          </div>
+
+
+                        </dl>
+
+                             </fieldset>
+
+          {% endif %}
 
 {% if phase == 'thomas'%}
 
 
 
 
-
-
-
-
-
-
-
-
- <fieldset class="govuk-fieldset">
-<h1 class="govuk-heading-{% if data['sae-item-type']%}m{% else %}l{% endif %}">
-
-  {% if data['sw-type']%}Total 2 support workers{% else %}  Thomas King has requested 1 support worker {% endif %}</h1>
-
-  {% if data['sw-type']%}
-              <fieldset class="govuk-fieldset">
-        <h2 class="govuk-heading-m">
-
-                Thomas King has requested 2 support worker </h2>{% endif %}
+<h2 class="govuk-heading-m">Support worker from application</h2>
     <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
@@ -50,7 +99,7 @@
         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
+              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> British Sign Language (BSL) interpreter</span></a>
             </li>
 
           </ul>
@@ -58,74 +107,14 @@
       </div>
 
 
-      <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-        Note taker
-        </dt>
-        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
-          {% if data['approve-2']=='true'%}Added to award{% endif %}
-            {% if data['approve-2']=='false'%}Not added to award{% endif %}
-        </dt>
-
-        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="details"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-            </li>
-
-          </ul>
-        </dd>
-      </div> -->
 
     </dl>
-
-         </fieldset>
-
 
 
 
   {% endif %}
 
-{% if data['sw-type']%}
-            <fieldset class="govuk-fieldset">
-      <h2 class="govuk-heading-{% if phase == 'thomas'%}m{% else %}l{% endif %}">
 
-              You have added 1 support worker </h2>
-
-
-
-
-
-              <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-                    {{data['sw-type']}}
-                  </dt>
-
-                  <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
-                    {% if data['approve-1']=='true'%}Added to award{% endif %}
-                      {% if data['approve-1']=='false'%}Not added to award{% endif %}
-                  </dt>
-
-
-                  <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
-                    <ul class="govuk-summary-list__actions-list">
-                      <li class="govuk-summary-list__actions-list-item">
-                        <a class="govuk-link" href="{% if not phase %}details-apply{% else %}details{% endif %}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                      </li>
-                      <li class="govuk-summary-list__actions-list-item">
-                        <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">{{data['condition-check-update']}}</span></a>
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-
-
-              </dl>
-
-                   </fieldset>
-
-{% endif %}
 
 
 
