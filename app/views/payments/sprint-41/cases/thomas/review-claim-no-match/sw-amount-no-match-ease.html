@@ -1,0 +1,162 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-41/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/sprint-41/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+          <div class="govuk-width-container">
+            <main class="govuk-main-wrapper">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+             <h1 class="govuk-heading-l">
+            Review amount to pay
+
+            </h1>
+
+
+
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+                      <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                        </div>
+
+
+
+        <br>
+        <h2 class="govuk-heading-m">Details entered from claim</h2>
+
+
+        <!-- <h2 class="govuk-heading-m">Grant award details</h2> -->
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+                  <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+        Element
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    British Sign Language (BSL) interpreter
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                  </div>
+
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+        Average hourly rate
+                </dt>
+                <dd class="govuk-summary-list__value">
+        £20
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+                </div>
+        </dl>
+
+
+                        <br>
+
+
+            <!-- <p class="govuk-body">The maximum per amount we will pay for each hour of support on this claim is is £30.</p> -->
+
+
+
+
+            <p class="govuk-body">
+              you can only pay this (The average hourly rate for this claim is £20, the new hours are 20)
+              <!-- (figure is made from +5% tolerance and Hourly rate awarded from grant award) -->
+              <!-- due to easements in place -->
+            </p>
+            <!-- <p class="govuk-body">
+              Cost of this claim:
+              Amount to pay on this claim:
+            </p> -->
+
+
+
+
+
+          <div class="govuk-inset-text">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">£688</p>
+        </div>
+
+        <!-- <p class="govuk-body">The maximum amount we will pay for each hour of support on this claim is £30, £600.00 in total for this claim.</p> -->
+        <!-- <p class="govuk-body">The maximum expected payment for support on this claim is £600.00</p> -->
+
+
+</br>
+                      <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h2 class="govuk-heading-m">
+                            <!-- Is the amount to pay correct?
+                            Do you want to pay? -->
+
+                            <!-- Approve amount to pay? -->
+                            Do you want to pay £688 for this claim?
+                          </h2>
+                        </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="amount-to-pay-1" name="amount-low-no-match-check" type="radio" value="Yes" {{ checked("amount-low-no-match-check", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="amount-to-pay-1">
+                                  Yes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="amount-to-pay-2" name="amount-low-no-match-check" type="radio" value="No~review-claim-no-match/sw-amount-no-match-enter-tab#your-tasks" {{ checked("amount-low-no-match-check", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="amount-to-pay-2">
+                                  No, update amount to pay
+                                </label>
+                              </div>
+
+                          </div>
+
+
+
+            </fieldset>
+
+
+
+          </div>
+        </div>
+
+<input type="hidden" id="easement" name="easement" value="Yes">
+
+          </div>
+                   <button class="govuk-button" data-module="govuk-button">
+                     Save and continue
+                   </button>
+                 </form>
+               </div>
+             </div>
+
+
+                </main>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
