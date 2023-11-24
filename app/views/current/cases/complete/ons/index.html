@@ -193,7 +193,7 @@ disabilities.</h2>
   </select>
 </div>
 </div>
-           <button class="govuk-button" data-module="govuk-button" name="award-dereck" value="complete">
+           <button class="govuk-button" data-module="govuk-button" name="{% if case == "other-cases-4" %}Arlo-Spinka{% endif %}{% if case == "other-cases-2" %}Thomas-King{% endif %}{% if case == "other-cases" %}Sonya-Corkery{% endif %}{% if not case %}Dereck-Smith{% endif %}" value="complete">
 Save and complete application
            </button>
 

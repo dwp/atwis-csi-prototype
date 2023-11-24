@@ -41,18 +41,17 @@
 {% set totalsae  = 2 %}
             Total items of specialist equipment: {{totalsae}} </h1>
 
+            <h2 class="govuk-heading-m">
 
-
+                  Items you have added </h2>
               <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
-
+  <div class="govuk-summary-list__row">
 
               {% for i in [1,2,3,4]-%}
               {% set index = i %}
               {% if data['sae-item-type'+ index]%}
-              <h2 class="govuk-heading-m">
 
-                    Items you have added </h2>
-    <div class="govuk-summary-list__row">
+
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                     {{data['sae-item-type'+ index]}}
                   </dt>
@@ -75,11 +74,11 @@
                       </li>
                     </ul>
                   </dd>
-  </dl>
+</div>
 
                 {% endif %}
     {%- endfor %}
-
+  </dl>
 
 
 
