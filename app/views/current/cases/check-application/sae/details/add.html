@@ -38,7 +38,7 @@
 
 
       <h1 class="govuk-heading-l">
-{% set totalsae  = 2 %}
+{% if phase =='sonay'%}{% set totalsae  = 2 %}{% endif %}
             Total items of specialist equipment: {{totalsae}} </h1>
 
             <h2 class="govuk-heading-m">
