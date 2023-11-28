@@ -9,7 +9,9 @@
 {% block csi %}
 <br>
 
-
+{% if case == 'thomas' %}
+<form action="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-check-tab#your-tasks" method="post" novalidate>
+{% endif %}
 {% if case == 'dereck' %}
 <form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
 {% endif %}
@@ -88,7 +90,12 @@
     </fieldset>
   </div>
            <button class="govuk-button" data-module="govuk-button">
+             {% if case == 'thomas' %}
+             Save and continue
+             {% else %}
             Put claim on hold
+            {% endif %}
+
 <!-- alternative button text: -->
 <!-- Save review date -->
            </button>

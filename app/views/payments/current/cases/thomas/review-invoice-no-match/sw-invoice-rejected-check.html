@@ -1,0 +1,135 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h2 class="govuk-fieldset__heading">
+Check your answers
+        </h2>
+
+
+        <br>
+        <dl class="govuk-summary-list">
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Do any invoices need to be rejected or replaced?
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['company-details']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks">
+
+    Update
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+How many invoices need to be rejected or replaced?
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['sw-invoice-rejected-how-many']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-how-many-tab#your-tasks">
+
+    Update
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Deadline for replacement invoices
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['invoice-deadline-day']}}
+
+            {% if (data['invoice-deadline-month'] =='01') or (data['invoice-deadline-month'] =='1') %} January {% endif%}
+            {% if (data['invoice-deadline-month'] =='02') or (data['invoice-deadline-month'] =='2') %} February  {% endif%}
+            {% if (data['invoice-deadline-month'] =='03') or (data['invoice-deadline-month'] =='3') %} March {% endif%}
+            {% if (data['invoice-deadline-month'] =='04') or (data['invoice-deadline-month'] =='4') %} April {% endif%}
+            {% if (data['invoice-deadline-month'] =='05') or (data['invoice-deadline-month'] =='5') %} May {% endif%}
+            {% if (data['invoice-deadline-month'] =='06') or (data['invoice-deadline-month'] =='6') %} June {% endif%}
+            {% if (data['invoice-deadline-month'] =='07') or (data['invoice-deadline-month'] =='7') %} July {% endif%}
+            {% if (data['invoice-deadline-month'] =='08') or (data['invoice-deadline-month'] =='8') %} August {% endif%}
+            {% if (data['invoice-deadline-month'] =='09') or (data['invoice-deadline-month'] =='9') %} September {% endif%}
+            {% if data['invoice-deadline-month'] =='10' %} October {% endif%}
+            {% if data['invoice-deadline-month'] =='11'%} November {% endif%}
+            {% if data['invoice-deadline-month'] =='12' %} December {% endif%}
+
+            {{data['invoice-deadline-year']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-return-date-tab#your-tasks">
+
+    Update
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+
+
+
+        </dl>
+
+
+        </fieldset>
+        </div>
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
