@@ -6,15 +6,13 @@
 {% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
 
 
-
 {% block csi %}
 <br>
 
 
 
 
-<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-hours-2-tab#your-tasks" method="post" novalidate>
+<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -29,25 +27,33 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h2 class="govuk-fieldset__heading">
-      {{data['sw-invoice-ref-2']}}: add invoice amount
+{{data['sw-invoice-ref-2']}}: reject payment
 
     </h2>
+
   </legend>
 
-  <!-- <div id="ttw-journeys-hint" class="govuk-hint">
-    This number will be used to idetify the rejected innvoice if the customer enquires
-  </div> -->
 
 
-  <input class="govuk-input govuk-input--width-10" id="sw-invoice-cost-2" name="sw-invoice-cost-2" type="text" aria-describedby="sw-hours-hint" value="{{data ['sw-invoice-cost-2'] }}">
+<p class="govuk-body">
+      A valid replacement invoice has not been received by the deadline date.
+      </p>
+
+<div class="govuk-inset-text">
+  This invoice will be removed from the payment calculation.
 </div>
-</div>
-</div>
 
-      </fieldset>
-    </div>
 
-               <button class="govuk-button" data-module="govuk-button">
+
+<!-- TRIGGER -->
+<input type="hidden" id="rejected-close-1" name="rejected-close-1" value="Yes">
+
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
              Save and continue
            </button>
          </form>
