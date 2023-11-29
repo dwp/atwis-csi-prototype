@@ -85,8 +85,8 @@
 {% if data['approve1']=='false' and data['approve-2']=='false' and  data['approve-3']=='true' %}
 {% set totalsae =  data['cost-per-item-3'] | int%}{% endif %}
 
-{% if data['approve1']=='true' and data['approve2']=='false' and not data['approve3'] %}
-{% set totalsae =  data['cost-per-item2'] | int%}{% endif %}
+{% if data['approve1']=='true' and data['approve2']=='false' %}
+{% set totalsae =  data['cost-per-item1'] | int%}{% endif %}
 
 
 
@@ -106,7 +106,7 @@
             {% endif %}
               {% if  data['social-domestic-2']=='Yes' %} <br>{{data['sae-item-type2']}}{% endif %}
                           </dd>
-                          <dd class="govuk-summary-list__value" style="text-align: right;">
+                          <dd class="govuk-summary-list__value" style="text-align: right; width: 8%;">
                   £-{{totalsd}}
                           </dd>
                           </div>

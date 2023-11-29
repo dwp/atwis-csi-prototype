@@ -185,7 +185,7 @@
         <tbody>
 
 
-{% if  data['award-dereck']=='complete'%}{% else %}
+{% if  data['Dereck-Smith']=='complete'%}{% else %}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Dereck Smith</th>
               <!-- <td class="govuk-table__cell"> 	Pan disability</td> -->
@@ -331,6 +331,9 @@
                         <td class="govuk-table__cell"><a href="/current/cases/sonya/cases/claim">Go to case</a></td>
                           <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
                       </tr>
+
+
+                      {% if  data['Thomas-King']=='complete'%}{% else %}
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">  Thomas King</th>
                         <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->
@@ -357,7 +360,7 @@
                              </script></td>
                         <td class="govuk-table__cell"><a href="/current/cases/thomas/cases/claim">Go to case</a></td>
                           <!-- cases/claim-sonya{% if phase == "allocator"%}-allocator{% endif %} -->
-                      </tr>
+                      </tr>{% endif %}
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header"> John Smith</th>
                         <!-- <td class="govuk-table__cell">{{ case.specialism }}</td> -->

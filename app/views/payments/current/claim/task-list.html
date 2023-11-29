@@ -802,7 +802,7 @@ Additional costs
 <!-- SW REJECTED INVOICE NO PATHS -->
 <!-- SW REJECTED INVOICE NO PATHS -->
 
-{% if case == 'thomas' and not data ['additional-costs-scenario']%}
+{% if case == 'tthomas' and not data ['additional-costs-scenario']%}
 {% if data ['company-details'] == 'Yes'%}
 
 
@@ -811,7 +811,7 @@ Additional costs
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
                                 {% if data ['company-details']%}
-                                <a href="/payments/current/cases/thomas/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
 
                 Review rejected invoice: British Sign Language (BSL) interpreter
@@ -827,11 +827,81 @@ Additional costs
 {% endif  %}
 {% endif  %}
 
+</li>
+
+
+{% if case == 'thomas' and not data ['additional-costs-scenario']%}
+{% if data ['company-details'] == 'Yes'%}
+
+
+
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+                                {% if data ['company-details']%}
+                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-1-tab#your-tasks" aria-describedby="claim-completed">
+                                {% endif  %}
+                                {% if data ['company-details'] and data ['sw-invoice-cost-1']%}
+                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-new-details-check-1-tab#your-tasks" aria-describedby="claim-completed">
+                                {% endif  %}
+
+                {% if data ['sw-invoice-ref-1']%}
+                Rejected invoice {{data['sw-invoice-ref-1']}}: Add details
+                {% else  %}
+                Rejected invoice 1: Add details
+                {% endif  %}
+
+                </a>
+                </span>
+
+                <!-- {% if not data['grant-matches-claim-sw']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %} -->
+                {% if data['grant-matches-claim-sw'] and not data ['checked-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['checked-1'] %} <strong class="govuk-tag govuk-tag--orange app-task-list__task-completed" id="grant-matches-claim-completed">On hold</strong>{% endif %}
+
+
+
+
+
+</li>
+
+
+
+
+
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+                                {% if data ['company-details']%}
+                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-2-tab#your-tasks" aria-describedby="claim-completed">
+                                {% endif  %}
+                                {% if data ['company-details'] and data ['sw-invoice-cost-2']%}
+                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-new-details-check-2-tab#your-tasks" aria-describedby="claim-completed">
+                                {% endif  %}
+
+
+                                {% if data ['sw-invoice-ref-2']%}
+                                Rejected invoice {{data['sw-invoice-ref-2']}}: Add details
+                                {% else  %}
+                                Rejected invoice 2: Add details
+                                {% endif  %}
+                </a>
+                </span>
+
+                <!-- {% if not data['grant-matches-claim-sw']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %} -->
+                {% if data['grant-matches-claim-sw'] and not data ['checked-2']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['checked-2'] %} <strong class="govuk-tag govuk-tag--orange app-task-list__task-completed" id="grant-matches-claim-completed">On hold</strong>{% endif %}
+<!-- govuk-tag--orange -->
+
+
+
+
+
+{% endif  %}
+{% endif  %}
 
 
 </ul>
 </li>
-
 
 
 

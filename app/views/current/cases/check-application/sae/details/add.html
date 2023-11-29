@@ -37,24 +37,21 @@
 
 
 
-      <h1 class="govuk-heading-{% if phase == 'sonya'%}m{% else %}l{% endif %}">
-
+      <h1 class="govuk-heading-l">
+{% if phase =='sonay'%}{% set totalsae  = 2 %}{% endif %}
             Total items of specialist equipment: {{totalsae}} </h1>
-
-
 
             <h2 class="govuk-heading-m">
 
                   Items you have added </h2>
-
               <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
-
+  <div class="govuk-summary-list__row">
 
               {% for i in [1,2,3,4]-%}
               {% set index = i %}
               {% if data['sae-item-type'+ index]%}
 
-    <div class="govuk-summary-list__row">
+
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                     {{data['sae-item-type'+ index]}}
                   </dt>
@@ -77,14 +74,74 @@
                       </li>
                     </ul>
                   </dd>
-  </div>
+</div>
 
                 {% endif %}
     {%- endfor %}
+  </dl>
 
 
-</dl>
-  </div>  </div>
+
+  {% if phase == 'sonya'%}
+
+              <h2 class="govuk-heading-m">
+
+                  Items from application </h2>
+
+
+                  <div class="govuk-form-group">
+
+                    <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                          Jaws
+                        </dt>
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+
+      {% if data['social-domestic-'+ phase]=='I am not sure, I need more details'%}Need more details{% else %}
+                          {% if data['approve-1']=='true'%}Added to award{% endif %}
+                            {% if data['approve-1']=='false'%}Not added to award{% endif %}{% endif %}
+                        </dt>
+                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                          <ul class="govuk-summary-list__actions-list">
+                            <li class="govuk-summary-list__actions-list-item">
+                              <a class="govuk-link" href=""><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">  {{data['sae-item-type'+ number]}}</span></a>
+                            </li>
+
+                          </ul>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                          ZoomText
+                        </dt>
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+
+                      {% if data['social-domestic-'+ phase]=='I am not sure, I need more details'%}Need more details{% else %}
+                          {% if data['approve-2']=='true'%}Added to award{% endif %}
+                            {% if data['approve-2']=='false'%}Not added to award{% endif %}{% endif %}
+                        </dt>
+
+                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                          <ul class="govuk-summary-list__actions-list">
+                            <li class="govuk-summary-list__actions-list-item">
+                              <a class="govuk-link" href=""><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">  {{data['sae-item-type'+ number]}}</span></a>
+                            </li>
+                             </ul>
+
+                    </dl>
+</div>
+
+
+
+
+
+
+                  {% endif %}
+
+                </dl>
+                  </div>  </div>
+
 
 
                    <form action="" method="post" novalidate>
