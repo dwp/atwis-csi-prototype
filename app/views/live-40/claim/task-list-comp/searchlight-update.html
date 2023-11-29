@@ -1,0 +1,132 @@
+
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Searchlight
+          </h2>
+          <ul class="app-task-list__items">
+
+<!-- Add National Insurance number from Searchlight task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="  {% if (data['national-insurance-number-change'] or data['found-nino-change']=='No' or data['Searchligh-check']=='No')%}./searchlight-change/national-insurance/check{% else %}/live-40/cases/john/cases/searchlight-change/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                  Check personal details and add National Insurance number
+                </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+            <!-- {% if data['Searchligh']=='Yes and application details match' and not (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">3In Progress</strong>{% endif %} -->
+            {% if data['Searchligh-change']=='No'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In Progress</strong>{% endif %}
+            {% if data['Searchligh-change']=='Yes, but name, date of birth or address do not match'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                    <!-- Completed -->
+            {% if data['Searchligh-change']=='Yes and application details match' and data['found-nino']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+            {% if data['Searchligh-change']=='Yes and application details match' and data['found-nino']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+
+                    <!-- Not started -->
+            {% if not (data['national-insurance-number-change'] or data['found-nino']=='No' or data['Searchligh']=='No') and
+            not data['Searchligh-change']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Update needed</strong>{% endif %}
+            <!-- Status - end -->
+            </li>
+
+
+<!-- appointee task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              <a href="  {% if data['appointee-change']%}searchlight-change/appointee/check{% else %}/live-40/cases/john/cases/searchlight-change/appointee{% endif %}" aria-describedby="Check-for-appointee">
+                  Check for appointee
+                 </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+                    <!-- complete -->
+              {% if data['appointee-change']%}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% else %}
+                   <!-- not started -->
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Update needed</strong>
+              {% endif %}
+              <!-- Status - end -->
+            </li>
+
+
+
+<!-- benefits task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="{% if data['benefits-change']%}/live-40/cases/john/cases/searchlight-change/benefits/check{% else %}
+                ./searchlight-change/benefits/{% endif %}" aria-describedby="benefits-status">
+                Check benefits
+                </a>
+              </span>
+
+              <!-- Status - start -->
+                    <!-- in progress -->
+  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+                    <!-- Completed -->
+          {% if 'No' in data['benefits-change'] or 'Personal Independence Payment' in data['benefits-change']
+          and not data['exceptions']%}  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+          {% else %}
+          {% if data['exceptions']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+          {% if data['exceptions']=='Yes' %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                  <!-- Not started-->
+          {% if not data['exceptions']%}
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Update needed</strong>{% endif %}
+   {% endif %}
+               <!-- Status - end -->
+            </li>
+
+
+
+
+<!-- Update task (if searchlight does not match personal details) -->
+            {% if data['Searchligh-change']=='Yes, but name, date of birth or address do not match'%}
+
+            <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+                <a href="{% if data['searchlight-correct']%}/live-40/cases/update/check{% else %}/live-40/cases/update{% endif %}">    Update personal details</a>
+              </span>
+              {% if data['searchlight-correct']=='Yes' or data['searchlight-correct']=='No' %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+              {% if data['searchlight-correct']=='I need to contact Dereck Smith to confirm'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>{% endif %}
+              {% if not data['searchlight-correct']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+            </li>
+
+
+
+
+
+            {% if data['searchlight-correct']=='No'%}
+            {% if data['searchlight-cis500']=='No'%}
+              <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                   <a href="{% if data['cis500']%}/live-40/cases/cis500/check{% else %}/live-40/cases/cis500{% endif %}">    CIS500</a>
+                </span>
+                {% if data['cis500']=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+                  {% if data['cis500']=='No'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status"> in progress</strong>{% endif %}
+              {% if not data['cis500']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+              </li>
+
+
+        {% endif %}  {% endif %}
+
+
+          {% endif %}
+
+
+
+        </ul>
+        </li>
+
+        </ol>  {% if data['Searchligh'] and
+
+            data ['appointee']
+            and
+            data ['benefits']
+          %}
+  <p>Go to next tab <a href="/live-40/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details">review application</a></p>
+          {% else %}
+
+
+
+        {% endif %}</div>

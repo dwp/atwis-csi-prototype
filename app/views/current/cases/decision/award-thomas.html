@@ -47,7 +47,7 @@
                                     <td class="govuk-table__cell govuk-table__cell--numeric">
     British Sign Language (BSL) interpreter <br>  £{{data['chosen-quote-thomas']}} per hour<br>{% if data['support-worker-hour-per-week']%}{{data['support-worker-hour-per-week']}}{% else %}5{% endif %} hours of support per week for 3 years</td>
     <td class="govuk-table__cell govuk-table__cell--numeric" >
-      {% if data['grant-award-date']=='Another date'%}
+      {% if data['sw-grant-award-date']=='Another date'%}
 
       {{data['sw-start-date-day']}}
 
@@ -93,6 +93,8 @@
 
   £{{totalAward}}</td>
 {% endif %}
+
+
     {% if data['approve-2']=='true' %}                                </tr>
 
                                   <tr class="govuk-table__row">
@@ -100,7 +102,7 @@
                                     <td class="govuk-table__cell govuk-table__cell--numeric">
   Notetaker<br>  £{{data['chosen-quote-thomas-2']}} per hour<br>5 hours of support per week for 3 years </td>
   <td class="govuk-table__cell govuk-table__cell--numeric" >
-    {% if data['grant-award-date']=='Another date'%}
+    {% if data['sw-grant-award-date']=='Another date'%}
 
     {{data['sw-start-date-2-day']}}
 

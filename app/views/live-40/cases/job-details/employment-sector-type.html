@@ -1,0 +1,120 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <div class="govuk-form-group">
+<form action="/live-40/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/employer-size" method="post" novalidate>
+                     <fieldset class="govuk-fieldset">
+                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                         <h2 class="govuk-fieldset__heading">
+                            {% include  "./content/employment-sector.html" %}
+                         </h2>
+                       </legend>
+<div id="dob-hint" class="govuk-hint">Select the option that most closely describes the organisation.</div>
+                       <div class="govuk-radios">
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="employer-sector-type{{phase}}" name="employer-sector-type{{phase}}" type="radio" value="Yes and all of the details match" {{ checked("employer-sector-type"+ phase, "Yes and all of the details match") }}>
+                           <label class="govuk-label govuk-radios__label" for="employer-sector-type">
+                          Government department
+                           </label>
+                         </div>
+
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-sector-type-2" name="employer-sector-type{{phase}}" type="radio" value="Government agency or other public body" {{ checked("employer-sector-type"+ phase, "Yes, but some details do not match") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-sector-type-2">
+                                                  Government agency or other public body
+                                            </label>
+                                          </div>
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-sector-type-3" name="employer-sector-type{{phase}}" type="radio" value="Other public sector – such as a state-funded school or NHS hospital" {{ checked("employer-sector-type"+ phase, "No, Smith Digital Limited has not confirmed job details yet") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-sector-type-3">
+                                            Other public sector – such as a state-funded school or NHS hospital
+                                            </label>
+                                          </div>
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-sector-type-4" name="employer-sector-type{{phase}}" type="radio" value="Charity" {{ checked("employer-sector-type"+ phase, "No, Smith Digital Limited has not confirmed job details yet") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-sector-type-4">
+                                            Charity
+                                            </label>
+                                          </div>
+
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-sector-type-5" name="employer-sector-type{{phase}}" type="radio" value="Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide" {{ checked("employer-sector-type"+ phase, "No, Smith Digital Limited has not confirmed job details yet") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-sector-type-5">
+                                            Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide
+                                            </label>
+                                            <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+
+       </div>
+                                          </div>
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-sector-type-6" name="employer-sector-type{{phase}}" type="radio" value="Private sector: local – such as a start-up or company largely based in one area of the country" {{ checked("employer-sector-type"+ phase, "No, Smith Digital Limited has not confirmed job details yet") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-sector-type-6">
+                                              Private sector: local – such as a start-up or company largely based in one area of the country
+                                            </label>
+                                            <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+
+       </div>
+                                          </div>
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-sector-type-7" name="employer-sector-type{{phase}}" type="radio" value="" {{ checked("employer-sector-type"+ phase, "No, Smith Digital Limited has not confirmed job details yet") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-sector-type-7">
+                                            Franchise
+                                            </label>
+                                          </div>
+
+<div class="govuk-radios__divider">or</div>
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="employer-sector-type-8" name="employer-sector-type{{phase}}" type="radio" value="Other voluntary or private sector organisation" {{ checked("employer-sector-type"+ phase, "No, Smith Digital Limited has not confirmed job details yet") }}>
+                                            <label class="govuk-label govuk-radios__label" for="employer-sector-type-8">
+                                            Other voluntary or private sector organisation
+                                            </label>
+                                          </div>
+
+                       </div>
+
+                     </fieldset>
+                   </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

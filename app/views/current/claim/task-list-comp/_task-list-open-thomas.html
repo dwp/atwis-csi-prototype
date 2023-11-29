@@ -63,20 +63,12 @@
     <li>
 
 
-{% if not data['wpa'+ phase]%}
-        <li class="app-task-list__item">
-        <span class="app-task-list__task-name">
-
-                Add information about the employer
-
-        </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
-{% else %}
 
 
 
 
-{% if data['wpa'+ phase]=='No'%}
+
+
 <li>
 
 
@@ -95,25 +87,9 @@
 {% if not data['employer-sector'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
 {% if data ['employer-sector'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
 </li>
-{% else %}
-
-{% if data['address-of-wpa'+ phase]%}
-<li>
 
 
-    <li class="app-task-list__item">
-      <span class="app-task-list__task-name">
-<a href="
 
-{% if data ['employer-sector'+ phase]%}/current/cases/thomas/cases/job-details/check{% else %}/current/cases/thomas/cases/job-details/employment-sector{% endif %}" aria-describedby="job-status">
-
-    Add information about the employer
-</a>
-      </span>
-{% if data['employer-sector'+ phase]=='Yes' and data['employer-sector-type'+ phase] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% if not data['employer-sector'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
-{% if data ['employer-sector'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
-</li>
 
 
 
@@ -153,19 +129,9 @@
 
 
 
-{% else %}
-<li class="app-task-list__item">
-<span class="app-task-list__task-name">
-
-        Add information about the employer
-
-</span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
 
 
-{% endif %}
-{% endif %}
-{% endif %}
+
 
 
 
