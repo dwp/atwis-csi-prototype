@@ -25,10 +25,13 @@
   <fieldset class="govuk-fieldset">
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <!-- <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">{{data['sw-invoice-ref-1']}}</span>
+      No replacement received by deadline date
+    </h1> -->
 
     <h2 class="govuk-fieldset__heading">
-{{data['sw-invoice-ref-2']}}: reject payment
-
+{{data['sw-invoice-ref-1']}} :no replacement received by deadline date  
     </h2>
 
   </legend>
@@ -36,12 +39,12 @@
 
 
 <p class="govuk-body">
-      A valid replacement invoice has not been received by the deadline date.
+      This payment will be rejected and invoice removed from payment calculation. 
       </p>
 
-<div class="govuk-inset-text">
+<!-- <div class="govuk-inset-text">
   This invoice will be removed from the payment calculation.
-</div>
+</div> -->
 
 
 
@@ -54,7 +57,7 @@
     </fieldset>
   </div>
            <button class="govuk-button" data-module="govuk-button">
-             Save and continue
+             Update calculation
            </button>
          </form>
        </div>
