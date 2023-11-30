@@ -42,14 +42,14 @@
                 </div>
 
 
-                <h2 class="govuk-heading-m">Previous invoice details</h2>
+                <h2 class="govuk-heading-m">Original invoice details</h2>
 
 
                 <dl class="govuk-summary-list">
 
                   <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-        Invoice start date
+        Start date
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{data['sw-invoice-start-day-1']}}
@@ -73,7 +73,7 @@
 
                   <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-        Invoice end date
+        End date
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{data['sw-invoice-end-day-1']}}
@@ -107,7 +107,7 @@
 
                   <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-        Invoice amount
+        Cost of support
                   </dt>
                   <dd class="govuk-summary-list__value">
                   £{{data['sw-invoice-cost-1']}}
@@ -163,15 +163,15 @@
     </div> -->
 
 
-    <!-- <div class="govuk-form-group">
+    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h2 class="govuk-heading-m">
-            Do the dates, amount and hours of support on the replacment invoice match the previous invoice details?
+            Do the dates, cost, and hours of support match the original invoice?
           </h2>
         </legend>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="sw-replacement-invoice-1-1" name="sw-replacement-invoice" type="radio" value="Yes~review-invoice-no-match/sw-invoice-rejected-review-1-tab#your-tasks" {{ checked("sw-replacement-invoice", "Yes") }}>
+          <input class="govuk-radios__input" id="sw-replacement-invoice-1-1" name="sw-replacement-invoice" type="radio" value="Yes~review-invoice-no-match/sw-invoice-rejected-review-saved-location-2-tab#your-tasks" {{ checked("sw-replacement-invoice", "Yes") }}>
           <label class="govuk-label govuk-radios__label" for="sw-replacement-invoice-1-1">
             Yes
           </label>
@@ -182,22 +182,20 @@
           <label class="govuk-label govuk-radios__label" for="sw-replacement-invoice-2-1">
             No
           </label>
-        </div> -->
+        </div>
+      </div>
 
 
 
 
 
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h2 class="govuk-heading-m">
                 Do the dates, amount and hours of support on the replacment invoice match the previous invoice details?
               </h2>
             </legend>
-            <!-- <div id="countries-hint" class="govuk-hint">
-              Select all countries that apply
-            </div> -->
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="sw-replacement-invoice-1-1" name="sw-replacement-invoice-1" type="checkbox" value="Yes" {{ checked("sw-replacement-invoice-1", "Yes") }}>
@@ -206,7 +204,6 @@
                 </label>
               </div>
               <div class="govuk-checkboxes__divider">or</div>
-
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="sw-replacement-invoice-1-2" name="sw-replacement-invoice-1" type="checkbox" value="No dates do not match" {{ checked("sw-replacement-invoice-1", "No dates do not match") }}>
                 <label class="govuk-label govuk-checkboxes__label" for="sw-replacement-invoice-1-2">
@@ -227,7 +224,7 @@
               </div>
             </div>
           </fieldset>
-        </div>
+        </div> -->
 
 
 <!-- TRIGGER -->
