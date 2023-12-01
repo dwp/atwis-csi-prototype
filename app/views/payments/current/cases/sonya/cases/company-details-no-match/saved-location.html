@@ -105,6 +105,30 @@ Amount on invoice is the same:
                     </div>
 {% endif %}
 
+{% if case == 'thomas' %}
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Did you save the replacement invoice in SharePoint?
+                      </h1>
+                      <br>
+                    </legend>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~thomas/review-invoice-no-match/sw-invoice-rejected-review-check-2-tab#your-tasks" {{ checked("invoice-saved", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="invoice-saved-1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="invoice-saved-2" name="invoice-saved" type="radio" value="No~sonya/cases/company-details-no-match/saved-location-other-tab#your-tasks" {{ checked("invoice-saved", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="invoice-saved-2">
+                          No
+                        </label>
+                      </div>
+                    </div>
+{% endif %}
 
 
         </div>

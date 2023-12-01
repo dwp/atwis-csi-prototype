@@ -1810,7 +1810,7 @@
       {% endif %}
 
 
-      {% if case == 'thomas' %}
+{% if case == 'thomas' %}
 
 
       <br>
@@ -1933,7 +1933,7 @@
                   Hours of support
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  20
+                  40
                   <!-- {{data['sw-hours']}} -->
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -1954,7 +1954,7 @@
                   Claim total
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £600
+                  £1200
                 </dd>
                 <dd class="govuk-summary-list__actions">
                 </dd>
@@ -2030,7 +2030,7 @@
                   Total amount to pay
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  £600
+                  £1200
 
                 </dd>
                 <dd class="govuk-summary-list__actions">
@@ -2041,6 +2041,237 @@
             {% endif %}
 
 
+
+<!-- SW END TO END TESTING -->
+            {% if case == 'thomas end to end testing' %}
+
+
+                  <br>
+                  <h2 class="govuk-heading-m">Payee details</h2>
+
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Payee name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{data['sop-payee-name']}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <!-- <a class="govuk-link" href="#">
+                                Change<span class="govuk-visually-hidden"> name</span>
+                              </a> -->
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Site code
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{data['sop-site-code-1']}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <!-- <a class="govuk-link" href="#">
+                                Change<span class="govuk-visually-hidden"> date of birth</span>
+                              </a> -->
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              SOP supplier number
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{data['sop-supplier-number-1']}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <!-- <a class="govuk-link" href="#">
+                                Change<span class="govuk-visually-hidden"> address</span>
+                              </a> -->
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                          Invoice numbers
+
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{data['invoice-number-1']}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <!-- <a class="govuk-link" href="#">
+                                Change<span class="govuk-visually-hidden"> contact details</span>
+                              </a> -->
+                            </dd>
+                          </div>
+                        </dl>
+
+                        <h2 class="govuk-heading-m">Payment calculation</h2>
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Claim start date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{data['sw-claim-start-day']}}
+
+                              {% if (data['sw-claim-start-month'] =='01') or (data['sw-claim-start-month'] =='1') %} January {% endif%}
+                              {% if (data['sw-claim-start-month'] =='02') or (data['sw-claim-start-month'] =='2') %} February  {% endif%}
+                              {% if (data['sw-claim-start-month'] =='03') or (data['sw-claim-start-month'] =='3') %} March {% endif%}
+                              {% if (data['sw-claim-start-month'] =='04') or (data['sw-claim-start-month'] =='4') %} April {% endif%}
+                              {% if (data['sw-claim-start-month'] =='05') or (data['sw-claim-start-month'] =='5') %} May {% endif%}
+                              {% if (data['sw-claim-start-month'] =='06') or (data['sw-claim-start-month'] =='6') %} June {% endif%}
+                              {% if (data['sw-claim-start-month'] =='07') or (data['sw-claim-start-month'] =='7') %} July {% endif%}
+                              {% if (data['sw-claim-start-month'] =='08') or (data['sw-claim-start-month'] =='8') %} August {% endif%}
+                              {% if (data['sw-claim-start-month'] =='09') or (data['sw-claim-start-month'] =='9') %} September {% endif%}
+                              {% if data['sw-claim-start-month'] =='10' %} October {% endif%}
+                              {% if data['sw-claim-start-month'] =='11'%} November {% endif%}
+                              {% if data['sw-claim-start-month'] =='12' %} December {% endif%}
+
+                              {{data['sw-claim-start-year']}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Claim end date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{data['sw-claim-end-day']}}
+
+                              {% if (data['sw-claim-end-month'] =='01') or (data['sw-claim-end-month'] =='1') %} January {% endif%}
+                              {% if (data['sw-claim-end-month'] =='02') or (data['sw-claim-end-month'] =='2') %} February  {% endif%}
+                              {% if (data['sw-claim-end-month'] =='03') or (data['sw-claim-end-month'] =='3') %} March {% endif%}
+                              {% if (data['sw-claim-end-month'] =='04') or (data['sw-claim-end-month'] =='4') %} April {% endif%}
+                              {% if (data['sw-claim-end-month'] =='05') or (data['sw-claim-end-month'] =='5') %} May {% endif%}
+                              {% if (data['sw-claim-end-month'] =='06') or (data['sw-claim-end-month'] =='6') %} June {% endif%}
+                              {% if (data['sw-claim-end-month'] =='07') or (data['sw-claim-end-month'] =='7') %} July {% endif%}
+                              {% if (data['sw-claim-end-month'] =='08') or (data['sw-claim-end-month'] =='8') %} August {% endif%}
+                              {% if (data['sw-claim-end-month'] =='09') or (data['sw-claim-end-month'] =='9') %} September {% endif%}
+                              {% if data['sw-claim-end-month'] =='10' %} October {% endif%}
+                              {% if data['sw-claim-end-month'] =='11'%} November {% endif%}
+                              {% if data['sw-claim-end-month'] =='12' %} December {% endif%}
+
+                              {{data['sw-claim-end-year']}}
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Hours of support
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              20
+                              <!-- {{data['sw-hours']}} -->
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Hourly rate
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              £30
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Claim total
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              £600
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+
+            {% if data ['additional-costs-scenario']%}
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Total additional costs
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              £600
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+            {% endif %}
+
+                        </dl>
+
+
+
+                        <!-- <h2 class="govuk-heading-m">Cost share</h2>
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Employer threshold
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            £500
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Employer threshold left after this claim
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            £190.49
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          </dd>
+                        </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              20% cost share
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              £0.00
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Total cost share deductions
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              £309.51
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+                        </dl> -->
+
+
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Total amount to pay
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              £600
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                          </div>
+                        </dl>
+
+                        {% endif %}
 
 
 

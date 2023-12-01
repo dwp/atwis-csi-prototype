@@ -61,7 +61,7 @@
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-Invoice referance number
+Reference number
           </dt>
           <dd class="govuk-summary-list__value">
           {{data['sw-invoice-ref-1']}}
@@ -69,7 +69,7 @@ Invoice referance number
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks">
 
-    Update
+    Change
             <span class="govuk-visually-hidden">amount to pay</span>
             </a>
           </dd>
@@ -78,7 +78,7 @@ Invoice referance number
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-Invoice start date
+Start date
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['sw-invoice-start-day-1']}}
@@ -101,7 +101,7 @@ Invoice start date
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-return-date-tab#your-tasks">
 
-    Update
+    Change
             <span class="govuk-visually-hidden">amount to pay</span>
             </a>
           </dd>
@@ -109,7 +109,7 @@ Invoice start date
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-Invoice end date
+End date
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['sw-invoice-end-day-1']}}
@@ -132,7 +132,23 @@ Invoice end date
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-return-date-tab#your-tasks">
 
-    Update
+    Change
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Hours of support
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['sw-invoice-hours-1']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-hours-1-tab#your-tasks">
+
+    Change
             <span class="govuk-visually-hidden">amount to pay</span>
             </a>
           </dd>
@@ -141,7 +157,7 @@ Invoice end date
 
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-Invoice amount
+Cost of support
           </dt>
           <dd class="govuk-summary-list__value">
           £{{data['sw-invoice-cost-1']}}
@@ -149,27 +165,12 @@ Invoice amount
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-cost-1-tab#your-tasks">
 
-    Update
+    Change
             <span class="govuk-visually-hidden">amount to pay</span>
             </a>
           </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Hours of support
-          </dt>
-          <dd class="govuk-summary-list__value">
-          £{{data['sw-invoice-hours-1']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-hours-1-tab#your-tasks">
-
-    Update
-            <span class="govuk-visually-hidden">amount to pay</span>
-            </a>
-          </dd>
-          </div>
 
 
         </dl>
@@ -184,29 +185,29 @@ Invoice amount
                       <fieldset class="govuk-fieldset">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                           <h2 class="govuk-heading-m">
-                            Place the claim on hold until replacment invoice is recived?
+                            Have you received a valid replacement invoice?
                           </h2>
                         </legend>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sw-hold-invoice-1-1" name="sw-hold-invoice" type="radio" value="Yes~claim-thomas#your-tasks" {{ checked("sw-hold-invoice", "Yes") }}>
-                            <label class="govuk-label govuk-radios__label" for="sw-hold-invoice-1-1">
+                            <input class="govuk-radios__input" id="sw-hold-1-invoice-1" name="sw-hold-1-invoice" type="radio" value="Yes~review-invoice-no-match/sw-invoice-rejected-review-1-tab#your-tasks" {{ checked("sw-hold-1-invoice", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="sw-hold-1-invoice-1">
                               Yes
                             </label>
                           </div>
                           <div class="govuk-radios__divider">or</div>
-
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sw-hold-invoice-2-1" name="sw-hold-invoice" type="radio" value="No~review-invoice-no-match/sw-invoice-rejected-review-1-tab#your-tasks" {{ checked("sw-hold-invoice", "No I have a valid replacmennt invoice") }}>
-                            <label class="govuk-label govuk-radios__label" for="sw-hold-invoice-2-1">
-                              No I have a valid replacmennt invoice
-                            </label>
-                          </div>
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sw-hold-invoice-3-1" name="sw-hold-invoice" type="radio" value="No" {{ checked("sw-hold-invoice", "No I have not received a valid replacement invoice") }}>
-                            <label class="govuk-label govuk-radios__label" for="sw-hold-invoice-3-1">
-                              No I have not received a valid replacement invoice
+                            <input class="govuk-radios__input" id="sw-hold-1-invoice-3" name="sw-hold-1-invoice" type="radio" value="No~claim-thomas#your-tasks" {{ checked("sw-hold-1-invoice", "No, put the claim on hold") }}>
+                            <label class="govuk-label govuk-radios__label" for="sw-hold-1-invoice-3">
+                              No, put the claim on hold
                             </label>
                   </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sw-hold-1-invoice-2" name="sw-hold-1-invoice" type="radio" value="No~review-invoice-no-match/sw-invoice-rejected-close-tab#your-tasks" {{ checked("sw-hold-1-invoice", "No, the deadline date has passed") }}>
+                            <label class="govuk-label govuk-radios__label" for="sw-hold-1-invoice-2">
+                              No, the deadline date has passed
+                            </label>
+                          </div>
                 </div>
 
 <!-- TRIGGER -->
