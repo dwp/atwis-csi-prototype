@@ -113,15 +113,55 @@
           {% endif %}
 
 
+          {% if data['Searchligh'] and
 
+             data ['appointee']
+             and
+             data ['benefits'] %}
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+               <a href="{% if data['disc']%}/current/cases/disc/check{% else %}/current/cases/disc{% endif %}">    Check DiSC</a>
+            </span>
+            {% if data['disc-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+
+              {% if data['disc-check']=='Yes'%}
+
+               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status"> in progress</strong>
+
+
+
+
+
+
+               {% endif %}
+          {% if not data['disc-check']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+          </li>
+          {% else %}
+          <li class="app-task-list__item">
+    
+              <span class="app-task-list__task-name">
+               Check DiSC
+            </span>
+
+         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+          </li>
+
+
+          {% endif %}
         </ul>
         </li>
 
-        </ol>  {% if data['Searchligh'] and
+        </ol>
+
+
+
+         {% if data['Searchligh'] and
 
             data ['appointee']
             and
             data ['benefits']
+            and
+            data ['disc-check']
           %}
   <p>Go to next tab <a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details">review application</a></p>
           {% else %}
