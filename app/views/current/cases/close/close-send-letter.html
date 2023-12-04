@@ -1,0 +1,205 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">Send a letter to the applicant</h1>
+
+<form action="closed-case" method="post" novalidate="">
+
+
+
+
+
+
+
+<p>Download and complete <strong>ATW05NARL Application Rejection letter</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+<a href="/sprint-13/agreed/intranet/letters" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" target="_blank" rel="noopener">
+  Get the letter
+</a>
+
+
+<table class="govuk-table">
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header govuk-!-width-one-third"></th>
+
+      <th scope="col" class="govuk-table__header govuk-!-width-two-thirds"></th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <th scope="row" class="govuk-table__header">Applicant name</th>
+
+
+
+
+          <td class="govuk-table__cell">Thomas Brown</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <th scope="row" class="govuk-table__header">Application date</th>
+
+
+
+
+          <td class="govuk-table__cell">6 January 2020</td>
+
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+
+
+
+          <th scope="row" class="govuk-table__header">Reference</th>
+
+
+
+
+          <td class="govuk-table__cell">ATW34593DE</td>
+
+
+        </tr>
+
+
+  </tbody>
+</table>
+
+
+<p>Send the letter to the following address:</p>
+
+
+
+
+<div class="govuk-inset-text">
+
+
+  Thomas Brown <br>
+  14 Kings Road <br>
+  Birmingham <br>
+  Midlands  <br>
+  B1 1EQ
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+    Have you printed and sent the letter?
+
+  </legend>
+
+
+  <div class="govuk-radios govuk-radios--inline">
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="yes" name="asked-info-email" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="yes">
+        Yes
+      </label>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no" name="asked-info-email" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="no">
+        No
+      </label>
+
+        </div>
+
+
+
+
+  </div>
+
+
+</fieldset>
+
+
+</div>
+
+
+
+
+
+<!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+</form>
+
+
+{% endblock %}
