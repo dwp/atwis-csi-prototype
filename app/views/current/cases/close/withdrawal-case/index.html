@@ -1,7 +1,7 @@
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
-{% set hideback = "true" %}
+
 
 
 {% extends folder + "/claim/_CSIBASE.html" %}
@@ -10,9 +10,9 @@
 
 <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Reject the case</h1>
+    <h1 class="govuk-heading-xl">Withdrawal the case</h1>
 
-<form action="close-send-letter" method="post" novalidate="">
+<form action="/current/cases/close/withdrawal-case/close-send-letter" method="post" novalidate="">
 
 
 
@@ -24,7 +24,7 @@
 
 <div class="govuk-form-group">
   <label class="govuk-label" for="close-reason">
-    Reason for rejecting the case
+Details for withdrawing the case
   </label>
 
 
