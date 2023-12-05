@@ -101,38 +101,42 @@
 
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-      Have you printed and sent the letter?
+      Have you sent the letter?
 
     </legend>
 
 
-    <div class="govuk-radios govuk-radios--inline">
+    <div class="govuk-radios ">
 
 
 
 
+
+
+
+
+
+
+    <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="yes" name="asked-info-email" type="radio" value="yes~/current/cases/complete/reject">
-            <label class="govuk-label govuk-radios__label" for="yes">
-          Yes
-        </label>
-
+            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="yes~/current/cases/complete/reject" aria-describedby="signIn-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn">
+            Yes
+            </label>
+            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          This will remove Dereck Smiths from your cases.
+            </div>
           </div>
-
-
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="no" name="asked-info-email" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
+            <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="no~/current/cases/arlo/cases/claim#application-summary" aria-describedby="signIn-2-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn-2">
           No
-        </label>
-
+            </label>
+            <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+This will return you to application summary. Wil remain in your cases. 
+            </div>
           </div>
-
-
-
-
-    </div>
-
+        </div>
 
   </fieldset>
 
