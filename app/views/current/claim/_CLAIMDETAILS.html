@@ -249,8 +249,8 @@ data-module="govuk-notification-banner">
 
 </div></div>
   <h2 class="govuk-heading-l">Case history</h2>
-<p><a href="/current/cases/close/reject-case"> Reject the case</a></p>
-<p><a href="/current/cases/close/withdrawal-case"> Withdraw the case</a></p>
+<p><a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/reject-case"> Reject the case</a></p>
+<p><a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/withdrawal-case"> Withdraw the case</a></p>
 <br>
 {% if phase == "arlo"  %}{% include  "../claim/timelines/timeline-john.html" %}{% endif %}
 {% if phase == "sonya"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}

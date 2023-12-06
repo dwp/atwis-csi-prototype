@@ -11,7 +11,7 @@
 <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl">Send an Application Rejection letter to Dereck Smith</h1>
+      <h1 class="govuk-heading-xl">Send an Application Rejection letter to {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}</h1>
 
   <form action="" method="post" novalidate="">
 
@@ -48,7 +48,7 @@
       Full  name
       </dt>
       <dd class="govuk-summary-list__value">
-        Dereck Smith
+      {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
       </dd>
       <dd class="govuk-summary-list__actions">
 
@@ -119,21 +119,21 @@
 
     <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="yes~/current/cases/complete/reject" aria-describedby="signIn-item-hint">
+            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="yes~/current/cases/{%if phase %}{{phase}}/cases/{% endif %}complete/reject" aria-describedby="signIn-item-hint">
             <label class="govuk-label govuk-radios__label" for="signIn">
             Yes
             </label>
             <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          This will remove Dereck Smith from your cases.
+          This will remove {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} from your cases.
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="no~/current/cases/claim#application-summary" aria-describedby="signIn-2-item-hint">
+            <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="no~/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#application-summary" aria-describedby="signIn-2-item-hint">
             <label class="govuk-label govuk-radios__label" for="signIn-2">
           No
             </label>
             <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-This will keep Dereck Smith in your cases and return you to application summary.
+This will keep {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} in your cases and return you to application summary.
             </div>
           </div>
         </div>

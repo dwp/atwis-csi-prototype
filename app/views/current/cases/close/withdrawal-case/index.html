@@ -12,7 +12,7 @@
 
     <h1 class="govuk-heading-xl">Withdraw the case</h1>
 
-<form action="/current/cases/close/withdrawal-case/close-send-letter" method="post" novalidate="">
+<form action="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/withdrawal-case/close-send-letter" method="post" novalidate="">
 
 
 
