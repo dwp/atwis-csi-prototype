@@ -56,7 +56,7 @@ module.exports = {
 'Searchligh' : "Yes and application details match",
 'found-nino' : "Yes",
 'national-insurance-number' : "AB 123456 C",
-// 'appointee' : "No",
+'appointee' : "No",
 'benefits' : "No",
 'benefits-change' : "",
 'condition-checkthomas' : "No",
