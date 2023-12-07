@@ -31,11 +31,10 @@
 
 
 
-
-<p class="govuk-body"> <a href="https://intranet.dwp.gov.uk/manual/access-work/40-customer-content-portal-ccp">Check guidance on using the Customer Content Portal (CCP) (opens in a new tab)</a>  to complete and send letters.            </p>
-<p class="govuk-body"><a href="https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH" class="govuk-link govuk-link--no-visited-state" target="_blank">Save a copy of letters in Sharepoint (opens in a new tab)</a>  </p>
-
-
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="https://intranet.dwp.gov.uk/manual/access-work/40-customer-content-portal-ccp">Check guidance on using the Customer Content Portal (CCP) (opens in a new tab)</a>  to complete and send letters.         </li>
+  <li><a href="https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH" class="govuk-link govuk-link--no-visited-state" target="_blank">Save a copy of letters in Sharepoint (opens in a new tab)</a>  </li>
+</uL>
 
 
 
@@ -118,7 +117,7 @@
 
   <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="yes~/current/cases/complete/reject" aria-describedby="signIn-item-hint">
+          <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="yes~/current/cases/{%if phase %}{{phase}}/cases/{% endif %}complete/withdrawal" aria-describedby="signIn-item-hint">
           <label class="govuk-label govuk-radios__label" for="signIn">
           Yes
           </label>
@@ -127,7 +126,7 @@
           </div>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="no~/current/cases/arlo/cases/claim#application-summary" aria-describedby="signIn-2-item-hint">
+          <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="no~/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#application-summary" aria-describedby="signIn-2-item-hint">
           <label class="govuk-label govuk-radios__label" for="signIn-2">
         No
           </label>
