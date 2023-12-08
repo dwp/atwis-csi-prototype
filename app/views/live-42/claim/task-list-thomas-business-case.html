@@ -1,0 +1,355 @@
+
+{% for case in data['priority-cases'] %}
+
+
+{% if not totalcomplete %}
+  {% set totalcomplete = 0 %}
+  {% endif %}
+
+  {% if not totaljob %}
+    {% set totaljob = 0 %}
+    {% endif %}
+
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if data['wpa'+ phase]=='No'  %}
+      {% set totaljob = totaljob + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if data['wpa'+ phase]=='Yes' and data['others-wpa'+ phase]  %}
+      {% set totaljob = totaljob + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+{% for i in [1] -%}
+ {% set contactindex = i %}
+  {% if 'Completed and sent letter ATW01CL' in data['notification'+ phase]
+  %}
+  {% set totalcomplete = totalcomplete + 1 %}
+{% endif %}
+  {%- endfor %}
+
+  {% for i in [1] -%}
+   {% set contactindex = i %}
+    {% if  'Completed and sent letter ATW02EL' in data['notification'+ phase]
+    %}
+    {% set totalcomplete = totalcomplete + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if  'Sent any attachments' in data['notification'+ phase]
+      %}
+      {% set totalcomplete = totalcomplete + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+  {% for i in [1] -%}
+   {% set contactindex = i %}
+    {% if
+    'Saved copy of letters and any attachments to Sharepoint' in data['notification'+ phase]
+    %}
+    {% set totalcomplete = totalcomplete + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l"> Prepare business case</h2>
+
+      <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
+
+
+{% if data['Searchligh']=='No'%}
+<p >
+<a href="{% if not data['_do_1']%}/live-42/cases/contact/1/how-do-you-want-to-contact{% else %}/live-42/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+
+</a>
+</p>
+
+<!-- <div class="govuk-inset-text">
+<p>  You need to contact Dereck Smith.  </p>
+
+</div> -->
+
+<br>
+{% else %}
+
+
+{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')
+%}
+
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing appointee task.</div>
+        {% endif %}
+        {% endif %}
+
+
+
+
+
+  {% if data['Searchligh'] and
+
+    data ['condition-check'+ phase]
+    and
+    data ['job-deatils-check'+ phase]
+    and
+data['sae-checkthomas'] and
+    data ['contact-check'+ phase]
+
+    and
+    data ['quotes-check-2'+ phase]
+    and
+    data ['appointee']
+    and
+    data ['benefits']
+  %}<ol class="app-task-list">
+    {% include  "../claim/task-list-comp/_task-list-open-thomas.html" %}
+  {% else %}
+
+<ol class="app-task-list">
+  <li>
+    <h2 class="app-task-list__section">
+      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
+    </h2>
+    <ul class="app-task-list__items">
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+
+        Confirm whether workplace assessment is needed
+
+    </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
+
+
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+
+                   Add information about the employer
+
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+            </li>
+
+
+
+
+
+{% endif %}
+
+          </ul>
+        </li>
+
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">4. </span> Element
+        </h2>
+        {% if not elementAdd %}
+          {% set elementAdd = 0 %}
+          {% endif %}
+
+      {% if data['wpathomas']=='Yes'%}
+        {% for i in [1] -%}
+         {% set contactindex = i %}
+          {% if data['report'] %}
+          {% set elementAdd = elementAdd + 1 %}
+        {% endif %}
+          {%- endfor %}
+      {% endif %}
+      {% if data['wpathomas']=='No'%}
+        {% for i in [1] -%}
+         {% set contactindex = i %}
+          {% if data['employer-cost-sharethomas'] %}
+          {% set elementAdd = elementAdd + 1 %}
+        {% endif %}
+          {%- endfor %}
+      {% endif %}
+
+
+
+
+{% if data['employer-size'+ phase] and
+data['wpa'+ phase]  %}
+    {% include  "../claim/task-list-comp/_task-list-element-thomas.html" %}{% else %}
+ <ul class="app-task-list__items">
+
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+
+               Support worker: add or change support
+
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+
+
+
+
+          <br> <form class="" action="/live-42/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
+           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+           Add new elements
+           </button></form>
+
+
+
+
+      </ul>{% endif %}
+
+      {% if data['approve-1']=='true' and data['approve-2']=='true'%}
+
+      {% if data['support-worker-hour-per-week']%}
+      {% set totalAward =  (((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4))  * 156  %}
+      {% else %}
+      {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
+      {% endif %}
+
+
+   {% if data['approve-1']=='true' and data['approve-2']=='false'%}
+   {% if data['support-worker-hour-per-week']%}
+   {% set totalAward =  ((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4)  * 156  %}
+
+   {% else %}
+   {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+   {% endif %}
+
+
+   {% if data['approve-1']=='false' and data['approve-2']=='true'%}
+   {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}
+   {% endif %}
+
+   {% if data['approve-1']=='true' and not data['approve-2']%}
+   {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}
+   {% endif %}
+{% if totalAward < 10000 %}
+      <h2 class="govuk-heading--m">Award is under approval limits</h2>
+
+      <p>You do not need to send this award to anyone else for approval. </p>
+
+    <br>
+{% endif %}
+
+{% if totalAward > 10000 %}
+      <h2 class="govuk-heading--m">Award is over approval limits</h2>
+<script>
+  const nunjucks = require('nunjucks');
+  const env = new nunjucks.Enviroment();
+
+  env.addFilter('formatNumber'), function (value) {
+    return value.toLocaleString();
+  });
+  </script>
+      <p>You will need to get approval from a appropriate approver.  </p>
+<div class="govuk-inset-text">Total award £{{totalAward }} <br><br>Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
+    <br>
+{% endif %}
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Award decision
+          </h2>
+
+
+
+
+          {% if not data['chosen-quote-thomas'] and not 'mental health support' in data['elements'] %}
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+               Review and confirm award summary
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Decision letters
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+            </li>
+    {% endif %}
+{% if 'Mental health support' in data['elements']%}
+    {% if  data['chosen-quote-thomas']  and not data['mhss-support']%}
+
+    <ul class="app-task-list__items">
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+         Review and confirm award summary
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+      </li>
+      <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+          Decision letters
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+      </li>
+  {% endif %}
+  {% endif %}
+
+{% if data['chosen-quote-thomas'] and not 'Mental health support' in data['elements'] %}
+
+  {% include  "../claim/task-list-comp/_task-list-decision-thomas.html" %}
+
+  {% endif  %}
+
+
+
+
+  {% if data['chosen-quote-thomas'] and  'Mental health support' in data['elements'] %}
+{% if  data['mhss-support']=='I am waiting for an answer' or data['mhss-support']=='I have not discussed it with Thomas King yet'%}  <ul class="app-task-list__items">
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+       Review and confirm award summary
+      </span>
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    </li>
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+        Decision letters
+      </span>
+      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+    </li>{% else %}
+  {% if   (data['mhss-support']=='Yes' and data['mhss-referral']) or (data['mhss-support']=='No') %}
+    {% include  "../claim/task-list-comp/_task-list-decision-thomas.html" %}  {% endif  %}
+    {% endif  %}
+    {% endif  %}
+
+
+
+
+
+        </li>
+      </ol>
+
+
+
+
+
+      {% if data['wpa'+ phase]=='No'%}
+    {% if totalcomplete > 2 and
+    data['award'+ phase]%}
+<form action="/live-42/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+       <button class="govuk-button" data-module="govuk-button">
+      Confirm award
+      </button>{% endif %}
+{% endif %}
+
+{% if data['wpa'+ phase]=='Yes'%}
+{% if totalcomplete == 4 and
+data['award'+ phase]%}
+<form action="/live-42/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+ <button class="govuk-button" data-module="govuk-button">
+  Confirm award
+</button>{% endif %}
+{% endif %}
+  </div>
+
+</div>
+{% endfor %}

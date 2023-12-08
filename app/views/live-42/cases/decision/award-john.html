@@ -1,0 +1,186 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+<form action="/live-42/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                   {% include  "live-42/cases/decision/content/under-25.html" %}
+                 </h1>
+               </legend>
+
+
+               <table class="govuk-table">
+                 <caption class="govuk-table__caption govuk-table__caption--m">Award summary</caption>
+                 <thead class="govuk-table__head">
+                   <tr class="govuk-table__row">
+                     <th scope="col" class="govuk-table__header">Support type</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Cost</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Start date</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                  <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Travel to and from work</th>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric">
+    Taxi <br>{% if data['travelling-to-and-from-work-how-many-journeys-taxi']%}{{data['travelling-to-and-from-work-how-many-journeys-taxi']}}{% else %}4{% endif %} journey per week for 3 years<br>£{{ (data['cost-per-journey'] | int) }} per journey
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" >
+  £{% if data['travelling-to-and-from-work-how-many-journeys-taxi']%}{{ ((data['cost-per-journey'] | int) * data['travelling-to-and-from-work-how-many-journeys-taxi']) * 156 }}{% else %}{{ ((data['cost-per-journey'] | int) * 4) * 156 }}{% endif %}
+<br>
+</td>  <td class="govuk-table__cell govuk-table__cell--numeric" >
+{% if data['grant-award-date']=='Another date'%}
+
+{{data['ttw-start-date-day']}}
+
+{% if (data['ttw-start-date-month'] =='01') or (data['ttw-start-date-month'] =='1') %} January {% endif%}
+{% if (data['ttw-start-date-month'] =='02') or (data['ttw-start-date-month'] =='2') %} February  {% endif%}
+{% if (data['ttw-start-date-month'] =='03') or (data['ttw-start-date-month'] =='3') %} March {% endif%}
+{% if (data['ttw-start-date-month'] =='04') or (data['ttw-start-date-month'] =='4') %} June {% endif%}
+{% if (data['ttw-start-date-month'] =='05') or (data['ttw-start-date-month'] =='5') %} May {% endif%}
+{% if (data['ttw-start-date-month'] =='06') or (data['ttw-start-date-month'] =='6') %} June {% endif%}
+{% if (data['ttw-start-date-month'] =='07') or (data['ttw-start-date-month'] =='7') %} July {% endif%}
+{% if (data['ttw-start-date-month'] =='08') or (data['ttw-start-date-month'] =='8') %} August {% endif%}
+{% if (data['ttw-start-date-month'] =='09') or (data['ttw-start-date-month'] =='9') %} September {% endif%}
+{% if data['ttw-start-date-month'] =='10' %} October {% endif%}
+{% if data['ttw-start-date-month'] =='11'%} November {% endif%}
+{% if data['ttw-start-date-month'] =='12' %} December {% endif%}
+
+
+{{data['ttw-start-date-year']}}
+{% else %}
+  <script>
+  // Get the current date
+       var now = new Date();
+       var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+       // Write the date to the HTML page
+       document.write(date);
+     </script>{% endif %}
+
+   </td>
+</tr>
+
+
+
+                                  <table class="govuk-table">
+
+                                    <tbody class="govuk-table__body">
+                                      <tr class="govuk-table__row">
+
+
+                                        <th scope="row" class="govuk-table__header"> Total award before deductions</th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">
+
+
+
+
+                                               £{% if data['travelling-to-and-from-work-how-many-journeys-taxi']%}{{ ((data['cost-per-journey'] | int) * data['travelling-to-and-from-work-how-many-journeys-taxi']) * 156 }}{% else %}{{ ((data['cost-per-journey'] | int) * 4) * 156 }}{% endif %}</td>
+                                                 <td class="govuk-table__cell govuk-table__cell--numeric"></td>   <td class="govuk-table__cell govuk-table__cell--numeric"></td><td class="govuk-table__cell govuk-table__cell--numeric" ></td><td class="govuk-table__cell govuk-table__cell--numeric"></td><td class="govuk-table__cell govuk-table__cell--numeric"></td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric"></td>  </tr>
+
+
+
+
+
+                                      </tbody>
+
+
+
+
+{% if data['customer-contributions']=='Previously drove' or data['customer-contributions']=='Previously used public transport'%}
+                                      <tbody class="govuk-table__body">
+                                        <tr class="govuk-table__row">
+                                          <th scope="row" class="govuk-table__header">
+                                            {% if data['customer-contributions']=='Previously drove'%}Customer contribution for mileage{% endif %}
+                                              {% if data['customer-contributions']=='Previously used public transport'%}Customer contribution for previously public transport cost{% endif %}
+                                          </th>
+                                          <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">
+                                  <!-- {{ data['weight']}} miles per journey</td> -->£{{ data['cost-per-journey-cc']| int  }} per journey
+                                          <td class="govuk-table__cell govuk-table__cell--numeric">
+
+                                            {% if data['customer-contributions']=='Previously drove' %}
+  £{{ (((data['drove-miles'] | int * 0.25)) * 4) * 156 }}
+{% endif %}
+                                            {% if data['customer-contributions']=='Previously used public transport'%}
+                                            ££{% if data['travelling-to-and-from-work-how-many-journeys-taxi']%}{{ ((data['cost-per-journey'] | int) * data['travelling-to-and-from-work-how-many-journeys-taxi']) * 156 }}{% else %}{{ ((data['cost-per-journey'] | int) * 4) * 156 }}{% endif %}{% endif %}
+
+                                              </td>{% endif %}
+                                        </tr>
+
+
+
+
+                                        </tbody></table>
+
+
+  <table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"> Total award      </th> <td class="govuk-table__cell govuk-table__cell--numeric"></td> <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"></td><td class="govuk-table__cell govuk-table__cell--numeric"></td><td class="govuk-table__cell govuk-table__cell--numeric"></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" >
+        {% if data['customer-contributions']=='Previously used public transport'%}
+        £{% if data['travelling-to-and-from-work-how-many-journeys-taxi']%}{{ ((data['cost-per-journey'] | int) * data['travelling-to-and-from-work-how-many-journeys-taxi']) * 156 }}{% else %}{{ ((data['cost-per-journey'] | int) * 4) * 156 }}{% endif %}
+
+
+
+      {% endif %}
+
+      {% if data['customer-contributions']=='Previously drove'%}
+£{% if data['travelling-to-and-from-work-how-many-journeys-taxi']%}{{ ((data['cost-per-journey'] | int) * data['travelling-to-and-from-work-how-many-journeys-taxi']) * 156 }}{% else %}{{ ((data['cost-per-journey'] | int) * 4) * 156 }}{% endif %}{% endif %}
+
+£{% if data['travelling-to-and-from-work-how-many-journeys-taxi']%}{{ ((data['cost-per-journey'] | int) * data['travelling-to-and-from-work-how-many-journeys-taxi']) * 156 }}{% else %}{{ ((data['cost-per-journey'] | int) * 4) * 156 }}{% endif %}
+</td><td class="govuk-table__cell govuk-table__cell--numeric"></td><td class="govuk-table__cell govuk-table__cell--numeric"></td><td class="govuk-table__cell govuk-table__cell--numeric"></td>
+   <td class="govuk-table__cell govuk-table__cell--numeric"></td><td class="govuk-table__cell govuk-table__cell--numeric"></td></tr>
+
+
+
+
+
+
+
+                  </tbody>
+                 </table>
+                                                        <p>By confirming, you are agreeing that John Smith can receive all of the support in the award summary. </p>
+                                                     <p>Once you have confirmed the award summary, you will be able to send the award decision to John Smith.</p>
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
+Confirm award summary
+           </button>
+           <p><a href="/live-42/cases/john/cases/claim#business-case">I need to change some business case details</a></p>
+           <p><a href="/live-42/cases/john/cases/claim#citizen-details">I need to change some application  details</a></p>
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
