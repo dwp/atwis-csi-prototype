@@ -148,8 +148,14 @@
 
             <dt class="govuk-visually-hidden">Decisions status:</dt>
        <dd class="dwp-key-details-bar__status">
-  {% if phase == "complete" %}
-  completed{% else %}
+  {% if phase == "complete" or phase == "reject" or phase == "withdrawal"%}
+{{phase}}
+
+
+
+
+
+  {% else %}
               {% if data ['Searchligh'] or
                          data ['appointee']
                           or

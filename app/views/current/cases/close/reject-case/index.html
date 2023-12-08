@@ -1,0 +1,68 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Reject the case</h1>
+
+<form action="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/reject-case/close-send-letter" method="post" novalidate="">
+
+
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="close-reason">
+    Reason for rejecting the case
+  </label>
+
+
+  <textarea class="govuk-textarea govuk-!-two-one-half" id="close-reason" name="close-reason" rows="5"></textarea>
+</div>
+
+
+<!-- hidden field to close case -->
+
+
+<div class="govuk-form-group">
+
+
+<input class="govuk-input govuk-radios__conditional--hidden" id="closed-case" name="closed-case" type="text" value="true">
+</div>
+
+
+
+
+
+<!-- option to override the default 'continue' text on the button by setting a variable called 'customNext' -->
+
+
+
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+</form>
+
+
+
+</div>
+
+
+
+{% endblock %}

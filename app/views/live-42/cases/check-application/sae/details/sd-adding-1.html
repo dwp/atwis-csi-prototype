@@ -1,0 +1,83 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/live-42/cases/check-application/sae/details/add" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+
+                             Social and domestic use</h1>
+
+
+                             <div class="govuk-inset-text">
+                             {{data['sae-item-type'+ number]}}
+                             </div>
+
+
+
+                               <p>Social and domestic contribution must be applied if this item is used outside work.</p> <p>Check guidance on <a href="https://intranet.dwp.gov.uk/manual/access-work/cost-share" target="_blank">cost share contribution, point 23 (opens in a new tab)</a> and
+
+
+                                  <a href="https://intranet.dwp.gov.uk/manual/access-work/motability-social-and-domestic-sd-contributions" target="_blank">motability - social and domestic contributions (opens in a new tab)</a>.</p>
+
+
+
+
+        <div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="social-domestic-1-hint">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <h2 class="govuk-fieldset__heading">
+{% include  "./content/social-domestic.html" %}
+    </h2>
+  </legend>
+
+
+  <div class="govuk-radios " data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="social-domestic-1" name="social-domestic-{{number}}" type="radio" value="Yes">
+      <label class="govuk-label govuk-radios__label" for="social-domestic-1">
+        Yes
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="social-domestic-1-2" name="social-domestic-{{number}}" type="radio" value="No">
+      <label class="govuk-label govuk-radios__label" for="social-domestic-1-2">
+        No
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="social-domestic-1-2" name="social-domestic-{{number}}" type="radio" value="I am not sure, I need more details">
+      <label class="govuk-label govuk-radios__label" for="social-domestic-1-2">
+  I am not sure, I need more details
+      </label>
+    </div>
+
+
+  </div>
+
+
+                                </div>
+                   <button class="govuk-button" data-module="govuk-button">
+                   Save and continue
+                   </button>
+
+                   </form>
+
+
+                   </main>
+                 </div>
+
+
+               {% endblock %}
