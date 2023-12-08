@@ -1,0 +1,96 @@
+
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="benefits-change-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+
+                  {% include  "live-42/cases/searchlight-change/benefits/content/benefits-affect-application.html" %}
+                </h2>
+              </legend>
+
+              <p class="govuk-body">
+                <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+              </p>
+
+              <div id="benefits-change-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="benefits-change" name="benefits-change" type="checkbox" value="Incapacity Benefit, including National Insurance credits only" {{ checked("benefits-change", "Incapacity Benefit, including National Insurance credits only") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="benefits-change">
+                    Incapacity Benefit, including National Insurance credits only
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="benefits-change-2" name="benefits-change" type="checkbox" value="Employment and Support Allowance, including National Insurance credits only" {{ checked("benefits-change", "Employment and Support Allowance, including National Insurance credits only") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="benefits-change-2">
+                    Employment and Support Allowance, including National Insurance credits only
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="benefits-change-3" name="benefits-change" type="checkbox" value="Severe Disablement Allowance" {{ checked("benefits-change", "Severe Disablement Allowance") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="benefits-change-3">
+                    Severe Disablement Allowance
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="benefits-change-4" name="benefits-change" type="checkbox" value="Income Support for illness or disability" {{ checked("benefits-change", "Income Support for illness or disability") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="benefits-change-4">
+                     Income Support for illness or disability
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="benefits-change-5" name="benefits-change" type="checkbox" value="Personal Independence Payment" {{ checked("benefits-change", "Personal Independence Payment") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="benefits-change-5">
+                    Personal Independence Payment
+                  </label>
+                </div>
+<div class="govuk-checkboxes__divider">or</div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="benefits-change-6" name="benefits-change" type="checkbox" value="No" data-behaviour="exclusive" {{ checked("benefits-change", "No") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="benefits-change-6">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

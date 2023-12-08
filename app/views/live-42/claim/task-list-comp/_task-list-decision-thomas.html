@@ -1,0 +1,66 @@
+
+
+          {% if totalAward > 10000 %}
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              <a href="/live-42/cases/{% if phase %}{{phase}}/cases/{% endif %}decision/approval" aria-describedby="job-status">  Approval</a>
+              </span>
+              {% if not data['approval']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+                {% if  data['approval']=='Not approved'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Review needed</strong>   {% endif %}
+            {% if data['approval']=='Approved'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+            </li>
+          {% endif %}
+
+
+
+        {% if totalAward < 10000 %}  <ul class="app-task-list__items">      {% endif %}
+
+  <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+    {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}<a href="decision/award" aria-describedby="job-status"> {% endif %}  {% else %} <a href="decision/award" aria-describedby="job-status"> {% endif %}
+     Review and confirm award summary
+  </a>
+  </span>
+  {% if not data['award'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">  {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}Not started{% else %}Cannot start yet{% endif %}{% else %}Not started{% endif %}</strong>   {% endif %}
+{% if data['award'+ phase]=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+
+
+   </li>
+
+
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+  {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}<a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">{% endif %}  {% else %} <a href="decision/award" aria-describedby="job-status"> {% endif %}
+Decision letters
+</a>
+</span>
+
+{% if data['wpa'+ phase]=='Yes'%}
+{% if totalcomplete == 4  %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if totalcomplete == 3  %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+
+
+
+
+{% endif %}
+{% if data['wpa'+ phase]=='No'%}
+{% if totalcomplete == 4  %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if totalcomplete == 3  %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% endif %}
+
+{% if totalcomplete == 2  %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+{% if totalcomplete == 1  %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+{% if totalcomplete == 0 %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if totalAward > 10000 %}{% if data['approval']=='Approved'%}Not started{% else %}Cannot start yet{% endif %}{% else %}Not started{% endif %}</strong>{% endif %}
+
+ </li>
+</ul>
