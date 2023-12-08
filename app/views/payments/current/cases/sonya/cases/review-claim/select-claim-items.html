@@ -37,7 +37,13 @@
                     <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
+                          {% if case == 'thomas' %}
+                          Which type of support is on the claim form?
+                          {% endif %}
+                          {% if case == 'dereck' and case == 'sonya' %}
                           Which items appear on the claim form?
+                          {% endif %}
+
                         </h1>
                       </legend>
                       <div id="claim-item" class="govuk-hint">
