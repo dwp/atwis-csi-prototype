@@ -1369,29 +1369,33 @@ Add invoice details
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
 
-              <!-- {% if data['company-details'] %}
+<!-- USABILITY TESTING -->
+              {% if data['company-details'] %}
               <a href="/payments/current/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
-                {% endif %} -->
+                {% endif %}
 
-                {% if data['reject-review-2'] %}
+<!-- INVOICE REJECTED -->
+                <!-- {% if data['reject-review-2'] %}
                 <a href="/payments/current/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                   {% else %}
-                  {% endif %}
+                  {% endif %} -->
 
 
                 Add invoice numbers
 
                 </span>
 
-
-                <!-- {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+<!-- USABILITY TESTING -->
+                {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
                 {% if data['company-details'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %} -->
-
-                {% if not data['reject-review-2']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                {% if data['reject-review-2'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                 {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+
+<!-- INVOICE REJECTED -->
+                <!-- {% if not data['reject-review-2']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                {% if data['reject-review-2'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %} -->
 
 
 
