@@ -2,7 +2,7 @@
 {% set claim = "true" %}
 {% set title = "Case details" %}
 {% set hideback = "true" %}
-{% set phase = "reject" %}
+{% set phase = "Copied to DiSC" %}
 
 
 
@@ -18,7 +18,7 @@
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation" >
           <h1 class="govuk-panel__title">
-            Case rejected
+            Case copied to DiSC
           </h1>
           <div class="govuk-panel__body">
           <!-- You have completed all tasks for this case -->
@@ -36,7 +36,7 @@
 <form action="/current/your-cases" method="post" novalidate name="{% if case == "other-cases-4" %}Arlo-Spinka{% endif %}{% if case == "other-cases-2" %}Thomas-King{% endif %}{% if case == "other-cases" %}Sonya-Corkery{% endif %}{% if not case %}Dereck-Smith{% endif %}" value="complete">
 
 
-<span class="govuk-visually-hidden"><input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="complete" name="{% if case == "other-cases-4" %}Arlo-Spinka{% endif %}{% if case == "other-cases-2" %}Thomas-King{% endif %}{% if case == "other-cases" %}Sonya-Corkery{% endif %}{% if not case %}Dereck-Smith{% endif %}" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value='complete'>
+<span class="govuk-visually-hidden"><input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="complete" name="Dereck-Smith" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value='complete'>
 </span>
   <button class="govuk-button" data-module="govuk-button">
 Return to your cases

@@ -57,7 +57,7 @@ module.exports = {
 'found-nino' : "Yes",
 'national-insurance-number' : "AB 123456 C",
 'appointee' : "No",
-'benefits' : "No",
+// 'benefits' : "No",
 'benefits-change' : "",
 'condition-checkthomas' : "No",
 'contact-checkthomas' : "No",
