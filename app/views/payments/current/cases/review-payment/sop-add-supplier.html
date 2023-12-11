@@ -43,11 +43,20 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
+{% if case == 'sonya' or case == 'dereck' and not data ['sop-site-code'] %}
+
 <div class="govuk-form-group">
 
   <fieldset class="govuk-fieldset">
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    {% if case == 'sonya' or case == 'dereck' and not data ['sop-site-code'] %}
+    {% if 'No' in data['paid-in-full']%}
+    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+    {% endif %}
+    {% endif %}
+
 
     <h1 class="govuk-fieldset__heading">
       Add payee details from SOP
@@ -55,16 +64,11 @@
   </legend>
 
 
-{% if case == 'sonya' or case == 'dereck' and not data ['sop-site-code'] %}
 
 
 {% if 'No' in data['paid-in-full']%}
 
-              <div class="govuk-form-group">
-                <div class="govuk-inset-text">
-                  Payee name: {{ data['payee-name'] }}
-                </div>
-
+<br>
 
 {% else %}
 
@@ -111,18 +115,27 @@
 
 {% else %}
 
+{% if 'No' in data['paid-in-full']%}
 
 <div class="govuk-form-group">
-  <!-- <div class="govuk-inset-text">
-    Payee name: {{ data['payee-name-1'] }}
-  </div> -->
 
-  {% if 'No' in data['paid-in-full']%}
+  <fieldset class="govuk-fieldset">
 
-                <div class="govuk-form-group">
-                  <div class="govuk-inset-text">
-                    Payee name: {{ data['payee-name-1'] }}
-                  </div>
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    {% if case == 'sonya' or case == 'dereck' and data ['sop-site-code'] %}
+    <span class="govuk-caption-xl">{{ data['payee-name-1'] }}</span>
+    {% endif %}
+
+
+    <h1 class="govuk-fieldset__heading">
+      Add payee details from SOP
+    </h1>
+  </legend>
+
+<br>
+
+
 
 
   {% else %}
