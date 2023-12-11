@@ -31,6 +31,8 @@ module.exports = {
 'details-item-no-match-ipad' : "",
 
 
+
+
   'claims' : "",
 'benefits' : "",
 'priority' : "",

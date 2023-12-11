@@ -31,22 +31,25 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-    <h2 class="govuk-fieldset__heading">
-Are the payee details in SOP correct?
-    </h2>
-
     {% if case == 'sonya' or case == 'dereck'%}
     {% if 'No' in data['paid-in-full'] and not data ['sop-site-code']%}
 
-    <div class="govuk-inset-text">
-      {{ data['payee-name'] }}
-    </div>
+    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
     {% else %}
     <!-- <div class="govuk-inset-text">
       {{ data['payee-name-1'] }}
     </div> -->
     {% endif %}
     {% endif %}
+
+
+    <h2 class="govuk-fieldset__heading">
+Are the payee details in SOP correct?
+    </h2>
+
+
+
+
 
   </legend>
   <div id="contact-hint" class="govuk-hint">

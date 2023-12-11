@@ -31,18 +31,15 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
+    {% if case == 'sonya' and not data ['sop-site-code'] %}
+    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+    {% else %}
+    <span class="govuk-caption-xl">{{ data['payee-name-1'] }}</span>
+    {% endif %}
+
     <h2 class="govuk-fieldset__heading">
 Are the payee details in SOP correct?
     </h2>
-    {% if case == 'sonya' and not data ['sop-site-code'] %}
-    <div class="govuk-inset-text">
-      {{ data['payee-name'] }}
-    </div>
-    {% else %}
-    <div class="govuk-inset-text">
-      {{ data['payee-name-1'] }}
-    </div>
-    {% endif %}
 
   </legend>
   <div id="contact-hint" class="govuk-hint">
