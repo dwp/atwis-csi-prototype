@@ -12,7 +12,7 @@
 
 
 
-<form action="id" method="post" novalidate>
+<form action="/contact-answer-{{phase}}" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -24,49 +24,20 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h1 class="govuk-heading-xl">Telephone call received</h1>
 
 
 
 
 
-              <div class="govuk-form-group">
-                          <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                              <h2 class="govuk-fieldset__heading">
-                          Who called us?
-                              </h2>
-                            </legend>
-                            <div class="govuk-radios" data-module="govuk-radios">
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="{% if phase == "arlo"  %}Arlo Spinka{% endif %}{% if phase == "john"  %}John Smith{% endif %}  {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
-">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                              {% if phase == "arlo"  %}Arlo Spinka{% endif %}{% if phase == "john"  %}John Smith{% endif %}  {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
-                                </label>
-                              </div>
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="Employer">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                                  Employer
-                                </label>
-                              </div>
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="Someone else~other">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                                  Someone else
-                                </label>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
 
-                        <!-- <div class="govuk-form-group">
+
+
+                        <div class="govuk-form-group">
                           <fieldset class="govuk-fieldset" aria-describedby="contact-why-hint">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                              <h2 class="govuk-fieldset__heading">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                              <h1 class="govuk-fieldset__heading">
                         What did they call us about?
-                              </h2>
+                              </h1>
                             </legend>
                             <div id="contact-why-hint" class="govuk-hint">
                               Select all that apply.
@@ -78,12 +49,7 @@
                                 Quotes
                                 </label>
                               </div>
-                              <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-2" name="contact-why" type="checkbox" value="Identity verification">
-                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-2">
-                                Identity verification
-                                </label>
-                              </div>
+
                               <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why" type="checkbox" value="Element details">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
@@ -125,7 +91,7 @@
                               <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why" type="checkbox" value="Award outcome">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-9">
-                            Application status
+                            Award outcome
                                 </label>
                               </div>
 
@@ -138,7 +104,7 @@
                               </div>
                             </div>
                           </fieldset>
-                        </div> -->
+                        </div>
 
 
 {% if data['clear']=='No' %}{% else %}
