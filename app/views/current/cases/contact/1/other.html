@@ -27,8 +27,12 @@
               <h1 class="govuk-heading-l">Other information</h1>
 
 
-<p>You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
-  about the following:</p>
+
+
+<p>{% if data['_do_'+ number]=='Telephone call recived' %}You said that {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
+ contacted us about the following{% else %}
+You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} about the following{% endif  %}:</p>
+
     <ul class="govuk-list govuk-list--bullet">
  {% for feature in data['contact-why'] %}
    <li>{{ feature }}</li>
