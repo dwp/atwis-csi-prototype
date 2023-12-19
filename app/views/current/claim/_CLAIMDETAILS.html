@@ -356,7 +356,7 @@ data ['appointee']
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-            You have added {{totalcontact}} contact
+            Logged contact: {{totalcontact}}
               </h2>
             </legend>
           </fieldset>
@@ -421,7 +421,7 @@ data ['appointee']
 
 
     <button class="govuk-button" data-module="govuk-button">
-      Add {% if totalcontact == 0 %}a{% else %}another{% endif %} contact
+      Log {% if totalcontact == 0 %}{% else %}another{% endif %} contact made
     </button>
   </form>
 {% if phase == "thomas"  %}
