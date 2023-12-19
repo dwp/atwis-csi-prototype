@@ -27,8 +27,8 @@
               <h1 class="govuk-heading-l">Other information</h1>
 
 
-<p>You said that                                 {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
- contacted us about the following:</p>
+<p>You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
+  about the following:</p>
     <ul class="govuk-list govuk-list--bullet">
  {% for feature in data['contact-why'] %}
    <li>{{ feature }}</li>
@@ -44,7 +44,7 @@
               <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-          Briefly summarise the 'other' information you discussed.
+          Summarise the 'other' information discussed
 
                 </label>
                 </h2>
