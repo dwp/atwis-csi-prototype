@@ -42,7 +42,7 @@ AB123456C
                           First name
                           </dt>
                           <dd class="govuk-summary-list__value">
-                          Dereck
+                        {% if phase == 'sonya'%}Sonya{% endif %} {% if not phase %} Dereck{% endif %}
                           </dd>
                           </div>
                           <div class="govuk-summary-list__row">
@@ -50,7 +50,7 @@ AB123456C
                           Last name
                           </dt>
                           <dd class="govuk-summary-list__value">
-                          Smith
+                        {% if phase == 'sonya'%}Corkery{% endif %} {% if not phase %} Smith{% endif %}  Smith
                           </dd>
                           </div>
                           <div class="govuk-summary-list__row">
@@ -80,7 +80,7 @@ AB123456C
                      <fieldset class="govuk-fieldset">
                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                          <h2 class="govuk-fieldset__heading">
-Is Dereck Smith in DiSC?
+Is {% if phase == 'sonya'%}Sonya Corkery{% endif %} {% if not phase %} Dereck Smith{% endif %} in DiSC?
                          </h2>
                        </legend>
 
