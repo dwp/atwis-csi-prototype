@@ -16,8 +16,13 @@
 <!-- <form action="/payments/current/cases/sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate> -->
 <form action="/payments/current/cases/sonya/cases/review-invoice/proforma-cost-share-tab#your-tasks" method="post" novalidate>
 {% endif %}
+
 {% if case == 'dereck' %}
+{% if data ['cost-share']%}
+<form action="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" method="post" novalidate>
+{% else %}
 <form action="/payments/current/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
+{% endif %}
 {% endif %}
 
 
