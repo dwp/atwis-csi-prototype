@@ -158,6 +158,45 @@ data-module="govuk-notification-banner">
           Date submitted
         </dt>
         <dd class="govuk-summary-list__value">
+  {% if case =='other-cases-2' %}
+<script>// Get date
+    var now = new Date();
+    var pastDate = new Date(now);
+    pastDate.setDate(now.getDate() - 70);
+
+    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+    });
+
+    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true
+    });
+
+    document.write(formattedDate + ' at 4:51 pm');</script>{% endif %}
+    {% if case =='other-cases' %}
+  <script>// Get date
+      var now = new Date();
+      var pastDate = new Date(now);
+      pastDate.setDate(now.getDate() - 60);
+
+      var formattedDate = pastDate.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+      });
+
+      var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true
+      });
+
+      document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
+{% if not case %}
         <script>  var now = new Date();
           var pastDate = new Date(now);
           pastDate.setDate(now.getDate() - 60);
@@ -174,7 +213,7 @@ data-module="govuk-notification-banner">
           hour12: true
           });
 
-          document.write(formattedDate + ' at 3:00 pm');</script>
+          document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
