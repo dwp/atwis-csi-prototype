@@ -974,6 +974,12 @@ Add invoice details
               {% endif %}
               {% if 'Yes' in data['company-details'] and not data ['details-item-no-match-jaws']%}
               {% endif %}
+
+              {% if 'No' in data['company-details'] and data ['cost-share']%}
+              <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
+              {% else %}
+              {% endif %}
+
               {% endif %}
 
 

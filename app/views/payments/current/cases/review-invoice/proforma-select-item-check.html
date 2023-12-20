@@ -13,7 +13,13 @@
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
 <!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
+{% if case == 'dereck' %}
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+{% endif %}
+
+{% if case == 'sonya' %}
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+{% endif %}
 
 
 
@@ -74,10 +80,15 @@ Update
 Items on invoice
         </dt>
         <dd class="govuk-summary-list__value">
+{% if data ['cost-share']%}
+          <p>JAWS screen reader  </p>
+{% else %}
           <p>Foot rest </p>
           <p>Sit stand desk </p>
           <p>Office chair </p>
           <p>Desk magnifier </p>
+{% endif %}
+
         </dd>
         <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -86,6 +97,56 @@ Items on invoice
         </a>
         </dd>
         </div>
+
+{% if data ['cost-share']%}
+                  <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+          Has the correct cost share amount been paid?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+          {{data['cost-share-proforma']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+          Update
+                  <span class="govuk-visually-hidden"> - </span>
+                    </a>
+                    </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+            How much has been paid on this invoice?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+            £{{data['cost-share-amount']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+            Update
+                    <span class="govuk-visually-hidden"> - </span>
+                      </a>
+                      </dd>
+                      </div>
+
+      {% if data ['cost-share-proforma-under']%}
+                      <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+              Place claim on hold while employer makes contribution?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+              {{data['cost-share-proforma-under']}}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+              Update
+                      <span class="govuk-visually-hidden"> - </span>
+                        </a>
+                        </dd>
+                        </div>
+      {% endif %}
+
+{% endif %}
 
 
         <div class="govuk-summary-list__row">

@@ -11,10 +11,16 @@
 
 
 
-
 {% if case == 'dereck' %}
+{% if data ['cost-share-amount'] %}
+<form action="/payments/current/cases/dereck/cases/review-invoice/proforma-select-item-check-tab#your-tasks" method="post" novalidate>
+{% else %}
 <form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
 {% endif %}
+{% endif %}
+
+
+
 {% if case == 'sonya' %}
 <form action="/payments/current/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
 {% endif %}

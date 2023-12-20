@@ -116,9 +116,25 @@
 {% if case == 'dereck' or case == 'sonya'%}
             <dd>Specialist equipment</dd>
 {% endif %}
+
 {% if case == 'thomas'%}
             <dd>Support worker</dd>
 {% endif %}
+
+
+
+{% if data ['cost-share']%}
+<br>
+</br>
+            <dt>Cost share:</dt>
+            <dd>Yes</dd>
+<br>
+</br>
+            <dt>Company size:</dt>
+            <dd>Medium</dd>
+
+{% endif %}
+
 
 
   {% if data['appointee']=='Yes, I need to add an appointee' and data['appointee-name']%}
