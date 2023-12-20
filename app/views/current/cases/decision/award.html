@@ -55,7 +55,7 @@
 
 
 
-                   {% for i in [1,2,3,4]-%}
+                   {% for i in[1,2,3,4,5,6,7,8,9,10,11,12] -%}
                    {% set index = i %}
                    {% if data['approve'+ index]%}
 
@@ -97,7 +97,7 @@
 
 
 
-                   {% for i in [1,2,3,4]-%}
+                   {% for i in [1,2,3,4,5,6,7,8,9,10,11,12] -%}
                    {% set number = i %}
                    {% if data['social-domestic-'+ number]=='Yes'%}
 
@@ -133,7 +133,7 @@
                           </dt>
                           <dd class="govuk-summary-list__value" style="text-align: right;">
 
-                                               {% for i in [1,2,3,4]-%}
+                                               {% for i in [1,2,3,4,5,6,7,8,9,10,11,12] -%}
                                                {% set number = i %}
                                                {% if data['social-domestic-'+ number]=='Yes'%}
                                                {% set totalsd =  (2/7 * data['cost-per-item'+ number] )| round(2, 'ceil') %}
@@ -142,7 +142,7 @@
   {% endif %}  {%- endfor %}
 
 {% if  data['social-domestic-'+ number]=='No' and not (data['employer-size']=='50 to 249 (medium)' or data['employer-size']=='250 or more (large)')%}
-£{{totalsae}}{% endif%}
+£{{totalsae}}{% endif%}£{{totalsae}}
 
 
 
