@@ -50,7 +50,7 @@
                     {% if data['wpa-type']=='They do not want a workplace assessment'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
           {% if data['wpa-type']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
           {% if data['wpa-type']=='Virtual'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
-          {% if data['wpa-type']=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+          {% if data['wpa-type']=='I need to contact them to discuss'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
           {% if not data['wpa-type']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
           </li>
     {% endif %}
@@ -58,13 +58,16 @@
     {% if data['wpa-type']=='Virtual' or data['wpa-type']=='Face-to-face'%}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-          <a href="{% if data['address-of-wpa']%}/current/cases/workplace-assesment/availability/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
+          <a href="{% if (data['address-of-wpa'] or data['wpa-availability']=='I’m waiting for an answer')%}/current/cases/workplace-assesment/availability/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
               Availability for workplace assessment
           </a>
             </span>
             {% if data['address-of-wpa']%}<strong class="govuk-tag app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
 
-            {% if data['']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+{% if data['wpa-availability']=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">Contact needed</strong>  {% endif %}
+
+            <!-- {% if data['wpa-availability']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">in progress</strong>  {% endif %} -->
+
             {% if data['wpa-4-weeks']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold </strong>{% endif %}
           {% if data['wpa-4-weeks']=='No'%}
           {% if data['wpa-pause']=='No'%}<strong class="govuk-tag govuk-tag--red app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}

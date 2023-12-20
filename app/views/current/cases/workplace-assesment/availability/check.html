@@ -20,6 +20,24 @@
 
 
 
+{% if data['wpa-availability']=='I’m waiting for an answer' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+{% include "./content/available.html"%}
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{ data['wpa-availability']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/current/cases/workplace-assesment/availability">
+              Update<span class="govuk-visually-hidden">  {% include "./content/available.html"%} </span>
+              </a>
+            </dd>
+          </div>
+{% else %}
+
+
+
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -29,12 +47,11 @@
 {{ data['wpa-availability']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
+              <a class="govuk-link" href="/current/cases/workplace-assesment/availability">
               Update<span class="govuk-visually-hidden">  {% include "./content/available.html"%} </span>
               </a>
             </dd>
           </div>
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 {% include "./content/anyone.html"%}
@@ -44,7 +61,7 @@
         {{ data['others-wpa']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
+              <a class="govuk-link" href="/current/cases/workplace-assesment/availability/others">
               Update<span class="govuk-visually-hidden">  {% include "./content/anyone.html"%}  </span>
               </a>
             </dd>
@@ -52,14 +69,14 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-Availability of Dereck Smith over the next 8 working days
+{% include  "./content/days-available.html" %}
             </dt>
             <dd class="govuk-summary-list__value">
 
         {{ data['availability-wpa']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
+              <a class="govuk-link" href="/current/cases/workplace-assesment/availability/days-available">
               Update<span class="govuk-visually-hidden">  Availability of Dereck Smith over the next 8 working days   </span>
               </a>
             </dd>
@@ -75,7 +92,7 @@ Where will Dereck Smith be for the workplace assessment?
         {{ data['address-of-wpa']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
+              <a class="govuk-link" href="/current/cases/workplace-assesment/availability/address-of-wpa">
               Update<span class="govuk-visually-hidden"> Where will Dereck Smith be for the workplace assessment?   </span>
               </a>
             </dd>
@@ -96,13 +113,13 @@ Address of the workplace assessment
 
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="">
+    <a class="govuk-link" href="/current/cases/workplace-assesment/availability/address-of-wpa-manual">
     Update<span class="govuk-visually-hidden"> Address of the workplace assessment   </span>
     </a>
   </dd>
 </div>
 {% endif %}
-
+{% endif %}
 <br>
 
           <input type="hidden" name="job-details-checked" value="true">

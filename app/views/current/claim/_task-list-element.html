@@ -112,7 +112,7 @@
     {% if 'Support worker' in data['elements']%}
  <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-   <a href="{% if data['sae-item-type']%}./check-application/sae/details/add{% else %}./check-application/sae/details/type{% endif %}" aria-describedby="read-declaration-status">
+   <a href="{% if data['sw-item-type']%}./check-application/sw/details/add{% else %}./check-application/sw/details/type{% endif %}" aria-describedby="read-declaration-status">
          Support worker: add or change support
      </a>
     </span>

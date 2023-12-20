@@ -21,8 +21,7 @@
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="availability-wpa">
-              When is Derek Smith available for a workplace assessment in the next {% if data['wpa-type']=='Face-to-face'%}10 {% else %}8{% endif %}
-weekdays?
+    {% include  "./content/days-available.html" %}
               </label>
             </h2>
         <p>Provide details of Derek Smith’s availability for a workplace assessment between 8am and 6pm
