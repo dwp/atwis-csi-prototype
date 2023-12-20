@@ -263,7 +263,7 @@ data ['benefits']
 
 
                 {% if data['sae-item-type']  and data['mhss-support'] %}
-                {% if data['medical-3']%}
+                {% if data['mhss-support']%}
             {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
           {% else %}
           <ul class="app-task-list__items">
@@ -283,7 +283,7 @@ data ['benefits']
 
 {% else %}
 
-          {% if data['medical-2']%}
+          {% if data['mhss-support']%}
       {% include  "../claim/task-list-comp/_task-list-decision-sonya.html" %}
     {% else %}
     <ul class="app-task-list__items">
