@@ -36,7 +36,7 @@
 {{data['sae-item-type'+ number]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/mhss/details/mental-health-support">
+              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/type">
                 Change<span class="govuk-visually-hidden">
                   What item of specialist equipment do you need to add for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}?
 
@@ -45,7 +45,7 @@
             </dd>
           </div>
 
-{% if data['wap']=='Yes'%}
+{% if data['wpa']=='Yes'%}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
@@ -55,7 +55,7 @@ Where is the suggestion for this item from?
         {{data['from-sae'+ number]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/mhss/details/mental-health-support">
+              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/from">
                 Change<span class="govuk-visually-hidden">
 Where is the suggestion for this item from?
         </span>
@@ -73,7 +73,7 @@ Add this item to the award?
 {{data['approve'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/approve">
+    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/approve">
       Change<span class="govuk-visually-hidden">
 Add this item to the award?
 </span>
@@ -88,7 +88,7 @@ Add this item to the award?
 Reason for not awarding this item
   </dt>
   <dd class="govuk-summary-list__value">
-{{data['sae-not-awarding'+ number]}}
+{{data['not-needed-sae'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
@@ -110,7 +110,7 @@ Quote for specialist equipment
 £{{data['cost-per-item'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
+    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
       Change<span class="govuk-visually-hidden">
 Reason for not awarding this item
 </span>
@@ -126,7 +126,7 @@ Where is the quote from?
 {{data['quotes-choose'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
+    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
       Change<span class="govuk-visually-hidden">
 Where is the quote from?
 </span>
@@ -144,7 +144,7 @@ Where is the quote from?
 {{data['social-domestic-'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
+    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
       Change<span class="govuk-visually-hidden">
     Does a social and domestic contribution need to be applied to this item?
 </span>

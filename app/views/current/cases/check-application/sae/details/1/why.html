@@ -19,7 +19,7 @@
             <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
 
 
-                       {% include "current/cases/check-application/sae/details/content/not-needed.html" %}
+                      Why is this item needed?
         </label>
           </h1>
 
@@ -32,7 +32,7 @@
                            <div class="govuk-inset-text">
                               {{data['sae-item-type'+ number]}}
                            </div>
-                           <textarea class="govuk-textarea" id="more-detail" name="not-needed-sae{{number}}" rows="5" aria-describedby="more-detail-hint">{{data['not-needed-sae'+ number]}}</textarea>
+                           <textarea class="govuk-textarea" id="more-detail" name="why-sae{{number}}" rows="5" aria-describedby="more-detail-hint">{{data['why-sae'+ number]}}</textarea>
                            <button class="govuk-button" data-module="govuk-button">
                            Save and continue
                            </button>

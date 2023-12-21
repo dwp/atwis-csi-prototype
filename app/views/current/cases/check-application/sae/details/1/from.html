@@ -28,13 +28,13 @@
         </div>
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae" name="from-sae" type="radio" value="Yes~approve">
+            <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Workplace assessment report~approve" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
             <label class="govuk-label govuk-radios__label" for="from-sae">
             Workplace assessment report
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="from-sae-2" name="from-sae" type="radio" value="No~why">
+            <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}~why" {{ checked("from-sae"+ number, "Yes") }}>
             <label class="govuk-label govuk-radios__label" for="from-sae-2">
         {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
             </label>
