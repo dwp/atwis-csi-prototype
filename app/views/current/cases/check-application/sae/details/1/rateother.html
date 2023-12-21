@@ -8,7 +8,7 @@
 
 {% block csi %}
 
-<form action="{% if data['wpa']=='Yes' %}from{% else %}approve{% endif %}" method="post" novalidate>
+<form action="sd-adding-1" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -19,13 +19,17 @@
         <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="sae-item-type">
 
-                {% include "current/cases/check-application/sae/details/content/type.html" %} </label> </h1>
+                Where is this quote from? </label> </h1>
 
 
-<div id="event-name-hint" class="govuk-hint">Give the name of one item. You will have the option to add more.</div>
+                <div class="govuk-inset-text">
+                   {{data['sae-item-type'+ number]}}<br>
+                   {{data['quotes-supplier'+ number]}}<br>
+                   £{{data['cost-per-item'+ number]}}
+                </div>
 
 
-            <input class="govuk-input" id="sae-item-type" name="sae-item-type{{number}}" type="text" spellcheck="false" autocomplete="name" value="{{data['sae-item-type'+ number]}}">
+            <input class="govuk-input" id="sae-item-type" name="sae-quote-from{{number}}" type="text" spellcheck="false" autocomplete="name" value="{{data['sae-quote-from'+ number]}}">
 
             </div>
 
