@@ -258,7 +258,7 @@ data['wpa'+ phase]  %}
 
 
 
-          {% if not data['chosen-quote-thomas'] and not 'mental health support' in data['elements'] %}
+          {% if not data['chosen-quote-thomas'] %}
 
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -274,26 +274,9 @@ data['wpa'+ phase]  %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
     {% endif %}
-{% if 'Mental health support' in data['elements']%}
-    {% if  data['chosen-quote-thomas']  and not data['mhss-support']%}
 
-    <ul class="app-task-list__items">
-      <li class="app-task-list__item">
-        <span class="app-task-list__task-name">
-         Review and confirm award summary
-        </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-      </li>
-      <li class="app-task-list__item">
-        <span class="app-task-list__task-name">
-          Decision letters
-        </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-      </li>
-  {% endif %}
-  {% endif %}
 
-{% if data['chosen-quote-thomas'] and not 'Mental health support' in data['elements'] %}
+{% if data['chosen-quote-thomas'] %}
 
   {% include  "../claim/task-list-comp/_task-list-decision-thomas.html" %}
 

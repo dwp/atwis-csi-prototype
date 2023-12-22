@@ -33,7 +33,7 @@
 
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
-  {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}<a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">{% endif %}  {% else %} <a href="decision/award" aria-describedby="job-status"> {% endif %}
+  {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}<a href="{%if data['notificationthomas']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">{% endif %}  {% else %} <a href="decision/award" aria-describedby="job-status"> {% endif %}
 Decision letters
 </a>
 </span>
