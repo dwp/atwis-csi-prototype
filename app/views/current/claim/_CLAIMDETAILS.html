@@ -355,7 +355,36 @@ data ['appointee']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing appointee task.</div>
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}  {% if case =='other-cases' %}
+                  {% for case in data['other-cases'] %}
+                  {{ case.name }}
+                  {% endfor %}
+                  {% endif %}
+
+                  {% if case =='other-cases-2' %}
+                  {% for case in data['other-cases-2'] %}
+                  {{ case.name }}
+                  {% endfor %}
+                  {% endif %}
+
+                  {% if case =='other-cases-3' %}
+                  {% for case in data['other-cases-2'] %}
+                  {{ case.name }}
+                  {% endfor %}
+                  {% endif %}
+
+
+                            {% if case =='other-cases-4' %}
+                            {% for case in data['other-cases-4'] %}
+                            {{ case.name }}
+                            {% endfor %}
+                            {% endif %}
+
+                  {% if not case %}
+                  {% for case in data['priority-cases'] %}
+                  {{ case.name }}
+                  {% endfor %}
+                  {% endif %}   {% endif %} before completing appointee task.</div>
         {% endif %}
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
