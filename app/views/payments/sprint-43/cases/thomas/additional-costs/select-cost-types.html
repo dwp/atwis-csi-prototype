@@ -1,0 +1,120 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-43/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+<form action="/payments/sprint-43/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+
+
+
+
+
+<div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                          Select additional costs to pay
+                        </h1>
+                      </legend>
+                      <div id="claim-item" class="govuk-hint">
+                         Select all types of additional costs to pay for this claim
+                      </div>
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="additional-cost-1" name="additional-cost" type="checkbox" value="support worker travel" {{ checked("additional-cost", "support worker travel") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="additional-cost-1">
+    Support worker travel
+  </label>
+</div>
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="additional-cost-3" name="additional-cost" type="checkbox" value="support worker accomodation" {{ checked("additional-cost", "support worker accomodation") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="additional-cost-3">
+    Support worker accommodation
+  </label>
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="additional-cost-2" name="additional-cost" type="checkbox" value="support worker food" {{ checked("additional-cost", "support worker food") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="additional-cost-2">
+    Support worker food
+  </label>
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="additional-cost-4" name="additional-cost" type="checkbox" value="citizen travel" {{ checked("additional-cost", "citizen travel") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="additional-cost-4">
+    Citizen travel
+  </label>
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="additional-cost-6" name="additional-cost" type="checkbox" value="citizen accomodation" {{ checked("additional-cost", "citizen accomodation") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="additional-cost-6">
+    Citizen accommodation
+  </label>
+</div>
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="additional-cost-5" name="additional-cost" type="checkbox" value="citizen food" {{ checked("additional-cost", "citizen food") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="additional-cost-5">
+    Citizen food
+  </label>
+</div>
+
+
+
+<div class="govuk-checkboxes__divider">or</div>
+
+
+<div class="govuk-checkboxes__item">
+  <input class="govuk-checkboxes__input" id="additional-cost-7" name="additional-cost" type="checkbox" value="none" {{ checked("additional-cost", "none") }}>
+  <label class="govuk-label govuk-checkboxes__label" for="additional-cost-7">
+    None of these
+  </label>
+</div>
+
+
+
+<input type="hidden" id="additional-cost-hidden" name="additional-cost-hidden" value="1">
+
+
+
+
+
+                                    </div>
+                                  </div>
+
+
+                                       <button class="govuk-button" data-module="govuk-button">
+                                         Save and continue
+                                       </button>
+                                     </form>
+                                   </div>
+                                  </div>
+
+
+                                    </main>
+                                    </div>
+
+
+
+
+
+
+
+                                  {% endblock %}
