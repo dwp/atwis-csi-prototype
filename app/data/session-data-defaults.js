@@ -56,11 +56,11 @@ module.exports = {
 // 'mhss-support-check' : ["Intensive Personalised Employment Support"],
 
 // assess
-// 'Searchligh' : "Yes and application details match",
-// 'found-nino' : "Yes",
-// 'national-insurance-number' : "AB 123456 C",
-// 'appointee' : "No",
-// 'benefits' : "No",
+'Searchligh' : "Yes and application details match",
+'found-nino' : "Yes",
+'national-insurance-number' : "AB 123456 C",
+'appointee' : "No",
+'benefits' : "No",
 'benefits-change' : "",
 'condition-checkthomas' : "No",
 'contact-checkthomas' : "No",
