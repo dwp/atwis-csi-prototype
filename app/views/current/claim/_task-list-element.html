@@ -9,7 +9,7 @@
   Specialist equipment: add or change support
 </a>
 </span>
-{% if not data['sae-add'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+{% if not data['sae-add'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}
 {% if data['sae-add'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
  </li>
@@ -22,7 +22,7 @@
             Mental health support: add or change support
 </a>
        </span>
-       {% if not data['mhss-support']%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+       {% if not data['mhss-support']%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}
        {% if data['mhss-support']=="I've not discussed it with Sonya Corkery yet"%} <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Contact needed</strong>  {% endif %}
        {% if data['mhss-support']=="I'm waiting for an answer"%} <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong>  {% endif %}
 
@@ -76,7 +76,7 @@
      Choose quote: specialist equipment 2
     </a>
     </span>
-    {% if not data['chosen-quote-'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>   {% endif %}
+    {% if not data['chosen-quote-'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}
     {% if data['chosen-quote-'+ phase]%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
      </li> -->
@@ -92,7 +92,7 @@
       Evidence for approval decision
 </a>
   </span>
-  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>            </li> -->
+  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>            </li> -->
 
 
   {% if 'Mental health support' in data['elements']%}
@@ -104,7 +104,7 @@
     </span>
     {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
     {% if data['placeholder']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
-    {% if not data['placeholder']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+    {% if not data['placeholder']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
   </li>
   {% endif %}
 
@@ -118,7 +118,7 @@
     </span>
     {% if data['placeholder']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
     {% if data['placeholder']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
-    {% if not data['placeholder']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+    {% if not data['placeholder']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
   </li>
 {% endif %}
 </ul>
