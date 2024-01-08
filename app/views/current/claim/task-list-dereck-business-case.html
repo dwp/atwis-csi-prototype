@@ -204,7 +204,7 @@ data ['benefits']
           </span>
           {% if data['sae-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
           {% if data['sae-add']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
-          {% if not data['sae-add']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+          {% if not data['sae-add']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
         </li>
 
 
@@ -231,7 +231,7 @@ data ['benefits']
     {% if data['mhss-support']=='I am waiting for an answer'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
     {% if data['mhss-support']=='I have not discussed it with Dereck Smith yet'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Contact needed</strong>{% endif %}
 
-    {% if not data['mhss-support']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+    {% if not data['mhss-support']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
   </li>
   {% endif %}
 
@@ -245,7 +245,7 @@ data ['benefits']
     </span>
     {% if data['sw-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
     {% if data['sw-add']=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
-    {% if not data['sw-type']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>{% endif %}
+    {% if not data['sw-type']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
   </li>
 {% endif %}
 

@@ -74,10 +74,15 @@ Telephone call made on    {{ data['contact-date-day-'+ number] }}
      <br>
 
 
-{% if 'Other' in data['contact-why'] %}
+     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-<p>{{data['other-discussion-'+ number]}}</p>
-{% endif %}
+               Summarise the 'other' information discussed
+
+                     </label>
+                     </h2>
+
+<p>{{data['other-discussion-1']}}</p>
+
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Return
