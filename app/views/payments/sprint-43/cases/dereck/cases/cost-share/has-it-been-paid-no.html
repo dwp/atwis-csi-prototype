@@ -1,0 +1,151 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-43/claim/_CSIBASE-no-footer.html" %}
+
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/payments/sprint-43/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+     <h1 class="govuk-heading-l">
+    Cost share payment needed
+    </h1>
+
+      <!-- <h2 class="govuk-heading-m">
+    Jaws screen reader
+    </h2> -->
+
+
+
+    <!-- <p class="govuk-body">A payment of £80.99 must be made on this claim before you can pay the remaining balance</p> -->
+
+
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Invoice total
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £499
+        </dd>
+        <!-- <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd> -->
+      </div>
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cost share paid
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £80.99
+        </dd> -->
+        <!-- <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd> -->
+      <!-- </div> -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cost share paid
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £20
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cost share remaining
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £60.99
+        </dd>
+      </div>
+
+    </dl>
+
+
+  </div>
+</div>
+</div>
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-heading-m">
+            Ring and put on hold?
+          </h2>
+        </legend>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="details-item-no-match-jaws-1" name="details-item-no-match-jaws" type="radio" value="Yes item amount is the same~dereck/cases/company-details-no-match/saved-location-tab#your-tasks" {{ checked("details-item-no-match-jaws", "Yes item amount is the same") }}>
+            <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="details-item-no-match-jaws-2" name="details-item-no-match-jaws" type="radio" value="No item amount is different~dereck/cases/company-details-no-match/rejected-invoice-ipad-amount-tab#your-tasks" {{ checked("details-item-no-match-jaws", "No item amount is different") }}>
+            <label class="govuk-label govuk-radios__label" for="details-item-no-match-jaws-2">
+              No, contact the customer and put the claim on hold
+            </label>
+          <!-- </div>
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="details-item-no-match-jaws-3" name="details-item-no-match-jaws" type="radio" value="I have not recived a replacment invoice~dereck/cases/company-details-no-match/rejected-invoice-ipad-close-tab#your-tasks" {{ checked("details-item-no-match-jaws", "I have not recived a replacment invoice") }}>
+            <label class="govuk-label govuk-radios__label" for="details-item-no-match-jaws-3">
+              I have not received a valid replacement invoice
+            </label> -->
+  </div>
+
+
+
+
+
+
+<!-- INVOICE LINK -->
+
+        <!-- <p class="govuk-body">   <a class="govuk-link" href="/public/images/test-invoice.pdf" target="_blank" download="test-invoice.pdf">Download invoice</a></p> -->
+
+
+            </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Put claim on hold
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
