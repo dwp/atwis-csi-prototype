@@ -32,8 +32,7 @@
       </div>
       {% if case == 'dereck' %}
       <div class="moj-timeline__description">
-        <p>£568.60 Paid to {{data['payee-name']}}</p>
-        <p>£570.21 Paid to {{data['payee-name-1']}}</p>
+        <p>£1237.81 Paid to {{data['sop-payee-name']}}</p>
       </div>
       {% endif %}
       {% if case == 'sonya' %}
@@ -182,6 +181,24 @@ to
 
 
         <!-- ADD INVOICE NUMBERS -->
+
+        {% if case == 'dereck' and data ['invoice-number']%}
+
+        <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Invoice numbers</h2>
+            <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+            </div>
+            <div class="moj-timeline__description">{{data['invoice-number']}}</div>
+            <p class="moj-timeline__description">
+            <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
+            </p>
+            <div class="moj-timeline__description"></div>
+          </div>
+          {%endif%}
+
+
 
         {% if case == 'dereck' and data ['invoice-number-1']%}
 
