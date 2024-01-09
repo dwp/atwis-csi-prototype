@@ -211,7 +211,9 @@ to
               <div class="moj-timeline__description"></div>
             </div>
 
-{%else%}
+            {%endif%}
+
+{% if case == 'thomas' and data ['invoice-number-1']%}
 
 <div class="moj-timeline__item">
 
@@ -226,7 +228,7 @@ to
     <div class="moj-timeline__description"></div>
   </div>
 
-{%endif%}
+  {%endif%}
           <!-- NO -->
           <!-- CHECK INVOICES HAVE BEEN PAID -->
           <!-- <div class="moj-timeline__item">
