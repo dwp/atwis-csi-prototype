@@ -1,0 +1,151 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="{% if data['wpa']=='Yes'%}from{% else %}approve-new{% endif %}" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+
+                {% include "live-44/cases/check-application/support-worker/details/content/type-2.html" %}  </h1>
+
+
+                           </legend>
+                           <div class="govuk-radios " data-module="govuk-radios">
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type" name="sw-type" type="radio" value="Advocate">
+                               <label class="govuk-label govuk-radios__label" for="sw-type">
+                                Advocate
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-2" name="sw-type" type="radio" value="British Sign Language (BSL) interpreter">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-2">
+                                 British Sign Language (BSL) interpreter
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-3" name="sw-type" type="radio" value="Carer">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-3">
+                                 Carer
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Communication support worker">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                 Communication support worker
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-5" name="sw-type" type="radio" value="Coping strategy training specialist">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-5">
+                                 Coping strategy training specialist
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-6" name="sw-type" type="radio" value="Counsellor">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-6">
+                                 Counsellor
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Disability awareness training specialist">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Disability awareness training specialist
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Driver">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                            Driver
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Job aide">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Job aide
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Job coach">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Job coach
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Lip speaker">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Lip speaker
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Mentor">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Mentor
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Notetaker">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Notetaker
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Personal reader">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Personal reader
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Re-speaker">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Re-speaker
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Speech-to-text support worker">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                              Speech-to-text support worker
+                               </label>
+                             </div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Travel buddy">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Travel buddy
+                               </label>
+                             </div>
+                                <div class="govuk-radios__divider">or</div>
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" id="sw-type-4" name="sw-type" type="radio" value="Other~other-type">
+                               <label class="govuk-label govuk-radios__label" for="sw-type-4">
+                                Other
+                               </label>
+                             </div>
+                           </div>
+                         </fieldset>
+                       </div>
+
+ </div> </div>
+                   <button class="govuk-button" data-module="govuk-button">
+                   Save and continue
+                   </button>
+
+                   </form>
+
+
+                   </main>
+                 </div>
+
+
+               {% endblock %}

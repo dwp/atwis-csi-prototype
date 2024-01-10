@@ -1,0 +1,98 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="/live-44/cases/claim#business-case" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+              Do you want to put Dereck Smith's case on hold?
+                 </h2>
+               </legend>
+
+
+
+
+
+
+
+
+<script>
+//get todays Date
+var today = new Date();
+var days = 0;
+var futureDate = new Date();
+
+//Add 8 weekdays to todays Date
+while (days < 8) {
+  futureDate.setDate(futureDate.getDate() + 1);
+  var day = futureDate.getDay();
+  if (day !== 0 && day !== 6) {
+    days++;
+}
+}
+
+//formate
+var options = { day: 'numeric', month: 'long', year: 'numeric'
+};
+var formattedDate = futureDate.toLocaleDateString('en-GB', options);
+
+// Display the future date on the page
+document.getElementById("future-date").innerHTML =
+formattedDate;
+</script>
+
+
+
+
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="wpa-pause" name="wpa-pause" type="radio" value="Yes" {{ checked("wpa-pause", "Yes: I want to put this case on hold and return to this later") }}>
+                   <label class="govuk-label govuk-radios__label" for="wpa-pause">
+                    Yes: I want to put this case on hold and return to this later
+                   </label>
+                 </div>
+                  <div class="govuk-radios__item">
+                 <input class="govuk-radios__input" id="wpa-pause" name="wpa-pause" type="radio" value="No" {{ checked("wpa-pause", "No") }}>
+                 <label class="govuk-label govuk-radios__label" for="wpa-pause">
+                  No
+                 </label>
+               </div>
+
+
+
+
+                 </fieldset>
+               </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}
