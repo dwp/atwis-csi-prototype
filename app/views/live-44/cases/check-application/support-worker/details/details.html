@@ -1,0 +1,132 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="add" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">British Sign Language (BSL) interpreter</h1>
+<p>I need to make <a href="/live-44/cases/thomas/cases/check-application/support-worker/details/edit-business-case#sw2">changes to application details</a>.</p>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+            Add this support worker to the award?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['approve-1']=='true'%}
+Yes
+              {% else %}No  {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="approve-1">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+
+
+                      {% if data['approve-1']=='true'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+
+
+                When does this support need to start?
+
+
+              </dt>
+              <dd class="govuk-summary-list__value">
+      {{data['sw-grant-award-date']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="award-start-1">
+                  Change<span class="govuk-visually-hidden"> </span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+            Quote for support worker
+              </dt>
+              <dd class="govuk-summary-list__value">
+            {{data['quotes-check']}}<br>
+          £{{data['chosen-quote-thomas']}} per hour{% if data['addtional-cost']%}<br>
+          £{{data['addtional-cost']}}{% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="selected-quote">
+                  Change<span class="govuk-visually-hidden"> customer reference</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+
+          Do you want to add additional costs?
+
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['additional']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="selected-quote">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+
+Where is the quote from?
+
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['quotes-choose']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="selected-quote">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% else %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+
+        Reason for not awarding this support worker?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['not-awarding-details']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="selected-quote">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+          {% endif %}
+          </dl>
+
+
+            <input type="hidden" name="answers-checked" value="true">
+            <button class="govuk-button" data-module="govuk-button">
+              Return to support worker
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+               {% endblock %}
