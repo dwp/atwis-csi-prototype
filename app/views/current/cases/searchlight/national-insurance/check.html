@@ -61,7 +61,9 @@
 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['national-insurance-number']| upper }}
+              <!-- Case managers use the Nino to search on DiSC, Disc search function does not allow spaces. Striped them out using the replace filter -->
+          {{data['national-insurance-number'] | upper | replace(" ", "") }}
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="add-national-insurance-number">
