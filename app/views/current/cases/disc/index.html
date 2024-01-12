@@ -34,7 +34,8 @@ Personal details:        </p>
   National Insurance number
   </dt>
   <dd class="govuk-summary-list__value">
-AB123456C
+    <!-- Case managers use the Nino to search on DiSC, Disc search function does not allow spaces. Striped them out using the replace filter -->
+{{data['national-insurance-number'] | upper | replace(" ", "") }}
   </dd>
   </div>
                           <div class="govuk-summary-list__row">
