@@ -1332,27 +1332,10 @@ Add invoice details
 <!-- SW ADD INVOICE NUMBER ADDITIONAL COSTS -->
 
 
-{% if case == 'thomas' and data ['additional-costs-scenario']%}
-                <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-
-                  {% if data['sw-food-day-amount'] %}
-                  <a href="/payments/sprint-42/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
-                    {% else %}
-                    {% endif %}
-
-                    Add invoice numbers
-
-                    </span>
-                    {% if not data['sw-food-day-amount']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                    {% if data['sw-food-day-amount'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                    {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
-
-{% endif %}
 
 
 
-{% if case == 'thomas' and not data ['additional-costs-scenario']%}
+{% if case == 'thomas' %}
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
@@ -1376,8 +1359,8 @@ Add invoice details
 
 <!-- USABILITY TESTING -->
                 {% if not data['company-details']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                {% if data['company-details'] and not data ['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                {% if data['invoice-number-1']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                {% if data['company-details'] and not data ['invoice-number']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['invoice-number']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
 
 <!-- INVOICE REJECTED -->
@@ -1484,7 +1467,7 @@ Add invoice details
                 {% if case == 'paul' and data['invoice-number-1'] %}
                 <a href="/payments/sprint-42/cases/paul/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
-                {% if case == 'thomas' and data['invoice-number-1'] %}
+                {% if case == 'thomas' and data['invoice-number'] %}
                 <a href="/payments/sprint-42/cases/thomas/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
@@ -1504,8 +1487,8 @@ Add invoice details
 
                 </a>
                 </span>
-                {% if not data['invoice-number-1']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                {% if data['invoice-number-1'] and not data ['sop-find']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if not data['invoice-number']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                {% if data['invoice-number'] and not data ['sop-find']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                 {% if data['sop-find'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
                 <li>
 
@@ -1649,7 +1632,7 @@ Add invoice details
 {% if case == 'paul' and data['sop-supplier-number'] %}
             <a href="/payments/sprint-42/cases/paul/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
-{% if case == 'thomas' and data['sop-supplier-number-1'] or data ['sop-find-details-confirm'] %}
+{% if case == 'thomas' and data['sop-supplier-number'] or data ['sop-find-details-confirm'] %}
             <a href="/payments/sprint-42/cases/thomas/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
