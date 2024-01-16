@@ -126,7 +126,7 @@
 
               {% if data['disc-check'+ phase]=='Yes' or data['disc-check']=='Yes'%}
 
-               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status"> in progress</strong>
+               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
 
 
 
@@ -148,6 +148,19 @@
 
 
           {% endif %}
+
+
+  {% if data['disc-check'+ phase]=='Yes' or data['disc-check']=='Yes'%}
+  <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+       <a href="/current/cases/disc/atwis-copy">   Compare AtWIS data to DiSC</a>
+    </span>
+
+  {% if not (data['disc-copy'+ phase] or data['disc-copy'])%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+  </li>
+
+{% endif %}
+
         </ul>
         </li>
 
