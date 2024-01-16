@@ -11,7 +11,7 @@
 <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl">Send an Application Rejection letter to {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}</h1>
+      <h1 class="govuk-heading-xl">Send an 'Application close' letter to {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}</h1>
 
   <form action="" method="post" novalidate="">
 
@@ -21,7 +21,7 @@
 
 
 
-  <p>Download and complete <strong>ATW05NARL Application Rejection letter:</strong></p>
+  <p>Download and complete <strong>AtW03ACL Application close letter:</strong></p>
 
 
 
@@ -43,6 +43,18 @@
 
 
   <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Reason
+      </dt>
+      <dd class="govuk-summary-list__value">
+{{data['case-closed']}}
+
+      </dd>
+      <dd class="govuk-summary-list__actions">
+<a href="index">Change</a>
+      </dd>
+    </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
       Full  name
@@ -101,7 +113,7 @@
 
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-      Have you sent the letter?
+      Have you sent the AtW03ACL letter?
 
     </legend>
 
@@ -133,7 +145,7 @@
           No
             </label>
             <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-This will keep {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} in your cases and return you to application summary.
+This will keep {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} in your cases and return you to the application summary.
             </div>
           </div>
         </div>
