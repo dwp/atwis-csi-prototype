@@ -968,19 +968,30 @@ Add invoice details
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
 
-              {% if case == 'dereck'%}
+              <!-- REJECTED INVOICES -->
+              <!-- {% if case == 'dereck'%}
               {% if 'Yes' in data['company-details'] and data ['details-item-no-match-jaws']%}
               <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
               {% endif %}
               {% if 'Yes' in data['company-details'] and not data ['details-item-no-match-jaws']%}
               {% endif %}
+              {% endif %} -->
 
-              {% if 'No' in data['company-details'] and data ['cost-share']%}
+{% if case == 'dereck' %}
+
+
+              {% if not data['company-details']%}
+              {% endif %}
+
+              {% if data['company-details']%}
               <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
-              {% else %}
               {% endif %}
 
-              {% endif %}
+{% endif %}
+
+
+
+
 
 
               {% if case == 'sonya' %}
@@ -1007,10 +1018,10 @@ Add invoice details
 
 
 
-<!-- LANGUAGE CHANGE FOR MULTIPLES -->
         Check invoices have been paid
 
-{% if case == 'sonya' or case == 'dereck'%}
+        <!-- REJECTED INVOICES -->
+<!-- {% if case == 'sonya' or case == 'dereck'%}
 {% if data ['invoice-deadline-year'] %}
                 </a>
                 </span>
@@ -1026,8 +1037,11 @@ Add invoice details
 
 
 {% endif %}
+{% endif %}
+{% endif %} -->
 
-{% else %}
+
+{% if case == 'sonya' or case == 'dereck'%}
 
                 </a>
                 </span>
@@ -1036,7 +1050,6 @@ Add invoice details
                 {% if data['paid-in-full'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
                 <li>
 
-{% endif %}
 {% endif %}
 
 
@@ -1215,17 +1228,48 @@ Add invoice details
                                                   <li class="app-task-list__item">
                                                   <span class="app-task-list__task-name">
 
-                                                  {% if case == 'dereck' and not data['payee-name'] %}
-                                                      <a href="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
-                                                  {% else %}
-                                                  <a href="/payments/current/cases/dereck/cases/review-invoice/proforma-select-item-check-tab#your-tasks" aria-describedby="company-information-completed">
+            {% if not data['cost-share'] %}
+                                                  {% if not data['payee-name'] %}
+                                                  <a href="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  {% endif %}
+                                                  {% if data['payee-name'] %}
+                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  {% endif %}
+            {% endif %}
+
+            {% if data['cost-share'] %}
+                                                  {% if not data['payee-name'] %}
+                                                  <a href="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  {% endif %}
+                                                  {% if data['payee-name'] and not data['cost-share-proforma'] and not data['cost-share-proforma-under'] and not data['cost-share-proforma-under2'] and not data['invoice-number']%}
+                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  {% endif %}
+                                                  {% if data['payee-name'] and data['cost-share-proforma'] and not data['cost-share-proforma-under'] and not data['cost-share-proforma-under2'] and not data['invoice-number']%}
+                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="read-declaration-completed">
+                                                  {% endif %}
+                                                  {% if data['payee-name'] and data['cost-share-proforma'] and data['cost-share-proforma-under'] and not data['cost-share-proforma-under2'] and not data['invoice-number']%}
+                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-under-tab#your-tasks" aria-describedby="read-declaration-completed">
+                                                  {% endif %}
+                                                  {% if data['payee-name'] and data['cost-share-proforma'] and data['cost-share-proforma-under'] and data['cost-share-proforma-under2'] and not data['invoice-number']%}
+                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-under2-tab#your-tasks" aria-describedby="read-declaration-completed">
+                                                  {% endif %}
+                                                  {% if data['payee-name'] and data['cost-share-proforma'] and data['cost-share-proforma-under'] and data['cost-share-proforma-under2'] and data['invoice-number']%}
+                                                  <a href="/payments/current/cases/dereck/cases/review-invoice/proforma-select-item-check-tab#your-tasks" aria-describedby="read-declaration-completed">
                                                   {% endif %}
 
-                                                  Payee 1: {{data['payee-name']}}
+
+            {% endif %}
+
+                                                  <!-- Payee 1: {{data['payee-name']}} -->
+                                                  Payee: {{data['payee-name']}}
+
 
                                                   </span>
                                                   {% if data['paid-in-full'] and not data ['payee-name']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
-                                                  {% if data['payee-name'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                                                  {% if data['payee-name'] and data ['cost-share-proforma'] and not data ['cost-share-proforma-under2']%} <strong class="govuk-tag govuk-tag--orange app-task-list__task-completed" id="grant-matches-claim-completed">On Hold</strong>{% endif %}
+                                                  {% if data['payee-name'] and data ['cost-share-proforma'] and data ['cost-share-proforma-under2'] and not data ['invoice-number']%} <strong class="govuk-tag govuk-tag--orange app-task-list__task-completed" id="grant-matches-claim-completed">On Hold</strong>{% endif %}
+                                                  {% if data['payee-name'] and data ['cost-share-proforma'] and data ['cost-share-proforma-under2'] and data ['invoice-number']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
 {% endif %}
 
 
@@ -1323,7 +1367,7 @@ Add invoice details
 <!-- BUTTON -->
 
 
-{% if case == 'dereck' and data ['payee-name'] %}
+<!-- {% if case == 'dereck' and data ['payee-name'] %}
 
                                                   </li>
                                                   <br>
@@ -1332,7 +1376,7 @@ Add invoice details
                                                   Add another payee
                                                   </button></form>
 
-{% endif %}
+{% endif %} -->
 
 
 
@@ -1460,22 +1504,41 @@ Add invoice details
 
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                {% if case == 'sonya' and not data['sop-site-code'] %}
+
+                <!-- {% if case == 'sonya' and not data['sop-site-code'] %}
                       <a href="/payments/current/cases/sonya/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
                       <a href="/payments/current/cases/sonya/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
+
+
                 {% if case == 'dereck' and not data['sop-site-code'] %}
                       <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
                       <a href="/payments/current/cases/dereck/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
-                {% endif %}
+                {% endif %} -->
 
-                Payee 1: find and add details from SOP
+
+    <!-- COST SHARE -->
+
+    {% if data['cost-share-proforma-under2'] and data ['invoice-number']%}
+    <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+    {% else %}
+    {% endif %}
+
+
+
+                <!-- Payee 1: find and add details from SOP -->
+                Find and add details from SOP
 
                 </span>
-                {% if data['payee-name'] and not data ['sop-site-code']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+
+                {% if data['cost-share-proforma'] and not data ['invoice-number']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                {% if data['invoice-number'] and not data ['sop-site-code']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                 {% if data['sop-site-code'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+
+                <!-- {% if data['payee-name'] and not data ['sop-site-code']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                {% if data['sop-site-code'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %} -->
 
 
 {% else %}
@@ -1652,7 +1715,7 @@ Add invoice details
             <ul class="app-task-list__items">
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-{% if case == 'dereck' and data['sop-supplier-number-1'] %}
+{% if case == 'dereck' and data['sop-supplier-number'] %}
             <a href="/payments/current/cases/dereck/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if case == 'sonya' and data['sop-supplier-number'] %}
@@ -1681,8 +1744,8 @@ Add invoice details
           {% if data['sop-supplier-number-1'] and not data ['sop-approve-button']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
           {% if data['sop-approve-button'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 {% else %}
-          {% if not data['sop-supplier-number-1']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-          {% if data['sop-supplier-number-1'] and not data ['sop-approve-button']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+          {% if not data['sop-supplier-number']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+          {% if data['sop-supplier-number'] and not data ['sop-approve-button']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
           {% if data['sop-approve-button'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 
 {% endif %}

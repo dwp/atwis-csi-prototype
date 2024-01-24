@@ -23,29 +23,33 @@
 
 
 
-  <div class="govuk-width-container">
-    <main class="govuk-main-wrapper">
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+
+
 
 
 <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Which items are not marked as paid
 
-                        <h1 class="govuk-fieldset__heading">
+                      </h1>
+                    </legend>
+                    <div id="claim-item" class="govuk-hint">
+                      <!-- If you have dual nationality, select all options that are relevant to you. -->
+                    </div>
 
-                          Which items are not marked as paid?
-                        </h1>
-                      </legend>
 
-                      <!-- <div id="nationality-hint" class="govuk-hint">
-                        Select all items you are paying from a pro forma invoice.
-                      </div> -->
+
+
+
                       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-
-
 
 {% if 'Jaws screen reader' in data['claim-item'] %}
+                          <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="paid-in-full-select-1" name="paid-in-full-select" type="checkbox" value="Jaws screen reader" {{ checked("paid-in-full-select", "Jaws screen reader") }}>
                           <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-1">
                             JAWS screen reader

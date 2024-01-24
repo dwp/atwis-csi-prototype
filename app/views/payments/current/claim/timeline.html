@@ -33,8 +33,8 @@
       </div>
       {% if case == 'dereck' %}
       <div class="moj-timeline__description">
-        <p>£568.60 Paid to {{data['payee-name']}}</p>
-        <p>£570.21 Paid to {{data['payee-name-1']}}</p>
+        <p>£418.01 Paid to {{data['payee-name']}}</p>
+        <!-- <p>£570.21 Paid to {{data['payee-name-1']}}</p> -->
       </div>
       {% endif %}
       {% if case == 'sonya' %}
@@ -214,18 +214,20 @@ to
 
 {%else%}
 
-<!-- <div class="moj-timeline__item">
+
+
+<div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
     <h2 class="moj-timeline__title">{% if case == 'dereck' %}Invoice number{% else %}Invoice numbers{% endif %}</h2>
     <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
     </div>
-    <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
+    <div class="moj-timeline__description">{{data['invoice-number']}}</div>
     <p class="moj-timeline__description">
     <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
     </p>
     <div class="moj-timeline__description"></div>
-  </div> -->
+  </div>
 
 {%endif%}
           <!-- NO -->
@@ -244,6 +246,29 @@ to
 
 
 
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+
+<!-- {% if data['cost-share-proforma-under2']%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Cost share paid on proforma</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£80.99</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+
+  {% endif %} -->
 
 
 
