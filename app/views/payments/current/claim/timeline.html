@@ -212,9 +212,10 @@ to
               <div class="moj-timeline__description"></div>
             </div>
 
-{%else%}
+            {%endif%}
 
 
+{% if case == 'dereck' and data ['invoice-number']%}
 
 <div class="moj-timeline__item">
 
@@ -516,18 +517,17 @@ to
 
               <!-- CHECK CLAIM MATTCHES GRANT AWARD -->
 {% if data['grant-matches-claim'] or data ['ttw-match'] or data ['grant-matches-claim-sw']%}
-              <div class="moj-timeline__item">
+              <!-- <div class="moj-timeline__item">
 
                   <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Check claim matches grant award</h2>
-                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
                   <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
                   </div>
                   <p class="moj-timeline__description">
                   <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
                   </p>
                   <div class="moj-timeline__description"></div>
-                </div>
+                </div> -->
 {% endif %}
 
 
