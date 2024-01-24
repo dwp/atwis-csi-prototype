@@ -1,0 +1,85 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+{% if data ['sw-check']%}
+<form action="sw-claim-tab#your-tasks" method="post" novalidate>
+{% endif %}
+{% if not data ['sw-check']%}
+<form action="/payments/current/cases/thomas/cases/review-claim/sw-add-amount-tab#your-tasks" method="post" novalidate>
+{% endif %}
+
+
+<!-- <form action="matches-grant-multi-tab#your-tasks" method="post" novalidate> -->
+
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="ttw-claim-start-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Total hours of support claimed
+                </h1>
+              </legend>
+
+
+              <div id="ttw-journeys-hint" class="govuk-hint">
+                <!-- For example, 502135326 -->
+              </div>
+
+            {# <div class="govuk-inset-text">
+         ** if more than 1 SW on claim – add if statement to pull in SW type selected from radios**
+            </div> #}
+
+              <input class="govuk-input govuk-input--width-5" id="sw-hours" name="sw-hours" type="text" aria-describedby="sw-hours-hint" value="{{data ['sw-hours'] }}">
+            </div>
+
+
+
+            </fieldset>
+          </div>
+
+
+
+
+
+
+    </div>
+    </div>
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

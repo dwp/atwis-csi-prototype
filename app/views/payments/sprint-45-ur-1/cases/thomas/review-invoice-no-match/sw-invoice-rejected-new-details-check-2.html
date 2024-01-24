@@ -1,0 +1,237 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h2 class="govuk-fieldset__heading">
+{{data['sw-invoice-ref-2']}}: summary
+        </h2>
+
+        <div class="govuk-inset-text">
+        Deadline for replacement invoice is
+
+        {{data['invoice-deadline-day']}}
+
+        {% if (data['invoice-deadline-month'] =='01') or (data['invoice-deadline-month'] =='1') %} January {% endif%}
+        {% if (data['invoice-deadline-month'] =='02') or (data['invoice-deadline-month'] =='2') %} February  {% endif%}
+        {% if (data['invoice-deadline-month'] =='03') or (data['invoice-deadline-month'] =='3') %} March {% endif%}
+        {% if (data['invoice-deadline-month'] =='04') or (data['invoice-deadline-month'] =='4') %} June {% endif%}
+        {% if (data['invoice-deadline-month'] =='05') or (data['invoice-deadline-month'] =='5') %} May {% endif%}
+        {% if (data['invoice-deadline-month'] =='06') or (data['invoice-deadline-month'] =='6') %} June {% endif%}
+        {% if (data['invoice-deadline-month'] =='07') or (data['invoice-deadline-month'] =='7') %} July {% endif%}
+        {% if (data['invoice-deadline-month'] =='08') or (data['invoice-deadline-month'] =='8') %} August {% endif%}
+        {% if (data['invoice-deadline-month'] =='09') or (data['invoice-deadline-month'] =='9') %} September {% endif%}
+        {% if data['invoice-deadline-month'] =='10' %} October {% endif%}
+        {% if data['invoice-deadline-month'] =='11'%} November {% endif%}
+        {% if data['invoice-deadline-month'] =='12' %} December {% endif%}
+
+        {{data['invoice-deadline-year']}}.
+        </div>
+
+
+        <br>
+        <dl class="govuk-summary-list">
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['sw-invoice-ref-2']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks">
+
+    Change
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sw-invoice-start-day-2']}}
+
+            {% if (data['sw-invoice-start-month-2'] =='01') or (data['sw-invoice-start-month-2'] =='1') %} January {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='02') or (data['sw-invoice-start-month-2'] =='2') %} February  {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='03') or (data['sw-invoice-start-month-2'] =='3') %} March {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='04') or (data['sw-invoice-start-month-2'] =='4') %} April {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='05') or (data['sw-invoice-start-month-2'] =='5') %} May {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='06') or (data['sw-invoice-start-month-2'] =='6') %} June {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='07') or (data['sw-invoice-start-month-2'] =='7') %} July {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='08') or (data['sw-invoice-start-month-2'] =='8') %} August {% endif%}
+            {% if (data['sw-invoice-start-month-2'] =='09') or (data['sw-invoice-start-month-2'] =='9') %} September {% endif%}
+            {% if data['sw-invoice-start-month-2'] =='10' %} October {% endif%}
+            {% if data['sw-invoice-start-month-2'] =='11'%} November {% endif%}
+            {% if data['sw-invoice-start-month-2'] =='12' %} December {% endif%}
+
+            {{data['sw-invoice-start-year-2']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-return-date-tab#your-tasks">
+
+    Change
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+End date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sw-invoice-end-day-2']}}
+
+            {% if (data['sw-invoice-end-month-2'] =='01') or (data['sw-invoice-end-month-2'] =='1') %} January {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='02') or (data['sw-invoice-end-month-2'] =='2') %} February  {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='03') or (data['sw-invoice-end-month-2'] =='3') %} March {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='04') or (data['sw-invoice-end-month-2'] =='4') %} April {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='05') or (data['sw-invoice-end-month-2'] =='5') %} May {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='06') or (data['sw-invoice-end-month-2'] =='6') %} June {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='07') or (data['sw-invoice-end-month-2'] =='7') %} July {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='08') or (data['sw-invoice-end-month-2'] =='8') %} August {% endif%}
+            {% if (data['sw-invoice-end-month-2'] =='09') or (data['sw-invoice-end-month-2'] =='9') %} September {% endif%}
+            {% if data['sw-invoice-end-month-2'] =='10' %} October {% endif%}
+            {% if data['sw-invoice-end-month-2'] =='11'%} November {% endif%}
+            {% if data['sw-invoice-end-month-2'] =='12' %} December {% endif%}
+
+            {{data['sw-invoice-end-year-2']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-return-date-tab#your-tasks">
+
+    Change
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Hours of support
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['sw-invoice-hours-2']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-hours-2-tab#your-tasks">
+
+    Change
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Cost of support
+          </dt>
+          <dd class="govuk-summary-list__value">
+          £{{data['sw-invoice-cost-2']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-cost-2-tab#your-tasks">
+
+    Change
+            <span class="govuk-visually-hidden">amount to pay</span>
+            </a>
+          </dd>
+          </div>
+
+
+
+        </dl>
+
+
+        </fieldset>
+        </div>
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h2 class="govuk-heading-m">
+                Have you received a valid replacement invoice?
+              </h2>
+            </legend>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sw-hold-2-invoice-1" name="sw-hold-2-invoice" type="radio" value="Yes~review-invoice-no-match/sw-invoice-rejected-review-2-tab#your-tasks" {{ checked("sw-hold-2-invoice-1", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="sw-hold-2-invoice-1">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sw-hold-2-invoice-3" name="sw-hold-2-invoice" type="radio" value="No, put the claim on hold~claim-thomas#your-tasks" {{ checked("sw-hold-2-invoice-3", "No, put the claim on hold") }}>
+                <label class="govuk-label govuk-radios__label" for="sw-hold-2-invoice-3">
+                  No, put the claim on hold
+                </label>
+      </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sw-hold-2-invoice-2" name="sw-hold-2-invoice" type="radio" value="No~review-invoice-no-match/sw-invoice-rejected-close-tab#your-tasks" {{ checked("sw-hold-2-invoice-2", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="sw-hold-2-invoice-2">
+                  No, the deadline date has passed
+                </label>
+              </div>
+    </div>
+
+<!-- TRIGGER -->
+<input type="hidden" id="checked-2" name="checked-2" value="Yes">
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
