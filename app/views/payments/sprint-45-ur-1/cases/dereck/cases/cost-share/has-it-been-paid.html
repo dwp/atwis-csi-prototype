@@ -1,0 +1,80 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+                <h1 class="govuk-fieldset__heading">
+                  Has the employer paid a £80.99 contribution?
+                  <!-- Has the correct cost share amount been paid? -->
+                </h1>
+              </legend>
+              <div id="changedName-hint" class="govuk-hint">
+                <!-- Check with the supplier that £80.99 has been paid on this invoice. -->
+              </div>
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="cost-share-proforma-1" name="cost-share-proforma" type="radio" value="Yes~cases/review-invoice/add-invoice-date-tab#your-tasks" {{ checked("cost-share-proforma", "Yes") }}>
+            <label class="govuk-label govuk-radios__label" for="cost-share-proforma-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="cost-share-proforma-2" name="cost-share-proforma" type="radio" value="No~cases/cost-share/has-it-been-paid-amount-tab#your-tasks" {{ checked("cost-share-proforma", "No") }}>
+            <label class="govuk-label govuk-radios__label" for="cost-share-proforma-2">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="cost-share-proforma-3" name="cost-share-proforma" type="radio" value="I need to check~claim-dereck#your-tasks" {{ checked("cost-share-proforma", "I need to check") }}>
+            <label class="govuk-label govuk-radios__label" for="cost-share-proforma-3">
+              I need to check
+            </label>
+          </div>
+
+        </div>
+      </fieldset>
+    </div>
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
