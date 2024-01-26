@@ -3,7 +3,7 @@
 {% set title = "Case details" %}
 {% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/sprint-45-ur-1/claim/_CSIBASE-no-footer.html" %}
 
 
 
@@ -13,15 +13,15 @@
 
 
 {% if case == 'sonya' %}
-<!-- <form action="/payments/current/cases/sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate> -->
-<form action="/payments/current/cases/sonya/cases/review-invoice/proforma-cost-share-tab#your-tasks" method="post" novalidate>
+<!-- <form action="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/proforma-cost-share-tab#your-tasks" method="post" novalidate>
 {% endif %}
 
 {% if case == 'dereck' %}
 {% if data ['cost-share']%}
-<form action="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" method="post" novalidate>
+<form action="/payments/sprint-45-ur-1/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" method="post" novalidate>
 {% else %}
-<form action="/payments/current/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
+<form action="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
 {% endif %}
 {% endif %}
 

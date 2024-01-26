@@ -4,7 +4,7 @@
 {% set view = "tab" %}
 
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/sprint-45-ur-1/claim/_CSIBASE-no-footer.html" %}
 
 
 
@@ -14,18 +14,18 @@
 {% if data ['cost-share'] %}
 
       {% if 'Yes' in data ['cost-share-proforma'] %}
-      <form action="/payments/current/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
+      <form action="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
       {% endif %}
 
       {% if 'No' in data ['cost-share-proforma'] %}
-        <form action="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-under-tab#your-tasks" method="post" novalidate>
+        <form action="/payments/sprint-45-ur-1/cases/dereck/cases/cost-share/has-it-been-paid-under-tab#your-tasks" method="post" novalidate>
 
       {% endif %}
 
 {% endif %}
 
 {% if not data ['cost-share'] %}
-<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+<form action="/payments/sprint-45-ur-1/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
   {% endif %}
 
 

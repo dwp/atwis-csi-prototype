@@ -3,7 +3,7 @@
 {% set title = "Case details" %}
 {% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/sprint-45-ur-1/claim/_CSIBASE-no-footer.html" %}
 
 {% block csi %}
 <br>
@@ -11,10 +11,10 @@
 
 
 {% if data ['sw-travel-number']%}
-<form action="/payments/current/cases/thomas/additional-costs/sw-travel-check-tab#your-tasks" method="post" novalidate>
+<form action="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-travel-check-tab#your-tasks" method="post" novalidate>
 {% endif %}
 {% if not data ['sw-travel-number']%}
-<form action="/payments/current/cases/thomas/additional-costs/sw-travel-amount-tab#your-tasks" method="post" novalidate>
+<form action="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-travel-amount-tab#your-tasks" method="post" novalidate>
 {% endif %}
 
 
