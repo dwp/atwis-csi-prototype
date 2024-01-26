@@ -3,7 +3,7 @@
 {% set title = "Case details" %}
 {% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/sprint-45-ur-1/claim/_CSIBASE-no-footer.html" %}
 
 {% block csi %}
 
@@ -12,8 +12,8 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
-<form action="/payments/current/cases/{{case}}/claim-{{case}}#your-tasks" method="post" novalidate>
+<!-- <form action="/payments/sprint-45-ur-1/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-45-ur-1/cases/{{case}}/claim-{{case}}#your-tasks" method="post" novalidate>
 
 
 
@@ -104,10 +104,10 @@ Select all items that appear on the claim form
         </dd>
         <dd class="govuk-summary-list__actions">
 {% if case == 'dereck' %}
-        <a class="govuk-link" href="/payments/current/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks">
+        <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks">
 {% endif %}
 {% if case == 'sonay' %}
-        <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks">
+        <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks">
 {% endif %}
 
 
@@ -129,10 +129,10 @@ Do the amounts on the claim form and invoices match the grant award?
         </dd>
         <dd class="govuk-summary-list__actions">
 {% if case == 'dereck' %}
-          <a class="govuk-link" href="/payments/current/cases/dereck/cases/review-claim/matches-grant-multi-tab#your-tasks">
+          <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/dereck/cases/review-claim/matches-grant-multi-tab#your-tasks">
 {% endif %}
 {% if case == 'sonya' %}
-          <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi-tab#your-tasks">
+          <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/matches-grant-multi-tab#your-tasks">
 {% endif %}
 
 Change
@@ -204,7 +204,7 @@ Which items do not match the grant award?</dt>
 
 </dd>
 <dd class="govuk-summary-list__actions">
-  <a class="govuk-link" href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi-tab#your-tasks">
+  <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/matches-grant-multi-tab#your-tasks">
 Change
 <span class="govuk-visually-hidden"> address</span>
 </a>

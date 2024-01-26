@@ -41,9 +41,9 @@
 
 
       {% if data['ttw-journeys'] %}
-      <a href="/payments/current/cases/paul/cases/review-claim/ttw-claim-tab#your-tasks" aria-describedby="claim-completed">
+      <a href="/payments/sprint-45-ur-1/cases/paul/cases/review-claim/ttw-claim-tab#your-tasks" aria-describedby="claim-completed">
       {% else %}
-      <a href="/payments/current/cases/paul/cases/review-claim/ttw-add-date-tab#your-tasks" aria-describedby="claim-completed">
+      <a href="/payments/sprint-45-ur-1/cases/paul/cases/review-claim/ttw-add-date-tab#your-tasks" aria-describedby="claim-completed">
       {% endif %}
 
 
@@ -84,9 +84,9 @@
 
 
                   {% if data['sw-claim-start-day'] %}
-                  <a href="/payments/current/cases/thomas/cases/review-claim/sw-claim-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-claim/sw-claim-tab#your-tasks" aria-describedby="claim-completed">
                   {% else %}
-                  <a href="/payments/current/cases/thomas/cases/review-claim/sw-add-date-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-claim/sw-add-date-tab#your-tasks" aria-describedby="claim-completed">
                   {% endif %}
 
 
@@ -123,41 +123,41 @@
 
 <!-- TTW - GRANT MATCHES CLAIM -->
 {% if case == 'paul' and data['ttw-journeys'] %}
-                    <a href="/payments/current/cases/paul/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/paul/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% else %}
 {% endif %}
 
 
 <!-- SW - GRANT MATCHES CLAIM -->
 {% if case == 'thomas' and data['claim-item-1'] %}
-                    <a href="/payments/current/cases/thomas/cases/review-claim/matches-grant-multi-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-claim/matches-grant-multi-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
 
 <!-- SAE - GRANT MATCHES CLAIM PROFORMA -->
 {% if case == 'nina' and not data['claim-item'] %}
-                    <a href="/payments/current/cases/nina/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/nina/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 {% if case == 'nina' and data['claim-item'] %}
-                    <a href="/payments/current/cases/nina/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/nina/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
 {% if case == 'james' and not data['claim-item'] %}
-                    <a href="/payments/current/cases/jamesm/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/jamesm/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 {% if case == 'james' and data['claim-item'] %}
-                    <a href="/payments/current/cases/jamesm/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/jamesm/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
 
 <!-- SAE - GRANT MATCHES CLAIM -->
 {% if case == 'sonya'%}
 {% if not data['grant-matches-claim'] %}
-                    <a href="/payments/current/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
 {% if data['grant-matches-claim'] %}
-                    <a href="/payments/current/cases/sonya/cases/review-claim/matches-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/matches-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 {% endif %}
 
@@ -165,11 +165,11 @@
 <!-- SAE - GRANT MATCHES CLAIM -->
 {% if case == 'dereck' %}
 {% if not data['grant-matches-claim'] %}
-                    <a href="/payments/current/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
 {% if data['grant-matches-claim'] %}
-                    <a href="/payments/current/cases/dereck/cases/review-claim/matches-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-claim/matches-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 {% endif %}
 
@@ -235,7 +235,7 @@
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
 
-                                                  <a href="/payments/current/cases/thomas/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/thomas/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
 
                                   Review number of hours claimed
                                   </a>
@@ -253,7 +253,7 @@
                     <span class="app-task-list__task-name">
 
                                 {% if data ['sw-hours-more']%}
-                                <a href="/payments/current/cases/thomas/review-claim-no-match/sw-amount-no-match-ease-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/sprint-45-ur-1/cases/thomas/review-claim-no-match/sw-amount-no-match-ease-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
 
 
@@ -295,10 +295,10 @@
                       <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
 {% if not data ['claim-item-no-match-jaws'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/jaws-item-no-match-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim-no-match/jaws-item-no-match-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if data ['claim-item-no-match-jaws'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-high-no-match-check-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim-no-match/amount-high-no-match-check-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                                                   JAWS screen reader
@@ -315,10 +315,10 @@
                       <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
 {% if not data ['claim-item-no-match-keyboard'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim-no-match/keyboard-item-no-match-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if data ['claim-item-no-match-keyboard'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-claim-no-match/amount-low-no-match-check-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim-no-match/amount-low-no-match-check-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                                                   Ergonomic keyboard
@@ -363,12 +363,12 @@
 
 
 {% if data ['grant-matches-claim'] == 'Yes'%}
-              <a href="/payments/current/cases/sonya/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
 {% if data ['grant-matches-claim'] == 'No' and not data ['claim-item-no-match-keyboard']%}
  <!-- if case == 'sonya' and data ['claim-item-no-match-keyboard']  -->
-              <!-- <a href="/payments/current/cases/sonya/cases/review-claim/company-details" aria-describedby="company-information-completed"> -->
+              <!-- <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/company-details" aria-describedby="company-information-completed"> -->
 {% endif %}
 {% if data ['grant-matches-claim'] == 'No' and data ['claim-item-no-match-keyboard']%}
 {% endif %}
@@ -401,11 +401,11 @@
                                   <li class="app-task-list__item">
                                   <span class="app-task-list__task-name">
 {% if not data ['invoice-saved'] %}
-                                      <a href="/payments/current/cases/sonya/cases/company-details-no-match/rejected-invoice-ipad-tab#your-tasks" aria-describedby="company-information-completed">
+                                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/company-details-no-match/rejected-invoice-ipad-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
 {% if data ['invoice-saved'] %}
-                                      <a href="/payments/current/cases/sonya/cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks" aria-describedby="company-information-completed">
+                                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
 
@@ -429,15 +429,15 @@
 
 
 {% if data ['grant-matches-claim'] == 'Yes'%}
-              <a href="/payments/current/cases/dereck/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
 {% if data ['grant-matches-claim'] == 'No' and not data ['claim-item-no-match-keyboard']%}
  <!-- if case == 'sonya' and data ['claim-item-no-match-keyboard']  -->
-              <!-- <a href="/payments/current/cases/sonya/cases/review-claim/company-details" aria-describedby="company-information-completed"> -->
+              <!-- <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-claim/company-details" aria-describedby="company-information-completed"> -->
 {% endif %}
 {% if data ['grant-matches-claim'] == 'No' and data ['claim-item-no-match-keyboard']%}
-              <a href="/payments/current/cases/dereck/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                 Check invoices are valid
@@ -468,11 +468,11 @@
                                   <li class="app-task-list__item">
                                   <span class="app-task-list__task-name">
 {% if not data ['invoice-saved'] %}
-                                      <a href="/payments/current/cases/dereck/cases/company-details-no-match/rejected-invoice-ipad-tab#your-tasks" aria-describedby="company-information-completed">
+                                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/company-details-no-match/rejected-invoice-ipad-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
 {% if data ['invoice-saved'] %}
-                                      <a href="/payments/current/cases/dereck/cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks" aria-describedby="company-information-completed">
+                                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
 
@@ -494,7 +494,7 @@
 
 
 {% if data ['grant-matches-claim'] %}
-              <a href="/payments/current/cases/dereck/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                 Check invoices are valid
@@ -517,7 +517,7 @@
 
 
 {% if data ['grant-matches-claim'] %}
-              <a href="/payments/current/cases/nina/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/nina/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                 Check invoices are valid
@@ -540,7 +540,7 @@
 
 
 {% if data ['grant-matches-claim'] %}
-              <a href="/payments/current/cases/jamesm/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/jamesm/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                 Check invoices are valid
@@ -564,7 +564,7 @@
 
 {% if data ['ttw-match'] %}
 
-              <a href="/payments/current/cases/paul/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/paul/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                 Check invoices are valid
@@ -589,7 +589,7 @@
 
 
                       <!-- {% if data['easement'] %}
-                                    <a href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+                                    <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
                       {% endif %}
 
                                       Check invoices are valid
@@ -603,7 +603,7 @@
                                     <li> -->
 
                                     {% if data['sw-hours-more'] %}
-                                                  <a href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
                                     {% endif %}
 
                                                     Check invoices are valid
@@ -621,7 +621,7 @@
 
 
                       {% if 'Yes' in data ['grant-matches-claim-sw']  %}
-                                    <a href="/payments/current/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
+                                    <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-claim/company-details-tab#your-tasks" aria-describedby="company-information-completed">
                                       {% endif %}
 
                                       Check invoices are valid
@@ -678,7 +678,7 @@ Additional costs
 <span class="app-task-list__task-name">
 
                   {% if data ['company-details'] %}
-                  <a href="/payments/current/cases/thomas/additional-costs/select-cost-types-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/select-cost-types-tab#your-tasks" aria-describedby="claim-completed">
                   {% else  %}
                   {% endif  %}
 
@@ -706,9 +706,9 @@ Additional costs
 <span class="app-task-list__task-name">
 
                   {% if data ['sw-travel-amount'] %}
-                  <a href="/payments/current/cases/thomas/additional-costs/sw-travel-check-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-travel-check-tab#your-tasks" aria-describedby="claim-completed">
                   {% else  %}
-                  <a href="/payments/current/cases/thomas/additional-costs/sw-travel-award-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-travel-award-tab#your-tasks" aria-describedby="claim-completed">
                   {% endif  %}
 
                   Additional costs: travel
@@ -739,9 +739,9 @@ Additional costs
 <span class="app-task-list__task-name">
 
                   {% if data ['sw-accomodation-amount'] %}
-                  <a href="/payments/current/cases/thomas/additional-costs/sw-accomodation-check-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-accomodation-check-tab#your-tasks" aria-describedby="claim-completed">
                   {% else  %}
-                  <a href="/payments/current/cases/thomas/additional-costs/sw-accomodation-award-tab#your-tasks" aria-describedby="claim-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-accomodation-award-tab#your-tasks" aria-describedby="claim-completed">
                   {% endif  %}
 
                   Additional costs: accommodation
@@ -771,10 +771,10 @@ Additional costs
           {% if not data ['sw-accomodation-amount']%}
           {% endif  %}
           {% if data ['sw-accomodation-amount'] and not data ['sw-food-day-amount']%}
-          <a href="/payments/current/cases/thomas/additional-costs/sw-food-award-tab#your-tasks" aria-describedby="claim-completed">
+          <a href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-food-award-tab#your-tasks" aria-describedby="claim-completed">
           {% endif  %}
           {% if data['sw-food-day-amount'] %}
-          <a href="/payments/current/cases/thomas/additional-costs/sw-food-check-tab#your-tasks" aria-describedby="claim-completed">
+          <a href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-food-check-tab#your-tasks" aria-describedby="claim-completed">
           {% endif  %}
 
 
@@ -811,7 +811,7 @@ Additional costs
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
                                 {% if data ['company-details']%}
-                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/sprint-45-ur-1/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
 
                 Review rejected invoice: British Sign Language (BSL) interpreter
@@ -840,15 +840,15 @@ Additional costs
   <span class="app-task-list__task-name">
     {% if data ['company-details'] and not data ['rejected-close-1']%}
                                 {% if not data ['sw-invoice-cost-1']%}
-                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-1-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/sprint-45-ur-1/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-1-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
                                 {% if data ['sw-invoice-cost-1']%}
-                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-new-details-check-1-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/sprint-45-ur-1/cases/thomas/review-invoice-no-match/sw-invoice-rejected-new-details-check-1-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
 {% endif  %}
 
 {% if data ['company-details'] and data ['rejected-close-1']%}
-<a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-review-check-1-tab#your-tasks" aria-describedby="claim-completed">
+<a href="/payments/sprint-45-ur-1/cases/thomas/review-invoice-no-match/sw-invoice-rejected-review-check-1-tab#your-tasks" aria-describedby="claim-completed">
 {% endif  %}
 
                 {% if data ['sw-invoice-ref-1']%}
@@ -884,14 +884,14 @@ Additional costs
   <span class="app-task-list__task-name">
 {% if data ['company-details'] and not data ['reject-review-2']%}
                                 {% if not data ['sw-invoice-cost-2']%}
-                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-2-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/sprint-45-ur-1/cases/thomas/review-invoice-no-match/sw-invoice-rejected-add-ref-2-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
                                 {% if data ['sw-invoice-cost-2']%}
-                                <a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-new-details-check-2-tab#your-tasks" aria-describedby="claim-completed">
+                                <a href="/payments/sprint-45-ur-1/cases/thomas/review-invoice-no-match/sw-invoice-rejected-new-details-check-2-tab#your-tasks" aria-describedby="claim-completed">
                                 {% endif  %}
 {% endif  %}
 {% if data ['company-details'] and data ['reject-review-2']%}
-<a href="/payments/current/cases/thomas/review-invoice-no-match/sw-invoice-rejected-review-check-2-tab#your-tasks" aria-describedby="claim-completed">
+<a href="/payments/sprint-45-ur-1/cases/thomas/review-invoice-no-match/sw-invoice-rejected-review-check-2-tab#your-tasks" aria-describedby="claim-completed">
 {% endif  %}
 
                                 {% if data ['sw-invoice-ref-2']%}
@@ -971,7 +971,7 @@ Add invoice details
               <!-- REJECTED INVOICES -->
               <!-- {% if case == 'dereck'%}
               {% if 'Yes' in data['company-details'] and data ['details-item-no-match-jaws']%}
-              <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
+              <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
               {% endif %}
               {% if 'Yes' in data['company-details'] and not data ['details-item-no-match-jaws']%}
               {% endif %}
@@ -984,7 +984,7 @@ Add invoice details
               {% endif %}
 
               {% if data['company-details']%}
-              <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
+              <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
               {% endif %}
 
 {% endif %}
@@ -996,7 +996,7 @@ Add invoice details
 
               {% if case == 'sonya' %}
               {% if 'Yes' in data['company-details'] and data ['details-item-no-match-ipad']%}
-              <a href="/payments/current/cases/sonya/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
               {% endif %}
               {% if 'Yes' in data['company-details'] and not data ['details-item-no-match-ipad']%}
               {% endif %}
@@ -1004,16 +1004,16 @@ Add invoice details
               {% if 'No' in data['company-details'] and data ['details-item-no-match-ipad']%}
               {% endif %}
               {% if 'No' in data['company-details'] and not data ['details-item-no-match-ipad']%}
-              <a href="/payments/current/cases/sonya/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
               {% endif %}
               {% endif %}
 
               {% if case == 'james' and data ['company-details'] %}
-              <a href="/payments/current/cases/jamesm/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/jamesm/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
               {% endif %}
 
               {% if case == 'nina' and data ['company-details'] %}
-              <a href="/payments/current/cases/nina/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/nina/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="company-information-completed">
               {% endif %}
 
 
@@ -1093,9 +1093,9 @@ Add invoice details
                                                   <span class="app-task-list__task-name">
 
                                                   {% if case == 'sonya' and not data['payee-name'] %}
-                                                      <a href="/payments/current/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% else %}
-                                                  <a href="/payments/current/cases/sonya/cases/review-invoice/proforma-select-item-check-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/proforma-select-item-check-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% endif %}
 
                                                   Payee 1: {{data['payee-name']}}
@@ -1114,12 +1114,12 @@ Add invoice details
                                                   <span class="app-task-list__task-name">
 
                                                       {% if 'Yes' in data['paid-in-full'] %}
-                                                      <a href="/payments/current/cases/sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+                                                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                                                         {% else %}
                                                         {% endif %}
 
                                                         {% if 'No' in data['paid-in-full'] %}
-                                                        <a href="/payments/current/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                        <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
                                                         {% else %}
                                                         {% endif %}
 
@@ -1177,9 +1177,9 @@ Add invoice details
                                                   <li class="app-task-list__item">
                                                   <span class="app-task-list__task-name">
                                                   {% if case == 'sonya' and not data['invoice-number-1'] %}
-                                                      <a href="/payments/current/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% else %}
-                                                        <a href="/payments/current/cases/sonya/cases/review-invoice/proforma-select-item-2-check-tab#your-tasks" aria-describedby="company-information-completed">
+                                                        <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/proforma-select-item-2-check-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% endif %}
 
                                                   Payee 2: {{data['payee-name-1']}}
@@ -1204,7 +1204,7 @@ Add invoice details
 
                                                   </li>
                                                   <br>
-                                                  <form class="" action="/payments/current/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" method="post" >
+                                                  <form class="" action="/payments/sprint-45-ur-1/cases/sonya/cases/review-invoice/payee-name-tab#your-tasks" method="post" >
                                                   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                                   Add another payee
                                                   </button></form>
@@ -1230,31 +1230,31 @@ Add invoice details
 
             {% if not data['cost-share'] %}
                                                   {% if not data['payee-name'] %}
-                                                  <a href="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% endif %}
                                                   {% if data['payee-name'] %}
-                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% endif %}
             {% endif %}
 
             {% if data['cost-share'] %}
                                                   {% if not data['payee-name'] %}
-                                                  <a href="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% endif %}
                                                   {% if data['payee-name'] and not data['cost-share-proforma'] and not data['cost-share-proforma-under'] and not data['cost-share-proforma-under2'] and not data['invoice-number']%}
-                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="company-information-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% endif %}
                                                   {% if data['payee-name'] and data['cost-share-proforma'] and not data['cost-share-proforma-under'] and not data['cost-share-proforma-under2'] and not data['invoice-number']%}
-                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="read-declaration-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/cost-share/has-it-been-paid-tab#your-tasks" aria-describedby="read-declaration-completed">
                                                   {% endif %}
                                                   {% if data['payee-name'] and data['cost-share-proforma'] and data['cost-share-proforma-under'] and not data['cost-share-proforma-under2'] and not data['invoice-number']%}
-                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-under-tab#your-tasks" aria-describedby="read-declaration-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/cost-share/has-it-been-paid-under-tab#your-tasks" aria-describedby="read-declaration-completed">
                                                   {% endif %}
                                                   {% if data['payee-name'] and data['cost-share-proforma'] and data['cost-share-proforma-under'] and data['cost-share-proforma-under2'] and not data['invoice-number']%}
-                                                  <a href="/payments/current/cases/dereck/cases/cost-share/has-it-been-paid-under2-tab#your-tasks" aria-describedby="read-declaration-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/cost-share/has-it-been-paid-under2-tab#your-tasks" aria-describedby="read-declaration-completed">
                                                   {% endif %}
                                                   {% if data['payee-name'] and data['cost-share-proforma'] and data['cost-share-proforma-under'] and data['cost-share-proforma-under2'] and data['invoice-number']%}
-                                                  <a href="/payments/current/cases/dereck/cases/review-invoice/proforma-select-item-check-tab#your-tasks" aria-describedby="read-declaration-completed">
+                                                  <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/proforma-select-item-check-tab#your-tasks" aria-describedby="read-declaration-completed">
                                                   {% endif %}
 
 
@@ -1281,12 +1281,12 @@ Add invoice details
                                                   <span class="app-task-list__task-name">
 
                                                       {% if 'Yes' in data['paid-in-full'] %}
-                                                      <a href="/payments/current/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+                                                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                                                         {% else %}
                                                         {% endif %}
 
                                                         {% if 'No' in data['paid-in-full'] %}
-                                                        <a href="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                        <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
                                                         {% else %}
                                                         {% endif %}
 
@@ -1344,9 +1344,9 @@ Add invoice details
                                                   <li class="app-task-list__item">
                                                   <span class="app-task-list__task-name">
                                                   {% if case == 'dereck' and not data['invoice-number-1'] %}
-                                                      <a href="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
+                                                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% else %}
-                                                        <a href="/payments/current/cases/dereck/cases/review-invoice/proforma-select-item-2-check-tab#your-tasks" aria-describedby="company-information-completed">
+                                                        <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/proforma-select-item-2-check-tab#your-tasks" aria-describedby="company-information-completed">
                                                   {% endif %}
 
                                                   Payee 2: {{data['payee-name-1']}}
@@ -1371,7 +1371,7 @@ Add invoice details
 
                                                   </li>
                                                   <br>
-                                                  <form class="" action="/payments/current/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" method="post" >
+                                                  <form class="" action="/payments/sprint-45-ur-1/cases/dereck/cases/review-invoice/payee-name-tab#your-tasks" method="post" >
                                                   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                                   Add another payee
                                                   </button></form>
@@ -1399,7 +1399,7 @@ Add invoice details
                 <span class="app-task-list__task-name">
 
                   {% if data['sw-food-day-amount'] %}
-                  <a href="/payments/current/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+                  <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                     {% else %}
                     {% endif %}
 
@@ -1421,13 +1421,13 @@ Add invoice details
 
 <!-- USABILITY TESTING -->
               {% if data['company-details'] %}
-              <a href="/payments/current/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
                 {% endif %}
 
 <!-- INVOICE REJECTED -->
                 <!-- {% if data['reject-review-2'] %}
-                <a href="/payments/current/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                   {% else %}
                   {% endif %} -->
 
@@ -1456,7 +1456,7 @@ Add invoice details
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="/payments/current/cases/paul/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
+              <a href="/payments/sprint-45-ur-1/cases/paul/cases/review-invoice/add-invoice-date-tab#your-tasks" aria-describedby="company-information-completed">
                 Add invoice numbers
 
                 </span>
@@ -1506,23 +1506,23 @@ Add invoice details
                 <span class="app-task-list__task-name">
 
                 <!-- {% if case == 'sonya' and not data['sop-site-code'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
-                      <a href="/payments/current/cases/sonya/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
 
                 {% if case == 'dereck' and not data['sop-site-code'] %}
-                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
-                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-payee-1-check-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %} -->
 
 
     <!-- COST SHARE -->
 
     {% if data['cost-share-proforma-under2'] and data ['invoice-number']%}
-    <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+    <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
     {% else %}
     {% endif %}
 
@@ -1546,27 +1546,27 @@ Add invoice details
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                 {% if case == 'dereck' and data['invoice-number-1'] %}
-                <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
 
                     {% if case == 'sonya' %}
                     {% if 'Yes' in data['paid-in-full'] and data['invoice-number']%}
-                    <a href="/payments/current/cases/sonya/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                    <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                     {% endif %}
                     {% endif %}
 
                 {% if case == 'james' and data['invoice-number-1'] %}
-                <a href="/payments/current/cases/jamesm/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/jamesm/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'nina' and data['invoice-number-1'] %}
-                <a href="/payments/current/cases/nina/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/nina/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'paul' and data['invoice-number-1'] %}
-                <a href="/payments/current/cases/paul/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/paul/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'thomas' and data['invoice-number-1'] %}
-                <a href="/payments/current/cases/thomas/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-payment/sop-find-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
                 Find and add payee from SOP
@@ -1600,14 +1600,14 @@ Add invoice details
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                 {% if case == 'sonya' and not data['sop-site-code-1'] %}
-                      <a href="/payments/current/cases/sonya/cases/review-payment/sop-find-2-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-payment/sop-find-2-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
-                      <a href="/payments/current/cases/sonya/cases/review-payment/sop-payee-2-check-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-payment/sop-payee-2-check-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'dereck' and not data['sop-site-code-1'] %}
-                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-find-2-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-find-2-tab#your-tasks" aria-describedby="company-information-completed">
                 {% else %}
-                      <a href="/payments/current/cases/dereck/cases/review-payment/sop-payee-2-check-tab#your-tasks" aria-describedby="company-information-completed">
+                      <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-payee-2-check-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
                 Payee 2: find and add payee from SOP
@@ -1629,19 +1629,19 @@ Add invoice details
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                 {% if case == 'dereck' and data['invoice-number'] %}
-                <a href="/payments/current/cases/dereck/cases/review-payment/sop-find" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-find" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'sonya' and data['sop-find-details-amend'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'james' and data['sop-find-details-amend'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'nina' and data['sop-find-details-amend'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'paul' and data['sop-find-details-amend'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
 
                 Amend existing payee details
@@ -1662,22 +1662,22 @@ Add invoice details
                 <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                 {% if case == 'dereck' and data['invoice-number'] %}
-                <a href="/payments/current/cases/dereck/cases/review-payment/sop-find" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-find" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'sonya' and data['sop-find'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'james' and data['sop-find'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'nina' and data['sop-find'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'paul' and data['sop-find'] %}
-                <a href="/payments/current/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/review-payment/sop-find-details-confirm" aria-describedby="company-information-completed">
                 {% endif %}
                 {% if case == 'thomas' and data['sop-find'] %}
-                <a href="/payments/current/cases/thomas/cases/review-payment/sop-find-details-confirm-tab#your-tasks" aria-describedby="company-information-completed">
+                <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-payment/sop-find-details-confirm-tab#your-tasks" aria-describedby="company-information-completed">
                 {% endif %}
 
                 Confirm payee is in SOP
@@ -1716,22 +1716,22 @@ Add invoice details
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
 {% if case == 'dereck' and data['sop-supplier-number'] %}
-            <a href="/payments/current/cases/dereck/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
+            <a href="/payments/sprint-45-ur-1/cases/dereck/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if case == 'sonya' and data['sop-supplier-number'] %}
-<a href="/payments/current/cases/sonya/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
+<a href="/payments/sprint-45-ur-1/cases/sonya/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if case == 'james' and data['sop-supplier-number'] %}
-            <a href="/payments/current/cases/jamesm/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
+            <a href="/payments/sprint-45-ur-1/cases/jamesm/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if case == 'nina' and data['sop-supplier-number'] %}
-            <a href="/payments/current/cases/nina/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
+            <a href="/payments/sprint-45-ur-1/cases/nina/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if case == 'paul' and data['sop-supplier-number'] %}
-            <a href="/payments/current/cases/paul/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
+            <a href="/payments/sprint-45-ur-1/cases/paul/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 {% if case == 'thomas' and data['sop-supplier-number-1'] or data ['sop-find-details-confirm'] %}
-            <a href="/payments/current/cases/thomas/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
+            <a href="/payments/sprint-45-ur-1/cases/thomas/cases/review-payment/sop-approve-tab#your-tasks" aria-describedby="company-information-completed">
 {% endif %}
 
                 Check and send payments for processing

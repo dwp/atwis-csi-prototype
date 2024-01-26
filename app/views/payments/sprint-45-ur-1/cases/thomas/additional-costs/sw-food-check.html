@@ -3,7 +3,7 @@
 {% set title = "Case details" %}
 {% set view = "tab" %}
 
-{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+{% extends   "payments/sprint-45-ur-1/claim/_CSIBASE-no-footer.html" %}
 
 {% block csi %}
 
@@ -12,8 +12,8 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<!-- <form action="/payments/current/cases/claim#your-tasks" method="post" novalidate> -->
-<form action="/payments/current/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+<!-- <form action="/payments/sprint-45-ur-1/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-45-ur-1/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
 
 
 
@@ -52,7 +52,7 @@ Number of meals (Daytime)
   {{data['sw-day-food-number']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-number-tab#your-tasks">
+            <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-food-number-tab#your-tasks">
   Change
           <span class="govuk-visually-hidden"> address</span>
           </a>
@@ -67,7 +67,7 @@ Number of meals (Daytime)
   £{{data['sw-food-day-amount']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
+            <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
   Change
           <span class="govuk-visually-hidden"> address</span>
           </a>
@@ -83,7 +83,7 @@ Number of meals (Overnight)
 {{data['sw-night-food-number']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-number-tab#your-tasks">
+          <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-food-number-tab#your-tasks">
 Change
         <span class="govuk-visually-hidden"> address</span>
         </a>
@@ -99,7 +99,7 @@ Cost of meals (Overnight)
 £{{data['sw-food-night-amount']}}
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
+        <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
 Change
       <span class="govuk-visually-hidden"> address</span>
       </a>
@@ -119,7 +119,7 @@ Total amount to pay
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/payments/current/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
+          <a class="govuk-link" href="/payments/sprint-45-ur-1/cases/thomas/additional-costs/sw-food-amount-tab#your-tasks">
 Change
         <span class="govuk-visually-hidden"> claim support type</span>
         </a>
