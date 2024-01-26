@@ -983,7 +983,10 @@ Add invoice details
               {% if not data['company-details']%}
               {% endif %}
 
-              {% if data['company-details']%}
+              {% if data['company-details'] and not data ['interrupt']%}
+              <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
+              {% endif %}
+              {% if data['company-details'] and data ['interrupt']%}
               <a href="/payments/current/cases/dereck/cases/review-invoice/paid-in-full-tab#your-tasks" aria-describedby="read-declaration-completed">
               {% endif %}
 
