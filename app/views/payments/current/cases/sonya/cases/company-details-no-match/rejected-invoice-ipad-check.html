@@ -124,7 +124,90 @@ Check your answers
 {% endif %}
 
 
-{% if case == 'dereck' %}
+{% if case == 'dereck' and not data ['cost-share'] %}
+
+                          <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                  Item
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                  JAWS screen reader
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                  <!-- Change
+                          <span class="govuk-visually-hidden"> name</span> -->
+                          </a>
+                          </dd>
+                          </div>
+
+
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                  Element
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                  Specialist equipment
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">
+                  <!-- Change
+                          <span class="govuk-visually-hidden"> address</span> -->
+                          </a>
+                          </dd>
+                          </div>
+
+
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                  Amount to pay
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                  {% if data ['new-invoice-amount-1'] %}
+                          £{{data['new-invoice-amount-1']}}
+                  {% endif %}
+
+                  {% if not data ['new-invoice-amount-1'] %}
+                          £499
+                  {% endif %}
+
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="/payments/current/cases/sonya/cases/company-details-no-match/rejected-invoice-ipad">
+                  Change
+                          <span class="govuk-visually-hidden">amount to pay</span>
+                          </a>
+                          </dd>
+                          </div>
+
+
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                  Did you save the replacement invoice in SharePoint?
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                  {% if data ['new-invoice-location-1'] %}
+                          {{data['new-invoice-location-1']}}
+                  {% endif %}
+
+                  {% if not data ['new-invoice-location-1'] %}
+                          Yes
+                  {% endif %}
+
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="/payments/current/cases/sonya/cases/company-details-no-match/saved-location">
+                  Change
+                          <span class="govuk-visually-hidden"> - </span>
+                          </a>
+                          </dd>
+                          </div>
+                          </dl>
+{% endif %}
+
+
+{% if case == 'dereck' and data ['cost-share'] %}
 
                           <dl class="govuk-summary-list">
                           <div class="govuk-summary-list__row">

@@ -30,6 +30,9 @@ module.exports = {
 'additional-cost' : "",
 'details-item-no-match-ipad' : "",
 'cost-share' : "YES",
+'SEA-hold-1-invoice' : "",
+
+
 
 
 
