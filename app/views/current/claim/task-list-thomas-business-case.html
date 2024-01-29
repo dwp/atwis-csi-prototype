@@ -83,7 +83,7 @@
 {% else %}
 
 
-{% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')
+{% if data ['appointee']
 %}
 
 
@@ -192,7 +192,7 @@ data['wpa'+ phase]  %}
 
 
 
-          <br> <form class="" action="/current/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
+          <br> <form class="" action="/current/cases/thomas/cases/workplace-assesment/wpa-report/support" method="post" >
            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
            Add new elements
            </button></form>
@@ -235,7 +235,27 @@ data['wpa'+ phase]  %}
     <br>
 {% endif %}
 
-{% if totalAward > 10000 %}
+{% if totalAward > 190000 %}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+    Award is over the annual cap limit of £66,000
+
+    </p>The current amount for this award is £{{totalAward / 3 }}  for one year. </P><br>
+
+    <p>You will need to contact Dereck Smith and let them know. </P><br>
+    <p>Check <a href="https://intranet.dwp.gov.uk/manual/access-work/ceiling-cap" target="_blank">guidance on ceiling cap (opens in new tab)</a>.</p>
+  </div>
+</div>
+    {% endif %}
+
+{% if totalAward > 10000 and totalAward <= 198000 %}
+
       <h2 class="govuk-heading--m">Award is over approval limits</h2>
 <script>
   const nunjucks = require('nunjucks');
@@ -246,7 +266,7 @@ data['wpa'+ phase]  %}
   });
   </script>
       <p>You will need to get approval from a appropriate approver.  </p>
-<div class="govuk-inset-text">Total award £{{totalAward }} <br><br>Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
+<div class="govuk-inset-text">Total award £{{totalAward }} over 3 years.<br><br>Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
     <br>
 {% endif %}
 
