@@ -1,5 +1,33 @@
 {% set monthAndYear = "November 2023" %}
 
+{% if data['approve-1']=='true' and data['approve-2']=='true'%}
+
+{% if data['support-worker-hour-per-week']%}
+{% set totalAward =  (((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4))  * 156  %}
+{% else %}
+{% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
+{% endif %}
+
+
+{% if data['approve-1']=='true' and data['approve-2']=='false'%}
+{% if data['support-worker-hour-per-week']%}
+{% set totalAward =  ((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4)  * 156  %}
+
+{% else %}
+{% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+{% endif %}
+
+
+{% if data['approve-1']=='false' and data['approve-2']=='true'%}
+{% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}
+{% endif %}
+
+{% if data['approve-1']=='true' and not data['approve-2']%}
+{% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}
+{% endif %}
+
+
+
 
 
     <div class="govuk-grid-row">
@@ -10,6 +38,75 @@
 
         <div class="moj-timeline">
 
+        
+          {% set conditionMet = totalAward > 190000 %}
+          {% if conditionMet %}
+          <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">  Cap limit exceeded </h2>
+            <p class="moj-timeline__byline">by John Goldsmith </p>
+          </div>
+
+          <p class="moj-timeline__date">
+            <time datetime="2023-06-06T09:12:00.000Z"><script>
+              // Get the current date and time
+                   var now = new Date();
+                   var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                   var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                   // Write the date and time to the HTML page
+                   document.write(date + ' at ' + time);
+                 </script></time>
+          </p>
+
+
+          </div>
+          {% endif %}
+          {% if data['sw-addthomas']=='No'%}
+          <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">   Support worker: add or change support task </h2>
+            <p class="moj-timeline__byline">by John Goldsmith </p>
+          </div>
+
+          <p class="moj-timeline__date">
+            <time datetime="2023-06-06T09:12:00.000Z"><script>
+              // Get the current date and time
+                   var now = new Date();
+                   var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                   var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                   // Write the date and time to the HTML page
+                   document.write(date + ' at ' + time);
+                 </script></time>
+          </p>
+
+
+          </div>
+          {% endif %}
+
+          {% if data['employer-sizethomas']%}
+          <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">  Add information about the employer task </h2>
+            <p class="moj-timeline__byline">by John Goldsmith </p>
+          </div>
+
+          <p class="moj-timeline__date">
+            <time datetime="2023-06-06T09:12:00.000Z"><script>
+              // Get the current date and time
+                   var now = new Date();
+                   var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                   var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                   // Write the date and time to the HTML page
+                   document.write(date + ' at ' + time);
+                 </script></time>
+          </p>
+
+
+          </div>
+          {% endif %}
 
 {% if data['wpathomas']%}
 <div class="moj-timeline__item">
