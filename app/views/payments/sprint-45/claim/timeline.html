@@ -1,0 +1,611 @@
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+
+<!-- <h2 class="govuk-heading-l">Case history</h2> -->
+
+
+  <!-- SEND PAYMENT -->
+
+  <!-- CHECK PAYMENT -->
+
+  <h2 class="govuk-heading-l">Case history</h2>
+  <div class="moj-timeline">
+
+
+
+
+
+
+
+
+
+  <!-- CHECK PAYMENT -->
+{% if data['sop-approve-button']%}
+
+  <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Check payment and send for approval</h2>
+      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+      </div>
+      {% if case == 'dereck' %}
+      <div class="moj-timeline__description">
+        <p>£120.18 Paid to {{data['payee-name']}}</p>
+        <p>£44.50 Paid to {{data['payee-name-1']}}</p>
+      </div>
+      {% endif %}
+      {% if case == 'sonya' %}
+      <div class="moj-timeline__description">£729.71 Paid on this claim</div>
+      {% endif %}
+      {% if case == 'james' %}
+      <div class="moj-timeline__description">£1249.64 Paid on this claim</div>
+      {% endif %}
+      {% if case == 'nina' %}
+      <div class="moj-timeline__description">£0.00 Paid on this claim</div>
+      {% endif %}
+      {% if case == 'paul' %}
+      <div class="moj-timeline__description">£296.00 Paid on this claim</div>
+      {% endif %}
+      {% if case == 'thomas' %}
+      <div class="moj-timeline__description">£600 Paid on this claim
+        <br>
+Paid to: {{data ['sop-payee-name'] }}
+<br>
+
+Claim period:
+
+ {{data['sw-claim-start-day']}}
+
+ {% if (data['sw-claim-start-month'] =='01') or (data['sw-claim-start-month'] =='1') %} January {% endif%}
+ {% if (data['sw-claim-start-month'] =='02') or (data['sw-claim-start-month'] =='2') %} February  {% endif%}
+ {% if (data['sw-claim-start-month'] =='03') or (data['sw-claim-start-month'] =='3') %} March {% endif%}
+ {% if (data['sw-claim-start-month'] =='04') or (data['sw-claim-start-month'] =='4') %} April {% endif%}
+ {% if (data['sw-claim-start-month'] =='05') or (data['sw-claim-start-month'] =='5') %} May {% endif%}
+ {% if (data['sw-claim-start-month'] =='06') or (data['sw-claim-start-month'] =='6') %} June {% endif%}
+ {% if (data['sw-claim-start-month'] =='07') or (data['sw-claim-start-month'] =='7') %} July {% endif%}
+ {% if (data['sw-claim-start-month'] =='08') or (data['sw-claim-start-month'] =='8') %} August {% endif%}
+ {% if (data['sw-claim-start-month'] =='09') or (data['sw-claim-start-month'] =='9') %} September {% endif%}
+ {% if data['sw-claim-start-month'] =='10' %} October {% endif%}
+ {% if data['sw-claim-start-month'] =='11'%} November {% endif%}
+ {% if data['sw-claim-start-month'] =='12' %} December {% endif%}
+
+ {{data['sw-claim-start-year']}}
+
+to
+
+ {{data['sw-claim-end-day']}}
+
+ {% if (data['sw-claim-end-month'] =='01') or (data['sw-claim-end-month'] =='1') %} January {% endif%}
+ {% if (data['sw-claim-end-month'] =='02') or (data['sw-claim-end-month'] =='2') %} February  {% endif%}
+ {% if (data['sw-claim-end-month'] =='03') or (data['sw-claim-end-month'] =='3') %} March {% endif%}
+ {% if (data['sw-claim-end-month'] =='04') or (data['sw-claim-end-month'] =='4') %} April {% endif%}
+ {% if (data['sw-claim-end-month'] =='05') or (data['sw-claim-end-month'] =='5') %} May {% endif%}
+ {% if (data['sw-claim-end-month'] =='06') or (data['sw-claim-end-month'] =='6') %} June {% endif%}
+ {% if (data['sw-claim-end-month'] =='07') or (data['sw-claim-end-month'] =='7') %} July {% endif%}
+ {% if (data['sw-claim-end-month'] =='08') or (data['sw-claim-end-month'] =='8') %} August {% endif%}
+ {% if (data['sw-claim-end-month'] =='09') or (data['sw-claim-end-month'] =='9') %} September {% endif%}
+ {% if data['sw-claim-end-month'] =='10' %} October {% endif%}
+ {% if data['sw-claim-end-month'] =='11'%} November {% endif%}
+ {% if data['sw-claim-end-month'] =='12' %} December {% endif%}
+
+ {{data['sw-claim-end-year']}}</div>
+
+      {% endif %}
+
+      <p class="moj-timeline__description">
+      <time datetime="2019-06-07T12:32:00.000Z">8:58am, 21 June 2023</time>
+      </p>
+    </div>
+
+{% endif %}
+
+
+
+<!-- REVIEW PAYMENT -->
+
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+<!-- PAYEE NOT IN SOP -->
+
+<!-- {% if data['sop-add-supplier']%}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Add details from SOP</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:54am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+{% endif %} -->
+
+
+
+
+    <!-- ADD PAYEE DETAILS FROM SOP -->
+{% if data['sop-add-supplier']%}
+
+    <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Add details from SOP</h2>
+        <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+        </div>
+        <p class="moj-timeline__description">
+        <time datetime="2019-06-07T12:32:00.000Z">8:54am, 21 June 2023</time>
+        </p>
+        <div class="moj-timeline__description"></div>
+      </div>
+{% endif %}
+
+      <!-- NO -->
+      <!-- CONFIRRM PAYEE IS IN SOP -->
+{% if data['sop-find-details-confirm']%}
+
+      <div class="moj-timeline__item">
+
+          <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Confirm payee is in SOP</h2>
+          <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+          </div>
+          <p class="moj-timeline__description">
+          <time datetime="2019-06-07T12:32:00.000Z">8:49am, 21 June 2023</time>
+          </p>
+          <div class="moj-timeline__description"></div>
+        </div>
+{% endif %}
+
+
+
+      <!-- FIND PAYEE IN SOP -->
+<!-- {% if data['sop-find']%}
+      <div class="moj-timeline__item">
+
+          <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Find payee in SOP</h2>
+          <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+          </div>
+          <p class="moj-timeline__description">
+          <time datetime="2019-06-07T12:32:00.000Z">8:49am, 21 June 2023</time>
+          </p>
+          <div class="moj-timeline__description"></div>
+        </div>
+{% endif %} -->
+
+        <!-- ADD INVOICE DETAILS -->
+
+
+
+        <!-- ADD INVOICE NUMBERS -->
+
+        {% if case == 'dereck' and data ['invoice-number-1']%}
+
+        <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Payee 1: invoice numbers</h2>
+            <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+            </div>
+            <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
+            <p class="moj-timeline__description">
+            <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
+            </p>
+            <div class="moj-timeline__description"></div>
+          </div>
+
+          <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Payee 2: invoice numbers</h2>
+              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+              </div>
+              <div class="moj-timeline__description">{{data['invoice-number']}}</div>
+              <p class="moj-timeline__description">
+              <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
+              </p>
+              <div class="moj-timeline__description"></div>
+            </div>
+
+            {%endif%}
+
+
+<!-- {% if case == 'dereck' and data ['invoice-number']%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">{% if case == 'dereck' %}Invoice number{% else %}Invoice numbers{% endif %}</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">{{data['invoice-number']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+{%endif%} -->
+          <!-- NO -->
+          <!-- CHECK INVOICES HAVE BEEN PAID -->
+          <!-- <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Rejected invoice: ZoomText Professional License</h2>
+              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+              </div>
+              <p class="moj-timeline__description">
+              <time datetime="2019-06-07T12:32:00.000Z">21 June 2023, 8:32am</time>
+              </p>
+              <div class="moj-timeline__description">£530.64 removed from calculation</div>
+            </div> -->
+
+
+
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+<!-- SAE COST SHARE -->
+
+<!-- {% if data['cost-share-proforma-under2']%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Cost share paid on proforma</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£80.99</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+
+  {% endif %} -->
+
+
+
+
+
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+<!-- SW ADDITIONAL COSTS -->
+
+
+{% if data['sw-travel-number']%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: travel</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£{{data['sw-travel-amount']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+
+
+
+
+
+
+{% endif %}
+
+{% if data['sw-accomodation-number']%}
+
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: accomodation</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£{{data['sw-accomodation-amount']}}</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+{% endif %}
+
+{% if data['sw-food-day-amount']%}
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Additional costs: food</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">£55.74</div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+
+{% endif %}
+
+
+
+
+
+
+
+
+          <!-- CHECK INVOICES HAVE BEEN PAID -->
+<!-- {% if data['paid-in-full']%}
+
+          <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Check invoices have been paid</h2>
+              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+              </div>
+              <p class="moj-timeline__description">
+              <time datetime="2019-06-07T12:32:00.000Z">8:32am, 21 June 2023</time>
+              </p>
+              <div class="moj-timeline__description"></div>
+            </div>
+{% endif %} -->
+
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
+<!-- INVOICE REJECTED -->
+
+
+<!-- IPAD INVOICE REJECTED -->
+{% if case == 'sonya' and data['invoice-saved']%}
+<!-- {{data['invoice-deadline-day']}} -->
+            <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Review rejected invoice Ipad Pro case</h2>
+                <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                </div>
+                <div class="moj-timeline__description">£60.48 new invoice submitted</div>
+
+                <div class="moj-timeline__description"><a class="govuk-link" href="cases/company-details-no-match/rejected-invoice-ipad-check">View details</a></div>
+                <p class="moj-timeline__description">
+                <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
+                </p>
+              </div>
+{% endif %}
+
+
+<!-- JAWS INVOICE REJECTED -->
+{% if case == 'dereck' and data['invoice-saved']%}
+              <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Review rejected invoice Jaws screen reader case</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description">£400 new invoice submitted</div>
+
+                  <div class="moj-timeline__description"><a class="govuk-link" href="cases/company-details-no-match/rejected-invoice-ipad-check-tab#your-tasks">View details</a></div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
+                  </p>
+                </div>
+{% endif %}
+
+
+
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+<!-- CHECK INVOICES ARE VALID -->
+
+            <!-- CHECK INVOICES ARE VALID -->
+<!-- {% if data['company-details']%}
+            <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Check invoices are valid</h2>
+                <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                </div>
+                <p class="moj-timeline__description">
+                <time datetime="2019-06-07T12:32:00.000Z">8:37am, 21 June 2023</time>
+                </p>
+                <div class="moj-timeline__description"></div>
+              </div>
+{% endif %} -->
+
+
+              <!-- NO -->
+              <!-- AMOUNT LOWER -->
+              <!-- <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Amount lower than grant award Ergonomic keyboard</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description"><a class="govuk-link" href="cases/review-claim-no-match/amount-low-no-match-check">View details</a></div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div> -->
+
+
+                <!-- NO -->
+                <!-- AMOUNT HIGHER -->
+                <!-- <div class="moj-timeline__item">
+
+                    <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Amount higher than grant award Jaws screen reader</h2>
+                    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                    </div>
+                    <div class="moj-timeline__description"><a class="govuk-link" href="cases/review-claim-no-match/amount-high-no-match-check">View details</a></div>
+                    <div class="moj-timeline__description"></div>
+                    <p class="moj-timeline__description">
+                    <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
+                    </p>
+                  </div> -->
+
+
+
+
+
+
+<!-- SW HOURS AND AMOUNT NO PATHS -->
+
+{% if data['sw-amount-more'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hourly rate does not match grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <!-- <div class="moj-timeline__description">£{{data['sw-amount']}} New total amount entered</div> -->
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+{% endif %}
+{% if data['sw-hours-more'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hours claimed are more than grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+{% if data['sw-hours-less'] %}
+              <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Hours claimed are less than grant award</h2>
+                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <div class="moj-timeline__description">{{data['sw-low-hours']}} hours entered from claim</div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div>
+
+{% endif %}
+
+
+
+
+
+
+              <!-- CHECK CLAIM MATTCHES GRANT AWARD -->
+{% if data['grant-matches-claim'] or data ['ttw-match'] or data ['grant-matches-claim-sw']%}
+              <!-- <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Check claim matches grant award</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__description">
+                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
+                  </p>
+                  <div class="moj-timeline__description"></div>
+                </div> -->
+{% endif %}
+
+
+
+<!-- {% if data['sw-claim-start-day']%}
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Add claim details</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:20am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+{% endif %} -->
+
+
+{% if data['ttw-claim-start-day']%}
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Add claim details</h2>
+    <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:20am, 21 June 2023</time>
+    </p>
+    <div class="moj-timeline__description"></div>
+  </div>
+{% endif %}
+
+
+                <!-- IDENTITY CHECKS COMPLETE -->
+                <div class="moj-timeline__item">
+
+                    <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Identity checks completed</h2>
+                    <p class="moj-timeline__byline"></p>
+                    </div>
+                    <div class="moj-timeline__description">Personal details match Searchlight</div>
+                    <p class="moj-timeline__description">
+                    <time datetime="2019-06-07T12:32:00.000Z">1:15pm, 29 May 2023</time>
+                    </p>
+                  </div>
+
+
+                  <!-- DIGITAL CLAIM RRECIVED -->
+                  <div class="moj-timeline__item">
+
+                      <div class="moj-timeline__header">
+                      <h2 class="moj-timeline__title">Claim received</h2>
+                      <p class="moj-timeline__byline"></p>
+                      </div>
+                      <p class="moj-timeline__description">
+                      <time datetime="2019-06-07T12:32:00.000Z">1:15pm, 29 May 2023</time>
+                      </p>
+                      <div class="moj-timeline__description"></div>
+                    </div>
+
+
+                    <!-- GRANT AWARDED -->
+                    <div class="moj-timeline__item">
+
+                        <div class="moj-timeline__header">
+                        <h2 class="moj-timeline__title">Grant awarded</h2>
+                        <p class="moj-timeline__byline">by Mark Dawson</p>
+                        </div>
+                        <p class="moj-timeline__description">
+                        <time datetime="2019-06-07T12:32:00.000Z">1:24pm, 1 February 2023</time>
+                        </p>
+                        <div class="moj-timeline__description"></div>
+                      </div>
+
+
+
+</div>
+</div>
+</div>

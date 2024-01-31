@@ -1,0 +1,105 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-45/claim/_CSIBASE-no-footer.html" %}
+
+
+{% block csi %}
+<br>
+
+<form action="/payments/sprint-45/cases/dereck/cases/cost-share-threshold/summary-tab#your-tasks" method="post" novalidate>
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+     <h1 class="govuk-heading-l">
+    Request replacement invoices that total £20 or more
+    </h1>
+
+<!-- paraagraph ttext -->
+
+      <p>
+        There's a £500 employer threshold and only £480 has been paid. To meet the contribution threshold, one or more invoices must be paid and replaced.
+      </p>
+
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                What is the deadline for replacement invoices?
+                </legend>
+        <div id="passport-issued-hint" class="govuk-hint">
+          For example, 27 3 2007
+        </div>
+        <div class="govuk-date-input" id="invoice-deadline">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="invoice-deadline-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="invoice-deadline-day" name="invoice-deadline-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="invoice-deadline-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="invoice-deadline-month" name="invoice-deadline-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="invoice-deadline-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="invoice-deadline-year" name="invoice-deadline-year" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+
+
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+
+<!-- alternative button text: -->
+<!-- Save review date -->
+           </button>
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
