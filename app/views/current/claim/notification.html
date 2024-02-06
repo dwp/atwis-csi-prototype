@@ -1,5 +1,5 @@
 
-
+<div class="govuk-grid-column-two-thirds">
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -8,8 +8,8 @@
   </div>
   <div class="govuk-notification-banner__content">
     <p class="govuk-notification-banner__heading">
-      Application may not be eligible.
-      <a class="govuk-notification-banner__link" href="/current/cases/contact">Your actions</a>.
+      Application is not eligible.
+      <!-- <a class="govuk-notification-banner__link" href="/current/cases/close/reject-case">Your action</a>. -->
     </p>
     <!-- <p>Summary of what make the case not eligible...</P> -->
     <!-- {% if phase == "notEligible"  %}
@@ -18,8 +18,8 @@
 
 
 
-    <!-- {% if data['exceptions']=='No'%}
-    <p> Dereck Smith is receiving benefits. </p>{% endif %} -->
+    {% if data['exceptions']=='No'%}
+    <p> Dereck Smith is receiving benefits. </p>{% endif %}
 
       <!-- and does not have one of the following:
     <ul class="govuk-list govuk-list--bullet">
@@ -28,4 +28,5 @@
       <li> has a permitted work decision from Access to Work</li>
         </ul> -->
   </div>
+</div>
 </div>

@@ -39,7 +39,7 @@
   </ul>
   <div class="govuk-tabs__panel" id="application-summary">
 
-  {% if phase == "notEligible"  %}
+  {% if data['exceptions']=='No'  %}
 {% include  "../claim/notification.html" %}
 {% endif %}
 <!--
@@ -307,46 +307,18 @@ data-module="govuk-notification-banner">
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contact">
 
-  {% if phase == "notEligible"  %}
-  {% include  "./notification.html" %}
-    {% else %}
+  {% if data['exceptions']=='No'  %}
+  {% include  "../claim/notification.html" %}
   {% endif %}
 
-  <!-- {% if data['wpa-4-weeks']=='Yes'%}
-  <div class="govuk-notification-banner" role="region"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-    Important
-  </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-  <p class="govuk-notification-banner__heading">
-    You have 7 days left to send your application.
-    <a class="govuk-notification-banner__link" href="#">View application</a>.
-  </p>
-  </div>
-  </div>
-  {% endif %}
-{% if data['wpa-pause']=='Yes'%}<div class="govuk-notification-banner" role="region"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      You have 7 days left to send your application.
-      <a class="govuk-notification-banner__link" href="#">View application</a>.
-    </p>
-  </div>
-</div>{% endif %} -->
-<h1 class="govuk-heading-l">
-Contact details and log
-</h1>{% if
+
+
+  <div class="govuk-grid-row">
+ <div class="govuk-grid-column-two-thirds">
+
+<h2 class="govuk-heading-l">Contact details and log</h2>
+
+{% if
 
 
 data ['appointee']
@@ -591,15 +563,13 @@ data ['appointee']
 
 
 
-</div>     </div>
+</div>     </div></div></div>
 
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="checks">
-
-    {% if phase == "notEligible"  %}
-    {% include  "./notification.html" %}
-      {% else %}
+    {% if data['exceptions']=='No'  %}
+    {% include  "../claim/notification.html" %}
     {% endif %}
   <!-- {% if data['wpa-4-weeks']=='Yes'%}
   <div class="govuk-notification-banner" role="region"
@@ -671,6 +641,9 @@ data ['appointee']
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="citizen-details">
+    {% if data['exceptions']=='No'  %}
+    {% include  "../claim/notification.html" %}
+    {% endif %}
     <!-- {% if data['wpa-4-weeks']=='Yes'%}
     <div class="govuk-notification-banner" role="region"
     aria-labelledby="govuk-notification-banner-title"
@@ -726,6 +699,9 @@ data ['appointee']
 
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
+  {% if data['exceptions']=='No'  %}
+  {% include  "../claim/notification.html" %}
+  {% endif %}
   <!-- {% if data['wpa-4-weeks']=='Yes'%}
   <div class="govuk-notification-banner" role="region"
   aria-labelledby="govuk-notification-banner-title"
