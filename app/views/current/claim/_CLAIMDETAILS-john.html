@@ -47,7 +47,7 @@
 
   <div class="govuk-tabs__panel" id="application-summary">
 
-  {% if phase == "notEligible"  %}
+       {% if data['clear']=='No' %}
 {% include  "../claim/notification.html" %}
 {% endif %}
 
@@ -215,7 +215,7 @@
 
 
 
-    {% if phase == "notEligible"  %}
+         {% if data['clear']=='No' %}
     {% include  "./notification.html" %}
       {% else %}
     {% endif %}
@@ -300,7 +300,7 @@
 
  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contact">
 
-   {% if phase == "notEligible"  %}
+     {% if data['clear']=='No' %}
    {% include  "./notification.html" %}
      {% else %}
    {% endif %}
@@ -352,7 +352,7 @@
            </fieldset>
 
 
-           {% if data['clear']=='No' %}{% else %}
+               {% if data['clear']=='No' %}
              {% include  "current/claim/notification-contact.html" %}{% endif %}
 
 
