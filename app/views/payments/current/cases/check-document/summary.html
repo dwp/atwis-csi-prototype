@@ -1,0 +1,200 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h2 class="govuk-fieldset__heading">
+<!-- {{data['sw-invoice-ref-1']}}: summary -->
+Summary of replacment invoice
+
+        </h2>
+
+        <div class="govuk-inset-text">
+        Deadline for replacement invoice is
+
+        {{data['invoice-deadline-day']}}
+
+        {% if (data['invoice-deadline-month'] =='01') or (data['invoice-deadline-month'] =='1') %} January {% endif%}
+        {% if (data['invoice-deadline-month'] =='02') or (data['invoice-deadline-month'] =='2') %} February  {% endif%}
+        {% if (data['invoice-deadline-month'] =='03') or (data['invoice-deadline-month'] =='3') %} March {% endif%}
+        {% if (data['invoice-deadline-month'] =='04') or (data['invoice-deadline-month'] =='4') %} June {% endif%}
+        {% if (data['invoice-deadline-month'] =='05') or (data['invoice-deadline-month'] =='5') %} May {% endif%}
+        {% if (data['invoice-deadline-month'] =='06') or (data['invoice-deadline-month'] =='6') %} June {% endif%}
+        {% if (data['invoice-deadline-month'] =='07') or (data['invoice-deadline-month'] =='7') %} July {% endif%}
+        {% if (data['invoice-deadline-month'] =='08') or (data['invoice-deadline-month'] =='8') %} August {% endif%}
+        {% if (data['invoice-deadline-month'] =='09') or (data['invoice-deadline-month'] =='9') %} September {% endif%}
+        {% if data['invoice-deadline-month'] =='10' %} October {% endif%}
+        {% if data['invoice-deadline-month'] =='11'%} November {% endif%}
+        {% if data['invoice-deadline-month'] =='12' %} December {% endif%}
+
+        {{data['invoice-deadline-year']}}.
+        </div>
+
+
+
+        <br>
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Give the invoice a name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} invoice 1 {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does this invoice need to be rejected or replaced?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the reason you are rejecting this invoice?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Key details missing
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Which items are on the invoice you are rejecting?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              JAWS screen reader
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Deadline for replacment invoice?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+
+              {{data['invoice-deadline-day']}}
+
+              {% if (data['invoice-deadline-month'] =='01') or (data['invoice-deadline-month'] =='1') %} January {% endif%}
+              {% if (data['invoice-deadline-month'] =='02') or (data['invoice-deadline-month'] =='2') %} February  {% endif%}
+              {% if (data['invoice-deadline-month'] =='03') or (data['invoice-deadline-month'] =='3') %} March {% endif%}
+              {% if (data['invoice-deadline-month'] =='04') or (data['invoice-deadline-month'] =='4') %} June {% endif%}
+              {% if (data['invoice-deadline-month'] =='05') or (data['invoice-deadline-month'] =='5') %} May {% endif%}
+              {% if (data['invoice-deadline-month'] =='06') or (data['invoice-deadline-month'] =='6') %} June {% endif%}
+              {% if (data['invoice-deadline-month'] =='07') or (data['invoice-deadline-month'] =='7') %} July {% endif%}
+              {% if (data['invoice-deadline-month'] =='08') or (data['invoice-deadline-month'] =='8') %} August {% endif%}
+              {% if (data['invoice-deadline-month'] =='09') or (data['invoice-deadline-month'] =='9') %} September {% endif%}
+              {% if data['invoice-deadline-month'] =='10' %} October {% endif%}
+              {% if data['invoice-deadline-month'] =='11'%} November {% endif%}
+              {% if data['invoice-deadline-month'] =='12' %} December {% endif%}
+
+              {{data['invoice-deadline-year']}}.
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+        </dl>
+
+
+<br>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h2 class="govuk-heading-m">
+                        Have you received a valid replacement invoice?
+                      </h2>
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="document-check-hold" name="document-check-hold" type="radio" value="Yes~cases/check-document/saved-location-tab#your-tasks" {{ checked("document-check-hold", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="document-check-hold">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="document-check-hold-2" name="document-check-hold" type="radio" value="No, put the claim on hold~claim-dereck#your-tasks" {{ checked("document-check-hold-2", "No, put the claim on hold") }}>
+                        <label class="govuk-label govuk-radios__label" for="document-check-hold-2">
+                          No, put the claim on hold
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="document-check-hold-3" name="document-check-hold" type="radio" value="No, the deadline date has passed~invoice-reject-tab#your-tasks" {{ checked("document-check-hold-3", "No, the deadline date has passed") }}>
+                        <label class="govuk-label govuk-radios__label" for="document-check-hold-3">
+                          No, the deadline date has passed
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+
+<!-- TRIGGER -->
+
+
+
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
