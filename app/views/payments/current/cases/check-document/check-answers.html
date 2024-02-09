@@ -1,0 +1,144 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/current/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h2 class="govuk-fieldset__heading">
+<!-- {{data['sw-invoice-ref-1']}}: summary -->
+Check answers
+
+        </h2>
+
+
+
+
+        <br>
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Give the invoice a name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} invoice 1 {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does this invoice need to be rejected or replaced?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the reason you are rejecting this invoice?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Key details missing
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Which items are on the invoice you are rejecting?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              JAWS screen reader
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              replacment invoice deadline date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              [date]
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Did you save the replacement invoice in SharePoint?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+        </dl>
+
+
+<br>
+
+
+<!-- TRIGGER -->
+
+
+
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
