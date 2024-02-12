@@ -54,6 +54,9 @@ Summary of replacment invoice
 
         {{data['invoice-deadline-year']}}.
         </div>
+        <p class="govuk-body">
+          Open <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} {{data ['invoice-name'] }} invoice.{% else %} invoice 1 {% endif %}</a>
+        </p>
 
 
 
@@ -111,7 +114,7 @@ Summary of replacment invoice
               Deadline for replacment invoice?
             </dt>
             <dd class="govuk-summary-list__value">
-              
+
 
               {{data['invoice-deadline-day']}}
 
