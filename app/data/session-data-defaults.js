@@ -29,7 +29,7 @@ module.exports = {
 'company-details' : "",
 'additional-cost' : "",
 'details-item-no-match-ipad' : "",
-'cost-share' : "",
+'cost-share' : "Yes",
 'SEA-hold-1-invoice' : "",
 
 
