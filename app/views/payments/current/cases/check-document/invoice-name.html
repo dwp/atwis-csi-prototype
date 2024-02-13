@@ -29,14 +29,14 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <!-- <span class="govuk-caption-xl">Invoice 1</span> -->
     <h1 class="govuk-fieldset__heading">
-      Give the invoice a name
+      What do you want to name this document?
 
     </h1>
   </legend>
 
 
   <p class="govuk-body">
-    Open <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} invoice 1 {% endif %}</a> and give it a name, we'll then ask you some questionas about the invoice.
+    <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} View this documetn in a new tab. {% endif %}</a>
   </p>
   <div class="govuk-input__wrapper">
     <input class="govuk-input govuk-input--width-10" id="invoice-name" name="invoice-name" type="text" spellcheck="false" aria-describedby="invoice-name" value="{{data ['invoice-name'] }}">

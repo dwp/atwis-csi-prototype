@@ -8,13 +8,12 @@
 
 
 {% block csi %}
-<br>
 
 
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-<form action="/payments/current/cases/dereck/cases/check-document/invoice-item-tab#your-tasks" method="post" novalidate>
+<form action="/payments/current/cases/dereck/cases/check-document/invoice-items-tab#your-tasks" method="post" novalidate>
 
 
 
@@ -23,51 +22,46 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    <span class="govuk-caption-xl">
-      {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</span>
-    <h1 class="govuk-fieldset__heading">
-      What is the reason you are rejecting this invoice?
-
-    </h1>
-  </legend>
 
 
-  <p class="govuk-body">
-    Open <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} {{data ['invoice-name'] }} invoice.{% else %} invoice 1 {% endif %}</a>
-  </p>
-
-
-
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="invoicerejectreason" name="invoicerejectreason" type="radio" value="Key details missing~invoice-items-tab#your-tasks" {{ checked("Key details missing", "Yes") }}>
-          <label class="govuk-label govuk-radios__label" for="invoicerejectreason">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="invoicerejectreason-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl">
+          {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</span>
+        <h1 class="govuk-fieldset__heading">
+          Why are you rejecting this document?
+        </h1>
+      </legend>
+      <p class="govuk-body">
+        <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
+      </p>
+      <!-- <div id="invoicerejectreason-hint" class="govuk-hint">
+        Select all invoicerejectreason that apply
+      </div> -->
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason" name="invoicerejectreason" type="checkbox" value="Key details missing" {{ checked("Key details missing", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason">
             Key details missing
           </label>
         </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="invoicerejectreason-2" name="invoicerejectreason" type="radio" value="Date is outside 9 month claim period~invoice-reject-9-months-tab#your-tasks" {{ checked("Date is outside 9 month claim period", "Yes") }}>
-          <label class="govuk-label govuk-radios__label" for="invoicerejectreason-2">
-            Date is outside 9 month claim period
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason-2" name="invoicerejectreason" type="checkbox" value="Date is outside 9 month claim period" {{ checked("Date is outside 9 month claim period", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason-2">
+            Date on document is outside 9 month claim period
           </label>
         </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="invoicerejectreason-3" name="invoicerejectreason" type="radio" value="Proforma invoice~invoice-reject-proforma-tab#your-tasks" {{ checked("Proforma invoice", "Yes") }}>
-          <label class="govuk-label govuk-radios__label" for="invoicerejectreason-3">
-            *Proforma invoice (only shows if large employer and not charity)
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason-3" name="invoicerejectreason" type="checkbox" value="Proforma invoice" {{ checked("Proforma invoice", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason-3">
+            It is a pro forma
           </label>
         </div>
-
-        <div class="govuk-radios__divider">or</div>
-
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="invoicerejectreason-6" name="invoicerejectreason" type="radio" value="None of these~invoice-reason-other-tab#your-tasks" {{ checked("None of these", "Yes") }}>
-          <label class="govuk-label govuk-radios__label" for="invoicerejectreason-6">
+        <div class="govuk-checkboxes__divider">or</div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason-5" name="invoicerejectreason" type="checkbox" value="none of these" data-behaviour="exclusive" {{ checked("None of these", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason-5">
             None of these
           </label>
         </div>

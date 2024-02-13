@@ -53,8 +53,9 @@
 <table class="govuk-table">
     <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Document type</th>
+          <th scope="col" class="govuk-table__header">Document name</th>
           <th scope="col" class="govuk-table__header">Date received</th>
+          <th scope="col" class="govuk-table__header">Status</th>
           <th scope="col" class="govuk-table__header">Action</th>
         </tr>
       </thead>
@@ -63,30 +64,38 @@
 
 
 
-
+{% if data ['invoice-saved']%}
 <tr class="govuk-table__row">
-  <td class="govuk-table__cell">Invoice 1</td>
+  <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</td>
   <td class="govuk-table__cell">29 May 2023</td>
-  <td class="govuk-table__cell"><a href="/public/images/S7-Cost-share-S1-Dereck-smith-demo-invoice-1.pdf" target="_blank" >View invoice 1</a></td>
+  <td class="govuk-table__cell">Replaced</td>
+  <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
 </tr>
+{% else %}
+{% endif %}
 
-<!-- <tr class="govuk-table__row">
-  <td class="govuk-table__cell">Invoice 2</td>
-  <td class="govuk-table__cell">29 May 2023</td>
-  <td class="govuk-table__cell"><a href="/public/images/S7-Cost-share-S1-Dereck-smith-demo-invoice-1.pdf" target="_blank" >View invoice 1</a></td>
-</tr>
 
+{% if data ['invoice-valid-2']%}
 <tr class="govuk-table__row">
-  <td class="govuk-table__cell">Invoice 3</td>
+  <td class="govuk-table__cell">{% if data['invoice-name-2']%} {{data ['invoice-name-2'] }} {% else %} Invoice 2 {% endif %}</td>
   <td class="govuk-table__cell">29 May 2023</td>
-  <td class="govuk-table__cell"><a href="/public/images/S7-Cost-share-S1-Dereck-smith-demo-invoice-1.pdf" target="_blank" >View invoice 1</a></td>
+  <td class="govuk-table__cell">Checked</td>
+  <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-2.pdf" target="_blank" >View document</a></td>
 </tr>
+{% else %}
+{% endif %}
 
+
+{% if data ['invoice-valid-3']%}
 <tr class="govuk-table__row">
-  <td class="govuk-table__cell">Invoice 4</td>
+  <td class="govuk-table__cell">{% if data['invoice-name-3']%} {{data ['invoice-name-3'] }} {% else %} Invoice 3 {% endif %}</td>
   <td class="govuk-table__cell">29 May 2023</td>
-  <td class="govuk-table__cell"><a href="/public/images/S7-Cost-share-S1-Dereck-smith-demo-invoice-1.pdf" target="_blank" >View invoice 1</a></td>
-</tr> -->
+  <td class="govuk-table__cell">Checked</td>
+  <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-3.pdf" target="_blank" >View document</a></td>
+</tr>
+{% else %}
+{% endif %}
+
 
 
 
