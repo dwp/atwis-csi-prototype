@@ -28,111 +28,93 @@
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
 
-        <h2 class="govuk-fieldset__heading">
+        <h1 class="govuk-fieldset__heading">
 <!-- {{data['sw-invoice-ref-1']}}: summary -->
-Summary of replacment invoice
+Summary of replacment document
 
-        </h2>
-
-        <div class="govuk-inset-text">
-        Deadline for replacement invoice is
-
-        {{data['invoice-deadline-day']}}
-
-        {% if (data['invoice-deadline-month'] =='01') or (data['invoice-deadline-month'] =='1') %} January {% endif%}
-        {% if (data['invoice-deadline-month'] =='02') or (data['invoice-deadline-month'] =='2') %} February  {% endif%}
-        {% if (data['invoice-deadline-month'] =='03') or (data['invoice-deadline-month'] =='3') %} March {% endif%}
-        {% if (data['invoice-deadline-month'] =='04') or (data['invoice-deadline-month'] =='4') %} June {% endif%}
-        {% if (data['invoice-deadline-month'] =='05') or (data['invoice-deadline-month'] =='5') %} May {% endif%}
-        {% if (data['invoice-deadline-month'] =='06') or (data['invoice-deadline-month'] =='6') %} June {% endif%}
-        {% if (data['invoice-deadline-month'] =='07') or (data['invoice-deadline-month'] =='7') %} July {% endif%}
-        {% if (data['invoice-deadline-month'] =='08') or (data['invoice-deadline-month'] =='8') %} August {% endif%}
-        {% if (data['invoice-deadline-month'] =='09') or (data['invoice-deadline-month'] =='9') %} September {% endif%}
-        {% if data['invoice-deadline-month'] =='10' %} October {% endif%}
-        {% if data['invoice-deadline-month'] =='11'%} November {% endif%}
-        {% if data['invoice-deadline-month'] =='12' %} December {% endif%}
-
-        {{data['invoice-deadline-year']}}.
-        </div>
-
-
-
+        </h1>
         <br>
+
+        <p class="govuk-body">
+          <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
+        </p>
+
+
 
 
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Give the invoice a name
+              What do you want to name this document?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} invoice 1 {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/check-document/invoice-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Does this invoice need to be rejected or replaced?
+              Does this document need to be rejected or replaced?
             </dt>
             <dd class="govuk-summary-list__value">
               Yes
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/check-document/invoice-valid-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What is the reason you are rejecting this invoice?
+              Why are you rejecting this document?
             </dt>
             <dd class="govuk-summary-list__value">
               Key details missing
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/check-document/invoice-reason-tab#your-tasks">Change<span class="govuk-visually-hidden"> date of birth</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Which items are on the invoice you are rejecting?
+              Which items are on this document?
             </dt>
             <dd class="govuk-summary-list__value">
               JAWS screen reader
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/check-document/invoice-items-tab#your-tasks">Change<span class="govuk-visually-hidden"> address</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Deadline for replacment invoice?
+              Deadline for replacment document?
             </dt>
             <dd class="govuk-summary-list__value">
-              
 
-              {{data['invoice-deadline-day']}}
 
-              {% if (data['invoice-deadline-month'] =='01') or (data['invoice-deadline-month'] =='1') %} January {% endif%}
-              {% if (data['invoice-deadline-month'] =='02') or (data['invoice-deadline-month'] =='2') %} February  {% endif%}
-              {% if (data['invoice-deadline-month'] =='03') or (data['invoice-deadline-month'] =='3') %} March {% endif%}
-              {% if (data['invoice-deadline-month'] =='04') or (data['invoice-deadline-month'] =='4') %} June {% endif%}
-              {% if (data['invoice-deadline-month'] =='05') or (data['invoice-deadline-month'] =='5') %} May {% endif%}
-              {% if (data['invoice-deadline-month'] =='06') or (data['invoice-deadline-month'] =='6') %} June {% endif%}
-              {% if (data['invoice-deadline-month'] =='07') or (data['invoice-deadline-month'] =='7') %} July {% endif%}
-              {% if (data['invoice-deadline-month'] =='08') or (data['invoice-deadline-month'] =='8') %} August {% endif%}
-              {% if (data['invoice-deadline-month'] =='09') or (data['invoice-deadline-month'] =='9') %} September {% endif%}
-              {% if data['invoice-deadline-month'] =='10' %} October {% endif%}
-              {% if data['invoice-deadline-month'] =='11'%} November {% endif%}
-              {% if data['invoice-deadline-month'] =='12' %} December {% endif%}
+              {{data['SEA-invoice-deadline-day']}}
 
-              {{data['invoice-deadline-year']}}.
+              {% if (data['SEA-invoice-deadline-month'] =='01') or (data['SEA-invoice-deadline-month'] =='1') %} January {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='02') or (data['SEA-invoice-deadline-month'] =='2') %} February  {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='03') or (data['SEA-invoice-deadline-month'] =='3') %} March {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='04') or (data['SEA-invoice-deadline-month'] =='4') %} June {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='05') or (data['SEA-invoice-deadline-month'] =='5') %} May {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='06') or (data['SEA-invoice-deadline-month'] =='6') %} June {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='07') or (data['SEA-invoice-deadline-month'] =='7') %} July {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='08') or (data['SEA-invoice-deadline-month'] =='8') %} August {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='09') or (data['SEA-invoice-deadline-month'] =='9') %} September {% endif%}
+              {% if data['SEA-invoice-deadline-month'] =='10' %} October {% endif%}
+              {% if data['SEA-invoice-deadline-month'] =='11'%} November {% endif%}
+              {% if data['SEA-invoice-deadline-month'] =='12' %} December {% endif%}
+
+              {{data['SEA-invoice-deadline-year']}}
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/check-document/deadline-date-tab#your-tasks">Change<span class="govuk-visually-hidden"> address</span></a>
             </dd>
           </div>
         </dl>
@@ -143,7 +125,7 @@ Summary of replacment invoice
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h2 class="govuk-heading-m">
-                        Have you received a valid replacement invoice?
+                        Have you received a valid replacement document?
                       </h2>
                     </legend>
                     <div class="govuk-radios" data-module="govuk-radios">

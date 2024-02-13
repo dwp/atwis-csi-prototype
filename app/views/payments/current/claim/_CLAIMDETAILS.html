@@ -19,7 +19,7 @@
       Claim form
       </a>
     </li>
-    {% if data ['invoice-saved']%}
+    {% if data ['invoice-valid'] or data ['invoice-valid-2'] or data ['invoice-valid-3']%}
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#document-details">
       Documents

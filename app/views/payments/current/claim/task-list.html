@@ -14,6 +14,11 @@
         <li>
 
 
+<!-- 1 REVIEW INVOICES -->
+<!-- 1 REVIEW INVOICES -->
+<!-- 1 REVIEW INVOICES -->
+<!-- 1 REVIEW INVOICES -->
+<!-- 1 REVIEW INVOICES -->
 
 
           <h2 class="app-task-list__section">
@@ -35,7 +40,8 @@
             {% if data ['SEA-invoice-deadline-day'] and data ['invoice-saved']%}
             <a href="/payments/current/cases/dereck/cases/check-document/check-answers-tab#your-tasks" aria-describedby="claim-completed">
             {% endif %}
-                            Review invoice 1
+            {% if data['invoice-name']%} Review {{data ['invoice-name'] }} invoice {% else %} Review invoice 1 {% endif %}
+
                             </a>
                             </span>
                             <!-- {% if not data['grant-matches-claim-sw']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %} -->
@@ -50,28 +56,30 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-            <a href="/payments/current/cases/dereck/-tab#your-tasks" aria-describedby="claim-completed">
+                <a href="/payments/current/cases/dereck/cases/check-document/invoice-name-2-tab#your-tasks" aria-describedby="claim-completed">
 
-                            Review invoice 2
+                  {% if data['invoice-name-2']%} Review {{data ['invoice-name-2'] }} invoice {% else %} Review invoice 2 {% endif %}
                             </a>
                             </span>
-                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>
+                            {% if not data ['invoice-valid-2']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                            {% if data ['invoice-valid-2']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
                             </li>
 
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
-            <a href="/payments/current/cases/dereck/-tab#your-tasks" aria-describedby="claim-completed">
+                <a href="/payments/current/cases/dereck/cases/check-document/invoice-name-3-tab#your-tasks" aria-describedby="claim-completed">
 
-                            Review invoice 3
+                  {% if data['invoice-name-3']%} Review {{data ['invoice-name-3'] }} invoice {% else %} Review invoice 3 {% endif %}
                             </a>
                             </span>
-                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>
+                            {% if not data ['invoice-valid-3']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                            {% if data ['invoice-valid-3']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
                             </li>
                             </li>
 
-            <li class="app-task-list__item">
+            <!-- <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
             <a href="/payments/current/cases/dereck/-tab#your-tasks" aria-describedby="claim-completed">
@@ -81,7 +89,7 @@
                             </span>
                             <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>
                             </li>
-                            </li>
+                            </li> -->
 
 
         </ul>
@@ -238,13 +246,21 @@
 
 <!-- SAE - GRANT MATCHES CLAIM -->
 {% if case == 'dereck' %}
-{% if not data['grant-matches-claim'] %}
-                    <!-- <a href="/payments/current/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed"> -->
+<!-- {% if not data['grant-matches-claim'] %}
+                    <a href="/payments/current/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
+{% endif %} -->
+{% if data ['invoice-saved'] and data ['invoice-name-2'] and data ['invoice-name-3'] and not data ['grant-matches-claim']%}
+                    <a href="/payments/current/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
 
-{% if data['grant-matches-claim'] %}
+
+<!-- {% if data['grant-matches-claim'] %}
                     <a href="/payments/current/cases/dereck/cases/review-claim/matches-grant-multi-check-tab#your-tasks" aria-describedby="claim-completed">
+{% endif %} -->
+{% if data ['invoice-name'] and data ['invoice-name-2'] and data ['invoice-name-3'] and data ['grant-matches-claim']%}
+                    <a href="/payments/current/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks" aria-describedby="claim-completed">
 {% endif %}
+
 {% endif %}
 
 
@@ -267,11 +283,17 @@
 {% endif %}
 
 
-{% if case == 'dereck' %}
+<!-- {% if case == 'dereck' %}
                   {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-                  <!-- {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %} -->
+                  {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                   {% if data['grant-matches-claim'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+{% endif %} -->
+{% if case == 'dereck' %}
+                  {% if not data ['invoice-name-3'] and not data ['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                  {% if data ['invoice-name-3'] and not data ['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                  {% if data ['invoice-saved'] and data ['invoice-name-2'] and data ['invoice-name-3'] and data ['grant-matches-claim']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
 {% endif %}
+
 
 {% if case == 'sonya' %}
                   {% if not data['grant-matches-claim']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}

@@ -31,14 +31,14 @@
     <span class="govuk-caption-xl">
       {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</span>
     <h1 class="govuk-fieldset__heading">
-      Does this invoice need to be rejected or replaced?
+      Does this document need to be rejected or replaced?
 
     </h1>
   </legend>
 
 
   <p class="govuk-body">
-    Open <a href="#" class="govuk-link">{% if data['invoice-name']%} {{data ['invoice-name'] }} invoice.{% else %} invoice 1 {% endif %}</a>
+    <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
   </p>
 
     <!-- <div id="changed-name-hint" class="govuk-hint">

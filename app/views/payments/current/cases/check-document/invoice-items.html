@@ -28,16 +28,16 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <span class="govuk-caption-xl">
-      {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</span>
+      {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Document 1 {% endif %}</span>
     <h1 class="govuk-fieldset__heading">
-      Which items are on the invoice you are rejecting?
+      Which items are on this document?
 
     </h1>
   </legend>
 
 
   <p class="govuk-body">
-    Open <a href="#" class="govuk-link">{% if data['invoice-name']%} {{data ['invoice-name'] }} invoice.{% else %} invoice 1 {% endif %}</a>
+    <a href="#" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
   </p>
 
 
