@@ -23,7 +23,7 @@
 
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">1. </span>
-            Review invoices
+            Review documents
           </h2>
 
 
@@ -40,7 +40,7 @@
             {% if data ['SEA-invoice-deadline-day'] and data ['invoice-saved']%}
             <a href="/payments/current/cases/dereck/cases/check-document/check-answers-tab#your-tasks" aria-describedby="claim-completed">
             {% endif %}
-            {% if data['invoice-name']%} Review {{data ['invoice-name'] }} invoice {% else %} Review invoice 1 {% endif %}
+            {% if data['invoice-name']%} Review {{data ['invoice-name'] }} invoice {% else %} Rename and check document 1 {% endif %}
 
                             </a>
                             </span>
@@ -62,7 +62,7 @@
             <a href="/payments/current/cases/dereck/cases/check-document/invoice-name-2-tab#your-tasks" aria-describedby="claim-completed">
             {% endif %}
 
-                  {% if data['invoice-name-2']%} Review {{data ['invoice-name-2'] }} invoice {% else %} Review invoice 2 {% endif %}
+                  {% if data['invoice-name-2']%} Review {{data ['invoice-name-2'] }} invoice {% else %} Rename and check document 2 {% endif %}
                             </a>
                             </span>
                             {% if not data ['invoice-valid-2']%} <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
@@ -80,7 +80,7 @@
                 <a href="/payments/current/cases/dereck/cases/check-document/invoice-name-3-tab#your-tasks" aria-describedby="claim-completed">
                 {% endif %}
 
-                  {% if data['invoice-name-3']%} Review {{data ['invoice-name-3'] }} invoice {% else %} Review invoice 3 {% endif %}
+                  {% if data['invoice-name-3']%} Review {{data ['invoice-name-3'] }} invoice {% else %} Rename and check document 3 {% endif %}
                             </a>
                             </span>
                             {% if not data ['invoice-valid-3']%} <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
