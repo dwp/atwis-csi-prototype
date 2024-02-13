@@ -388,7 +388,7 @@ to
 
 
 <!-- JAWS INVOICE REJECTED -->
-{% if case == 'dereck' and data['invoice-saved']%}
+<!-- {% if case == 'dereck' and data['invoice-saved']%}
               <div class="moj-timeline__item">
 
                   <div class="moj-timeline__header">
@@ -402,7 +402,7 @@ to
                   <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
                   </p>
                 </div>
-{% endif %}
+{% endif %} -->
 
 
 
@@ -562,6 +562,23 @@ to
   </div>
 {% endif %}
 
+
+
+{% if data['invoice-saved']%}
+<div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Invoice rejected and replaced</h2>
+    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+    </div>
+    <div class="moj-timeline__description">Freedom scientific new invoice recieved</div>
+
+    <div class="moj-timeline__description"><a class="govuk-link" href="cases/check-document/check-answers-timeline-link-tab#your-tasks">View details</a></div>
+    <p class="moj-timeline__description">
+    <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
+    </p>
+  </div>
+    {% endif %}
 
                 <!-- IDENTITY CHECKS COMPLETE -->
                 <div class="moj-timeline__item">

@@ -37,9 +37,13 @@
                       <span class="govuk-caption-xl">
                         {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</span>
                       <h1 class="govuk-fieldset__heading">
-                        Did you save the replacement invoice in SharePoint?
+                        Did you save the replacement document in SharePoint?
                       </h1>
                     </legend>
+                    <p class="govuk-body">
+                      <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
+                    </p>
+
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~dereck/cases/check-document/check-answers-tab#your-tasks" {{ checked("invoice-saved", "Yes") }}>
                         <label class="govuk-label govuk-radios__label" for="invoice-saved-1">

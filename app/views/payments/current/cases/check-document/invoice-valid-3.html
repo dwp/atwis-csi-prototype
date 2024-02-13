@@ -29,16 +29,16 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <span class="govuk-caption-xl">
-      {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</span>
+      {% if data['invoice-name-3']%} {{data ['invoice-name-3'] }} {% else %} Invoice 3 {% endif %}</span>
     <h1 class="govuk-fieldset__heading">
-      Does this invoice need to be rejected or replaced?
+      Does this document need to be rejected or replaced?
 
     </h1>
   </legend>
 
 
   <p class="govuk-body">
-    Open <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} {{data ['invoice-name'] }} invoice.{% else %} invoice 1 {% endif %}</a>
+    View <a href="/public/images/S8-Dereck-smith-invoice-3.pdf" target="_blank" class="govuk-link">{% if data['invoice-name-3']%} View {{data ['invoice-name-3'] }} {% else %} invoice 3 {% endif %} document in a new tab.</a>
   </p>
 
     <!-- <div id="changed-name-hint" class="govuk-hint">
@@ -55,7 +55,7 @@
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="invoice-valid-3-2" name="invoice-valid-3" type="radio" value="No~dereck/cases/check-document/invoice-ok-tab#your-tasks" {{ checked("invoice-valid-3", "No") }}>
+            <input class="govuk-radios__input" id="invoice-valid-3-2" name="invoice-valid-3" type="radio" value="No~dereck/cases/check-document/invoice-ok-2-tab#your-tasks" {{ checked("invoice-valid-3", "No") }}>
             <label class="govuk-label govuk-radios__label" for="invoice-valid-3-2">
               No
             </label>
