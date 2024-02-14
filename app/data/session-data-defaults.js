@@ -73,6 +73,13 @@ module.exports = {
 'quotes-check-1thomas' : "No",
 'quotes-check-2thomas' : "No",
 // '_do_1' : "Email sent",
+'condition-checksonya' : "No",
+'job-deatils-checksonya' : "No",
+'sae-checksonya' : "No",
+'employer-sectorsonya' : "Yes",
+'employer-sizesonya' : "10 to 49 (small)",
+'employer-sector-typesonya' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
+'wpasonya' : "No",
 //
 // 'contact-date-day-1' : "29",
 // 'contact-date-month-1' : "03",
