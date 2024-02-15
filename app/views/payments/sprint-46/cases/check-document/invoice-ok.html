@@ -1,0 +1,87 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-46/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-46/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <span class="govuk-caption-xl">
+      {% if data['invoice-name-2']%} {{data ['invoice-name-2'] }} {% else %} Invoice 2 {% endif %}</span>
+    <h1 class="govuk-fieldset__heading">
+      Document renamed and checked
+
+    </h1>
+  </legend>
+
+
+  <!-- <p class="govuk-body">
+    You can now view this in the Documetns tab</a>
+  </p> -->
+
+    <!-- <div id="changed-name-hint" class="govuk-hint">
+          Answer yes if you need to ask for any replacement invoices for this claim.<br>
+        </div> -->
+
+        <!-- </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="invoice-valid" name="invoice-valid" type="radio" value="Yes~dereck/cases/check-document/invoice-reason-tab#your-tasks" {{ checked("invoice-valid", "Yes") }}>
+            <label class="govuk-label govuk-radios__label" for="invoice-valid">
+              Yes
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="invoice-valid-2" name="invoice-valid" type="radio" value="No~dereck/cases/check-document/invoice-ok-tab#your-tasks" {{ checked("invoice-valid", "No") }}>
+            <label class="govuk-label govuk-radios__label" for="invoice-valid-2">
+              No
+            </label>
+          </div>
+        </div> -->
+
+      </fieldset>
+    </div>
+
+
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

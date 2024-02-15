@@ -1,0 +1,102 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-46/claim/_CSIBASE-no-footer.html" %}
+
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/payments/sprint-46/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+     <h1 class="govuk-heading-l">
+    Cost share paid on invoice
+    </h1>
+
+      <!-- <h2 class="govuk-heading-m">
+    Jaws screen reader
+    </h2> -->
+
+
+
+    <p class="govuk-body">The customer has paid 20% of the invoice you may proceed with this payment  </p>
+
+  <!-- <div class="govuk-inset-text">
+  <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">£499 </p>
+</div> -->
+
+
+
+
+
+              <!-- <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h2 class="govuk-heading-m">
+                    Select a different option for this item?
+                  </h2>
+                </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="amount-low-no-match-check-1" name="amount-low-no-match-check" type="radio" value="Yes" {{ checked("amount-low-no-match-check", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="amount-low-no-match-check-1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="amount-low-no-match-check-2" name="amount-low-no-match-check" type="radio" value="No" {{ checked("amount-low-no-match-check", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="amount-low-no-match-check-2">
+                          No
+                        </label>
+                      </div>
+
+                  </div>
+                </div> -->
+
+
+
+
+
+
+<!-- INVOICE LINK -->
+
+        <!-- <p class="govuk-body">   <a class="govuk-link" href="/public/images/test-invoice.pdf" target="_blank" download="test-invoice.pdf">Download invoice</a></p> -->
+
+
+            </div>
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save amount to pay
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
