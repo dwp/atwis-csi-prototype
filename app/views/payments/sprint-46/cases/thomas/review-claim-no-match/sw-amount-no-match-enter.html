@@ -1,0 +1,133 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-46/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+        <form action="/payments/sprint-46/cases/thomas/review-claim-no-match/sw-amount-no-match-check-tab#your-tasks" method="post" novalidate>
+
+          <div class="govuk-width-container">
+            <main class="govuk-main-wrapper">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+             <h1 class="govuk-heading-l">
+            Enter amount you will pay for this claim
+            </h1>
+
+              <h2 class="govuk-heading-m">
+            British Sign Language (BSL) interpreter
+            </h2>
+
+
+
+            <!-- <p class="govuk-body">The maximum per hour we will pay for support on this claim is: </p> -->
+
+
+
+
+            <!-- <p class="govuk-body">
+    As the amount claimed for this item is lower than the grant award, enter the amount you need to pay from the invoice.
+            </p> -->
+
+
+            <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <!-- Enter hours to pay -->
+            </legend>
+            <div id="dob-hint" class="govuk-hint">
+
+            </div>
+            <div class="govuk-form-group">
+            <label class="govuk-label" for="sw-new-amount">
+
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="sw-new-amount" name="sw-new-amount" type="text" autocomplete="" value="{{data ['sw-new-amount'] }}">
+            </div>
+            </fieldset>
+
+
+
+          <!-- <div class="govuk-inset-text">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">£30</p>
+        </div>
+
+
+
+</br>
+</br>
+                      <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h2 class="govuk-heading-m">
+                            Do you want to pay this claim?
+                          </h2>
+                        </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="amount-low-no-match-check-1" name="amount-low-no-match-check" type="radio" value="Yes" {{ checked("amount-low-no-match-check", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="amount-low-no-match-check-1">
+                                  Yes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="amount-low-no-match-check-2" name="amount-low-no-match-check" type="radio" value="No" {{ checked("amount-low-no-match-check", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="amount-low-no-match-check-2">
+                                  No, reject this claim
+                                </label>
+                              </div>
+
+                          </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+              </div>
+            </fieldset> -->
+
+
+
+          </div>
+
+
+
+          </div>
+                   <button class="govuk-button" data-module="govuk-button">
+                     Save and continue
+                   </button>
+                 </form>
+               </div>
+             </div>
+
+
+                </main>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
