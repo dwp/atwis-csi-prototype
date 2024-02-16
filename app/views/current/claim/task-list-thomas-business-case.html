@@ -235,7 +235,7 @@ data['wpa'+ phase]  %}
     <br>
 {% endif %}
 
-{% if totalAward > 190000 %}
+{% if totalAward > 198000 %}
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -266,7 +266,12 @@ data['wpa'+ phase]  %}
   });
   </script>
       <p>You will need to get approval from a appropriate approver.  </p>
-<div class="govuk-inset-text">Total award £{{totalAward }} over 3 years.<br><br>Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
+<div class="govuk-inset-text">Total award £{{totalAward }} over 3 years.<br><br>
+The current amount for this award is £{{totalAward / 3 }}  for 1 year. 
+  <br><br>
+
+
+  Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
     <br>
 {% endif %}
 
