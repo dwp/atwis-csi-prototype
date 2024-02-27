@@ -18,6 +18,7 @@ Example usage:
 */
 
 module.exports = {
+'others-wpa-2': "",
 'report': "",
 'ttw-match' : "",
 'claim-item' : "",
