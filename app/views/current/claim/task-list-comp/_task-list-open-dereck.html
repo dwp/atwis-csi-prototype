@@ -24,7 +24,7 @@
 <!-- <br> -->
 <li>
   <h2 class="app-task-list__section">
-    <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
+Workplace assessment and job details
   </h2>
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
@@ -151,6 +151,94 @@
 
 
 
-
-
           </ul>
+
+
+          {% if data['report']%}
+          <!-- <br>
+          <form class="" action="index.html" method="post">
+
+
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add another workplace assesment
+          </button></form> -->
+
+          <li>
+            <h2 class="app-task-list__section">
+        Second workplace assessment
+            </h2>
+            <ul class="app-task-list__items">
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+          <a href="{% if data['wpa-type']%}/current/cases/workplace-assesment/type/check{% else %}/current/cases/workplace-assesment/type{% endif %}" aria-describedby="job-status">
+              Type of workplace assessment
+          </a>
+            </span>
+                      {% if data['wpa-type']=='They do not want a workplace assessment'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+            {% if data['wpa-type']=='Face-to-face'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+            {% if data['wpa-type']=='Virtual'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+            {% if data['wpa-type']=='I need to contact them to discuss'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+            {% if not data['wpa-type']%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>  {% endif %}
+            </li>
+
+
+
+            {% if data['wpa-type']=='Virtual' or data['wpa-type']=='Face-to-face'%}
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                  <a href="{% if (data['address-of-wpa'] or data['wpa-availability']=='I’m waiting for an answer')%}/current/cases/workplace-assesment/availability/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
+                      Availability for workplace assessment
+                  </a>
+                    </span>
+                    {% if data['address-of-wpa']%}<strong class="govuk-tag app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
+
+        {% if data['wpa-availability']=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">Contact needed</strong>  {% endif %}
+
+                    <!-- {% if data['wpa-availability']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">in progress</strong>  {% endif %} -->
+
+                    {% if data['wpa-4-weeks']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold </strong>{% endif %}
+                  {% if data['wpa-4-weeks']=='No'%}
+                  {% if data['wpa-pause']=='No'%}<strong class="govuk-tag app-task-list__tag" id="contact-details-status"> Completed</strong>{% endif %}
+                  {% if data['wpa-pause']=='Yes'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status"> On hold</strong>{% endif %}
+        {% endif %}
+
+
+                    {% if not data['wpa-availability']%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>  {% endif %}
+                    </li>
+              {% endif %}
+
+              {% if data['wpa']=='Yes' and  data['employer-size'] and data['employer-sector-type'] and data['address-of-wpa']%}
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name">
+                        <a href="{% if data['referral-form']%}/current/cases/workplace-assesment/check-referral-form{% else %}/current/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
+                                Workplace assessment referral form
+                        </a>
+                            </span>
+                            {% if not data['referral-form']%}
+                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>            </li>
+              {% else %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% endif %}          {% endif %}
+
+
+
+
+
+                {% if data['referral-form']%}
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+              <a href="{% if data['report']%}/current/cases/workplace-assesment/wpa-report/check{% else %}/current/cases/workplace-assesment/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
+                    Review workplace assessment report
+              </a>
+                  </span>
+              {% if data['report']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}         </li>
+
+              {% endif %}
+
+
+
+</ul>
+            {% endif%}

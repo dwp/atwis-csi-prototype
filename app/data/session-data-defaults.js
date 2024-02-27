@@ -18,7 +18,7 @@ Example usage:
 */
 
 module.exports = {
-
+'report': "",
 'ttw-match' : "",
 'claim-item' : "",
 'sw-match' : "",
