@@ -1,0 +1,78 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-46/cases/claim#checks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+          <h1 class="govuk-heading-l">
+        This case must be done in DiSC
+        </h1>
+        <p class="govuk-body">
+
+
+
+
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Is Dereck Smith in DiSC?
+      </dt>
+      <dd class="govuk-summary-list__value">
+      Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">   Is Dereck Smith in DiSC?</span></a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+    Does Dereck Smith have an existing live award?
+      </dt>
+      <dd class="govuk-summary-list__value">
+      Yes
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+      </dd>
+    </div>
+
+
+  </dl>
+
+<p>You should compare ATWIS data with DiSC and copy over any information needed to continue with Dereck Smith's case.</p>
+           <button class="govuk-button" data-module="govuk-button">
+             Return to tasks and compare data
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
