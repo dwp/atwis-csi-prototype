@@ -1,0 +1,83 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-47/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+      <form action="/payments/sprint-47/cases/dereck/cases/cost-share-threshold/invoice1-select-tab#your-tasks" method="post" novalidate>
+
+
+
+
+<!-- <form action="matches-grant-multi-tab#your-tasks" method="post" novalidate> -->
+
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+            <!-- {# <div class="govuk-inset-text">
+         ** if more than 1 SW on claim – add if statement to pull in SW type selected from radios**
+            </div> #} -->
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="ttw-claim-start-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="cost">
+                  How many invoices are not marked as paid?
+                </label>
+              </h1>
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="threshold-how-many" name="threshold-how-many" type="text" spellcheck="false" aria-describedby="cost-share-amount" value="{{data ['threshold-how-many'] }}">
+              </div>
+            </div>
+
+
+
+
+
+            </fieldset>
+
+
+
+
+
+
+    </div>
+    </div>
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
