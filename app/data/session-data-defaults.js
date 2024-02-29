@@ -64,12 +64,7 @@ module.exports = {
 'employer-sectorthomas' : "Yes",
 'employer-sector-typethomas' : "Charity",
 'employer-sizethomas' : "10 to 49 (small)",
-'Searchligh' : "Yes and application details match",
-'found-nino' : "Yes",
-'national-insurance-number' : "AB 123456 C",
-'appointee' : "No",
-'benefits' : "No",
-'disc-check' : "No",
+
 'benefits-change' : "",
 'condition-checkthomas' : "No",
 'contact-checkthomas' : "No",
