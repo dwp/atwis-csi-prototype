@@ -99,7 +99,7 @@ router.post('/current/cases/workplace-assesment/answer', function(req, res, next
   for (i = 0; i<req.session.data['report'].length; i++){
   switch (req.session.data['report'][i]){
 
-   case "Another workplace assesment needed" :  return res.redirect("/current/cases/claim#business-case"); next(); break;
+   case "Another workplace assesment needed" :  return res.redirect("/current/cases/claim#wpa"); next(); break;
    default: continue;
    }
    break;

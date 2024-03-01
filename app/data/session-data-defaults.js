@@ -38,7 +38,8 @@ module.exports = {
 
 
 
-  'claims' : "",
+
+'claims' : "",
 'benefits' : "",
 'priority' : "",
 'other' : "",

@@ -60,19 +60,19 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l"> Prepare business case</h2>
+        <h2 class="govuk-heading-l"> Business case</h2>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
 
 
 {% if data['Searchligh']=='No'%}
-<p >
+<!-- <p >
 <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
 Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
 </a>
-</p>
+</p> -->
 
 <!-- <div class="govuk-inset-text">
 <p>  You need to contact Dereck Smith.  </p>
@@ -100,60 +100,6 @@ data ['appointee']
 
 
       <ol class="app-task-list">
-
-  {% if data['Searchligh'] and
-
-    data ['condition-check']
-    and
-    data ['job-deatils-check']
-
-    and
-    data ['appointee']
-    and
-    data ['benefits']
-  %}
-    {% include  "../claim/task-list-comp/_task-list-open-dereck.html" %}
-  {% else %}
-
-
-  <li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
-    </h2>
-    <ul class="app-task-list__items">
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-
-        Confirm whether workplace assessment is needed
-
-    </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
-
-
-
-        </li>
-
-        <li>
-
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-
-            Add information about the employer
-
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
-            </li>
-
-
-
-
-{% endif %}
-
-
-
-          </ul>
-        </li>
 
         <h2 class="app-task-list__section">
       Element
