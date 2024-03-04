@@ -3,7 +3,7 @@
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Searchlight
+            Searchlight
           </h2>
           <ul class="app-task-list__items">
 
@@ -62,7 +62,7 @@
 
               <!-- Status - start -->
                     <!-- in progress -->
-  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+  {% if data['exceptions']=='I need to contact Dereck Smith about their benefits'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
                     <!-- Completed -->
           {% if 'No' in data['benefits'] or 'Personal Independence Payment' in data['benefits']
           and not data['exceptions']%}  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>

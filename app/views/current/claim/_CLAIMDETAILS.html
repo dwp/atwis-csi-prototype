@@ -9,7 +9,7 @@
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#application-summary">
-      Application summary
+      Summary
       </a>
     </li>
 
@@ -25,8 +25,13 @@
       </a>
     </li>
     <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#wpa">
+      Job details and workplace assessment
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#business-case">
-      Prepare business case
+      Business case
       </a>
     </li>
     <li class="govuk-tabs__list-item">
@@ -78,7 +83,7 @@ data-module="govuk-notification-banner">
 
  <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
-<h2 class="govuk-heading-l">Application summary</h2>
+<h2 class="govuk-heading-l">Summary</h2>
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <dl class="govuk-summary-list govuk-summary-list--no-border">
 
@@ -694,9 +699,19 @@ data ['appointee']
 
 
 
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wpa">
+{% include  "./task-list-dereck-wpa-job.html" %}
+
+{% if data['wpa'] =='No'or data['report']
+
+ %}
+<p>Go to next tab: <a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">business case</a></p><br>
+ {% else %}
 
 
 
+{% endif %}
+</div></div> </div>
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
   {% if data['exceptions']=='No'  %}

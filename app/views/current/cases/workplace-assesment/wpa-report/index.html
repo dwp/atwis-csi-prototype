@@ -19,7 +19,7 @@
                        Review workplace assessment report
                     </h1>
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}/workplace-assesment/wpa-report/date-of-assessment" method="post" novalidate>
+<form action="/current/cases/workplace-assesment/answer" method="post" novalidate>
 <p class="govuk-body">You should <a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">save a copy of the workplace assessment report in Sharepoint (opens in a new tab)</a> when you have received and reviewed it.</p>
 
 
@@ -51,11 +51,18 @@
        </label>
      </div>
      <div class="govuk-checkboxes__item">
-       <input class="govuk-checkboxes__input" id="report-3" name="report" type="checkbox" value="Saved copy of letters and any attachments to Sharepoint" {{ checked("report", "Saved copy of letters and any attachments to Sharepoint") }}>
-       <label class="govuk-label govuk-checkboxes__label" for="report-3">
+       <input class="govuk-checkboxes__input" id="report-4" name="report" type="checkbox" value="Saved copy of letters and any attachments to Sharepoint" {{ checked("report", "Saved copy of letters and any attachments to Sharepoint") }}>
+       <label class="govuk-label govuk-checkboxes__label" for="report-4">
         Saved a copy of the workplace assessment email in Sharepoint
        </label>
      </div>
+     <!-- <div class="govuk-checkboxes__divider">or</div> -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="report-5" name="report" type="checkbox" value="Another workplace assesment needed"  {{ checked("report", "Another workplace assesment needed") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="report-5">
+        Another workplace assessment needed
+        </label>
+      </div>
    </div>
 
                    </fieldset>
