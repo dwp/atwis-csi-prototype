@@ -92,6 +92,29 @@ router.use('/sprint-12b', require('./views/sprint-12b/_routes'));
 // current sprint, remember to add older sprint when adding a new folder!
 // router.use('/current', require('./views/current/_routes'));
 
+
+router.post('/current/cases/workplace-assesment/answer', function(req, res, next){ 
+
+ if (req.session.data['report']){
+  for (i = 0; i<req.session.data['report'].length; i++){
+  switch (req.session.data['report'][i]){
+
+   case "Another workplace assesment needed" :  return res.redirect("/current/cases/claim#wpa"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/workplace-assesment/wpa-report/date-of-assessment"); next();
+})
+
+
+
+
+
+
 router.post('/contact-answer-john', function(req, res, next){ 
 if (req.session.data['contact-why'] && Array.isArray(req.session.data['contact-why'])){
   for (let i = 0; i<req.session.data['contact-why'].length; i++) {
