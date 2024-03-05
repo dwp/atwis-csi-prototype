@@ -702,8 +702,7 @@ data ['appointee']
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wpa">
 {% include  "./task-list-dereck-wpa-job.html" %}
 
-{% if data['wpa'] =='No'or ('Reviewed workplace assessment report' in data['report'] and not 'Another workplace assesment needed' in data['report']) or data['report-2'] 
-
+{% if data['another-wpa'] =='No' or data['another-wpa'] =='Yes' and data['report-2']
  %}
 <p>Go to <a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">business case tab</a></p><br>
  {% else %}
