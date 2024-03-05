@@ -107,10 +107,25 @@ router.post('/current/cases/workplace-assesment/answer', function(req, res, next
  } else {
 
  }
-return res.redirect("/current/cases/workplace-assesment/wpa-report/date-of-assessment"); next();
+return res.redirect("/current/cases/workplace-assesment-2/wpa-report/date-of-assessment"); next();
 })
 
+router.post('/current/cases/workplace-assesment-2/answer', function(req, res, next){ 
 
+ if (req.session.data['report-2']){
+  for (i = 0; i<req.session.data['report-2'].length; i++){
+  switch (req.session.data['report-2'][i]){
+
+   case "None of the above" :  return res.redirect("/current/cases/workplace-assesment-2/wpa-report/do-need-wpa"); next(); break;
+   default: continue;
+   }
+   break;
+  }
+ } else {
+
+ }
+return res.redirect("/current/cases/workplace-assesment-2/wpa-report/date-of-assessment"); next();
+})
 
 
 
