@@ -1,12 +1,16 @@
+{% set case = "dereck" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
 {% if not number or (number == 'undefined') %}
 {% set number = 1 %}
 {% endif %}
+
+{% extends   "payments/current/claim/_CSIBASE.html" %}
+
 {% block csi %}
+
 <br>
 
 
@@ -49,7 +53,7 @@ Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% end
 
     </label>
     </h2>
-<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
+<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya {% endif %}{% if not case %}Dereck Smith{% endif %}{% endif %}</p>
 <p>
 {{data['job-detail-discussion-'+ number]}}
 </p>
@@ -69,8 +73,27 @@ Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% end
      <br>
 
 
+     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+               Summarise the information discussed
+
+                     </label>
+                     </h2>
+
+<p>{{data['other-discussion-1']}}</p>
 
 
+     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+               Copy the content of the email
+
+                     </label>
+                     </h2>
+
+     <p>{{data['other-discussion2-1']}}</p>
+
+
+<br>
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Return
           </button>

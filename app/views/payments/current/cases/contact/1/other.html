@@ -1,18 +1,21 @@
+{% set case = "dereck" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
 {% if not number or (number == 'undefined') %}
 {% set number = 1 %}
 {% endif %}
+
+{% extends   "payments/current/claim/_CSIBASE.html" %}
+
 {% block csi %}
 <br>
 
 
 
 
-<form action="/current/cases/{% if phase == "thomas" %}thomas/cases/{% endif %}{% if phase == "sonya" %}sonya/cases/{% endif %}claim#contact" method="post" novalidate>
+  <form action="/payments/current/cases/dereck/claim-dereck#contact-log" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -24,14 +27,14 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h1 class="govuk-heading-l">Other information</h1>
+              <h1 class="govuk-heading-l">Information about contact</h1>
 
 
 
 
-<p>{% if data['_do_'+ number]=='Telephone call received' %}You said that {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
+<p>{% if data['_do_'+ number]=='Telephone call received' %}You said that {% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
  contacted us about the following{% else %}
-You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} about the following{% endif  %}:</p>
+You said you contacted {% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} about the following{% endif  %}:</p>
 
     <ul class="govuk-list govuk-list--bullet">
  {% for feature in data['contact-why'] %}
@@ -48,21 +51,30 @@ You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if ph
               <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-          Summarise the 'other' information discussed
+          Summarise the information discussed
 
                 </label>
                 </h2>
 
-            <textarea class="govuk-textarea govuk-js-character-count" id="other-note1" name="other-discussion-{{number}}" rows="5" aria-describedby="other-note1-info other-note1-hint"></textarea><div id="other-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 300 characters remaining</div>
+            <textarea class="govuk-textarea govuk-js-character-count" id="other-note1" name="other-discussion-{{number}}" rows="3" aria-describedby="other-note1-info other-note1-hint"></textarea><div id="other-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 300 characters remaining</div>
             </div>
             </div>
 
+{% if "Email received" in data ['_do_1'] or "Email sent" in data ['_do_1']%}
+            <div class="govuk-form-group">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="300">
+            <div class="govuk-form-group">
+              <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note2">
 
+        Copy the content of the email
 
+              </label>
+              </h2>
 
-
-
-
+              <textarea class="govuk-textarea" id="other-note2" name="other-discussion2-{{number}}" rows="5" aria-describedby="more-detail-hint"></textarea>          </div>
+          </div>
+{% else %}
+{% endif %}
 
 
 
