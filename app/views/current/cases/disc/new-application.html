@@ -25,20 +25,32 @@
 
 
 
-          <div class="govuk-form-group">
-                     <fieldset class="govuk-fieldset">
-                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                         <h1 class="govuk-fieldset__heading">
-Does Dereck Smith have an existing live award?
+
+
+                      <h1 class="govuk-heading-l">
+New application
                          </h1>
-                       </legend>
 
-<div id="passport-number-hint" class="govuk-hint">This could mean a grant awarded within the last 3 years.</div>
 
+<p>A new application may be needed where details have changed. This includes some changes to employment.</p>
+
+
+<p>Check the guidance on <a href="https://intranet.dwp.gov.uk/mainual/access-work/change-circumstances">change of circumstances (opens a new tab)</a>.</p>
+
+
+
+
+<div class="govuk-form-group">
+           <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+               <h2 class="govuk-fieldset__heading">
+Is this case a new application?
+               </h2>
+             </legend>
 
                        <div class="govuk-radios govuk-radios--inline">
                          <div class="govuk-radios__item">
-                           <input class="govuk-radios__input" id="disc-check{{phase}}" name="disc-check{{phase}}" type="radio" value="Yes~new-application" {{ checked("disc-check"+ phase, "Yes and all of the details match") }}>
+                           <input class="govuk-radios__input" id="disc-check{{phase}}" name="disc-check{{phase}}" type="radio" value="Yes~done-atwis" {{ checked("disc-check"+ phase, "Yes and all of the details match") }}>
                            <label class="govuk-label govuk-radios__label" for="disc-check">
                             Yes
                            </label>
@@ -46,7 +58,7 @@ Does Dereck Smith have an existing live award?
 
 
                                           <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="disc-check-2" name="disc-check{{phase}}" type="radio" value="No~/current/cases/claim#checks" {{ checked("disc-check"+ phase, "Yes, but some details do not match") }}>
+                                            <input class="govuk-radios__input" id="disc-check-2" name="disc-check{{phase}}" type="radio" value="No~done-disc" {{ checked("disc-check"+ phase, "Yes, but some details do not match") }}>
                                             <label class="govuk-label govuk-radios__label" for="disc-check-2">
                                           No
                                             </label>
