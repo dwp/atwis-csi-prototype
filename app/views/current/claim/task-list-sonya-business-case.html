@@ -98,60 +98,13 @@ data ['appointee']
 
 
 
-
-
-  {% if data['Searchligh'] and
-
-    data ['condition-check'+ phase]
-    and
-    data ['job-deatils-check'+ phase]
-
-    and
-    data ['appointee']
-    and
-    data ['benefits']
-  %}<ol class="app-task-list">
-    {% include  "../claim/task-list-comp/_task-list-open-sonya.html" %}
-  {% else %}
-
 <ol class="app-task-list">
-  <li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
-    </h2>
-    <ul class="app-task-list__items">
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
-
-        Confirm whether workplace assessment is needed
-
-    </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
 
 
 
-
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-
-                   Add information about the employer
-
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
-            </li>
-
-
-
-
-
-{% endif %}
-
-          </ul>
-        </li>
 
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span> Element
+      Element
         </h2>
         {% if not elementAdd %}
           {% set elementAdd = 0 %}
@@ -178,7 +131,7 @@ data ['appointee']
 
 
 
-{% if  data['employer-sizesonya'] %}
+{% if  data['employer-sizesonya'] and data['Searchligh'] %}
 
     {% include  "../claim/_task-list-element.html" %}{% else %}
     <ul class="app-task-list__items">
@@ -251,7 +204,7 @@ data ['appointee']
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Award decision
+      Award decision
           </h2>
 
 
