@@ -700,16 +700,22 @@ data ['appointee']
 
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wpa">
-{% include  "./task-list-dereck-wpa-job.html" %}
 
-{% if data['another-wpa'] =='No' or data['another-wpa'] =='Yes' and data['report-2']
+  {% if case =='other-cases' %}
+{% include  "./task-list-sonya-wpa-job.html" %}{% endif %}
+
+ {% if not case %}
+{% include  "./task-list-dereck-wpa-job.html" %}{% endif %}
+
+{% if (data['another-wpa'] =='No' or data['another-wpa'] =='Yes' and data['report-2']) or (data['wpa'+ phase] =='No')
  %}
 <p>Go to <a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">business case tab</a></p><br>
- {% else %}
-
-
-
 {% endif %}
+
+
+
+
+
 </div></div> </div>
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
