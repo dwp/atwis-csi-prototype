@@ -702,10 +702,10 @@ data ['appointee']
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wpa">
 
   {% if case =='other-cases' %}
-{% include  "./task-list-sonya-wpa-job.html" %}{% endif %}
+{% include  "./task-list-sonya-wpa-job.html" %}</div></div>{% endif %}
 
  {% if not case %}
-{% include  "./task-list-dereck-wpa-job.html" %}{% endif %}
+{% include  "./task-list-dereck-wpa-job.html" %}</div></div>{% endif %}
 
 {% if (data['another-wpa'] =='No' or data['another-wpa'] =='Yes' and data['report-2']) or (data['wpa'+ phase] =='No')
  %}
@@ -716,7 +716,7 @@ data ['appointee']
 
 
 
-</div></div> </div>
+</div>
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="business-case">
   {% if data['exceptions']=='No'  %}
@@ -767,7 +767,7 @@ data ['appointee']
   {% include  "./task-list-dereck-business-case.html" %}{% endif %}
 
 
-</div>  </div>
+</div>
 
 
 
