@@ -23,84 +23,43 @@
 
 
 
-  <!-- CHECK PAYMENT -->
-{% if data['sop-approve-button']%}
+<!-- CHECK PAYMENT -->
+                  {% if data['sop-approve-button']%}
+                  <div class="moj-timeline__item">
 
-  <div class="moj-timeline__item">
-      <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Check payment and send for approval</h2>
-      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-      </div>
-      {% if case == 'dereck' %}
-      <div class="moj-timeline__description">
-        <p>£120.18 Paid to {{data['payee-name']}}</p>
-        <p>£44.50 Paid to {{data['payee-name-1']}}</p>
-      </div>
-      {% endif %}
-      {% if case == 'sonya' %}
-      <div class="moj-timeline__description">£729.71 Paid on this claim</div>
-      {% endif %}
-      {% if case == 'james' %}
-      <div class="moj-timeline__description">£1249.64 Paid on this claim</div>
-      {% endif %}
-      {% if case == 'nina' %}
-      <div class="moj-timeline__description">£0.00 Paid on this claim</div>
-      {% endif %}
-      {% if case == 'paul' %}
-      <div class="moj-timeline__description">£296.00 Paid on this claim</div>
-      {% endif %}
-      {% if case == 'thomas' %}
-      <div class="moj-timeline__description">£600 Paid on this claim
-        <br>
-Paid to: {{data ['sop-payee-name'] }}
-<br>
+                      <div class="moj-timeline__header">
+                      <h2 class="moj-timeline__title">Payee 1: invoice numbers</h2>
+                      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                      </div>
+                      <p class="moj-timeline__date">
+                        <time datetime="2023-06-06T09:12:00.000Z"><script>
+                          // Get date
+                              var now = new Date();
+                              var pastDate = new Date(now);
+                              pastDate.setDate(now.getDate() - 5);
 
-Claim period:
+                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                              day: 'numeric',
+                              month: 'long',
+                              year: 'numeric'
+                              });
 
- {{data['sw-claim-start-day']}}
+                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                              hour: 'numeric',
+                              minute: 'numeric',
+                              hour12: true
+                              });
 
- {% if (data['sw-claim-start-month'] =='01') or (data['sw-claim-start-month'] =='1') %} January {% endif%}
- {% if (data['sw-claim-start-month'] =='02') or (data['sw-claim-start-month'] =='2') %} February  {% endif%}
- {% if (data['sw-claim-start-month'] =='03') or (data['sw-claim-start-month'] =='3') %} March {% endif%}
- {% if (data['sw-claim-start-month'] =='04') or (data['sw-claim-start-month'] =='4') %} April {% endif%}
- {% if (data['sw-claim-start-month'] =='05') or (data['sw-claim-start-month'] =='5') %} May {% endif%}
- {% if (data['sw-claim-start-month'] =='06') or (data['sw-claim-start-month'] =='6') %} June {% endif%}
- {% if (data['sw-claim-start-month'] =='07') or (data['sw-claim-start-month'] =='7') %} July {% endif%}
- {% if (data['sw-claim-start-month'] =='08') or (data['sw-claim-start-month'] =='8') %} August {% endif%}
- {% if (data['sw-claim-start-month'] =='09') or (data['sw-claim-start-month'] =='9') %} September {% endif%}
- {% if data['sw-claim-start-month'] =='10' %} October {% endif%}
- {% if data['sw-claim-start-month'] =='11'%} November {% endif%}
- {% if data['sw-claim-start-month'] =='12' %} December {% endif%}
+                              document.write(formattedDate + ' at ');
+                             </script> 10:15am</time>
+                      </p>
+                      <div class="moj-timeline__description">
+                        <p>£120.18 Paid to {{data['payee-name']}}</p>
+                      <p>£44.50 Paid to {{data['payee-name-1']}}</p>
+                    </div>
+                    </div>
 
- {{data['sw-claim-start-year']}}
-
-to
-
- {{data['sw-claim-end-day']}}
-
- {% if (data['sw-claim-end-month'] =='01') or (data['sw-claim-end-month'] =='1') %} January {% endif%}
- {% if (data['sw-claim-end-month'] =='02') or (data['sw-claim-end-month'] =='2') %} February  {% endif%}
- {% if (data['sw-claim-end-month'] =='03') or (data['sw-claim-end-month'] =='3') %} March {% endif%}
- {% if (data['sw-claim-end-month'] =='04') or (data['sw-claim-end-month'] =='4') %} April {% endif%}
- {% if (data['sw-claim-end-month'] =='05') or (data['sw-claim-end-month'] =='5') %} May {% endif%}
- {% if (data['sw-claim-end-month'] =='06') or (data['sw-claim-end-month'] =='6') %} June {% endif%}
- {% if (data['sw-claim-end-month'] =='07') or (data['sw-claim-end-month'] =='7') %} July {% endif%}
- {% if (data['sw-claim-end-month'] =='08') or (data['sw-claim-end-month'] =='8') %} August {% endif%}
- {% if (data['sw-claim-end-month'] =='09') or (data['sw-claim-end-month'] =='9') %} September {% endif%}
- {% if data['sw-claim-end-month'] =='10' %} October {% endif%}
- {% if data['sw-claim-end-month'] =='11'%} November {% endif%}
- {% if data['sw-claim-end-month'] =='12' %} December {% endif%}
-
- {{data['sw-claim-end-year']}}</div>
-
-      {% endif %}
-
-      <p class="moj-timeline__description">
-      <time datetime="2019-06-07T12:32:00.000Z">8:58am, 21 June 2023</time>
-      </p>
-    </div>
-
-{% endif %}
+                    {% endif %}
 
 
 
@@ -128,38 +87,78 @@ to
 
 
 
-    <!-- ADD PAYEE DETAILS FROM SOP -->
-{% if data['sop-add-supplier']%}
+<!-- ADD PAYEE DETAILS FROM SOP -->
+                    {% if data['sop-add-supplier']%}
 
-    <div class="moj-timeline__item">
+                    <div class="moj-timeline__item">
 
-        <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Add details from SOP</h2>
-        <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-        </div>
-        <p class="moj-timeline__description">
-        <time datetime="2019-06-07T12:32:00.000Z">8:54am, 21 June 2023</time>
-        </p>
-        <div class="moj-timeline__description"></div>
-      </div>
-{% endif %}
+                        <div class="moj-timeline__header">
+                        <h2 class="moj-timeline__title">Add details from SOP</h2>
+                        <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                        </div>
+                        <p class="moj-timeline__date">
+                          <time datetime="2023-06-06T09:12:00.000Z"><script>
+                            // Get date
+                                var now = new Date();
+                                var pastDate = new Date(now);
+                                pastDate.setDate(now.getDate() - 5);
+
+                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                                });
+
+                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                                });
+
+                                document.write(formattedDate + ' at ');
+                               </script> 10:15am</time>
+                        </p>
+                      </div>
+                    {% endif %}
 
       <!-- NO -->
-      <!-- CONFIRRM PAYEE IS IN SOP -->
-{% if data['sop-find-details-confirm']%}
 
-      <div class="moj-timeline__item">
 
-          <div class="moj-timeline__header">
-          <h2 class="moj-timeline__title">Confirm payee is in SOP</h2>
-          <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-          </div>
-          <p class="moj-timeline__description">
-          <time datetime="2019-06-07T12:32:00.000Z">8:49am, 21 June 2023</time>
-          </p>
-          <div class="moj-timeline__description"></div>
-        </div>
-{% endif %}
+
+
+<!-- CONFIRRM PAYEE IS IN SOP -->
+                    {% if data['sop-find-details-confirm']%}
+
+                    <div class="moj-timeline__item">
+
+                        <div class="moj-timeline__header">
+                        <h2 class="moj-timeline__title">Confirm payee is in SOP</h2>
+                        <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                        </div>
+                        <p class="moj-timeline__date">
+                          <time datetime="2023-06-06T09:12:00.000Z"><script>
+                            // Get date
+                                var now = new Date();
+                                var pastDate = new Date(now);
+                                pastDate.setDate(now.getDate() - 5);
+
+                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                                });
+
+                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                                });
+
+                                document.write(formattedDate + ' at ');
+                               </script> 10:15am</time>
+                        </p>
+                      </div>
+                    {% endif %}
 
 
 
@@ -182,37 +181,74 @@ to
 
 
 
-        <!-- ADD INVOICE NUMBERS -->
+<!-- ADD INVOICE NUMBERS -->
 
-        {% if case == 'dereck' and data ['invoice-number-1']%}
+                  {% if case == 'dereck' and data ['invoice-number-1']%}
+                      <div class="moj-timeline__item">
 
-        <div class="moj-timeline__item">
+                          <div class="moj-timeline__header">
+                          <h2 class="moj-timeline__title">Payee 1: invoice numbers</h2>
+                          <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                          </div>
+                          <p class="moj-timeline__date">
+                            <time datetime="2023-06-06T09:12:00.000Z"><script>
+                              // Get date
+                                  var now = new Date();
+                                  var pastDate = new Date(now);
+                                  pastDate.setDate(now.getDate() - 5);
 
-            <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Payee 1: invoice numbers</h2>
-            <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-            </div>
-            <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
-            <p class="moj-timeline__description">
-            <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
-            </p>
-            <div class="moj-timeline__description"></div>
-          </div>
+                                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                  day: 'numeric',
+                                  month: 'long',
+                                  year: 'numeric'
+                                  });
 
-          <div class="moj-timeline__item">
+                                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                  hour: 'numeric',
+                                  minute: 'numeric',
+                                  hour12: true
+                                  });
 
-              <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Payee 2: invoice numbers</h2>
-              <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-              </div>
-              <div class="moj-timeline__description">{{data['invoice-number']}}</div>
-              <p class="moj-timeline__description">
-              <time datetime="2019-06-07T12:32:00.000Z">8:42am, 21 June 2023</time>
-              </p>
-              <div class="moj-timeline__description"></div>
-            </div>
+                                  document.write(formattedDate + ' at ');
+                                 </script> 10:15am</time>
+                          </p>
+                          <div class="moj-timeline__description">{{data['invoice-number-1']}}</div>
+                        </div>
 
-            {%endif%}
+
+
+                      <div class="moj-timeline__item">
+
+                          <div class="moj-timeline__header">
+                          <h2 class="moj-timeline__title">Payee 2: invoice numbers</h2>
+                          <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                          </div>
+                          <p class="moj-timeline__date">
+                            <time datetime="2023-06-06T09:12:00.000Z"><script>
+                              // Get date
+                                  var now = new Date();
+                                  var pastDate = new Date(now);
+                                  pastDate.setDate(now.getDate() - 5);
+
+                                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                  day: 'numeric',
+                                  month: 'long',
+                                  year: 'numeric'
+                                  });
+
+                                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                  hour: 'numeric',
+                                  minute: 'numeric',
+                                  hour12: true
+                                  });
+
+                                  document.write(formattedDate + ' at ');
+                                 </script> 10:15am</time>
+                          </p>
+                          <div class="moj-timeline__description">{{data['invoice-number']}}</div>
+                        </div>
+
+                      {%endif%}
 
 
 <!-- {% if case == 'dereck' and data ['invoice-number']%}
@@ -466,50 +502,113 @@ to
 
 <!-- SW HOURS AND AMOUNT NO PATHS -->
 
-{% if data['sw-amount-more'] %}
-              <div class="moj-timeline__item">
-                  <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Hourly rate does not match grant award</h2>
-                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
-                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-                  </div>
-                  <!-- <div class="moj-timeline__description">£{{data['sw-amount']}} New total amount entered</div> -->
-                  <p class="moj-timeline__description">
-                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
-                  </p>
-                  <div class="moj-timeline__description"></div>
-                </div>
-{% endif %}
-{% if data['sw-hours-more'] %}
-              <div class="moj-timeline__item">
-                  <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Hours claimed are more than grant award</h2>
-                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
-                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-                  </div>
-                  <p class="moj-timeline__description">
-                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
-                  </p>
-                  <div class="moj-timeline__description"></div>
-                </div>
+                  {% if data['sw-amount-more'] %}
+                  <div class="moj-timeline__item">
 
-{% endif %}
-{% if data['sw-hours-less'] %}
-              <div class="moj-timeline__item">
-                  <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Hours claimed are less than grant award</h2>
-                  <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
-                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-                  </div>
-                  <div class="moj-timeline__description">{{data['sw-low-hours']}} hours entered from claim</div>
-                  <p class="moj-timeline__description">
-                  <time datetime="2019-06-07T12:32:00.000Z">8:22am, 21 June 2023</time>
-                  </p>
-                  <div class="moj-timeline__description"></div>
-                </div>
+                      <div class="moj-timeline__header">
+                      <h2 class="moj-timeline__title">Hourly rate does not match grant award</h2>
+                      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                      </div>
+                      <p class="moj-timeline__date">
+                        <time datetime="2023-06-06T09:12:00.000Z"><script>
+                          // Get date
+                              var now = new Date();
+                              var pastDate = new Date(now);
+                              pastDate.setDate(now.getDate() - 5);
 
-{% endif %}
+                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                              day: 'numeric',
+                              month: 'long',
+                              year: 'numeric'
+                              });
 
+                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                              hour: 'numeric',
+                              minute: 'numeric',
+                              hour12: true
+                              });
+
+                              document.write(formattedDate + ' at ');
+                             </script> 10:15am</time>
+                      </p>
+                    </div>
+
+                  {% endif %}
+
+
+
+
+<!-- SW HOURS CLAIMED MORE -->
+
+                  {% if data['sw-hours-more'] %}
+                  <div class="moj-timeline__item">
+
+                      <div class="moj-timeline__header">
+                      <h2 class="moj-timeline__title">Hours claimed are more than grant award</h2>
+                      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                      </div>
+                      <p class="moj-timeline__date">
+                        <time datetime="2023-06-06T09:12:00.000Z"><script>
+                          // Get date
+                              var now = new Date();
+                              var pastDate = new Date(now);
+                              pastDate.setDate(now.getDate() - 5);
+
+                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                              day: 'numeric',
+                              month: 'long',
+                              year: 'numeric'
+                              });
+
+                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                              hour: 'numeric',
+                              minute: 'numeric',
+                              hour12: true
+                              });
+
+                              document.write(formattedDate + ' at ');
+                             </script> 10:15am</time>
+                      </p>
+                    </div>
+
+                  {% endif %}
+
+
+
+<!-- SW HOURS CLAIMED LESS -->
+
+                    {% if data['sw-hours-less'] %}
+                    <div class="moj-timeline__item">
+
+                        <div class="moj-timeline__header">
+                        <h2 class="moj-timeline__title">Hours claimed are less than grant award</h2>
+                        <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                        </div>
+                        <p class="moj-timeline__date">
+                          <time datetime="2023-06-06T09:12:00.000Z"><script>
+                            // Get date
+                                var now = new Date();
+                                var pastDate = new Date(now);
+                                pastDate.setDate(now.getDate() - 5);
+
+                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                                });
+
+                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                                });
+
+                                document.write(formattedDate + ' at ');
+                               </script> 10:15am</time>
+                        </p>
+                        <div class="moj-timeline__description">{{data['sw-low-hours']}} hours entered from claim</div>
+                      </div>
+                      {% endif %}
 
 
 
@@ -551,75 +650,372 @@ to
 <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
-    <h2 class="moj-timeline__title">Add claim details</h2>
-    <!-- <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong> -->
+    <h2 class="moj-timeline__title">Invoice rejected and replaced</h2>
     <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
     </div>
-    <p class="moj-timeline__description">
-    <time datetime="2019-06-07T12:32:00.000Z">8:20am, 21 June 2023</time>
+    <p class="moj-timeline__date">
+      <time datetime="2023-06-06T09:12:00.000Z"><script>
+        // Get date
+            var now = new Date();
+            var pastDate = new Date(now);
+            pastDate.setDate(now.getDate() - 5);
+
+            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+            });
+
+            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+            });
+
+            document.write(formattedDate + ' at ');
+           </script> 10:15am</time>
     </p>
-    <div class="moj-timeline__description"></div>
   </div>
 {% endif %}
 
 
 
-{% if data['invoice-saved']%}
-<div class="moj-timeline__item">
 
-    <div class="moj-timeline__header">
-    <h2 class="moj-timeline__title">Invoice rejected and replaced</h2>
-    <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
-    </div>
-    <div class="moj-timeline__description">Freedom scientific new invoice recieved</div>
 
-    <div class="moj-timeline__description"><a class="govuk-link" href="cases/check-document/check-answers-timeline-link-tab#your-tasks">View details</a></div>
-    <p class="moj-timeline__description">
-    <time datetime="2019-06-07T12:32:00.000Z">8:23am, 21 June 2023</time>
-    </p>
-  </div>
-    {% endif %}
+<!-- INVOICE REJECTED -->
 
-                <!-- IDENTITY CHECKS COMPLETE -->
+              {% if data['invoice-saved']%}
+              <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Invoice rejected and replaced</h2>
+                  <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+                  </div>
+                  <p class="moj-timeline__date">
+                    <time datetime="2023-06-06T09:12:00.000Z"><script>
+                      // Get date
+                          var now = new Date();
+                          var pastDate = new Date(now);
+                          pastDate.setDate(now.getDate() - 5);
+
+                          var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'long',
+                          year: 'numeric'
+                          });
+
+                          var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                          hour: 'numeric',
+                          minute: 'numeric',
+                          hour12: true
+                          });
+
+                          document.write(formattedDate + ' at ');
+                         </script> 10:15am</time>
+                  </p>
+                  <div class="moj-timeline__description">Freedom scientific new invoice recieved</div>
+                </div>
+                  {% endif %}
+
+
+
+
+<!-- CONTACT LOG EMAIL SENT -->
+{% if data['contact-date-month-3']%}
+
+                      <div class="moj-timeline__item">
+
+                        <div class="moj-timeline__header">
+                          <h2 class="moj-timeline__title">Email received  </h2>
+                          <p class="moj-timeline__byline">by Sue Pearson</p>
+                        </div>
+
+                        <p class="moj-timeline__date">
+                          <time datetime="2023-06-06T09:12:00.000Z"><script>
+                            // Get date
+                                var now = new Date();
+                                var pastDate = new Date(now);
+                                pastDate.setDate(now.getDate() - 5);
+
+                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                                });
+
+                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                                });
+
+                                document.write(formattedDate + ' at ');
+                               </script> 10:15am</time>
+                        </p>
+
+
+                        <div class="moj-timeline__description">Email received
+
+                          {{data['contact-date-day-3']}}
+
+                          {% if (data['contact-date-month-3'] =='01') or (data['contact-date-month-3'] =='1') %} January {% endif%}
+                          {% if (data['contact-date-month-3'] =='02') or (data['contact-date-month-3'] =='2') %} February  {% endif%}
+                          {% if (data['contact-date-month-3'] =='03') or (data['contact-date-month-3'] =='3') %} March {% endif%}
+                          {% if (data['contact-date-month-3'] =='04') or (data['contact-date-month-3'] =='4') %} April {% endif%}
+                          {% if (data['contact-date-month-3'] =='05') or (data['contact-date-month-3'] =='5') %} May {% endif%}
+                          {% if (data['contact-date-month-3'] =='06') or (data['contact-date-month-3'] =='6') %} June {% endif%}
+                          {% if (data['contact-date-month-3'] =='07') or (data['contact-date-month-3'] =='7') %} July {% endif%}
+                          {% if (data['contact-date-month-3'] =='08') or (data['contact-date-month-3'] =='8') %} August {% endif%}
+                          {% if (data['contact-date-month-3'] =='09') or (data['contact-date-month-3'] =='9') %} September {% endif%}
+                          {% if data['contact-date-month-3'] =='10' %} October {% endif%}
+                          {% if data['contact-date-month-3'] =='11'%} November {% endif%}
+                          {% if data['contact-date-month-3'] =='12' %} December {% endif%}
+
+                          {{data['contact-date-year-3']}}
+                       at {{data['contact-time-2']}} <a href="/payments/current/cases/dereck/cases/contact/3/email-log">View details</a></div>
+
+                      </div>
+                      {% endif%}
+
+
+
+
+
+
+
+
+
+<!-- CONTACT LOG EMAIL SENT -->
+{% if data['contact-date-month-2']%}
+
+                      <div class="moj-timeline__item">
+
+                        <div class="moj-timeline__header">
+                          <h2 class="moj-timeline__title">Email sent  </h2>
+                          <p class="moj-timeline__byline">by Sue Pearson</p>
+                        </div>
+
+                        <p class="moj-timeline__date">
+                          <time datetime="2023-06-06T09:12:00.000Z"><script>
+                            // Get date
+                                var now = new Date();
+                                var pastDate = new Date(now);
+                                pastDate.setDate(now.getDate() - 5);
+
+                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                                });
+
+                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                                });
+
+                                document.write(formattedDate + ' at ');
+                               </script> 10:15am</time>
+                        </p>
+
+
+                        <div class="moj-timeline__description">Email sent
+
+                          {{data['contact-date-day-2']}}
+
+                          {% if (data['contact-date-month-2'] =='01') or (data['contact-date-month-2'] =='1') %} January {% endif%}
+                          {% if (data['contact-date-month-2'] =='02') or (data['contact-date-month-2'] =='2') %} February  {% endif%}
+                          {% if (data['contact-date-month-2'] =='03') or (data['contact-date-month-2'] =='3') %} March {% endif%}
+                          {% if (data['contact-date-month-2'] =='04') or (data['contact-date-month-2'] =='4') %} April {% endif%}
+                          {% if (data['contact-date-month-2'] =='05') or (data['contact-date-month-2'] =='5') %} May {% endif%}
+                          {% if (data['contact-date-month-2'] =='06') or (data['contact-date-month-2'] =='6') %} June {% endif%}
+                          {% if (data['contact-date-month-2'] =='07') or (data['contact-date-month-2'] =='7') %} July {% endif%}
+                          {% if (data['contact-date-month-2'] =='08') or (data['contact-date-month-2'] =='8') %} August {% endif%}
+                          {% if (data['contact-date-month-2'] =='09') or (data['contact-date-month-2'] =='9') %} September {% endif%}
+                          {% if data['contact-date-month-2'] =='10' %} October {% endif%}
+                          {% if data['contact-date-month-2'] =='11'%} November {% endif%}
+                          {% if data['contact-date-month-2'] =='12' %} December {% endif%}
+
+                          {{data['contact-date-year-2']}}
+                       at {{data['contact-time-2']}} <a href="/payments/current/cases/dereck/cases/contact/2/email-log">View details</a></div>
+
+                      </div>
+                      {% endif%}
+
+
+
+
+<!-- CONTACT LOG CALL MADE -->
+{% if data['contact-date-month-1']%}
+                      <div class="moj-timeline__item">
+
+                        <div class="moj-timeline__header">
+                          <h2 class="moj-timeline__title">Telephone call made  </h2>
+                          <p class="moj-timeline__byline">by Sue Pearson</p>
+                        </div>
+
+                        <p class="moj-timeline__date">
+                          <time datetime="2023-06-06T09:12:00.000Z"><script>
+                            // Get date
+                                var now = new Date();
+                                var pastDate = new Date(now);
+                                pastDate.setDate(now.getDate() - 5);
+
+                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                                });
+
+                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                                });
+
+                                document.write(formattedDate + ' at ');
+                               </script> 10:15am</time>
+                        </p>
+
+
+                        <div class="moj-timeline__description">Telephone call made
+
+                          {{data['contact-date-day-1']}}
+
+                          {% if (data['contact-date-month-1'] =='01') or (data['contact-date-month-1'] =='1') %} January {% endif%}
+                          {% if (data['contact-date-month-1'] =='02') or (data['contact-date-month-1'] =='2') %} February  {% endif%}
+                          {% if (data['contact-date-month-1'] =='03') or (data['contact-date-month-1'] =='3') %} March {% endif%}
+                          {% if (data['contact-date-month-1'] =='04') or (data['contact-date-month-1'] =='4') %} April {% endif%}
+                          {% if (data['contact-date-month-1'] =='05') or (data['contact-date-month-1'] =='5') %} May {% endif%}
+                          {% if (data['contact-date-month-1'] =='06') or (data['contact-date-month-1'] =='6') %} June {% endif%}
+                          {% if (data['contact-date-month-1'] =='07') or (data['contact-date-month-1'] =='7') %} July {% endif%}
+                          {% if (data['contact-date-month-1'] =='08') or (data['contact-date-month-1'] =='8') %} August {% endif%}
+                          {% if (data['contact-date-month-1'] =='09') or (data['contact-date-month-1'] =='9') %} September {% endif%}
+                          {% if data['contact-date-month-1'] =='10' %} October {% endif%}
+                          {% if data['contact-date-month-1'] =='11'%} November {% endif%}
+                          {% if data['contact-date-month-1'] =='12' %} December {% endif%}
+
+                          {{data['contact-date-year-1']}}
+                       at {{data['contact-time-1']}} <a href="/payments/current/cases/dereck/cases/contact/1/phone-log">View details</a></div>
+
+                      </div>
+{% endif%}
+
+
+
+
+
+
+
+
+
+<!-- IDENTITY CHECKS COMPLETE -->
                 <div class="moj-timeline__item">
 
                     <div class="moj-timeline__header">
                     <h2 class="moj-timeline__title">Identity checks completed</h2>
                     <p class="moj-timeline__byline"></p>
                     </div>
-                    <div class="moj-timeline__description">Personal details match Searchlight</div>
-                    <p class="moj-timeline__description">
-                    <time datetime="2019-06-07T12:32:00.000Z">1:15pm, 29 May 2023</time>
+                    <p class="moj-timeline__date">
+                      <time datetime="2023-06-06T09:12:00.000Z"><script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 15);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate + ' at ');
+                           </script> 10:15am</time>
                     </p>
+                    <div class="moj-timeline__description">Personal details match Searchlight</div>
                   </div>
 
 
-                  <!-- DIGITAL CLAIM RRECIVED -->
+<!-- DIGITAL CLAIM RRECIVED -->
                   <div class="moj-timeline__item">
 
                       <div class="moj-timeline__header">
                       <h2 class="moj-timeline__title">Claim received</h2>
                       <p class="moj-timeline__byline"></p>
                       </div>
-                      <p class="moj-timeline__description">
-                      <time datetime="2019-06-07T12:32:00.000Z">1:15pm, 29 May 2023</time>
+                      <p class="moj-timeline__date">
+                        <time datetime="2023-06-06T09:12:00.000Z"><script>
+                          // Get date
+                              var now = new Date();
+                              var pastDate = new Date(now);
+                              pastDate.setDate(now.getDate() - 15);
+
+                              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                              day: 'numeric',
+                              month: 'long',
+                              year: 'numeric'
+                              });
+
+                              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                              hour: 'numeric',
+                              minute: 'numeric',
+                              hour12: true
+                              });
+
+                              document.write(formattedDate + ' at ');
+                             </script> 10:15am</time>
                       </p>
-                      <div class="moj-timeline__description"></div>
+                      <p class="moj-timeline__description">
                     </div>
 
 
-                    <!-- GRANT AWARDED -->
+
+
+<!-- GRANT AWARDED -->
+
                     <div class="moj-timeline__item">
 
                         <div class="moj-timeline__header">
                         <h2 class="moj-timeline__title">Grant awarded</h2>
-                        <p class="moj-timeline__byline">by Mark Dawson</p>
+                        <p class="moj-timeline__byline">by Jon Goldsmith</p>
                         </div>
-                        <p class="moj-timeline__description">
-                        <time datetime="2019-06-07T12:32:00.000Z">1:24pm, 1 February 2023</time>
+                        <p class="moj-timeline__date">
+                          <time datetime="2023-06-06T09:12:00.000Z"><script>
+                            // Get date
+                                var now = new Date();
+                                var pastDate = new Date(now);
+                                pastDate.setDate(now.getDate() - 60);
+
+                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric'
+                                });
+
+                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                hour12: true
+                                });
+
+                                document.write(formattedDate + ' at ');
+                               </script> 10:15am</time>
                         </p>
-                        <div class="moj-timeline__description"></div>
+                        <p class="moj-timeline__description">
                       </div>
+
+
+
+
+
+
+
 
 
 

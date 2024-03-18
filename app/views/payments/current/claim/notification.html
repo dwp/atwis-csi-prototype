@@ -134,10 +134,10 @@
       <dd class="hmrc-list-with-actions__action">
         <a class="govuk-link"
         href="
+        {% if data['_do_'+ contactindex]=='Telephone call made'%}/payments/current/cases/dereck/cases/contact/{{contactindex}}/phone-log{% endif %}
         {% if data['_do_'+ contactindex]=='Email sent'%} /payments/current/cases/dereck/cases/contact/{{contactindex}}/email-log {% endif %}
         {% if data['_do_'+ contactindex]=='Email received'%} /payments/current/cases/dereck/cases/contact/{{contactindex}}/email-log {% endif %}
         {% if data['_do_'+ contactindex]=='Text message (SMS) sent'%} /payments/current/cases/dereck/cases/contact/{{contactindex}}/sms-log {% endif %}
-        {% if data['_do_'+ contactindex]=='Telephone call made'%}/payments/current/cases/dereck/cases/contact/{{contactindex}}/phone-log{% endif %}
         {% if data['_do_'+ contactindex]=='Telephone call received'%} /payments/current/cases/dereck/cases/contact/{{contactindex}}/phone-log{% endif %}">
           <span aria-hidden="true">View </span>
           <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
@@ -145,6 +145,8 @@
       </dd>
     </div>
   </div>
+
+
 
 {% endif %}
 {%- endfor %}

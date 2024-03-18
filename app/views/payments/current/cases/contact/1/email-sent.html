@@ -14,7 +14,7 @@
 <a href="javascript:history.go(-1)" class="govuk-back-link">Back </a>
 
 
-<form action="/payments/current/cases/{{case}}/cases/contact/1/other" method="post" novalidate>
+<form action="/payments/current/cases/{{case}}/cases/contact/{{number}}/other" method="post" novalidate>
 
 
 
@@ -51,22 +51,22 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/payments/curren
                             </legend>
                             <div class="govuk-radios" data-module="govuk-radios">
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="{% if case == "arlo"  %}Arlo Spinka{% endif %}{% if case == "john"  %}John Smith{% endif %}  {% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                                  {% if case == "arlo"  %}Arlo Spinka{% endif %}{% if case == "john"  %}John Smith{% endif %}  {% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya Corkery{% endif %}{% if case == "dereck" %}Dereck Smith{% endif %}
+                                <input class="govuk-radios__input" id="email-sent-who" name="email-sent-who" type="radio" value="Dereck Smith">
+                                <label class="govuk-label govuk-radios__label" for="email-sent-who">
+                                  Dereck Smith
                                 </label>
                               </div>
 
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="Employer">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                <input class="govuk-radios__input" id="email-sent-who-2" name="email-sent-who" type="radio" value="Employer">
+                                <label class="govuk-label govuk-radios__label" for="email-sent-who-2">
                                   Employer
                                 </label>
                               </div>
 
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="Supplier">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                <input class="govuk-radios__input" id="email-sent-who-3" name="email-sent-who" type="radio" value="Supplier">
+                                <label class="govuk-label govuk-radios__label" for="email-sent-who-3">
                                   Supplier
                                 </label>
                               </div>
