@@ -50,16 +50,16 @@ Is this case a new application?
 
                        <div class="govuk-radios govuk-radios--inline">
                          <div class="govuk-radios__item">
-                           <input class="govuk-radios__input" id="disc-check{{phase}}" name="disc-check{{phase}}" type="radio" value="Yes~done-atwis" {{ checked("disc-check"+ phase, "Yes and all of the details match") }}>
-                           <label class="govuk-label govuk-radios__label" for="disc-check">
+                           <input class="govuk-radios__input" id="new-application{{phase}}" name="new-application{{phase}}" type="radio" value="Yes~done-atwis" {{ checked("new-application", "Yes") }}>
+                           <label class="govuk-label govuk-radios__label" for="new-application">
                             Yes
                            </label>
                          </div>
 
 
                                           <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="disc-check-2" name="disc-check{{phase}}" type="radio" value="No~done-disc" {{ checked("disc-check"+ phase, "Yes, but some details do not match") }}>
-                                            <label class="govuk-label govuk-radios__label" for="disc-check-2">
+                                            <input class="govuk-radios__input" id="new-application-2" name="new-application{{phase}}" type="radio" value="No~done-disc" {{ checked("new-application", "No") }}>
+                                            <label class="govuk-label govuk-radios__label" for="new-application-2">
                                           No
                                             </label>
                                           </div>
