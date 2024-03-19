@@ -8,7 +8,7 @@
 
 {% block csi %}
 
-<form action="sd-adding-1" method="post" novalidate>
+<form action="../add" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -16,7 +16,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">  Quote for specialist equipment</h1>
+        <h1 class="govuk-heading-l">  Cost details for specialist equipment</h1>
 
 
 
@@ -25,7 +25,33 @@
               {{data['sae-item-type'+ number]}}
                   </div>
 
+                  {% if data['wpa']=='Yes'%}
+                  <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Where is the suggestion for this item from?
+                    </h2>
+                  </legend>
 
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Workplace assessment report" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
+                      <label class="govuk-label govuk-radios__label" for="from-sae">
+                      Workplace assessment report
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}" {{ checked("from-sae"+ number, "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="from-sae-2">
+                  {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
+                      </label>
+                    </div>
+                  </div>
+
+                </fieldset>
+                </div>
+              {% endif %}
 
 <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -59,11 +85,12 @@ Total cost
     </div>
 
 
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-    Where is the quote from?
+    Where did the cost come from?
           </h1>
         </legend>
         <div class="govuk-radios__item">
@@ -81,7 +108,7 @@ Total cost
           </label>
         </div>{% endif %}
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="quotes-choose-3" name="quotes-choose{{number}}" type="radio" value="Other source~rateother" {{ checked("quotes-choose"+ number, "Other source") }}>
+          <input class="govuk-radios__input" id="quotes-choose-3" name="quotes-choose{{number}}" type="radio" value="Other source" {{ checked("quotes-choose"+ number, "Other source") }}>
           <label class="govuk-label govuk-radios__label" for="quotes-choose-3">
             Other source
           </label>
@@ -89,6 +116,75 @@ Total cost
 
       </fieldset>
     </div>
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+What is the start date for this item?
+          </h1>
+        </legend>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sae-start-date-2" name="sae-start-date{{number}}" type="radio" value="Dereck Smith" {{ checked("sae-start-date"+ number, "Dereck Smith") }}>
+          <label class="govuk-label govuk-radios__label" for="sae-start-date-2">
+
+      Date of decision
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sae-start-date-3" name="sae-start-date{{number}}" type="radio" value="Other source" {{ checked("sae-start-date"+ number, "Other source") }}>
+          <label class="govuk-label govuk-radios__label" for="sae-start-date-3">
+          Another date
+          </label>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="social-domestic-1-hint">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  <h2 class="govuk-fieldset__heading">
+  {% include  "../content/social-domestic.html" %}
+  </h2>
+  </legend>
+
+                                 <p>Social and domestic contribution must be applied if this item is used outside work.</p> <p>Check guidance on <a href="https://intranet.dwp.gov.uk/manual/access-work/cost-share" target="_blank">cost share contribution, point 23 (opens in a new tab)</a> and
+
+
+                                    <a href="https://intranet.dwp.gov.uk/manual/access-work/motability-social-and-domestic-sd-contributions" target="_blank">motability - social and domestic contributions (opens in a new tab)</a>.</p>
+
+
+
+  <div class="govuk-radios " data-module="govuk-radios">
+  <div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="social-domestic-1" name="social-domestic-{{number}}" type="radio" value="Yes" {{ checked("social-domestic-"+ number, "Yes") }}>
+  <label class="govuk-label govuk-radios__label" for="social-domestic-1">
+    Yes
+  </label>
+  </div>
+  <div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="social-domestic-1-2" name="social-domestic-{{number}}" type="radio" value="No" {{ checked("social-domestic-"+ number, "No") }}>
+  <label class="govuk-label govuk-radios__label" for="social-domestic-1-2">
+    No
+  </label>
+  </div>
+
+  <div class="govuk-radios__item">
+  <input class="govuk-radios__input" id="social-domestic-1-2" name="social-domestic-{{number}}" type="radio" value="I am not sure, I need more details" {{ checked("social-domestic-"+ number, "I am not sure, I need more details") }}>
+  <label class="govuk-label govuk-radios__label" for="social-domestic-1-2">
+  I am not sure, I need more details
+  </label>
+  </div>
+
+
+  </div>  </div>
+
 
    <button class="govuk-button" data-module="govuk-button">
      Save and continue
