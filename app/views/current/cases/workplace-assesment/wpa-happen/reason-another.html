@@ -1,0 +1,36 @@
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#wpa" method="post" novalidate>
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="wpa-date-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+Why does Dereck Smith need another workplace assessment?
+        </h1>
+      </legend>
+      <div class="govuk-form-group">
+
+    <textarea class="govuk-textarea" id="another-wpa-reason" name="another-wpa-reason" rows="5" autocomplete="another-wpa-reason"></textarea>
+  </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+</form>
+
+{% endblock %}

@@ -91,10 +91,21 @@
 {% endif %}
 {% endif %}
 
+{% if data['referral-form']%}
+
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+<a href="{% if data['wpa-happen']%}/current/cases/workplace-assesment/wpa-happen/check{% else %}/current/cases/workplace-assesment/wpa-happen{% endif %}" aria-describedby="cost-share-agreement">
+     Workplace assessment
+</a>
+  </span>
+{% if data['wpa-happen']%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}         </li>
+
+{% endif %}
 
 
-
-  {% if data['referral-form']%}
+  {% if data['wpa-happen']=='Yes'%}
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
