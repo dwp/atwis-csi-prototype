@@ -20,30 +20,45 @@
       <fieldset class="govuk-fieldset" aria-describedby="approve-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Add this item to the award?
+        Start date
           </h1>
         </legend>
+        <div id="dob-hint" class="govuk-hint">
+                 For example, 31 3 2024
+               </div>
         <div class="govuk-inset-text">
       {{data['sae-item-type'+ number]}}
         </div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="approve" name="approve{{number}}" type="radio" value="Yes~selected-quote" {{ checked("approve"+ number, "Yes") }}>
-            <label class="govuk-label govuk-radios__label" for="approve">
-            Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="approve-2" name="approve{{number}}" type="radio" value="No~not-needed-adding" {{ checked("approve"+ number, "No") }}>
-            <label class="govuk-label govuk-radios__label" for="approve-2">
-              No
-            </label>
-          </div>
-        </div>
 
-      </fieldset>
-    </div>
-                   <button class="govuk-button" data-module="govuk-button">
+               <div class="govuk-date-input" id="dob">
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label" for="dob-day">
+                       Day
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                   </div>
+                 </div>
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label" for="dob-month">
+                       Month
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                   </div>
+                 </div>
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label" for="dob-year">
+                       Year
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                   </div>
+                 </div>
+               </div>
+             </fieldset>
+           </div>
+         <button class="govuk-button" data-module="govuk-button">
                    Save and continue
                    </button>
 
