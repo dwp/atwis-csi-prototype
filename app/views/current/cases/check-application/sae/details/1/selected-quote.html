@@ -24,13 +24,13 @@
                 <div class="govuk-inset-text">
               {{data['sae-item-type'+ number]}}
                   </div>
-
+{% if data['quotes-choose'+ number]=='Other source'%}
                   <div class="govuk-form-group">
                   <label class="govuk-label govuk-label--m" for="passport-number">
                   Other source of suggestion
                   </label>
                   <input class="govuk-input" id="Supplier" name="quotes-supplier{{number}}" type="text" spellcheck="false" autocomplete="name" value=''>
-                  </div>
+                  </div>{% endif %}
 
 <div class="govuk-form-group">
 <label class="govuk-label govuk-label--m" for="passport-number">
