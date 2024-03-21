@@ -36,6 +36,12 @@
  contacted us about the following{% else %}
 You said you contacted {% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} about the following{% endif  %}:</p>
 
+You said you contacted
+{% if "Dereck Smith" in data [email-sent-who] %}
+Dereck Smith
+{% endif %}
+{% if data[email-sent-who]=='Employer' %}Smith digital{% endif %} {% if data[email-sent-who]=='Supplier' %}a supplier{% endif %}about the following:</p>
+
     <ul class="govuk-list govuk-list--bullet">
  {% for feature in data['contact-why'] %}
    <li>{{ feature }}</li>
