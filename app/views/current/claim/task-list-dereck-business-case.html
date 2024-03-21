@@ -146,7 +146,7 @@ data ['appointee']
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
          <a href="{% if data['sae-add']%}./check-application/sae/details/add{% else %}./check-application/sae/details/1/type{% endif %}" aria-describedby="read-declaration-status">
-               Specialist equipment: add or change support
+               Specialist equipment: add or change
            </a>
           </span>
           {% if data['sae-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
@@ -169,7 +169,7 @@ data ['appointee']
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
    <a href="{% if data['mhss-support']%}./check-application/mhss/details/check{% else %}./check-application/mhss/details/mental-health-support{% endif %}" aria-describedby="read-declaration-status">
-        Mental health support: add or change support
+        Mental health support: add or change
      </a>
     </span>
     {% if data['mhss-support']=='Yes'%}
@@ -187,7 +187,7 @@ data ['appointee']
  <li class="app-task-list__item">
     <span class="app-task-list__task-name">
    <a href="{% if data['sw-add']%}./check-application/support-worker/details/add{% else %}./check-application/support-worker/details/type{% endif %}" aria-describedby="read-declaration-status">
-         Support worker: add or change support
+         Support worker: add or change
      </a>
     </span>
     {% if data['sw-add']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}

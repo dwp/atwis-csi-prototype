@@ -16,7 +16,7 @@
 
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">  Details for this item of  specialist equipment</h1>
+        <h1 class="govuk-heading-l">  Cost details for specialist equipment</h1>
 
 
 
@@ -27,17 +27,12 @@
 {% if data['quotes-choose'+ number]=='Other source'%}
                   <div class="govuk-form-group">
                   <label class="govuk-label govuk-label--m" for="passport-number">
-                  Other source of suggestion
+                  Item suggested by
                   </label>
                   <input class="govuk-input" id="Supplier" name="quotes-supplier{{number}}" type="text" spellcheck="false" autocomplete="name" value=''>
                   </div>{% endif %}
 
-<div class="govuk-form-group">
-<label class="govuk-label govuk-label--m" for="passport-number">
-Supplier
-</label>
-<input class="govuk-input" id="Supplier" name="quotes-supplier{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['quotes-supplier'+ number]}}'>
-</div>
+
 <div class="govuk-form-group">
 <label class="govuk-label govuk-label--m" for="passport-number">
 Total cost
