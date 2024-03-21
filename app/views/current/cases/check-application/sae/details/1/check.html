@@ -29,17 +29,15 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
-              What item of specialist equipment do you need to add for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}?
-
+            What is the specialist equipment?
             </dt>
             <dd class="govuk-summary-list__value">
 {{data['sae-item-type'+ number]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/type">
+            <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/type#sae-item-type">
                 Change<span class="govuk-visually-hidden">
-                  What item of specialist equipment do you need to add for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}?
-
+                What is the specialist equipment?
 </span>
               </a>
             </dd>
@@ -73,7 +71,7 @@ Add this item to the award?
 {{data['approve'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/approve">
+    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/type#approve">
       Change<span class="govuk-visually-hidden">
 Add this item to the award?
 </span>
