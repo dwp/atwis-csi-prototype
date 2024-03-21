@@ -1,11 +1,14 @@
+{% set case = "dereck" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
 {% if not number or (number == 'undefined') %}
 {% set number = 1 %}
 {% endif %}
+
+{% extends   "payments/current/claim/_CSIBASE.html" %}
+
 {% block csi %}
 <br>
 
@@ -49,15 +52,7 @@ Telephone call made on    {{ data['contact-date-day-'+ number] }}
 
     </label>
     </h2>
-{% if data['_do_1']=='Telephone call received'%}
-<p>From Thomas King to John Goldsmith</p>{% else %}
-<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
-{% endif %}
-{% if data['asked-info-phone-'+number]=='Yes'%}
-<p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} answered the telephone.</p>{% endif %}
-{% if data['asked-info-phone-'+number]=='No'%}
-<p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} did not answer the telephone.</p>{% endif %}
-
+<p>From Dereck Smith to Sue Pearson</p>
 
 <p>About: </p>
 <ul class="govuk-list govuk-list--bullet">
@@ -76,13 +71,17 @@ Telephone call made on    {{ data['contact-date-day-'+ number] }}
 
      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-               Summarise the 'other' information discussed
+               Summarise the information discussed
 
                      </label>
                      </h2>
 
 <p>{{data['other-discussion-1']}}</p>
 
+
+
+
+<br>
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Return
