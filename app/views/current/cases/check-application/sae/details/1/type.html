@@ -18,17 +18,17 @@
 
 
 
-<h1 class="govuk-heading-l">Add specialist equipment details</h1>
+<h1 class="govuk-heading-l">Add item of specialist equipment</h1>
 
 
-
+<p>Give the name of one item. You will have the option to add more.</p>
         <div class="govuk-form-group">
   <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="sae-item-type">
 
                 {% include "current/cases/check-application/sae/details/content/type.html" %} </label> </h2>
 
 
-<div id="event-name-hint" class="govuk-hint">Give the name of one item. You will have the option to add more.</div>
+
 
 
             <input class="govuk-input" id="sae-item-type" name="sae-item-type{{number}}" type="text" spellcheck="false" autocomplete="name" value="{{data['sae-item-type'+ number]}}">
@@ -40,7 +40,36 @@
 
                    </div>         </div><br>
 
+                   <div class="govuk-form-group">
+                     <fieldset class="govuk-fieldset">
+                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                         <h1 class="govuk-fieldset__heading">
+                   Where is the suggestion for this item from?
+                         </h1>
+                       </legend>
+                       <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose{{number}}" type="radio" value="Dereck Smith" {{ checked("quotes-choose"+ number, "Dereck Smith") }}>
+                         <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
 
+                         Dereck Smith
+                         </label>
+                       </div>
+                     {% if data['wpa']=='Yes'%}  <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose{{number}}" type="radio" value="Workplace assessment" {{ checked("quotes-choose"+ number, "Workplace assessment") }}>
+                         <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
+
+                       Workplace assessment report
+                         </label>
+                       </div>{% endif %}
+                       <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="quotes-choose-3" name="quotes-choose{{number}}" type="radio" value="Other source" {{ checked("quotes-choose"+ number, "Other source") }}>
+                         <label class="govuk-label govuk-radios__label" for="quotes-choose-3">
+                           Other source
+                         </label>
+                       </div>
+
+                     </fieldset>
+                   </div>
 
 
                    <div class="govuk-form-group">
