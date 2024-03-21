@@ -17,6 +17,7 @@
      <div class="govuk-header__logo">
        <a href="#" class="govuk-header__link govuk-header__link--homepage">
          <span class="govuk-header__logotype">
+
            <span class="govuk-header__logotype-text">
              GOV.UK
            </span>
@@ -27,7 +28,14 @@
        <a href="/{{folder}}/" class="govuk-header__link govuk-header__link--service-name">
         {{serviceName}}
        </a>
+
+
      </div>
+     {% if not hideUser %}
+     <div class="header-user-details">
+          Sue Pearson
+         </div>
+        {% endif %}
    </div>
  </header>
 

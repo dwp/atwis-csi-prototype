@@ -10,7 +10,6 @@
 {% extends   "payments/current/claim/_CSIBASE.html" %}
 
 {% block csi %}
-
 <br>
 
 
@@ -35,7 +34,7 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
-Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% endif %} on  {{ data['contact-date-day-'+ number] }}
+Telephone call made on    {{ data['contact-date-day-'+ number] }}
 {% if (data['contact-date-month-'+ number] =='01') or (data['contact-date-month-'+ number] =='1') %} January {% endif%}
 {% if (data['contact-date-month-'+ number] =='02') or (data['contact-date-month-'+ number] =='2') %} February  {% endif%}
 {% if (data['contact-date-month-'+ number] =='03') or (data['contact-date-month-'+ number] =='3') %} March {% endif%}
@@ -48,26 +47,32 @@ Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% end
 {% if data['contact-date-month-'+ number] =='10' %} October {% endif%}
 {% if data['contact-date-month-'+ number] =='11'%} November {% endif%}
 {% if data['contact-date-month-'+ number] =='12' %} December {% endif%}
-{{ data['contact-date-year-'+ number] }} at {{data['contact-time-'+ number]}}
+{{ data['contact-date-year-'+ number] }} at {{data['contact-time-'+ number]| lower}}
 
 
     </label>
     </h2>
-<p>By Sue Pearson to {{data['email-sent-who']}}
-<p>
-{{data['job-detail-discussion-'+ number]}}
-</p>
+{% if data['_do_1']=='Telephone call received'%}
+<p>From Dereck Smith to Sue Pearson</p>{% else %}
 
-</div>
+<p>By Sue Pearson to {{data['contact-who']}}</p>
+{% endif %}
+{% if data['asked-info-phone-'+number]=='Yes'%}
+<p>  {{data['contact-who']}} answered the telephone.</p>{% endif %}
+{% if data['asked-info-phone-'+number]=='No'%}
+<p>  {{data['contact-who']}} did not answer the telephone.</p>{% endif %}
+
+
 <p>About: </p>
-
-  <ul class="govuk-list govuk-list--bullet">
-    {% for feature in data['contact-why'] %}
-      <li>{{ feature }}</li>
-    {% else %}
-      <li>No features selected</li>
-    {% endfor %}
-  </ul>
+<ul class="govuk-list govuk-list--bullet">
+  {% for feature in data['contact-why'] %}
+    <li>{{ feature }}</li>
+  {% else %}
+    <li>No features selected</li>
+  {% endfor %}
+</ul>
+</div>
+<p>{% if pahse == 'thomas'%}{{data['other-discussion-1']}}{% endif %}</p>
 <!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
 <!-- {% include  "current/claim/notification-contact.html" %} -->
      <br>
@@ -80,20 +85,13 @@ Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% end
                      </label>
                      </h2>
 
-<p>{{data['other-discussion-2']}}</p>
+<p>{{data['other-discussion-1']}}</p>
 
 
-     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
-
-               Copy the content of the email
-
-                     </label>
-                     </h2>
-
-     <p>{{data['other-discussion2-2']}}</p>
 
 
 <br>
+
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Return
           </button>
