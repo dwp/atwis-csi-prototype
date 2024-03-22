@@ -8,13 +8,57 @@
 
 {% block csi %}
 
-<form action="selected-quote" method="post" novalidate>
+<form action="sd-adding-1" method="post" novalidate>
 <div class="govuk-width-container">
 
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+{% if data['sae-start-date'+ number]=='Another date' and data['from-sae'+ number]=='Someone else'%}<h1 class="govuk-heading-l">Additional cost details for specialist equipment</h1>
+
+
+
+
+        <div class="govuk-inset-text">
+      {{data['sae-item-type'+ number]}}
+
+        </div>
+{% endif %}
+
+{% if data['from-sae'+ number]=='Someone else'%}
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--{% if data['sae-start-date'+ number]=='Another date'%}m{% else %}l{% endif %}" for="event-name">
+    Someone else
+  </label>
+
+
+    <div class="govuk-inset-text">
+        {{data['sae-item-type'+ number]}}
+          </div>
+    </h1>
+
+            {% if not data['sae-start-date1']=='Another date'%}<div class="govuk-inset-text">
+          {{data['sae-item-type'+ number]}}
+            </div>{% endif %}
+
+        <input class="govuk-input" id="Someone else" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
+        </div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+{% if data['sae-start-date'+ number]=='Another date'%}
 
         <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="approve-hint">
@@ -26,7 +70,8 @@
         <div id="dob-hint" class="govuk-hint">
                  For example, 31 3 2024
                </div>
-        <div class="govuk-inset-text">
+
+  <div class="govuk-inset-text">
       {{data['sae-item-type'+ number]}}
         </div>
 
@@ -58,6 +103,8 @@
                </div>
              </fieldset>
            </div>
+{% endif %}
+
          <button class="govuk-button" data-module="govuk-button">
                    Save and continue
                    </button>

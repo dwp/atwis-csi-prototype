@@ -73,7 +73,7 @@ Total cost
     </label>
   </div>
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Someone else" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
+    <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Someone else~other" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
     <label class="govuk-label govuk-radios__label" for="from-sae">
     Someone else
     </label>
@@ -83,6 +83,10 @@ Total cost
 </fieldset>
 </div>
 {% endif %}
+
+
+
+
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -99,7 +103,7 @@ What is the start date for this item?
     </div>
 
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="sae-start-date-3" name="sae-start-date{{number}}" type="radio" value="Other source~other" {{ checked("sae-start-date"+ number, "Other source") }}>
+      <input class="govuk-radios__input" id="sae-start-date-3" name="sae-start-date{{number}}" type="radio" value="Another date~other" {{ checked("sae-start-date"+ number, "Another date") }}>
       <label class="govuk-label govuk-radios__label" for="sae-start-date-3">
       Another date
       </label>
