@@ -14,7 +14,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-l">  Quote for specialist equipment</h1>
+        <h1 class="govuk-heading-l">  Details for specialist equipment</h1>
 
 
 
@@ -36,12 +36,12 @@
     </label>
     <input class="govuk-input" id="Brand" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
   </div> -->
-  <div class="govuk-form-group">
+  <!-- <div class="govuk-form-group">
 <label class="govuk-label" for="Supplier">
 Supplier
 </label>
 <input class="govuk-input" id="Supplier" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
-</div>
+</div> -->
 <label class="govuk-label" for="cost-per-item">
 Total cost
 </label>
@@ -56,28 +56,77 @@ Total cost
     </div>
 
 
+
+
+
+
+
+    <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+      Who provided the cost for the item?
+      </h2>
+    </legend>
+
+    <div class="govuk-radios " data-module="govuk-radios">
+        {% if data['wpa']=='Yes'%}
+         <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Workplace assessment report" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
+        <label class="govuk-label govuk-radios__label" for="from-sae">
+        Workplace assessor
+        </label>
+      </div>    {% endif %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}" {{ checked("from-sae"+ number, "Yes") }}>
+        <label class="govuk-label govuk-radios__label" for="from-sae-2">
+    {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Someone else" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
+        <label class="govuk-label govuk-radios__label" for="from-sae">
+        Someone else
+        </label>
+      </div>
+    </div>
+
+    </fieldset>
+    </div>
+
+
+
+
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-        Where is the quote from?
+    What is the start date for this item?
           </h1>
         </legend>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose" type="radio" value="John Smith" {{ checked("quotes-choose", "John Smith") }}>
-          <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
-        Sonya Corkery
+          <input class="govuk-radios__input" id="sae-start-date-2" name="sae-start-date{{number}}" type="radio" value="Dereck Smith" {{ checked("sae-start-date"+ number, "Dereck Smith") }}>
+          <label class="govuk-label govuk-radios__label" for="sae-start-date-2">
+
+      Date of decision
           </label>
         </div>
+
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="quotes-choose-3" name="quotes-choose" type="radio" value="Other source~rateother" {{ checked("quotes-choose", "Other source") }}>
-          <label class="govuk-label govuk-radios__label" for="quotes-choose-3">
-            Other source
+          <input class="govuk-radios__input" id="sae-start-date-3" name="sae-start-date{{number}}" type="radio" value="Another date" {{ checked("sae-start-date"+ number, "Another date") }}>
+          <label class="govuk-label govuk-radios__label" for="sae-start-date-3">
+          Another date
           </label>
         </div>
 
       </fieldset>
     </div>
+
+
+
+
+
 
    <button class="govuk-button" data-module="govuk-button">
      Save and continue

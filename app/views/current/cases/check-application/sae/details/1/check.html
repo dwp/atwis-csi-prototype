@@ -29,17 +29,15 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
-              What item of specialist equipment do you need to add for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}?
-
+            Name of item
             </dt>
             <dd class="govuk-summary-list__value">
 {{data['sae-item-type'+ number]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/type">
+            <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/type#sae-item-type">
                 Change<span class="govuk-visually-hidden">
-                  What item of specialist equipment do you need to add for {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}?
-
+                Name of item
 </span>
               </a>
             </dd>
@@ -49,7 +47,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
 
-Where is the suggestion for this item from?
+Suggested by
             </dt>
             <dd class="govuk-summary-list__value">
         {{data['from-sae'+ number]}}
@@ -57,7 +55,7 @@ Where is the suggestion for this item from?
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/from">
                 Change<span class="govuk-visually-hidden">
-Where is the suggestion for this item from?
+Suggested by
         </span>
               </a>
             </dd>
@@ -67,15 +65,15 @@ Where is the suggestion for this item from?
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
 
-Add this item to the award?
+Add to the award?
   </dt>
   <dd class="govuk-summary-list__value">
 {{data['approve'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/approve">
+    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/type#approve">
       Change<span class="govuk-visually-hidden">
-Add this item to the award?
+Add to the award?
 </span>
     </a>
   </dd>
@@ -99,14 +97,30 @@ Reason for not awarding this item
   </dd>
 </div>
 {% else %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+Item suggested by
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['quotes-supplier'+ number]}}<br>
+</dd>
+<dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+    Change<span class="govuk-visually-hidden">
+Reason for not awarding this item
+</span>
+  </a>
+</dd>
+</div>
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
 
-Quote for specialist equipment
+Cost
   </dt>
   <dd class="govuk-summary-list__value">
-{{data['quotes-supplier'+ number]}}<br>
+
 £{{data['cost-per-item'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
@@ -120,7 +134,7 @@ Reason for not awarding this item
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-Where is the quote from?
+Where is the cost from?
   </dt>
   <dd class="govuk-summary-list__value">
 {{data['quotes-choose'+ number]}}
@@ -128,7 +142,7 @@ Where is the quote from?
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
       Change<span class="govuk-visually-hidden">
-Where is the quote from?
+Where is the cost from?
 </span>
     </a>
   </dd>
@@ -137,7 +151,7 @@ Where is the quote from?
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
 
-    Does a social and domestic contribution need to be applied to this item?
+    Social and domestic contribution?
 
   </dt>
   <dd class="govuk-summary-list__value">
@@ -146,7 +160,7 @@ Where is the quote from?
   <dd class="govuk-summary-list__actions">
     <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
       Change<span class="govuk-visually-hidden">
-    Does a social and domestic contribution need to be applied to this item?
+    Social and domestic contribution?
 </span>
     </a>
   </dd>
