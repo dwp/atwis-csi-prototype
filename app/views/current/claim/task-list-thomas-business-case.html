@@ -95,62 +95,12 @@
 
 
 
-
-  {% if data['Searchligh'] and
-
-    data ['condition-check'+ phase]
-    and
-    data ['job-deatils-check'+ phase]
-    and
-data['sae-checkthomas'] and
-    data ['contact-check'+ phase]
-
-    and
-    data ['quotes-check-2'+ phase]
-    and
-    data ['appointee']
-    and
-    data ['benefits']
-  %}<ol class="app-task-list">
-    {% include  "../claim/task-list-comp/_task-list-open-thomas.html" %}
-  {% else %}
-
 <ol class="app-task-list">
-  <li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
-    </h2>
-    <ul class="app-task-list__items">
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
 
-        Confirm whether workplace assessment is needed
-
-    </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
-
-
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-
-                   Add information about the employer
-
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
-            </li>
-
-
-
-
-
-{% endif %}
-
-          </ul>
-        </li>
+        <li>
 
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span> Element
+        Element
         </h2>
         {% if not elementAdd %}
           {% set elementAdd = 0 %}
@@ -277,7 +227,7 @@ The current amount for this award is £{{totalAward / 3 }}  for 1 year. 
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Award decision
+           Award decision
           </h2>
 
 
