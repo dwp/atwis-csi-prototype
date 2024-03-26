@@ -50,7 +50,7 @@ Total cost
 
 
 
-{% if data['wpa']=='Yes'%}
+
 <div class="govuk-form-group">
 <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -60,12 +60,13 @@ Total cost
 </legend>
 
 <div class="govuk-radios " data-module="govuk-radios">
+{% if data['wpa']=='Yes'%}
   <div class="govuk-radios__item">
     <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Workplace assessment report" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
     <label class="govuk-label govuk-radios__label" for="from-sae">
     Workplace assessor
     </label>
-  </div>
+  </div>    {% endif %}
   <div class="govuk-radios__item">
     <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}" {{ checked("from-sae"+ number, "Yes") }}>
     <label class="govuk-label govuk-radios__label" for="from-sae-2">
@@ -82,7 +83,7 @@ Total cost
 
 </fieldset>
 </div>
-{% endif %}
+
 
 
 

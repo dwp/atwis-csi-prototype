@@ -15,7 +15,7 @@
    </li>
 
 
-
+{% if data['award']=='complete'%}
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
 <a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
@@ -48,4 +48,11 @@ Decision letters
 <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
 
  </li>
+ {% else %}
+ <li class="app-task-list__item">
+   <span class="app-task-list__task-name">
+     Decision letters
+   </span>
+   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+ </li>{% endif %}
 </ul>
