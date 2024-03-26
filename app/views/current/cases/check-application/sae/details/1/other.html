@@ -16,41 +16,155 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-{% if data['sae-start-date'+ number]=='Another date' and data['from-sae'+ number]=='Someone else'%}<h1 class="govuk-heading-l">Additional cost details for specialist equipment</h1>
+
+
+
+<!-- both -->
+    {% if data['sae-start-date'+ number]=='Another date' and data['from-sae'+ number]=='Someone else'%}
+
+
+    <h1 class="govuk-heading-l">Additional cost details for specialist equipment</h1>
+
+
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+              Someone else
+            </label>
+
+
+              </h1>
+
+
+
+                  <input class="govuk-input" id="Someone else" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
+                  </div>
 
 
 
 
-        <div class="govuk-inset-text">
-      {{data['sae-item-type'+ number]}}
-
-        </div>
-{% endif %}
-
-{% if data['from-sae'+ number]=='Someone else'%}
-
-<div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--{% if data['sae-start-date'+ number]=='Another date'%}m{% else %}l{% endif %}" for="event-name">
-    Someone else
-  </label>
-
-
-    <div class="govuk-inset-text">
-        {{data['sae-item-type'+ number]}}
-          </div>
-    </h1>
-
-            {% if not data['sae-start-date1']=='Another date'%}<div class="govuk-inset-text">
-          {{data['sae-item-type'+ number]}}
-            </div>{% endif %}
-
-        <input class="govuk-input" id="Someone else" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
-        </div>
-{% endif %}
+                  <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="approve-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                  Start date
+                    </h1>
+                  </legend>
+                  <div id="start-date-hint" class="govuk-hint">
+                           For example, 31 3 2024
+                         </div>
 
 
 
+                         <div class="govuk-date-input" id="start-date">
+                           <div class="govuk-date-input__item">
+                             <div class="govuk-form-group">
+                               <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                                 Day
+                               </label>
+                               <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                             </div>
+                           </div>
+                           <div class="govuk-date-input__item">
+                             <div class="govuk-form-group">
+                               <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                                 Month
+                               </label>
+                               <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                             </div>
+                           </div>
+                           <div class="govuk-date-input__item">
+                             <div class="govuk-form-group">
+                               <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                                 Year
+                               </label>
+                               <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                             </div>
+                           </div>
+                         </div>
+                       </fieldset>
+                     </div>
+
+
+
+
+
+                     {% elif data['sae-start-date'+ number]=='Another date'%}
+
+                     <fieldset class="govuk-fieldset" aria-describedby="approve-hint">
+                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                         <h1 class="govuk-fieldset__heading">
+                       Start date
+                         </h1>
+                       </legend>
+                       <div id="start-date-hint" class="govuk-hint">
+                                For example, 31 3 2024
+                              </div>
+                              <div class="govuk-inset-text">
+                            {{data['sae-item-type'+ number]}}
+
+                              </div>
+
+
+                              <div class="govuk-date-input" id="start-date">
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                                      Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                                      Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                                      Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>    </div>
+
+                          {% elif data['from-sae'+ number]=='Someone else'%}
+
+
+                                    <div class="govuk-form-group">
+                                      <h1 class="govuk-label-wrapper">
+                                        <label class="govuk-label govuk-label--l" for="event-name">
+                                        Someone else
+                                      </label>
+
+
+                                        </h1>
+
+                                        <div class="govuk-inset-text">
+                                      {{data['sae-item-type'+ number]}}
+
+                                        </div>
+
+                                            <input class="govuk-input" id="Someone else" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
+                                            </div>
+
+    {% endif %}
+
+
+    <!-- another date -->
+
+
+
+
+    <!-- someone else -->
 
 
 
@@ -58,52 +172,6 @@
 
 
 
-{% if data['sae-start-date'+ number]=='Another date'%}
-
-        <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="approve-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-        Start date
-          </h1>
-        </legend>
-        <div id="dob-hint" class="govuk-hint">
-                 For example, 31 3 2024
-               </div>
-
-  <div class="govuk-inset-text">
-      {{data['sae-item-type'+ number]}}
-        </div>
-
-               <div class="govuk-date-input" id="dob">
-                 <div class="govuk-date-input__item">
-                   <div class="govuk-form-group">
-                     <label class="govuk-label govuk-date-input__label" for="dob-day">
-                       Day
-                     </label>
-                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
-                   </div>
-                 </div>
-                 <div class="govuk-date-input__item">
-                   <div class="govuk-form-group">
-                     <label class="govuk-label govuk-date-input__label" for="dob-month">
-                       Month
-                     </label>
-                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
-                   </div>
-                 </div>
-                 <div class="govuk-date-input__item">
-                   <div class="govuk-form-group">
-                     <label class="govuk-label govuk-date-input__label" for="dob-year">
-                       Year
-                     </label>
-                     <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
-                   </div>
-                 </div>
-               </div>
-             </fieldset>
-           </div>
-{% endif %}
 
          <button class="govuk-button" data-module="govuk-button">
                    Save and continue

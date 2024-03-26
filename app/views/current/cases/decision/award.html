@@ -75,13 +75,29 @@
                                     <tr class="govuk-table__row">
                                       <th scope="row" class="govuk-table__header">Specialist equipment</th>
                                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: left;">{{data['sae-item-type'+ index] }}</td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: left;"><script>// Get the current date and time
-                                             var now = new Date();
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: left;">
+                                          {% if data['sae-start-date'+ index]=='Another date'%}
+{{data['start-date-day']}}
+{% if data['start-date-month']=='1' or data['start-date-month']=='01'%}January{% endif %}
+{% if data['start-date-month']=='2' or data['start-date-month']=='02'%}February{% endif %}
+{% if data['start-date-month']=='3' or data['start-date-month']=='03'%}March{% endif %}
+{% if data['start-date-month']=='4' or data['start-date-month']=='04'%}April{% endif %}
+{% if data['start-date-month']=='5' or data['start-date-month']=='05'%}May{% endif %}
+{% if data['start-date-month']=='6' or data['start-date-month']=='06'%}June{% endif %}
+{% if data['start-date-month']=='7' or data['start-date-month']=='07'%}July{% endif %}
+{% if data['start-date-month']=='8' or data['start-date-month']=='08'%}August{% endif %}
+{% if data['start-date-month']=='9' or data['start-date-month']=='09'%}Sepember{% endif %}
+{% if data['start-date-month']=='10' %}October{% endif %}
+{% if data['start-date-month']=='11' %}November{% endif %}
+{% if data['start-date-month']=='12' %}December{% endif %}
+{{data['start-date-year']}}
+                                          {% else %}<script>// Get the current date and time
+                                            var now = new Date();
                                              var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
                                              var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
 
                                              // Write the date and time to the HTML page
-                                             document.write(date);</script></td>
+                                             document.write(date);</script>{% endif %}</td>
                                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item'+ index] }}</td>
                                     </tr>
                                     {% endif %}  {% endif %}
