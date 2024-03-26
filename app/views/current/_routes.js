@@ -8,6 +8,28 @@ const router = express.Router()
 
 
 //current
+
+// SAE anotehr start date and someone else routes
+
+router.post('/cases/check-application/sae/details/1/other-answer', function(request, response) {
+
+    var startdate1 = request.session.data['sae-start-date1']
+    var fromsae1 = request.session.data['from-sae1']
+
+
+    if (startdate1 == "Another date" && fromsae1 == "Someone else"){
+        response.redirect("/current/cases/check-application/sae/details/1/other")
+
+    } if (startdate1 == "Another date"){
+          response.redirect("/current/cases/check-application/sae/details/1/other")
+    } else if (fromsae1 == "Someone else"){
+          response.redirect("/current/cases/check-application/sae/details/1/other")
+    } else {
+        response.redirect("/current/cases/check-application/sae/details/1/sd-adding-1")
+    }
+})
+
+
 router.post('/cases/thomas/cases/check-application/mhss/details/answer', function(req, res, next){ 
 if (req.session.data['mhss-support-check']){
   for (i = 0; i<req.session.data['mhss-support-check'].length; i++){

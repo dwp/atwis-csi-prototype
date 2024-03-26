@@ -58,10 +58,10 @@
                   </dt>
 
                   <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
-
+{% if data['approve'+ index]=='I am not sure, I need more details'%}Need more details{% else %}
 {% if data['social-domestic-'+ index]=='I am not sure, I need more details'%}Need more details{% else %}
                     {% if data['approve'+ index]=='Yes'%}Added to award{% endif %}
-                      {% if data['approve'+ index]=='No'%}Not added to award{% endif %}{% endif %}
+                      {% if data['approve'+ index]=='No'%}Not added to award{% endif %}{% endif %}{% endif %}
                   </dt>
 
 
@@ -172,7 +172,7 @@
                                    </div>
 
                                  </fieldset>
-                         </div>
+                         </div><br>
                              <button class="govuk-button" data-module="govuk-button">
                                Save and continue
                              </button>
