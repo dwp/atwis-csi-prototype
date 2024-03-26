@@ -1,0 +1,93 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-48/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-48/cases/dereck/cases/check-document/invoice-items-tab#your-tasks" method="post" novalidate>
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="invoicerejectreason-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <span class="govuk-caption-xl">
+          {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</span>
+        <h1 class="govuk-fieldset__heading">
+          Why are you rejecting this document?
+        </h1>
+      </legend>
+      <p class="govuk-body">
+        <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
+      </p>
+      <!-- <div id="invoicerejectreason-hint" class="govuk-hint">
+        Select all invoicerejectreason that apply
+      </div> -->
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason" name="invoicerejectreason" type="checkbox" value="Key details missing" {{ checked("Key details missing", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason">
+            Key details missing
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason-2" name="invoicerejectreason" type="checkbox" value="Date is outside 9 month claim period" {{ checked("Date is outside 9 month claim period", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason-2">
+            Date on document is outside 9 month claim period
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason-3" name="invoicerejectreason" type="checkbox" value="Proforma invoice" {{ checked("Proforma invoice", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason-3">
+            It is a pro forma
+          </label>
+        </div>
+        <div class="govuk-checkboxes__divider">or</div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="invoicerejectreason-5" name="invoicerejectreason" type="checkbox" value="none of these" data-behaviour="exclusive" {{ checked("None of these", "Yes") }}>
+          <label class="govuk-label govuk-checkboxes__label" for="invoicerejectreason-5">
+            None of these
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+
+
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

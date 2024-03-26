@@ -1,12 +1,16 @@
+{% set case = "dereck" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
 {% if not number or (number == 'undefined') %}
 {% set number = 1 %}
 {% endif %}
+
+{% extends   "payments/current/claim/_CSIBASE.html" %}
+
 {% block csi %}
+
 <br>
 
 
@@ -35,7 +39,7 @@ Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% end
 {% if (data['contact-date-month-'+ number] =='01') or (data['contact-date-month-'+ number] =='1') %} January {% endif%}
 {% if (data['contact-date-month-'+ number] =='02') or (data['contact-date-month-'+ number] =='2') %} February  {% endif%}
 {% if (data['contact-date-month-'+ number] =='03') or (data['contact-date-month-'+ number] =='3') %} March {% endif%}
-{% if (data['contact-date-month-'+ number] =='04') or (data['contact-date-month-'+ number] =='4') %} June {% endif%}
+{% if (data['contact-date-month-'+ number] =='04') or (data['contact-date-month-'+ number] =='4') %} April {% endif%}
 {% if (data['contact-date-month-'+ number] =='05') or (data['contact-date-month-'+ number] =='5') %} May {% endif%}
 {% if (data['contact-date-month-'+ number] =='06') or (data['contact-date-month-'+ number] =='6') %} June {% endif%}
 {% if (data['contact-date-month-'+ number] =='07') or (data['contact-date-month-'+ number] =='7') %} July {% endif%}
@@ -49,7 +53,7 @@ Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% end
 
     </label>
     </h2>
-<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
+<p>By Sue Pearson to {{data['email-sent-who']}}
 <p>
 {{data['job-detail-discussion-'+ number]}}
 </p>
@@ -69,8 +73,27 @@ Email {% if data['_do_'+ number]=='Email received'%}received{% else %}sent{% end
      <br>
 
 
+     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+               Summarise the information discussed
+
+                     </label>
+                     </h2>
+
+<p>{{data['other-discussion-2']}}</p>
 
 
+     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+               Copy the content of the email
+
+                     </label>
+                     </h2>
+
+     <p>{{data['other-discussion2-2']}}</p>
+
+
+<br>
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Return
           </button>
