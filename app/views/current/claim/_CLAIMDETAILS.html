@@ -704,11 +704,17 @@ data ['appointee']
   {% if case =='other-cases' %}
 {% include  "./task-list-sonya-wpa-job.html" %}</div></div>{% endif %}
 
+{% if case =='other-cases-2' %}
+{% include  "./task-list-thomas-wpa-job.html" %}</div></div>{% endif %}
+
  {% if not case %}
 {% include  "./task-list-dereck-wpa-job.html" %}</div></div>{% endif %}
 
 {% if (data['another-wpa'] =='No' or data['another-wpa'] =='Yes' and data['report-2']) or (data['wpa'+ phase] =='No')
  %}
+
+
+
 <p>Go to <a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">business case tab</a></p><br>
 {% endif %}
 
