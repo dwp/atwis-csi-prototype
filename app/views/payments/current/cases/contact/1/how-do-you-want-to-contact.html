@@ -1,3 +1,4 @@
+{% set case = "dereck" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
@@ -6,9 +7,11 @@
 {% set number = 1 %}
 {% endif %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
+{% extends   "payments/current/claim/_CSIBASE.html" %}
 
 {% block csi %}
+
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back </a>
 
 
 

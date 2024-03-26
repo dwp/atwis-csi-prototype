@@ -1,0 +1,141 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "../claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+
+<br>
+
+
+
+
+<form action="/payments/sprint-48/your-cases" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              {% if case == 'sonya' %}
+              Payments sent for processing
+              {% else %}
+              Payment sent for processing
+              {% endif %}
+
+            </h1>
+            <div class="govuk-panel__body">
+              {% if case == 'sonya' %}
+              Amounts:
+              {% else %}
+              Amount:
+              {% endif %}
+
+
+
+              <br><strong>
+                <!-- {% if case == 'dereck' %}
+                          £499
+                {% endif %} -->
+
+                {% if case == 'dereck' %}
+                {% if case == 'dereck' and data ['payee-name-1']%}
+                                £120.18
+                                                                <br>
+                                £44.50
+                {% else %}
+                                £418.01
+                {% endif %}
+                {% endif %}
+
+
+{% if case == 'sonya' %}
+{% if case == 'sonya' and data ['payee-name-1']%}
+                £530.64
+                <br>
+                £709.71
+{% else %}
+                £1249.64
+{% endif %}
+{% endif %}
+
+
+                {% if case == 'james' %}
+                          <!-- £488.11 -->
+                          £511.71
+                {% endif %}
+                {% if case == 'nina' %}
+                          £0.00
+                {% endif %}
+                {% if case == 'paul' %}
+                          £296.00
+                {% endif %}
+                {% if case == 'thomas' %}
+                                  <!-- £971.04 -->
+                                  £1200
+
+                {% endif %}
+
+              </strong>
+            </div>
+          </div>
+
+
+          <h2 class="govuk-heading-m">What happens next</h2>
+
+          <p class="govuk-body">
+            The
+            {% if case == 'sonya' %}
+            payments
+            {% else %}
+            payment
+            {% endif %}
+            will be made once any checks have been completed.
+
+            <p class="govuk-body">
+              You will be able to see this claim in your <a href="/payments/sprint-48/your-cases#waiting" class="govuk-link">waiting for payment tab</a> until it has been sent to SOP.</p>
+          </p>
+          <!-- <p class="govuk-body">
+            You will be able to see this claim in your
+            <a href="/payments/sprint-48/your-cases#waiting" class="govuk-link">waiting for approval tab</a>
+            until the payment has been approved and sent to SOP.
+          </p> -->
+
+        </div>
+      </div>
+
+
+
+
+{% if case == 'thomas'%}
+      <input type="hidden" id="thomas" name="thomas" value="Yes">
+{% endif %}
+{% if case == 'dereck'%}
+      <input type="hidden" id="dereck" name="dereck" value="Yes">
+{% endif %}
+
+
+
+
+    <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Back to your cases
+        </button>
+      </form>
+
+
+      </main>
+      </div>
+
+
+
+
+
+
+
+{% endblock %}

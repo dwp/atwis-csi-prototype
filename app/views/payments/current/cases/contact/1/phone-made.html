@@ -1,11 +1,14 @@
+{% set case = "dereck" %}
 {% set page = "claim" %}
 {% set claim = "true" %}
 {% set title = "Case details" %}
 
-{% extends folder + "/claim/_CSIBASE.html" %}
 {% if not number or (number == 'undefined') %}
 {% set number = 1 %}
 {% endif %}
+
+{% extends   "payments/current/claim/_CSIBASE.html" %}
+
 {% block csi %}
 <br>
 
@@ -39,9 +42,9 @@
                             </legend>
                             <div class="govuk-radios" data-module="govuk-radios">
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="contact-who" name="contact-who" type="radio" value="{% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}">
+                                <input class="govuk-radios__input" id="contact-who" name="contact-who" type="radio" value="{% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}">
                                 <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                              {% if phase == "arlo"  %}Arlo Spinka{% endif %}{% if phase == "john"  %}John Smith{% endif %}  {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
+                                  {% if case == "arlo"  %}Arlo Spinka{% endif %}{% if case == "john"  %}John Smith{% endif %}  {% if case == "thomas"  %}Thomas King{% endif %}{% if case == "sonya"  %}Sonya Corkery{% endif %}{% if case == "dereck" %}Dereck Smith{% endif %}
                               </div>
                               <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="contact-who-2" name="contact-who" type="radio" value="Employer">
@@ -49,9 +52,17 @@
                                 Employer
                                 </label>
                               </div>
+
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="contact-who-3" name="contact-who" type="radio" value="Someone else">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="Supplier">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                  Supplier
+                                </label>
+                              </div>
+
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-who-4" name="contact-who" type="radio" value="Someone else">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
                                 Someone else
                                 </label>
                               </div>

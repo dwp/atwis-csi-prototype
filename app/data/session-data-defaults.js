@@ -30,7 +30,7 @@ module.exports = {
 'company-details' : "",
 'additional-cost' : "",
 'details-item-no-match-ipad' : "",
-'cost-share' : "Yes",
+'cost-share' : "",
 'SEA-hold-1-invoice' : "",
 'benefits' : "",
 'Searchligh' : "Yes and application details match",
