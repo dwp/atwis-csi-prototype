@@ -30,7 +30,7 @@
    </li>
 
 
-
+{% if data['award'+ phase] %}
 <li class="app-task-list__item">
 <span class="app-task-list__task-name">
   {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}<a href="{%if data['notificationthomas']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">{% endif %}  {% else %} <a href="decision/award" aria-describedby="job-status"> {% endif %}
@@ -63,4 +63,12 @@ Decision letters
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if totalAward > 10000 %}{% if data['approval']=='Approved'%}Not started{% else %}Cannot start yet{% endif %}{% else %}Not started{% endif %}</strong>{% endif %}
 
  </li>
+
+{% else %}
+ <li class="app-task-list__item">
+   <span class="app-task-list__task-name">
+     Decision letters
+   </span>
+   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+ </li>{% endif %}
 </ul>

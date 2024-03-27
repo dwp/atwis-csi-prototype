@@ -194,41 +194,65 @@ data['wpa'+ phase]  %}
   </div>
   <div class="govuk-notification-banner__content">
     <p class="govuk-notification-banner__heading">
-    Award is over the annual cap limit of £66,000
+  This award is over the cap limit and approval limit
 
-    </p>The current amount for this award is £{{totalAward / 3 }}  for one year. </P><br>
-
-    <p>You will need to contact Thomas King and let them know. </P><br>
-    <p>Check <a href="https://intranet.dwp.gov.uk/manual/access-work/ceiling-cap" target="_blank">guidance on ceiling cap (opens in new tab)</a>.</p>
-
-
-
-
-    <h2 class="govuk-heading--m">Award is over approval limits</h2>
-<script>
-const nunjucks = require('nunjucks');
-const env = new nunjucks.Enviroment();
-
-env.addFilter('formatNumber'), function (value) {
-  return value.toLocaleString();
-});
-</script>
-    <p>You will need to get approval from a appropriate approver.  </p>
-<div class="govuk-inset-text">Total award £{{totalAward }} over 3 years.<br><br>
-The current amount for this award is £{{totalAward / 3 }}  for 1 year. 
-<br><br>
+    </p><p>The current award is:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li> £{{totalAward }} over 3 years</li>
+     <li>£{{totalAward / 3 }}  for 1 year</li>
+     </ul>
+<div class="govuk-inset-text">Cap limit is £66,000 for 1 year</div>
 
 
-Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
-  
-
-
+Check guidance on:
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="https://intranet.dwp.gov.uk/manual/access-work/ceiling-cap" target="_blank">ceiling cap (opens in new tab)</a>.</li>
+  <li> <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a></li>
+</ul>
+You must:
+<ul class="govuk-list govuk-list--bullet">
+  <li>contact Thomas King about the cap limit </li>
+<li>get appropriate approval to continue </li>
+</ul>
+  </div>
 </div>
-</div>
-
-
-
 {% endif %}
+
+
+
+
+
+
+{% if totalAward > 10000 and totalAward <= 198000 %}
+      <h2 class="govuk-heading--m">Award is over approval limits</h2>
+<script>
+  const nunjucks = require('nunjucks');
+  const env = new nunjucks.Enviroment();
+
+  env.addFilter('formatNumber'), function (value) {
+    return value.toLocaleString();
+  });
+  </script>
+      <p>You will need to get approval from a appropriate approver.  </p>
+<div class="govuk-inset-text">
+  <p>Current award is:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li> £{{totalAward }} over 3 years</li>
+   <li>£{{totalAward / 3 }}  for 1 year</li>
+   </ul>
+
+   <br>
+
+
+
+  Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
+    <br>
+{% endif %}
+
+
+
+
+
 
         <li>
           <h2 class="app-task-list__section">
@@ -254,6 +278,12 @@ Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
     {% endif %}
+
+
+
+
+
+
 
 
 {% if data['sw-addthomas'] %}
