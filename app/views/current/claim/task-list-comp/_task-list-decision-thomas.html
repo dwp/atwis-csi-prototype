@@ -22,7 +22,16 @@
      Review and confirm award summary
   </a>
   </span>
-  {% if not data['award'+ phase]%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">  {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}Not started{% else %}Cannot start yet{% endif %}{% else %}Not started{% endif %}</strong>   {% endif %}
+  {% if not data['award'+ phase]%}
+  {% if totalAward > 10000 %}{% if data['approval']=='Approved'%}
+<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">  Not started</strong>  
+  {% else %}
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+  {% endif %}
+  {% else %}
+  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">Not started</strong>  {% endif %}
+
+   {% endif %}
 {% if data['award'+ phase]=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
 
 
@@ -60,7 +69,7 @@ Decision letters
 {% if totalcomplete == 1  %}
 <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
 {% if totalcomplete == 0 %}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">{% if totalAward > 10000 %}{% if data['approval']=='Approved'%}Not started{% else %}Cannot start yet{% endif %}{% else %}Not started{% endif %}</strong>{% endif %}
+<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">{% if totalAward > 10000 %}{% if data['approval']=='Approved'%}Not started{% else %}Cannot start yet{% endif %}{% else %}Not started{% endif %}</strong>{% endif %}
 
  </li>
 
