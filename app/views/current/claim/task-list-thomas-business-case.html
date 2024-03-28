@@ -60,10 +60,71 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l"> Prepare business case</h2>
+      {% if data['approve-1']=='true' and data['approve-2']=='true'%}
+
+      {% if data['support-worker-hour-per-week']%}
+      {% set totalAward =  (((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4))  * 156  %}
+      {% else %}
+      {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
+      {% endif %}
+
+
+   {% if data['approve-1']=='true' and data['approve-2']=='false'%}
+   {% if data['support-worker-hour-per-week']%}
+   {% set totalAward =  ((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4)  * 156  %}
+
+   {% else %}
+   {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
+   {% endif %}
+
+
+   {% if data['approve-1']=='false' and data['approve-2']=='true'%}
+   {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}
+   {% endif %}
+
+   {% if data['approve-1']=='true' and not data['approve-2']%}
+   {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}
+   {% endif %}
+
+
+{% if totalAward > 198000 %}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+This award is over the cap limit and approval limit
+
+    </p><p>Current award is:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li> £{{totalAward }} for 3 years</li>
+     <li>£{{totalAward / 3 }}  for 1 year</li>
+     </ul>
+<div class="govuk-inset-text">Cap limit is £66,000 for 1 year</div>
+
+
+
+<h3 class="govuk-heading-m">Next steps</h3>
+<p>You must:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>check <a href="https://intranet.dwp.gov.uk/manual/access-work/ceiling-cap" target="_blank">ceiling cap guidance (opens in new tab)</a></li>
+
+  <li>let Thomas King know about cap limit</li>
+  <!-- <li> check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">decision and approvals guidance (opens in new tab)</a></li> -->
+
+
+</ul>
+  </div>
+</div>
+{% endif %}
+        <h1 class="govuk-heading-l"> Prepare business case</h1>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
+
 
 
 {% if data['Searchligh']=='No'%}
@@ -152,31 +213,9 @@ data['wpa'+ phase]  %}
 
       </ul>{% endif %}
 
-      {% if data['approve-1']=='true' and data['approve-2']=='true'%}
-
-      {% if data['support-worker-hour-per-week']%}
-      {% set totalAward =  (((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4))  * 156  %}
-      {% else %}
-      {% set totalAward =  (((data['chosen-quote-thomas'] | int * 5) * 4) + ((data['chosen-quote-thomas-2'] | int * 5) * 4)) * 156  %}{% endif %}
-      {% endif %}
 
 
-   {% if data['approve-1']=='true' and data['approve-2']=='false'%}
-   {% if data['support-worker-hour-per-week']%}
-   {% set totalAward =  ((data['chosen-quote-thomas'] | int * data['support-worker-hour-per-week'] | int) * 4)  * 156  %}
 
-   {% else %}
-   {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}{% endif %}
-   {% endif %}
-
-
-   {% if data['approve-1']=='false' and data['approve-2']=='true'%}
-   {% set totalAward =  ((data['chosen-quote-thomas-2'] | int * 5) * 4)  * 156  %}
-   {% endif %}
-
-   {% if data['approve-1']=='true' and not data['approve-2']%}
-   {% set totalAward =  ((data['chosen-quote-thomas'] | int * 5) * 4)  * 156  %}
-   {% endif %}
 {% if totalAward < 10000 %}
       <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
@@ -185,27 +224,8 @@ data['wpa'+ phase]  %}
     <br>
 {% endif %}
 
-{% if totalAward > 198000 %}
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-    Award is over the annual cap limit of £66,000
-
-    </p>The current amount for this award is £{{totalAward / 3 }}  for one year. </P><br>
-
-    <p>You will need to contact Thomas King and let them know. </P><br>
-    <p>Check <a href="https://intranet.dwp.gov.uk/manual/access-work/ceiling-cap" target="_blank">guidance on ceiling cap (opens in new tab)</a>.</p>
-  </div>
-</div>
-    {% endif %}
 
 {% if totalAward > 10000 and totalAward <= 198000 %}
-
       <h2 class="govuk-heading--m">Award is over approval limits</h2>
 <script>
   const nunjucks = require('nunjucks');
@@ -216,14 +236,25 @@ data['wpa'+ phase]  %}
   });
   </script>
       <p>You will need to get approval from a appropriate approver.  </p>
-<div class="govuk-inset-text">Total award £{{totalAward }} over 3 years.<br><br>
-The current amount for this award is £{{totalAward / 3 }}  for 1 year. 
-  <br><br>
+<div class="govuk-inset-text">
+  <p>Current award is:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li> £{{totalAward }} over 3 years</li>
+   <li>£{{totalAward / 3 }}  for 1 year</li>
+   </ul>
+
+   <br>
+
 
 
   Check <a href="https://intranet.dwp.gov.uk/manual/access-work/complete-business-case-notification-award-and-next-steps" target="_blank">complete business case, notification of award and next steps (opens in new tab)</a>.</div>
     <br>
 {% endif %}
+
+
+
+
+
 
         <li>
           <h2 class="app-task-list__section">
@@ -249,6 +280,12 @@ The current amount for this award is £{{totalAward / 3 }}  for 1 year. 
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
     {% endif %}
+
+
+
+
+
+
 
 
 {% if data['sw-addthomas'] %}
