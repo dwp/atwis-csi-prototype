@@ -1,0 +1,212 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-49/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+<form action="/payments/sprint-49/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h1 class="govuk-fieldset__heading">
+      Additional costs: accommodation
+    </h1>
+
+
+
+
+
+
+          <br>
+          <h2 class="govuk-heading-m">Award details</h2>
+
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+          Type
+                </dt>
+                <dd class="govuk-summary-list__value">
+          Accomodation
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+                </div> -->
+
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+          Description
+                </dt>
+                <dd class="govuk-summary-list__value">
+          <p> Stay overnight in Lincoln twice a year</p>
+          <p> Manchester conference stay 2 nights 3 times a year</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+                </div>
+
+                <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+          Total amount per return journey
+                </dt>
+                <dd class="govuk-summary-list__value">
+          £150
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+                </div> -->
+
+                <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+          Jounreys awarded
+                </dt>
+                <dd class="govuk-summary-list__value">
+          10
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+                </div>
+
+
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+          Jounreys claimed
+                </dt>
+                <dd class="govuk-summary-list__value">
+          6
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+                </div> -->
+
+
+
+          </dl>
+
+
+
+
+
+          <!-- <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+                Enter the number of journeys being claimed?
+              </label>
+            </h1>
+            <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+          </div> -->
+
+
+
+
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do receipts match award?
+                  <!-- Do the accomodation recipts match journeys from the award Description? -->
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sw-accomodation-recipts-match" name="sw-accomodation-recipts-match" type="radio" value="Yes~additional-costs/sw-accomodation-number-tab#your-tasks" {{ checked("sw-accomodation-recipts-match", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sw-accomodation-recipts-match-2" name="sw-accomodation-recipts-match" type="radio" value="No~additional-costs/sw-accomodation-number-tab#your-tasks" {{ checked("sw-accomodation-recipts-match", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="sw-accomodation-recipts-match-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <!-- <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+                Enter the amount on all invoices you will pay?
+              </label>
+            </h2>
+            <input class="govuk-input govuk-input--width-10" id="sw-low-hours" name="sw-low-hours" type="text" autocomplete="sw-low-hours" value="{{data ['sw-low-hours'] }}">
+          </div> -->
+
+
+
+
+          <!-- <br>
+          <h2 class="govuk-heading-m">Description from award</h2>
+
+
+            <p> London to Lincoln </p>
+            <p> 81 Palewell Park, London SW14 8JJ to 16 Peter St, Manchester M60 2DS </p>
+
+          <br>
+
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="event-name">
+                Enter the amount on all invoices you will pay?
+              </label>
+            </h2>
+            <div id="event-name-hint" class="govuk-hint">
+              The name you’ll use on promotional material
+            </div>
+            <input class="govuk-input govuk-input--width-10" id="sw-low-hours" name="sw-low-hours" type="text" autocomplete="sw-low-hours" value="{{data ['sw-low-hours'] }}">
+          </div> -->
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+          </fieldset>
+          </div>
+
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+  Save and continue
+          </button>
+          </form>
+
+
+
+          </div>
+          </div>
+          </main>
+          </div>
+
+
+
+
+
+
+
+  {% endblock %}
