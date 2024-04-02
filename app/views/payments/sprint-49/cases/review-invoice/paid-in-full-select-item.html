@@ -1,0 +1,275 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-49/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+{% if case == 'dereck' %}
+<form action="/payments/sprint-49/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+{% endif %}
+{% if case == 'sonya' %}
+<form action="/payments/sprint-49/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+{% endif %}
+
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+
+
+
+
+<div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Which items are not marked as paid?
+
+                      </h1>
+                    </legend>
+                    <div id="claim-item" class="govuk-hint">
+                      <!-- If you have dual nationality, select all options that are relevant to you. -->
+                    </div>
+
+
+
+
+
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+{% if 'Jaws screen reader' in data['claim-item'] %}
+                          <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-1" name="paid-in-full-select" type="checkbox" value="Jaws screen reader" {{ checked("paid-in-full-select", "Jaws screen reader") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-1">
+                            JAWS screen reader
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £499
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'ZoomText Professional License' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-2" name="paid-in-full-select" type="checkbox" value="ZoomText Professional License" {{ checked("paid-in-full-select", "ZoomText Professional License") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-2">
+                            ZoomText Professional License
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £501
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Ipad Pro case' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-3" name="paid-in-full-select" type="checkbox" value="Ipad Pro case" {{ checked("paid-in-full-select", "Ipad Pro case") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-3">
+                            Ipad Pro case
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £80
+                          </div> -->
+                        </div>
+{% endif %}
+
+{% if 'Foot rest' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-9" name="paid-in-full-select" type="checkbox" value="Foot rest" {{ checked("paid-in-full-select", "Foot rest") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-9">
+                            Foot rest
+                          </label>
+                        </div>
+{% endif %}
+
+
+{% if 'Sit stand desk' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-10" name="paid-in-full-select" type="checkbox" value="Sit stand desk" {{ checked("paid-in-full-select", "Sit stand desk") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-10">
+                            Sit stand desk
+                          </label>
+                        </div>
+{% endif %}
+
+
+
+
+
+{% if 'Ergonomic Keyboard' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-4" name="paid-in-full-select" type="checkbox" value="Ergonomic Keyboard" {{ checked("paid-in-full-select", "Ergonomic Keyboard") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-4">
+                            Ergonomic keyboard
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Ergonomic Keyboard home' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-5" name="paid-in-full-select" type="checkbox" value="Ergonomic Keyboard home" {{ checked("paid-in-full-select", "Ergonomic Keyboard home") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-5">
+                            Ergonomic keyboard
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+
+{% if 'Office chair' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-6" name="paid-in-full-select" type="checkbox" value="Office chair" {{ checked("paid-in-full-select", "Office chair") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-6">
+                            Office chair
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £230
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Ergonomic mouse' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-7" name="paid-in-full-select" type="checkbox" value="Ergonomic mouse" {{ checked("paid-in-full-select", "Ergonomic mouse") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-7">
+                            Ergonomic mouse
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £40
+                          </div> -->
+                        </div>
+{% endif %}
+
+{% if 'Desk magnifier' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-8" name="paid-in-full-select" type="checkbox" value="Desk magnifier" {{ checked("paid-in-full-select", "Desk magnifier") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-8">
+                            Desk magnifier
+                          </label>
+                        </div>
+{% endif %}
+
+
+{% if 'Laptop stand' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-in-full-select-11" name="paid-in-full-select" type="checkbox" value="Laptop stand" {{ checked("paid-in-full-select", "Laptop stand") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-in-full-select-11">
+                            Laptop stand
+                          </label>
+                        </div>
+{% endif %}
+
+
+
+                      </div>
+
+
+
+                  <!-- <p class="govuk-body">
+                     <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                   </p> -->
+
+                          <!-- <p class="govuk-body">
+                            Application details: -->
+                          <!-- </p>
+                          <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Element type
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          Specialist equipment
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Description
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          JAWS, Job Access With Speech
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Cost
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          £499
+                          </dd>
+                          </div>
+                          <br>
+
+                          </dl>
+                          <form action="/form-handler" method="post" novalidate>
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+ -->
+
+
+
+
+                                  <!-- <div class="govuk-form-group">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                    <h2 class="govuk-heading-m">
+                                      Does the claim match the invoice?
+                                    </h2>
+                                  </legend>
+                                      <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-1" name="grant-matches-invoice" type="radio" value="yes~claim#your-tasks" {{ checked("grant-matches-invoice", "Yes") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-1">
+                                            Yes
+                                          </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-2" name="grant-matches-invoice" type="radio" value="No~claim#your-tasks" {{ checked("grant-matches-invoice", "No") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-2">
+                                            No
+                                          </label>
+                                        </div>
+ -->
+                                    </div>
+                                  </div>
+
+
+                                       <button class="govuk-button" data-module="govuk-button">
+                                         Save and continue
+                                       </button>
+                                     </form>
+                                   </div>
+                                  </div>
+
+
+                                    </main>
+                                    </div>
+
+
+
+
+
+
+
+                                  {% endblock %}

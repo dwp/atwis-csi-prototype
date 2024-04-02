@@ -1,0 +1,46 @@
+
+{% block pageTitle %}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Your tasks</h2>
+      <ol class="app-task-list">
+        <li>
+
+
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span>
+            Review claim and invoices
+          </h2>
+
+
+<ul class="app-task-list__items">
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+
+                                                  <a href="/payments/sprint-49/cases/thomas/review-claim-no-match/sw-hours-more-no-match-tab#your-tasks" aria-describedby="claim-completed">
+
+                                  Review number of hours claimed
+                                  </a>
+                                  </span>
+
+                                  {% if not data['grant-matches-claim-sw']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                                  {% if data['grant-matches-claim-sw'] and not data ['sw-hours-more']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                                  {% if data['sw-hours-more'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                                  </li>
+
+
+
+</ul>
+</li>
+
+
+
+{% endblock %}
