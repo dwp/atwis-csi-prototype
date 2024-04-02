@@ -23,8 +23,8 @@ module.exports = {
 'ttw-match' : "",
 'claim-item' : "",
 'sw-match' : "",
-// 'job-deatils-check' : "No",
-// 'condition-check' : "No",
+'job-deatils-check' : "No",
+'condition-check' : "No",
 'grant-matches-claim-sw' : "",
 'paid-in-full' : "",
 'company-details' : "",
@@ -62,6 +62,10 @@ module.exports = {
 // 'mhss-support-check' : ["Intensive Personalised Employment Support"],
 
 // assess
+'employer-sector' : "Yes",
+'employer-sector-type' : "Charity",
+'employer-size' : "10 to 49 (small)",
+
 'wpathomas' : "No",
 'employer-sectorthomas' : "Yes",
 'employer-sector-typethomas' : "Charity",
