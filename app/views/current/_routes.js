@@ -30,6 +30,44 @@ router.post('/cases/check-application/sae/details/1/other-answer', function(requ
 })
 
 
+router.post('/cases/check-application/sae/details/2/other-answer', function(request, response) {
+
+    var startdate2 = request.session.data['sae-start-date2']
+    var fromsae2 = request.session.data['from-sae2']
+
+
+    if (startdate2 == "Another date" && fromsae2 == "Someone else"){
+        response.redirect("/current/cases/check-application/sae/details/2/other")
+
+    } if (startdate2 == "Another date"){
+          response.redirect("/current/cases/check-application/sae/details/2/other")
+    } else if (fromsae2 == "Someone else"){
+          response.redirect("/current/cases/check-application/sae/details/2/other")
+    } else {
+        response.redirect("/current/cases/check-application/sae/details/2/sd-adding-1")
+    }
+})
+
+router.post('/cases/check-application/sae/details/3/other-answer', function(request, response) {
+
+    var startdate3 = request.session.data['sae-start-date3']
+    var fromsae3 = request.session.data['from-sae3']
+
+
+    if (startdate3 == "Another date" && fromsae2 == "Someone else"){
+        response.redirect("/current/cases/check-application/sae/details/3/other")
+
+    } if (startdate3 == "Another date"){
+          response.redirect("/current/cases/check-application/sae/details/3/other")
+    } else if (fromsae3 == "Someone else"){
+          response.redirect("/current/cases/check-application/sae/details/3/other")
+    } else {
+        response.redirect("/current/cases/check-application/sae/details/3/sd-adding-1")
+    }
+})
+
+
+
 router.post('/cases/thomas/cases/check-application/mhss/details/answer', function(req, res, next){ 
 if (req.session.data['mhss-support-check']){
   for (i = 0; i<req.session.data['mhss-support-check'].length; i++){
