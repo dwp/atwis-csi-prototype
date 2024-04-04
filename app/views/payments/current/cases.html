@@ -134,10 +134,33 @@
   </thead>
   <tbody class="govuk-table__body">
 
+
+
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Paul Hill</th>
       <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 63);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/paul/claim-paul{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -145,7 +168,28 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">James McCarthy</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 66);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/jamesm/claim-jamesm{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -153,7 +197,28 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Nina West</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 68);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/nina/claim-nina{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -161,57 +226,57 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Sonya Corkey</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 71);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/sonya/claim-sonya{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Dereck Smith</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">29 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Shameela Shaan</th>
       <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">18 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Jessica Martins</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">16 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Katherin Jane Pearson</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">14 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">John Humphries</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">04 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Selma Yousef</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">28 April 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Jemma Barns</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">22 April 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 75);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -220,6 +285,12 @@
 </table>
 
 {% endif %}
+
+
+
+
+
+
 
 {% if data['claims'] and data ['sop-site-code']%}
 
@@ -236,10 +307,63 @@
   </thead>
   <tbody class="govuk-table__body">
 
+    {% if not data ['dereck'] %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Dereck Smith</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 60);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
+      <td class="govuk-table__cell">Not started</td>
+      <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+    </tr>
+    {% else %}
+    {% endif %}
+
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Paul Hill</th>
       <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 63);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/paul/claim-paul{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -247,7 +371,28 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">James McCarthy</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 66);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/jamesm/claim-jamesm{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -255,7 +400,28 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Nina West</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 68);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/nina/claim-nina{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -263,64 +429,61 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Sonya Corkey</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 71);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/sonya/claim-sonya{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
 
-    {% if not data ['dereck'] %}
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Dereck Smith</th>
-          <td class="govuk-table__cell">Specialist equipment</td>
-          <td class="govuk-table__cell">29 May 2023</td>
-          <td class="govuk-table__cell">Not started</td>
-          <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-        </tr>
-    {% else %}
-    {% endif %}
-
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Shameela Shaan</th>
       <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">18 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 75);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Jessica Martins</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">16 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Katherin Jane Pearson</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">14 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">John Humphries</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">04 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Selma Yousef</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">28 April 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Jemma Barns</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">22 April 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
+
 
   </tbody>
 </table>
@@ -342,22 +505,61 @@
   </thead>
   <tbody class="govuk-table__body">
 
-{% if not data ['thomas'] %}
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Thomas King</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">29 May 2023</td>
+      <th scope="row" class="govuk-table__header">Dereck Smith</th>
+      <td class="govuk-table__cell">Specialist equipment</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 60);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/thomas/claim-thomas{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
+      <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
-{% else %}
-{% endif %}
 
 
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Paul Hill</th>
       <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 63);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/paul/claim-paul{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -365,7 +567,28 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">James McCarthy</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 66);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/jamesm/claim-jamesm{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -373,7 +596,28 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Nina West</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 68);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/nina/claim-nina{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -381,61 +625,57 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Sonya Corkey</th>
       <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">26 May 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 71);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/sonya/claim-sonya{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
 
-{% if not data ['dereck'] %}
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Dereck Smith</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">29 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-{% else %}
-{% endif %}
-
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Shameela Shaan</th>
       <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">18 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Jessica Martins</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">16 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Katherin Jane Pearson</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">14 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">John Humphries</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">04 May 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Selma Yousef</th>
-      <td class="govuk-table__cell">Specialist equipment</td>
-      <td class="govuk-table__cell">28 April 2023</td>
-      <td class="govuk-table__cell">Not started</td>
-      <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Jemma Barns</th>
-      <td class="govuk-table__cell">No specialist equipment</td>
-      <td class="govuk-table__cell">22 April 2023</td>
+      <td class="govuk-table__cell">
+        <script>
+                        // Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 75);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate );
+                           </script>
+</td>
       <td class="govuk-table__cell">Not started</td>
       <td class="govuk-table__cell"><a href="cases/claim{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
     </tr>
@@ -506,8 +746,50 @@
                           <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Dereck Smith</th>
                             <td class="govuk-table__cell">Specialist equipment</td>
-                            <td class="govuk-table__cell">29 May 2023</td>
-                            <td class="govuk-table__cell">29 May 2023</td>
+                            <td class="govuk-table__cell">
+                              <script>
+                                              // Get date
+                                                  var now = new Date();
+                                                  var pastDate = new Date(now);
+                                                  pastDate.setDate(now.getDate() - 60);
+
+                                                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                                  day: 'numeric',
+                                                  month: 'long',
+                                                  year: 'numeric'
+                                                  });
+
+                                                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                                  hour: 'numeric',
+                                                  minute: 'numeric',
+                                                  hour12: true
+                                                  });
+
+                                                  document.write(formattedDate );
+                                                 </script>
+</td>
+                            <td class="govuk-table__cell">
+                              <script>
+                                              // Get date
+                                                  var now = new Date();
+                                                  var pastDate = new Date(now);
+                                                  pastDate.setDate(now.getDate() - 0);
+
+                                                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                                                  day: 'numeric',
+                                                  month: 'long',
+                                                  year: 'numeric'
+                                                  });
+
+                                                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                                                  hour: 'numeric',
+                                                  minute: 'numeric',
+                                                  hour12: true
+                                                  });
+
+                                                  document.write(formattedDate );
+                                                 </script>
+</td>
                             <td class="govuk-table__cell">Waiting for payment</td>
                             <td class="govuk-table__cell"><a href="cases/dereck/claim-dereck{% if phase == "payment-officer"%}-payment-officer{% endif %}{% if phase == "case-manger-view"%}-case-manager-view{% endif %}">Go to claim</a></td>
                           </tr>
