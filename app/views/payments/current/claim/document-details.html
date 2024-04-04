@@ -97,9 +97,46 @@
 {% endif %}
 
 
+{% if data ['whitemail-complete1']%}
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">{% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Whitemail {% endif %}</td>
+  <td class="govuk-table__cell"> {{data['whitemail-day']}}
+
+  {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
+  {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
+  {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
+  {% if (data['whitemail-month'] =='04') or (data['whitemail-month'] =='4') %} June {% endif%}
+  {% if (data['whitemail-month'] =='05') or (data['whitemail-month'] =='5') %} May {% endif%}
+  {% if (data['whitemail-month'] =='06') or (data['whitemail-month'] =='6') %} June {% endif%}
+  {% if (data['whitemail-month'] =='07') or (data['whitemail-month'] =='7') %} July {% endif%}
+  {% if (data['whitemail-month'] =='08') or (data['whitemail-month'] =='8') %} August {% endif%}
+  {% if (data['whitemail-month'] =='09') or (data['whitemail-month'] =='9') %} September {% endif%}
+  {% if data['whitemail-month'] =='10' %} October {% endif%}
+  {% if data['whitemail-month'] =='11'%} November {% endif%}
+  {% if data['whitemail-month'] =='12' %} December {% endif%}
+
+  {{data['whitemail-year']}}</td>
+  <td class="govuk-table__cell">Checked</td>
+  <td class="govuk-table__cell"><a href="/payments/current/cases/dereck/cases/whitemail/view-details-tab#document-details" >View details</a></td>
+</tr>
+{% else %}
+{% endif %}
+
+
 
 
     </tbody>
   </table>
+
+</dl>
+<form method="post" novalidate action="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#document-details">
+
+
+  <button class="govuk-button" data-module="govuk-button">
+    Add whitemail document
+  </button>
+</form>
+
+
 
 <br>
