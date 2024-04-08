@@ -29,18 +29,37 @@
                      <fieldset class="govuk-fieldset">
                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                          <h1 class="govuk-fieldset__heading">
-Have you copied any information needed in ATWIS, over to DiSC?
+Compare AtWIS data with DiSC
                          </h1>
                        </legend>
+                       <p class="govuk-body">
 
 
 
 
+                       <p class="govuk-body">You must:</p>
+                       <ul class="govuk-list govuk-list--bullet">
+                         <li>compare AtWIS data with DiSC</li>
+                         <li>check for any new information in AtWIS and manually copy this over to DiSC</li>
+                         <li>then continue with Dereck Smith's case in DiSC</li>
+                       </ul>                       
+
+
+
+
+
+
+<form action="/form-handler" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Have you checked for any new information in AtWIS and manually copied this over to DiSC? 
+              </legend>
                        <div class="govuk-radios ">
                          <div class="govuk-radios__item">
                            <input class="govuk-radios__input" id="disc-copy" name="disc-copy{{phase}}" type="radio" value="Yes" {{ checked("disc-copy", "Yes") }}>
                            <label class="govuk-label govuk-radios__label" for="disc-copy">
-                            Yes
+                            Yes, I have copied new information over to DiSC
                            </label>
                          </div>
 
@@ -48,9 +67,19 @@ Have you copied any information needed in ATWIS, over to DiSC?
                                           <div class="govuk-radios__item">
                                             <input class="govuk-radios__input" id="disc-copy-2" name="disc-copy" type="radio" value="No, there is no information to copy over" {{ checked("disc-copy", "No, there is no information to copy over") }}>
                                             <label class="govuk-label govuk-radios__label" for="disc-copy-2">
-                                          No, there is no information to copy over
+                                              Yes, there is no new information to copy over
                                             </label>
                                           </div>
+
+
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="disc-copy-2" name="disc-copy" type="radio" value="No, there is no information to copy over" {{ checked("disc-copy", "No, there is no information to copy over") }}>
+                                            <label class="govuk-label govuk-radios__label" for="disc-copy-2">
+                                              No, I need to check
+                                            </label>
+                                          </div>
+
 
 
 
