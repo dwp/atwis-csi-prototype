@@ -29,8 +29,10 @@ Is {% if phase == "john" %}John Smith{% endif %}{% if phase == "sonya" %}Sonya C
 
 
 
-               
-               <p>Hint: This excludes public holidays and weekends.</p>
+               <div id="passport-issued-hint" class="govuk-hint">
+                This excludes public holidays and weekends
+              </div>               
+
                <ul id="future-dates" class="govuk-list govuk-list--bullet"></ul>
                  <script>
                    const today = new Date();
