@@ -29,7 +29,9 @@
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <span class="govuk-caption-xl">
-      {% if data['invoice-name-3']%} {{data ['invoice-name-3'] }} {% else %} Invoice 3 {% endif %}</span>
+      <!-- {% if data['invoice-name-3']%} {{data ['invoice-name-3'] }} {% else %} Invoice 3 {% endif %}</span> -->
+      {% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Invoice 3 {% endif %}</span>
+
     <h1 class="govuk-fieldset__heading">
       Does this document need to be rejected or replaced?
 
@@ -38,7 +40,7 @@
 
 
   <p class="govuk-body">
-    View <a href="/public/images/S8-Dereck-smith-invoice-3.pdf" target="_blank" class="govuk-link">{% if data['invoice-name-3']%} View {{data ['invoice-name-3'] }} {% else %} invoice 3 {% endif %} document in a new tab.</a>
+    <a href="/payments/current/cases/dereck/cases/whitemail/view-details-tab#document-details" target="_blank" class="govuk-link">{% if data['invoice-name-3']%} {{data ['invoice-name-3'] }} {% else %} View document details in a new tab. {% endif %}</a>
   </p>
 
     <!-- <div id="changed-name-hint" class="govuk-hint">

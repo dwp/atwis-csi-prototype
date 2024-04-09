@@ -43,24 +43,62 @@ Check your answers
 
 
         <dl class="govuk-summary-list">
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What do you want to name this document?
+              Where is the document from?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data ['whitemail-name'] }}
+              {{data ['whitemail-origin'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Add date whitemail was recieved??
+              What is the doucment type?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data ['whitemail-type'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+{% if 'Claim' in data ['whitemail-type']%}
+{% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you want to name this document?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['whitemail-sharepoint']%}
+              {{data ['whitemail-name-2'] }}
+              {% else %}
+              {{data ['whitemail-name'] }}
+              {% endif %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+{% endif %}
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {% if 'Email' in data ['whitemail-origin']%}
+                    Add date email was recieved?
+              {% else %}
+                    Add date whitemail was scanned?
+              {% endif %}
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['whitemail-day']}}
-
               {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
               {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
               {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
@@ -73,24 +111,59 @@ Check your answers
               {% if data['whitemail-month'] =='10' %} October {% endif%}
               {% if data['whitemail-month'] =='11'%} November {% endif%}
               {% if data['whitemail-month'] =='12' %} December {% endif%}
-
               {{data['whitemail-year']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-date-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Envelope ID
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data ['envelope-id'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
+
+
+
+
+{% if 'Email' in data ['whitemail-origin']%}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Did you save the replacment document in sharepoint?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data ['whitemail-sharepoint'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+
+      {% if 'No' in data ['whitemail-sharepoint']%}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Where did you save the replacment document?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data ['whitemail-sharepoint-other'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+      {% endif %}
+
+
+{% else %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Envelope ID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data ['envelope-id'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+{% endif %}
+
+
           <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Document ID

@@ -29,6 +29,13 @@
 
             <ul class="app-task-list__items">
 
+
+<!-- INVOICE TASK ADDED FROM WHITEMAIL DOCUMENTS TASK -->
+
+
+
+
+
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
             {% if not data ['SEA-invoice-deadline-day'] and not data ['SEA-invoice-deadline']%}
@@ -70,23 +77,26 @@
                             </li>
 
 
+{% if data['whitemail-complete1']%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
                 {% if not data ['invoice-valid-2']%}
-                <a href="/payments/current/cases/dereck/cases/check-document/invoice-name-3-tab#your-tasks" aria-describedby="claim-completed">
+                <a href="/payments/current/cases/dereck/cases/check-document/invoice-valid-3-tab#your-tasks" aria-describedby="claim-completed">
                 {% endif %}
                 {% if data ['invoice-valid-2']%}
-                <a href="/payments/current/cases/dereck/cases/check-document/invoice-name-3-tab#your-tasks" aria-describedby="claim-completed">
+                <a href="/payments/current/cases/dereck/cases/check-document/invoice-valid-3-tab#your-tasks" aria-describedby="claim-completed">
                 {% endif %}
 
-                  {% if data['invoice-name-3']%} Review {{data ['invoice-name-3'] }} invoice {% else %} Rename and check document 3 {% endif %}
+                  <!-- {% if data['invoice-name-3']%} Review {{data ['invoice-name-3'] }} invoice {% else %} Rename and check document 3 {% endif %} -->
+                  {% if data['whitemail-name']%} Review {{data ['whitemail-name'] }} invoice {% else %} Rename and check document 3 {% endif %}
                             </a>
                             </span>
                             {% if not data ['invoice-valid-3']%} <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
                             {% if data ['invoice-valid-3']%} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
                             </li>
                             </li>
+{% endif %}
 
             <!-- <li class="app-task-list__item">
               <span class="app-task-list__task-name">
