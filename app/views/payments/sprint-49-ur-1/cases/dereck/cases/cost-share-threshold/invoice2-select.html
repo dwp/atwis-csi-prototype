@@ -1,0 +1,313 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-49-ur-1/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+<form action="/payments/sprint-49-ur-1/cases/dereck/cases/cost-share-threshold/interupt-screen-tab#your-tasks" method="post" novalidate>
+
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+
+
+
+
+<div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <span class="govuk-caption-xl">Pro forma 2</span>
+                      <h1 class="govuk-fieldset__heading">
+                        Which items are not marked as paid?
+
+                      </h1>
+                    </legend>
+                    <div id="threshold2-hint" class="govuk-hint">
+                      <!-- If you have dual nationality, select all options that are relevant to you. -->
+                    </div>
+
+
+
+
+
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                        {% if 'Jaws screen reader' in data['threshold1'] %}
+                        {% if 'Jaws screen reader' in data['claim-item'] %}
+                        {% else %}
+
+                                                  <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-1" name="threshold2" type="checkbox" value="Jaws screen reader" {{ checked("threshold2", "Jaws screen reader") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-1">
+                                                    JAWS screen reader
+                                                  </label>
+                                                  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                    £499
+                                                  </div> -->
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+                        {% if 'ZoomText Professional License' in data['claim-item'] %}
+                        {% if 'ZoomText Professional License' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-2" name="threshold2" type="checkbox" value="ZoomText Professional License" {{ checked("threshold2", "ZoomText Professional License") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-2">
+                                                    ZoomText Professional License
+                                                  </label>
+                                                  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                    £501
+                                                  </div> -->
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+
+                        {% if 'Ipad Pro case' in data['claim-item'] %}
+                        {% if 'Ipad Pro case' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-3" name="threshold2" type="checkbox" value="Ipad Pro case" {{ checked("threshold2", "Ipad Pro case") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-3">
+                                                    Ipad Pro case
+                                                  </label>
+                                                  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                    £80
+                                                  </div> -->
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+                        {% if 'Foot rest' in data['claim-item'] %}
+                        {% if 'Foot rest' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-9" name="threshold2" type="checkbox" value="Foot rest" {{ checked("threshold2", "Foot rest") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-9">
+                                                    Foot rest
+                                                  </label>
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+                        {% if 'Sit stand desk' in data['claim-item'] %}
+                        {% if 'Sit stand desk' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-10" name="threshold2" type="checkbox" value="Sit stand desk" {{ checked("threshold2", "Sit stand desk") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-10">
+                                                    Sit stand desk
+                                                  </label>
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+
+
+
+                        {% if 'Ergonomic Keyboard' in data['claim-item'] %}
+                        {% if 'Ergonomic Keyboard' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-4" name="threshold2" type="checkbox" value="Ergonomic Keyboard" {{ checked("threshold2", "Ergonomic Keyboard") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-4">
+                                                    Ergonomic keyboard
+                                                  </label>
+                                                  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                    £110
+                                                  </div> -->
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+                        {% if 'Ergonomic Keyboard home' in data['claim-item'] %}
+                        {% if 'Ergonomic Keyboard home' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-5" name="threshold2" type="checkbox" value="Ergonomic Keyboard home" {{ checked("threshold2", "Ergonomic Keyboard home") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-5">
+                                                    Ergonomic keyboard
+                                                  </label>
+                                                  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                    £110
+                                                  </div> -->
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+
+                        {% if 'Office chair' in data['claim-item'] %}
+                        {% if 'Office chair' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-6" name="threshold2" type="checkbox" value="Office chair" {{ checked("threshold2", "Office chair") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-6">
+                                                    Office chair
+                                                  </label>
+                                                  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                    £230
+                                                  </div> -->
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+                        {% if 'Ergonomic mouse' in data['claim-item'] %}
+                        {% if 'Ergonomic mouse' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-7" name="threshold2" type="checkbox" value="Ergonomic mouse" {{ checked("threshold2", "Ergonomic mouse") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-7">
+                                                    Ergonomic mouse
+                                                  </label>
+                                                  <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                                    £40
+                                                  </div> -->
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+                        {% if 'Desk magnifier' in data['claim-item'] %}
+                        {% if 'Desk magnifier' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-8" name="threshold2" type="checkbox" value="Desk magnifier" {{ checked("threshold2", "Desk magnifier") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-8">
+                                                    Desk magnifier
+                                                  </label>
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+                        {% if 'Laptop stand' in data['claim-item'] %}
+                        {% if 'Laptop stand' in data['threshold1'] %}
+                        {% else %}
+
+                                                <div class="govuk-checkboxes__item">
+                                                  <input class="govuk-checkboxes__input" id="threshold2-11" name="threshold2" type="checkbox" value="Laptop stand" {{ checked("threshold2", "Laptop stand") }}>
+                                                  <label class="govuk-label govuk-checkboxes__label" for="threshold2-11">
+                                                    Laptop stand
+                                                  </label>
+                                                </div>
+                        {% endif %}
+                        {% endif %}
+
+
+
+
+
+
+
+
+                      </div>
+
+
+
+                  <!-- <p class="govuk-body">
+                     <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                   </p> -->
+
+                          <!-- <p class="govuk-body">
+                            Application details: -->
+                          <!-- </p>
+                          <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Element type
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          Specialist equipment
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Description
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          JAWS, Job Access With Speech
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Cost
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          £499
+                          </dd>
+                          </div>
+                          <br>
+
+                          </dl>
+                          <form action="/form-handler" method="post" novalidate>
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+ -->
+
+
+
+
+                                  <!-- <div class="govuk-form-group">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                    <h2 class="govuk-heading-m">
+                                      Does the claim match the invoice?
+                                    </h2>
+                                  </legend>
+                                      <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-1" name="grant-matches-invoice" type="radio" value="yes~claim#your-tasks" {{ checked("grant-matches-invoice", "Yes") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-1">
+                                            Yes
+                                          </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="grant-matches-invoice-2" name="grant-matches-invoice" type="radio" value="No~claim#your-tasks" {{ checked("grant-matches-invoice", "No") }}>
+                                          <label class="govuk-label govuk-radios__label" for="grant-matches-invoice-2">
+                                            No
+                                          </label>
+                                        </div>
+ -->
+                                    </div>
+                                  </div>
+
+
+                                       <button class="govuk-button" data-module="govuk-button">
+                                         Save and continue
+                                       </button>
+                                     </form>
+                                   </div>
+                                  </div>
+
+
+                                    </main>
+                                    </div>
+
+
+
+
+
+
+
+                                  {% endblock %}

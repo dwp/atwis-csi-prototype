@@ -27,7 +27,8 @@
   <fieldset class="govuk-fieldset">
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    <!-- <span class="govuk-caption-xl">Invoice 1</span> -->
+    <span class="govuk-caption-xl">
+      {% if data['whitemail-name']%} {{data ['whitemail-name'] }}{% endif %}</span>
     <h1 class="govuk-fieldset__heading">
       Enter document information
 

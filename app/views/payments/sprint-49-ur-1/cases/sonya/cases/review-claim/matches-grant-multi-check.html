@@ -1,0 +1,246 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-49-ur-1/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<!-- <form action="/payments/sprint-49-ur-1/cases/claim#your-tasks" method="post" novalidate> -->
+<form action="/payments/sprint-49-ur-1/cases/{{case}}/claim-{{case}}#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h2 class="govuk-fieldset__heading">
+Check your answers: Check claim matches grant award
+
+        </h2>
+
+
+
+        <br>
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Select all items that appear on the claim form
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if 'Jaws screen reader' in data['claim-item'] %}
+          <p>Jaws screen reader</p>
+          {% endif %}
+
+
+          {% if 'ZoomText Professional License' in data['claim-item'] %}
+          <p>Zoom text professional license</p>
+          {% endif %}
+
+
+          {% if 'Ipad Pro case' in data['claim-item'] %}
+          <p>Ipad Pro case</p>
+          {% endif %}
+
+          {% if 'Foot rest' in data['claim-item'] %}
+          <p>Foot rest</p>
+          {% endif %}
+
+
+          {% if 'Sit stand desk' in data['claim-item'] %}
+          <p>Sit stand desk</p>
+          {% endif %}
+
+
+          {% if 'Ergonomic Keyboard' in data['claim-item'] %}
+          <p>Ergonomic keyboard</p>
+          {% endif %}
+
+          {% if 'Ergonomic Keyboard home' in data['claim-item'] %}
+          <p>Ergonomic keyboard</p>
+          {% endif %}
+
+
+          {% if 'Office chair' in data['claim-item'] %}
+          <p>Office chair</p>
+          {% endif %}
+
+
+          {% if 'Ergonomic mouse' in data['claim-item'] %}
+          <p>Ergonomic mouse</p>
+          {% endif %}
+
+
+          {% if 'Desk magnifier' in data['claim-item'] %}
+          <p>Desk magnifier</p>
+          {% endif %}
+
+
+          {% if 'Laptop stand' in data['claim-item'] %}
+          <p>Laptop stand</p>
+          {% endif %}
+
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+{% if case == 'dereck' %}
+        <a class="govuk-link" href="/payments/sprint-49-ur-1/cases/dereck/cases/review-claim/select-claim-items-tab#your-tasks">
+{% endif %}
+{% if case == 'sonay' %}
+        <a class="govuk-link" href="/payments/sprint-49-ur-1/cases/sonya/cases/review-claim/select-claim-items-tab#your-tasks">
+{% endif %}
+
+
+Change
+        <span class="govuk-visually-hidden"> name</span>
+        </a>
+        </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+Do the amounts on the claim form and invoices match the grant award?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['grant-matches-claim']}}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+{% if case == 'dereck' %}
+          <a class="govuk-link" href="/payments/sprint-49-ur-1/cases/dereck/cases/review-claim/matches-grant-multi-tab#your-tasks">
+{% endif %}
+{% if case == 'sonya' %}
+          <a class="govuk-link" href="/payments/sprint-49-ur-1/cases/sonya/cases/review-claim/matches-grant-multi-tab#your-tasks">
+{% endif %}
+
+Change
+        <span class="govuk-visually-hidden"> address</span>
+        </a>
+        </dd>
+        </div>
+
+
+{% if data['claim-item-no-match'] %}
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Which items do not match the grant award?</dt>
+<dd class="govuk-summary-list__value">
+
+  {% if 'Jaws screen reader' in data['claim-item-no-match'] %}
+  <p>Jaws screen reader</p>
+  {% endif %}
+
+
+  {% if 'ZoomText Professional License' in data['claim-item-no-match'] %}
+  <p>Zoom text professional license</p>
+  {% endif %}
+
+
+  {% if 'Ipad Pro case' in data['claim-item-no-match'] %}
+  <p>Ipad Pro case</p>
+  {% endif %}
+
+  {% if 'Foot rest' in data['claim-item-no-match'] %}
+  <p>Foot rest</p>
+  {% endif %}
+
+
+  {% if 'Sit stand desk' in data['claim-item-no-match'] %}
+  <p>Sit stand desk</p>
+  {% endif %}
+
+
+  {% if 'Ergonomic Keyboard' in data['claim-item-no-match'] %}
+  <p>Ergonomic keyboard</p>
+  {% endif %}
+
+  {% if 'Ergonomic Keyboard home' in data['claim-item-no-match'] %}
+  <p>Ergonomic keyboard</p>
+  {% endif %}
+
+
+  {% if 'Office chair' in data['claim-item-no-match'] %}
+  <p>Office chair</p>
+  {% endif %}
+
+
+  {% if 'Ergonomic mouse' in data['claim-item-no-match'] %}
+  <p>Ergonomic mouse</p>
+  {% endif %}
+
+
+  {% if 'Desk magnifier' in data['claim-item-no-match'] %}
+  <p>Desk magnifier</p>
+  {% endif %}
+
+
+  {% if 'Laptop stand' in data['claim-item-no-match'] %}
+  <p>Laptop stand</p>
+  {% endif %}
+
+
+</dd>
+<dd class="govuk-summary-list__actions">
+  <a class="govuk-link" href="/payments/sprint-49-ur-1/cases/sonya/cases/review-claim/matches-grant-multi-tab#your-tasks">
+Change
+<span class="govuk-visually-hidden"> address</span>
+</a>
+</dd>
+</div>
+
+
+
+{% else %}
+
+{% endif %}
+
+
+        </fieldset>
+        </div>
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

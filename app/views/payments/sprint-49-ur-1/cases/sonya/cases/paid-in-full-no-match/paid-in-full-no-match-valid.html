@@ -1,0 +1,140 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Are you rejecting any proforma invoices for this claim?" %}
+
+{% extends   "payments/sprint-49-ur-1/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-49-ur-1/cases/claim#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+      <h1 class="govuk-fieldset__heading">
+        ZoomText Professional License
+        <!-- ZoomText Professional License: Review proforma invoice -->
+
+      </h1>
+
+    </legend>
+
+<br>
+    <!-- <br>
+    <h2 class="govuk-heading-m">Grant award details</h2>
+
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+    Description
+              </dt>
+              <dd class="govuk-summary-list__value">
+    ZoomText Professional License
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+    Element
+              </dt>
+              <dd class="govuk-summary-list__value">
+    Specialist equipment
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+              </div>
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+    Award amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+    £530.64
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+            </div>
+    </dl>
+
+
+                    <br> -->
+
+
+  <!-- <div id="contact-hint" class="govuk-hint">
+              You can check wih the supplier or employer about these items
+                </div>
+
+  <div class="govuk-inset-text">
+    Proformas have been authorised for this case by a case manager
+  </div> -->
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-heading-m">
+            Are you rejecting the proforma invoices for this item?
+          </h2>
+        </legend>
+        <!-- <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="claim-item-no-match-jaws-1" name="claim-item-no-match-jaws" type="radio" value="Element type" {{ checked("claim-item-no-match-jaws", "Element type") }}>
+            <label class="govuk-label govuk-radios__label" for="claim-item-no-match-jaws-1">
+              Element type
+            </label>
+          </div> -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="paid-in-full-valid-1" name="paid-in-full-valid" type="radio" value="Yes~sonya/cases/paid-in-full-no-match/paid-in-full-no-match-valid-no-reject" {{ checked("paid-in-full-valid", "Yes") }}>
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-valid-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="paid-in-full-valid-2" name="paid-in-full-valid" type="radio" value="No~sonya/cases/paid-in-full-no-match/paid-in-full-no-match-valid-yes" {{ checked("paid-in-full-valid", "No") }}>
+            <label class="govuk-label govuk-radios__label" for="paid-in-full-valid-2">
+              No
+            </label>
+          </div>
+
+</div>
+</div>
+</fieldset>
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

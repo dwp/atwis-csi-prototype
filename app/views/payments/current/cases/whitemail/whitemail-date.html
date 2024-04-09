@@ -13,7 +13,11 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+{% if 'Email' in data ['whitemail-origin']%}
+<form action="/payments/current/cases/dereck/cases/whitemail/whitemail-saved-location-tab#document-details" method="post" novalidate>
+{% else %}
 <form action="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#document-details" method="post" novalidate>
+{% endif %}
 
 
 
@@ -27,9 +31,14 @@
   <fieldset class="govuk-fieldset">
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    <!-- <span class="govuk-caption-xl">Invoice 1</span> -->
+    <span class="govuk-caption-xl">
+      {% if data['whitemail-name']%} {{data ['whitemail-name'] }}{% endif %}</span>
     <h1 class="govuk-fieldset__heading">
-      Add date whitemail was recieved?
+{% if 'Email' in data ['whitemail-origin']%}
+      Date document was recieved
+{% else %}
+      Date document was scanned
+{% endif %}
 
     </h1>
   </legend>
