@@ -1,0 +1,76 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-50/claim/_CSIBASE-no-footer.html" %}
+
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/payments/sprint-50/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <!-- <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">{{data['sw-invoice-ref-1']}}</span>
+      No replacement received by deadline date
+    </h1> -->
+
+    <h2 class="govuk-fieldset__heading">
+{{data['sw-invoice-ref-1']}}: no replacement received by deadline date  
+    </h2>
+
+  </legend>
+
+
+
+<p class="govuk-body">
+      This payment will be rejected and invoice removed from payment calculation. 
+      </p>
+
+<!-- <div class="govuk-inset-text">
+  This invoice will be removed from the payment calculation.
+</div> -->
+
+
+
+<!-- TRIGGER -->
+<input type="hidden" id="rejected-close-1" name="rejected-close-1" value="Yes">
+
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Update calculation
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
