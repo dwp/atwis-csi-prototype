@@ -1,0 +1,102 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-50/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+<form action="/payments/sprint-50/cases/thomas/claim-thomas#your-tasks" method="post" novalidate>
+
+          <div class="govuk-width-container">
+            <main class="govuk-main-wrapper">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+             <h1 class="govuk-heading-l">
+            Hours claimed are less than grant award
+            </h1>
+
+              <h2 class="govuk-heading-m">
+            British Sign Language (BSL) interpreter
+            </h2>
+
+
+            <p class="govuk-body">The hours you are paying for this claim are: </p>
+
+          <div class="govuk-inset-text">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27">{{data['sw-hours']}} hours </p>
+        </div>
+
+
+
+</br>
+</br>
+                      <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h2 class="govuk-heading-m">
+                            Are the hours being claimed per week correct?
+                          </h2>
+                        </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sw-hours-less-1" name="sw-hours-less" type="radio" value="Yes" {{ checked("sw-hours-less", "Yes") }}>
+                                <label class="govuk-label govuk-radios__label" for="sw-hours-less-1">
+                                  Yes
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sw-hours-less-2" name="sw-hours-less" type="radio" value="No~review-claim-no-match/sw-hours-less-no-match-enter-tab#your-tasks" {{ checked("amount-low-no-match-check", "No") }}>
+                                <label class="govuk-label govuk-radios__label" for="sw-hours-less-2">
+                                  No
+                                </label>
+                              </div>
+
+                          </div>
+                        </div>
+
+
+
+
+
+
+        <!-- INVOICE LINK -->
+
+                <!-- <p class="govuk-body">   <a class="govuk-link" href="/public/images/test-invoice.pdf" target="_blank" download="test-invoice.pdf">Download invoice</a></p> -->
+
+
+                    </div>
+
+                </div>
+              </div>
+            </fieldset>
+          </div>
+                   <button class="govuk-button" data-module="govuk-button">
+                     Save and continue
+                   </button>
+                 </form>
+               </div>
+             </div>
+
+
+                </main>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -144,7 +144,7 @@
         </tr>
 {% endif%}
 
-{% if data['invoice-valid-2']%}
+{% if data['invoice-valid-3']%}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Document 3 {% endif %}</td>
           <td class="govuk-table__cell">Whitemail</td>
@@ -188,7 +188,7 @@
 {% endif%}
 
 {% if 'Unstructured whitemail' in data ['whitemail-origin']%}
-{% if data['invoice-valid-2']%}
+{% if data['invoice-valid-3']%}
 {% else%}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Document 3 {% endif %}</td>

@@ -1,0 +1,227 @@
+<h1 class="govuk-heading-l">Documents</h1>
+
+
+
+
+
+<!-- <h2 class="app-task-list__section">
+  <span class="app-task-list__section-number">1. </span>
+  Review invoices
+</h2>
+
+
+<ul class="app-task-list__items">
+
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+
+                                        <a href="/payments/sprint-50/cases/dereck/-tab#your-tasks" aria-describedby="claim-completed">
+
+                        Review invoice 1
+                        </a>
+                        </span>
+
+                        {% if not data['grant-matches-claim-sw']%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
+                        {% if data['grant-matches-claim-sw'] and not data ['sw-hours-more']%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+                        {% if data['sw-hours-more'] %} <strong class="govuk-tag app-task-list__task-completed" id="grant-matches-claim-completed">Completed</strong>{% endif %}
+                        </li>
+
+
+
+</ul>
+</li> -->
+
+
+
+
+
+
+
+
+<!-- DOCUMENTS -->
+<!-- DOCUMENTS -->
+<!-- DOCUMENTS -->
+<!-- DOCUMENTS -->
+<!-- DOCUMENTS -->
+
+<!-- <p class="govuk-body">Tasks must be compleated before all documents can be viewd</p> -->
+
+
+
+
+
+<!-- <table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Document name</th>
+          <th scope="col" class="govuk-table__header">Origin</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</td>
+          <td class="govuk-table__cell">Whitemail</td>
+          <td class="govuk-table__cell">Replaced</td>
+          <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</td>
+          <td class="govuk-table__cell">Email</td>
+          <td class="govuk-table__cell">Replaced</td>
+          <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
+        </tr>
+
+
+{% if data ['invoice-saved']%}
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Invoice 1 {% endif %}</td>
+  <td class="govuk-table__cell">Original claim</td>
+  <td class="govuk-table__cell">Replaced</td>
+  <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
+</tr>
+{% else %}
+{% endif %}
+
+
+{% if data ['invoice-valid-2']%}
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">{% if data['invoice-name-2']%} {{data ['invoice-name-2'] }} {% else %} Invoice 2 {% endif %}</td>
+  <td class="govuk-table__cell">Original claim</td>
+  <td class="govuk-table__cell">Checked</td>
+  <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-2.pdf" target="_blank" >View document</a></td>
+</tr>
+{% else %}
+{% endif %}
+
+
+{% if data ['invoice-valid-3']%}
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">{% if data['invoice-name-3']%} {{data ['invoice-name-3'] }} {% else %} Invoice 3 {% endif %}</td>
+  <td class="govuk-table__cell">Original claim</td>
+  <td class="govuk-table__cell">Checked</td>
+  <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-3.pdf" target="_blank" >View document</a></td>
+</tr>
+{% else %}
+{% endif %}
+
+
+
+{% if data ['whitemail-complete1']%}
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">{% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Whitemail {% endif %}</td>
+  <td class="govuk-table__cell">Original claim</td>
+  <td class="govuk-table__cell">Checked</td>
+  <td class="govuk-table__cell"><a href="/payments/sprint-50/cases/dereck/cases/whitemail/view-details-tab#document-details" >View details</a></td>
+</tr>
+{% else %}
+{% endif %} -->
+
+
+{% if data['invoice-valid-2']%}
+
+<table class="govuk-table">
+  <h2 class="govuk-heading-m">Checked</h2>
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Document name</th>
+          <th scope="col" class="govuk-table__header">Taken from</th>
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['invoice-name-2']%} {{data ['invoice-name-2'] }} {% else %} Document 2 {% endif %}</td>
+          <td class="govuk-table__cell">Claim submission</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-2.pdf" target="_blank" >View document</a></td>
+        </tr>
+{% endif%}
+
+{% if data['invoice-valid-3']%}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Document 3 {% endif %}</td>
+          <td class="govuk-table__cell">Whitemail</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><a href="/payments/sprint-50/cases/dereck/cases/whitemail/view-details-tab#document-details" >View details</a></td>
+        </tr>
+{% endif%}
+
+
+
+
+
+
+<table class="govuk-table">
+  <h2 class="govuk-heading-m">Unchecked</h2>
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Document name</th>
+          <th scope="col" class="govuk-table__header">Taken from</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Document 1 {% endif %}</td>
+          <td class="govuk-table__cell">Claim submission</td>
+          <td class="govuk-table__cell">{% if data['invoice-valid']%} To be replaced {% else %} To be checked {% endif %}</td>
+          <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
+        </tr>
+
+{% if data['invoice-valid-2']%}
+{% else%}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['invoice-name-2']%} {{data ['invoice-name-2'] }} {% else %} Document 2 {% endif %}</td>
+          <td class="govuk-table__cell">Claim submission</td>
+          <td class="govuk-table__cell">To be checked</td>
+          <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-2.pdf" target="_blank" >View document</a></td>
+        </tr>
+{% endif%}
+
+{% if 'Unstructured whitemail' in data ['whitemail-origin']%}
+{% if data['invoice-valid-3']%}
+{% else%}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Document 3 {% endif %}</td>
+          <td class="govuk-table__cell">Whitemail</td>
+          <td class="govuk-table__cell">To be checked</td>
+          <td class="govuk-table__cell"><a href="/payments/sprint-50/cases/dereck/cases/whitemail/view-details-tab#document-details" >View details</a></td>
+        </tr>
+{% endif%}
+{% endif%}
+
+{% if 'Email' in data ['whitemail-origin']%}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['whitemail-name-2']%} {{data ['whitemail-name-2'] }} {% else %} Document 4 {% endif %}</td>
+          <td class="govuk-table__cell">Email</td>
+          <td class="govuk-table__cell">To be checked</td>
+          <td class="govuk-table__cell"><a href="/payments/sprint-50/cases/dereck/cases/whitemail/view-details-tab#document-details" >View details</a></td>
+        </tr>
+{% endif%}
+
+
+
+    </tbody>
+  </table>
+
+</dl>
+<form method="post" novalidate action="/payments/sprint-50/cases/dereck/cases/whitemail/whitemail-origin-tab#document-details">
+
+
+  <button class="govuk-button" data-module="govuk-button">
+    Add document
+  </button>
+</form>
+
+
+
+<br>
