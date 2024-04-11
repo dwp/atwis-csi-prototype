@@ -24,7 +24,7 @@
     {% include  "./content/days-available.html" %}
               </label>
 
-        <p> Provide details of Dereck Smith's availability between 8am and  6pm on the following days:</p>        
+        <p> Provide details of Dereck Smith's availability between 8am and  6pm on the following days:</p>
 
 <ul id="future-dates" class="govuk-list govuk-list--bullet"></ul>
   <script>
@@ -34,7 +34,7 @@
     const dateList = [];
 
     // Add 2 weekdays to today's date
-      {% if data['wpa-type']=='Face-to-face'%}while (days < 10){% else %}while (days < 2){% endif %}  {
+    while (days < 2) {
       futureDate.setDate(futureDate.getDate() + 1);
       const day = futureDate.getDay();
       if (day !== 0 && day !== 6) {
