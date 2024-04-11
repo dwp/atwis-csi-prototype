@@ -31,7 +31,7 @@ Is {% if phase == "john" %}John Smith{% endif %}{% if phase == "sonya" %}Sonya C
 
                <div id="passport-issued-hint" class="govuk-hint">
                 This excludes public holidays and weekends
-              </div>               
+              </div>
 
                <ul id="future-dates" class="govuk-list govuk-list--bullet"></ul>
                  <script>
@@ -41,7 +41,7 @@ Is {% if phase == "john" %}John Smith{% endif %}{% if phase == "sonya" %}Sonya C
                    const dateList = [];
 
                    // Add 0 weekdays to today's date
-                {% if data['wpa-type']=='Face-to-face'%}while (days < 10){% else %}while (days < 0){% endif %} {
+      while (days < 0) {
                      futureDate.setDate(futureDate.getDate() + 1);
                      const day = futureDate.getDay();
                      if (day !== 0 && day !== 6) {                      days++;
