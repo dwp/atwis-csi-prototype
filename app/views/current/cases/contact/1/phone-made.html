@@ -40,7 +40,7 @@
                             <div class="govuk-radios" data-module="govuk-radios">
                               <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="contact-who" name="contact-who" type="radio" value="{% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact">
                               {% if phase == "arlo"  %}Arlo Spinka{% endif %}{% if phase == "john"  %}John Smith{% endif %}  {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
                               </div>
                               <div class="govuk-radios__item">
@@ -49,9 +49,17 @@
                                 Employer
                                 </label>
                               </div>
+                              {% if data['wpa']=='Yes'%}
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="contact-who-3" name="contact-who" type="radio" value="Someone else">
-                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                <input class="govuk-radios__input" id="contact-who-3" name="contact-who" type="radio" value="Workplace assessor~phone-made-about">
+                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact-3">
+                                  Workplace assessor
+                                </label>
+                              </div>
+                              {% endif %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-who-4" name="contact-who" type="radio" value="Someone else">
+                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact-4">
                                 Someone else
                                 </label>
                               </div>
