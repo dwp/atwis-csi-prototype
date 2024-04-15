@@ -1,0 +1,211 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/current/cases/dereck/claim-dereck#document-details" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h1 class="govuk-fieldset__heading">
+<!-- {{data['sw-invoice-ref-1']}}: summary -->
+Check your answers
+
+        </h1>
+        <br>
+
+
+
+
+
+
+
+
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where is the document from?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data ['whitemail-origin'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the doucment type?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data ['whitemail-type'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+{% if 'Claim' in data ['whitemail-type']%}
+{% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you want to name this document?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['whitemail-sharepoint']%}
+              {{data ['whitemail-name-2'] }}
+              {% else %}
+              {{data ['whitemail-name'] }}
+              {% endif %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+{% endif %}
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {% if 'Email' in data ['whitemail-origin']%}
+                    Add date email was recieved?
+              {% else %}
+                    Add date whitemail was scanned?
+              {% endif %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['whitemail-day']}}
+              {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
+              {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
+              {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
+              {% if (data['whitemail-month'] =='04') or (data['whitemail-month'] =='4') %} June {% endif%}
+              {% if (data['whitemail-month'] =='05') or (data['whitemail-month'] =='5') %} May {% endif%}
+              {% if (data['whitemail-month'] =='06') or (data['whitemail-month'] =='6') %} June {% endif%}
+              {% if (data['whitemail-month'] =='07') or (data['whitemail-month'] =='7') %} July {% endif%}
+              {% if (data['whitemail-month'] =='08') or (data['whitemail-month'] =='8') %} August {% endif%}
+              {% if (data['whitemail-month'] =='09') or (data['whitemail-month'] =='9') %} September {% endif%}
+              {% if data['whitemail-month'] =='10' %} October {% endif%}
+              {% if data['whitemail-month'] =='11'%} November {% endif%}
+              {% if data['whitemail-month'] =='12' %} December {% endif%}
+              {{data['whitemail-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-date-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+
+
+
+
+{% if 'Email' in data ['whitemail-origin']%}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Did you save the replacment document in sharepoint?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data ['whitemail-sharepoint'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+
+      {% if 'No' in data ['whitemail-sharepoint']%}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Where did you save the replacment document?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data ['whitemail-sharepoint-other'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+      {% endif %}
+
+
+{% else %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Envelope ID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data ['envelope-id'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+{% endif %}
+
+
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Document ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['document-id']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div> -->
+        </dl>
+
+
+<br>
+
+
+<!-- TRIGGER -->
+
+
+<input type="hidden" id="whitemail-complete1" name="whitemail-complete1" value="Yes">
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

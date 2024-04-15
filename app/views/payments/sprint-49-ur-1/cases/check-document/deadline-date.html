@@ -1,0 +1,103 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-49-ur-1/claim/_CSIBASE-no-footer.html" %}
+
+
+{% block csi %}
+<br>
+
+<form action="/payments/sprint-49-ur-1/cases/dereck/cases/check-document/summary-tab#your-tasks" method="post" novalidate>
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+     <h1 class="govuk-heading-l">
+    Deadline for replacement document
+    </h1>
+
+    <p class="govuk-body">
+      <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
+    </p>
+
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Deadline date
+                </legend> -->
+        <div id="passport-issued-hint" class="govuk-hint">
+          For example, 27 3 2007
+        </div>
+        <div class="govuk-date-input" id="SEA-invoice-deadline">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="SEA-invoice-deadline-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="SEA-invoice-deadline-day" name="SEA-invoice-deadline-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="SEA-invoice-deadline-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="SEA-invoice-deadline-month" name="SEA-invoice-deadline-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="SEA-invoice-deadline-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="SEA-invoice-deadline-year" name="SEA-invoice-deadline-year" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+
+
+
+        </div>
+      </div>
+    </fieldset>
+  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+
+<!-- alternative button text: -->
+<!-- Save review date -->
+           </button>
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

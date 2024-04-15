@@ -1,0 +1,42 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set edit = 'true' %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="edit" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="employer-name">
+          What is the name of the company or organisation that {% if phase == "john" %}John Smith{% endif %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya" %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} works for?
+        </label>
+        </h1>
+        <div class="govuk-!-padding-bottom-2"></div>
+        <div class="govuk-form-group">
+          <input class="govuk-input" id="employer-name" name="employer-name" type="text" value="{% if not data['employer-name']%}Smith Digital Limited{% else %}{{ data['employer-name'] }}{% endif %}"></div>
+      </div>
+
+      <div class="govuk-!-padding-bottom-0"></div>
+
+      <form class="form" action="/url/of/next/page" method="post">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+</div>
+
+  </div>
+
+{% endblock %}

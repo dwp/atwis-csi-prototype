@@ -1,0 +1,174 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-49-ur-1/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/sprint-49-ur-1/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h1 class="govuk-fieldset__heading">
+<!-- {{data['sw-invoice-ref-1']}}: summary -->
+Check answers
+
+        </h1>
+        <br>
+
+        <p class="govuk-body">
+          <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
+        </p>
+
+
+
+
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you want to name this document?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} invoice 1 {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/sprint-49-ur-1/cases/dereck/cases/check-document/invoice-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Does this document need to be rejected or replaced?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a> -->
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Why are you rejecting this document?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Key details missing
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a> -->
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Which items are on this document?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              JAWS screen reader
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> -->
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Deadline for replacement document
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['SEA-invoice-deadline-day']}}
+
+              {% if (data['SEA-invoice-deadline-month'] =='01') or (data['SEA-invoice-deadline-month'] =='1') %} January {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='02') or (data['SEA-invoice-deadline-month'] =='2') %} February  {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='03') or (data['SEA-invoice-deadline-month'] =='3') %} March {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='04') or (data['SEA-invoice-deadline-month'] =='4') %} June {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='05') or (data['SEA-invoice-deadline-month'] =='5') %} May {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='06') or (data['SEA-invoice-deadline-month'] =='6') %} June {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='07') or (data['SEA-invoice-deadline-month'] =='7') %} July {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='08') or (data['SEA-invoice-deadline-month'] =='8') %} August {% endif%}
+              {% if (data['SEA-invoice-deadline-month'] =='09') or (data['SEA-invoice-deadline-month'] =='9') %} September {% endif%}
+              {% if data['SEA-invoice-deadline-month'] =='10' %} October {% endif%}
+              {% if data['SEA-invoice-deadline-month'] =='11'%} November {% endif%}
+              {% if data['SEA-invoice-deadline-month'] =='12' %} December {% endif%}
+
+              {{data['SEA-invoice-deadline-year']}}.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a> -->
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have you received a valid replacement document?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Did you save the replacement invoice in SharePoint?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd>
+          </div>
+        </dl>
+
+
+<br>
+
+
+<!-- TRIGGER -->
+
+
+
+
+
+        <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        </form>
+
+
+
+
+        </form>
+        </div>
+        </div>
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

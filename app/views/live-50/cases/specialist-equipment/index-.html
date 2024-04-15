@@ -1,0 +1,184 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="/live-46/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+
+                     Confirm details for specialist equipment: {% if phase =='sonya'%}
+                       Jaws screen reader{% else %}{{data['sae-item-type-3']}}{% endif %}</h1>
+
+
+        <!-- <h2 class="govuk-heading-m">Special aids and equipment</h2> -->
+
+
+      {% if data['wpa']=='Yes'%}
+
+{% else %}{% if phase == 'sonya'%}
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+How will this equipment help {% if phase == 'sonya'%}Sonya Corkery{% else %}Dereck Smith{% endif %} at work?
+</dt>
+<dd class="govuk-summary-list__value">
+
+
+
+I need Jaws and ZoomText software to read out the content on a screen to me, as I'm unable to visual see the screen currently have to rely on others. I use a computer for 99% of my work.
+
+<br>
+</dd>
+
+<dd class="govuk-summary-list__actions">
+
+
+
+</dd>
+</div>
+</dl>{% else %}
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+How will this equipment help {% if phase == 'sonya'%}Sonya Corkery{% else %}Dereck Smith{% endif %} at work?
+</dt>
+<dd class="govuk-summary-list__value">
+                {{data['more-detail']}}
+</dd>
+<dd class="govuk-summary-list__actions">
+</dd>
+</div>
+</dl>{% endif %}{% endif %}
+
+
+<p>There is no mandatory cost share for this equipment because the employer is a small company.</p>
+
+ <p class="govuk-body">
+<a href="https://intranet.dwp.gov.uk/manual/access-work/09-special-aids-and-equipment-0" class="govuk-link">Check guidance for special aids and equipment (opens in a new tab)</a>
+ </p>
+
+
+  <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      {% include  "./content/linked.html" %}
+
+                </legend>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item govuk-radios--inline">
+                    <input class="govuk-radios__input" id="linked" name="linked-3" type="radio" value="Yes" {{ checked("linked-3", "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="linked">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="linked-2" name="linked-3" type="radio" value="No" {{ checked("linked-3", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="linked-2">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
+      </div>
+      <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          {% include  "./content/medical-aid.html" %}
+
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                      <div class="govuk-radios__item govuk-radios--inline">
+                        <input class="govuk-radios__input" id="medical" name="medical-3" type="radio" value="Yes" {{ checked("medical-3", "Yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="medical">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="medical-2" name="medical-3" type="radio" value="No" {{ checked("medical-3", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="medical-2">
+                          No
+                        </label>
+                      </div>
+
+                    </div>
+
+                  </fieldset>
+                  </div>
+
+                  <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                      {% include  "./content/social-domestic.html" %}
+
+                                </legend>
+                                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                  <div class="govuk-radios__item govuk-radios--inline">
+                                    <input class="govuk-radios__input" id="social-domestic" name="social-domestic-3{{phase}}" type="radio" value="Yes" {{ checked("social-domestic"+ phase, "Yes") }}>
+                                    <label class="govuk-label govuk-radios__label" for="social-domestic">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="social-domestic-2" name="social-domestic-3{{phase}}" type="radio" value="No" {{ checked("social-domestic"+ phase, "No") }}>
+                                    <label class="govuk-label govuk-radios__label" for="social-domestic-2">
+                                      No
+                                    </label>
+                                  </div>
+
+                                </div>
+
+                              </fieldset>
+                              </div>
+
+                              <!-- <div class="govuk-form-group">
+                                          <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                                  {% include  "./content/accept-element.html" %}
+
+                                            </legend>
+                                            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                              <div class="govuk-radios__item govuk-radios--inline">
+                                                <input class="govuk-radios__input" id="element-decision" name="element-decision{{phase}}" type="radio" value="Yes" {{ checked("element-decision"+ phase, "Yes") }}>
+                                                <label class="govuk-label govuk-radios__label" for="element-decision">
+                                                  Yes
+                                                </label>
+                                              </div>
+                                              <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="element-decision-2" name="element-decision{{phase}}" type="radio" value="No" {{ checked("element-decision"+ phase, "No") }}>
+                                                <label class="govuk-label govuk-radios__label" for="element-decision-2">
+                                                  No
+                                                </label>
+                                              </div>
+
+                                            </div>
+
+                                          </fieldset>
+                                          </div> -->
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/current/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/current/cases/dereck/cases/whitemail/whitemail-date-tab#document-details" method="post" novalidate>
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <!-- <span class="govuk-caption-xl">Invoice 1</span> -->
+    <h1 class="govuk-fieldset__heading">
+
+      What do you want to name the document?
+
+    </h1>
+  </legend>
+
+
+  <!-- <p class="govuk-body">
+    <a href="/public/images/S8-Dereck-smith-invoice-2.pdf" target="_blank" class="govuk-link">{% if data['invoice-name-2']%} {{data ['invoice-name-2'] }} {% else %} View this document in a new tab. {% endif %}</a>
+  </p> -->
+  {% if data['whitemail-name']%}
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-10" id="whitemail-name-2" name="whitemail-name-2" type="text" spellcheck="false" aria-describedby="whitemail-name-2" value="{{data ['whitemail-name-2'] }}">
+  </div>
+  {% else%}
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-10" id="whitemail-name" name="whitemail-name" type="text" spellcheck="false" aria-describedby="whitemail-name" value="{{data ['whitemail-name'] }}">
+  </div>
+  {% endif%}
+
+    <!-- <div id="changed-name-hint" class="govuk-hint">
+          Answer yes if you need to ask for any replacement invoices for this claim.<br>
+        </div> -->
+
+
+      </fieldset>
+    </div>
+
+
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}

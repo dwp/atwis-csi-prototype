@@ -1,7 +1,26 @@
 
 
 
+<script>
+                // Get date
+                    var now = new Date();
+                    var pastDate = new Date(now);
+                    pastDate.setDate(now.getDate() - 60);
 
+                    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                    });
+
+                    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true
+                    });
+
+                    document.write(formattedDate + ', 3:00 pm');
+                   </script>
 
 
 

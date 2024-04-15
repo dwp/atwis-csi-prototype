@@ -32,6 +32,7 @@ module.exports = {
 'details-item-no-match-ipad' : "",
 'cost-share' : "",
 'SEA-hold-1-invoice' : "",
+'whitemail-origin' : "",
 'benefits' : "",
 'Searchligh' : "Yes and application details match",
 'found-nino' : "Yes",

@@ -1,0 +1,51 @@
+
+<ul class="app-task-list__items">
+
+  <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+  <a href="decision/award" aria-describedby="job-status">
+  Review and  confirm award summary
+  </a>
+  </span>
+  {% if not data['award']%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}
+{% if data['award']=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+
+
+   </li>
+
+
+
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+<a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
+Decision letters
+</a>
+</span>
+
+{% if data['wpa']=='Yes'%}
+{% if totalcomplete == 4  %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if totalcomplete == 3  %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+
+
+
+
+{% endif %}
+{% if data['wpa']=='No'%}
+{% if totalcomplete == 4  %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if totalcomplete == 3  %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% endif %}
+
+{% if totalcomplete == 2  %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+{% if totalcomplete == 1  %}
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+{% if totalcomplete == 0 %}
+<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+
+ </li>
+</ul>
