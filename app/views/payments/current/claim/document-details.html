@@ -122,7 +122,7 @@
 {% endif %} -->
 
 
-{% if data['invoice-valid-2']%}
+{% if data['invoice-valid-2'] or data ['invoice-name']%}
 
 <table class="govuk-table">
   <h2 class="govuk-heading-m">Checked</h2>
@@ -135,7 +135,18 @@
         </tr>
       </thead>
       <tbody>
+{% endif%}
 
+{% if data ['invoice-name']%}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Document 1 {% endif %}</td>
+          <td class="govuk-table__cell">Claim submission</td>
+          <td class="govuk-table__cell">{% if data['invoice-valid']%} To be replaced {% else %} To be checked {% endif %}</td>
+          <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
+        </tr>
+{% endif%}
+
+{% if data['invoice-valid-2']%}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{% if data['invoice-name-2']%} {{data ['invoice-name-2'] }} {% else %} Document 2 {% endif %}</td>
           <td class="govuk-table__cell">Claim submission</td>
@@ -170,12 +181,16 @@
       </thead>
       <tbody>
 
+{% if data ['invoice-name']%}
+{% else%}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Document 1 {% endif %}</td>
           <td class="govuk-table__cell">Claim submission</td>
           <td class="govuk-table__cell">{% if data['invoice-valid']%} To be replaced {% else %} To be checked {% endif %}</td>
           <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
         </tr>
+{% endif%}
+
 
 {% if data['invoice-valid-2']%}
 {% else%}

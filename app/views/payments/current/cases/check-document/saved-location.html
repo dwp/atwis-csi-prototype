@@ -21,15 +21,6 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-
-
-  <div id="contact-hint" class="govuk-hint">
-              <!-- secondary text -->
-                </div>
-
 
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
@@ -40,9 +31,9 @@
                         Did you save the replacement document in SharePoint?
                       </h1>
                     </legend>
-                    <p class="govuk-body">
+                    <!-- <p class="govuk-body">
                       <a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" class="govuk-link">{% if data['invoice-name']%} View {{data ['invoice-name'] }} {% else %} invoice 2 {% endif %} document in a new tab.</a>
-                    </p>
+                    </p> -->
 
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="invoice-saved-1" name="invoice-saved" type="radio" value="Yes~dereck/cases/check-document/check-answers-tab#your-tasks" {{ checked("invoice-saved", "Yes") }}>
@@ -60,9 +51,7 @@
 
 
 
-        </div>
       </div>
-    </fieldset>
   </div>
            <button class="govuk-button" data-module="govuk-button">
              Save and continue
