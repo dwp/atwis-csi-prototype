@@ -24,8 +24,7 @@
     {% include  "./content/days-available.html" %}
               </label>
             </h2>
-        <p>Provide details of Derek Smith’s availability for a workplace assessment between 8am and 6pm
-on the following days:</p>
+        <p>Provide details of Dereck Smith's availability between 8am and 6pm on the following days:</p>
 
 
 <ul id="future-dates" class="govuk-list govuk-list--bullet"></ul>
@@ -36,7 +35,7 @@ on the following days:</p>
     const dateList = [];
 
     // Add 8 weekdays to today's date
-      {% if data['wpa-type-2']=='Face-to-face'%}while (days < 10){% else %}while (days < 8){% endif %}  {
+      while (days < 2) {
       futureDate.setDate(futureDate.getDate() + 1);
       const day = futureDate.getDay();
       if (day !== 0 && day !== 6) {
@@ -60,27 +59,26 @@ on the following days:</p>
   </script>
 
 
-<p>Allow 90 minutes for an assessment.</p>
+
 
             <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa" rows="5" aria-describedby="availability-wpa-hint"></textarea>
           </div>
           {% if 'No' in data['others-wpa-2']%}
           <p>Derek Smith does not want anyone else to be at the workplace assessment</p>{% endif %}
 
-          {% if 'portugal' in data['others-wpa-2']%}
-          <p>Dereck Smith has requested a third party at the WPA.</p>
+          {% if 'Yes, a third party' in data['others-wpa-2']%}
+          <p>Dereck Smith has requested a third party at the workplace assessment.</p>
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-2">
-              When is the third party available for a workplace assessment in the next 8
-              weekdays?
 
+When can a workplace assessor contact third party to arrange an assessment?
 
 
               </label>
             </h2>
             <div id="availability-wpa-hint" class="govuk-hint">
-              Include names and availability on non-working days/out of working hours if
+              Include names and availability on non-working days or out of working hours if
           appropriate.
             </div>
 
@@ -91,19 +89,17 @@ on the following days:</p>
 
           {% endif %}
 
-          {% if 'france' in data['others-wpa-2']%}
-          <p>Dereck Smith has requested someone from Smith Digital Limited at the WPA.</p>
+          {% if 'Yes, someone from Smith Digital Limited' in data['others-wpa-2']%}
+          <p>Dereck Smith has requested someone from Smith Digital Limited at the workplace assessment.</p>
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-3">
 
-
-                When is the someone from Smith Digital Limited available for a workplace assessment in the next 8
-                weekdays?
+                When can a workplace assessor contact Smith Digital Limited to arrange an assessment?
               </label>
             </h2>
             <div id="availability-wpa-hint" class="govuk-hint">
-              Include names and availability on non-working days/out of working hours if
+              Include names and availability on non-working days or out of working hours if
           appropriate.
             </div>
 
