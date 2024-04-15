@@ -62,15 +62,14 @@
 
             <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa" rows="5" aria-describedby="availability-wpa-hint"></textarea>
           </div>
-          {% if 'No' in data['others-wpa']%}
-          <p>Derek Smith does not want anyone else to be at the workplace assessment</p>{% endif %}
+        
 
-          {% if 'portugal' in data['others-wpa']%}
-          <p>Dereck Smith has requested a third party at the WPA.</p>
+          {% if 'france' in data['others-wpa']%}
+          <!-- <p>Dereck Smith has requested a third party at the WPA.</p> -->
 
           <div class="govuk-form-group">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-2">
-              When is the third party available for a workplace assessment in the next 2 working days?
+              When can a workplace assessor contact the third party to arrange the assessment?
 
 
 
@@ -78,8 +77,7 @@
               </label>
             </h2>
             <div id="availability-wpa-hint" class="govuk-hint">
-              Include names and availability on non-working days/out of working hours if
-          appropriate.
+              Include names and availability within the next 2 working days.
             </div>
 
             <div class="govuk-form-group">
@@ -89,27 +87,7 @@
 
           {% endif %}
 
-          {% if 'france' in data['others-wpa']%}
-          <p>Dereck Smith has requested someone from Smith Digital Limited at the WPA.</p>
 
-          <div class="govuk-form-group">
-            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="availability-wpa-3">
-
-
-                When is the someone from Smith Digital Limited available for a workplace assessment in the next 2 working days?
-              </label>
-            </h2>
-            <div id="availability-wpa-hint" class="govuk-hint">
-              Include names and availability on non-working days/out of working hours if
-          appropriate.
-            </div>
-
-            <div class="govuk-form-group">
-          </div>
-            <textarea class="govuk-textarea" id="availability-wpa" name="availability-wpa-3" rows="5" aria-describedby="availability-wpa-hint"></textarea>
-          </div>
-
-          {% endif %}
 
            <button class="govuk-button" data-module="govuk-button">
              Save and continue
