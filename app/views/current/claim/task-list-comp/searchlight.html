@@ -153,11 +153,12 @@
   {% if data['new-application']=='Yes' %}
   <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-       <a href="/current/cases/disc/end-disc">   End case in DiSC</a>
+       <a href="{% if data['disc-end']%}/current/cases/disc/end-disc/check{% else %}/current/cases/disc/end-disc{% endif %}">   End case in DiSC</a>
     </span>
 
   {% if not (data['disc-end'+ phase] or data['disc-end'])%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
   {% if   data['disc-end']=='No'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status"> in progress</strong>{% endif %}
+  {% if   data['disc-end']=='I need to check'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status"> in progress</strong>{% endif %}
     {% if   data['disc-end']=='Yes'%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
   </li>
 
@@ -166,7 +167,7 @@
   {% if data['new-application']=='No' %}
   <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-       <a href="/current/cases/disc/atwis-copy">   Compare AtWIS data with DiSC</a>
+       <a href="/current/cases/disc/atwis-copy"> Check and compare AtWIS with DiSC</a>
     </span>
 
   {% if not (data['disc-copy'+ phase] or data['disc-copy'])%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>

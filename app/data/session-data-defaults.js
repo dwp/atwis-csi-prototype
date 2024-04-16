@@ -63,9 +63,9 @@ module.exports = {
 // 'mhss-support-check' : ["Intensive Personalised Employment Support"],
 
 // assess
-'employer-sector' : "Yes",
-'employer-sector-type' : "Charity",
-'employer-size' : "10 to 49 (small)",
+// 'employer-sector' : "Yes",
+// 'employer-sector-type' : "Charity",
+// 'employer-size' : "10 to 49 (small)",
 
 'wpathomas' : "No",
 'employer-sectorthomas' : "Yes",

@@ -48,9 +48,9 @@
 
 
 
-                       <div class="govuk-radios govuk-radios--inline">
+                       <div class="govuk-radios">
                          <div class="govuk-radios__item">
-                           <input class="govuk-radios__input" id="disc-end{{phase}}" name="disc-end{{phase}}" type="radio" value="Yes" {{ checked("disc-end"+ phase, "Yes and all of the details match") }}>
+                           <input class="govuk-radios__input" id="disc-end{{phase}}" name="disc-end{{phase}}" type="radio" value="Yes" {{ checked("disc-end", "Yes") }}>
                            <label class="govuk-label govuk-radios__label" for="disc-end">
                             Yes
                            </label>
@@ -58,11 +58,19 @@
 
 
                                           <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="disc-end-2" name="disc-end{{phase}}" type="radio" value="No" {{ checked("disc-end"+ phase, "Yes, but some details do not match") }}>
+                                            <input class="govuk-radios__input" id="disc-end-2" name="disc-end{{phase}}" type="radio" value="No" {{ checked("disc-end", "No") }}>
                                             <label class="govuk-label govuk-radios__label" for="disc-end-2">
                                           No
                                             </label>
                                           </div>
+
+
+                                                                                    <div class="govuk-radios__item">
+                                                                                      <input class="govuk-radios__input" id="disc-end-3" name="disc-end{{phase}}" type="radio" value="I need to check" {{ checked("disc-end", "I need to check") }}>
+                                                                                      <label class="govuk-label govuk-radios__label" for="disc-end-3">
+                                                                                    I need to check
+                                                                                      </label>
+                                                                                    </div>
 
 
 

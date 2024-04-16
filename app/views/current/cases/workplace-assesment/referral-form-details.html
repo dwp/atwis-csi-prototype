@@ -58,12 +58,60 @@ Dereck Smith
 </div>
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
+Appointee
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
 NINO
 </dt>
 <dd class="govuk-summary-list__value">
 {{data['national-insurance-number']}}
 </dd>
 </div>
+
+
+<h2>Contact details</h2>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Telephone number
+</dt>
+<dd class="govuk-summary-list__value">
+01234567890
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+ Email
+</dt>
+<dd class="govuk-summary-list__value">
+dereck@gmail.com
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+When are the best times to contact you?
+</dt>
+<dd class="govuk-summary-list__value">
+Between 8:30 am and 6pm Monday to Saturday.
+</dd>
+</div>
+
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key">
+Reasonable adjustment agreed
+</dt>
+<dd class="govuk-summary-list__value">
+No
+</dd>
+</div>
+
+
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
 Assessment Type
@@ -94,12 +142,13 @@ Detail the customer’s experience with previous solutions
 </dt>
 <dd class="govuk-summary-list__value">
 I need Jaws to read out the content on a screen to me, as I'm unable to visual see the screen currently have to rely on others. I use a computer for 99% of my work.</dd>
-</div>
+</div></div>
 
 
 
 
-
+<h2>Employment Details</h2>
+<dl class="govuk-summary-list govuk-summary-list--no-border">
 <div class="govuk-summary-list__row">
 <dt class="govuk-summary-list__key">
 Job title
@@ -125,31 +174,7 @@ Responsible for the creation of tests to identify issues with software before th
 </dd>
 </div>
 
-<h2>Contact details</h2>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-Telephone number
-</dt>
-<dd class="govuk-summary-list__value">
-01234567890
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
- Email
-</dt>
-<dd class="govuk-summary-list__value">
-dereck@gmail.com
-</dd>
-</div>
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-When are the best times to contact you?
-</dt>
-<dd class="govuk-summary-list__value">
-Between 8:30 am and 6pm Monday to Saturday.
-</dd>
-</div>
+
 
 
 <h2>Place of Assessment</h2>
@@ -271,7 +296,7 @@ Phone number
 
 <div class="govuk-form-group">
   <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-      Availability of Dereck Smith over the next 8 working days
+      Availability of Dereck Smith over the next 2 working days
     </label>
   </h2>
 
@@ -285,7 +310,7 @@ Phone number
 
 <div class="govuk-form-group">
   <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-      Avability of third party over the next 8 working days
+      Avability of third party over the next 2 working days
     </label>
   </h2>
   <div id="more-detail-hint" class="govuk-hint">
@@ -301,22 +326,15 @@ appropriate.
 {% endif %}
 
 {% if 'france' in data['others-wpa']%}
-<p>Dereck Smith has requested someone from Smith Digital Limited at the workplace assessment.</p>
+<p>Dereck Smith has requested a thrid party at the workplace assessment.</p>
 
 <div class="govuk-form-group">
   <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-      Avability of someone from Smith Digital Limited over the next 8 working days
+      Avability of third party over the next 2 working days
     </label>
   </h2>
-  <div id="more-detail-hint" class="govuk-hint">
-    Include names and availability on non-working days/out of working hours if
-appropriate.
-  </div>
 
-  <div class="govuk-form-group">
-</div>
-  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-</div>
+
 
 {% endif %}
             <form action="/form-handler" method="post" novalidate>
@@ -327,7 +345,7 @@ appropriate.
 
 
   <h2 >
-  Access to Work Adviser Name
+  Access to Work Case Manager Information
   </h2>
   <p>
 John Goldsmith</p>
@@ -338,9 +356,17 @@ Access to Work Adviser Email
 
 <div class="govuk-form-group">
   <label class="govuk-label" for="telephone-number">
-Access to Work Adviser Telephone Number
+Telephone Number
   </label>
   <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+</div>
+
+<label class="govuk-label" for="telephone-number">
+Working Pattern
+</label>
+  <div class="govuk-form-group">
+</div>
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
 </div>
 
 <!-- <div id="current_date"></p>
