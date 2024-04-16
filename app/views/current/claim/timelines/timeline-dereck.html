@@ -6,7 +6,7 @@
 
 
         <div class="moj-timeline">
-{% if data['wpa']%}
+{% if data['where-do-you-live']%}
           <div class="moj-timeline__item">
                     <div class="moj-timeline__header">
                       <h2 class="moj-timeline__title">  Email recived</h2>
@@ -23,7 +23,7 @@
                              // Write the date and time to the HTML page
                              document.write(date + ' at ' + time);
                            </script></time>
-                    </p><br><p> Email received 30 January 2024 at 1:00pm. <a href="#">View details</a></p>
+                    </p><br><p> Email received {% data['contact-date-day-1']%} April 2024 at {% data['"contact-time-1']%}. <a href="#">View details</a></p>
                     </div>
 {% endif %}
 
