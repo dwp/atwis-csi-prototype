@@ -39,7 +39,7 @@ module.exports = {
 'national-insurance-number' : "AB 123456 C",
 'appointee' : "No",
 'benefits' : "No",
-'disc-check' : "No",
+// 'disc-check' : "No",
 
 'claims' : "",
 

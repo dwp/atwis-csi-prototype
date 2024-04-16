@@ -150,7 +150,19 @@
 
           {% endif %}
 
+  {% if data['new-application']=='Yes' %}
+  <li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+       <a href="/current/cases/disc/end-disc">   End case in DiSC</a>
+    </span>
 
+  {% if not (data['disc-end'+ phase] or data['disc-end'])%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+  {% if   data['disc-end']=='No'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status"> in progress</strong>{% endif %}
+    {% if   data['disc-end']=='Yes'%} <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+  </li>
+
+
+  {% endif %}
   {% if data['new-application']=='No' %}
   <li class="app-task-list__item">
   <span class="app-task-list__task-name">
@@ -176,7 +188,7 @@
             and
             data ['benefits']
             and
-            (data ['new-application']=='Yes' or data['disc-check']=='No' or data['live-grant']=='No')
+            ( data['disc-check']=='No' or data['live-grant']=='No' or data['disc-end']=='Yes')
           %}
   <p>Go to <a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#citizen-details">review application</a></p>
           {% else %}
