@@ -120,7 +120,7 @@
              data ['benefits'] %}
           <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-               <a href="{% if data['disc-check']%}/current/cases/{%if phase %}{{phase}}/cases/{% endif %}disc/{% if data['new-application']=='Yes'%}done-atwis{% else %}done-disc{% endif %}{% else %}
+               <a href="{% if data['disc-check']%}/current/cases/{%if phase %}{{phase}}/cases/{% endif %}disc/{% if data['new-application']=='Yes'%}done-atwis-done{% else %}done-disc{% endif %}{% else %}
                /current/cases/{%if phase %}{{phase}}/cases/{% endif %}disc{% endif %}">    Check DiSC</a>
             </span>
             {% if data['disc-check'+ phase]=='No' or data['disc-check']=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
