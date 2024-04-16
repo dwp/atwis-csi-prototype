@@ -39,7 +39,7 @@ module.exports = {
 'national-insurance-number' : "AB 123456 C",
 'appointee' : "No",
 'benefits' : "No",
-'disc-check' : "No",
+// 'disc-check' : "No",
 
 'claims' : "",
 
@@ -63,9 +63,9 @@ module.exports = {
 // 'mhss-support-check' : ["Intensive Personalised Employment Support"],
 
 // assess
-'employer-sector' : "Yes",
-'employer-sector-type' : "Charity",
-'employer-size' : "10 to 49 (small)",
+// 'employer-sector' : "Yes",
+// 'employer-sector-type' : "Charity",
+// 'employer-size' : "10 to 49 (small)",
 
 'wpathomas' : "No",
 'employer-sectorthomas' : "Yes",
