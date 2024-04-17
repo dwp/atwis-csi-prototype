@@ -33,13 +33,14 @@ module.exports = {
 'cost-share' : "",
 'SEA-hold-1-invoice' : "",
 'whitemail-origin' : "",
+'whitemail-type' : "",
 'benefits' : "",
 'Searchligh' : "Yes and application details match",
 'found-nino' : "Yes",
 'national-insurance-number' : "AB 123456 C",
 'appointee' : "No",
 'benefits' : "No",
-'disc-check' : "No",
+// 'disc-check' : "No",
 
 'claims' : "",
 

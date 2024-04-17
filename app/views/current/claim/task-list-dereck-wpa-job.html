@@ -123,7 +123,7 @@ data ['appointee']
     <ul class="app-task-list__items">
 
 
-  
+
 
 
             <li class="app-task-list__item">
@@ -146,7 +146,8 @@ data ['appointee']
   <h2 class="app-task-list__section">
   Workplace assessment
   </h2>
-  {% if data['employer-size']%}
+  {% if data['employer-size'] and
+    data ['disc-check']%}
     {% include  "../claim/task-list-comp/_task-list-open-wpa-dereck.html" %}
   {% else %}
   <ul class="app-task-list__items">
