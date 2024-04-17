@@ -9,6 +9,7 @@
           <!-- <th scope="col" class="govuk-table__header">Document type</th> -->
           <!-- <th scope="col" class="govuk-table__header">Claim type</th> -->
           <th scope="col" class="govuk-table__header">Claim received</th>
+          <th scope="col" class="govuk-table__header">Taken from</th>
           <th scope="col" class="govuk-table__header">Action</th>
         </tr>
       </thead>
@@ -21,6 +22,7 @@
                                   <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
                                   <!-- <td class="govuk-table__cell">Specialist equipment</td> -->
                                   <td class="govuk-table__cell">29 May 2023</td>
+                                  <td class="govuk-table__cell">Claim submission</td>
                                   <td class="govuk-table__cell"><a href="/public/images/S4-Thomas-King-Claim-Form-Support-Worker.pdf" target="_blank" >View claim form</a></td>
                                   <!-- <td class="govuk-table__cell"><a href="/public/images/test-claim-form.pdf" target="_blank" download="test-claim-form.pdf" >View claim form</a></td> -->
                                   <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
@@ -32,6 +34,7 @@
                           <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
                           <!-- <td class="govuk-table__cell">Specialist equipment</td> -->
                           <td class="govuk-table__cell">29 May 2023</td>
+                          <td class="govuk-table__cell">Claim submission</td>
                           <td class="govuk-table__cell"><a href="/public/images/S1-Paul-Hill-Claim-Form-Travel-to-work.pdf" target="_blank" >View claim form</a></td>
                           <!-- <td class="govuk-table__cell"><a href="/public/images/test-claim-form.pdf" target="_blank" download="test-claim-form.pdf" >View claim form</a></td> -->
                           <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
@@ -45,6 +48,7 @@
                   <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
                   <!-- <td class="govuk-table__cell">Specialist equipment</td> -->
                   <td class="govuk-table__cell">22 January 2022</td>
+                  <td class="govuk-table__cell">Claim submission</td>
                   <td class="govuk-table__cell"><a href="/public/images/S6-Nina-West-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></td>
                   <!-- <td class="govuk-table__cell"><a href="/public/images/test-claim-form.pdf" target="_blank" download="test-claim-form.pdf" >View claim form</a></td> -->
                   <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
@@ -57,6 +61,7 @@
                   <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
                   <!-- <td class="govuk-table__cell">Specialist equipment</td> -->
                   <td class="govuk-table__cell">22 January 2022</td>
+                  <td class="govuk-table__cell">Claim submission</td>
                   <td class="govuk-table__cell"><a href="/public/images/S6-James-McCarthey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></td>
                   <!-- <td class="govuk-table__cell"><a href="/public/images/test-claim-form.pdf" target="_blank" download="test-claim-form.pdf" >View claim form</a></td> -->
                   <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
@@ -69,6 +74,7 @@
           <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
           <!-- <td class="govuk-table__cell">Specialist equipment</td> -->
           <td class="govuk-table__cell">29 May 2023</td>
+          <td class="govuk-table__cell">Claim submission</td>
           <td class="govuk-table__cell"><a href="/public/images/S5-1-Sonya-Corkey-Claim-Form-Specialist-equipment.pdf" target="_blank" >View claim form</a></td>
           <!-- <td class="govuk-table__cell"><a href="/public/images/test-claim-form.pdf" target="_blank" download="test-claim-form.pdf" >View claim form</a></td> -->
           <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
@@ -77,14 +83,34 @@
 
 
 {% if case == 'dereck' %}
+{% if 'Claim' in data ['whitemail-type']%}
         <tr class="govuk-table__row">
-          <!-- <th scope="row" class="govuk-table__header">Invoice</th> -->
-          <!-- <td class="govuk-table__cell">Specialist equipment</td> -->
+          <td class="govuk-table__cell">
+            {{data['whitemail-day']}}
+            {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
+            {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
+            {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
+            {% if (data['whitemail-month'] =='04') or (data['whitemail-month'] =='4') %} June {% endif%}
+            {% if (data['whitemail-month'] =='05') or (data['whitemail-month'] =='5') %} May {% endif%}
+            {% if (data['whitemail-month'] =='06') or (data['whitemail-month'] =='6') %} June {% endif%}
+            {% if (data['whitemail-month'] =='07') or (data['whitemail-month'] =='7') %} July {% endif%}
+            {% if (data['whitemail-month'] =='08') or (data['whitemail-month'] =='8') %} August {% endif%}
+            {% if (data['whitemail-month'] =='09') or (data['whitemail-month'] =='9') %} September {% endif%}
+            {% if data['whitemail-month'] =='10' %} October {% endif%}
+            {% if data['whitemail-month'] =='11'%} November {% endif%}
+            {% if data['whitemail-month'] =='12' %} December {% endif%}
+            {{data['whitemail-year']}}
+          </td>
+          <td class="govuk-table__cell">Whitemail</td>
+          <td class="govuk-table__cell"><a href="/payments/current/cases/dereck/cases/whitemail/view-claim-details-tab#claim-details" >View details</a></td>
+        </tr>
+
+        <!-- <tr class="govuk-table__row">
           <td class="govuk-table__cell">29 May 2023</td>
           <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-Smith-Claim-Form-SEA.pdf" target="_blank" >View claim form</a></td>
-          <!-- <td class="govuk-table__cell"><a href="/public/images/test-claim-form.pdf" target="_blank" download="test-claim-form.pdf" >View claim form</a></td> -->
-          <!-- <td class="govuk-table__cell"><a href="/images/dwp-logo.png" target="_blank" download="test.png" >View invoice</a></td> -->
-        </tr>
+        </tr> -->
+
+{% endif %}
 {% endif %}
 
 
