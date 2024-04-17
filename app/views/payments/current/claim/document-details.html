@@ -122,7 +122,7 @@
 {% endif %} -->
 
 
-{% if data['invoice-valid-2'] or data ['invoice-name']%}
+{% if data['invoice-valid-2']%}
 
 <table class="govuk-table">
   <h2 class="govuk-heading-m">Checked</h2>
@@ -137,14 +137,14 @@
       <tbody>
 {% endif%}
 
-{% if data ['invoice-name']%}
+<!-- {% if data ['invoice-name']%}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Document 1 {% endif %}</td>
           <td class="govuk-table__cell">Claim submission</td>
           <td class="govuk-table__cell">{% if data['invoice-valid']%} To be replaced {% else %} To be checked {% endif %}</td>
           <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
         </tr>
-{% endif%}
+{% endif%} -->
 
 {% if data['invoice-valid-2']%}
         <tr class="govuk-table__row">
@@ -181,15 +181,18 @@
       </thead>
       <tbody>
 
-{% if data ['invoice-name']%}
-{% else%}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{% if data['invoice-name']%} {{data ['invoice-name'] }} {% else %} Document 1 {% endif %}</td>
           <td class="govuk-table__cell">Claim submission</td>
-          <td class="govuk-table__cell">{% if data['invoice-valid']%} To be replaced {% else %} To be checked {% endif %}</td>
+          <td class="govuk-table__cell">
+            {% if data['check-document-check-answers']%}
+            Replaced
+            {% else %}
+            {% if data['invoice-valid']%} To be replaced {% else %} To be checked {% endif %}
+            {% endif %}
+          </td>
           <td class="govuk-table__cell"><a href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document</a></td>
         </tr>
-{% endif%}
 
 
 {% if data['invoice-valid-2']%}
@@ -202,17 +205,12 @@
         </tr>
 {% endif%}
 
-{% if 'Unstructured whitemail' in data ['whitemail-origin']%}
-{% if data['invoice-valid-3']%}
-{% else%}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{% if data['whitemail-name']%} {{data ['whitemail-name'] }} {% else %} Document 3 {% endif %}</td>
           <td class="govuk-table__cell">Whitemail</td>
           <td class="govuk-table__cell">To be checked</td>
           <td class="govuk-table__cell"><a href="/payments/current/cases/dereck/cases/whitemail/view-details-tab#document-details" >View details</a></td>
         </tr>
-{% endif%}
-{% endif%}
 
 {% if 'Email' in data ['whitemail-origin']%}
         <tr class="govuk-table__row">
