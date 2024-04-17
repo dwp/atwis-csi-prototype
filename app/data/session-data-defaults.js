@@ -33,6 +33,7 @@ module.exports = {
 'cost-share' : "",
 'SEA-hold-1-invoice' : "",
 'whitemail-origin' : "",
+'whitemail-type' : "",
 'benefits' : "",
 'Searchligh' : "Yes and application details match",
 'found-nino' : "Yes",
