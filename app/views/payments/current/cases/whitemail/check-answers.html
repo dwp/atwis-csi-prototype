@@ -58,7 +58,7 @@ Check your answers
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What is the doucment type?
+              What type  of document is it?
             </dt>
             <dd class="govuk-summary-list__value">
               {{data ['whitemail-type'] }}
@@ -72,7 +72,7 @@ Check your answers
 {% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What do you want to name this document?
+              What do you want to name the document?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['whitemail-sharepoint']%}
@@ -92,9 +92,9 @@ Check your answers
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               {% if 'Email' in data ['whitemail-origin']%}
-                    Add date email was recieved?
+                    Date document was received
               {% else %}
-                    Add date whitemail was scanned?
+                    Date whitemail was scanned
               {% endif %}
             </dt>
             <dd class="govuk-summary-list__value">
@@ -124,7 +124,7 @@ Check your answers
 {% if 'Email' in data ['whitemail-origin']%}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Did you save the replacment document in sharepoint?
+                  Did you save the replacement document in SharePoint?
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{data ['whitemail-sharepoint'] }}
@@ -137,7 +137,7 @@ Check your answers
       {% if 'No' in data ['whitemail-sharepoint']%}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Where did you save the replacment document?
+                  Where did you save the replacement document?
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{data ['whitemail-sharepoint-other'] }}
