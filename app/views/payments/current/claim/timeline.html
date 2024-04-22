@@ -937,18 +937,54 @@
     </p>
     <div class="moj-timeline__description">
       <p>
-        {% if 'Invoice' or 'Claim' in data ['whitemail-type']%}
+        <!-- {% if 'Invoice' or 'Claim' in data ['whitemail-type']%}
         {{data['whitemail-type']}}
         {% else%}
         Other Document
         {% endif%}
         from
-        {{data['whitemail-origin']}}
+        {{data['whitemail-origin']}} -->
+        Freedom Scientific invoice replaced
       </p>
   </div>
   </div>
 
 
+  <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Document Added</h2>
+      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2023-06-06T09:12:00.000Z"><script>
+          // Get date
+              var now = new Date();
+              var pastDate = new Date(now);
+              pastDate.setDate(now.getDate() - 5);
+
+              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+              });
+
+              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+              hour: 'numeric',
+              minute: 'numeric',
+              hour12: true
+              });
+
+              document.write(formattedDate + ' at ');
+             </script> 10:15am</time>
+      </p>
+      <div class="moj-timeline__description">
+        <p>
+          Claim form taken from whitemail
+          <!-- {{data['whitemail-origin']}} -->
+        </p>
+    </div>
+    </div>
 
 
 

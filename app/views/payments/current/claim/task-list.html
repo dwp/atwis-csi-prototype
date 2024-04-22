@@ -81,12 +81,16 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
 
+{% if not data ['whitemail-complete1']%}
                 {% if not data ['invoice-valid-2']%}
                 <a href="/payments/current/cases/dereck/cases/check-document/invoice-valid-3-tab#your-tasks" aria-describedby="claim-completed">
                 {% endif %}
                 {% if data ['invoice-valid-2']%}
                 <a href="/payments/current/cases/dereck/cases/check-document/invoice-valid-3-tab#your-tasks" aria-describedby="claim-completed">
                 {% endif %}
+{% else %}
+                <a href="/payments/current/cases/dereck/cases/check-document/check-answers-tab#your-tasks" aria-describedby="claim-completed">
+{% endif %}
 
                   <!-- {% if data['invoice-name-3']%} Review {{data ['invoice-name-3'] }} invoice {% else %} Rename and check document 3 {% endif %} -->
                   {% if data['whitemail-name']%} Review {{data ['whitemail-name'] }} invoice {% else %} Rename and check document 3 {% endif %}
