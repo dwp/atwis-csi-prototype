@@ -13,11 +13,7 @@
 
 
 <!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
-{% if 'Email' in data ['whitemail-origin']%}
-<form action="/payments/current/cases/dereck/cases/whitemail/whitemail-saved-location-tab#document-details" method="post" novalidate>
-{% else %}
-<form action="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#document-details" method="post" novalidate>
-{% endif %}
+<form action="/payments/current/cases/dereck/cases/check-document/whitemail-origin-tab#your-tasks" method="post" novalidate>
 
 
 
@@ -34,11 +30,7 @@
     <span class="govuk-caption-xl">
       {% if data['whitemail-name']%} {{data ['whitemail-name'] }}{% endif %}</span>
     <h1 class="govuk-fieldset__heading">
-{% if 'Whitemail' in data ['whitemail-origin']%}
-      Date document was scanned
-{% else %}
       Date document was recieved
-{% endif %}
 
     </h1>
   </legend>
