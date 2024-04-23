@@ -28,7 +28,8 @@
                   <div class="moj-timeline__item">
 
                       <div class="moj-timeline__header">
-                      <h2 class="moj-timeline__title">Payee 1: invoice numbers</h2>
+                      <!-- <h2 class="moj-timeline__title">Payee 1: invoice numbers</h2> -->
+                      <h2 class="moj-timeline__title">Payment complete</h2>
                       <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
                       </div>
                       <p class="moj-timeline__date">
@@ -54,8 +55,8 @@
                              </script> 10:15am</time>
                       </p>
                       <div class="moj-timeline__description">
-                        <p>£120.18 Paid to {{data['payee-name']}}</p>
-                      <p>£44.50 Paid to {{data['payee-name-1']}}</p>
+                        <p>£550.69 Paid to {{data['sop-payee-name']}}</p>
+                      <!-- <p>£44.50 Paid to {{data['payee-name-1']}}</p> -->
                     </div>
                     </div>
 
@@ -181,9 +182,13 @@
 
 
 
-<!-- ADD INVOICE NUMBERS -->
+<!-- MULTIPLE INVOICE NUMBERS -->
+<!-- MULTIPLE INVOICE NUMBERS -->
+<!-- MULTIPLE INVOICE NUMBERS -->
+<!-- MULTIPLE INVOICE NUMBERS -->
+<!-- MULTIPLE INVOICE NUMBERS -->
 
-                  {% if case == 'dereck' and data ['invoice-number-1']%}
+                  <!-- {% if case == 'dereck' and data ['invoice-number-1']%}
                       <div class="moj-timeline__item">
 
                           <div class="moj-timeline__header">
@@ -248,10 +253,15 @@
                           <div class="moj-timeline__description">{{data['invoice-number']}}</div>
                         </div>
 
-                      {%endif%}
+                      {%endif%} -->
 
 
-<!-- {% if case == 'dereck' and data ['invoice-number']%}
+<!-- ADD INVOICE NUMBERS -->
+<!-- ADD INVOICE NUMBERS -->
+<!-- ADD INVOICE NUMBERS -->
+<!-- ADD INVOICE NUMBERS -->
+
+{% if case == 'dereck' and data ['invoice-number']%}
 
 <div class="moj-timeline__item">
 
@@ -266,7 +276,12 @@
     <div class="moj-timeline__description"></div>
   </div>
 
-{%endif%} -->
+{%endif%}
+
+
+
+
+
           <!-- NO -->
           <!-- CHECK INVOICES HAVE BEEN PAID -->
           <!-- <div class="moj-timeline__item">
@@ -688,7 +703,7 @@
               <div class="moj-timeline__item">
 
                   <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Invoice rejected and replaced</h2>
+                  <h2 class="moj-timeline__title">Document replaced</h2>
                   <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
                   </div>
                   <p class="moj-timeline__date">
@@ -907,7 +922,7 @@
 <!-- WHITEMAIL ADDED -->
 
 
-<div class="moj-timeline__item">
+<!-- <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
     <h2 class="moj-timeline__title">Document Added to claim</h2>
@@ -936,7 +951,7 @@
            </script> 10:15am</time>
     </p>
     <div class="moj-timeline__description">
-      <p>
+      <p> -->
         <!-- {% if 'Invoice' or 'Claim' in data ['whitemail-type']%}
         {{data['whitemail-type']}}
         {% else%}
@@ -944,24 +959,42 @@
         {% endif%}
         from
         {{data['whitemail-origin']}} -->
-        Freedom Scientific invoice replaced
+        <!-- Freedom Scientific invoice replaced
       </p>
   </div>
-  </div>
+  </div> -->
 
 
   <div class="moj-timeline__item">
 
       <div class="moj-timeline__header">
       <h2 class="moj-timeline__title">Document Added</h2>
-      <p class="moj-timeline__byline">by {% if data['advisor-name']%} {{data['advisor-name']}} {%else%} Sue Pearson {% endif %}</p>
+      <p class="moj-timeline__byline">by Katie Tilman</p>
       </div>
       <p class="moj-timeline__date">
-        <time datetime="2023-06-06T09:12:00.000Z"><script>
+
+        {{data['whitemail-day']}}
+
+        {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
+        {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
+        {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
+        {% if (data['whitemail-month'] =='04') or (data['whitemail-month'] =='4') %} April {% endif%}
+        {% if (data['whitemail-month'] =='05') or (data['whitemail-month'] =='5') %} May {% endif%}
+        {% if (data['whitemail-month'] =='06') or (data['whitemail-month'] =='6') %} June {% endif%}
+        {% if (data['whitemail-month'] =='07') or (data['whitemail-month'] =='7') %} July {% endif%}
+        {% if (data['whitemail-month'] =='08') or (data['whitemail-month'] =='8') %} August {% endif%}
+        {% if (data['whitemail-month'] =='09') or (data['whitemail-month'] =='9') %} September {% endif%}
+        {% if data['whitemail-month'] =='10' %} October {% endif%}
+        {% if data['whitemail-month'] =='11'%} November {% endif%}
+        {% if data['whitemail-month'] =='12' %} December {% endif%}
+
+        {{data['whitemail-year']}}
+
+        <!-- <time datetime="2023-06-06T09:12:00.000Z"><script>
           // Get date
               var now = new Date();
               var pastDate = new Date(now);
-              pastDate.setDate(now.getDate() - 5);
+              pastDate.setDate(now.getDate() - 10);
 
               var formattedDate = pastDate.toLocaleDateString('en-GB', {
               day: 'numeric',
@@ -976,13 +1009,15 @@
               });
 
               document.write(formattedDate + ' at ');
-             </script> 10:15am</time>
+             </script> 10:15am</time> -->
       </p>
       <div class="moj-timeline__description">
         <p>
           Claim form taken from whitemail
-          <!-- {{data['whitemail-origin']}} -->
+        <br>
+          Envelope ID: 24041200000000035
         </p>
+
     </div>
     </div>
 

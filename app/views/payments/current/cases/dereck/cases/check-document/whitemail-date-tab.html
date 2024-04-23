@@ -27,7 +27,7 @@
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#claim-summarry">
-        Case history
+        Claim summary
       </a>
     </li>
     <li class="govuk-tabs__list-item">
@@ -46,16 +46,10 @@
         Your tasks
       </a>
 
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#contact-log">
-          Contact details and log
-        </a>
-    </li>
-
     </li>
 
 
-<!-- Case history DETAILS -->
+<!-- CLAIM SUMMARY DETAILS -->
 
   </ul>
   <div class="govuk-tabs__panel" id="claim-summarry">
@@ -66,7 +60,7 @@
 
  <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
-<h2 class="govuk-heading-l">Case history</h2>
+<h2 class="govuk-heading-l">Claim summary</h2>
   <dl class="govuk-summary-list govuk-summary-list--no-border">
     <dl class="govuk-summary-list govuk-summary-list--no-border">
 
@@ -201,8 +195,13 @@
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="document-details">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-    {% include "payments/current/claim/document-details.html"%}
+ {% include "payments/current/claim/document-details.html"%}
+
+</div>
+</div>
 </div>
 
 
@@ -211,7 +210,8 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
- {% include  "payments/current/cases/whitemail/view-claim-details.html" %}
+ {% include "payments/current/claim/claim-details.html"%}
+
 
   </div>    </div>    </div>
 
@@ -227,25 +227,20 @@
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="your-tasks">
 
 
-    {% include "payments/current/claim/task-list.html"%}
+    {% include  "payments/current/cases/check-document/whitemail-date-1.html" %}
 
 
   </div>
 
+
+
+
+
+
+
   </div>
 </div>
 
-
-<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contact-log">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% include "payments/current/claim/notification.html"%}
-
-
-
-</div>
-</div>
-</div>
 
 
 {% endif %}
