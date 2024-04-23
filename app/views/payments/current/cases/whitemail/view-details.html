@@ -38,6 +38,10 @@ Document details
 
 
 
+                <!-- {% if data ['whitemail-name']%}
+
+        {% else%}
+        {% endif%}
 
 
 
@@ -48,19 +52,21 @@ Document details
               Name
             </dt>
             <dd class="govuk-summary-list__value">
+{% if data ['whitemail-name']%}
               {{data ['whitemail-name'] }}
+{% else%}
+              {{data ['invoice-name'] }}
+{% endif%}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <!-- <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-name-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a> -->
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date scanned
+              Date recieved
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['whitemail-day']}}
-
               {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
               {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
               {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
@@ -73,11 +79,9 @@ Document details
               {% if data['whitemail-month'] =='10' %} October {% endif%}
               {% if data['whitemail-month'] =='11'%} November {% endif%}
               {% if data['whitemail-month'] =='12' %} December {% endif%}
-
               {{data['whitemail-year']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <!-- <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-date-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a> -->
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -88,24 +92,110 @@ Document details
               {{data ['envelope-id'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <!-- <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a> -->
             </dd>
           </div>
-          <!-- <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Document ID
+              Original document
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['document-id']}}
+              <td class="govuk-table__cell"><a href="/payments/current/cases/dereck/cases/whitemail/view-details-tab#document-details" >View document</a></td>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
-          </div> -->
-        </dl>
+          </div>
+        </dl> -->
 
 
 
+
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Replacment document
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/payments/current/cases/dereck/cases/whitemail/remove-whitemail-tab#document-details" target="_blank" >Edit details<span class="govuk-visually-hidden"> -</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date recieved
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['whitemail-day']}}
+                  {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
+                  {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
+                  {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
+                  {% if (data['whitemail-month'] =='04') or (data['whitemail-month'] =='4') %} June {% endif%}
+                  {% if (data['whitemail-month'] =='05') or (data['whitemail-month'] =='5') %} May {% endif%}
+                  {% if (data['whitemail-month'] =='06') or (data['whitemail-month'] =='6') %} June {% endif%}
+                  {% if (data['whitemail-month'] =='07') or (data['whitemail-month'] =='7') %} July {% endif%}
+                  {% if (data['whitemail-month'] =='08') or (data['whitemail-month'] =='8') %} August {% endif%}
+                  {% if (data['whitemail-month'] =='09') or (data['whitemail-month'] =='9') %} September {% endif%}
+                  {% if data['whitemail-month'] =='10' %} October {% endif%}
+                  {% if data['whitemail-month'] =='11'%} November {% endif%}
+                  {% if data['whitemail-month'] =='12' %} December {% endif%}
+                  {{data['whitemail-year']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Taken from
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Email
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Document location
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Sharepoint
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Original document
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/public/images/S8-Dereck-smith-invoice-1.pdf" target="_blank" >View document<span class="govuk-visually-hidden"> -</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date recieved
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  7 April 2024
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Taken from
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Claim submission
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+        </div>
 
 <!-- TRIGGER -->
 
@@ -113,11 +203,11 @@ Document details
 <!-- <input type="hidden" id="whitemail-complete1" name="whitemail-complete1" value="Yes"> -->
 
 
-        <div class="govuk-button-group">
+        <!-- <div class="govuk-button-group">
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Remove document
           </button>
-        </form>
+        </form> -->
 
 
 
