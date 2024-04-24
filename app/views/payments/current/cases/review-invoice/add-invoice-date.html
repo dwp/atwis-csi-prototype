@@ -60,7 +60,10 @@
                 {% if 'No' in data['paid-in-full'] %}
                 <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
                   Add invoice numbers for items you are paying
-                  {% endif %}
+                  {% else %}
+                  <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+                    Add invoice numbers for items you are paying
+                    {% endif %}
                   {% endif %}
 
                 </label>

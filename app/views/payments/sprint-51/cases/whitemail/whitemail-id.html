@@ -1,0 +1,76 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-51/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-51/cases/dereck/cases/whitemail/check-answers-tab#document-details" method="post" novalidate>
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <span class="govuk-caption-xl">
+      {% if data['whitemail-name']%} {{data ['whitemail-name'] }}{% endif %}</span>
+    <h1 class="govuk-fieldset__heading">
+      Enter the envelope ID
+
+    </h1>
+  </legend>
+
+
+
+  <div class="govuk-form-group">
+  
+    <input class="govuk-input" id="envelope-id" name="envelope-id" type="text" aria-describedby="envelope-id" value="{{data ['envelope-id'] }}">
+  </div>
+
+  <!-- <div class="govuk-form-group">
+    <label class="govuk-label" for="event-name">
+      Document id
+    </label>
+    <input class="govuk-input" id="document-id" name="document-id" type="text" aria-describedby="document-id" value="{{data ['document-id'] }}">
+  </div> -->
+
+
+
+      </fieldset>
+    </div>
+
+
+
+               <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
