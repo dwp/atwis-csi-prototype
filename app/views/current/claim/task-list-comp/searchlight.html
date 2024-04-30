@@ -153,7 +153,7 @@
   {% if data['new-application']=='Yes' %}
   <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-       <a href="{% if data['disc-end']%}/current/cases/disc/end-disc/check{% else %}/current/cases/disc/end-disc{% endif %}">   End case in DiSC</a>
+       <a href="{% if data['disc-end']=='No' or data['disc-end']=='Yes'%}/current/cases/disc/end-disc/check{% else %}/current/cases/disc/end-disc{% endif %}">   End case in DiSC</a>
     </span>
 
   {% if not (data['disc-end'+ phase] or data['disc-end'])%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
