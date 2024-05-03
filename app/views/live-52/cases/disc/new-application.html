@@ -1,0 +1,89 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+
+                      <h1 class="govuk-heading-l">
+New application
+                         </h1>
+
+
+<p>A new application may be needed where details have changed. This includes some changes to employment.</p>
+
+
+<p>Check the guidance on <a href="https://intranet.dwp.gov.uk/manual/access-work/change-circumstances">change of circumstances (opens in a new tab)</a>.</p>
+
+
+
+
+<div class="govuk-form-group">
+           <fieldset class="govuk-fieldset">
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+               <h2 class="govuk-fieldset__heading">
+Is this case a new application?
+               </h2>
+             </legend>
+
+                       <div class="govuk-radios govuk-radios--inline">
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="new-application{{phase}}" name="new-application{{phase}}" type="radio" value="Yes~done-atwis" {{ checked("new-application", "Yes") }}>
+                           <label class="govuk-label govuk-radios__label" for="new-application">
+                            Yes
+                           </label>
+                         </div>
+
+
+                                          <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="new-application-2" name="new-application{{phase}}" type="radio" value="No~done-disc" {{ checked("new-application", "No") }}>
+                                            <label class="govuk-label govuk-radios__label" for="new-application-2">
+                                          No
+                                            </label>
+                                          </div>
+
+
+
+
+                       </div>
+
+                     </fieldset>
+                   </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

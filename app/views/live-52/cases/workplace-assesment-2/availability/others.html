@@ -1,0 +1,72 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="days-available" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                  Does Dereck Smith want anyone else to be at the workplace assessment?
+                 </h2>
+               </legend>
+
+                <div id="others-wpa-2-hint" class="govuk-hint">
+                     Select all that apply
+                   </div>
+                   <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                     <div class="govuk-checkboxes__item">
+                       <input class="govuk-checkboxes__input" id="others-wpa-2" name="others-wpa-2" type="checkbox" value="Yes, someone from Smith Digital Limited" {{ checked("others-wpa-2", "Yes, someone from Smith Digital Limited") }}>
+                       <label class="govuk-label govuk-checkboxes__label" for="others-wpa-2">
+                         Yes, someone from Smith Digital Limited
+                       </label>
+                     </div>
+                     <div class="govuk-checkboxes__item">
+                       <input class="govuk-checkboxes__input" id="others-wpa-2-2" name="others-wpa-2" type="checkbox" value="Yes, a third party" {{ checked("others-wpa-2", "Yes, a third party") }}>
+                       <label class="govuk-label govuk-checkboxes__label" for="others-wpa-2-2">
+                        Yes, a third party
+                       </label>
+                     </div>
+
+                     <div class="govuk-checkboxes__divider">or</div>
+                     <div class="govuk-checkboxes__item">
+                       <input class="govuk-checkboxes__input" id="others-wpa-2-5" name="others-wpa-2" type="checkbox" value="No" data-behaviour="exclusive" {{ checked("others-wpa-2", "No") }}>
+                       <label class="govuk-label govuk-checkboxes__label" for="others-wpa-2-5">
+                         No
+                       </label>
+                     </div>
+                   </div>
+
+                 </fieldset>
+               </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

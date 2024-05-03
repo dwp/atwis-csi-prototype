@@ -1,0 +1,73 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% if not number %}
+{% set number = "1" %}
+{% endif %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-form-group">
+      <div class="govuk-form-group">
+        <form class="form" action="edit" method="post">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+              <label class="govuk-label govuk-label--l" for="travelling-to-and-from-work-how-would-meet-your-needs-taxi">
+                  <h1 class="govuk-fieldset__heading">
+                  How will having a taxi to and from work meet {% if phase =='john' %}John Smith{% endif %}{% if phase =='thomas' %}Thomas King{% endif %}{% if phase =='sonya' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}s needs?
+                  </h1>
+                </label>
+
+
+                <!-- <p class="govuk-body">You can include things like:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>what you find difficult about travelling to work</li>
+                  <li>how long it takes you to travel to work</li>
+                  <li>the effect of not having any support to travel to work</li>
+                </ul> -->
+
+                <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+                  <div class="govuk-form-group">
+
+                  <textarea class="govuk-textarea govuk-js-character-count" id="travelling-to-and-from-work-how-would-meet-your-needs-taxi" name="travelling-to-and-from-work-more-details{{number}}" rows="10" aria-describedby="travelling-to-and-from-work-how-would-meet-your-needs-taxi-info travelling-to-and-from-work-how-would-meet-your-needs-taxi-hint"></textarea>
+                  </div>
+
+                  <div id="travelling-to-and-from-work-how-would-meet-your-needs-taxi-info"
+                       class="govuk-hint govuk-character-count__message" aria-live="polite">
+                    You can enter up to 500 characters
+                  </div>
+
+
+
+                </div>
+
+              </fieldset>
+            </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+        
+
+  </div>
+
+  </div>
+
+  </div>
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
