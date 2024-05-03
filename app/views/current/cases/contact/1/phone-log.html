@@ -31,7 +31,7 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
-Telephone call made on    {{ data['contact-date-day-'+ number] }}
+Telephone call received on    {{ data['contact-date-day-'+ number] }}
 {% if (data['contact-date-month-'+ number] =='01') or (data['contact-date-month-'+ number] =='1') %} January {% endif%}
 {% if (data['contact-date-month-'+ number] =='02') or (data['contact-date-month-'+ number] =='2') %} February  {% endif%}
 {% if (data['contact-date-month-'+ number] =='03') or (data['contact-date-month-'+ number] =='3') %} March {% endif%}
@@ -58,6 +58,9 @@ Telephone call made on    {{ data['contact-date-day-'+ number] }}
 {% if data['asked-info-phone-'+number]=='No'%}
 <p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} did not answer the telephone.</p>{% endif %}
 
+{% if data['idv1']=='Yes'%}
+<p>Verify Thomas Kings identity.</p>{% else %}
+<p>Did not verify the person's identity.</p>{% endif %}
 
 <p>About: </p>
 <ul class="govuk-list govuk-list--bullet">

@@ -18,14 +18,12 @@ Example usage:
 */
 
 module.exports = {
-'approval': "Approved",  
+'approval': "Approved",
 'others-wpa-2': "",
 'report': "",
 'ttw-match' : "",
 'claim-item' : "",
 'sw-match' : "",
-'job-deatils-check' : "No",
-'condition-check' : "No",
 'grant-matches-claim-sw' : "",
 'paid-in-full' : "",
 'company-details' : "",
@@ -36,12 +34,8 @@ module.exports = {
 'whitemail-origin' : "",
 'whitemail-type' : "",
 'benefits' : "",
-'Searchligh' : "Yes and application details match",
-'found-nino' : "Yes",
-'national-insurance-number' : "AB 123456 C",
-'appointee' : "No",
-'benefits' : "No",
-// 'disc-check' : "No",
+
+
 
 'claims' : "",
 
@@ -54,20 +48,33 @@ module.exports = {
 'notificationjohn' : "",
 'notificationarlo' : "",
 'wpa-report' : "",
-// '_do_1' : "Telephone call received",
-// 'contact-time-1' : "9am",
-// 'contact-date-day-1' : "25",
-// 'contact-date-month-1' : "4",
-// 'contact-date-year-1' : "2023",
+
+
+'_do_1' : "Telephone call received",
+'contact-time-1' : "9:00 am",
+'contact-date-day-1' : "2",
+'contact-date-month-1' : "5",
+'contact-date-year-1' : "2024",
+'idv1' : "Yes",
 // 'where-do-you-live' : "Thomas King",
-// 'contact-why' : ["Element details", "ID&V", "Other"],
-'other-discussion-1' : "Thomas King contacted ATW asking for mental health support though Access to Work. They are not on Intensive Personalised Employment Support, Work and Health Programme, Work Able Scotland, and Fair Start Scotland.",
+'contact-why' : ["Element details", "Health condition or disability", "Other"],
+'other-discussion-1' : "Thomas King contacted ATW asking for mental health support though Access to Work, as they did not included it in the orignial application. They are not on Intensive Personalised Employment Support, Work and Health Programme, Work Able Scotland, and Fair Start Scotland.",
 // 'mhss-support-check' : ["Intensive Personalised Employment Support"],
 
 // assess
-'employer-sector' : "Yes",
-'employer-sector-type' : "Charity",
-'employer-size' : "10 to 49 (small)",
+
+'Searchligh' : "Yes and application details match",
+'found-nino' : "Yes",
+'national-insurance-number' : "AB 123456 C",
+'appointee' : "No",
+'benefits' : "No",
+'disc-check' : "No",
+'job-deatils-check' : "No",
+'condition-check' : "No",
+//
+// 'employer-sector' : "Yes",
+// 'employer-sector-type' : "Charity",
+// 'employer-size' : "10 to 49 (small)",
 
 'wpathomas' : "No",
 'employer-sectorthomas' : "Yes",
