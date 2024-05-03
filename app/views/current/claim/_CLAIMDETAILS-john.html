@@ -9,7 +9,7 @@
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#application-summary">
-      Application summary
+      Summary
       </a>
     </li>
 
@@ -26,7 +26,12 @@
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#business-case">
-      Prepare business case
+      Job details and workplace assessment
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#business-case">
+      Business case
       </a>
     </li>
     <li class="govuk-tabs__list-item">
@@ -195,7 +200,7 @@
 
 
 {% if phase == "sonya"  %}{% include  "../claim/timeline.html" %}{% endif %}
-{% if phase == "john"  %}{% include  "../claim/timeline-john.html" %}{% endif %}
+{% if phase == "john"  %}{% include  "../claim/timelines/timeline-john.html" %}{% endif %}
 {% if phase == "thomas"  %}{% include  "../claim/timeline-thomas-new.html" %}</div></div>{% endif %}
 {% if not phase %}{% include  "../claim/timeline-dereck-new.html" %}{% endif %}
 </div>
