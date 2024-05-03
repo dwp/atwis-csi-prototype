@@ -1,0 +1,136 @@
+{% set link = "4" %}
+{% set personalDetails =  true  %}
+{% set hideChange = true %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+Do the personal details from the application match Searchlight?
+                 </h2>
+               </legend>
+
+               <p class="govuk-body">
+                            <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                          </p>
+
+               <p class="govuk-body">Application details:</p>
+               <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+
+
+                 <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key ">
+                     Full name
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                     <p>John Smith</p>
+                   </dd>
+
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+
+
+                 </div>
+
+
+
+                 <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                     Date of birth
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                     <p>1 October 1978 </p>
+                   </dd>
+
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+
+
+                </div>
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                     Address
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+
+               <p>72 Guild Street
+                  <br>
+                 London <br>
+
+                 SE23 6FH  <br>
+                 </p>
+
+                   </dd>
+
+                   <dd class="govuk-summary-list__actions">
+                <!-- end change -->
+                   </dd>
+
+                 </div>
+
+
+
+
+
+
+
+
+               </dl>
+               <div class="govuk-radios ">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="personal" name="personal" type="radio" value="Yes~/live-52cases/claim#your-tasks">
+                   <label class="govuk-label govuk-radios__label" for="personal">
+                     Yes
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="personal-2" name="personal" type="radio" value="No">
+                   <label class="govuk-label govuk-radios__label" for="personal-2">
+                     No, I need to contact the applicant
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
