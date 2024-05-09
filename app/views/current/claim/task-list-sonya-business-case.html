@@ -5,37 +5,9 @@
 {% if not totalcomplete %}
   {% set totalcomplete = 0 %}
   {% endif %}
-
-  {% if not totaljob %}
-    {% set totaljob = 0 %}
-    {% endif %}
-
-
-    {% for i in [1] -%}
-     {% set contactindex = i %}
-      {% if data['wpa'+ phase]=='No'  %}
-      {% set totaljob = totaljob + 1 %}
-    {% endif %}
-      {%- endfor %}
-
-    {% for i in [1] -%}
-     {% set contactindex = i %}
-      {% if data['wpa'+ phase]=='Yes' and data['others-wpa'+ phase]  %}
-      {% set totaljob = totaljob + 1 %}
-    {% endif %}
-      {%- endfor %}
-
-{% for i in [1] -%}
- {% set contactindex = i %}
-  {% if 'Completed and sent letter ATW01CL' in data['notification'+ phase]
-  %}
-  {% set totalcomplete = totalcomplete + 1 %}
-{% endif %}
-  {%- endfor %}
-
   {% for i in [1] -%}
    {% set contactindex = i %}
-    {% if  'Completed and sent letter ATW02EL' in data['notification'+ phase]
+    {% if 'Completed and sent letter ATW01CL' in data['notification'+ phase]
     %}
     {% set totalcomplete = totalcomplete + 1 %}
   {% endif %}
@@ -43,18 +15,36 @@
 
     {% for i in [1] -%}
      {% set contactindex = i %}
-      {% if  'Sent any attachments' in data['notification'+ phase]
+      {% if  'Completed and sent letter ATW02EL' in data['notification'+ phase]
       %}
       {% set totalcomplete = totalcomplete + 1 %}
     {% endif %}
       {%- endfor %}
 
+      {% for i in [1] -%}
+       {% set contactindex = i %}
+        {% if  'Sent any attachments' in data['notification'+ phase]
+        %}
+        {% set totalcomplete = totalcomplete + 1 %}
+      {% endif %}
+        {%- endfor %}
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if
+      'Saved copy of letters and any attachments to Sharepoint' in data['notification'+ phase]
+      %}
+      {% set totalcomplete = totalcomplete + 1 %}
+    {% endif %}
+      {%- endfor %}
+{% if not totaljob %}
+  {% set totaljob = 0 %}
+  {% endif %}
+
   {% for i in [1] -%}
    {% set contactindex = i %}
-    {% if
-    'Saved copy of letters and any attachments to Sharepoint' in data['notification'+ phase]
-    %}
-    {% set totalcomplete = totalcomplete + 1 %}
+    {% if data['wpa'+ phase]=='No'  %}
+    {% set totaljob = totaljob + 1 %}
   {% endif %}
     {%- endfor %}
 

@@ -106,6 +106,16 @@
 
             <dt class="govuk-visually-hidden">Name:</dt>
             <dd class="dwp-key-details-bar__primary">
+              {% if case =='other-cases-fill-1' %}
+              {% for case in data['other-cases-fill-1'] %}
+              {{ case.name }}
+              {% endfor %}
+              {% endif %}
+              {% if case =='other-cases-fill-2' %}
+              {% for case in data['other-cases-fill-2'] %}
+              {{ case.name }}
+              {% endfor %}
+              {% endif %}
 
   {% if case =='other-cases' %}
   {% for case in data['other-cases'] %}
@@ -182,6 +192,18 @@
 
             <dt>Application reference:</dt>
             <dd>
+
+              {% if case =='other-cases-fill-1' %}
+              {% for case in data['other-cases-fill-1'] %}
+            {{ case.ref }}
+              {% endfor %}
+              {% endif %}
+              {% if case =='other-cases-fill-2' %}
+              {% for case in data['other-cases-fill-2'] %}
+            {{ case.ref }}
+              {% endfor %}
+              {% endif %}
+
             {% if case =='other-cases' %}
             {% for case in data['other-cases'] %}
             {{ case.ref }}

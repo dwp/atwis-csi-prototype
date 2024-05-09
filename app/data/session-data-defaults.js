@@ -63,12 +63,12 @@ module.exports = {
 
 // assess
 
-// 'Searchligh' : "Yes and application details match",
-// 'found-nino' : "Yes",
-// 'national-insurance-number' : "AB 123456 C",
-// 'appointee' : "No",
-// 'benefits' : "No",
-// 'disc-check' : "No",
+'Searchligh' : "Yes and application details match",
+'found-nino' : "Yes",
+'national-insurance-number' : "AB 123456 C",
+'appointee' : "No",
+'benefits' : "No",
+'disc-check' : "No",
 // 'job-deatils-check' : "No",
 // 'condition-check' : "No",
 //
@@ -97,6 +97,23 @@ module.exports = {
 'employer-sector-typesonya' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
 'wpasonya' : "No",
 //
+'condition-checkgeorge' : "No",
+'job-deatils-checkgeorge' : "No",
+'sae-checkgeorge' : "No",
+'employer-sectorgeorge' : "Yes",
+'employer-sizegeorge' : "10 to 49 (small)",
+'employer-sector-typegeorge' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
+'wpageorge' : "No",
+'appointeegeorge' : "No",
+//
+'condition-checkpaul' : "No",
+'job-deatils-checkpaul' : "No",
+'sae-checkpaul' : "No",
+'employer-sectorpaul' : "Yes",
+'employer-sizepaul' : "10 to 49 (small)",
+'employer-sector-typepaul' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
+'wpapaul' : "No",
+'appointeepaul' : "No",
 // 'contact-date-day-1' : "29",
 // 'contact-date-month-1' : "03",
 // 'contact-date-year-1' : "2023",
@@ -199,6 +216,30 @@ module.exports = {
     'priority' : "true",
     'date': '4 October 2023, 13:23'
 
+  }],
+  'other-cases-fill-1': [{
+    'name': 'George Dermott',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
+    'ref': 'RMPX31',
+    'dos': '2 June 2022',
+    'case': 'Other',
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
+  }],
+  'other-cases-fill-2': [{
+    'name': 'Paul Stenberg ',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
+    'ref': 'RMPX31',
+    'dos': '2 June 2022',
+    'case': 'Other',
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
   }],
 
   'other-cases': [{

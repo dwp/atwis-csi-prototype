@@ -42,6 +42,7 @@
 
 
   </ul>
+
   <div class="govuk-tabs__panel" id="application-summary">
 
   {% if data['exceptions']=='No'  %}
@@ -93,6 +94,18 @@ data-module="govuk-notification-banner">
           Full name
         </dt>
         <dd class="govuk-summary-list__value">
+          {% if case =='other-cases-fill-1' %}
+          {% for case in data['other-cases-fill-1'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+          {% if case =='other-cases-fill-2' %}
+          {% for case in data['other-cases-fill-2'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+
+
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
           {{ case.name }}
@@ -163,6 +176,27 @@ data-module="govuk-notification-banner">
           Date submitted
         </dt>
         <dd class="govuk-summary-list__value">
+
+          {% if case =='other-cases-fill-1' %}
+        <script>// Get date
+            var now = new Date();
+            var pastDate = new Date(now);
+            pastDate.setDate(now.getDate() - 60);
+
+            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+            });
+
+            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+            });
+
+            document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
+
   {% if case =='other-cases-2' %}
 <script>// Get date
     var now = new Date();
@@ -297,12 +331,13 @@ data-module="govuk-notification-banner">
 <p><a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/reject-case"> Close the case</a></p>
 <!-- <p><a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/withdrawal-case"> Withdraw the case</a></p> -->
 <br>
+
+{% if phase == "george"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
 {% if phase == "arlo"  %}{% include  "../claim/timelines/timeline-john.html" %}{% endif %}
 {% if phase == "sonya"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
 {% if phase == "thomas"  %}{% include  "../claim/timelines/timeline-thomas-new.html" %}</div></div>{% endif %}
 {% if not phase %}{% include  "../claim/timelines/timeline-dereck.html" %}{% endif %}
 </div>
-
 
 
 
@@ -332,7 +367,14 @@ data ['appointee']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}  {% if case =='other-cases' %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}
+              {% if case =='other-cases-fill-1' %}
+                  {% for case in data['other-cases-fill-1'] %}
+                  {{ case.name }}
+                  {% endfor %}
+                  {% endif %}
+
+{% if case =='other-cases' %}
                   {% for case in data['other-cases'] %}
                   {{ case.name }}
                   {% endfor %}
@@ -605,15 +647,19 @@ data ['appointee']
     <p class="govuk-notification-banner__heading">
       You have 7 days left to send your application.
       <a class="govuk-notification-banner__link" href="#">View application</a>.
-    </p>
-  </div>
+    </p>  </div>
 </div>{% endif %} -->
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-l">Checks</h2>
 
 <p>You can <a href="./personal-details">update or edit personal details</a>.</p>
-
+{% if case =='other-cases-fill-1' %}
+  {% include  "./task-list-comp/task-list-george-searchlight.html" %}
+{% endif %}
+{% if case =='other-cases-fill-2' %}
+  {% include  "./task-list-comp/task-list-george-searchlight.html" %}
+{% endif %}
     {% if case =='other-cases' %}
       {% include  "./task-list-comp/task-list-sonya-searchlight.html" %}
     {% endif %}
@@ -681,6 +727,11 @@ data ['appointee']
     </p>
   </div>
 </div>{% endif %} -->
+{% if case =='other-cases-fill-1' %}
+  {% include  "./task-list-george-application.html" %}{% endif %}
+  {% if case =='other-cases-fill-2' %}
+    {% include  "./task-list-george-application.html" %}{% endif %}
+
   {% if case =='other-cases' %}
     {% include  "./task-list-sonya-application.html" %}{% endif %}
 
@@ -700,6 +751,10 @@ data ['appointee']
 
 
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wpa">
+  {% if case =='other-cases-fill-1' %}
+{% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
+{% if case =='other-cases-fill-2' %}
+{% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
 
   {% if case =='other-cases' %}
 {% include  "./task-list-sonya-wpa-job.html" %}</div></div>{% endif %}
@@ -760,6 +815,11 @@ data ['appointee']
     </p>
   </div>
 </div>{% endif %} -->
+{% if case =='other-cases-fill-1' %}
+{% include  "./task-list-george-business-case.html" %}{% endif %}
+{% if case =='other-cases-fill-2' %}
+{% include  "./paul/task-list-paul-business-case.html" %}{% endif %}
+
   {% if case =='other-cases-2' %}
   {% include  "./task-list-thomas-business-case.html" %}{% endif %}
 
