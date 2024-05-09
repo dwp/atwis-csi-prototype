@@ -229,6 +229,42 @@ document.write(date);
 </td>
 
 <tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header"> Specialist equipment</th>
+<td class="govuk-table__cell govuk-table__cell--body">
+Brailliant BI 40X braille display
+</td>
+
+<td class="govuk-table__cell govuk-table__cell--numeric" >
+
+<script>
+
+  var now = new Date();
+  var pastDate = new Date(now);
+  pastDate.setDate(now.getDate() - 60);
+
+  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+  });
+
+
+
+  document.write(formattedDate);
+
+
+</script>
+</td>
+
+
+
+
+<td class="govuk-table__cell govuk-table__cell--numeric" >
+£3,599.00
+</td>
+
+
+<tr class="govuk-table__row">
 <th scope="row" class="govuk-table__header"> Support worker</th>
 <td class="govuk-table__cell govuk-table__cell--body">
   Notetaker<br>  £20 per hour<br>37 hours of support per week for 1 years </td>
@@ -286,7 +322,7 @@ document.write(date);
       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
     <td class="govuk-table__cell govuk-table__cell--numeric"></td>
        <td class="govuk-table__cell govuk-table__cell--numeric"><div class="govuk-!-padding-bottom-9"></div>
-£67,094.00
+£70,693.99
          </td> </tr>
 
 
@@ -311,7 +347,7 @@ document.write(date);
                    <tr class="govuk-table__row">
                    <th scope="row" class="govuk-table__header"> Mandatory cost share to be paid by employer</th>
                    <td class="govuk-table__cell govuk-table__cell--body">
-                    Medium employer
+                    Large employer
                    </td>
 
                    <td class="govuk-table__cell govuk-table__cell--numeric" >
@@ -323,7 +359,7 @@ document.write(date);
 
 
                    <td class="govuk-table__cell govuk-table__cell--numeric" >
-                   -£600.00
+                   -£1000.00
                    </td>
                  <tr class="govuk-table__row">
                  <th scope="row" class="govuk-table__header"> Total social and domestic contribution: 2 days</th>
@@ -368,7 +404,7 @@ document.write(date);
                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         <td class="govuk-table__cell govuk-table__cell--numeric"><div class="govuk-!-padding-bottom-9"></div>
-                 £66,454.00
+                 £69,653.99
                           </td>
 
                         </tr>
