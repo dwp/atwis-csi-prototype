@@ -105,6 +105,17 @@ data-module="govuk-notification-banner">
           {% endfor %}
           {% endif %}
 
+          {% if case =='other-cases-fill-3' %}
+          {% for case in data['other-cases-fill-3'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+          {% if case =='other-cases-fill-4' %}
+          {% for case in data['other-cases-fill-4'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+
 
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
@@ -333,6 +344,9 @@ data-module="govuk-notification-banner">
 <br>
 
 {% if phase == "george"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
+{% if phase == "paul"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
+{% if phase == "anahi"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
+{% if phase == "kam"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
 {% if phase == "arlo"  %}{% include  "../claim/timelines/timeline-john.html" %}{% endif %}
 {% if phase == "sonya"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
 {% if phase == "thomas"  %}{% include  "../claim/timelines/timeline-thomas-new.html" %}</div></div>{% endif %}
@@ -660,6 +674,15 @@ data ['appointee']
 {% if case =='other-cases-fill-2' %}
   {% include  "./task-list-comp/task-list-george-searchlight.html" %}
 {% endif %}
+
+{% if case =='other-cases-fill-3' %}
+  {% include  "./task-list-comp/task-list-george-searchlight.html" %}
+{% endif %}
+
+{% if case =='other-cases-fill-4' %}
+  {% include  "./task-list-comp/task-list-george-searchlight.html" %}
+{% endif %}
+
     {% if case =='other-cases' %}
       {% include  "./task-list-comp/task-list-sonya-searchlight.html" %}
     {% endif %}
@@ -731,6 +754,10 @@ data ['appointee']
   {% include  "./task-list-george-application.html" %}{% endif %}
   {% if case =='other-cases-fill-2' %}
     {% include  "./task-list-george-application.html" %}{% endif %}
+    {% if case =='other-cases-fill-3' %}
+      {% include  "./anahi/task-list-anahi-application.html" %}{% endif %}
+      {% if case =='other-cases-fill-4' %}
+        {% include  "./kam/task-list-kam-application.html" %}{% endif %}
 
   {% if case =='other-cases' %}
     {% include  "./task-list-sonya-application.html" %}{% endif %}
@@ -755,6 +782,12 @@ data ['appointee']
 {% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
 {% if case =='other-cases-fill-2' %}
 {% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
+{% if case =='other-cases-fill-3' %}
+{% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
+{% if case =='other-cases-fill-4' %}
+{% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
+
+
 
   {% if case =='other-cases' %}
 {% include  "./task-list-sonya-wpa-job.html" %}</div></div>{% endif %}
@@ -819,6 +852,10 @@ data ['appointee']
 {% include  "./task-list-george-business-case.html" %}{% endif %}
 {% if case =='other-cases-fill-2' %}
 {% include  "./paul/task-list-paul-business-case.html" %}{% endif %}
+{% if case =='other-cases-fill-3' %}
+{% include  "./anahi/task-list-anahi-business-case.html" %}{% endif %}
+{% if case =='other-cases-fill-4' %}
+{% include  "./paul/task-list-kam-business-case.html" %}{% endif %}
 
   {% if case =='other-cases-2' %}
   {% include  "./task-list-thomas-business-case.html" %}{% endif %}

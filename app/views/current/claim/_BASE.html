@@ -117,6 +117,18 @@
               {% endfor %}
               {% endif %}
 
+              {% if case =='other-cases-fill-3' %}
+              {% for case in data['other-cases-fill-3'] %}
+              {{ case.name }}
+              {% endfor %}
+              {% endif %}
+
+              {% if case =='other-cases-fill-4' %}
+              {% for case in data['other-cases-fill-4'] %}
+              {{ case.name }}
+              {% endfor %}
+              {% endif %}
+
   {% if case =='other-cases' %}
   {% for case in data['other-cases'] %}
   {{ case.name }}
@@ -200,6 +212,18 @@
               {% endif %}
               {% if case =='other-cases-fill-2' %}
               {% for case in data['other-cases-fill-2'] %}
+            {{ case.ref }}
+              {% endfor %}
+              {% endif %}
+
+              {% if case =='other-cases-fill-3' %}
+              {% for case in data['other-cases-fill-3'] %}
+            {{ case.ref }}
+              {% endfor %}
+              {% endif %}
+
+              {% if case =='other-cases-fill-4' %}
+              {% for case in data['other-cases-fill-4'] %}
             {{ case.ref }}
               {% endfor %}
               {% endif %}

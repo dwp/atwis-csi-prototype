@@ -96,7 +96,7 @@ module.exports = {
 'employer-sizesonya' : "10 to 49 (small)",
 'employer-sector-typesonya' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
 'wpasonya' : "No",
-//
+// filled in case
 'condition-checkgeorge' : "No",
 'job-deatils-checkgeorge' : "No",
 'sae-checkgeorge' : "No",
@@ -105,7 +105,7 @@ module.exports = {
 'employer-sector-typegeorge' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
 'wpageorge' : "No",
 'appointeegeorge' : "No",
-//
+// filled in case
 'condition-checkpaul' : "No",
 'job-deatils-checkpaul' : "No",
 'sae-checkpaul' : "No",
@@ -114,6 +114,24 @@ module.exports = {
 'employer-sector-typepaul' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
 'wpapaul' : "No",
 'appointeepaul' : "No",
+// filled in case
+'condition-checkanahi' : "No",
+'job-deatils-checkanahi' : "No",
+'sae-checkanahi' : "No",
+'employer-sectoranahi' : "Yes",
+'employer-sizeanahi' : "10 to 49 (small)",
+'employer-sector-typeanahi' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
+'wpaanahi' : "No",
+'appointeeanahi' : "No",
+// filled in case
+'condition-checkkam' : "No",
+'job-deatils-checkkam' : "No",
+'sae-checkkam' : "No",
+'employer-sectorkam' : "Yes",
+'employer-sizekam' : "10 to 49 (small)",
+'employer-sector-typekam' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
+'wpakam' : "No",
+'appointeekam' : "No",
 // 'contact-date-day-1' : "29",
 // 'contact-date-month-1' : "03",
 // 'contact-date-year-1' : "2023",
@@ -241,6 +259,33 @@ module.exports = {
     'date': '15 October 2021 15:23',
     'appointee': 'No'
   }],
+
+  'other-cases-fill-3': [{
+    'name': 'Anahi Korrapati',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
+    'ref': 'RMPX40',
+    'dos': '2 June 2022',
+    'case': 'Other',
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
+  }],
+
+  'other-cases-fill-4': [{
+    'name': 'Kam Haraguchi',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
+    'ref': 'RMPX41',
+    'dos': '2 June 2022',
+    'case': 'Other',
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
+  }],
+
 
   'other-cases': [{
     'name': 'Sonya Corkery',
