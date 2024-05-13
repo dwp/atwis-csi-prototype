@@ -1,0 +1,74 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="/live-53/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#wpa" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+              Address of the workplace assessment
+              </label>
+            </h2>
+            <div class="govuk-form-group">
+          <label class="govuk-label" for="address-wpa-line-1">
+          Address line 1
+          </label>
+          <input class="govuk-input" id="address-wpa-line-1" name="address-wpa-line-1" type="text" autocomplete="address-wpa-line1" value="{{data['address-wpa-line-1']}}">
+          </div>
+
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="address-wpa-line-2">
+          Address line 2 (optional)
+          </label>
+          <input class="govuk-input" id="address-wpa-line-2" name="address-wpa-line-2" type="text" autocomplete="address-wpa-line2" value="{{data['address-wpa-line-2']}}">
+          </div>
+
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="address-wpa-town">
+          Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-wpa-town" name="address-wpa-town" type="text" autocomplete="address-wpa-level2" value="{{data['address-wpa-town']}}">
+          </div>
+
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="address-wpa-county">
+          County (optional)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-wpa-county" name="address-wpa-county" type="text" value="{{data['address-wpa-county']}}">
+          </div>
+
+          <div class="govuk-form-group">
+          <label class="govuk-label" for="address-wpa-postcode">
+          Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="address-wpa-postcode" name="address-wpa-postcode" type="text" autocomplete="postal-code" value="{{data['address-wpa-postcode']}}">
+          </div>  </div>
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

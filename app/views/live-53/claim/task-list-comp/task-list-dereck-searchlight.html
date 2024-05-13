@@ -1,0 +1,50 @@
+
+{% for case in data['priority-cases'] %}
+
+{% if not totalchanges %}
+  {% set totalchanges = 0 %}
+  {% endif %}
+
+  {% for i in [1] -%}
+   {% set changesindex = i %}
+    {% if data['change-address-line1'] or data['change-address-town'] or data['change-address-postcode'] %}
+    {% set totalchanges = totalchanges + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+
+
+
+      <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
+
+
+
+
+
+
+
+{% if data ['appointee']
+
+%}
+
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} before completing appointee task.</div>
+        {% endif %}
+
+
+
+{% if data['changeaddressline1'] %}{% include "live-53/claim/task-list-comp/searchlight-update.html"%}{% else %}
+{% include "live-53/claim/task-list-comp/searchlight.html"%}{% endif %}
+
+
+
+
+
+
+
+
+
+
+{% endfor %}
