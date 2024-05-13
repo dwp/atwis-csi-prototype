@@ -207,6 +207,65 @@ data-module="govuk-notification-banner">
             });
 
             document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
+            {% if case =='other-cases-fill-2' %}
+          <script>// Get date
+              var now = new Date();
+              var pastDate = new Date(now);
+              pastDate.setDate(now.getDate() - 60);
+
+              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+              });
+
+              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+              hour: 'numeric',
+              minute: 'numeric',
+              hour12: true
+              });
+
+              document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
+              {% if case =='other-cases-fill-3' %}
+            <script>// Get date
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 60);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
+                {% if case =='other-cases-fill-4' %}
+              <script>// Get date
+                  var now = new Date();
+                  var pastDate = new Date(now);
+                  pastDate.setDate(now.getDate() - 60);
+
+                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                  });
+
+                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  hour12: true
+                  });
+
+                  document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
+
+
 
   {% if case =='other-cases-2' %}
 <script>// Get date
@@ -227,6 +286,10 @@ data-module="govuk-notification-banner">
     });
 
     document.write(formattedDate + ' at 4:51 pm');</script>{% endif %}
+
+
+
+
     {% if case =='other-cases' %}
   <script>// Get date
       var now = new Date();
@@ -387,6 +450,21 @@ data ['appointee']
                   {{ case.name }}
                   {% endfor %}
                   {% endif %}
+                  {% if case =='other-cases-fill-2' %}
+                      {% for case in data['other-cases-fill-2'] %}
+                      {{ case.name }}
+                      {% endfor %}
+                      {% endif %}
+                      {% if case =='other-cases-fill-3' %}
+                          {% for case in data['other-cases-fill-3'] %}
+                          {{ case.name }}
+                          {% endfor %}
+                          {% endif %}
+                          {% if case =='other-cases-fill-4' %}
+                              {% for case in data['other-cases-fill-4'] %}
+                              {{ case.name }}
+                              {% endfor %}
+                              {% endif %}
 
 {% if case =='other-cases' %}
                   {% for case in data['other-cases'] %}
@@ -753,11 +831,11 @@ data ['appointee']
 {% if case =='other-cases-fill-1' %}
   {% include  "./task-list-george-application.html" %}{% endif %}
   {% if case =='other-cases-fill-2' %}
-    {% include  "./task-list-george-application.html" %}{% endif %}
+    {% include  "./paul/task-list-paul-application.html" %}{% endif %}
     {% if case =='other-cases-fill-3' %}
       {% include  "./anahi/task-list-anahi-application.html" %}{% endif %}
       {% if case =='other-cases-fill-4' %}
-        {% include  "./kam/task-list-kam-application.html" %}{% endif %}
+        {% include  "current/claim/kam/task-list-kam-application.html" %}{% endif %}
 
   {% if case =='other-cases' %}
     {% include  "./task-list-sonya-application.html" %}{% endif %}
@@ -783,7 +861,7 @@ data ['appointee']
 {% if case =='other-cases-fill-2' %}
 {% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
 {% if case =='other-cases-fill-3' %}
-{% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
+{% include  "./anahi/task-list-anahi-wpa-job.html" %}</div></div>{% endif %}
 {% if case =='other-cases-fill-4' %}
 {% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
 
@@ -855,7 +933,7 @@ data ['appointee']
 {% if case =='other-cases-fill-3' %}
 {% include  "./anahi/task-list-anahi-business-case.html" %}{% endif %}
 {% if case =='other-cases-fill-4' %}
-{% include  "./paul/task-list-kam-business-case.html" %}{% endif %}
+{% include  "./kam/task-list-kam-business-case.html" %}{% endif %}
 
   {% if case =='other-cases-2' %}
   {% include  "./task-list-thomas-business-case.html" %}{% endif %}

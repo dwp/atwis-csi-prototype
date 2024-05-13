@@ -118,6 +118,7 @@ module.exports = {
 'condition-checkanahi' : "No",
 'job-deatils-checkanahi' : "No",
 'sae-checkanahi' : "No",
+'sw-checkanahi' : "No",
 'employer-sectoranahi' : "Yes",
 'employer-sizeanahi' : "10 to 49 (small)",
 'employer-sector-typeanahi' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",

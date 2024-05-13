@@ -47,7 +47,16 @@
     {% if not data['sae-check'+ phase]%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not reviewed</strong>{% endif %}
   </li>
 
-
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+   <a href="./check-application/support-worker/index" aria-describedby="read-declaration-status">
+         Support details: Support worker
+     </a>
+    </span>
+    {% if data['sw-check'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Reviewed</strong>{% endif %}
+    {% if data['sw-check'+ phase]=='Yes'%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">Contact needed</strong>{% endif %}
+    {% if not data['sw-check'+ phase]%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not reviewed</strong>{% endif %}
+  </li>
 
 
 

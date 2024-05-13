@@ -50,8 +50,28 @@
                        <div class="govuk-radios__item">
                          <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose{{number}}" type="radio" value="Dereck Smith" {{ checked("quotes-choose"+ number, "Dereck Smith") }}>
                          <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
-
-                         Dereck Smith
+                        {% if case %}  {% if case =='other-cases-fill-1' %}
+                               {% for case in data['other-cases-fill-1'] %}
+                               {{ case.name }}
+                               {% endfor %}
+                               {% endif %}
+                               {% if case =='other-cases-fill-2' %}
+                                   {% for case in data['other-cases-fill-2'] %}
+                                   {{ case.name }}
+                                   {% endfor %}
+                                   {% endif %}
+                                   {% if case =='other-cases-fill-3' %}
+                                       {% for case in data['other-cases-fill-3'] %}
+                                       {{ case.name }}
+                                       {% endfor %}
+                                       {% endif %}
+                                       {% if case =='other-cases-fill-4' %}
+                                           {% for case in data['other-cases-fill-4'] %}
+                                           {{ case.name }}
+                                           {% endfor %}
+                                           {% endif %}
+                                           {% else %}
+                         Dereck Smith{% endif %}
                          </label>
                        </div>
                      {% if data['wpa']=='Yes'%}  <div class="govuk-radios__item">

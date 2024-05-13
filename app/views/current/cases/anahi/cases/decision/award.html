@@ -112,7 +112,7 @@ document.write(date);
 </td><tr class="govuk-table__row">
 <th scope="row" class="govuk-table__header"> Specialist equipment</th>
 <td class="govuk-table__cell govuk-table__cell--body">
-  High visability keyboard 2000
+  High visability keyboard 5000 PRO
 </td>
 
 <td class="govuk-table__cell govuk-table__cell--numeric" >
@@ -130,7 +130,7 @@ document.write(date);
 
 
 <td class="govuk-table__cell govuk-table__cell--numeric" >
-£100.00
+£3,200.00
 </td><tr class="govuk-table__row">
 <th scope="row" class="govuk-table__header"> Specialist equipment</th>
 <td class="govuk-table__cell govuk-table__cell--body">
@@ -322,7 +322,9 @@ document.write(date);
       <td class="govuk-table__cell govuk-table__cell--numeric"></td>
     <td class="govuk-table__cell govuk-table__cell--numeric"></td>
        <td class="govuk-table__cell govuk-table__cell--numeric"><div class="govuk-!-padding-bottom-9"></div>
-£70,693.99
+£73,793.99
+
+
          </td> </tr>
 
 
@@ -344,7 +346,7 @@ document.write(date);
                  </thead>
 
                  <tbody class="govuk-table__body">
-                   <tr class="govuk-table__row">
+                {% if data['cost-share-needanahi']=='Yes'%} {% else %}  <tr class="govuk-table__row">
                    <th scope="row" class="govuk-table__header"> Mandatory cost share to be paid by employer</th>
                    <td class="govuk-table__cell govuk-table__cell--body">
                     Large employer
@@ -359,12 +361,12 @@ document.write(date);
 
 
                    <td class="govuk-table__cell govuk-table__cell--numeric" >
-                   -£1000.00
-                   </td>
+                   -£3000.00
+                   </td>{% endif %}
                  <tr class="govuk-table__row">
                  <th scope="row" class="govuk-table__header"> Total social and domestic contribution: 2 days</th>
                  <td class="govuk-table__cell govuk-table__cell--body">
-                  High visability keyboard 2000
+                  High visability keyboard 5000 PRO
                  </td>
 
                  <td class="govuk-table__cell govuk-table__cell--numeric" >
@@ -376,7 +378,8 @@ document.write(date);
 
 
                  <td class="govuk-table__cell govuk-table__cell--numeric" >
-                 -£28.57
+              {% if data['cost-share-needanahi']=='Yes'%}  -£914.28 {% else %}   -£57.13{% endif %}
+                 <!-- 28.57 -->
                  </td>
                  <tr class="govuk-table__row">
                  <th scope="row" class="govuk-table__header"> Total social and domestic contribution: 2 days</th>
@@ -393,7 +396,8 @@ document.write(date);
 
 
                  <td class="govuk-table__cell govuk-table__cell--numeric" >
-                 -£28.57
+{% if data['cost-share-needanahi']=='Yes'%}  -£28.57 {% else %} £0{% endif %}
+                 <!-- -£28.57 -->
                  </td>
 
 
@@ -404,7 +408,7 @@ document.write(date);
                        <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                      <td class="govuk-table__cell govuk-table__cell--numeric"></td>
                         <td class="govuk-table__cell govuk-table__cell--numeric"><div class="govuk-!-padding-bottom-9"></div>
-                 £69,636.85
+            {% if data['cost-share-needanahi']=='Yes'%} £72,851.14{% else %}     £70,736.86{% endif %}
                           </td>
 
                         </tr>
