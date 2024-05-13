@@ -345,7 +345,7 @@ Brailliant BI 40X braille display
 
   var now = new Date();
   var pastDate = new Date(now);
-  pastDate.setDate(now.getDate() - 60);
+  pastDate.setDate(now.getDate() );
 
   var formattedDate = pastDate.toLocaleDateString('en-GB', {
   day: 'numeric',
@@ -365,7 +365,7 @@ Brailliant BI 40X braille display
   <script>// Get end date
       var now = new Date();
       var pastDate = new Date(now);
-      pastDate.setDate(now.getDate() + 305);
+      pastDate.setDate(now.getDate() + 365);
 
       var formattedDate = pastDate.toLocaleDateString('en-GB', {
       day: 'numeric',
@@ -391,28 +391,39 @@ Brailliant BI 40X braille display
 
 <td class="govuk-table__cell govuk-table__cell--numeric" >
 
-<script>
-// Get the current date
-var now = new Date();
-var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-// Write the date to the HTML page
-document.write(date);
-</script>
-</td>
-<td class="govuk-table__cell govuk-table__cell--numeric" >
+  <script>
 
-  <script>// Get end date
-      var now = new Date();
-      var pastDate = new Date(now);
-      pastDate.setDate(now.getDate() + 365);
+    var now = new Date();
+    var pastDate = new Date(now);
+    pastDate.setDate(now.getDate() - 60);
 
-      var formattedDate = pastDate.toLocaleDateString('en-GB', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-      });
+    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+    });
 
-      document.write(formattedDate );</script>
+
+
+    document.write(formattedDate);
+
+
+  </script>
+  </td>
+  <td class="govuk-table__cell govuk-table__cell--numeric" >
+
+    <script>// Get end date
+        var now = new Date();
+        var pastDate = new Date(now);
+        pastDate.setDate(now.getDate() + 305);
+
+        var formattedDate = pastDate.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+        });
+
+        document.write(formattedDate );</script>
 </td>
 
 
