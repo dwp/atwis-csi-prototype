@@ -1,0 +1,63 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="add" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+<!--
+        <h1 class="govuk-heading-l"> John Smith's quote for cost per journey</h1>
+
+
+
+
+
+        <div class="govuk-inset-text">
+        £{{data['cost-per-journey']}}
+        </div> -->
+
+
+<div class="govuk-form-group">
+
+
+
+
+
+
+
+
+<div class="govuk-form-group ">
+  <h1 class="govuk-label-wrapper">
+     <label class="govuk-label govuk-label--l" for="source-name">
+What is the other source?
+</label>
+</h1>
+    <!-- <div id="authentication-code-hint" class="govuk-hint">
+  Include any extra costs, like account fees and VAT.
+  </div> -->
+      <div class="govuk-input__wrapper">
+
+          <input class="govuk-input govuk-input" id="source-name" name="source-name" type="text" spellcheck="false">
+
+
+
+                  </div>
+    </div>    </div>
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

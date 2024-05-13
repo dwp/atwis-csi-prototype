@@ -1,0 +1,123 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+{% if not totalcontactindex %}
+  {% set totalcontactdetails = 0 %}
+  {% endif %}
+
+
+
+  {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+   {% set totalcontactindex = i %}
+    {% if data['contact-check-update'+ totalcontactindex]%}
+    {% set totalcontactdetails = totalcontactdetails + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+<form action="/live-53/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/details/{{totalcontactdetails + 1}}" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+
+                  Contact details</h1>
+
+
+
+
+  {% include "live-53/claim/_how-to-contact.html"%}
+
+
+  {% if totalcontactdetails == 0 %}{% else %}
+      <h2 class="govuk-heading-m">
+
+                      Updated details</h2>
+                      <div class="govuk-form-group">
+                        <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">{% endif %}
+
+      {% for i in [1,2,3,4,5] -%}
+      {% set detailscontactindex = i  %}
+      {% if data['contact-check-update'+ detailscontactindex] %}
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+            <strong> Details from {{data['contact-check-update'+ detailscontactindex]}}</strong>
+          </dt>
+
+          <dt class="govuk-summary-list__value govuk-!-font-weight-regular hmrc-summary_value">
+          {{data['more-detail-contact'+ detailscontactindex]}}
+          </dt>
+
+
+          <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="condition-help-needed/details/{{detailscontactindex}}"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden"> </span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden"> </span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+
+</div>
+      {% endif %}
+      {%- endfor %}  {% if totalhealthdetails == 0 %}{% else %}  </dl></div>{% endif %}
+  <!-- <p><a href="/live-53/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
+
+</div>
+
+
+  <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add more details
+  </button> -->
+  </form>
+
+  <form action="/live-53/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+  <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      {% include  "./content/more-information.html" %}
+
+                </legend>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item govuk-radios--inline">
+                    <input class="govuk-radios__input" id="contact-check" name="contact-check{{phase}}" type="radio" value="Yes" {{ checked("contact-check"+ phase, "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="contact-check">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-check-2" name="contact-check{{phase}}" type="radio" value="No" {{ checked("contact-check"+ phase, "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="contact-check-2">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
+      </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}
