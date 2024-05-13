@@ -58,7 +58,16 @@
   </li>
 
 
-
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+   <a href="./check-application/additional/index" aria-describedby="read-declaration-status">
+      Additional information
+     </a>
+    </span>
+    {% if data['additional-check'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">reviewed</strong>{% endif %}
+    {% if data['additional-check'+ phase]=='Yes'%}  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Contact needed</strong>{% endif %}
+    {% if not data['additional-check'+ phase]%}  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not reviewed</strong>{% endif %}
+  </li>
 
 
 
