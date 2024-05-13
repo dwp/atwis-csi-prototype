@@ -1,0 +1,129 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">
+                    Use Searchlight to check if these details match
+                  </h2>
+
+                  <p class="govuk-body">
+                     <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                   </p>
+
+                          <p class="govuk-body">
+                            Application details:
+                          </p>
+                          <dl class="govuk-summary-list">
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          First Name
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          Dereck
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Last Name
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          Smith
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Date of birth
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          1 October 1978
+                          </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                          Address
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                          {% if  data['changeaddressline1']%} {{data['changeaddressline1']}} {% else %}72 Guild Street{% endif %}
+                          {% if data['citizen-address-line-2'] %}<br>{{data['citizen-address-line-2']}}{% endif %}
+                          <br>{% if not data['citizen-address-town'] %}London{% else %}{{data['citizen-address-town']}}{% endif %}
+                          {% if data['citizen-address-county'] %}<br>{{data['citizen-address-county']}}{% endif %}
+                          <br>{% if not data['change-address-postcode'] %}SE23 6FH{% else %}{{data['change-address-postcode']}}{% endif %}
+                          </dd>
+                          </div>
+
+                          </dl>
+                          <form action="/form-handler" method="post" novalidate>
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+  {% include  "live-53/cases/searchlight/national-insurance/content/are-these-details-in-searchlight.html" %}
+
+
+                                </legend>
+
+
+
+
+
+
+               <div class="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="Searchligh-change" name="Searchligh-change" type="radio" value="Yes and application details match~./add-national-insurance-number" {{ checked("Searchligh-change", "Yes and application details match") }}>
+                   <label class="govuk-label govuk-radios__label" for="Searchligh-change">
+                      Yes and application details match
+
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="Searchligh-2" name="Searchligh-change" type="radio" value="Yes, but name, date of birth or address do not match~./add-national-insurance-number" {{ checked("Searchligh-change", "Yes, but name, date of birth or address do not match") }}>
+                   <label class="govuk-label govuk-radios__label" for="Searchligh-2">
+                       Yes, but name, date of birth or address do not match
+                   </label>
+                 </div>
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="Searchligh-3" name="Searchligh-change" type="radio" value="No~/live-53/cases/claim#your-tasks" {{ checked("Searchligh-change", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="Searchligh-3">
+                     No
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

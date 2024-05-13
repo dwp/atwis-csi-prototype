@@ -1,0 +1,69 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<form action="days-available" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                  Does Dereck Smith want anyone else to be at the workplace assessment?
+                 </h2>
+               </legend>
+
+      
+
+
+
+
+                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="others-wpa" name="others-wpa" type="radio" value="france" {{ checked("others-wpa", "portugal") }}>
+                           <label class="govuk-label govuk-radios__label" for="others-wpa">
+                             Yes
+                           </label>
+                         </div>
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="others-wpa-2" name="others-wpa" type="radio" value="No" {{ checked("others-wpa", "No") }}>
+                           <label class="govuk-label govuk-radios__label" for="others-wpa-2">
+                             No
+                           </label>
+                         </div>
+                       </div>
+                     </fieldset>
+
+
+
+
+               </div>
+
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}

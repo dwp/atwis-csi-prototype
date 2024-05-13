@@ -1,0 +1,64 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-width-container">
+
+
+ <form action="./" method="post" novalidate>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-issued-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+Date of birth
+        </h1>
+      </legend>
+      <div id="dob-issued-hint" class="govuk-hint">
+
+      </div>
+      <div class="govuk-date-input" id="dob-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="dob-issued-day">
+              Day
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-issued-day" name="dob-issued-day" type="text" inputmode="numeric" value='{%if not data['dob-issued-day']%}1{% else %}{{data['dob-issued-day']}}{% endif %}'>
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="dob-issued-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-issued-month" name="dob-issued-month" type="text" inputmode="numeric"value='{%if not data['dob-issued-month']%}10{% else %}{{data['dob-issued-month']}}{% endif %}'>
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="dob-issued-year">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-issued-year" name="dob-issued-year" type="text" inputmode="numeric" value='{%if not data['dob-issued-year']%}1978{% else %}{{data['dob-issued-year']}}{% endif %}'>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+  <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+
+  </main>
+  </div>
+
+
+{% endblock %}

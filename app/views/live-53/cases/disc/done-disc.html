@@ -1,0 +1,95 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-53/cases/claim#checks" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+          <h1 class="govuk-heading-l">
+        This case must be done in DiSC
+        </h1>
+        <p class="govuk-body">This is because Dereck Smith already has a live case in DiSC and this is not a new application.</p>
+
+
+
+
+
+            <p class="govuk-body">You must:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>compare AtWIS data with DiSC</li>
+              <li>check for any new information in AtWIS and manually copy this over to DiSC</li>
+              <li>continue with Dereck Smith's case in DiSC</li>
+            </ul>
+
+
+
+
+<!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Is Dereck Smith in DiSC?
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="disc">Change<span class="govuk-visually-hidden">   Is Dereck Smith in DiSC?</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+  Does Dereck Smith have an existing live award?
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="live-grant">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+    </dd></div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+  Is this case a new application?
+      </dt>
+      <dd class="govuk-summary-list__value">
+      No
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="new-application">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+      </dd>
+    </div>
+
+
+  </dl> -->
+
+           <button class="govuk-button" data-module="govuk-button">
+             Return to tasks and compare data
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set edit = 'true' %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="edit" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="job-length-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How many hours does {% if phase == "john" %}John Smith{% endif %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya" %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} work per week at Smith Digital Limited?
+            </h1>
+          </legend>
+
+          <p>If your hours can be different each week, give an estimate of the number of hours that you work on average.</p>
+
+          <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-3" id="hours per week"
+                                                   name="hours per week" type="text" spellcheck="false" value="{% if not data['hours per week'] %}37{% else %}{{ data['hours per week'] }}{% endif %}">
+            <div class="govuk-input__suffix" aria-hidden="true">hours per week</div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <form class="form" action="/url/of/next/page" method="post">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+</div>
+
+  </div>
+
+{% endblock %}
