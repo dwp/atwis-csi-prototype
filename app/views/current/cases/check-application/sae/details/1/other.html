@@ -20,7 +20,7 @@
 
 
 <!-- both -->
-    {% if data['sae-start-date'+ number]=='Another date' and data['from-sae'+ number]=='Someone else'%}
+    {% if data['sae-start-date'+ number]=='Another date' and data['from-sae'+ number]=='Other'%}
 
 
     <h1 class="govuk-heading-l">Additional cost details for specialist equipment</h1>
@@ -35,7 +35,7 @@
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--m" for="event-name">
 
-  Who provided the cost for the item?
+Where is the cost for the item?
 
             </label>
 
@@ -44,7 +44,7 @@
 
 
 
-                  <input class="govuk-input" id="Someone else" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
+                  <input class="govuk-input" id="Other" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
                   </div>
 
 
@@ -142,14 +142,14 @@
                             </fieldset>
                           </div>    </div>
 
-                          {% elif data['from-sae'+ number]=='Someone else'%}
+                          {% elif data['from-sae'+ number]=='Other'%}
 
 
                                     <div class="govuk-form-group">
                                       <h1 class="govuk-label-wrapper">
                                         <label class="govuk-label govuk-label--l" for="event-name">
 
-  Who provided the cost for the item?
+Where is the cost for the item?
 
                                       </label>
 
@@ -161,7 +161,7 @@
 
                                         </div>
 
-                                            <input class="govuk-input" id="Someone else" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
+                                            <input class="govuk-input" id="Other" name="other-source{{number}}" type="text" spellcheck="false" autocomplete="name" value='{{data['other-source'+ number]}}'>
                                             </div>
 
     {% endif %}
@@ -172,7 +172,7 @@
 
 
 
-    <!-- someone else -->
+    <!-- Other -->
 
 
 
