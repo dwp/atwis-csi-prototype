@@ -17,11 +17,114 @@
 
                    Support details: specialist equipment</h1>
 
+                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
+
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Do you need equipment, adaptations or software to support you with your condition at work?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   Yes
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+                   </div>
+
+
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Do you know what specialist equipment you need?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   Yes, I know what I need
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+                   </div>
+                   <!--
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Do you need a wheelchair or a hearing aid to support at work?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   Other
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+                   </div> -->
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   What type of specialist equipment do you need?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   <ul>
+                     <li>Jaws Screen Reader Software</li>
+                   <li>ZoomText</li>
+
+
+                   </ul>
+                   <br>
+
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+
+                   </dd>
+                   </div>
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Add another item of specialist equipment?
+
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                     No
+                   <br>
+
+                   <br>
+
+                   <br>
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+
+                   </dd>
+                   </div>
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   How will this equipment help you at work?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+
+
+
+                   I need Jaws and ZoomText software to read out the content on a screen to me, as I'm unable to visual see the screen currently have to rely on others. I use a computer for 99% of my work.
+
+                   <br>
+                   </dd>
+
+                   <dd class="govuk-summary-list__actions">
+                    <a href="#">
+
+                   <span class="govuk-visually-hidden"> How will this equipment help you at work?</span>
+                   </a>
+
+                   </dd>
+                   </div>
+                   </dl>
 
 {% if phase == 'sonya'%}
-  {% include "current/claim/_sae-sonya.html"%}{% else %}{% set changeHide = "true"%}
-  {% include "current/claim/_sae-dereck.html"%}{% endif %}
+  {% include "current/claim/_sae-sonya.html"%}
+
+{% else %}
+{% endif %}
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
 Edit support details
   </button>
@@ -30,7 +133,7 @@ Edit support details
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                      {% include  "./content/more-information.html" %}
+                Do you need more information about the support that Anahi Korrapati needs?
 
                 </legend>
                 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">

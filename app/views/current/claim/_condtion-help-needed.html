@@ -6,6 +6,26 @@
 
           </dt>
           <dd class="govuk-summary-list__value">
+            {% if case =='other-cases-fill-1' %}
+            {% for case in data['other-cases-fill-1'] %}
+            {{ case.condition }}
+            {% endfor %}
+            {% endif %}
+            {% if case =='other-cases-fill-2' %}
+            {% for case in data['other-cases-fill-2'] %}
+            {{ case.condition }}
+            {% endfor %}
+            {% endif %}
+            {% if case =='other-cases-fill-3' %}
+            {% for case in data['other-cases-fill-3'] %}
+            {{ case.condition }}
+            {% endfor %}
+            {% endif %}
+            {% if case =='other-cases-fill-4' %}
+            {% for case in data['other-cases-fill-4'] %}
+            {{ case.condition }}
+            {% endfor %}
+            {% endif %}
 
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
@@ -55,6 +75,27 @@
 
         </dt>
         <dd class="govuk-summary-list__value">
+          {% if case =='other-cases-fill-1' %}
+          {% for case in data['other-cases-fill-1'] %}
+          {{ case.conditiondetails }}
+          {% endfor %}
+          {% endif %}
+          {% if case =='other-cases-fill-2' %}
+          {% for case in data['other-cases-fill-2'] %}
+          {{ case.conditiondetails }}
+          {% endfor %}
+          {% endif %}
+          {% if case =='other-cases-fill-3' %}
+          {% for case in data['other-cases-fill-3'] %}
+          {{ case.conditiondetails }}
+          {% endfor %}
+          {% endif %}
+          {% if case =='other-cases-fill-4' %}
+          {% for case in data['other-cases-fill-4'] %}
+          {{ case.conditiondetails }}
+          {% endfor %}
+          {% endif %}
+
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
           {{ case.conditiondetails }}
