@@ -55,6 +55,7 @@
                      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Support type</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Details</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Start date</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">End date</th>
                         <th scope="col" class="govuk-table__header govuk-table__header--numeric"style="text-align: center;" >Cost</th>
 
 
@@ -98,6 +99,7 @@
 
                                              // Write the date and time to the HTML page
                                              document.write(date);</script>{% endif %}</td>
+                                               <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">14 May 2027</td>
                                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;">£{{data['cost-per-item'+ index] }}</td>
                                     </tr>
                                     {% endif %}  {% endif %}
@@ -124,7 +126,7 @@
 
      <th scope="row" class="govuk-table__header"><br>Total award {% if  deductions > 0 %}before deductions{% endif %}</th>
      <td class="govuk-table__cell govuk-table__cell--numeric"><br></td>
-       <td class="govuk-table__cell govuk-table__cell--numeric"><br></td>
+       <td class="govuk-table__cell govuk-table__cell--numeric"><br></td>   <td class="govuk-table__cell govuk-table__cell--numeric"><br></td>
      <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;"><br>£{{totalsae | round(2, 'ceil')}}</td>
    </tr>
 
@@ -242,10 +244,10 @@
 
 
 
+<p>If you need to change anything, go to <a href="/current/cases/claim#business-case">business case</a> or <a href="/current/cases/claim#citizen-details">application  review</a>. </p>
+<p>Once you have confirmed the award summary, you will be able to send the award decision to Thomas King.</p>
 
 
-<p>By confirming, you are agreeing that Dereck Smith can receive all of the support in the award summary. </p>
-<p>Once you have confirmed the award summary, you will be able to send the award decision to Dereck Smith.</p>
 
 
 
@@ -254,9 +256,7 @@
            <button class="govuk-button" data-module="govuk-button" name="award" value="complete">
 Confirm the award summary
            </button>
-           <p><a href="/current/cases/claim#business-case">I need to change some business case details</a></p>
-           <p><a href="/current/cases/claim#citizen-details">I need to change some application  details</a></p>
-
+        
          </form>
        </div>
      </div>
