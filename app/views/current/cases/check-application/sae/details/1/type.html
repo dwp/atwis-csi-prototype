@@ -61,6 +61,45 @@
                        Workplace assessment report
                          </label>
                        </div>{% endif %}
+                       {% if data['appointee']=='Yes'%}  <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose{{number}}" type="radio" value="Workplace assessment" {{ checked("quotes-choose"+ number, "Workplace assessment") }}>
+                           <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
+
+                    Appointee
+                           </label>
+                         </div>{% endif %}
+
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose{{number}}" type="radio" value="Dereck Smith" {{ checked("quotes-choose"+ number, "Dereck Smith") }}>
+                           <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
+
+                           Occupational Health
+                           </label>
+                         </div>
+
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose{{number}}" type="radio" value="Dereck Smith" {{ checked("quotes-choose"+ number, "Dereck Smith") }}>
+                           <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
+
+                          Employer
+                           </label>
+                         </div>
+
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose{{number}}" type="radio" value="Dereck Smith" {{ checked("quotes-choose"+ number, "Dereck Smith") }}>
+                           <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
+
+                          Access to Work
+                           </label>
+                         </div>
+
+                         <div class="govuk-radios__item">
+                           <input class="govuk-radios__input" id="quotes-choose-3" name="quotes-choose{{number}}" type="radio" value="Other source" {{ checked("quotes-choose"+ number, "Other source") }}>
+                           <label class="govuk-label govuk-radios__label" for="quotes-choose-3">
+                            Third party representative
+                           </label>
+                         </div>
+
                        <div class="govuk-radios__item">
                          <input class="govuk-radios__input" id="quotes-choose-3" name="quotes-choose{{number}}" type="radio" value="Other source" {{ checked("quotes-choose"+ number, "Other source") }}>
                          <label class="govuk-label govuk-radios__label" for="quotes-choose-3">

@@ -17,12 +17,12 @@ router.post('/cases/check-application/sae/details/1/other-answer', function(requ
     var fromsae1 = request.session.data['from-sae1']
 
 
-    if (startdate1 == "Another date" && fromsae1 == "Someone else"){
+    if (startdate1 == "Another date" && fromsae1 == "Other"){
         response.redirect("/current/cases/check-application/sae/details/1/other")
 
     } if (startdate1 == "Another date"){
           response.redirect("/current/cases/check-application/sae/details/1/other")
-    } else if (fromsae1 == "Someone else"){
+    } else if (fromsae1 == "Other"){
           response.redirect("/current/cases/check-application/sae/details/1/other")
     } else {
         response.redirect("/current/cases/check-application/sae/details/1/sd-adding-1")
@@ -36,12 +36,12 @@ router.post('/cases/check-application/sae/details/2/other-answer', function(requ
     var fromsae2 = request.session.data['from-sae2']
 
 
-    if (startdate2 == "Another date" && fromsae2 == "Someone else"){
+    if (startdate2 == "Another date" && fromsae2 == "Other"){
         response.redirect("/current/cases/check-application/sae/details/2/other")
 
     } if (startdate2 == "Another date"){
           response.redirect("/current/cases/check-application/sae/details/2/other")
-    } else if (fromsae2 == "Someone else"){
+    } else if (fromsae2 == "Other"){
           response.redirect("/current/cases/check-application/sae/details/2/other")
     } else {
         response.redirect("/current/cases/check-application/sae/details/2/sd-adding-1")
@@ -54,12 +54,12 @@ router.post('/cases/check-application/sae/details/3/other-answer', function(requ
     var fromsae3 = request.session.data['from-sae3']
 
 
-    if (startdate3 == "Another date" && fromsae2 == "Someone else"){
+    if (startdate3 == "Another date" && fromsae2 == "Other"){
         response.redirect("/current/cases/check-application/sae/details/3/other")
 
     } if (startdate3 == "Another date"){
           response.redirect("/current/cases/check-application/sae/details/3/other")
-    } else if (fromsae3 == "Someone else"){
+    } else if (fromsae3 == "Other"){
           response.redirect("/current/cases/check-application/sae/details/3/other")
     } else {
         response.redirect("/current/cases/check-application/sae/details/3/sd-adding-1")
