@@ -71,25 +71,25 @@ Total cost
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Workplace assessment report" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
       <label class="govuk-label govuk-radios__label" for="from-sae">
-      Workplace assessor
+      Workplace assessment report
       </label>
     </div>    {% endif %}
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}" {{ checked("from-sae"+ number, "Yes") }}>
+    <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="Employer" {{ checked("from-sae"+ number, "Employer") }}>
     <label class="govuk-label govuk-radios__label" for="from-sae-2">
 Employer
     </label>
   </div>
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}" {{ checked("from-sae"+ number, "Yes") }}>
+    <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="Access to Work" {{ checked("from-sae"+ number, "Access to Work") }}>
     <label class="govuk-label govuk-radios__label" for="from-sae-2">
 Access to Work
     </label>
   </div>
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Someone else" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
+    <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Other" {{ checked("from-sae"+ number, "Other") }}>
     <label class="govuk-label govuk-radios__label" for="from-sae">
-    Someone else
+  Other
     </label>
   </div>
 </div>
