@@ -87,7 +87,7 @@ document.write(date);
   <script>// Get end date
       var now = new Date();
       var pastDate = new Date(now);
-      pastDate.setDate(now.getDate() + 365);
+      pastDate.setDate(now.getDate() + 364);
 
       var formattedDate = pastDate.toLocaleDateString('en-GB', {
       day: 'numeric',
