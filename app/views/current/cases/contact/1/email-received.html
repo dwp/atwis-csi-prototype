@@ -26,7 +26,43 @@
 
               <h1 class="govuk-heading-xl">Email received</h1>
 
-
+              {% if data['todays-date'+ number]=='No'%}
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                 Date
+                                </legend>
+                                <div id="expiry-hint" class="govuk-hint">
+                                  For example, 31 1 2022
+                                </div>
+                                <div class="govuk-date-input" id="contact-date-">
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-day">
+                                        Day
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-day" name="contact-date-day-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-month">
+                                        Month
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-month" name="contact-date-month-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-year">
+                                        Year
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contact-date-year" name="contact-date-year-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                </div>
+                                     </div>
+              {% endif %}
 
 
 
@@ -142,6 +178,12 @@
                                 </label>
                               </div>
 
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why" type="checkbox" value="Other">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-9">
+                        Additional information 
+                                </label>
+                              </div>
 
 
                             </div>
