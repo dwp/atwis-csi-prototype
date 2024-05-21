@@ -50,15 +50,15 @@ module.exports = {
 'wpa-report' : "",
 
 
-'_do_1' : "Telephone call received",
-'contact-time-1' : "9:00 am",
-'contact-date-day-1' : "2",
-'contact-date-month-1' : "5",
-'contact-date-year-1' : "2024",
-'idv1' : "Yes",
+// '_do_1' : "Telephone call received",
+// 'contact-time-1' : "9:00 am",
+// 'contact-date-day-1' : "2",
+// 'contact-date-month-1' : "5",
+// 'contact-date-year-1' : "2024",
+// 'idv1' : "Yes",
 // 'where-do-you-live' : "Thomas King",
-'contact-why' : ["Element details", "Health condition or disability", "Other"],
-'other-discussion-1' : "Thomas King contacted ATW asking for mental health support though Access to Work, as they did not included it in the orignial application. They are not on Intensive Personalised Employment Support, Work and Health Programme, Work Able Scotland, and Fair Start Scotland.",
+// 'contact-why' : ["Element details", "Health condition or disability", "Other"],
+// 'other-discussion-1' : "Thomas King contacted ATW asking for mental health support though Access to Work, as they did not included it in the orignial application. They are not on Intensive Personalised Employment Support, Work and Health Programme, Work Able Scotland, and Fair Start Scotland.",
 // 'mhss-support-check' : ["Intensive Personalised Employment Support"],
 
 // assess

@@ -32,6 +32,15 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/current/cases/c
 
               <h1 class="govuk-heading-xl">Email sent</h1>
 
+              <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--m" for="passport-number">
+                           Summary for case history
+                         </label>
+                         <div id="passport-number-hint" class="govuk-hint">
+                           For example, xxxxxx
+                         </div>
+                         <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+                       </div>
 
 {% if data['todays-date'+ number]=='No'%}
               <div class="govuk-form-group">
@@ -194,7 +203,27 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/current/cases/c
                             </div>
                           </fieldset>
                         </div>
-
+                        <div class="govuk-form-group">
+                                   <fieldset class="govuk-fieldset">
+                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                       Saved copy to SharePoint cutormer folder?
+                                     </legend>
+                                     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                       <div class="govuk-radios__item">
+                                         <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
+                                         <label class="govuk-label govuk-radios__label" for="interviewNeeds">
+                                           Yes
+                                         </label>
+                                       </div>
+                                       <div class="govuk-radios__item">
+                                         <input class="govuk-radios__input" id="interviewNeeds-2" name="interviewNeeds" type="radio" value="no">
+                                         <label class="govuk-label govuk-radios__label" for="interviewNeeds-2">
+                                           No
+                                         </label>
+                                       </div>
+                                     </div>
+                                   </fieldset>
+                                 </div>
 <!--
 {% if data['clear']=='No' %}{% else %}
   {% include  "current/claim/notification-contact.html" %}{% endif %} -->
