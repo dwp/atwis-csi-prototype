@@ -49,7 +49,12 @@
                                 Quotes
                                 </label>
                               </div>
-
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-2" name="contact-why" type="checkbox" value="Reasonable adjustment">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-2">
+                            Reasonable adjustment
+                                </label>
+                              </div>
                               <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why" type="checkbox" value="Element details">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
@@ -88,25 +93,55 @@
                                 </label>
                               </div>
 
-                              <div class="govuk-checkboxes__item">
+                              <!-- <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why" type="checkbox" value="Award outcome">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-9">
                             Award outcome
                                 </label>
-                              </div>
-
-
+                              </div> -->
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why" type="checkbox" value="Other">
-                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-10">
-                            Additional information 
+                                <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why" type="checkbox" value="  Application status">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-9">
+                          Cap limit
                                 </label>
                               </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why" type="checkbox" value="Application status">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-9">
+                            Application status
+                                </label>
+                              </div>
+                              <!-- <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why" type="checkbox" value="Other">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-10">
+                            Additional information
+                                </label>
+                              </div> -->
                             </div>
                           </fieldset>
                         </div>
 
-
+                        <div class="govuk-form-group">
+                                   <fieldset class="govuk-fieldset">
+                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                      Add more information about this telephone call?
+                                     </legend>
+                                     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                       <div class="govuk-radios__item">
+                                         <input class="govuk-radios__input" id="contact-moreDetails" name="contact-moreDetails{{number}}" type="radio" value="Yes~/current/cases/contact/{{number}}/other">
+                                         <label class="govuk-label govuk-radios__label" for="contact-moreDetails">
+                                           Yes
+                                         </label>
+                                       </div>
+                                       <div class="govuk-radios__item">
+                                         <input class="govuk-radios__input" id="contact-moreDetails-2" name="contact-moreDetails{{number}}" type="radio" value="no">
+                                         <label class="govuk-label govuk-radios__label" for="contact-moreDetails-2">
+                                           No
+                                         </label>
+                                       </div>
+                                     </div>
+                                   </fieldset>
+                                 </div>
 {% if data['clear']=='No' %}{% else %}
   {% include  "current/claim/notification-contact.html" %}{% endif %}
 

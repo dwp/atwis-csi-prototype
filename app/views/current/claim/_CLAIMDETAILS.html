@@ -36,7 +36,7 @@
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#contact">
-      Contact details and log
+      Contact notes and details
       </a>
     </li>
 
@@ -433,7 +433,7 @@ data-module="govuk-notification-banner">
   <div class="govuk-grid-row">
  <div class="govuk-grid-column-two-thirds">
 
-<h2 class="govuk-heading-l">Contact details and log</h2>
+<h1 class="govuk-heading-l">Contact notes and details</h1>
 
 {% if
 
@@ -535,7 +535,7 @@ data ['appointee']
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-            Logged contact: {{totalcontact}}
+          Contact records: {{totalcontact}}
               </h2>
             </legend>
           </fieldset>
@@ -562,23 +562,24 @@ data ['appointee']
       {{data['_do_'+ contactindex]}}
       </dt>
       <dt class="hmrc-list-with-actions__name">
-        {% if data['todays-date'+ number]=='No'%}
-        {% if (data['contact-date-month-'+ number] =='01') or (data['contact-date-month-'+ number] =='1') %} January {% endif%}
-        {% if (data['contact-date-month-'+ number] =='02') or (data['contact-date-month-'+ number] =='2') %} February  {% endif%}
-        {% if (data['contact-date-month-'+ number] =='03') or (data['contact-date-month-'+ number] =='3') %} March {% endif%}
-        {% if (data['contact-date-month-'+ number] =='04') or (data['contact-date-month-'+ number] =='4') %} June {% endif%}
-        {% if (data['contact-date-month-'+ number] =='05') or (data['contact-date-month-'+ number] =='5') %} May {% endif%}
-        {% if (data['contact-date-month-'+ number] =='06') or (data['contact-date-month-'+ number] =='6') %} June {% endif%}
-        {% if (data['contact-date-month-'+ number] =='07') or (data['contact-date-month-'+ number] =='7') %} July {% endif%}
-        {% if (data['contact-date-month-'+ number] =='08') or (data['contact-date-month-'+ number] =='8') %} August {% endif%}
-        {% if (data['contact-date-month-'+ number] =='09') or (data['contact-date-month-'+ number] =='9') %} September {% endif%}
-        {% if data['contact-date-month-'+ number] =='10' %} October {% endif%}
-        {% if data['contact-date-month-'+ number] =='11'%} November {% endif%}
-        {% if data['contact-date-month-'+ number] =='12' %} December {% endif%}
-        {{ data['contact-date-year-'+ number] }} {% else %}
+      {% if data['todays-date'+ contactindex]=='No'%}
+      {{ data['contact-date-day-'+ contactindex] }}
+        {% if (data['contact-date-month-'+ contactindex] =='01') or (data['contact-date-month-'+ contactindex] =='1') %} January {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='02') or (data['contact-date-month-'+ contactindex] =='2') %} February  {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='03') or (data['contact-date-month-'+ contactindex] =='3') %} March {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='04') or (data['contact-date-month-'+ contactindex] =='4') %} June {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='05') or (data['contact-date-month-'+ contactindex] =='5') %} May {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='06') or (data['contact-date-month-'+ contactindex] =='6') %} June {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='07') or (data['contact-date-month-'+ contactindex] =='7') %} July {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='08') or (data['contact-date-month-'+ contactindex] =='8') %} August {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='09') or (data['contact-date-month-'+ contactindex] =='9') %} September {% endif%}
+        {% if data['contact-date-month-'+ contactindex] =='10' %} October {% endif%}
+        {% if data['contact-date-month-'+ contactindex] =='11'%} November {% endif%}
+        {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
+        {{ data['contact-date-year-'+ contactindex] }} {% endif %}
 
 
-
+  {% if data['todays-date'+ contactindex]=='Yes'%}
         <script>
           // Get the current date and time
                var now = new Date();
@@ -611,7 +612,7 @@ data ['appointee']
 
 
     <button class="govuk-button" data-module="govuk-button">
-      Log {% if totalcontact == 0 %}{% else %}another{% endif %} contact made
+      Record {% if totalcontact == 0 %}{% else %}another{% endif %} contact made
     </button>
   </form>
 {% if phase == "thomas"  %}

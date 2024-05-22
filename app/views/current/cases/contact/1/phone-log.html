@@ -31,7 +31,7 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
-Telephone call received on    {% if data['todays-date'+ number]=='No'%}
+Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %}made{% endif %} on    {% if data['todays-date'+ number]=='No'%}
 {% if (data['contact-date-month-'+ number] =='01') or (data['contact-date-month-'+ number] =='1') %} January {% endif%}
 {% if (data['contact-date-month-'+ number] =='02') or (data['contact-date-month-'+ number] =='2') %} February  {% endif%}
 {% if (data['contact-date-month-'+ number] =='03') or (data['contact-date-month-'+ number] =='3') %} March {% endif%}
@@ -75,7 +75,7 @@ Telephone call received on    {% if data['todays-date'+ number]=='No'%}
 <p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} did not answer the telephone.</p>{% endif %}
 
 {% if data['idv1']=='Yes'%}
-<p>Verify Thomas Kings identity.</p>{% else %}
+<p>Verify Dereck Smith identity.</p>{% else %}
 <p>Did not verify the person's identity.</p>{% endif %}
 
 <p>About: </p>
@@ -92,16 +92,16 @@ Telephone call received on    {% if data['todays-date'+ number]=='No'%}
 <!-- {% include  "current/claim/notification-contact.html" %} -->
      <br>
 
-
+{% if data['contact-moreDetails1']=='Yes'%}
      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-               Summarise the 'other' information discussed
+               Additional  details of contact
 
                      </label>
                      </h2>
 
 <p>{{data['other-discussion-1']}}</p>
-
+{% endif %}
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Return

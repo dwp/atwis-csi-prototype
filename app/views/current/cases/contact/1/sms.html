@@ -26,15 +26,7 @@
 
               <h2 class="govuk-heading-xl">Text message (SMS) sent</h2>
 
-              <div class="govuk-form-group">
-                         <label class="govuk-label govuk-label--m" for="passport-number">
-                           Summary for case history
-                         </label>
-                         <div id="passport-number-hint" class="govuk-hint">
-                           For example, xxxxxx
-                         </div>
-                         <input class="govuk-input govuk-input--width-10" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
-                       </div>
+
 
               {% if data['todays-date'+ number]=='No'%}
                             <div class="govuk-form-group">
@@ -179,12 +171,12 @@
                               Notification
                                   </label>
                                 </div>
-                                <div class="govuk-checkboxes__item">
+                                <!-- <div class="govuk-checkboxes__item">
                                   <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why" type="checkbox" value="Notification">
                                   <label class="govuk-label govuk-checkboxes__label" for="contact-why-10">
                             Additional information
                                   </label>
-                                </div>
+                                </div> -->
                               </div>
                             </fieldset>
                           </div>
