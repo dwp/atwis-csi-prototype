@@ -91,7 +91,7 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
 <!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
 <!-- {% include  "current/claim/notification-contact.html" %} -->
      <br>
-
+{% if data['contact-moreDetails-'+ number]=='Yes'%}
 <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
           Summary
@@ -109,7 +109,7 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
 
 <p>{{data['other-discussion-2']}}</p>
 {% endif %}
-
+{% endif %}
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
              Return
           </button>
