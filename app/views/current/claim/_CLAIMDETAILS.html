@@ -501,19 +501,37 @@ data ['appointee']
 
 
 </div>
+
+<!-- {% if case =='other-cases-fill-1' %}
+test
+    {% endif %}
+
+    {% if case =='other-cases-fill-2' %}
+    test
+        {% endif %}
+
+        {% if case =='other-cases-fill-3' %}
+        test
+            {% endif %}
+
+            {% if case =='other-cases-fill-4' %}
+            test
+                {% endif %} -->
+
+
 {% if not totalcontact %}
   {% set totalcontact = 0 %}
   {% endif %}
 
 
-
+{% if not case %}
   {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
    {% set contactindex = i %}
     {% if data['_do_'+ contactindex]%}
     {% set totalcontact = totalcontact + 1 %}
   {% endif %}
     {%- endfor %}
-
+{% endif %}
 
 
   <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
@@ -530,8 +548,9 @@ data ['appointee']
         <p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
 
 
-
-
+{% if phase == "thomas"  %}
+  {% set totalcontact = + 1 %}
+  {% endif %}
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
@@ -550,9 +569,35 @@ data ['appointee']
 
 <div class="govuk-form-group">
   <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+{% if phase == "thomas"  %}
+<div class="hmrc-list-with-actions__item">
+  <dt class="hmrc-list-with-actions__name">
+  Telephone call received
+  </dt>
+  <dt class="hmrc-list-with-actions__name">
+    <script>
+      // Get the current date and time
+           var now = new Date();
+           var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+           var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
 
+           // Write the date and time to the HTML page
+           document.write(date );
+         </script>, 9:02am
+       </dt>
+       <div class="hmrc-list-with-actions__actions">
+         <dd class="hmrc-list-with-actions__action">
+           <a class="govuk-link"
+           href="/current/cases/thomas/cases/contact/prefill/phone-log">
+             <span aria-hidden="true">View </span>
+             <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
+           </a>
+         </dd>
+       </div>
+     </div><br>
+{% endif %}
 
-
+{% if not case %}
 {% for i in [5,4,3,2,1] -%}
 {% set contactindex = i  %}
 {% if data['_do_'+ contactindex] %}
@@ -607,7 +652,7 @@ data ['appointee']
 {%- endfor %}
 
 
-  </dl>
+  </dl>{% endif %}
   <form method="post" novalidate action="">
 
 
@@ -615,6 +660,7 @@ data ['appointee']
       Record {% if totalcontact == 0 %}{% else %}another{% endif %} contact made
     </button>
   </form>
+
 {% if phase == "thomas"  %}
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -639,7 +685,26 @@ data ['appointee']
         </dt>
         <dt class="hmrc-list-with-actions__name">
 
-          16 February 2024, 9:30am
+          <script>
+            // Get date
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 5);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate);
+               </script>, 3:15pm
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">
@@ -660,7 +725,26 @@ data ['appointee']
         </dt>
         <dt class="hmrc-list-with-actions__name">
 
-      16 February 2024, 10:14am
+          <time datetime="2023-06-06T09:12:00.000Z"><span class="govuk-body"><script>
+            // Get date
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 5);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate);
+               </script></time>, 10:14am
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">
@@ -681,7 +765,26 @@ data ['appointee']
         </dt>
         <dt class="hmrc-list-with-actions__name">
 
-      12 February 2024, 11:11am
+          <script>
+            // Get date
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 9);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate );
+               </script>, 11:11am
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">

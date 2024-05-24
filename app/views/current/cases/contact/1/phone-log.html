@@ -66,7 +66,7 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
     </label>
     </h2>
 {% if data['_do_1']=='Telephone call received'%}
-<p>From Thomas King to John Goldsmith</p>{% else %}
+<p>From {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} to John Goldsmith</p>{% else %}
 <p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
 {% endif %}
 {% if data['asked-info-phone-'+number]=='Yes'%}
@@ -80,19 +80,26 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
 
 <p>About: </p>
 <ul class="govuk-list govuk-list--bullet">
-  {% for feature in data['contact-why'] %}
+  {% for feature in data['contact-why-'+ number] %}
     <li>{{ feature }}</li>
   {% else %}
     <li>No features selected</li>
   {% endfor %}
 </ul>
 </div>
-<p>{% if pahse == 'thomas'%}{{data['other-discussion-1']}}{% endif %}</p>
+<p>{% if phase == 'thomas'%}{{data['other-discussion-1']}}{% endif %}</p>
 <!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
 <!-- {% include  "current/claim/notification-contact.html" %} -->
      <br>
 
-{% if data['contact-moreDetails1']=='Yes'%}
+<h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+          Summary
+
+                </label>
+                </h2>
+                <p>{{data['summary-case-history2']}}</p>
+{% if data['contact-moreDetails-2']=='Yes'%}
      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
                Additional  details
@@ -100,7 +107,7 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
                      </label>
                      </h2>
 
-<p>{{data['other-discussion-1']}}</p>
+<p>{{data['other-discussion-2']}}</p>
 {% endif %}
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
