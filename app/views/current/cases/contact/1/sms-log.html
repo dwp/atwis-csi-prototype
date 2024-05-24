@@ -58,9 +58,14 @@ Text message (SMS) sent on    {{ data['contact-date-day-'+ number] }}
 {% if data['asked-info-phone-'+number]=='no'%}
 <p>Dereck Smith did not answer the phone.</p>{% endif %}
 
-<p>
-{{data['job-detail-discussion-'+ number]}}
-</p>
+<p>About: </p>
+<ul class="govuk-list govuk-list--bullet">
+  {% for feature in data['contact-why-'+ number] %}
+    <li>{{ feature }}</li>
+  {% else %}
+    <li>No features selected</li>
+  {% endfor %}
+</ul>
 
 </div>
 

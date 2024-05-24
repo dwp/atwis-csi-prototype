@@ -31,7 +31,26 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
-Text message (SMS) sent on 16 February 2024 at 10:14am
+Text message (SMS) sent on   <script>
+    // Get the current date and time
+    var now = new Date();
+    var pastDate = new Date(now);
+    pastDate.setDate(now.getDate() - 5);
+
+    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+    });
+
+    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true
+    });
+
+    document.write(formattedDate + ' at ');
+       </script>11:14am
 
 
     </label>

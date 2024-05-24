@@ -55,7 +55,7 @@ Email
   // Get the current date and time
        var now = new Date();
        var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-  
+
 
        // Write the date and time to the HTML page
        document.write(date);
@@ -78,7 +78,7 @@ at {{data['contact-time-'+ number]}}
 <p>About: </p>
 
   <ul class="govuk-list govuk-list--bullet">
-    {% for feature in data['contact-why'] %}
+    {% for feature in data['contact-why-'+ number] %}
       <li>{{ feature }}</li>
     {% else %}
       <li>No features selected</li>

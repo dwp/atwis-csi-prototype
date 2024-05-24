@@ -74,7 +74,7 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
 {% if data['asked-info-phone-'+number]=='No'%}
 <p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} did not answer the telephone.</p>{% endif %}
 
-{% if data['idv1']=='Yes'%}
+{% if data['idv'+ number]=='Yes'%}
 <p>Verify Dereck Smith identity.</p>{% else %}
 <p>Did not verify the person's identity.</p>{% endif %}
 
