@@ -24,26 +24,16 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h1 class="govuk-heading-l">More information about this contact</h1>
+              <h1 class="govuk-heading-l">Add more information about this email</h1>
 
 
 
 
-<p>{% if data['_do_'+ number]=='Telephone call received' %}You said that {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
- contacted us about the following{% else %}
-You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} about the following{% endif  %}:</p>
 
-    <ul class="govuk-list govuk-list--bullet">
- {% for feature in data['contact-why'] %}
-   <li>{{ feature }}</li>
- {% else %}
-   <li>No features selected</li>
- {% endfor %}
- </ul>
 
  <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="summary-case-history">
-            Summary of contact
+            Summary
             </label>
             <div id="summary-case-history-hint" class="govuk-hint">
             Give a short description. This will appear in the case history timeline.
@@ -56,7 +46,7 @@ You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if ph
               <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-          Details of contact
+          Additional details
 
                 </label>
                 </h2>
