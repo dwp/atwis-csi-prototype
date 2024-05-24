@@ -67,7 +67,7 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
     </h2>
 {% if data['_do_1']=='Telephone call received'%}
 <p>From {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} to John Goldsmith</p>{% else %}
-<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
+<p>By John Goldsmith to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}.</p>
 {% endif %}
 {% if data['asked-info-phone-'+number]=='Yes'%}
 <p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} answered the telephone.</p>{% endif %}
@@ -75,7 +75,7 @@ Telephone call {% if data['_do_1']=='Telephone call received'%}received{% else %
 <p>  {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} did not answer the telephone.</p>{% endif %}
 
 {% if data['idv'+ number]=='Yes'%}
-<p>Verify Dereck Smith identity.</p>{% else %}
+<p>Verified Dereck Smith's identity.</p>{% else %}
 <p>Did not verify the person's identity.</p>{% endif %}
 
 <p>About: </p>
