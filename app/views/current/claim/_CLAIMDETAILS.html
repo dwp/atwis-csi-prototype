@@ -546,9 +546,11 @@ test
 
 
         <p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
+        {% if phase == "sonya" %}
+          {% set totalcontact = + 1 %}
+          {% endif %}
 
-
-{% if phase == "thomas" or "sonya" %}
+{% if phase == "thomas" %}
   {% set totalcontact = + 1 %}
   {% endif %}
 
