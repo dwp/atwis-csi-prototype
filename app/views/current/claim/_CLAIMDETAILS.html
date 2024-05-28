@@ -548,9 +548,10 @@ test
         <p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
 
 
-{% if phase == "thomas"  %}
+{% if phase == "thomas" or "sonya" %}
   {% set totalcontact = + 1 %}
   {% endif %}
+
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
@@ -569,6 +570,44 @@ test
 
 <div class="govuk-form-group">
   <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+    {% if phase == "sonya"  %}
+    <div class="hmrc-list-with-actions__item">
+      <dt class="hmrc-list-with-actions__name">
+      Telephone call made
+      </dt>
+      <dt class="hmrc-list-with-actions__name">
+        <time datetime="2023-06-06T09:12:00.000Z"><script>
+          var pastDate = new Date(now);
+          pastDate.setDate(now.getDate() - 7);
+
+          var formattedDate = pastDate.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+          });
+
+          var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true
+          });
+
+          document.write(formattedDate);
+
+             </script></time>, 11:00 am
+           </dt>
+           <div class="hmrc-list-with-actions__actions">
+             <dd class="hmrc-list-with-actions__action">
+               <a class="govuk-link"
+               href="/current/cases/thomas/cases/contact/prefill/phone-log">
+                 <span aria-hidden="true">View </span>
+                 <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
+               </a>
+             </dd>
+           </div>
+         </div><br>
+    {% endif %}
+
 {% if phase == "thomas"  %}
 <div class="hmrc-list-with-actions__item">
   <dt class="hmrc-list-with-actions__name">
@@ -640,7 +679,11 @@ test
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">
           <a class="govuk-link"
-          href="{% if data['_do_'+ contactindex]=='Email sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call made'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
+          href="{% if data['_do_'+ contactindex]=='Email sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Email received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Telephone call made'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Telephone call received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
             <span aria-hidden="true">View </span>
             <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
           </a>

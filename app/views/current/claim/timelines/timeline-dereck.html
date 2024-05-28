@@ -267,11 +267,7 @@
            <li>No features selected</li>
          {% endfor %}
          </ul>{% endif %} </p> -->
-          <p> <a href="/current/cases/contact/1/{% if data['_do_1']=='Email sent'%}email-log{% endif %}
-          {% if data['_do_1']=='Email received'%}email-log{% endif %}
-          {% if data['_do_1']=='Telephone call made'%}phone-log{% endif %}
-          {% if data['_do_1']=='Telephone call received'%}phone-log{% endif %}
-          {% if data['_do_1']=='Text message (SMS) sent'%}sms-log{% endif %}">View details</a></p>
+          <p> <a href="/current/cases/contact/1/{% if data['_do_1']=='Email sent'%}email-log{% endif %}{% if data['_do_1']=='Email received'%}email-log{% endif %}{% if data['_do_1']=='Telephone call made'%}phone-log{% endif %}{% if data['_do_1']=='Telephone call received'%}phone-log{% endif %}{% if data['_do_1']=='Text message (SMS) sent'%}sms-log{% endif %}">View details</a></p>
                     </div>
 {% endif %}
 

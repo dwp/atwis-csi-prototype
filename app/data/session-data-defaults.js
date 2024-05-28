@@ -108,7 +108,18 @@ module.exports = {
 'employer-sectorsonya' : "Yes",
 'employer-sizesonya' : "10 to 49 (small)",
 'employer-sector-typesonya' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
-'wpasonya' : "No",
+
+'wpasonya' : "Yes",
+'wpa-typesonya' : "Virtual",
+'wpa-availabilitysonya' : "Yes",
+'other-wpasonya' : "No",
+'wpa-availabilitysonya' : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+'address-of-wpasonya' : "220 St Vincent Street, Glasgow, AB1 1AB",
+'referral-formsonya' : ["Completed and sent referral form", "Saved copies to Sharepoint", "Set up a record for Dereck Smith on LMS", "Added workplace assessment type in LMS"],
+'wpa-happensonya' : "Yes",
+'reportsonya' : ["Reviewed workplace assessment report","Saved a copy of the workplace assessment report in Sharepoint", "Saved a copy of the workplace assessment email in Sharepoint"],
+'another-wpasonya' : "No",
+
 // filled in case
 'condition-checkgeorge' : "No",
 'job-deatils-checkgeorge' : "No",
