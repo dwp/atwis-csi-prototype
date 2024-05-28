@@ -31,7 +31,28 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
-Email sent on  12 February 2024 at 11:11am
+Email sent on    <script>
+    // Get the current date and time
+    var now = new Date();
+    var pastDate = new Date(now);
+    pastDate.setDate(now.getDate() - 9);
+
+    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+    });
+
+    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true
+    });
+
+    document.write(formattedDate + ' at ');
+         // Write the date and time to the HTML page
+         document.write(date + ' at ');
+       </script>11:11am
 
 
     </label>
@@ -47,7 +68,7 @@ Email sent on  12 February 2024 at 11:11am
   <ul class="govuk-list govuk-list--bullet">
 
       <li>Health condition or disability</li>
-
+    <li>Notifications</li>
   </ul>
 <!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
 <!-- {% include  "current/claim/notification-contact.html" %} -->
