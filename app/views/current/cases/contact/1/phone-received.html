@@ -26,9 +26,53 @@
 
               <h1 class="govuk-heading-xl">Telephone call received</h1>
 
+              <!-- <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--m" for="summary-case-history">
+                           Summary for case history
+                         </label>
+                         <div id="summary-case-history-hint" class="govuk-hint">
+                           For example, xxxxxx
+                         </div>
+                         <input class="govuk-input govuk-input--width-10" id="summary-case-history" name="summary-case-history{{number}}" type="text" aria-describedby="summary-case-history-hint">
+                       </div> -->
 
-
-
+              {% if data['todays-date'+ number]=='No'%}
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                 Date
+                                </legend>
+                                <div id="expiry-hint" class="govuk-hint">
+                                  For example, 31 1 2022
+                                </div>
+                                <div class="govuk-date-input" id="contact-date-">
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-day">
+                                        Day
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-day" name="contact-date-day-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-month">
+                                        Month
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-month" name="contact-date-month-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-year">
+                                        Year
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contact-date-year" name="contact-date-year-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                </div>
+                                     </div>
+              {% endif %}
 
               <div class="govuk-form-group">
                           <fieldset class="govuk-fieldset">
@@ -81,57 +125,57 @@
                             </div>
                             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why" name="contact-why" type="checkbox" value="Quotes">
+                                <input class="govuk-checkboxes__input" id="contact-why" name="contact-why-{{number}}" type="checkbox" value="Quotes">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why">
                                 Quotes
                                 </label>
                               </div>
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-2" name="contact-why" type="checkbox" value="Identity verification">
+                                <input class="govuk-checkboxes__input" id="contact-why-2" name="contact-why-{{number}}" type="checkbox" value="Identity verification">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-2">
                                 Identity verification
                                 </label>
                               </div>
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why" type="checkbox" value="Element details">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Element details">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
                                 Element details
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-4" name="contact-why" type="checkbox" value="Personal details">
+                                <input class="govuk-checkboxes__input" id="contact-why-4" name="contact-why-{{number}}" type="checkbox" value="Personal details">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-4">
                                 Personal details
                                 </label>
                               </div>
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-5" name="contact-why" type="checkbox" value="Health condition or disability">
+                                <input class="govuk-checkboxes__input" id="contact-why-5" name="contact-why-{{number}}" type="checkbox" value="Health condition or disability">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-5">
                                  Health condition or disability
                                 </label>
                               </div>
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-6" name="contact-why" type="checkbox" value="Employment details">
+                                <input class="govuk-checkboxes__input" id="contact-why-6" name="contact-why-{{number}}" type="checkbox" value="Employment details">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-6">
                                 Employment details
                                 </label>
                               </div>
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-7" name="contact-why" type="checkbox" value="Employer information">
+                                <input class="govuk-checkboxes__input" id="contact-why-7" name="contact-why-{{number}}" type="checkbox" value="Employer information">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-7">
                                 Employer information
                                 </label>
                               </div>
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-8" name="contact-why" type="checkbox" value="Workplace assessment">
+                                <input class="govuk-checkboxes__input" id="contact-why-8" name="contact-why-{{number}}" type="checkbox" value="Workplace assessment">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-8">
                                 Workplace assessment
                                 </label>
                               </div>
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why" type="checkbox" value="Award outcome">
+                                <input class="govuk-checkboxes__input" id="contact-why-9" name="contact-why-{{number}}" type="checkbox" value="Award outcome">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-9">
                             Application status
                                 </label>
@@ -139,7 +183,7 @@
 
 
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why" type="checkbox" value="Other">
+                                <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why-{{number}}" type="checkbox" value="Other">
                                 <label class="govuk-label govuk-checkboxes__label" for="contact-why-10">
                             Other
                                 </label>

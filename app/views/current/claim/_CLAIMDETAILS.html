@@ -36,7 +36,7 @@
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#contact">
-      Contact details and log
+      Contact notes and details
       </a>
     </li>
 
@@ -433,7 +433,7 @@ data-module="govuk-notification-banner">
   <div class="govuk-grid-row">
  <div class="govuk-grid-column-two-thirds">
 
-<h2 class="govuk-heading-l">Contact details and log</h2>
+<h1 class="govuk-heading-l">Contact notes and details</h1>
 
 {% if
 
@@ -501,19 +501,37 @@ data ['appointee']
 
 
 </div>
+
+<!-- {% if case =='other-cases-fill-1' %}
+test
+    {% endif %}
+
+    {% if case =='other-cases-fill-2' %}
+    test
+        {% endif %}
+
+        {% if case =='other-cases-fill-3' %}
+        test
+            {% endif %}
+
+            {% if case =='other-cases-fill-4' %}
+            test
+                {% endif %} -->
+
+
 {% if not totalcontact %}
   {% set totalcontact = 0 %}
   {% endif %}
 
 
-
+{% if not case %}
   {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
    {% set contactindex = i %}
     {% if data['_do_'+ contactindex]%}
     {% set totalcontact = totalcontact + 1 %}
   {% endif %}
     {%- endfor %}
-
+{% endif %}
 
 
   <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
@@ -530,12 +548,14 @@ data ['appointee']
         <p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
 
 
-
+{% if phase == "thomas" or "sonya" %}
+  {% set totalcontact = + 1 %}
+  {% endif %}
 
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-            Logged contact: {{totalcontact}}
+          Contact records: {{totalcontact}}
               </h2>
             </legend>
           </fieldset>
@@ -550,9 +570,73 @@ data ['appointee']
 
 <div class="govuk-form-group">
   <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+    {% if phase == "sonya"  %}
+    <div class="hmrc-list-with-actions__item">
+      <dt class="hmrc-list-with-actions__name">
+      Telephone call made
+      </dt>
+      <dt class="hmrc-list-with-actions__name">
+        <time datetime="2023-06-06T09:12:00.000Z"><script>
+          var pastDate = new Date(now);
+          pastDate.setDate(now.getDate() - 7);
 
+          var formattedDate = pastDate.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+          });
 
+          var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true
+          });
 
+          document.write(formattedDate);
+
+             </script></time>, 11:00 am
+           </dt>
+           <div class="hmrc-list-with-actions__actions">
+             <dd class="hmrc-list-with-actions__action">
+               <a class="govuk-link"
+               href="/current/cases/thomas/cases/contact/prefill/phone-log">
+                 <span aria-hidden="true">View </span>
+                 <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
+               </a>
+             </dd>
+           </div>
+         </div><br>
+    {% endif %}
+
+{% if phase == "thomas"  %}
+<div class="hmrc-list-with-actions__item">
+  <dt class="hmrc-list-with-actions__name">
+  Telephone call received
+  </dt>
+  <dt class="hmrc-list-with-actions__name">
+    <script>
+      // Get the current date and time
+           var now = new Date();
+           var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+           var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+           // Write the date and time to the HTML page
+           document.write(date );
+         </script>, 9:02am
+       </dt>
+       <div class="hmrc-list-with-actions__actions">
+         <dd class="hmrc-list-with-actions__action">
+           <a class="govuk-link"
+           href="/current/cases/thomas/cases/contact/prefill/phone-log">
+             <span aria-hidden="true">View </span>
+             <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
+           </a>
+         </dd>
+       </div>
+     </div><br>
+{% endif %}
+
+{% if not case %}
 {% for i in [5,4,3,2,1] -%}
 {% set contactindex = i  %}
 {% if data['_do_'+ contactindex] %}
@@ -562,28 +646,44 @@ data ['appointee']
       {{data['_do_'+ contactindex]}}
       </dt>
       <dt class="hmrc-list-with-actions__name">
+      {% if data['todays-date'+ contactindex]=='No'%}
+      {{ data['contact-date-day-'+ contactindex] }}
+        {% if (data['contact-date-month-'+ contactindex] =='01') or (data['contact-date-month-'+ contactindex] =='1') %} January {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='02') or (data['contact-date-month-'+ contactindex] =='2') %} February  {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='03') or (data['contact-date-month-'+ contactindex] =='3') %} March {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='04') or (data['contact-date-month-'+ contactindex] =='4') %} June {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='05') or (data['contact-date-month-'+ contactindex] =='5') %} May {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='06') or (data['contact-date-month-'+ contactindex] =='6') %} June {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='07') or (data['contact-date-month-'+ contactindex] =='7') %} July {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='08') or (data['contact-date-month-'+ contactindex] =='8') %} August {% endif%}
+        {% if (data['contact-date-month-'+ contactindex] =='09') or (data['contact-date-month-'+ contactindex] =='9') %} September {% endif%}
+        {% if data['contact-date-month-'+ contactindex] =='10' %} October {% endif%}
+        {% if data['contact-date-month-'+ contactindex] =='11'%} November {% endif%}
+        {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
+        {{ data['contact-date-year-'+ contactindex] }} {% endif %}
 
-         {{ data['contact-date-day-'+ contactindex] }}
-     {% if (data['contact-date-month-'+ contactindex] =='01') or (data['contact-date-month-'+ contactindex] =='1') %} January {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='02') or (data['contact-date-month-'+ contactindex] =='2') %} February  {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='03') or (data['contact-date-month-'+ contactindex] =='3') %} March {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='04') or (data['contact-date-month-'+ contactindex] =='4') %} April {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='05') or (data['contact-date-month-'+ contactindex] =='5') %} May {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='06') or (data['contact-date-month-'+ contactindex] =='6') %} June {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='07') or (data['contact-date-month-'+ contactindex] =='7') %} July {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='08') or (data['contact-date-month-'+ contactindex] =='8') %} August {% endif%}
-     {% if (data['contact-date-month-'+ contactindex] =='09') or (data['contact-date-month-'+ contactindex] =='9') %} September {% endif%}
-     {% if data['contact-date-month-'+ contactindex] =='10' %} October {% endif%}
-     {% if data['contact-date-month-'+ contactindex] =='11'%} November {% endif%}
-     {% if data['contact-date-month-'+ contactindex] =='12' %} December {% endif%}
-{{ data['contact-date-year-'+ contactindex] }},
+
+  {% if data['todays-date'+ contactindex]=='Yes'%}
+        <script>
+          // Get the current date and time
+               var now = new Date();
+               var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+               var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+               // Write the date and time to the HTML page
+               document.write(date );
+             </script>{% endif %},
 
 {{data['contact-time-'+ contactindex ] | lower}}
       </dt>
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">
           <a class="govuk-link"
-          href="{% if data['_do_'+ contactindex]=='Email sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call made'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
+          href="{% if data['_do_'+ contactindex]=='Email sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Email received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Telephone call made'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Telephone call received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
             <span aria-hidden="true">View </span>
             <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
           </a>
@@ -595,14 +695,15 @@ data ['appointee']
 {%- endfor %}
 
 
-  </dl>
+  </dl>{% endif %}
   <form method="post" novalidate action="">
 
 
     <button class="govuk-button" data-module="govuk-button">
-      Log {% if totalcontact == 0 %}{% else %}another{% endif %} contact made
+      Record {% if totalcontact == 0 %}{% else %}another{% endif %} contact made
     </button>
   </form>
+
 {% if phase == "thomas"  %}
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -627,7 +728,26 @@ data ['appointee']
         </dt>
         <dt class="hmrc-list-with-actions__name">
 
-          16 February 2024, 9:30am
+          <script>
+            // Get date
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 5);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate);
+               </script>, 3:15pm
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">
@@ -648,7 +768,26 @@ data ['appointee']
         </dt>
         <dt class="hmrc-list-with-actions__name">
 
-      16 February 2024, 10:14am
+          <time datetime="2023-06-06T09:12:00.000Z"><span class="govuk-body"><script>
+            // Get date
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 5);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate);
+               </script></time>, 10:14am
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">
@@ -669,7 +808,26 @@ data ['appointee']
         </dt>
         <dt class="hmrc-list-with-actions__name">
 
-      12 February 2024, 11:11am
+          <script>
+            // Get date
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 9);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate );
+               </script>, 11:11am
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">

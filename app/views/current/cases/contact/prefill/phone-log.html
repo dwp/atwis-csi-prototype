@@ -31,40 +31,30 @@
 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
   <div class="govuk-form-group">
     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
-Telephone call made on  <script> var now = new Date();
-  var pastDate = new Date(now);
-  pastDate.setDate(now.getDate() - 5);
+Telephone call recived on <script>
+  // Get the current date and time
+       var now = new Date();
+       var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+       var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-  var formattedDate = pastDate.toLocaleDateString('en-GB', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric'
-  });
-
-  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-  hour: 'numeric',
-  minute: 'numeric',
-  hour12: true
-  });
-
-  document.write(formattedDate + ' at ');</script> 10:14am
+       // Write the date and time to the HTML page
+       document.write(date + ' at ');
+     </script> at 10:14am
 
 
     </label>
     </h2>
 
 
-<p>By Jane Doe to {% if data['appointee']=='Yes, I need to add an appointee'%}Dereck Smith’s appointee {{data['appointee-name']}}{% else %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}{% endif %}</p>
+<p>By John Goldsmith to {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}</p>
 
-
-<!-- <p>  John King answered the telephone.</p> -->
-<p>  Verify Thomas Kings identity.</p>
+<p>Verify Thomas Kings identity.</p>
 
 <p>About: </p>
 <ul class="govuk-list govuk-list--bullet">
 
-    <li>Health condition or disability</li>
-    <li>Quotes</li>
+    <li>Personal details</li>
+    <li>Application status</li>
 
 <!-- <li>Workplace assessment </li> -->
 </ul>
@@ -82,12 +72,12 @@ Telephone call made on  <script> var now = new Date();
                           <p> Ask for quotes</p>
      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-                  Additional details
+      About change of address.
 
                           </label>
                           </h2>
 
-                          <p>Spoke to John King, Thomas King's brother who spoke for him on the phone. Received a quote for a specialist BSL interpreter at ABC Interpreters - at £70 an hour and additional details about Thomas condition.</p>
+                          <p>Thomas King phone to inform that they have recently moved house. Changed to 16 Blum Street. </p>
 
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">

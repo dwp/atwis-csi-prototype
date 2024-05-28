@@ -24,36 +24,36 @@
         <div class="govuk-grid-column-two-thirds">
 
 
-              <h1 class="govuk-heading-l">Other information</h1>
+              <h1 class="govuk-heading-l">Add more information about this
+                {% if data['_do_'+ number]=='Email sent'%}email sent{% endif %}{% if data['_do_'+ number]=='Email received'%}email received{% endif %}
+                {% if data['_do_'+ number]=='Telephone call made'%} call made{% endif %}{% if data['_do_'+ number]=='Telephone call received'%} call received{% endif %}</h1>
 
 
 
 
-<p>{% if data['_do_'+ number]=='Telephone call received' %}You said that {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
- contacted us about the following{% else %}
-You said you contacted {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} about the following{% endif  %}:</p>
-
-    <ul class="govuk-list govuk-list--bullet">
- {% for feature in data['contact-why'] %}
-   <li>{{ feature }}</li>
- {% else %}
-   <li>No features selected</li>
- {% endfor %}
- </ul>
 
 
+ <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="summary-case-history">
+            Summary
+            </label>
+            <div id="summary-case-history-hint" class="govuk-hint">
+            Give a short description. This will appear in the case history timeline.
+            </div>
+            <input class="govuk-input govuk-input--width-20" id="summary-case-history" name="summary-case-history{{number}}" type="text" aria-describedby="summary-case-history-hint">
+          </div>
 
               <div class="govuk-form-group">
-            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="300">
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
               <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
-          Summarise the 'other' information discussed
+          Additional details
 
                 </label>
                 </h2>
 
-            <textarea class="govuk-textarea govuk-js-character-count" id="other-note1" name="other-discussion-{{number}}" rows="5" aria-describedby="other-note1-info other-note1-hint"></textarea><div id="other-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 300 characters remaining</div>
+            <textarea class="govuk-textarea govuk-js-character-count" id="other-note1" name="other-discussion-{{number}}" rows="5" aria-describedby="other-note1-info other-note1-hint"></textarea><div id="other-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 500 characters remaining</div>
             </div>
             </div>
 
