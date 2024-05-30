@@ -100,14 +100,20 @@
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="mhss-support-3" name="mhss-support" type="radio" value="I am waiting for an answer~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("mhss-support", "I am waiting for an answer") }}>
+          <input class="govuk-radios__input" id="mhss-support-3" name="mhss-support" type="radio" value="No~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("mhss-support", "Self referral") }}>
           <label class="govuk-label govuk-radios__label" for="mhss-support-3">
+            Self referral
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mhss-support-4" name="mhss-support" type="radio" value="I am waiting for an answer~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("mhss-support", "I am waiting for an answer") }}>
+          <label class="govuk-label govuk-radios__label" for="mhss-support-4">
             I am waiting for an answer
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="mhss-support-4" name="mhss-support" type="radio" value="I have not discussed it with {% if phase == 'thomas'%}Thomas King{% endif %}{% if phase == 'sonya'%}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} yet~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("mhss-support", "I have not discussed it with Thomas King yet") }}>
-          <label class="govuk-label govuk-radios__label" for="mhss-support-4">
+          <input class="govuk-radios__input" id="mhss-support-5" name="mhss-support" type="radio" value="I have not discussed it with {% if phase == 'thomas'%}Thomas King{% endif %}{% if phase == 'sonya'%}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} yet~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("mhss-support", "I have not discussed it with Thomas King yet") }}>
+          <label class="govuk-label govuk-radios__label" for="mhss-support-5">
         I have not discussed it with {% if phase == 'thomas'%}Thomas King{% endif %}{% if phase == 'sonya'%}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} yet
           </label>
         </div>
