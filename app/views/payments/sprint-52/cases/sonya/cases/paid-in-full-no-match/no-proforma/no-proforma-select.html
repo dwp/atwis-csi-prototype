@@ -1,0 +1,143 @@
+{% set case = "sonya" %}
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends   "payments/sprint-52/claim/_CSIBASE.html" %}
+
+
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="/payments/sprint-52/cases/sonya/claim-sonya#your-tasks" method="post" novalidate>
+  <div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+
+
+
+
+
+<div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+
+<!-- MAKE DYNAMIC TEXT BASED ON FEEDER RADIOS AS WE KNOW WHAT IS WRONG ALREADY, AMOUNT, ELEMENT OR BOTH -->
+                          Which items appear on the invoices you are rejecting
+                        </h1>
+                      </legend>
+                      <div id="nationality-hint" class="govuk-hint">
+                        <!-- If you have dual nationality, select all options that are relevant to you. -->
+                      </div>
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+
+
+{% if 'Jaws screen reader' in data['claim-item'] %}
+                          <input class="govuk-checkboxes__input" id="paid-item-no-match-1" name="paid-item-no-match" type="checkbox" value="Jaws screen reader" {{ checked("paid-item-no-match", "Jaws screen reader") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-item-no-match-1">
+                            Jaws screen reader
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £499
+                          </div> -->
+                        </div>
+{% endif %}
+
+{% if 'ZoomText Professional License' in data['claim-item'] %}
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-item-no-match-2" name="paid-item-no-match" type="checkbox" value="ZoomText Professional License" {{ checked("paid-item-no-match", "ZoomText Professional License") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-item-no-match-2">
+                            ZoomText Professional License
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £501
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Ipad Pro case' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-item-no-match-3" name="paid-item-no-match" type="checkbox" value="Ipad Pro case" {{ checked("paid-item-no-match", "Ipad Pro case") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-item-no-match-3">
+                            Ipad Pro case
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £80
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Ergonomic Keyboard' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-item-no-match-4" name="paid-item-no-match" type="checkbox" value="Ergonomic Keyboard" {{ checked("paid-item-no-match", "Ergonomic Keyboard") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-item-no-match-4">
+                            Ergonomic Keyboard
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £110
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Office chair' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-item-no-match-5" name="paid-item-no-match" type="checkbox" value="Office chair" {{ checked("paid-item-no-match", "Office chair") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-item-no-match-5">
+                            Office chair
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £230
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+{% if 'Ergonomic mouse' in data['claim-item'] %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="paid-item-no-match-6" name="paid-item-no-match" type="checkbox" value="Ergonomic mouse" {{ checked("paid-item-no-match", "Ergonomic mouse") }}>
+                          <label class="govuk-label govuk-checkboxes__label" for="paid-item-no-match-6">
+                            Ergonomic mouse
+                          </label>
+                          <!-- <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                            £40
+                          </div> -->
+                        </div>
+{% endif %}
+
+
+                      </div>
+
+
+
+                                    </div>
+                                  </div>
+
+
+                                       <button class="govuk-button" data-module="govuk-button">
+                                         Save and continue
+                                       </button>
+                                     </form>
+                                   </div>
+                                  </div>
+
+
+                                    </main>
+                                    </div>
+
+
+
+
+
+
+
+                                  {% endblock %}
