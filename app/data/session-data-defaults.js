@@ -63,11 +63,11 @@ module.exports = {
 
 // assess
 
-'Searchligh' : "Yes and application details match",
+// 'Searchligh' : "Yes and application details match",
 'found-nino' : "Yes",
-'national-insurance-number' : "AB 123456 C",
-'appointee' : "No",
-'benefits' : "No",
+// 'national-insurance-number' : "AB 123456 C",
+// 'appointee' : "No",
+// 'benefits' : "No",
 // 'disc-check' : "No",
 // 'job-deatils-check' : "No",
 // 'condition-check' : "No",
