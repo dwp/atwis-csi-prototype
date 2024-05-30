@@ -1,0 +1,96 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-52/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+<br>
+
+{% if data ['cost-share'] %}
+
+      {% if 'Yes' in data ['cost-share-proforma'] %}
+      <form action="/payments/sprint-52/cases/dereck/cases/review-invoice/add-invoice-date-tab#your-tasks" method="post" novalidate>
+      {% endif %}
+
+      {% if 'No' in data ['cost-share-proforma'] %}
+        <form action="/payments/sprint-52/cases/dereck/cases/cost-share/has-it-been-paid-under-tab#your-tasks" method="post" novalidate>
+
+      {% endif %}
+
+{% endif %}
+
+{% if not data ['cost-share'] %}
+<form action="/payments/sprint-52/cases/dereck/claim-dereck#your-tasks" method="post" novalidate>
+  {% endif %}
+
+
+<!-- <form action="matches-grant-multi-tab#your-tasks" method="post" novalidate> -->
+
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+            <!-- {# <div class="govuk-inset-text">
+         ** if more than 1 SW on claim – add if statement to pull in SW type selected from radios**
+            </div> #} -->
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="ttw-claim-start-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="cost">
+                  How much has been paid on this invoice?
+                </label>
+              </h1>
+              <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-input--width-5" id="cost-share-amount" name="cost-share-amount" type="text" spellcheck="false" aria-describedby="cost-share-amount" value="{{data ['cost-share-amount'] }}">
+              </div>
+            </div>
+
+
+
+
+
+            </fieldset>
+
+
+
+
+
+
+    </div>
+    </div>
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+
+
+
+
+{% endblock %}
