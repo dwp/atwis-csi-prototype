@@ -50,7 +50,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l"> Prepare business case</h2>
+        <h2 class="govuk-heading-l"> Business case</h2>
 
       <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
@@ -91,33 +91,10 @@
         data['ttw-checkjohn']
          %}
   <ol class="app-task-list">
-    {% include  "../claim/task-list-comp/_task-list-open-john.html" %}
+
   {% else %}
 
-<ol class="app-task-list">
-  <li>
-    <h2 class="app-task-list__section">
-      <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
-    </h2>
-    <ul class="app-task-list__items">
-  <li class="app-task-list__item">
-    <span class="app-task-list__task-name">
 
-        Confirm whether workplace assessment is needed
-
-    </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>            </li>
-
-
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-
-                   Add information about the employer
-
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
-            </li>
 
 
 
@@ -129,7 +106,7 @@
         </li>
 
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">4. </span> Element
+       Element
         </h2>
         {% if not elementAdd %}
           {% set elementAdd = 0 %}
@@ -155,32 +132,9 @@
 
 
 
-{% if data['employer-size'+ phase] and
-data['wpa'+ phase]  %}
-    {% include  "../claim/task-list-comp/_task-list-element-john.html" %}{% else %}
- <ul class="app-task-list__items">
 
-          <li class="app-task-list__item">
-          <span class="app-task-list__task-name">
+    {% include  "../claim/task-list-comp/_task-list-element-john.html" %}
 
-               Travel to and from work: add or change support
-
-          </span>
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
-
-
-
-
-
-          <br> <form class="" action="/current/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
-           <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-           Add new elements
-           </button></form>
-
-
-
-
-      </ul>{% endif %}
 {% if data['cost-per-journey']%}
 <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
@@ -194,9 +148,9 @@ data['wpa'+ phase]  %}
 
 {% endif %}
 
-        <li>
+
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Award decision
+    Award decision
           </h2>
 
 
