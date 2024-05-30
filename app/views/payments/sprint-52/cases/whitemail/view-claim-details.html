@@ -1,0 +1,155 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+{% extends   "payments/sprint-52/claim/_CSIBASE-no-footer.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+<form action="/payments/sprint-52/cases/dereck/cases/whitemail/remove-whitemail-tab#document-details" method="post" novalidate>
+
+
+
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+
+        <h1 class="govuk-fieldset__heading">
+<!-- {{data['sw-invoice-ref-1']}}: summary -->
+Claim details
+
+        </h1>
+        <br>
+
+
+
+
+
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <!-- <dt class="govuk-summary-list__key">
+              Origin
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data ['whitemail-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div> -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date scanned
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              <time datetime="2023-06-06T09:12:00.000Z"><script>
+              // Get date
+                  var now = new Date();
+                  var pastDate = new Date(now);
+                  pastDate.setDate(now.getDate() - 10);
+
+                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                  });
+
+                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  hour12: true
+                  });
+
+                  document.write(formattedDate);
+                 </script>
+
+              <!-- {{data['whitemail-day']}}
+
+              {% if (data['whitemail-month'] =='01') or (data['whitemail-month'] =='1') %} January {% endif%}
+              {% if (data['whitemail-month'] =='02') or (data['whitemail-month'] =='2') %} February  {% endif%}
+              {% if (data['whitemail-month'] =='03') or (data['whitemail-month'] =='3') %} March {% endif%}
+              {% if (data['whitemail-month'] =='04') or (data['whitemail-month'] =='4') %} April {% endif%}
+              {% if (data['whitemail-month'] =='05') or (data['whitemail-month'] =='5') %} May {% endif%}
+              {% if (data['whitemail-month'] =='06') or (data['whitemail-month'] =='6') %} June {% endif%}
+              {% if (data['whitemail-month'] =='07') or (data['whitemail-month'] =='7') %} July {% endif%}
+              {% if (data['whitemail-month'] =='08') or (data['whitemail-month'] =='8') %} August {% endif%}
+              {% if (data['whitemail-month'] =='09') or (data['whitemail-month'] =='9') %} September {% endif%}
+              {% if data['whitemail-month'] =='10' %} October {% endif%}
+              {% if data['whitemail-month'] =='11'%} November {% endif%}
+              {% if data['whitemail-month'] =='12' %} December {% endif%}
+
+              {{data['whitemail-year']}} -->
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="/payments/sprint-52/cases/dereck/cases/whitemail/whitemail-date-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a> -->
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Envelope ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <!-- {{data ['envelope-id'] }} -->
+              24041200000000035
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="/payments/sprint-52/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a> -->
+            </dd>
+          </div>
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Document ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['document-id']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/payments/sprint-52/cases/dereck/cases/whitemail/whitemail-id-tab#your-tasks">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div> -->
+        </dl>
+
+
+
+
+<!-- TRIGGER -->
+
+
+<!-- <input type="hidden" id="whitemail-complete1" name="whitemail-complete1" value="Yes"> -->
+
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Remove document
+          </button>
+        </form>
+
+
+
+
+        </form>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set view = "tab" %}
+
+
+{% extends   "payments/sprint-52/claim/_CSIBASE-no-footer.html" %}
+
+
+
+{% block csi %}
+
+
+
+
+
+
+<!-- <form action="/cases/claim/task-list" method="post" novalidate> -->
+<form action="/payments/sprint-52/cases/claim#your-tasks" method="post" novalidate>
+
+
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    {% if case == 'sonya' and not data ['sop-site-code'] %}
+    <span class="govuk-caption-xl">{{ data['payee-name'] }}</span>
+    {% else %}
+    <span class="govuk-caption-xl">{{ data['payee-name-1'] }}</span>
+    {% endif %}
+
+    <h2 class="govuk-fieldset__heading">
+Are the payee details in SOP correct?
+    </h2>
+
+  </legend>
+  <div id="contact-hint" class="govuk-hint">
+              <!-- Does the claim match the grant award information below for the claim and grant award match. -->
+                </div>
+
+
+
+
+
+
+
+      <div class="govuk-form-group">
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          {% if case == 'dereck' %}
+          <input class="govuk-radios__input" id="sop-find-yes-2-1" name="sop-find-yes-1" type="radio" value="Yes~dereck/cases/review-payment/sop-add-supplier-tab#your-tasks" {{ checked("sop-find-yes-1", "Yes") }}>
+          {% endif %}
+          {% if case == 'sonya'%}
+          <input class="govuk-radios__input" id="sop-find-yes-2-1" name="sop-find-yes-1" type="radio" value="Yes~sonya/cases/review-payment/sop-add-supplier-tab#your-tasks" {{ checked("sop-find-yes-1", "Yes") }}>
+          {% endif %}
+          {% if case == 'james' %}
+          <input class="govuk-radios__input" id="sop-find-yes-2-1" name="sop-find-yes-1" type="radio" value="Yes~jamesm/claim-jamesm#your-tasks" {{ checked("sop-find-yes-1", "Yes") }}>
+          {% endif %}
+          {% if case == 'nina' %}
+          <input class="govuk-radios__input" id="sop-find-yes-2-1" name="sop-find-yes-1" type="radio" value="Yes~nina/claim-nina#your-tasks" {{ checked("sop-find-yes-1", "Yes") }}>
+          {% endif %}
+          {% if case == 'paul' %}
+          <input class="govuk-radios__input" id="sop-find-yes-2-1" name="sop-find-yes-1" type="radio" value="Yes~paul/claim-paul#your-tasks" {{ checked("sop-find-yes-1", "Yes") }}>
+          {% endif %}
+
+          <label class="govuk-label govuk-radios__label" for="sop-find-yes-2-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sop-find-yes-2-2" name="sop-find-yes" type="radio" value="No~review-payment/sop-find-details-amend" {{ checked("sop-find-yes", "No") }}>
+          <label class="govuk-label govuk-radios__label" for="sop-find-yes-2-2">
+            No
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+    </div>
+    <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+     </div>
+   </div>
+
+
+      </main>
+      </div>
+
+
+
+
+
+
+
+{% endblock %}
