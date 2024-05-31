@@ -1,0 +1,143 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="add" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l"> Quote for support worker</h1>
+
+
+
+                                   <div class="govuk-inset-text">
+                        {% if not phase %}  {{ data['sw-type']}}{% endif %}
+                          {% if phase == 'thomas'%} British Sign Language (BSL) interpreter {% endif %}
+                                   </div>
+
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+
+              </legend>
+              <!-- <div class="govuk-form-group">
+    <label class="govuk-label" for="Brand">
+      Brand
+    </label>
+    <input class="govuk-input" id="Brand" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
+  </div> -->
+  <div class="govuk-form-group">
+<label class="govuk-label" for="Supplier">
+Support worker provider
+</label>
+<input class="govuk-input" id="Supplier" name="quotes-check" type="text" spellcheck="false" autocomplete="name" value='{{data['quotes-check']}}'>
+</div>
+
+    <label class="govuk-label" for="cost-per-item">
+    Cost per hour
+    </label>
+      <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="chosen-quote-{{phase}}" type="text" spellcheck="false" value='{{data['chosen-quote-'+ phase]}}'>
+
+
+          </div>
+              </div>
+              <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="support-worker-hour-per-week">
+                How many hours per week does Thomas King need this support at work?
+              </label>
+              </h2>
+              <div id="hour-per-week-hint" class="govuk-hint">
+                Give the maximum number of hours per week Thomas King will need this support.
+              </div>
+              <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="support-worker-hour-per-week" name="support-worker-hour-per-week" type="text" spellcheck="false" value="{% if data['support-worker-hour-per-week']%}{{data['support-worker-hour-per-week']}}{% else %}5{% endif %}">
+                <div class="govuk-input__suffix" aria-hidden="true">hours per week</div>
+              </div><br>
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Do you want to add additional costs?
+              </legend>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="additional" name="additional" type="radio" value="Yes" {{ checked("additional", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="additional">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="additional-2" name="additional" type="radio" value="No" {{ checked("additional", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="additional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+              <!-- <label class="govuk-label" for="cost-per-item">
+              Number of hours per week
+              </label>
+              <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="support-worker-hour-per-week" name="support-worker-hour-per-week" type="text" spellcheck="false" value="">
+                        <div class="govuk-input__suffix" aria-hidden="true">hours per week</div>
+                      </div>  </div> -->
+                  </div>
+    </div>
+
+
+    <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                Where is the quote from?
+                    </h1>
+                  </legend>
+                  <!-- <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quotes-choose" name="quotes-choose" type="radio" value="From Hackney fare table~add">
+                      <label class="govuk-label govuk-radios__label" for="quotes-choose">
+                      From Hackney fare table
+                      </label>
+                    </div> -->
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quotes-choose-1" name="quotes-choose" type="radio" value="Thomas King" {{ checked("quotes-choose", "Thomas King") }}>
+                      <label class="govuk-label govuk-radios__label" for="quotes-choose-1">
+{% if not phase %}Dereck Smith{% endif %}
+{% if phase=='thomas'%}Thomas King{% endif %}
+                      </label>
+                    </div>
+                    {% if data['wpa'+ phase]=='Yes'%}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quotes-choose-2" name="quotes-choose" type="radio" value="Workplace assessment report"  {{ checked("quotes-choose", "Workplace assessment report") }}>
+                      <label class="govuk-label govuk-radios__label" for="quotes-choose-2">
+                    Workplace assessment report
+                      </label>
+                    </div>{% endif %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="quotes-choose-3" name="quotes-choose" type="radio" value="Other source" {{ checked("quotes-choose", "Other source") }}>
+                      <label class="govuk-label govuk-radios__label" for="quotes-choose-3">
+                        Other source
+                      </label>
+                    </div>
+          </fieldset>
+        </div>
+
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

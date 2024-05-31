@@ -1,0 +1,157 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+              <h1 class="govuk-heading-xl">Telephone call made</h1>
+            
+
+              {% if data['todays-date'+ number]=='No'%}
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                 Date
+                                </legend>
+                                <div id="expiry-hint" class="govuk-hint">
+                                  For example, 31 1 2022
+                                </div>
+                                <div class="govuk-date-input" id="contact-date-">
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-day">
+                                        Day
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-day" name="contact-date-day-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-month">
+                                        Month
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contact-date-month" name="contact-date-month-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                  <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label govuk-date-input__label" for="contact-date-year">
+                                        Year
+                                      </label>
+                                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contact-date-year" name="contact-date-year-{{number}}" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                  </div>
+                                </div>
+                                     </div>
+              {% endif %}
+
+
+              <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              <h2 class="govuk-fieldset__heading">
+                        Who did you call?
+                              </h2>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-who" name="contact-who" type="radio" value="{% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}">
+                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact">
+                              {% if phase == "arlo"  %}Arlo Spinka{% endif %}{% if phase == "john"  %}John Smith{% endif %}  {% if phase == "thomas"  %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-who-2" name="contact-who" type="radio" value="Employer">
+                                <label class="govuk-label govuk-radios__label" for="contact-who-2">
+                                Employer
+                                </label>
+                              </div>
+                              {% if data['wpa']=='Yes'%}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-who-3" name="contact-who" type="radio" value="Workplace assessor~phone-made-about">
+                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact-3">
+                                  Workplace assessor
+                                </label>
+                              </div>
+                              {% endif %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-who-4" name="contact-who" type="radio" value="Someone else">
+                                <label class="govuk-label govuk-radios__label" for="who-did-you-contact-4">
+                                Someone else
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                        <h2 class="govuk-fieldset__heading">
+                                Was the call answered?
+                                        </h2>
+                                      </legend>
+                                      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="asked-info-phone-" name="asked-info-phone-{{number}}" type="radio" value="Yes~id">
+                                          <label class="govuk-label govuk-radios__label" for="contact-who">
+                                      Yes
+                                          </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                          <input class="govuk-radios__input" id="contact-who-2" name="asked-info-phone-{{number}}" type="radio" value="No~phone-made-about">
+                                          <label class="govuk-label govuk-radios__label" for="contact-who-2">
+                                            No
+                                          </label>
+                                        </div>
+
+                                      </div>
+                                    </fieldset>
+                                  </div>
+
+
+
+{% if data['clear']=='No' %}{% else %}
+  {% include  "current/claim/notification-contact.html" %}{% endif %}
+
+
+
+
+
+
+<div class="govuk-inset-text">
+Once saved, details cannot be changed.
+  </div>
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+          Confirm and save
+          </button>
+
+
+          </form>
+
+
+        </div>        </div>
+
+
+
+{% endblock %}
