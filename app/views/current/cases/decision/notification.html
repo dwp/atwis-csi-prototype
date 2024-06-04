@@ -67,12 +67,13 @@
      Completed and sent letter ATW02EL
      </label>
    </div>{% endif %}
+   {% if (data['wpa']=='Yes') or (data['wpa'+ phase]=='Yes')%}
    <div class="govuk-checkboxes__item">
      <input class="govuk-checkboxes__input" id="notification-3" name="notification{{phase}}" type="checkbox" value="Sent any attachments" {{ checked("notification"+ phase, "Sent any attachments") }}>
      <label class="govuk-label govuk-checkboxes__label" for="notification-3">
        Sent any attachments
      </label>
-   </div>
+   </div>{% endif %}
    <div class="govuk-checkboxes__item">
      <input class="govuk-checkboxes__input" id="notification-3" name="notification{{phase}}" type="checkbox" value="Saved copy of letters and any attachments to Sharepoint" {{ checked("notification"+ phase, "Saved copy of letters and any attachments to Sharepoint") }}>
      <label class="govuk-label govuk-checkboxes__label" for="notification-3">
