@@ -1,0 +1,158 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+{% if not detailshealthindex %}
+  {% set totalhealthdetails = 0 %}
+  {% endif %}
+  {% if phase == "thomas"%}
+    {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+     {% set detailshealthindex = i %}
+     {% if data['condition-check-updatethomas'+ detailshealthindex]%}
+      {% set totalhealthdetails = totalhealthdetails + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+      {% endif %}
+
+{% if phase == "sonya"%}
+  {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+   {% set detailshealthindex = i %}
+   {% if data['condition-check-updatesonya'+ detailshealthindex]%}
+    {% set totalhealthdetails = totalhealthdetails + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+{% endif %}
+
+{% if not phase %}
+    {% for i in [1,2,3,4,5,6,7,8,9,10] -%}
+     {% set detailshealthindex = i %}
+     {% if data['condition-check-update'+ detailshealthindex]%}
+      {% set totalhealthdetails = totalhealthdetails + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+{% endif %}
+
+
+
+
+<div class="govuk-width-container">
+
+  <form action="/live-54/cases/{% if phase %}{{phase}}/cases/{% else %}{% endif %}check-application/condition-help-needed/more-details/{{totalhealthdetails + 1}}" method="post" novalidate>
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+
+                         Health condition or disability</h1>
+
+
+
+    {% include "current/claim/_condtion-help-needed.html"%}
+
+
+
+
+{% if not totalhealthdetails == 0 %}
+    <h2 class="govuk-heading-m">
+
+                    More details added</h2>
+                    <div class="govuk-form-group">
+                      <dl class="hmrc-list-with-actions hmrc-list-with-actions--short">
+{% endif %}
+
+
+
+
+{% if phase == "sonya"%}
+    {% for i in [1,2,3,4,5] -%}
+    {% set detailshealthindex = i  %}
+    {% if data['condition-check-updatesonya'+ detailshealthindex] %}
+
+        {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
+
+    {% endif %}  {%- endfor %}{% else %}
+
+    {% if phase == "thomas"%}
+        {% for i in [1,2,3,4,5] -%}
+        {% set detailshealthindex = i  %}
+        {% if data['condition-check-updatethomas'+ detailshealthindex] %}
+
+            {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
+<br>
+        {% endif %}  {%- endfor %}{% else %}
+
+
+    {% for i in [1,2,3,4,5] -%}
+    {% set detailshealthindex = i  %}
+    {% if data['condition-check-update'+ detailshealthindex] %}
+
+            {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
+
+    {% endif %}  {%- endfor %}
+{% endif %}
+
+    {% if totalhealthdetails == 0 %}{% else %}  </dl></div>{% endif %}{% endif %}
+
+
+
+
+
+
+
+    <!-- <p><a href="/live-54/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
+
+
+
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add more details <span class="govuk-visually-hidden"> about the health condition or disability</span>
+    </button>
+    </form>
+
+
+  <form action="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+
+    <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        {% include  "./content/more-information.html" %}
+
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item govuk-radios--inline">
+                      <input class="govuk-radios__input" id="condition-check" name="condition-check{{phase}}" type="radio" value="Yes"
+                      {% if not data['more-detail{{pahse}}1']%}{{ checked("condition-check"+ phase, "Yes") }}{% endif %}>
+                      <label class="govuk-label govuk-radios__label" for="condition-check">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="condition-check-2" name="condition-check{{phase}}" type="radio" value="No"
+                      {% if not data['more-detail{{phase}}1']%}{{ checked("condition-check"+ phase, "No") }}{% endif %}>
+                      <label class="govuk-label govuk-radios__label" for="condition-check-2">
+                        No
+                      </label>
+                    </div>
+
+                  </div>
+
+                </fieldset>
+        </div>
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

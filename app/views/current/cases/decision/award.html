@@ -54,9 +54,9 @@
                    <tr class="govuk-table__row">
                      <th scope="col" class="govuk-table__header ">Support type</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Details</th>
-                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Start date</th>
-                          <th scope="col" class="govuk-table__header govuk-table__header--numeric">End date</th>
-                        <th scope="col" class="govuk-table__header govuk-table__header--numeric" >Cost</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Start date</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Award end date</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric"style="text-align: center;" >Cost</th>
 
 
 
@@ -99,7 +99,7 @@
 
                                              // Write the date and time to the HTML page
                                              document.write(date);</script>{% endif %}</td>
-                                               <td class="govuk-table__cell govuk-table__cell--numeric" ><script>// Get end date
+                                               <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;"><script>// Get Award end date
                                                    var now = new Date();
                                                    var pastDate = new Date(now);
                                                    pastDate.setDate(now.getDate() + 1094);

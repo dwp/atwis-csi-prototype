@@ -1,0 +1,55 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+<form action="{% if data['national-insurance-number']%}check{% else %}/live-54/cases/claim#checks{% endif %}" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading"><label class="govuk-label govuk-label--l" for="postcode">
+
+                {% include  "current/cases/searchlight/national-insurance/content/add-national-insurance.html" %}
+   </h2>
+               </legend>
+               <!-- <div id="national-insurance-number-hint" class="govuk-hint">
+                Copy and paste Dereck Smith's National Insurance number from Searchlight.
+                </div> -->
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="national-insurance-number">
+    National Insurance number
+  </label>
+  <div id="national-insurance-number-hint" class="govuk-hint">
+
+  </div>
+  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value="{{data['national-insurance-number']| upper }}">
+</div>
+</fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button" >
+  Save and continue
+</button>
+</form>
+</div>
+</div>
+
+</main>
+</div>
+{% endblock %}

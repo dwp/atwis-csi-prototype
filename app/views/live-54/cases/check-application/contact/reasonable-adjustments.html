@@ -1,0 +1,316 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+
+
+
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back </a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+  Contact details
+    </h1>
+  </legend>
+</fieldset>
+<!-- <h2 class="govuk-heading-m">Appointee contact</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Jane Doe
+  </dd>
+  <dd class="govuk-summary-list__actions">
+
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their email address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Jane@smithdigital.co
+  </dd>
+  <dd class="govuk-summary-list__actions">
+
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Their phone number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    123456789
+  </dd>
+  <dd class="govuk-summary-list__actions">
+
+  </dd>
+</div> -->
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">  {% if phase == "sonya" %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %}{% if phase == "john" %}John Smith{% endif %}{% if phase == 'thomas'%}Thomas King{% endif %} {% if phase == "arlo" %}Arlo Spinka{% endif %} contact</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who should we contact about your application?
+        </dt>
+        <dd class="govuk-summary-list__value">
+      {% if phase == "sonya" %}Someone else{% endif %}   {% if phase == "john" %}John Smith{% endif %}  {% if phase == 'thomas'%}Thomas King{% endif %}{% if phase == "arlo" %}Arlo Spinka{% endif %}{% if not phase%}Dereck Smith {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">   Who should we contact about your application?</span>
+          </a>
+        </dd>
+      </div>
+
+      </dl>
+{% if phase == "sonya" %}
+<br>
+<h2 class="govuk-heading-m">Details of the third party representative </h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Their full name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            John Smith
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/alpha-1i/how-we-contact-you/someone-else">
+              Change
+              <span class="govuk-visually-hidden"> their full name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Their relationship to Sonya Corkery
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Father
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/alpha-1i/how-we-contact-you/someone-else">
+              Change
+              <span class="govuk-visually-hidden"> their relationship to you</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Their telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1234567890
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/alpha-1i/how-we-contact-you/someone-else">
+              Change
+              <span class="govuk-visually-hidden"> their telephone number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Their email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ewq@ewq.co
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/alpha-1i/how-we-contact-you/someone-else">
+              Change
+              <span class="govuk-visually-hidden"> their email address</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>{% endif %}
+
+{% if phase == "thomas" %}
+
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Thomas King finds it difficult to hear or speak on the telephone
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> your email address</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            john@gmail.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> your email address</span>
+            </a>
+          </dd>
+        </div>
+
+
+{% else %}
+{% if phase == "sonya" %}
+<h2 class="govuk-heading-m">Details of Sonya Corkery </h2>{% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+           Telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+        01234567890
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> Telephone number </span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {% if not phase%}dereck{% else %}  {{phase}}{% endif %}@gmail.com
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> Email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        When are the best times to contact you?
+        </dt>
+        <dd class="govuk-summary-list__value">
+        Between 8:30 am and 6pm Monday to Saturday.
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> When are the best times to contact you? </span>
+          </a>
+        </dd>
+      </div>
+{% endif %}
+
+
+    </dl>
+  </div>
+</div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title" id="workplace-contact">Workplace contact</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Permission to communicate with workplace contact
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Permission given
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="permission#">
+            Change<span class="govuk-visually-hidden">    Permission to communicate with workplace contact </span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Their name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jane Doe
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="workplace-contact#">
+            Change<span class="govuk-visually-hidden"> Their name </span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their job title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Line Manager
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="workplace-contact#">
+            Change<span class="govuk-visually-hidden">   Their job title </span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Their email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+      Jane@smithdigital.co
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="workplace-contact#">
+            Change<span class="govuk-visually-hidden">   Their email address </span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Their telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+    123456789
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="workplace-contact#">
+            Change<span class="govuk-visually-hidden">    Their telephone number  </span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- </dl> -->
+{% endblock %}

@@ -74,28 +74,34 @@ Total cost
       Workplace assessment report
       </label>
     </div>    {% endif %}
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="from-sae-3" name="from-sae{{number}}" type="radio" value="Occupational Health" {{ checked("from-sae"+ number, "Occupational Health") }}>
+      <label class="govuk-label govuk-radios__label" for="from-sae-3">
+  Occupational Health
+      </label>
+    </div>
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="Employer" {{ checked("from-sae"+ number, "Employer") }}>
-    <label class="govuk-label govuk-radios__label" for="from-sae-2">
+    <input class="govuk-radios__input" id="from-sae-4" name="from-sae{{number}}" type="radio" value="Employer" {{ checked("from-sae"+ number, "Employer") }}>
+    <label class="govuk-label govuk-radios__label" for="from-sae-4">
 Employer
     </label>
   </div>
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae-3" name="from-sae{{number}}" type="radio" value="Access to Work" {{ checked("from-sae"+ number, "Access to Work") }}>
-    <label class="govuk-label govuk-radios__label" for="from-sae-3">
-Access to Work
+    <input class="govuk-radios__input" id="from-sae-5" name="from-sae{{number}}" type="radio" value="Access to Work case manager" {{ checked("from-sae"+ number, "Access to Work case manager") }}>
+    <label class="govuk-label govuk-radios__label" for="from-sae-5">
+Access to Work case manager
     </label>
   </div>
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae-4" name="from-sae{{number}}" type="radio" value="Other" {{ checked("from-sae"+ number, "Other") }}>
-    <label class="govuk-label govuk-radios__label" for="from-sae-4">
+    <input class="govuk-radios__input" id="from-sae-6" name="from-sae{{number}}" type="radio" value="Third party representative" {{ checked("from-sae"+ number, "Third party representative") }}>
+    <label class="govuk-label govuk-radios__label" for="from-sae-6">
   Third party representative
     </label>
   </div>
 
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="from-sae-5" name="from-sae{{number}}" type="radio" value="Other" {{ checked("from-sae"+ number, "Other") }}>
-    <label class="govuk-label govuk-radios__label" for="from-sae-5">
+    <input class="govuk-radios__input" id="from-sae-7" name="from-sae{{number}}" type="radio" value="Other" {{ checked("from-sae"+ number, "Other") }}>
+    <label class="govuk-label govuk-radios__label" for="from-sae-7">
   Other
     </label>
   </div>

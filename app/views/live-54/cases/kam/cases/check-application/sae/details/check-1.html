@@ -1,0 +1,211 @@
+{% set case = "other-cases-fill-4" %}
+{% set phase = "kam" %}
+
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% if not number %}
+{% set number = '1'%}
+{% endif %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+<form action="/live-54/cases/kam/cases/check-application/sae/details/add" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Task summary:  High visability keyboard 2000</h2>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+
+            Item of specialist equipment
+            </dt>
+            <dd class="govuk-summary-list__value">
+High visability keyboard 2000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+Add this item to the award?
+  </dt>
+  <dd class="govuk-summary-list__value">
+
+Added to award
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/approve-1">
+      Change<span class="govuk-visually-hidden">
+Add this item to the award?
+</span>
+    </a>
+  </dd>
+</div>
+
+
+{% if data['approve-1']=='false'%}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+  Reasons for not adding to award
+
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['more-detail']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
+      Change<span class="govuk-visually-hidden">
+    Reason for not adding to award
+</span>
+    </a>
+  </dd>
+</div>
+{% else %}
+
+
+
+
+
+{% if data['approve'+ number]=='No' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+Reason for not awarding this item
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['not-needed-sae'+ number]}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
+      Change<span class="govuk-visually-hidden">
+Reason for not awarding this item
+</span>
+    </a>
+  </dd>
+</div>
+{% else %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+Total cost
+  </dt>
+  <dd class="govuk-summary-list__value">
+
+£100
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+      Change<span class="govuk-visually-hidden">
+
+</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+    Who provided the cost for this item?
+
+  </dt>
+  <dd class="govuk-summary-list__value">
+Kam Haraguchi
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+      Change<span class="govuk-visually-hidden">
+  Who provided the cost for this item?
+</span>
+    </a>
+  </dd>
+</div>
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+  What is the start date for this item?
+
+  </dt>
+  <dd class="govuk-summary-list__value">
+Date of decision
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
+      Change<span class="govuk-visually-hidden">
+      What is the start date for this item?
+</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+
+    Does a social and domestic contribution need to be applied to this item?
+
+  </dt>
+  <dd class="govuk-summary-list__value">
+Yes
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="/live-54/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
+      Change<span class="govuk-visually-hidden">
+    Does a social and domestic contribution need to be applied to this item?
+</span>
+    </a>
+  </dd>
+</div>
+
+{% endif %}{% endif %}
+        </dl>
+
+
+
+
+
+
+<!-- {% if "None of the above" in data['benefits'] or data['exceptions']=='Yes' or data['exceptions']=='No'%}{% else %}
+        <div class="govuk-inset-text">
+        <p> You need to contact Dereck Smith to check whether their benefits mean they are not eligible for Access to Work. This will be added to your <strong>log contact with Dereck Smith</strong>.  </p>
+
+        </div>
+{% endif %} -->
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="" value="">
+            Return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}
