@@ -49,7 +49,7 @@
 
      <input class="govuk-checkboxes__input" id="notification" name="notification{{phase}}" type="checkbox" value="Completed and sent letter ATW05NARL" {{ checked("notification"+ phase, "Completed and sent letter ATW05NARL") }}>
      <label class="govuk-label govuk-checkboxes__label" for="notification{{phase}}">
-       Completed and sent letter ATW05NARL
+       Completed and sent Application Rejection letter (AtW05NARL)
      </label>
    </div>
    {% else %}
@@ -57,14 +57,14 @@
 
      <input class="govuk-checkboxes__input" id="notification" name="notification{{phase}}" type="checkbox" value="Completed and sent letter ATW01CL" {{ checked("notification"+ phase, "Completed and sent letter ATW01CL") }}>
      <label class="govuk-label govuk-checkboxes__label" for="notification{{phase}}">
-       Completed and sent letter ATW01CL
+       Completed and sent Award letter (AtW01CL)
      </label>
    </div>
 
    <div class="govuk-checkboxes__item">
      <input class="govuk-checkboxes__input" id="notification-2" name="notification{{phase}}" type="checkbox" value="Completed and sent letter ATW02EL" {{ checked("notification"+ phase, "Completed and sent letter ATW02EL") }}>
      <label class="govuk-label govuk-checkboxes__label" for="notification-2">
-     Completed and sent letter ATW02EL
+     Completed and sent Employer letter (AtW02EL)
      </label>
    </div>{% endif %}
    {% if (data['wpa']=='Yes') or (data['wpa'+ phase]=='Yes')%}
