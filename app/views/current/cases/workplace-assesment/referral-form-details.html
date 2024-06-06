@@ -151,27 +151,6 @@ No
 
 
 
-
-{% if 'france' in data['others-wpa']%}
-<p>Dereck Smith has requested a thrid party at the workplace assessment.</p>
-
-
-<dl class="govuk-summary-list govuk-summary-list--no-border">
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key">
-      Details of     avability of third party over the next 2 working days
-    </dt>
-    <dd class="govuk-summary-list__value">
-<p>{{ data['availability-wpa-2']}}</p>
-</dd>
-</div>
-
-
-
-{% endif %}
-</dl>
-
-
 <h2>Assessment Preference</h2>
 
 <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -393,13 +372,7 @@ Telephone Number:
   <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
 </div>
 
-<label class="govuk-label" for="work-pattern">
-Working Pattern:
-</label>
 
-
-  <textarea class="govuk-textarea" id="work-pattern" name="work-pattern" rows="3" aria-describedby="more-detail-hint"></textarea>
-</div>
 
 <!-- <div id="current_date"></p>
 <script>

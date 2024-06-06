@@ -54,9 +54,9 @@
                    <tr class="govuk-table__row">
                      <th scope="col" class="govuk-table__header ">Support type</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Details</th>
-                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Start date</th>
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Award end date</th>
-                        <th scope="col" class="govuk-table__header govuk-table__header--numeric"style="text-align: center;" >Cost</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" style="text-align: right;">Start date</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" style="text-align: right;">Award end date</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric"style="text-align: right;" >Cost</th>
 
 
 
@@ -76,7 +76,7 @@
                                     <tr class="govuk-table__row">
                                       <th scope="row" class="govuk-table__header">Specialist equipment</th>
                                       <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: left;">{{data['sae-item-type'+ index] }}</td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric" >
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">
                                           {% if data['sae-start-date'+ index]=='Another date'%}
 {{data['start-date-day']}}
 {% if data['start-date-month']=='1' or data['start-date-month']=='01'%}January{% endif %}
@@ -99,7 +99,7 @@
 
                                              // Write the date and time to the HTML page
                                              document.write(date);</script>{% endif %}</td>
-                                               <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;"><script>// Get Award end date
+                                               <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;"><script>// Get Award end date
                                                    var now = new Date();
                                                    var pastDate = new Date(now);
                                                    pastDate.setDate(now.getDate() + 1094);
@@ -111,13 +111,13 @@
                                                    });
 
                                                    document.write(formattedDate );</script></td>
-                                      <td class="govuk-table__cell govuk-table__cell--numeric" >£{{data['cost-per-item'+ index] }}</td>
+                                      <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: right;">£{{data['cost-per-item'+ index] }}</td>
 
 
 
 
 
-                                      <tr class="govuk-table__row">
+                                    {% if data['sw-type']%}<tr class="govuk-table__row">
                                         <th scope="row" class="govuk-table__header">Support worker</th>
                                         <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: left;">Notetaker<br>
                                         £6 per hour<br>
@@ -157,7 +157,7 @@
                                                      });
 
                                                      document.write(formattedDate );</script></td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric" >£144.00</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" >£144.00</td> {% endif %}
 
 
 
@@ -187,7 +187,8 @@
      <th scope="row" class="govuk-table__header"><br><br>Total award {% if  deductions > 0 %}before deductions{% endif %}</th>
      <td class="govuk-table__cell govuk-table__cell--numeric"><br><br></td>
        <td class="govuk-table__cell govuk-table__cell--numeric"><br><br></td>   <td class="govuk-table__cell govuk-table__cell--numeric"><br></td>
-     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;"><br><br>£643.00</td>
+     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;"><br><br>{% set totalsae =  (data['cost-per-item1'] | default(0)| int) +  (144| int)%}
+       £{{totalsae}}    </td>
    </tr>
 
 </tbody>
@@ -301,11 +302,16 @@
 
 
 
+    <p class="govuk-body">If you need to change anything, go to:</p>
+                                     <ul class="govuk-list govuk-list--bullet">
+                                       <li><a href="/current/cases/claim#business-case">business case</a></li>
+                                       <li><a href="/current/cases/claim#citizen-details">application  review</a></li>
+                                     <!-- <li><a href="cost-share-need">update mandatory cost share</a> -->
+                                         <li><a href="employer-size">change employer size</a></li>  </ul>
 
 
 
-<p>If you need to change anything, go to <a href="/current/cases/claim#business-case">business case</a> or <a href="/current/cases/claim#citizen-details">application  review</a>. </p>
-<p>Once you have confirmed the award summary, you will be able to send the award decision to Thomas King.</p>
+<p>Once you have confirmed the award summary, you will be able to send the award decision to Dereck Smith.</p>
 
 
 
