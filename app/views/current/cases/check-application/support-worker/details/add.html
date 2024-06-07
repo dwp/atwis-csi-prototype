@@ -9,15 +9,17 @@
 {% endif %}
 
 {% if data['sw-type']  %}
-{% set totalSw = totalSw + 1 %}
+{% set totalSw =  + 1 %}
 {% endif %}
 
 
 {% for i in [1,2,3,4] -%}
    {% set index = i %}
     {% if data['sw-type'+ index]%}
-    {% set totalSw = totalSw + 1 %}
+{% set totalSw =  + 1 %}
   {% endif %}
+
+
 
 
     {%- endfor %}

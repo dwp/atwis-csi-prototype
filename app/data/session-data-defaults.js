@@ -68,9 +68,9 @@ module.exports = {
 'national-insurance-number' : "AB 123456 C",
 'appointee' : "No",
 'benefits' : "No",
-// 'disc-check' : "No",
-// 'job-deatils-check' : "No",
-// 'condition-check' : "No",
+'disc-check' : "No",
+'job-deatils-check' : "No",
+'condition-check' : "No",
 //no to WPA
 //'wpa' : "No",
 //yes to WPA
@@ -85,9 +85,9 @@ module.exports = {
 // 'report' : ["Reviewed workplace assessment report","Saved a copy of the workplace assessment report in Sharepoint", "Saved a copy of the workplace assessment email in Sharepoint"],
 // 'another-wpa' : "No",
 //
-// 'employer-sector' : "Yes",
-// 'employer-sector-type' : "Charity",
-// 'employer-size' : "10 to 49 (small)",
+'employer-sector' : "Yes",
+'employer-sector-type' : "Charity",
+'employer-size' : "10 to 49 (small)",
 
 'wpathomas' : "No",
 'employer-sectorthomas' : "Yes",

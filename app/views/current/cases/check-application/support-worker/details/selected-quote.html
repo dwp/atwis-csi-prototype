@@ -59,7 +59,7 @@ Support worker provider
               <div id="hour-per-week-hint" class="govuk-hint">
                 Give the maximum number of hours per week Thomas King will need this support.
               </div>
-              <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="support-worker-hour-per-week" name="support-worker-hour-per-week" type="text" spellcheck="false" value="{% if data['support-worker-hour-per-week']%}{{data['support-worker-hour-per-week']}}{% else %}5{% endif %}">
+              <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="support-worker-hour-per-week" name="support-worker-hour-per-week" type="text" spellcheck="false" value="{% if not data['support-worker-hour-per-week']%}{{data['support-worker-hour-per-week']}}{% else %}5{% endif %}">
                 <div class="govuk-input__suffix" aria-hidden="true">hours per week</div>
               </div><br>
 <div class="govuk-form-group">
