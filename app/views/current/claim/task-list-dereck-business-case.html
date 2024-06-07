@@ -203,7 +203,7 @@ data ['appointee']
 </ul>
 
 
-      {% if data['sae-add']=='No' and data['sw-add']=='No'%}
+      {% if data['sae-add']=='No' %}
             <h2 class="govuk-heading--m">Award is under approval limits</h2>
 
             <p>You do not need to send this award to anyone else for approval. </p>
@@ -217,7 +217,7 @@ data ['appointee']
           <h2 class="app-task-list__section">
  Award decision
           </h2>
-          {% if data['sae-add']=='No' and data['sw-add']=='No'%}
+          {% if data['sae-add']=='No' %}
             {% include  "../claim/task-list-comp/_task-list-decision-dereck.html" %}
           {% else %}
           <ul class="app-task-list__items">
