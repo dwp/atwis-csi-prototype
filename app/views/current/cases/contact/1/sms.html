@@ -171,18 +171,39 @@
                               Notification
                                   </label>
                                 </div>
-                                <!-- <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why-{{number}}" type="checkbox" value="Notification">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="contact-why-10" name="contact-why-{{number}}" type="checkbox" value="Other">
                                   <label class="govuk-label govuk-checkboxes__label" for="contact-why-10">
-                            Additional information
+                          Other
                                   </label>
-                                </div> -->
+                                </div>
                               </div>
                             </fieldset>
                           </div>
 
 
-                             <!-- <a href="">Set to todays date</a> -->
+                          <div class="govuk-form-group">
+                                     <label class="govuk-label govuk-label--m" for="summary-case-history">
+                                     Summary
+                                     </label>
+                                     <div id="summary-case-history-hint" class="govuk-hint">
+                                     Give a short description. This will appear in the case history timeline.
+                                     </div>
+                                     <input class="govuk-input govuk-input--width-20" id="summary-case-history" name="summary-case-history{{number}}" type="text" aria-describedby="summary-case-history-hint">
+                                   </div>
+
+                                       <div class="govuk-form-group">
+                                     <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+                                       <div class="govuk-form-group">
+                                         <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+                                   Additional details
+
+                                         </label>
+                                         </h2>
+
+                                     <textarea class="govuk-textarea govuk-js-character-count" id="other-note1" name="other-discussion-{{number}}" rows="5" aria-describedby="other-note1-info other-note1-hint"></textarea><div id="other-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 500 characters remaining</div>
+                                     </div>
 
 <div class="govuk-inset-text">
 Once saved, details cannot be changed.
