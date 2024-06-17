@@ -1,0 +1,76 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+<form action="/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-grid-column-two-thirds">
+                  <h1 class="govuk-heading-l">Approval</h1>
+                  <form action="/form-handler" method="post" novalidate>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--m" for="passport-number">
+                    Full name of approver
+                      </label>
+
+                      <input class="govuk-input govuk-input--width-15" id="passport-number" name="passportNumber" type="text" aria-describedby="passport-number-hint">
+                    </div>
+
+
+                    <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                  What was the decision?
+                                  </legend>
+                                  <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                      <input class="govuk-radios__input" id="approval" name="approval" type="radio" value="Approved">
+                                      <label class="govuk-label govuk-radios__label" for="approval">
+                                        Approved
+                                      </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                      <input class="govuk-radios__input" id="approval-2" name="approval" type="radio" value="Not approved">
+                                      <label class="govuk-label govuk-radios__label" for="approval-2">
+                                        Not approved
+                                      </label>
+                                    </div>
+
+                                  </div>
+                                </fieldset>
+                              </div>
+
+
+
+
+
+           <button class="govuk-button" data-module="govuk-button"  value="complete">Save and continue
+           </button>
+
+
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

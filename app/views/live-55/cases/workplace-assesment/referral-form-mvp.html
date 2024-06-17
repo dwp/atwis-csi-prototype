@@ -1,0 +1,93 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+
+  <div class="govuk-width-container">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+    <h1 class="govuk-heading-l">
+              Referral form
+            </h1>
+
+
+              <p class="govuk-body"> <a href="https://intranet.dwp.gov.uk/manual/access-work/40-customer-content-portal-ccp" class="govuk-link govuk-link--no-visited-state" target="_blank">Check guidance on using the Customer Content Portal (CCP) (opens in a new tab)</a> for the latest referral form.
+            </p>
+           <p class="govuk-body">
+              Use DWP Place to send a secure email to {% if data['national-insurance-number']=='AB 123456 C'%}Royal British Legion Industries (RBLI) at atwsouth@rbli.co.uk{% else %}People Plus at chris.williams2@peopleplus.co.uk{% endif %}. You must attach the referral form.
+            </p>
+            <p class="govuk-body"><a href='https://dwpgovuk.sharepoint.com/:f:/s/SRO-6622/ElpWMJKZR75KkoUqdMDNFbQBvyYJk9lAqJZ366oYJ1_xrg?e=6hTdeH' class="govuk-link govuk-link--no-visited-state" target="_blank">Save a copy of the referral form in customer folder in Sharepoint (opens in a new tab)</a>  </p>
+
+
+            <form action="/live-55/cases/claim#your-tasks" method="post" novalidate>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+Which tasks have you completed?
+
+                  </legend>
+                  <div id="referral-form-hint" class="govuk-hint">
+       Select all that apply.
+     </div>
+     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form" name="referral-form" type="checkbox" value="carcasses">
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form">
+           Completed and sent referral form
+         </label>
+       </div>
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-2" name="referral-form" type="checkbox" value="mines">
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-2">
+           Saved copies to Sharepoint
+         </label>
+       </div>
+
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-3" name="referral-form" type="checkbox" value="Set up on Labour Market System (LMS)">
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-3">
+           Set up on Labour Market System (LMS)
+         </label>
+       </div>
+       <div class="govuk-checkboxes__item">
+         <input class="govuk-checkboxes__input" id="referral-form-4" name="referral-form" type="checkbox" value="Record workplace assessment type in LMS">
+         <label class="govuk-label govuk-checkboxes__label" for="referral-form-4">
+           Record workplace assessment type in LMS
+         </label>
+       </div>
+
+     </div>
+
+                </fieldset>
+              </div>
+  </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+   </main>
+   </div>
+
+
+
+{% endblock %}
