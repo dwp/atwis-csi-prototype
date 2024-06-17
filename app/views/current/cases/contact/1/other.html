@@ -26,7 +26,8 @@
 
               <h1 class="govuk-heading-l">Add more information about this
                 {% if data['_do_'+ number]=='Email sent'%}email sent{% endif %}{% if data['_do_'+ number]=='Email received'%}email received{% endif %}
-                {% if data['_do_'+ number]=='Telephone call made'%} call made{% endif %}{% if data['_do_'+ number]=='Telephone call received'%} call received{% endif %}</h1>
+                {% if data['_do_'+ number]=='Telephone call made'%} call made{% endif %}{% if data['_do_'+ number]=='Telephone call received'%} call received{% endif %}
+            {% if data['_do_'+ number]=='Text message (SMS) sent'%}  text message (SMS){% endif %}</h1>
 
 
 

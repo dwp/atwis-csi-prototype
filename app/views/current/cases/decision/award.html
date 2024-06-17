@@ -157,7 +157,7 @@
                                                      });
 
                                                      document.write(formattedDate );</script></td>
-                                        <td class="govuk-table__cell govuk-table__cell--numeric" >£144.00</td> {% endif %}
+                                        <td class="govuk-table__cell govuk-table__cell--numeric" >£144</td> {% endif %}
 
 
 
@@ -187,7 +187,7 @@
      <th scope="row" class="govuk-table__header"><br><br>Total award {% if  deductions > 0 %}before deductions{% endif %}</th>
      <td class="govuk-table__cell govuk-table__cell--numeric"><br><br></td>
        <td class="govuk-table__cell govuk-table__cell--numeric"><br><br></td>   <td class="govuk-table__cell govuk-table__cell--numeric"><br></td>
-     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;"><br><br>{% set totalsae =  (data['cost-per-item1'] | default(0)| int) %}
+     <td class="govuk-table__cell govuk-table__cell--numeric" style="text-align: center;"><br><br>{% set totalsae =  (data['cost-per-item1'] | default(0)| int) + 144%}
        £{{totalsae}}    </td>
    </tr>
 
