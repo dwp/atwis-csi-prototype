@@ -22,28 +22,10 @@
 Decision letters
 </a>
 </span>
-
-{% if data['wpa']=='Yes'%}
-{% if totalcomplete == 4  %}
-<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% if totalcomplete == 3  %}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
+{% if data['notification']  %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> {% endif %}
 
 
-
-
-{% endif %}
-{% if data['wpa']=='No'%}
-{% if totalcomplete == 4  %}
-<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% if totalcomplete == 3  %}
-<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
-{% endif %}
-
-{% if totalcomplete == 2  %}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
-{% if totalcomplete == 1  %}
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">in progress</strong>{% endif %}
 {% if totalcomplete == 0 %}
 <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
 
