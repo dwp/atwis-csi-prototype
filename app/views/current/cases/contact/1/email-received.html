@@ -33,7 +33,7 @@
                                  When did this happen?
                                 </legend>
                                 <div id="expiry-hint" class="govuk-hint">
-                                    Give the date, for example 31 1 2024 
+                                    Give the date, for example 31 1 2024
                                 </div>
                                 <div class="govuk-date-input" id="contact-date-">
                                   <div class="govuk-date-input__item">
@@ -86,12 +86,12 @@
                                 Employer
                                 </label>
                               </div>
-                              <div class="govuk-radios__item">
+                            {% if data['wpa']=='Yes'%}    <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="who-emailed-us-3" name="who-emailed-us" type="radio" value="Workplace assessor">
                                 <label class="govuk-label govuk-radios__label" for="who-emailed-us-3">
                                 Workplace assessor
                                 </label>
-                              </div>
+                              </div>{% endif %}
                               <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="who-emailed-us-4" name="who-emailed-us" type="radio" value="Someone else">
                                 <label class="govuk-label govuk-radios__label" for="who-emailed-us-4">
