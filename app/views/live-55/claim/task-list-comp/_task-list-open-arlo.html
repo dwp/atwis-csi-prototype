@@ -1,0 +1,176 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+      </li>
+      <!-- <p >
+<a href="{% if not data['_do_1'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/1/how-do-you-want-to-contact{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+  Record contact with {% if data['appointee'+ phase]=='Yes, I need to add an appointee'%}{{data['appointee-name'+ phase]}}{% else %}{% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}{% endif %}
+</a>
+      </p><br> -->
+
+      <!-- <p >
+      <a href="{% if not data['_do_1'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/1/how-do-you-want-to-contact{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/contact-log{% endif %}" aria-describedby="contact-status">
+      Add contact
+      </a>
+      </p> -->
+<!-- <br> -->
+<li>
+  <h2 class="app-task-list__section">
+    <span class="app-task-list__section-number">3. </span> Workplace assessment and job details
+  </h2>
+  <ul class="app-task-list__items">
+<li class="app-task-list__item">
+  <span class="app-task-list__task-name">
+<a href="{% if phase =="sonya"%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-not-needed{% else %}{% if data['wpa'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/check-wpa{% else %}{% if data['elements'+ phase]=='I do not know'%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-not-needed{% endif %}{% endif %}{% endif %}" aria-describedby="job-status">
+  Confirm whether workplace assessment is needed
+</a>
+  </span>
+
+    {% if not data['wpa'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>  {% else %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+    {% endif %}
+  </li>
+
+
+  {% if data['wpa'+ phase]=='Yes'%}
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+        <a href="{% if data['wpa-type'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/check{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/citizen-wpa{% endif %}" aria-describedby="job-status">
+            Type of workplace assessment
+        </a>
+          </span>
+          {% if data['wpa'+ phase]=='No'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+        {% if data['wpa-type'+ phase]=='I have not discussed it with them yet'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+        {% if data['wpa-availability'+ phase]=='I’m waiting for an answer'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">In progress</strong> {% endif %}
+        {% if data['wpa-availability'+ phase]=='Yes'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+            {% if not data['wpa-type'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>  {% endif %}
+          </li>
+    {% endif %}
+
+
+    <li>
+
+
+{% if not data['wpa'+ phase]%}
+        <li class="app-task-list__item">
+        <span class="app-task-list__task-name">
+
+                Add information about the employer
+
+        </span>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+{% else %}
+
+
+
+
+{% if data['wpa'+ phase]=='No'%}
+<li>
+
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+<a href="
+
+{% if data ['employer-sector'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/check{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/employment-sector{% endif %}
+
+" aria-describedby="job-status">
+
+    Add information about the employer
+</a>
+      </span>
+{% if data['employer-sector'+ phase]=='Yes' and data['employer-sector-type'+ phase] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if not data['employer-sector'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+{% if data ['employer-sector'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+</li>
+{% else %}
+
+{% if data['address-of-wpa'+ phase]%}
+<li>
+
+
+    <li class="app-task-list__item">
+      <span class="app-task-list__task-name">
+<a href="
+{% if data ['job-deatils-contact'+ phase]=='They gave permission (apply)'%}
+{% if data ['employer-sector'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/check{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/employment-sector{% endif %}
+{% else %}
+{% if data ['job-deatils-contact'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}job-details/check{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}contact-employer{% endif %}
+{% endif %}
+" aria-describedby="job-status">
+
+    Add information about the employer
+</a>
+      </span>
+{% if data['employer-sector'+ phase]=='Yes' and data['employer-sector-type'+ phase] %}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% endif %}
+{% if not data['employer-sector'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
+{% if data ['employer-sector'+ phase]=='No'%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">Contact needed</strong>{% endif %}
+</li>
+
+
+
+
+
+
+
+{% if data['wpa'+ phase]=='Yes' and  data['employer-size'+ phase] and data['employer-sector-type'+ phase]%}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+          <a href="{% if data['referral-form'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/check-referral-form{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
+                  Workplace assessment referral form
+          </a>
+              </span>
+              {% if not data['referral-form'+ phase]%}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>            </li>
+{% else %}
+<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+{% endif %}
+{% endif %}
+
+
+
+
+  {% if data['referral-form'+ phase]%}
+
+  <li class="app-task-list__item">
+    <span class="app-task-list__task-name">
+<a href="{% if data['report'+ phase]%}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-report/check{% else %}/live-55/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
+      Review workplace assessment report
+</a>
+    </span>
+{% if data['report'+ phase]%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}         </li>
+
+{% endif %}
+
+
+
+{% else %}
+<li class="app-task-list__item">
+<span class="app-task-list__task-name">
+
+        Add information about the employer
+
+</span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
+
+
+{% endif %}
+{% endif %}
+{% endif %}
+
+
+
+          </ul>
