@@ -88,7 +88,7 @@ at {{data['contact-time-'+ number]}}
 <!-- {% include  "current/claim/notification-contact.html" %} -->
      <br>
 
-     {% if data['contact-moreDetails-'+ number]=='Yes'%}
+
      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
                Summary
@@ -96,7 +96,7 @@ at {{data['contact-time-'+ number]}}
                      </label>
                      </h2>
                      <p>{{data['summary-case-history'+ number]}}</p>
-     {% if data['contact-moreDetails-'+ number]=='Yes'%}
+     {% if data['other-discussion-'+ number]%}
           <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
 
                     Additional  details
@@ -106,7 +106,7 @@ at {{data['contact-time-'+ number]}}
 
      <p>{{data['other-discussion-'+ number]}}</p>
      {% endif %}
-     {% endif %}
+
 
 
            <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
