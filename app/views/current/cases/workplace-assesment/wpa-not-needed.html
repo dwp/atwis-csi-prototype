@@ -22,7 +22,7 @@
                   </h1>
 
                   <p class="govuk-body">
-Based on the application, {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} does not need a workplace assessment.     </p>
+Based on the application, {% if case =='other-cases-fill-5' %}Sarah Lumley{% endif %}{% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} does not need a workplace assessment.     </p>
 <p>This is because {% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %} knows what support they need.</p>
 
 
@@ -34,7 +34,8 @@ Based on the application, {% if case =='other-cases-4' %}Arlo Spinka{% endif %}{
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                  <h2 class="govuk-fieldset__heading">
-                     {% include  "./content/wpa.html" %}
+                  Do you recommend a workplace assessment for {% if case =='other-cases-fill-5' %}Sarah Lumley{% endif %}{% if case =='other-cases-4' %}Arlo Spinka{% endif %}{% if case =='other-cases-3' %}John Smith{% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}?
+
                  </h2>
                </legend>
                <!-- <div id="national-insurance-number-hint" class="govuk-hint">

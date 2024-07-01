@@ -116,6 +116,13 @@ data-module="govuk-notification-banner">
           {% endfor %}
           {% endif %}
 
+          {% if case =='other-cases-fill-5' %}
+          {% for case in data['other-cases-fill-5'] %}
+          {{ case.name }}
+          {% endfor %}
+          {% endif %}
+
+
 
           {% if case =='other-cases' %}
           {% for case in data['other-cases'] %}
@@ -264,6 +271,25 @@ data-module="govuk-notification-banner">
                   });
 
                   document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
+                  {% if case =='other-cases-fill-5' %}
+                <script>// Get date
+                    var now = new Date();
+                    var pastDate = new Date(now);
+                    pastDate.setDate(now.getDate() - 60);
+
+                    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                    });
+
+                    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true
+                    });
+
+                    document.write(formattedDate + ' at 3:00 pm');</script>{% endif %}
 
 
 
@@ -414,6 +440,7 @@ data-module="govuk-notification-banner">
 {% if phase == "sonya"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
 {% if phase == "thomas"  %}{% include  "../claim/timelines/timeline-thomas-new.html" %}</div></div>{% endif %}
 {% if not phase %}{% include  "../claim/timelines/timeline-dereck.html" %}{% endif %}
+{% if phase == "allocator"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
 </div>
 
 
@@ -444,7 +471,7 @@ data ['appointee']
 
 
                 {% else %}
-                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee' %}{{data['appointee-name']}}{% else %}
               {% if case =='other-cases-fill-1' %}
                   {% for case in data['other-cases-fill-1'] %}
                   {{ case.name }}
@@ -465,6 +492,12 @@ data ['appointee']
                               {{ case.name }}
                               {% endfor %}
                               {% endif %}
+
+                              {% if case =='other-cases-fill-5' %}
+                                  {% for case in data['other-cases-fill-5'] %}
+                                  {{ case.name }}
+                                  {% endfor %}
+                                  {% endif %}
 
 {% if case =='other-cases' %}
                   {% for case in data['other-cases'] %}
@@ -921,6 +954,10 @@ test
   {% include  "./task-list-comp/task-list-george-searchlight.html" %}
 {% endif %}
 
+{% if case =='other-cases-fill-5' %}
+  {% include  "./task-list-comp/task-list-george-searchlight.html" %}
+{% endif %}
+
     {% if case =='other-cases' %}
       {% include  "./task-list-comp/task-list-sonya-searchlight.html" %}
     {% endif %}
@@ -996,6 +1033,8 @@ test
       {% include  "./anahi/task-list-anahi-application.html" %}{% endif %}
       {% if case =='other-cases-fill-4' %}
         {% include  "current/claim/kam/task-list-kam-application.html" %}{% endif %}
+        {% if case =='other-cases-fill-5' %}
+          {% include  "current/claim/sarah/task-list-sarah-application.html" %}{% endif %}
 
   {% if case =='other-cases' %}
     {% include  "./task-list-sonya-application.html" %}{% endif %}
@@ -1024,7 +1063,8 @@ test
 {% include  "./anahi/task-list-anahi-wpa-job.html" %}</div></div>{% endif %}
 {% if case =='other-cases-fill-4' %}
 {% include  "./task-list-george-wpa-job.html" %}</div></div>{% endif %}
-
+{% if case =='other-cases-fill-5' %}
+{% include  "./sarah/task-list-sarah-wpa-job.html" %}</div></div>{% endif %}
 
 
   {% if case =='other-cases' %}
@@ -1094,6 +1134,8 @@ test
 {% include  "./anahi/task-list-anahi-business-case.html" %}{% endif %}
 {% if case =='other-cases-fill-4' %}
 {% include  "./kam/task-list-kam-business-case.html" %}{% endif %}
+{% if case =='other-cases-fill-5' %}
+{% include  "./sarah/task-list-sarah-business-case.html" %}{% endif %}
 
   {% if case =='other-cases-2' %}
   {% include  "./task-list-thomas-business-case.html" %}{% endif %}

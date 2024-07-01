@@ -18,7 +18,7 @@ Example usage:
 */
 
 module.exports = {
-'approval': "Approved",
+'allocator': "Approved",
 'others-wpa-2': "",
 'report': "",
 'ttw-match' : "",
@@ -38,7 +38,7 @@ module.exports = {
 
 
 'claims' : "",
-
+'found-nino' : "Yes",
 'priority' : "",
 'other' : "",
 'remove' : "",
@@ -63,10 +63,10 @@ module.exports = {
 
 // assess
 
-// 'Searchligh' : "Yes and application details match",
-'found-nino' : "Yes",
-// 'national-insurance-number' : "AB 123456 C",
-// 'appointee' : "No",
+'Searchligh' : "Yes and application details match",
+
+'national-insurance-number' : "AB 123456 C",
+'appointee' : "No",
 // 'benefits' : "No",
 // 'disc-check' : "No",
 // 'job-deatils-check' : "No",
@@ -157,6 +157,29 @@ module.exports = {
 'employer-sector-typekam' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
 'wpakam' : "No",
 'appointeekam' : "No",
+// filled in case 5 allocator
+'condition-checkallocator' : "No",
+'job-deatils-checkallocator' : "No",
+'sae-checkallocator' : "No",
+'sw-checkallocator' : "No",
+'employer-sectorallocator' : "Yes",
+'employer-sizeallocator' : "10 to 49 (small)",
+'employer-sector-typeallocator' : "Private sector: international or national – such as a large retailer or service that operates across the UK or worldwide",
+
+'appointeeallocator' : "No",
+'disc-checkallocator' : "No",
+'wpaallocator' : "Yes",
+
+'wpa-typeallocator' : "Virtual",
+'wpa-availabilityallocator' : "Yes",
+'other-wpaallocator' : "No",
+'wpa-availabilityallocator' : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+'address-of-wpaallocator' : "220 St Vincent Street, Glasgow, AB1 1AB",
+'referral-formallocator' : ["Completed and sent referral form", "Saved copies to Sharepoint", "Set up a record for Dereck Smith on LMS", "Added workplace assessment type in LMS"],
+'wpa-happenallocator' : "Yes",
+'reportallocator' : ["Reviewed workplace assessment report","Saved a copy of the workplace assessment report in Sharepoint", "Saved a copy of the workplace assessment email in Sharepoint"],
+'another-wpaallocator' : "No",
+
 // 'contact-date-day-1' : "29",
 // 'contact-date-month-1' : "03",
 // 'contact-date-year-1' : "2023",
@@ -310,7 +333,18 @@ module.exports = {
     'date': '15 October 2021 15:23',
     'appointee': 'No'
   }],
-
+  'other-cases-fill-5': [{
+    'name': 'Sarah Lumley',
+    'condition': 'macular oedema',
+    'conditiondetails': 'I have macular oedema which has cause permanent vision loss in both eyes. It was caused by my diabetes. I ask colleagues to read thing out aloud and describe them to me on video calls and in person.',
+    'ref': 'RMPX40',
+    'dos': '2 June 2022',
+    'case': 'Other',
+    'type': 'New Application',
+    'priority' : false,
+    'date': '15 October 2021 15:23',
+    'appointee': 'No'
+  }],
 
   'other-cases': [{
     'name': 'Sonya Corkery',
