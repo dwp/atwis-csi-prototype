@@ -125,68 +125,65 @@ data ['appointee']
 
 
           <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-           <span class="app-task-list__task-name">
-            <a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
-            Approval
-            </a>
-            </span>
 
-<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-
-
-             </li>
 
 
 
             <li class="app-task-list__item">
             <span class="app-task-list__task-name">
             <a href="decision/award" aria-describedby="job-status">
-              Review and  confirm award summary
+              Review and  send for approval
             </a>
             </span>
-            {% if not data['award'+ phase]%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}
-          {% if data['award'+ phase]=='complete'%}<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>  {% endif %}
+
+          <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
 
 
 
              </li>
 
+             <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+             <a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
+             Approval
+             </a>
+             </span>
+
+           <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Approved</strong>
 
 
-          <li class="app-task-list__item">
-    {% if data['awardanahi']%}    <span class="app-task-list__task-name">
-          <a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
-          Decision letters
-          </a>
-          </span>
+              </li>
 
+              <li class="app-task-list__item">
+         <span class="app-task-list__task-name">
+              <a href="{%if data['notification']%}decision/check.html{% else %}decision/notification.html{% endif %}" aria-describedby="job-status">
+              Decision letters
+              </a>
+              </span>
 
-          <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
-
-          <span class="app-task-list__task-name">
-                Decision letters
-
-          </span>
-
-          <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-matches-claim-status">Cannot start yet</strong>{% endif %}
-
-           </li>
-          </ul>
-
-
-        </li>
-      </ol>
+    {% if data['notificationanahi']%}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>{% else %}
+    <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>{% endif %}
 
 
 
-{% if data['']%}
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
-       <button class="govuk-button" data-module="govuk-button">
-      Confirm award
-      </button>
-  </div>{% endif %}
+               </li>
+              </ul>
+
+
+            </li>
+          </ol>
+
+
+
+    {% if data['notificationanahi']%}
+
+    <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+           <button class="govuk-button" data-module="govuk-button">
+          Confirm award
+          </button>
+      </div>{% endif %}
 
 </div>
 {% endfor %}
