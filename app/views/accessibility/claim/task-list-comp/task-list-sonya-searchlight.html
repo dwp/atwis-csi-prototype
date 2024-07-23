@@ -1,0 +1,94 @@
+
+{% for case in data['priority-cases'] %}
+
+
+{% if not totalcomplete %}
+  {% set totalcomplete = 0 %}
+  {% endif %}
+
+  {% if not totaljob %}
+    {% set totaljob = 0 %}
+    {% endif %}
+
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if data['wpa'+ phase]=='No'  %}
+      {% set totaljob = totaljob + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if data['wpa'+ phase]=='Yes' and data['others-wpa'+ phase]  %}
+      {% set totaljob = totaljob + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+
+
+  {% for i in [1] -%}
+   {% set contactindex = i %}
+    {% if  'Completed and sent letter ATW02EL' in data['notification'+ phase]
+    %}
+    {% set totalcomplete = totalcomplete + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+    {% for i in [1] -%}
+     {% set contactindex = i %}
+      {% if  'Sent any attachments' in data['notification'+ phase]
+      %}
+      {% set totalcomplete = totalcomplete + 1 %}
+    {% endif %}
+      {%- endfor %}
+
+  {% for i in [1] -%}
+   {% set contactindex = i %}
+    {% if
+    'Saved copy of letters and any attachments to Sharepoint' in data['notification'+ phase]
+    %}
+    {% set totalcomplete = totalcomplete + 1 %}
+  {% endif %}
+    {%- endfor %}
+
+
+
+      <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tasks incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have 9 sections to complete.</p> -->
+
+
+{% if data['Searchligh']=='No'%}
+<p >
+<a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+
+
+</a>
+</p>
+
+
+
+<br>
+{% else %}
+
+
+{% if
+
+
+data ['appointee']
+
+%}
+
+
+                {% else %}
+                <div class="govuk-inset-text">You cannot contact {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Sonya Corkery{% endif %} before completing appointee task.</div>
+        {% endif %}
+        {% endif %}
+
+
+
+{% include  "./searchlight.html" %}
+
+
+
+{% endfor %}

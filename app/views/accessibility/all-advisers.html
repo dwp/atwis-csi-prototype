@@ -1,0 +1,140 @@
+{% extends "./claim/_BASE.html" %}
+{% set hideBanner = true %}
+
+{% if not phase %}
+{% set phase = "allocator" %}
+
+{% endif %}
+
+{% set advisers = true %}
+
+{% set unallocated = [
+  {
+
+    name: "Desmond Smith",
+    submitted: "27 February 2020 - 04:23",
+    interview: "1 November 2021",
+    status: "New"
+  },
+  {
+
+    name: "Sam Argentino",
+    submitted: "23 February 2020 - 13:23",
+    interview: "2 November 2021",
+    status: "Action needed"
+  }
+
+  ]
+  %}
+
+{% block content %}
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">All advisers</h1>
+
+      </div>
+    </div>
+
+  <p>**Content placeholders here about payment officers and how to see payment officers***</p>
+
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">All Case managers</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case mangers</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total cases allocated</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cases needing approval</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Not started </th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">In progress </th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">On hold </th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="/current/your-cases-case-manager-view">John Goldsmith</a></th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">8</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#"> Imani Pretorius </a></th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">11</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">Tom Garb </a></th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">8</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#"> John Smith </a></th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#">Robyn Wallis </a></th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">11</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#"> Caelan Stafford </a></th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">11</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">9</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#"> Safaa Marchand</a></th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">11</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a class="govuk-link" href="#"> Brian Ayodele</a></th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">11</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+
+
+  </main>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

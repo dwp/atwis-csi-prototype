@@ -1,0 +1,140 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="sd-1" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">  Details for specialist equipment</h1>
+
+
+
+
+
+        <div class="govuk-inset-text">
+        Jaws Screen reader
+          </div>
+
+<div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+
+              </legend>
+              <!-- <div class="govuk-form-group">
+    <label class="govuk-label" for="Brand">
+      Brand
+    </label>
+    <input class="govuk-input" id="Brand" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
+  </div> -->
+  <!-- <div class="govuk-form-group">
+<label class="govuk-label" for="Supplier">
+Supplier
+</label>
+<input class="govuk-input" id="Supplier" name="quotes-check" type="text" spellcheck="false" autocomplete="name">
+</div> -->
+<label class="govuk-label" for="cost-per-item">
+Total cost
+</label>
+  <div class="govuk-input__wrapper">
+      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+      <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text" spellcheck="false">
+
+    </div>
+
+
+            </fieldset>
+    </div>
+
+
+
+
+
+
+
+    <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="from-sae-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+      Who provided the cost for the item?
+      </h2>
+    </legend>
+
+    <div class="govuk-radios " data-module="govuk-radios">
+        {% if data['wpa']=='Yes'%}
+         <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Workplace assessment report" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
+        <label class="govuk-label govuk-radios__label" for="from-sae">
+        Workplace assessor
+        </label>
+      </div>    {% endif %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="from-sae-2" name="from-sae{{number}}" type="radio" value="{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}" {{ checked("from-sae"+ number, "Yes") }}>
+        <label class="govuk-label govuk-radios__label" for="from-sae-2">
+    {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="from-sae" name="from-sae{{number}}" type="radio" value="Someone else" {{ checked("from-sae"+ number, "Workplace assessment report") }}>
+        <label class="govuk-label govuk-radios__label" for="from-sae">
+        Someone else
+        </label>
+      </div>
+    </div>
+
+    </fieldset>
+    </div>
+
+
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+    What is the start date for this item?
+          </h1>
+        </legend>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sae-start-date-2" name="sae-start-date{{number}}" type="radio" value="Dereck Smith" {{ checked("sae-start-date"+ number, "Dereck Smith") }}>
+          <label class="govuk-label govuk-radios__label" for="sae-start-date-2">
+
+      Date of decision
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sae-start-date-3" name="sae-start-date{{number}}" type="radio" value="Another date" {{ checked("sae-start-date"+ number, "Another date") }}>
+          <label class="govuk-label govuk-radios__label" for="sae-start-date-3">
+          Another date
+          </label>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+
+
+
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}
