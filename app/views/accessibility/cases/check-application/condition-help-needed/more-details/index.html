@@ -1,0 +1,25 @@
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key" style='width: 22%;'>
+  <strong>Added by Jane Doe</strong>
+    </dt>
+
+    <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__value">
+      {% if phase =='sonya'%}{{data['condition-check-updatesonya'+ detailshealthindex]}}{% endif %}
+      {% if phase =='thomas'%}{{data['more-detailthomas1']}}{% endif%}
+      {% if not phase %}{{data['condition-check-update'+ detailshealthindex]}}{% endif%}
+    </dt>
+
+
+    <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+      <ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href=""><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">  details</span></a>
+        </li>
+        <li class="govuk-summary-list__actions-list-item">
+          <a class="govuk-link" href=""><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">  details</span></a>
+        </li>
+      </ul>
+    </dd>
+  </div>

@@ -1,0 +1,95 @@
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Case details
+          </h2>
+          <ul class="app-task-list__items">
+
+<!-- Add National Insurance number from Searchlight task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="  {% if (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No')%}./searchlight/national-insurance/check{% else %}./searchlight/national-insurance/check-searchlight{% endif %}" aria-describedby="eligibility-status">
+                  Check personal details and add National Insurance number
+                </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+            <!-- {% if data['Searchligh']=='Yes and application details match' and not (data['national-insurance-number'] or data['found-nino']=='No' or data['Searchligh']=='No') %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">3In Progress</strong>{% endif %} -->
+
+          <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+
+            </li>
+
+
+<!-- appointee task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              <a href="  {% if data['appointee']%}searchlight/appointee/check{% else %}searchlight/appointee{% endif %}" aria-describedby="Check-for-appointee">
+                  Check for appointee
+                 </a>
+              </span>
+              <!-- Status - start -->
+                    <!-- in progress -->
+                    <!-- complete -->
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              <!-- Status - end -->
+            </li>
+
+
+
+<!-- benefits task -->
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="{% if data['benefits']%}./searchlight/benefits/check{% else %}
+                ./searchlight/benefits/{% endif %}" aria-describedby="benefits-status">
+                Check benefits
+                </a>
+              </span>
+
+              <!-- Status - start -->
+                    <!-- in progress -->
+  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+               <!-- Status - end -->
+            </li>
+
+
+
+
+<!-- Update task (if searchlight does not match personal details) -->
+
+
+
+
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+               <a href="{% if data['disc-check']%}/current/cases/{%if phase %}{{phase}}/cases/{% endif %}disc/{% if data['new-application']=='Yes'%}done-atwis-done{% else %}done-disc{% endif %}{% else %}
+               /current/cases/{%if phase %}{{phase}}/cases/{% endif %}disc{% endif %}">    Check DiSC</a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>    </li>
+
+        
+
+
+        </ul>
+        </li>
+
+        </ol>
+
+
+
+         {% if data['Searchligh'] and
+
+            data ['appointee']
+            and
+            data ['benefits']
+            and
+            ( data['disc-check']=='No' or data['live-grant']=='No' or data['disc-end']=='Yes')
+          %}
+  <p>Go to <a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#citizen-details">review application</a></p>
+          {% else %}
+
+
+
+        {% endif %}</div>
