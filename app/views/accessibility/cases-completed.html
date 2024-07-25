@@ -1,7 +1,6 @@
 
 
 
-
 <!-------------- csi tables -->
 {% macro statusTable(payment="") %}
     <table class="govuk-table">
@@ -162,43 +161,55 @@
       {% set other %}
 
 
+      <div class="govuk-width-container">
 
 
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Success
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+                  <h3 class="govuk-notification-banner__heading">
+                Task completed
+                  </h3>
 
-
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <h1 class="govuk-heading-l">Your other cases (0)</h1>
-
-
-<form action="/accessibility/your-cases#other" method="post" novalidate for="submitButtonRequestother">
-        <div class="govuk-grid-column-one-quaters">
-
-          <div class="govuk-form-group" style="float: left">
-            <label class="govuk-label" for="sort">
-              Type of case
-            </label>
-            <select class="govuk-select" id="other" name="other">
-              <option value="any"
-                {% if 'any' in data['other']%}selected{% endif %}>Any</option>
-              <option value="new"
-              {% if 'new' in data['other']%}selected{% endif %} >New application</option>
-              <option value="renewal"
-              {% if 'renewal' in data['other']%}selected{% endif %}>Renewal</option>
-
-            </select>
+                </div>
+              </div>
+              <h1 class="govuk-heading-l">Your other cases (0)</h1>
             </div>
-            <div class="govuk-grid-column-one-quaters">
-            <button type="submit" class="govuk-button" data-module="govuk-button" id="submitButtonRequestother" value="Request a new other case">Request a new other case</button></form>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <label class="govuk-label" for="sort">
+                Type of case
+              </label>
+              <select class="govuk-select" id="other" name="other">
+                <option value="any"
+                  {% if 'any' in data['other']%}selected{% endif %}>Any</option>
+                <option value="new"
+                {% if 'new' in data['other']%}selected{% endif %} >New application</option>
+                <option value="renewal"
+                {% if 'renewal' in data['other']%}selected{% endif %}>Renewal</option>
 
-</div></div>
+              </select>
+              <br> <button type="submit" class="govuk-button" data-module="govuk-button" id="submitButtonRequestother" value="Request a new other case">Request a new other case</button></form>
+
+            </div>
+
+          </div>
+
+      </div>
 
 
 
 
 
-</div></div>
+
+
 
 
         {% endset -%}
