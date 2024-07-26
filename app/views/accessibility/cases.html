@@ -57,7 +57,7 @@
     {% set csi %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Your CSI cases (0)</h2>
+        <h2 class="govuk-heading-l">Your CSI cases (0)</h2>
       </div>
     </div>
 
@@ -75,39 +75,6 @@
 
 {% include "./claim/_notification-csi-type-case.html" %}
 
-{% if (phase == "empty" or phase == "allocator")  %}
-<br></br></br></br></br></br>
-<p>There are currently no CSI Cases.</P>
-
-{% else %}
-
-<table class="govuk-table">
-      <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header">Name</th>
-
-            <th class="govuk-table__header">Date submitted</th>
-            <th class="govuk-table__header">Interview date</th>
-            <th class="govuk-table__header">Status</th>
-            <th class="govuk-table__header"></th>
-          </tr>
-        </thead>
-        <tbody>
-
-
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Thomas Brown</th>
-
-              <td class="govuk-table__cell">2 November 2021 13:23</td>
-              <td class="govuk-table__cell">9 March 2021</td>
-              <td class="govuk-table__cell">New
-              </td><td class="govuk-table__cell"><a href="/sprint-13/agreed/csi/index">Go to case</a></td>
-            </tr>
-      </tbody>
-    </table>
-
-
-{% endif %}
 
       {% endset -%}
 
