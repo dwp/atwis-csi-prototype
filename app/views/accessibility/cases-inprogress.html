@@ -82,6 +82,7 @@
 {% else %}
 
 <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Cases</caption>
       <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header">Name</th>
@@ -341,7 +342,7 @@
           Type of document
         </label>
         <select class="govuk-select" id="sort" name="sort">
-          <option value="published" selected >None complex</option>
+          <option value="published" selected >Not complex</option>
           <option value="updated" >Complex</option>
           <option value="views">TESG</option>
           <option value="comments">CSI</option>
@@ -355,6 +356,7 @@
       </div>
         <div class="govuk-grid-column-full">
       <table class="govuk-table" id="list-envelopes">
+          <caption class="govuk-table__caption govuk-table__caption--m">Documents</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header">Name</th>
