@@ -61,7 +61,7 @@
       </div>
     </div>
 
-<form action="/current/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
+<form action="/accessibility/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
 
 
   <div class="govuk-grid-column-one-quaters">
@@ -90,7 +90,7 @@
 
 
 
-<form action="/current/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
+<form action="/accessibility/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
   <div class="govuk-grid-column-one-quaters">
 
 
@@ -118,7 +118,8 @@
 
 
 
-  </div></div>
+  </div> </form> <div class="govuk-grid-column-full">
+  {% include "./claim/_notification-priority-type-case.html" %}</div></div>
 
 
 
@@ -165,9 +166,10 @@
 
 
 
-</div></div>
-
-
+</div>
+  <div class="govuk-grid-column-full">
+{% include "./claim/_notification-other-type-case.html" %}</div>
+</div>
         {% endset -%}
 
 
@@ -179,13 +181,13 @@
 
 
 
-
+<form action="/accessibility/your-cases#in-disc" method="post" novalidate for="submitButtonRequestother">
 
         <label class="govuk-label" for="sort">
           Type of document
         </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="published" selected >Generic</option>
+        <select class="govuk-select" id="sort" name="doc">
+          <option value="not-complex" selected >Not complex</option>
           <option value="updated" >Complex</option>
           <option value="views">TESG</option>
           <option value="comments">CSI</option>
@@ -195,9 +197,10 @@
 
 
 
-        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a document" style="float: left">
+        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a document" style="float: left"></form>
 
-  </div>
+  </div>  <div class="govuk-grid-column-full">
+    {% include "./claim/_notification-doc-type-case.html" %}</div>
 
 {% endset -%}
 
