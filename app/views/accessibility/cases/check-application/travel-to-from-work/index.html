@@ -6,7 +6,7 @@
 
 {% block csi %}
 <br>
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/travel-to-from-work/details/edit" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/travel-to-from-work/details/edit" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -21,11 +21,11 @@
 
 
   {% if case =='other-cases-4' %}
-  {% include "current/claim/_ttw-arlo.html"%}{% endif %}
+  {% include "accessibility/claim/_ttw-arlo.html"%}{% endif %}
 
 
   {% if case =='other-cases-3' %}
-  {% include "current/claim/_ttw-john.html"%}{% endif %}
+  {% include "accessibility/claim/_ttw-john.html"%}{% endif %}
 
   <!-- <div class="govuk-inset-text">
   If a travel buddy has been requested, it is not part of travel to and from work. Add it to the support worker element in the business case.
@@ -37,7 +37,7 @@
   </button>
   </form>
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

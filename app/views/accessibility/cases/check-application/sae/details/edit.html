@@ -6,7 +6,7 @@
 
 {% block csi %}
 <br>
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/edit" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/edit" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -22,8 +22,8 @@
 
                      Specialist equipment</h2>
 {% if phase == 'sonya'%}
-  {% include "current/claim/_sae-sonya.html"%}{% else %}{% set changeHide = "true"%}
-  {% include "current/claim/_sae-dereck.html"%}{% endif %}
+  {% include "accessibility/claim/_sae-sonya.html"%}{% else %}{% set changeHide = "true"%}
+  {% include "accessibility/claim/_sae-dereck.html"%}{% endif %}
 
 
 

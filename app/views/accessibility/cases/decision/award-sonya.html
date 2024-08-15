@@ -9,7 +9,7 @@
 
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -24,7 +24,7 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h1 class="govuk-fieldset__heading">
-                   {% include  "current/cases/decision/content/under-25.html" %}
+                   {% include  "accessibility/cases/decision/content/under-25.html" %}
                  </h1>
                </legend>
 
@@ -160,8 +160,8 @@
            <button class="govuk-button" data-module="govuk-button" name="award{{phase}}" value="complete">
 Confirm award summary
            </button>
-           <p><a href="/current/cases/sonya/cases/claim#business-case">I need to change some business case details</a></p>
-           <p><a href="/current/cases/sonya/cases/claim#citizen-details">I need to change some application  details</a></p>
+           <p><a href="/accessibility/cases/sonya/cases/claim#business-case">I need to change some business case details</a></p>
+           <p><a href="/accessibility/cases/sonya/cases/claim#citizen-details">I need to change some application  details</a></p>
 
          </form>
        </div>

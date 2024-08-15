@@ -9,7 +9,7 @@
 
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -38,7 +38,7 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-      {% if  changeHide %}  <a href="/current/cases/check-application/element/sae">
+      {% if  changeHide %}  <a href="/accessibility/cases/check-application/element/sae">
         Update
           <span class="govuk-visually-hidden">   {% include  "./content/specialist-equipment.html" %}</span>
         </a>{% endif %}

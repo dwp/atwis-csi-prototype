@@ -330,7 +330,7 @@
 
 
 
-   <form action="/current/cases/john/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
+   <form action="/accessibility/cases/john/cases/contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
 
 
 
@@ -343,7 +343,7 @@
          <h1 class="govuk-heading-l">
        Contact
      </h1>
-         <p><a href="/current/cases/{{phase}}/cases/contact/contact-details">View contact details</a></p>
+         <p><a href="/accessibility/cases/{{phase}}/cases/contact/contact-details">View contact details</a></p>
 
 
 
@@ -358,7 +358,7 @@
 
 
                {% if data['clear']=='No' %}
-             {% include  "current/claim/notification-contact.html" %}{% endif %}
+             {% include  "accessibility/claim/notification-contact.html" %}{% endif %}
 
 
              <!-- <p>Best times to contact Dereck Smith:</p>
@@ -399,7 +399,7 @@
        <div class="hmrc-list-with-actions__actions">
          <dd class="hmrc-list-with-actions__action">
            <a class="govuk-link"
-           href="{% if data['_do_'+ contactindex]=='Email received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}{% if phase == "john"  %}john/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Email sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}{% if phase == "john"  %}john/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call made'%}/current/cases/{% if phase == "john"  %}john/cases/{% endif %}{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
+           href="{% if data['_do_'+ contactindex]=='Email received'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}{% if phase == "john"  %}john/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Email sent'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}{% if phase == "john"  %}john/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}{% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call made'%}/accessibility/cases/{% if phase == "john"  %}john/cases/{% endif %}{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}{% if data['_do_'+ contactindex]=='Telephone call received'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
              <span aria-hidden="true">View </span>
              <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
            </a>
@@ -462,7 +462,7 @@
          </dt>
          <div class="hmrc-list-with-actions__actions">
            <dd class="hmrc-list-with-actions__action">
-             <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/phone-log-prefill">
+             <a class="govuk-link" href="/accessibility/cases/thomas/cases/contact/1/phone-log-prefill">
                <span aria-hidden="true">View </span>
                <span class="govuk-visually-hidden"> Telephone call made</span>
              </a>
@@ -498,7 +498,7 @@
          </dt>
          <div class="hmrc-list-with-actions__actions">
            <dd class="hmrc-list-with-actions__action">
-             <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/sms-log-prefill">
+             <a class="govuk-link" href="/accessibility/cases/thomas/cases/contact/1/sms-log-prefill">
                <span aria-hidden="true">View </span>
                <span class="govuk-visually-hidden"> Text message (SMS) sent</span>
              </a>
@@ -534,7 +534,7 @@
          </dt>
          <div class="hmrc-list-with-actions__actions">
            <dd class="hmrc-list-with-actions__action">
-             <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/email-log-prefill">
+             <a class="govuk-link" href="/accessibility/cases/thomas/cases/contact/1/email-log-prefill">
                <span aria-hidden="true">View </span>
                <span class="govuk-visually-hidden"> Email sent</span>
              </a>

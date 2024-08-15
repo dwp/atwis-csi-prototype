@@ -128,17 +128,17 @@
                                  <fieldset class="govuk-fieldset">
                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-{% include "current/cases/check-application/support-worker/details/content/add.html" %}
+{% include "accessibility/cases/check-application/support-worker/details/content/add.html" %}
                                    </legend>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
-                                       <input class="govuk-radios__input" id="sw-add" name="sw-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}thomas/cases/{% endif %}/check-application/support-worker/details/type.html" {{ checked("sw-add", "Yes") }}>
+                                       <input class="govuk-radios__input" id="sw-add" name="sw-add{{phase}}" type="radio" value="Yes~/accessibility/cases/{% if phase %}thomas/cases/{% endif %}/check-application/support-worker/details/type.html" {{ checked("sw-add", "Yes") }}>
                                        <label class="govuk-label govuk-radios__label" for="sw-add">
                                          Yes
                                        </label>
                                      </div>
                                      <div class="govuk-radios__item">
-                                       <input class="govuk-radios__input" id="sw-add-2" name="sw-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}thomas/cases/{% endif %}claim#business-case" {{ checked("sw-add"+ phase, "No") }}>
+                                       <input class="govuk-radios__input" id="sw-add-2" name="sw-add{{phase}}" type="radio" value="No~/accessibility/cases/{% if phase %}thomas/cases/{% endif %}claim#business-case" {{ checked("sw-add"+ phase, "No") }}>
                                        <label class="govuk-label govuk-radios__label" for="sw-add-2">
                                          No
                                        </label>

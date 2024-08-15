@@ -17,7 +17,7 @@
     {% set totalemploymentdetails = totalemploymentdetails + 1 %}
   {% endif %}
     {%- endfor %}
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/employment-details/details/{{totalemploymentdetails + 1}}" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/employment-details/details/{{totalemploymentdetails + 1}}" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -39,15 +39,15 @@
 
 
 
-  {% include "current/claim/_job-details.html"%}
+  {% include "accessibility/claim/_job-details.html"%}
 
 
-  <!-- <p><a href="/current/cases/check-application/employment-help-needed/details">  Add more details</a></p> -->
+  <!-- <p><a href="/accessibility/cases/check-application/employment-help-needed/details">  Add more details</a></p> -->
 
 
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
 
           <button class="govuk-button" data-module="govuk-button">
       Confirm and save

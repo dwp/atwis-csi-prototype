@@ -7,7 +7,7 @@
 {% block csi %}
 <br>
 
-<form action="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#checks" method="post" novalidate>
+<form action="/accessibility/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#checks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -23,7 +23,7 @@
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h2 class="govuk-fieldset__heading"><label class="govuk-label govuk-label--l" for="postcode">
 
-                {% include  "current/cases/searchlight/national-insurance/content/add-national-insurance.html" %}
+                {% include  "accessibility/cases/searchlight/national-insurance/content/add-national-insurance.html" %}
    </h2>
                </legend>
                <!-- <div id="national-insurance-number-hint" class="govuk-hint">

@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -22,7 +22,7 @@
 
 
       {% if data['wpa']=='Yes'%}
-        {% include "current/claim/_sae-dereck.html"%}
+        {% include "accessibility/claim/_sae-dereck.html"%}
 {% else %}{% if phase == 'sonya'%}
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -47,7 +47,7 @@ I need Jaws and ZoomText software to read out the content on a screen to me, as 
 </dd>
 </div>
 </dl>{% else %}
-  {% include "current/claim/_sae-dereck.html"%}{% endif %}{% endif %}
+  {% include "accessibility/claim/_sae-dereck.html"%}{% endif %}{% endif %}
 
 
 <p>There is no mandatory cost share for this equipment because the employer is a small company.</p>

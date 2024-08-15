@@ -9,7 +9,7 @@
 
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -24,7 +24,7 @@
              <fieldset class="govuk-fieldset">
                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                  <h1 class="govuk-fieldset__heading">
-                   {% include  "current/cases/decision/content/under-25.html" %}
+                   {% include  "accessibility/cases/decision/content/under-25.html" %}
                  </h1>
                </legend>
 
@@ -66,8 +66,8 @@
                        <p>Check that you are ready to confirm this award summary, or go back and make changes:</p>
 
                        <ul class="govuk-list">
-     <li><a href="/current/cases/sonya/cases/claim#business-case">I need to change some business case details</a></li>
-                      <li><a href="/current/cases/sonya/cases/claim#citizen-details">I need to change some application  details</a></li></ul>
+     <li><a href="/accessibility/cases/sonya/cases/claim#business-case">I need to change some business case details</a></li>
+                      <li><a href="/accessibility/cases/sonya/cases/claim#citizen-details">I need to change some application  details</a></li></ul>
 
                    <p>Once you have confirmed the award summary, you will be able to send the award decision to Sonya Corkery.</p>
 

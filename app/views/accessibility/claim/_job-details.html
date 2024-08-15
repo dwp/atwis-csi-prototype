@@ -137,7 +137,7 @@ Improving Quality Assurance Practices
       </dt>
       <dd class="govuk-summary-list__value">
       {% if not data['employer-name']%}Smith Digital Limited{% else %}{{ data['employer-name'] }}{% endif %}
-    {% if edit == 'true' %}   {% else %}  <div class="govuk-inset-text"><p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/workplace-contact">Workplace contact details</a></div>
+    {% if edit == 'true' %}   {% else %}  <div class="govuk-inset-text"><p><a href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/workplace-contact">Workplace contact details</a></div>
     {% endif %}  </dd>
       <dd class="govuk-summary-list__actions">{% if edit == 'true' %}  <a href="employer-name">
               Update

@@ -6,7 +6,7 @@
 
 {% block csi %}
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -18,7 +18,7 @@
 
 
 
-        {% include "current/claim/_quote-sae-1.html"%}
+        {% include "accessibility/claim/_quote-sae-1.html"%}
 
 <p>Only 1 quote is needed from {% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %} because the total cost is below £500.</p>
 
@@ -31,7 +31,7 @@
 </form>
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
 <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

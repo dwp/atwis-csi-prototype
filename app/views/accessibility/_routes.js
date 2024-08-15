@@ -18,14 +18,14 @@ router.post('/cases/check-application/sae/details/1/other-answer', function(requ
 
 
     if (startdate1 == "Another date" && fromsae1 == "Other"){
-        response.redirect("/current/cases/check-application/sae/details/1/other")
+        response.redirect("/accessibility/cases/check-application/sae/details/1/other")
 
     } if (startdate1 == "Another date"){
-          response.redirect("/current/cases/check-application/sae/details/1/other")
+          response.redirect("/accessibility/cases/check-application/sae/details/1/other")
     } else if (fromsae1 == "Other"){
-          response.redirect("/current/cases/check-application/sae/details/1/other")
+          response.redirect("/accessibility/cases/check-application/sae/details/1/other")
     } else {
-        response.redirect("/current/cases/check-application/sae/details/1/sd-adding-1")
+        response.redirect("/accessibility/cases/check-application/sae/details/1/sd-adding-1")
     }
 })
 
@@ -37,14 +37,14 @@ router.post('/cases/check-application/sae/details/2/other-answer', function(requ
 
 
     if (startdate2 == "Another date" && fromsae2 == "Other"){
-        response.redirect("/current/cases/check-application/sae/details/2/other")
+        response.redirect("/accessibility/cases/check-application/sae/details/2/other")
 
     } if (startdate2 == "Another date"){
-          response.redirect("/current/cases/check-application/sae/details/2/other")
+          response.redirect("/accessibility/cases/check-application/sae/details/2/other")
     } else if (fromsae2 == "Other"){
-          response.redirect("/current/cases/check-application/sae/details/2/other")
+          response.redirect("/accessibility/cases/check-application/sae/details/2/other")
     } else {
-        response.redirect("/current/cases/check-application/sae/details/2/sd-adding-1")
+        response.redirect("/accessibility/cases/check-application/sae/details/2/sd-adding-1")
     }
 })
 
@@ -55,14 +55,14 @@ router.post('/cases/check-application/sae/details/3/other-answer', function(requ
 
 
     if (startdate3 == "Another date" && fromsae2 == "Other"){
-        response.redirect("/current/cases/check-application/sae/details/3/other")
+        response.redirect("/accessibility/cases/check-application/sae/details/3/other")
 
     } if (startdate3 == "Another date"){
-          response.redirect("/current/cases/check-application/sae/details/3/other")
+          response.redirect("/accessibility/cases/check-application/sae/details/3/other")
     } else if (fromsae3 == "Other"){
-          response.redirect("/current/cases/check-application/sae/details/3/other")
+          response.redirect("/accessibility/cases/check-application/sae/details/3/other")
     } else {
-        response.redirect("/current/cases/check-application/sae/details/3/sd-adding-1")
+        response.redirect("/accessibility/cases/check-application/sae/details/3/sd-adding-1")
     }
 })
 
@@ -124,12 +124,12 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -137,7 +137,7 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight/benefits/', function(req, res, next){ 
@@ -146,11 +146,11 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -158,7 +158,7 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight/benefits/', function(req, res, next){ 
@@ -167,10 +167,10 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -178,7 +178,7 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight/benefits/', function(req, res, next){ 
@@ -187,9 +187,9 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -197,7 +197,7 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight/benefits/', function(req, res, next){ 
@@ -206,8 +206,8 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -215,7 +215,7 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 router.post('/cases/searchlight/benefits/', function(req, res, next){ 
 
@@ -223,7 +223,7 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -231,7 +231,7 @@ router.post('/cases/searchlight/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 
@@ -246,12 +246,12 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits-change'].length; i++){
   switch (req.session.data['benefits-change'][i]){
 
-   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -259,7 +259,7 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
@@ -268,11 +268,11 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits-change'].length; i++){
   switch (req.session.data['benefits-change'][i]){
 
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -280,7 +280,7 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
@@ -289,10 +289,10 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits-change'].length; i++){
   switch (req.session.data['benefits-change'][i]){
 
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -300,7 +300,7 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
@@ -309,9 +309,9 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits-change'].length; i++){
   switch (req.session.data['benefits-change'][i]){
 
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/searchlight-change/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/searchlight-change/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -319,7 +319,7 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
@@ -328,8 +328,8 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits-change'].length; i++){
   switch (req.session.data['benefits-change'][i]){
 
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -337,7 +337,7 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
 
@@ -345,7 +345,7 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
   for (i = 0; i<req.session.data['benefits-change'].length; i++){
   switch (req.session.data['benefits-change'][i]){
 
-   case "none" :  return res.redirect("/current/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -353,7 +353,7 @@ router.post('/cases/searchlight-change/benefits/', function(req, res, next){ 
  } else {
 
  }
-return res.redirect("/current/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/claim#checks"); next();
 })
 
 
@@ -364,12 +364,12 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
+   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -377,7 +377,7 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
  } else {
 
  }
-return res.redirect("/current/cases/john/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/john/cases/claim#checks"); next();
 })
 
 router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){ 
@@ -386,11 +386,11 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -398,7 +398,7 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
  } else {
 
  }
-return res.redirect("/current/cases/john/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/john/cases/claim#checks"); next();
 })
 
 router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){ 
@@ -407,10 +407,10 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -418,7 +418,7 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
  } else {
 
  }
-return res.redirect("/current/cases/john/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/john/cases/claim#checks"); next();
 })
 
 router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){ 
@@ -427,9 +427,9 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/john/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -437,7 +437,7 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
  } else {
 
  }
-return res.redirect("/current/cases/john/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/john/cases/claim#checks"); next();
 })
 
 router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){ 
@@ -446,8 +446,8 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -455,7 +455,7 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
  } else {
 
  }
-return res.redirect("/current/cases/john/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/john/cases/claim#checks"); next();
 })
 router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){ 
 
@@ -463,7 +463,7 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "none" :  return res.redirect("/current/cases/john/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/john/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -471,7 +471,7 @@ router.post('/cases/john/cases/searchlight/benefits/', function(req, res, next){
  } else {
 
  }
-return res.redirect("/current/cases/john/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/john/cases/claim#checks"); next();
 })
 
 
@@ -486,12 +486,12 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
+   case "Incapacity Benefit, including National Insurance credits only" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -499,7 +499,7 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
  } else {
 
  }
-return res.redirect("/current/cases/sonya/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next();
 })
 
 router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next){ 
@@ -508,11 +508,11 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
+   case "Employment and Support Allowance, including National Insurance credits only" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -520,7 +520,7 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
  } else {
 
  }
-return res.redirect("/current/cases/sonya/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next();
 })
 
 router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next){ 
@@ -529,10 +529,10 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Severe Disablement Allowance" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
+   case "Severe Disablement Allowance" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -540,7 +540,7 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
  } else {
 
  }
-return res.redirect("/current/cases/sonya/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next();
 })
 
 router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next){ 
@@ -549,9 +549,9 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Income Support for illness or disability" :  return res.redirect("/current/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
-      case "Personal Independence Payment" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
+   case "Income Support for illness or disability" :  return res.redirect("/accessibility/cases/sonya/cases/searchlight/benefits/exceptions"); next(); break;
+      case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -559,7 +559,7 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
  } else {
 
  }
-return res.redirect("/current/cases/sonya/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next();
 })
 
 router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next){ 
@@ -568,8 +568,8 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "Personal Independence Payment" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
-   case "none" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
+   case "Personal Independence Payment" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -577,7 +577,7 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
  } else {
 
  }
-return res.redirect("/current/cases/sonya/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next();
 })
 router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next){ 
 
@@ -585,7 +585,7 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
   for (i = 0; i<req.session.data['benefits'].length; i++){
   switch (req.session.data['benefits'][i]){
 
-   case "none" :  return res.redirect("/current/cases/sonya/cases/claim#checks"); next(); break;
+   case "none" :  return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next(); break;
    default: continue;
    }
    break;
@@ -593,7 +593,7 @@ router.post('/cases/sonya/cases/searchlight/benefits/', function(req, res, next)
  } else {
 
  }
-return res.redirect("/current/cases/sonya/cases/claim#checks"); next();
+return res.redirect("/accessibility/cases/sonya/cases/claim#checks"); next();
 })
 
 module.exports = router

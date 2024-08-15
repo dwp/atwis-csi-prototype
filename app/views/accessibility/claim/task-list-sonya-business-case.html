@@ -58,7 +58,7 @@
 
 {% if data['Searchligh']=='No'%}
 <p >
-<a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+<a href="{% if not data['_do_1']%}/accessibility/cases/contact/1/how-do-you-want-to-contact{% else %}/accessibility/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
 
 </a>
@@ -140,7 +140,7 @@ data ['appointee']
 
               </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot Start yet</strong>            </li>
-            <br> <form class="" action="/current/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
+            <br> <form class="" action="/accessibility/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
              Add new elements
              </button></form>
@@ -256,7 +256,7 @@ data ['appointee']
       {% if data['wpa'+ phase]=='No'%}
     {% if totalcomplete > 2 and
     data['award'+ phase]%}
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
        <button class="govuk-button" data-module="govuk-button">
       Confirm award
       </button>{% endif %}
@@ -265,7 +265,7 @@ data ['appointee']
 {% if data['wpa'+ phase]=='Yes'%}
 {% if totalcomplete == 4 and
 data['award'+ phase]%}
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
   Confirm award
 </button>{% endif %}

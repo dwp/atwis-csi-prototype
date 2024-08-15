@@ -12,7 +12,7 @@
 <br>
 
 
-<form action="/current/cases/check-application/sae/details/add" method="post" novalidate>
+<form action="/accessibility/cases/check-application/sae/details/add" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -35,7 +35,7 @@
 {{data['sae-item-type'+ number]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/type#sae-item-type">
+            <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/1/type#sae-item-type">
                 Change<span class="govuk-visually-hidden">
                 Name of item
 </span>
@@ -53,7 +53,7 @@ Suggested by
         {{data['from-sae'+ number]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/from">
+              <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/from">
                 Change<span class="govuk-visually-hidden">
 Suggested by
         </span>
@@ -71,7 +71,7 @@ Add to the award?
 {{data['approve'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/type#approve">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/type#approve">
       Change<span class="govuk-visually-hidden">
 Add to the award?
 </span>
@@ -89,7 +89,7 @@ Reason for not awarding this item
 {{data['not-needed-sae'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
       Change<span class="govuk-visually-hidden">
 Reason for not awarding this item
 </span>
@@ -109,7 +109,7 @@ Cost
 £{{data['cost-per-item'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
       Change<span class="govuk-visually-hidden">
 Reason for not awarding this item
 </span>
@@ -125,7 +125,7 @@ Where is the cost for this item from?
 {{data['quotes-choose'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
       Change<span class="govuk-visually-hidden">
 Where is the cost from?
 </span>
@@ -141,7 +141,7 @@ Start date
 Date of decision<br>
 </dd>
 <dd class="govuk-summary-list__actions">
-  <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+  <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
     Change<span class="govuk-visually-hidden">
 Reason for not awarding this item
 </span>
@@ -158,7 +158,7 @@ Reason for not awarding this item
 {{data['social-domestic-'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
       Change<span class="govuk-visually-hidden">
     Social and domestic contribution?
 </span>
