@@ -45,7 +45,7 @@
 
     </dd>
     <dd class="govuk-summary-list__actions">
-      {% if  changeHide %}  <a href="/current/cases/check-application/element/sae">
+      {% if  changeHide %}  <a href="/accessibility/cases/check-application/element/sae">
         Update
           <span class="govuk-visually-hidden">   {% include  "./content/specialist-equipment.html" %}</span>
         </a>{% endif %}
@@ -173,7 +173,7 @@
 </ul></p>{% endif %}{% endif %}{% endif %}
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" method="post" novalidate>
 {% if not 'Yes' in data['elements']%}
          <div class="govuk-form-group">
            <fieldset class="govuk-fieldset">
@@ -182,19 +182,19 @@
              </legend>
              <div class="govuk-radios" data-module="govuk-radios">
                <div class="govuk-radios__item">
-                 <input class="govuk-radios__input" id="support-needs" name="support-needs" type="radio" value="yes~/current/cases/check-application/element/element">
+                 <input class="govuk-radios__input" id="support-needs" name="support-needs" type="radio" value="yes~/accessibility/cases/check-application/element/element">
                  <label class="govuk-label govuk-radios__label" for="support-needs">
                    Yes
                  </label>
                </div>
                <div class="govuk-radios__item">
-                 <input class="govuk-radios__input" id="support-needs-2" name="support-needs" type="radio" value="no~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" {{ checked("chosen-quote-sae-justification", "It was the most suitable support for Sonya Corkery") }}>
+                 <input class="govuk-radios__input" id="support-needs-2" name="support-needs" type="radio" value="no~/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks" {{ checked("chosen-quote-sae-justification", "It was the most suitable support for Sonya Corkery") }}>
                  <label class="govuk-label govuk-radios__label" for="support-needs-2">
                    No
                  </label>
                </div>
                <div class="govuk-radios__item">
-                 <input class="govuk-radios__input" id="support-needs-3" name="support-needs" type="radio" value="I dont know~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks">
+                 <input class="govuk-radios__input" id="support-needs-3" name="support-needs" type="radio" value="I dont know~/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#your-tasks">
                  <label class="govuk-label govuk-radios__label" for="support-needs-3">
                   I’m waiting for more information about the support that {% if case =='other-cases-2' %}{% for case in data['other-cases-2'] %}{{ case.name }}  {% endfor %}{% endif %}{% if case =='other-cases' %}{% for case in data['other-cases'] %}{{ case.name }}  {% endfor %}{% endif %} needs
                  </label>

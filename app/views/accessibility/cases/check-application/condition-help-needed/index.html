@@ -44,7 +44,7 @@
 
 <div class="govuk-width-container">
 
-  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% else %}{% endif %}check-application/condition-help-needed/more-details/{{totalhealthdetails + 1}}" method="post" novalidate>
+  <form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% else %}{% endif %}check-application/condition-help-needed/more-details/{{totalhealthdetails + 1}}" method="post" novalidate>
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -54,7 +54,7 @@
 
 
 
-    {% include "current/claim/_condtion-help-needed.html"%}
+    {% include "accessibility/claim/_condtion-help-needed.html"%}
 
 
 
@@ -75,7 +75,7 @@
     {% set detailshealthindex = i  %}
     {% if data['condition-check-updatesonya'+ detailshealthindex] %}
 
-        {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
+        {% include "accessibility/cases/check-application/condition-help-needed/more-details/index.html"%}
 
     {% endif %}  {%- endfor %}{% else %}
 
@@ -84,7 +84,7 @@
         {% set detailshealthindex = i  %}
         {% if data['condition-check-updatethomas'+ detailshealthindex] %}
 
-            {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
+            {% include "accessibility/cases/check-application/condition-help-needed/more-details/index.html"%}
 <br>
         {% endif %}  {%- endfor %}{% else %}
 
@@ -93,7 +93,7 @@
     {% set detailshealthindex = i  %}
     {% if data['condition-check-update'+ detailshealthindex] %}
 
-            {% include "current/cases/check-application/condition-help-needed/more-details/index.html"%}
+            {% include "accessibility/cases/check-application/condition-help-needed/more-details/index.html"%}
 
     {% endif %}  {%- endfor %}
 {% endif %}
@@ -106,7 +106,7 @@
 
 
 
-    <!-- <p><a href="/current/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
+    <!-- <p><a href="/accessibility/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
 
 
 
@@ -116,7 +116,7 @@
     </form>
 
 
-  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+  <form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
 
     <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">

@@ -25,7 +25,7 @@
     {% if case =='other-cases-3' %} John Smith {% endif %}{% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}personal-details/full-name">
+                          <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}personal-details/full-name">
                             Change<span class="govuk-visually-hidden"> name</span>
                           </a>
                         </dd>
@@ -38,7 +38,7 @@
                     {%if not data['dob-issued-day']%}1{% else %}{{data['dob-issued-day']}}{% endif %} {%if not data['dob-issued-month']%}October{% else %}{{data['dob-issued-month']}}{% endif %} {%if not data['dob-issued-year']%}1978{% else %}{{data['dob-issued-year']}}{% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}personal-details/date-birth">
+                          <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}personal-details/date-birth">
                             Change<span class="govuk-visually-hidden"> date of birth</span>
                           </a>
                         </dd>
@@ -55,14 +55,14 @@
                           <br>{% if  data['change-address-postcode']%} {{data['change-address-postcode']}} {% else %}SE23 6FH{% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}personal-details/address">
+                          <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}personal-details/address">
                             Change<span class="govuk-visually-hidden"> address</span>
                           </a>
                         </dd>
                       </div>
 
                     </dl>
-  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}/claim#checks" method="post" novalidate>
+  <form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}/claim#checks" method="post" novalidate>
 
                     <button class="govuk-button" data-module="govuk-button">
                                 Return to checks

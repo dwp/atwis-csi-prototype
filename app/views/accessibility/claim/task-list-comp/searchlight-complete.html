@@ -64,8 +64,8 @@
 
           <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-               <a href="{% if data['disc-check']%}/current/cases/{%if phase %}{{phase}}/cases/{% endif %}disc/{% if data['new-application']=='Yes'%}done-atwis-done{% else %}done-disc{% endif %}{% else %}
-               /current/cases/{%if phase %}{{phase}}/cases/{% endif %}disc{% endif %}">    Check DiSC</a>
+               <a href="{% if data['disc-check']%}/accessibility/cases/{%if phase %}{{phase}}/cases/{% endif %}disc/{% if data['new-application']=='Yes'%}done-atwis-done{% else %}done-disc{% endif %}{% else %}
+               /accessibility/cases/{%if phase %}{{phase}}/cases/{% endif %}disc{% endif %}">    Check DiSC</a>
             </span>
             <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>    </li>
 
@@ -87,7 +87,7 @@
             and
             ( data['disc-check']=='No' or data['live-grant']=='No' or data['disc-end']=='Yes')
           %}
-  <p>Go to <a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#citizen-details">review application</a></p>
+  <p>Go to <a href="/accessibility/cases/{%if phase %}{{phase}}/cases/{% endif %}claim#citizen-details">review application</a></p>
           {% else %}
 
 

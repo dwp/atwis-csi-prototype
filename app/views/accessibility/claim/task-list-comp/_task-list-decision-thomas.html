@@ -4,7 +4,7 @@
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-              <a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}decision/approval" aria-describedby="job-status">  Approval</a>
+              <a href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}decision/approval" aria-describedby="job-status">  Approval</a>
               </span>
               {% if not data['approval']%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-matches-claim-status">Not started</strong>   {% endif %}
                 {% if  data['approval']=='Not approved'%}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Review needed</strong>   {% endif %}

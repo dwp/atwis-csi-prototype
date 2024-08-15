@@ -12,7 +12,7 @@
 <br>
 
 
-<form action="/current/cases/check-application/sae/details/add" method="post" novalidate>
+<form action="/accessibility/cases/check-application/sae/details/add" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -52,7 +52,7 @@ Add this item to the award?
 {% if data['approve-1']=='true'%}Added to award{% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/approve-1">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/approve-1">
       Change<span class="govuk-visually-hidden">
 Add this item to the award?
 </span>
@@ -72,7 +72,7 @@ Add this item to the award?
 {{data['more-detail']}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
       Change<span class="govuk-visually-hidden">
     Does a social and domestic contribution need to be applied to this item?
 </span>
@@ -95,7 +95,7 @@ Reason for not awarding this item
 {{data['not-needed-sae'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/not-needed-adding">
       Change<span class="govuk-visually-hidden">
 Reason for not awarding this item
 </span>
@@ -114,7 +114,7 @@ Quote for specialist equipment
 £{{data['cost-per-item'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
       Change<span class="govuk-visually-hidden">
 Reason for not awarding this item
 </span>
@@ -130,7 +130,7 @@ Where is the quote from?
 {{data['quotes-choose'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/selected-quote">
       Change<span class="govuk-visually-hidden">
 Where is the quote from?
 </span>
@@ -148,7 +148,7 @@ Where is the quote from?
 {{data['social-domestic-'+ number]}}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
+    <a class="govuk-link" href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{number}}/sd-adding-1">
       Change<span class="govuk-visually-hidden">
     Does a social and domestic contribution need to be applied to this item?
 </span>

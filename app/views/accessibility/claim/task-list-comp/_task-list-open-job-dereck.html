@@ -8,14 +8,14 @@
 
 
       <!-- <p >
-<a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+<a href="{% if not data['_do_1']%}/accessibility/cases/contact/1/how-do-you-want-to-contact{% else %}/accessibility/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
   Record contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}{% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}{% endif %}
 </a>
       </p><br> -->
 
       <!-- <p >
-      <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+      <a href="{% if not data['_do_1']%}/accessibility/cases/contact/1/how-do-you-want-to-contact{% else %}/accessibility/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
       Add contact
       </a>
       </p> -->
@@ -32,9 +32,9 @@ Job details
             <span class="app-task-list__task-name">
       <a href="
       {% if data ['job-deatils-contact']=='They gave permission (apply)'%}
-      {% if data ['employer-sector']%}/current/cases/job-details/check{% else %}/current/cases/job-details/employment-sector{% endif %}
+      {% if data ['employer-sector']%}/accessibility/cases/job-details/check{% else %}/accessibility/cases/job-details/employment-sector{% endif %}
       {% else %}
-      {% if data ['job-deatils-contact']%}/current/cases/job-details/check{% else %}/current/cases/contact-employer{% endif %}
+      {% if data ['job-deatils-contact']%}/accessibility/cases/job-details/check{% else %}/accessibility/cases/contact-employer{% endif %}
       {% endif %}
       " aria-describedby="job-status">
 

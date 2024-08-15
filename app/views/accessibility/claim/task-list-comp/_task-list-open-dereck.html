@@ -10,14 +10,14 @@
       </ul>
       </li>
       <!-- <p >
-<a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+<a href="{% if not data['_do_1']%}/accessibility/cases/contact/1/how-do-you-want-to-contact{% else %}/accessibility/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
   Record contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}{% if phase == "sonya" %}Sonya Corkery{% else %}Dereck Smith{% endif %}{% endif %}
 </a>
       </p><br> -->
 
       <!-- <p >
-      <a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+      <a href="{% if not data['_do_1']%}/accessibility/cases/contact/1/how-do-you-want-to-contact{% else %}/accessibility/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
       Add contact
       </a>
       </p> -->
@@ -29,7 +29,7 @@ Workplace assessment and job details
   <ul class="app-task-list__items">
 <li class="app-task-list__item">
   <span class="app-task-list__task-name">
-<a href="{% if phase =="sonya"%}/current/cases/workplace-assesment/wpa-not-needed{% else %}{% if data['wpa']%}/current/cases/workplace-assesment/check-wpa{% else %}{% if data['elements']=='I do not know'%}/current/cases/workplace-assesment{% else %}/current/cases/workplace-assesment/wpa-not-needed{% endif %}{% endif %}{% endif %}" aria-describedby="job-status">
+<a href="{% if phase =="sonya"%}/accessibility/cases/workplace-assesment/wpa-not-needed{% else %}{% if data['wpa']%}/accessibility/cases/workplace-assesment/check-wpa{% else %}{% if data['elements']=='I do not know'%}/accessibility/cases/workplace-assesment{% else %}/accessibility/cases/workplace-assesment/wpa-not-needed{% endif %}{% endif %}{% endif %}" aria-describedby="job-status">
   Confirm whether workplace assessment is needed
 </a>
   </span>
@@ -43,7 +43,7 @@ Workplace assessment and job details
   {% if data['wpa']=='Yes'%}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
-        <a href="{% if data['wpa-type']%}/current/cases/workplace-assesment/type/check{% else %}/current/cases/workplace-assesment/type{% endif %}" aria-describedby="job-status">
+        <a href="{% if data['wpa-type']%}/accessibility/cases/workplace-assesment/type/check{% else %}/accessibility/cases/workplace-assesment/type{% endif %}" aria-describedby="job-status">
             Type of workplace assessment
         </a>
           </span>
@@ -58,7 +58,7 @@ Workplace assessment and job details
     {% if data['wpa-type']=='Virtual' or data['wpa-type']=='Face-to-face'%}
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-          <a href="{% if (data['address-of-wpa'] or data['wpa-availability']=='I’m waiting for an answer')%}/current/cases/workplace-assesment/availability/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
+          <a href="{% if (data['address-of-wpa'] or data['wpa-availability']=='I’m waiting for an answer')%}/accessibility/cases/workplace-assesment/availability/check{% else %}/accessibility/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
               Availability for workplace assessment
           </a>
             </span>
@@ -86,9 +86,9 @@ Workplace assessment and job details
             <span class="app-task-list__task-name">
       <a href="
       {% if data ['job-deatils-contact']=='They gave permission (apply)'%}
-      {% if data ['employer-sector']%}/current/cases/job-details/check{% else %}/current/cases/job-details/employment-sector{% endif %}
+      {% if data ['employer-sector']%}/accessibility/cases/job-details/check{% else %}/accessibility/cases/job-details/employment-sector{% endif %}
       {% else %}
-      {% if data ['job-deatils-contact']%}/current/cases/job-details/check{% else %}/current/cases/contact-employer{% endif %}
+      {% if data ['job-deatils-contact']%}/accessibility/cases/job-details/check{% else %}/accessibility/cases/contact-employer{% endif %}
       {% endif %}
       " aria-describedby="job-status">
 
@@ -119,7 +119,7 @@ Workplace assessment and job details
 {% if data['wpa']=='Yes' and  data['employer-size'] and data['employer-sector-type'] and data['address-of-wpa']%}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-          <a href="{% if data['referral-form']%}/current/cases/workplace-assesment/check-referral-form{% else %}/current/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
+          <a href="{% if data['referral-form']%}/accessibility/cases/workplace-assesment/check-referral-form{% else %}/accessibility/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
                   Workplace assessment referral form
           </a>
               </span>
@@ -137,7 +137,7 @@ Workplace assessment and job details
 
   <li class="app-task-list__item">
     <span class="app-task-list__task-name">
-<a href="{% if data['report']%}/current/cases/workplace-assesment/wpa-report/check{% else %}/current/cases/workplace-assesment/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
+<a href="{% if data['report']%}/accessibility/cases/workplace-assesment/wpa-report/check{% else %}/accessibility/cases/workplace-assesment/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
       Review workplace assessment report
 </a>
     </span>
@@ -171,7 +171,7 @@ Workplace assessment and job details
 
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-          <a href="{% if data['wpa-type-2']%}/current/cases/workplace-assesment-2/type/check{% else %}/current/cases/workplace-assesment-2/type{% endif %}" aria-describedby="job-status">
+          <a href="{% if data['wpa-type-2']%}/accessibility/cases/workplace-assesment-2/type/check{% else %}/accessibility/cases/workplace-assesment-2/type{% endif %}" aria-describedby="job-status">
               Type of workplace assessment
           </a>
             </span>
@@ -187,7 +187,7 @@ Workplace assessment and job details
             {% if data['wpa-type-2']=='Virtual' or data['wpa-type-2']=='Face-to-face'%}
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                  <a href="{% if (data['address-of-wpa-2'] or data['wpa-availability-2']=='I’m waiting for an answer')%}/current/cases/workplace-assesment-2/availability/check{% else %}/current/cases/workplace-assesment-2/availability{% endif %}" aria-describedby="job-status">
+                  <a href="{% if (data['address-of-wpa-2'] or data['wpa-availability-2']=='I’m waiting for an answer')%}/accessibility/cases/workplace-assesment-2/availability/check{% else %}/accessibility/cases/workplace-assesment-2/availability{% endif %}" aria-describedby="job-status">
                       Availability for workplace assessment
                   </a>
                     </span>
@@ -211,7 +211,7 @@ Workplace assessment and job details
             {% if data['wpa-pause-2']=='No' or data['address-of-wpa-2'] %}
                           <li class="app-task-list__item">
                             <span class="app-task-list__task-name">
-                        <a href="{% if data['referral-form-2']%}/current/cases/workplace-assesment-2/check-referral-form{% else %}/current/cases/workplace-assesment-2/referral-form{% endif %}" aria-describedby="cost-share-agreement">
+                        <a href="{% if data['referral-form-2']%}/accessibility/cases/workplace-assesment-2/check-referral-form{% else %}/accessibility/cases/workplace-assesment-2/referral-form{% endif %}" aria-describedby="cost-share-agreement">
                                 Workplace assessment referral form
                         </a>
                             </span>
@@ -229,7 +229,7 @@ Workplace assessment and job details
 
                 <li class="app-task-list__item">
                   <span class="app-task-list__task-name">
-              <a href="{% if data['report-2']%}/current/cases/workplace-assesment-2/wpa-report/check{% else %}/current/cases/workplace-assesment-2/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
+              <a href="{% if data['report-2']%}/accessibility/cases/workplace-assesment-2/wpa-report/check{% else %}/accessibility/cases/workplace-assesment-2/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
                     Review workplace assessment report
               </a>
                   </span>

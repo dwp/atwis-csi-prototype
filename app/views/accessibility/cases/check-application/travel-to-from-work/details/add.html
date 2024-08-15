@@ -63,17 +63,17 @@
                                  <fieldset class="govuk-fieldset">
                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-{% include "current/cases/check-application/travel-to-from-work/details/content/add.html" %}
+{% include "accessibility/cases/check-application/travel-to-from-work/details/content/add.html" %}
                                    </legend>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
-                                       <input class="govuk-radios__input" id="ttw-add" name="ttw-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}/check-application/travel-to-from-work/details/type.html" {{ checked("ttw-add", "Yes") }}>
+                                       <input class="govuk-radios__input" id="ttw-add" name="ttw-add{{phase}}" type="radio" value="Yes~/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}/check-application/travel-to-from-work/details/type.html" {{ checked("ttw-add", "Yes") }}>
                                        <label class="govuk-label govuk-radios__label" for="ttw-add">
                                          Yes
                                        </label>
                                      </div>
                                      <div class="govuk-radios__item">
-                                       <input class="govuk-radios__input" id="ttw-add-2" name="ttw-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("ttw-add"+ phase, "No") }}>
+                                       <input class="govuk-radios__input" id="ttw-add-2" name="ttw-add{{phase}}" type="radio" value="No~/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case" {{ checked("ttw-add"+ phase, "No") }}>
                                        <label class="govuk-label govuk-radios__label" for="ttw-add-2">
                                          No
                                        </label>

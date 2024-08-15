@@ -14,7 +14,7 @@
 
 {% if data['Searchligh']=='No'%}
 <!-- <p >
-<a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+<a href="{% if not data['_do_1']%}/accessibility/cases/contact/1/how-do-you-want-to-contact{% else %}/accessibility/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
 Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
 </a>
@@ -48,7 +48,7 @@ data ['appointee']
       <ol class="app-task-list">
 
 
-    {% include  "current/claim/task-list-comp/_task-list-open-job-sonya.html" %}
+    {% include  "accessibility/claim/task-list-comp/_task-list-open-job-sonya.html" %}
 
 
 
@@ -80,7 +80,7 @@ data ['appointee']
 
       <li class="app-task-list__item">
         <span class="app-task-list__task-name">
-      <a href="{% if phase =="sonya"%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-not-needed{% else %}{% if data['wpa'+ phase]%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/check-wpa{% else %}{% if data['elements'+ phase]=='I do not know'%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-not-needed{% endif %}{% endif %}{% endif %}" aria-describedby="job-status">
+      <a href="{% if phase =="sonya"%}/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-not-needed{% else %}{% if data['wpa'+ phase]%}/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/check-wpa{% else %}{% if data['elements'+ phase]=='I do not know'%}/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment{% else %}/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/wpa-not-needed{% endif %}{% endif %}{% endif %}" aria-describedby="job-status">
         Confirm whether workplace assessment is needed
       </a>
         </span>
@@ -94,7 +94,7 @@ data ['appointee']
 
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-              <a href="{% if data['wpa-type'+ phase]%}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/check{% else %}/current/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/citizen-wpa{% endif %}" aria-describedby="job-status">
+              <a href="{% if data['wpa-type'+ phase]%}/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/check{% else %}/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}workplace-assesment/citizen-wpa{% endif %}" aria-describedby="job-status">
                   Type of workplace assessment
               </a>
                 </span>
@@ -114,7 +114,7 @@ data ['appointee']
 
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                  <a href="{% if (data['address-of-wpa'] or data['wpa-availability']=='I’m waiting for an answer')%}/current/cases/workplace-assesment/availability/check{% else %}/current/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
+                  <a href="{% if (data['address-of-wpa'] or data['wpa-availability']=='I’m waiting for an answer')%}/accessibility/cases/workplace-assesment/availability/check{% else %}/accessibility/cases/workplace-assesment/availability{% endif %}" aria-describedby="job-status">
                       Availability for workplace assessment
                   </a>
                     </span>
@@ -132,7 +132,7 @@ data ['appointee']
 
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-            <a href="{% if data['referral-form']%}/current/cases/workplace-assesment/check-referral-form{% else %}/current/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
+            <a href="{% if data['referral-form']%}/accessibility/cases/workplace-assesment/check-referral-form{% else %}/accessibility/cases/workplace-assesment/referral-form{% endif %}" aria-describedby="cost-share-agreement">
                     Workplace assessment referral form
             </a>
                 </span>
@@ -147,7 +147,7 @@ data ['appointee']
 
     <li class="app-task-list__item">
       <span class="app-task-list__task-name">
-  <a href="{% if data['report']%}/current/cases/workplace-assesment/wpa-report/check{% else %}/current/cases/workplace-assesment/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
+  <a href="{% if data['report']%}/accessibility/cases/workplace-assesment/wpa-report/check{% else %}/accessibility/cases/workplace-assesment/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
         Review workplace assessment report
   </a>
       </span>
@@ -180,7 +180,7 @@ data ['appointee']
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-            <a href="{% if data['wpa-type-2']%}/current/cases/workplace-assesment-2/type/check{% else %}/current/cases/workplace-assesment-2/type{% endif %}" aria-describedby="job-status">
+            <a href="{% if data['wpa-type-2']%}/accessibility/cases/workplace-assesment-2/type/check{% else %}/accessibility/cases/workplace-assesment-2/type{% endif %}" aria-describedby="job-status">
                 Type of workplace assessment
             </a>
               </span>
@@ -196,7 +196,7 @@ data ['appointee']
               {% if data['wpa-type-2']=='Virtual' or data['wpa-type-2']=='Face-to-face'%}
                     <li class="app-task-list__item">
                       <span class="app-task-list__task-name">
-                    <a href="{% if (data['address-of-wpa-2'] or data['wpa-availability-2']=='I’m waiting for an answer')%}/current/cases/workplace-assesment-2/availability/check{% else %}/current/cases/workplace-assesment-2/availability{% endif %}" aria-describedby="job-status">
+                    <a href="{% if (data['address-of-wpa-2'] or data['wpa-availability-2']=='I’m waiting for an answer')%}/accessibility/cases/workplace-assesment-2/availability/check{% else %}/accessibility/cases/workplace-assesment-2/availability{% endif %}" aria-describedby="job-status">
                         Availability for workplace assessment
                     </a>
                       </span>
@@ -220,7 +220,7 @@ data ['appointee']
               {% if data['wpa-pause-2']=='No' or data['address-of-wpa-2'] %}
                             <li class="app-task-list__item">
                               <span class="app-task-list__task-name">
-                          <a href="{% if data['referral-form-2']%}/current/cases/workplace-assesment-2/check-referral-form{% else %}/current/cases/workplace-assesment-2/referral-form{% endif %}" aria-describedby="cost-share-agreement">
+                          <a href="{% if data['referral-form-2']%}/accessibility/cases/workplace-assesment-2/check-referral-form{% else %}/accessibility/cases/workplace-assesment-2/referral-form{% endif %}" aria-describedby="cost-share-agreement">
                                   Workplace assessment referral form
                           </a>
                               </span>
@@ -238,7 +238,7 @@ data ['appointee']
 
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
-                <a href="{% if data['report-2']%}/current/cases/workplace-assesment-2/wpa-report/check{% else %}/current/cases/workplace-assesment-2/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
+                <a href="{% if data['report-2']%}/accessibility/cases/workplace-assesment-2/wpa-report/check{% else %}/accessibility/cases/workplace-assesment-2/wpa-report{% endif %}" aria-describedby="cost-share-agreement">
                       Review workplace assessment report
                 </a>
                     </span>

@@ -6,7 +6,7 @@
 
 {% block csi %}
 <br>
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/edit" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/edit" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -121,7 +121,7 @@
                    </dl>
 
 {% if phase == 'sonya'%}
-  {% include "current/claim/_sae-sonya.html"%}
+  {% include "accessibility/claim/_sae-sonya.html"%}
 
 {% else %}
 {% endif %}
@@ -129,7 +129,7 @@
 Edit support details
   </button>
   </form>
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

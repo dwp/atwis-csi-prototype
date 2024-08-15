@@ -150,20 +150,20 @@
                                  <fieldset class="govuk-fieldset">
                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-{% include "current/cases/check-application/sae/details/content/add.html" %}
+{% include "accessibility/cases/check-application/sae/details/content/add.html" %}
                                    </legend>
 
 
                                 <div id="event-name-hint" class="govuk-hint">You should add all items suggested by {% if case =='other-cases-2' %}Thomas King{% endif %}{% if case =='other-cases' %}Sonya Corkery{% endif %}{% if not case %}Dereck Smith{% endif %}{% if data['wpa']=='Yes'%} or in the workplace assessment report{% endif %}.</div>
                                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                      <div class="govuk-radios__item govuk-radios--inline">
-                                       <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{totalsae +1}}/type.html" >
+                                       <input class="govuk-radios__input" id="sae-add" name="sae-add{{phase}}" type="radio" value="Yes~/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/{{totalsae +1}}/type.html" >
                                        <label class="govuk-label govuk-radios__label" for="sae-add">
                                          Yes
                                        </label>
                                      </div>
                                      <div class="govuk-radios__item">
-                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add{{phase}}" type="radio" value="No~/current/cases/{% if phase %}sonya/cases/{% endif %}claim#business-case" {{ checked("sae-add", "No") }}>
+                                       <input class="govuk-radios__input" id="sae-add-2" name="sae-add{{phase}}" type="radio" value="No~/accessibility/cases/{% if phase %}sonya/cases/{% endif %}claim#business-case" {{ checked("sae-add", "No") }}>
                                        <label class="govuk-label govuk-radios__label" for="sae-add-2">
                                          No
                                        </label>

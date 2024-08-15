@@ -13,12 +13,12 @@
 
 
 <form action="
-{% if data['clear']=='No' %}/current/cases/contact/claim#contact{% else %}
+{% if data['clear']=='No' %}/accessibility/cases/contact/claim#contact{% else %}
 {% if data ['Searchligh']=='No' or
 data ['Searchligh']=='Yes, but name, date of birth or address do not match' or
 data ['found-nino']=='No' or
 data ['exceptions']=='I need to contact Dereck Smith about their benefits' or
-data ['job-deatils-contact']=='No, I have not spoken to them' %}/current/cases/contact/{{number}}/notification-need{% else %}/current/cases/claim#contact{% endif %}{% endif %}" method="post" novalidate>
+data ['job-deatils-contact']=='No, I have not spoken to them' %}/accessibility/cases/contact/{{number}}/notification-need{% else %}/accessibility/cases/claim#contact{% endif %}{% endif %}" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -42,7 +42,7 @@ data ['job-deatils-contact']=='No, I have not spoken to them' %}/current/cases/c
 
 
 {% if data['clear']=='No' %}{% else %}
-  {% include  "current/claim/notification-contact.html" %}{% endif %}
+  {% include  "accessibility/claim/notification-contact.html" %}{% endif %}
 
 
 

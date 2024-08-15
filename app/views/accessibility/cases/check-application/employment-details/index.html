@@ -30,18 +30,18 @@
 
 
 
-  {% include "current/claim/_job-details.html"%}
+  {% include "accessibility/claim/_job-details.html"%}
 
-  <!-- <p><a href="/current/cases/check-application/employment-help-needed/details">  Add more details</a></p> -->
+  <!-- <p><a href="/accessibility/cases/check-application/employment-help-needed/details">  Add more details</a></p> -->
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/employment-details/details/edit" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/employment-details/details/edit" method="post" novalidate>
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Edit employment details
   </button>
   </form>
 
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

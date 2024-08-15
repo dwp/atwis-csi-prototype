@@ -428,8 +428,8 @@ data-module="govuk-notification-banner">
 </div></div>
   <h2 class="govuk-heading-l">Case history</h2>
 
-<p><a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/reject-case"> Close the case</a></p>
-<!-- <p><a href="/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/withdrawal-case"> Withdraw the case</a></p> -->
+<p><a href="/accessibility/cases/{%if phase %}{{phase}}/cases/{% endif %}close/reject-case"> Close the case</a></p>
+<!-- <p><a href="/accessibility/cases/{%if phase %}{{phase}}/cases/{% endif %}close/withdrawal-case"> Withdraw the case</a></p> -->
 <br>
 
 {% if phase == "george"  %}{% include  "../claim/timelines/timeline.html" %}{% endif %}
@@ -568,7 +568,7 @@ test
 {% endif %}
 
 
-  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
+  <form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}contact/{{totalcontact + 1}}/how-do-you-want-to-contact" method="post" novalidate>
 
 
 
@@ -579,7 +579,7 @@ test
 
 
 
-        <p><a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
+        <p><a href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/contact-details">View contact details</a></p>
         {% if phase == "sonya" %}
           {% set totalcontact = + 1 %}
           {% endif %}
@@ -598,7 +598,7 @@ test
 
 
           {% if data['clear']=='No' %}{% else %}
-            {% include  "current/claim/notification-contact.html" %}{% endif %}
+            {% include  "accessibility/claim/notification-contact.html" %}{% endif %}
 
 
             <!-- <p>Best times to contact Dereck Smith:</p>
@@ -635,7 +635,7 @@ test
            <div class="hmrc-list-with-actions__actions">
              <dd class="hmrc-list-with-actions__action">
                <a class="govuk-link"
-               href="/current/cases/sonya/cases/contact/prefill/phone-log">
+               href="/accessibility/cases/sonya/cases/contact/prefill/phone-log">
                  <span aria-hidden="true">View </span>
                  <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
                </a>
@@ -663,7 +663,7 @@ test
        <div class="hmrc-list-with-actions__actions">
          <dd class="hmrc-list-with-actions__action">
            <a class="govuk-link"
-           href="/current/cases/thomas/cases/contact/prefill/phone-log">
+           href="/accessibility/cases/thomas/cases/contact/prefill/phone-log">
              <span aria-hidden="true">View </span>
              <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
            </a>
@@ -715,11 +715,11 @@ test
       <div class="hmrc-list-with-actions__actions">
         <dd class="hmrc-list-with-actions__action">
           <a class="govuk-link"
-          href="{% if data['_do_'+ contactindex]=='Email sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
-          {% if data['_do_'+ contactindex]=='Email received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
-          {% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}
-          {% if data['_do_'+ contactindex]=='Telephone call made'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}
-          {% if data['_do_'+ contactindex]=='Telephone call received'%}/current/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
+          href="{% if data['_do_'+ contactindex]=='Email sent'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Email received'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/email-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Text message (SMS) sent'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/sms-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Telephone call made'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}
+          {% if data['_do_'+ contactindex]=='Telephone call received'%}/accessibility/cases/{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}contact/{{contactindex}}/phone-log{% endif %}">
             <span aria-hidden="true">View </span>
             <span class="govuk-visually-hidden"> {{data['_do_'+ contactindex]}}</span>
           </a>
@@ -787,7 +787,7 @@ test
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">
-            <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/phone-log-prefill">
+            <a class="govuk-link" href="/accessibility/cases/thomas/cases/contact/1/phone-log-prefill">
               <span aria-hidden="true">View </span>
               <span class="govuk-visually-hidden"> Telephone call made</span>
             </a>
@@ -827,7 +827,7 @@ test
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">
-            <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/sms-log-prefill">
+            <a class="govuk-link" href="/accessibility/cases/thomas/cases/contact/1/sms-log-prefill">
               <span aria-hidden="true">View </span>
               <span class="govuk-visually-hidden"> Text message (SMS) sent</span>
             </a>
@@ -867,7 +867,7 @@ test
         </dt>
         <div class="hmrc-list-with-actions__actions">
           <dd class="hmrc-list-with-actions__action">
-            <a class="govuk-link" href="/current/cases/thomas/cases/contact/1/email-log-prefill">
+            <a class="govuk-link" href="/accessibility/cases/thomas/cases/contact/1/email-log-prefill">
               <span aria-hidden="true">View </span>
               <span class="govuk-visually-hidden"> Email sent</span>
             </a>
@@ -1033,9 +1033,9 @@ test
     {% if case =='other-cases-fill-3' %}
       {% include  "./anahi/task-list-anahi-application.html" %}{% endif %}
       {% if case =='other-cases-fill-4' %}
-        {% include  "current/claim/kam/task-list-kam-application.html" %}{% endif %}
+        {% include  "accessibility/claim/kam/task-list-kam-application.html" %}{% endif %}
         {% if case =='other-cases-fill-5' %}
-          {% include  "current/claim/sarah/task-list-sarah-application.html" %}{% endif %}
+          {% include  "accessibility/claim/sarah/task-list-sarah-application.html" %}{% endif %}
 
   {% if case =='other-cases' %}
     {% include  "./task-list-sonya-application.html" %}{% endif %}
@@ -1082,7 +1082,7 @@ test
 
 
 
-<p>Go to <a href="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">business case tab</a></p><br>
+<p>Go to <a href="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#business-case">business case tab</a></p><br>
 {% endif %}
 
 

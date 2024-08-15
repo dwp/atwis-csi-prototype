@@ -10,7 +10,7 @@
 
 
 
-<form action="/current/cases/claim#your-tasks" method="post" novalidate>
+<form action="/accessibility/cases/claim#your-tasks" method="post" novalidate>
 
 
   <div class="govuk-width-container">
@@ -36,7 +36,7 @@
 
   <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="email" name="who-contacted" type="radio" value="casemanager~/current/cases/contact/how-do-you-want-to-contact">
+          <input class="govuk-radios__input" id="email" name="who-contacted" type="radio" value="casemanager~/accessibility/cases/contact/how-do-you-want-to-contact">
           <label class="govuk-label govuk-radios__label" for="email">
         I need to contact
       </label>
@@ -50,7 +50,7 @@
 
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="phone" name="who-contacted" type="radio" value="citizen~/current/cases/contact/how-do-you-want-to-contact">
+          <input class="govuk-radios__input" id="phone" name="who-contacted" type="radio" value="citizen~/accessibility/cases/contact/how-do-you-want-to-contact">
           <label class="govuk-label govuk-radios__label" for="phone">
         {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %} contacted Access to work
       </label>

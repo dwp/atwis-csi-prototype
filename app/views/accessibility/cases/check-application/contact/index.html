@@ -18,7 +18,7 @@
   {% endif %}
     {%- endfor %}
 
-<form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/details/{{totalcontactdetails + 1}}" method="post" novalidate>
+<form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/contact/details/{{totalcontactdetails + 1}}" method="post" novalidate>
 <div class="govuk-width-container">
 
 
@@ -32,7 +32,7 @@
 
 
 
-  {% include "current/claim/_how-to-contact.html"%}
+  {% include "accessibility/claim/_how-to-contact.html"%}
 
 
   {% if totalcontactdetails == 0 %}{% else %}
@@ -74,7 +74,7 @@
 </div>
       {% endif %}
       {%- endfor %}  {% if totalhealthdetails == 0 %}{% else %}  </dl></div>{% endif %}
-  <!-- <p><a href="/current/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
+  <!-- <p><a href="/accessibility/cases/check-application/condition-help-needed/details">  Add more details</a></p> -->
 
 </div>
 
@@ -84,7 +84,7 @@
   </button> -->
   </form>
 
-  <form action="/current/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+  <form action="/accessibility/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
   <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">

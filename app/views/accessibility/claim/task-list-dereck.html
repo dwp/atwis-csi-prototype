@@ -68,7 +68,7 @@
 
 {% if data['Searchligh']=='No'%}
 <p >
-<a href="{% if not data['_do_1']%}/current/cases/contact/1/how-do-you-want-to-contact{% else %}/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+<a href="{% if not data['_do_1']%}/accessibility/cases/contact/1/how-do-you-want-to-contact{% else %}/accessibility/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
 Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
 </a>
@@ -97,9 +97,9 @@ data ['appointee']
 
 
 
-{% include "current/claim/task-list-comp/searchlight.html"%}
+{% include "accessibility/claim/task-list-comp/searchlight.html"%}
 
-{% include  "current/claim/task-list-comp/review-application-dereck.html" %}
+{% include  "accessibility/claim/task-list-comp/review-application-dereck.html" %}
 
 
 
@@ -192,7 +192,7 @@ data['wpa'] and data['report'] and (data['quotes-choose'] or data['quotes-checks
       {% if data['wpa']=='No'%}
     {% if totalcomplete > 2 and
     data['award']%}
-<form action="/current/cases/complete/ons" method="post" novalidate>
+<form action="/accessibility/cases/complete/ons" method="post" novalidate>
        <button class="govuk-button" data-module="govuk-button">
       Confirm award
       </button>{% endif %}
@@ -201,7 +201,7 @@ data['wpa'] and data['report'] and (data['quotes-choose'] or data['quotes-checks
 {% if data['wpa']=='Yes'%}
 {% if totalcomplete == 4 and
 data['award']%}
-<form action="/current/cases/complete/ons" method="post" novalidate>
+<form action="/accessibility/cases/complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
   Confirm award
 </button>{% endif %}
