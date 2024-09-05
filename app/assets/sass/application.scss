@@ -19,12 +19,161 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/hmrc-add-to-list";
 
 
+
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 @import "components/key-details";
 @import "components/timeline-moj";
 @import "components/smart-cards";
 
+.dwp-quick-reference {
+  margin: 15px 0;
+  color: #0b0c0c;
+  font-family: Helvetica, Arial, sans-serif;
+  word-break: break-word;
+}
+.dwp-quick-reference:first-child {
+  margin-top: 0;
+}
+.dwp-quick-reference--alternative {
+  margin-left: -15px;
+  padding: 15px 15px 5px;
+  color: #ffffff;
+  background: #1d70b8;
+}
+@media (max-width: 40.0525em) {
+  .dwp-quick-reference--alternative {
+    margin-right: -15px;
+  }
+}
+.dwp-quick-reference__block {
+  margin: 0;
+  padding: 0;
+}
+.dwp-quick-reference__label {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 1px;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0 10px 0 0;
+  float: left;
+}
+@media print {
+  .dwp-quick-reference__label {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .dwp-quick-reference__label {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .dwp-quick-reference__label {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.dwp-quick-reference__label:has(+ .dwp-quick-reference__status) {
+  padding-top: 5px;
+}
+@media (max-width: 25em) {
+  .dwp-quick-reference__label {
+    padding-bottom: 4px;
+    float: none;
+  }
+}
+.dwp-quick-reference__primary {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.1111111111;
+  margin: 0;
+  padding-bottom: 10px;
+}
+@media print {
+  .dwp-quick-reference__primary {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .dwp-quick-reference__primary {
+    font-size: 1.6875rem;
+    line-height: 1.1111111111;
+  }
+}
+@media print {
+  .dwp-quick-reference__primary {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+@media (max-width: 40.0525em) {
+  .dwp-quick-reference__primary {
+    font-size: 20px;
+  }
+}
+.dwp-quick-reference__secondary {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0;
+  padding-bottom: 10px;
+}
+@media print {
+  .dwp-quick-reference__secondary {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .dwp-quick-reference__secondary {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .dwp-quick-reference__secondary {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.dwp-quick-reference__status {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.dwp-quick-reference__status .govuk-tag {
+  max-width: 260px;
+}
+.dwp-quick-reference__status--white {
+  color: #1d70b8;
+  background-color: #ffffff;
+}
+
+.dwp-quick-reference--reduced {
+  margin-bottom: 15px;
+}
+.dwp-quick-reference--reduced .dwp-quick-reference__label {
+  float: none;
+}
+@media (max-width: 40.0525em) {
+  .dwp-quick-reference--reduced .dwp-quick-reference__label {
+    margin-bottom: 3px;
+  }
+  .dwp-quick-reference--reduced .dwp-quick-reference__label:has(+ .dwp-quick-reference__status) {
+    margin-bottom: 7px;
+    padding-top: 0;
+}
+}
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
