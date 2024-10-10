@@ -1,0 +1,73 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Personal details" %}
+{% set case = "other-cases-3" %}
+{% set phase = "john" %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+ <form action="/live-atwis/0/cases/john/cases/personal-details" method="post" novalidate>
+<script>
+
+
+  </script>
+
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Address
+    </h1>
+  </legend>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="change-address-line-1">
+      Address line 1
+    </label>
+    <input class="govuk-input" id="change-address-line-1" name="changeaddressline1" type="text" autocomplete="change-address-line1" value='{% if  data['changeaddressline1']%}{{data['changeaddressline1']}}{% else %}72 Guild Street{% endif %}'>
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="change-address-line-2">
+      Address line 2 (optional)
+    </label>
+    <input class="govuk-input" id="change-address-line-2" name="change-address-line-2" type="text" autocomplete="change-address-line2" value='{{data['change-address-line-2']}}'>
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="change-address-town">
+      Town or city
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="change-address-town" name="change-address-town" type="text" autocomplete="change-address-level2" value='{% if  data['change-address-town']%}{{data['change-address-town']}}{% else %}London{% endif %}'>
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="change-address-county">
+      County (optional)
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="change-address-county" name="change-address-county" type="text" value='{{data['change-address-county']}}'>
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="change-address-postcode">
+      Postcode
+    </label>
+    <input class="govuk-input govuk-input--width-10" id="change-address-postcode" name="change-address-postcode" type="text" autocomplete="postal-code" value='SE23 6FH '>
+  </div>
+</fieldset>
+
+<button class="govuk-button" data-module="govuk-button">
+          Confirm and save
+        </button>
+      </form>
+
+</main>
+</div>
+
+
+
+
+{% endblock %}

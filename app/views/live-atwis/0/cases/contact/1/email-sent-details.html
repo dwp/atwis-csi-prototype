@@ -1,0 +1,190 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="/live-atwis/0/cases/
+{% if phase == "john"  %}john/cases/{% endif %}{% if phase == "thomas"  %}thomas/cases/{% endif %}{% if phase == "sonya"  %}sonya/cases/{% endif %}claim#contact" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+              <h1 class="govuk-heading-xl">  What did you email them about?</h1>
+
+
+
+              {% if data['who-emailed-us']=='Someone else'%}
+                            <div class="govuk-form-group">
+                                       <label class="govuk-label govuk-label--m" for="summary-case-history">
+                                       Someone else full name
+                                       </label>
+                                       <!-- <div id="summary-case-history-hint" class="govuk-hint">
+                                       Give a short description. This will appear in the case history timeline.
+                                       </div> -->
+                                       <input class="govuk-input govuk-input--width-20" id="summary-case-history" name="summary-case-history{{number}}" type="text" aria-describedby="summary-case-history-hint">
+                                     </div>
+              {% endif %}
+
+
+
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="contact-why-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              <h2 class="govuk-fieldset__heading">
+                          Reason
+                              </h2>
+                            </legend>
+                            <div id="contact-why-hint" class="govuk-hint">
+                              Select all that apply.
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why" name="contact-why-{{number}}" type="checkbox" value="Quotes">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why">
+                                Quotes
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-2" name="contact-why-{{number}}" type="checkbox" value="Identity verification">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-2">
+                              Identity verification
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-2" name="contact-why-{{number}}" type="checkbox" value="Reasonable adjustment">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-2">
+                          Reasonable adjustment
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Element details">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                                Element details
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Personal details">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                                Personal details
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Health condition or disability">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                                 Health condition or disability
+                                </label>
+                              </div>
+
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Employment details">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                                Employment details
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-7" name="contact-why-{{number}}" type="checkbox" value="Employer information">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-7">
+                                Employer information
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Workplace assessment">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                                Workplace assessment
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Cap limit">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                            Cap limit
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Application status">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                            Application status
+                                </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="contact-why-3" name="contact-why-{{number}}" type="checkbox" value="Other reason">
+                                <label class="govuk-label govuk-checkboxes__label" for="contact-why-3">
+                        Other reason
+                                </label>
+                              </div>
+
+
+
+                            </div>
+                          </fieldset>
+                        </div>
+
+
+                        <div class="govuk-form-group">
+                                   <label class="govuk-label govuk-label--m" for="summary-case-history">
+                                   Summary
+                                   </label>
+                                   <div id="summary-case-history-hint" class="govuk-hint">
+                                   Give a short description. This will appear in the case history timeline.
+                                   </div>
+                                   <input class="govuk-input govuk-input--width-20" id="summary-case-history" name="summary-case-history{{number}}" type="text" aria-describedby="summary-case-history-hint">
+                                 </div>
+
+                                     <div class="govuk-form-group">
+                                   <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+                                     <div class="govuk-form-group">
+                                       <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+                                 Additional details (optional)
+
+                                       </label>
+                                       </h2>
+
+                                   <textarea class="govuk-textarea govuk-js-character-count" id="other-note1" name="other-discussion-{{number}}" rows="5" aria-describedby="other-note1-info other-note1-hint"></textarea><div id="other-note1-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 500 characters remaining</div>
+                                   </div>
+
+
+
+
+
+<div class="govuk-inset-text">
+Once saved, details cannot be changed.
+  </div>
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+          Confirm and save
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

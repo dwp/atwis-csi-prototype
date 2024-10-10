@@ -1,0 +1,123 @@
+
+{% extends "layout.html" %} {% set serviceName = "Renew Access to Work" %}
+
+{% block pageTitle %}
+  Access to Work prototypes: renewals
+{% endblock %}
+
+{% block header %}
+
+  <div class="prototype-remove-blue-border-from-header">
+
+    {{ super() }}
+
+    <div class="prototype-home-top">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Access to Work</h1>
+            <h1 class="govuk-heading-l govuk-!-font-weight-regular  govuk-!-margin-bottom-2">Renewals prototype</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ super() }}
+  {{ govukBackLink({
+    text: 'Back to renewals scenarios',
+    href: '/renewals/index'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <h2 class="govuk-heading-l">HTO-2719: GA cookie consent – renewals service</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+     <p>
+        <a href="cookie-policy" class="govuk-link--no-visited-state">
+       Cookie policy page – no banner</a>
+
+       <p>Set DWP content, this includes interaction to:</p>
+       <ul class="govuk-list govuk-list--bullet"> 
+        <li>set cookies for the first time – if not set from banner</li>
+        <li>change cookie choice – if already set</li>
+      </ul>
+      
+      
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+     <p>
+        <a href="cookie-details" class="govuk-link--no-visited-state">
+       Cookie details page – no banner
+     
+        </a>
+      <p>
+      <p>More information about cookies, including listing actual cookies on service.</p>
+      <p>Only service specific content is the service name and cookies listed.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+       <p>
+        <a href="main-banner-start-of-service" class="govuk-link--no-visited-state">
+       Main cookie banner
+     
+        </a>
+      <p>
+      <p>Shown before cookies have been accepted or rejected. Also shown when cookie preferences expire.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+       <p>
+        <a href="accepted-banner-start-of-service" class="govuk-link--no-visited-state">
+       Banner confirmation message – cookies accepted
+     
+        </a>
+      <p>
+      <p><p>Shown after accepted cookies from main banner.</p></p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+      <p>
+        <a href="rejected-banner-start-of-service" class="govuk-link--no-visited-state">
+       Banner confirmation message – cookies rejected
+     
+        </a>
+      <p>
+      <p>Shown after rejected cookies from main banner.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+
+
+    </div>
+  </div>
+
+{% endblock %}

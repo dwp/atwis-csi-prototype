@@ -1,0 +1,168 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+<form action="/live-atwis/0/cases/{% if phase %}{{phase}}/cases/{% endif %}check-application/sae/details/edit" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+
+                   Support details: specialist equipment</h1>
+
+                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Do you need equipment, adaptations or software to support you with your condition at work?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   Yes
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+                   </div>
+
+
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Do you know what specialist equipment you need?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   Yes, I know what I need
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+                   </div>
+                   <!--
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Do you need a wheelchair or a hearing aid to support at work?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   Other
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+                   </dd>
+                   </div> -->
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   What type of specialist equipment do you need?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                   <ul>
+                     <li>Jaws Screen Reader Software</li>
+                   <li>ZoomText</li>
+
+
+                   </ul>
+                   <br>
+
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+
+                   </dd>
+                   </div>
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   Add another item of specialist equipment?
+
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                     No
+                   <br>
+
+                   <br>
+
+                   <br>
+                   </dd>
+                   <dd class="govuk-summary-list__actions">
+
+
+                   </dd>
+                   </div>
+
+                   <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                   How will this equipment help you at work?
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+
+
+
+                   I need Jaws and ZoomText software to read out the content on a screen to me, as I'm unable to visual see the screen currently have to rely on others. I use a computer for 99% of my work.
+
+                   <br>
+                   </dd>
+
+                   <dd class="govuk-summary-list__actions">
+                    <a href="#">
+
+                   <span class="govuk-visually-hidden"> How will this equipment help you at work?</span>
+                   </a>
+
+                   </dd>
+                   </div>
+                   </dl>
+
+{% if phase == 'sonya'%}
+  {% include "live-atwis/0/claim/_sae-sonya.html"%}
+
+{% else %}
+{% endif %}
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+Edit support details
+  </button>
+  </form>
+<form action="/live-atwis/0/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#citizen-details" method="post" novalidate>
+  <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Do you need more information about the support that Anahi Korrapati needs?
+
+                </legend>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item govuk-radios--inline">
+                    <input class="govuk-radios__input" id="sae-check" name="sae-check{{phase}}" type="radio" value="Yes" {{ checked("sae-check"+ phase, "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="sae-check">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="sae-check-2" name="sae-check{{phase}}" type="radio" value="No" {{ checked("sae-check"+ phase, "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="sae-check-2">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
+      </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}

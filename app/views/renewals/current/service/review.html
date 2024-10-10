@@ -1,0 +1,234 @@
+{% extends "layout.html" %} {% set serviceName = "Renew Access to Work" %}
+
+{% block pageTitle %}
+  Check your answers before sending your renewal application
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% if not hideback %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:history.go(-1)"
+}) }}
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your renewal application</h1>
+
+      <form class="form" action="renewal-sent" method="post">
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['firstname']}}
+              {{data['lastname']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="personal-details-name#f-firstname">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['dob-day']}}
+
+              {% if (data['dob-month'] =='01') or (data['dob-month'] =='1') %} January {% endif%}
+              {% if (data['dob-month'] =='02') or (data['dob-month'] =='2') %} February  {% endif%}
+              {% if (data['dob-month'] =='03') or (data['dob-month'] =='3') %} March {% endif%}
+              {% if (data['dob-month'] =='04') or (data['dob-month'] =='4') %} June {% endif%}
+              {% if (data['dob-month'] =='05') or (data['dob-month'] =='5') %} May {% endif%}
+              {% if (data['dob-month'] =='06') or (data['dob-month'] =='6') %} June {% endif%}
+              {% if (data['dob-month'] =='07') or (data['dob-month'] =='7') %} July {% endif%}
+              {% if (data['dob-month'] =='08') or (data['dob-month'] =='8') %} August {% endif%}
+              {% if (data['dob-month'] =='09') or (data['dob-month'] =='9') %} September {% endif%}
+              {% if data['dob-month'] =='10' %} October {% endif%}
+              {% if data['dob-month'] =='11'%} November {% endif%}
+              {% if data['dob-month'] =='12' %} December {% endif%}
+
+              {{data['dob-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="personal-details-dob#dob-day">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['address-line-1']}}
+              <br>
+              {{data['address-line-2']}}
+              <br>
+              {{data['address-town']}}
+              <br>
+              {{data['address-county']}}
+              <br>
+              {{data['address-postcode']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="personal-details-address#address-line-1">
+                Change<span class="govuk-visually-hidden"> home address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Unique reference number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['urn']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="urn">
+                Change<span class="govuk-visually-hidden"> unique reference number</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Changes to support needed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class=“govuk-list govuk-list--bullet govuk-list--spaced”>
+
+                {% if data ['support-changes'] %}
+
+                {% if 'cost' in data['support-changes'] %}
+                <li>Cost of support has changed</li>
+                {% endif%}
+                {% if 'how-often' in data['support-changes'] %}
+                <li>How often support is needed has changed</li>
+                {% endif%}
+                {% if 'type' in data['support-changes'] %}
+                <li>Type of support needed has changed</li>
+                {% endif%}
+                {% if 'other' in data['support-changes'] %}
+                <li>Other change to support needed</li>
+                {% endif%}
+
+                {% else%}
+
+                <li>No changes</li>
+                {% endif%}
+
+                </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="support-changes">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['email_address']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact-details#f-contact_method">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Telephone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['phone_number']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="contact-details#contact_method-2">
+                Change<span class="govuk-visually-hidden"> phone number</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+        <h2 class="govuk-heading-m">Declaration</h2>
+
+        <p class="govuk-body">By submitting this notification you are agreeing that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+         <li>the information in this renewal application is correct as far as you know</li>
+         <li>you’ll tell the Access to Work team about any changes to your condition or circumstances, for example if your place of work changes</li>
+       </ul>
+
+
+       <div class="govuk-warning-text">
+       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+       <strong class="govuk-warning-text__text">
+       <span class="govuk-warning-text__assistive">Warning</span>
+         It might be a criminal offence if you knowingly give false information or do not report anything that would affect your grant, for example if your condition improves or you change where you work.
+       </strong>
+      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Accept and send application</button>
+
+      </form></div></div>
+
+
+
+
+
+
+
+
+      <section class="govuk-width-container govuk-!-margin-top-7 govuk-!-margin-bottom-7 ">
+        <hr class="govuk-section-break govuk-section-break--visible" aria-hidden="true">
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+
+
+          <p class="govuk-body">You can contact us for free by:</p>
+          <ul class="govuk-list govuk-list--bullet">
+      <li>Telephone: 0800 121 7479</li>
+      <li>Textphone: 0800 121 7579</li>
+      <li><a href="https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+    <li><a href="https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+      </ul>
+
+          <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm (except public holidays)</p>
+
+
+
+        </div> </div>
+
+{% endblock %}

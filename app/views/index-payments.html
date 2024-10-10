@@ -8,12 +8,16 @@
 {% set serviceName = "Apply for commmunication support at interview (Access to Work)" %}
 
 {% block content %}
-
+{{ super() }}
+{{ govukBackLink({
+  text: 'Back to prototype home',
+  href: '/'
+}) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-width">
       <h1 class="govuk-heading-xl">
         Payments
-        <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
+        <!-- <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span> -->
       </h1>
 
       <p>

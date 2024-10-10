@@ -1,0 +1,95 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set edit = 'true' %}
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="edit" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Which days of the week does {% if phase == "john" %}John Smith{% endif %}{% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya" %}Sonya Corkery{% endif %}{% if not phase %}Dereck Smith{% endif %} work for Smith Digital Limited?
+            </h1>
+          </legend>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week" name="day-of-week" type="checkbox"
+                     value="Monday" {{ checked("day-of-week", "Monday") }}checked>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week">
+                Monday
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week-2" name="day-of-week" type="checkbox" value="Tuesday"{{ checked("day-of-week", "Tuesday") }} checked>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week-2">
+                Tuesday
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week-3" name="day-of-week" type="checkbox" value="Wednesday"  {{ checked("day-of-week", "Wednesday") }}checked>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week-3">
+                Wednesday
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week-4" name="day-of-week" type="checkbox" value="Thursday" {{ checked("day-of-week", "Thursday") }}checked>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week-4">
+                Thursday
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week-5" name="day-of-week" type="checkbox" value="Friday"  {{ checked("day-of-week", "Friday") }}checked>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week-5">
+                Friday
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week-6" name="day-of-week" type="checkbox" value="Saturday"  {{ checked("day-of-week", "Saturday") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week-6">
+                Saturday
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week-7" name="day-of-week" type="checkbox" value="Sunday" {{ checked("day-of-week", "Sunday") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week-7">
+                Sunday
+              </label>
+            </div>
+            <div class="govuk-!-padding-bottom-1"></div>
+            <div class="govuk-checkboxes__divider"><p>or</p></div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="day-of-week-8" name="day-of-week" type="checkbox" value="I work flexibly or on a shift pattern" data-behaviour="exclusive" {{ checked("day-of-week", "I work flexibly or on a shift pattern") }}>
+              <label class="govuk-label govuk-checkboxes__label" for="day-of-week-8">
+                I work flexibly or on a shift pattern
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <form class="form" action="/url/of/next/page" method="post">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+</div>
+
+  </div>
+
+{% endblock %}
