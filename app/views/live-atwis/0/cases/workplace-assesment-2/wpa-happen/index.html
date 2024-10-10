@@ -1,0 +1,68 @@
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+
+
+
+    <div class="govuk-width-container">
+
+<form action="" method="post" novalidate>
+
+    <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                   <h2 class="govuk-fieldset__heading">
+{% include  "./content/happen.html" %}
+                   </h2>
+                 </legend>
+
+
+
+                 <div class="govuk-radios " data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="wpa-happen-2" name="wpa-happen-2" type="radio" value="Yes~/live-atwis/0/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#wpa">
+                      <label class="govuk-label govuk-radios__label" for="wpa-happen-2">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="wpa-happen-2-2" name="wpa-happen-2" type="radio" value="No~wpa-happen-2/reason">
+                      <label class="govuk-label govuk-radios__label" for="wpa-happen-2-2">
+                        No
+                      </label>
+                    </div>
+                    <div class="govuk-radios__divider">or</div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="wpa-happen-2-3" name="wpa-happen-2" type="radio" value="Still waiting for an confimation~/live-atwis/0/cases/{% if phase %}{{phase}}/cases/{% endif %}claim#wpa">
+                      <label class="govuk-label govuk-radios__label" for="wpa-happen-2-3">
+                        Still waiting for assessor to confirm
+                      </label>
+                    </div>
+
+                   </fieldset>
+                 </div>
+
+
+
+
+
+             <button class="govuk-button" data-module="govuk-button" >
+               Save and continue
+             </button>
+           </form>
+         </div>
+       </div>
+
+
+          </main>
+          </div>
+
+
+
+{% endblock %}

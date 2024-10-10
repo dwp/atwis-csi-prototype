@@ -5,38 +5,68 @@
   Communication support at interview prototype
 {% endblock %}
 
-{% set serviceName = "Access to Work (AtWIS)" %}
+{% set serviceName = "Access to Work" %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-width">
       <h1 class="govuk-heading-xl">
-        ATWIS prototype (payments, assess and others)
-        <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
-      </h1>
-      <div class="govuk-warning-text">
+        ATW (Access to Work) prototypes
+        <!-- <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
+      </h1> -->
+  <br>     <br>    <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
           Navigation page for internal team use only. Not for development or usability sessions.
         </strong>
       </div>
-      <p>
+    <h2 class="govuk-heading-m">Current ATWIS:</h2>
+            <ul class="govuk-list govuk-list--bullet">
+          <li>
+      <a href="live-atwis/0/index">Current</a>
+      </li>
+      <li>
+      <a href="index-accessibility">Accessibility</a>
+        </li>
+        </ul>
+
+<h2 class="govuk-heading-m">New ATWIS:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+    <li>
 <a href="index-assess">Assess</a>
-      </p>
-
-      <p>
+</li>
+<li>
 <a href="index-payments">Payments</a>
-      </p>
+  </li>
+  </ul>
 
+
+
+<h2 class="govuk-heading-m">Citizen facing services:</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+          Apply
+            </li>
+  <li>
+    <a href="renewals" class="govuk-link--no-visited-state"> Renewal</a>
+    </li>
+
+    <li>
+<a href="csi" class="govuk-link--no-visited-state">CSI</a>
+</li>
+    </ul>
+
+
+
+
+<h2 class="govuk-heading-m">Misc:</h2>
       <p>
     <a href="orange/index">Others</a>
       </p>
 
-      <p>
-    <a href="index-accessibility">Accessibility</a>
-      </p>
+
 
 
 {% endblock %}

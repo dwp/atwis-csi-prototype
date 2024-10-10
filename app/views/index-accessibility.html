@@ -8,12 +8,16 @@
 {% set serviceName = "Access to Work (AtWIS)" %}
 
 {% block content %}
-
+{{ super() }}
+{{ govukBackLink({
+  text: 'Back to prototype home',
+  href: '/'
+}) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-width">
       <h1 class="govuk-heading-xl">
       Accessibility
-        <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
+        <!-- <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span> -->
       </h1>
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -63,17 +67,17 @@
                       text: " 0.1"
                     },
                     {
-                      text: "1 March 2022"
+                      text: "1 August 2024"
                     },
                     {
                       html: '
 
-                         <p><strong>Prototype: </strong></p>
+                         <!-- <p><strong>Prototype: </strong></p>
                        <ul class="govuk-list govuk-list--bullet">
 
                            <li></li>
                           <li></li>
-                        </ul>
+                        </ul> -->
 
                         <p><strong>Documents: </strong></p>
                     <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1720772458879/7a83befe752821e1bfaa2efba620d5033a6e5964?sender=u94e9c1818b653c5b2cd43612">https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1720772458879/7a83befe752821e1bfaa2efba620d5033a6e5964?sender=u94e9c1818b653c5b2cd43612</a>

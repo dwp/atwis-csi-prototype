@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you shielding?
+{% endblock %}
+
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+   
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   <span class="govuk-caption-xl">Question 1 of 6</span>
+  
+    <form class="form" action="personal-details-name" method="post">
+  
+   <div class="govuk-form-group">
+   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Did you receive a letter from the NHS or have contact from your GP advising you to shield because of coronavirus (COVID-19)?
+      </h1>
+    </legend>
+
+    <div id="clinicallyExtremelyVulnerable-hint" class="govuk-hint">
+       For more information see <a href="https://www.gov.uk/government/publications/guidance-on-shielding-and-protecting-extremely-vulnerable-persons-from-covid-19/guidance-on-shielding-and-protecting-extremely-vulnerable-persons-from-covid-19"> guidance on shielding and protecting people who are clinically extremely vulnerable from COVID-19</a>
+    </div>
+
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="changed-name">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changed-name-2">
+          No
+        </label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>
+
+  <button class="govuk-button" data-module="govuk-button">
+     Continue
+   </button>
+   </form>
+  </div>
+ </div>
+
+     
+{% endblock %}

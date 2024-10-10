@@ -1,0 +1,61 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+
+
+<form action="/live-atwis/0/cases/claim#wpa" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h2 class="govuk-heading-l">Task summary:  type of workplace assessment</h2>
+
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+{% include "./content/wpa.html"%}
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{ data['wpa']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/live-atwis/0/cases/workplace-assesment">
+              Update<span class="govuk-visually-hidden">     {% include "./content/wpa.html"%}      </span>
+              </a>
+            </dd>
+          </div>
+
+
+
+
+
+
+
+<br>
+
+          <input type="hidden" name="job-details-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button" name="third-party-cya" value="finished">
+            Return to your tasks
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

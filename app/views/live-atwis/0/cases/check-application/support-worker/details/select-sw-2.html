@@ -1,0 +1,122 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+
+<form action="type-apply" method="post" novalidate>
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">   Choose a quote for support worker 2</h1>
+
+
+<div class="govuk-inset-text">
+ Notetaker
+  </div>
+<p>Quotes are based on 5 hours of support per week for 3 years</p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+            Which quote do you want to use for the grant award?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="chosen-quote-sw-1" name="chosen-quote-{{phase}}-2" type="radio" value="{% if case =='other-cases' %}£501{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £11,520{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "501") }}>
+         <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-1">
+
+      £16 per hour, total cost £11,520
+         </label>
+         <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+
+  Agency One
+         </div>
+       </div>
+
+       <div class="govuk-radios" data-module="govuk-radios">
+         <div class="govuk-radios__item">
+           <input class="govuk-radios__input" id="chosen-quote-sw-2" name="chosen-quote-{{phase}}-2" type="radio" value="{% if case =='other-cases' %}£502{% endif %}{% if case =='other-cases-2' %}£16 per hour, total cost £11,520{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "502") }}>
+    <label class="govuk-label govuk-radios__label" for="chosen-quote-sw-2">
+
+      £16 per hour, total cost £11,520
+    </label>
+    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+
+    Agency Two
+    </div>
+  </div>
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="chosen-quote-sw-3" name="chosen-quote-{{phase}}-2" type="radio" value="{% if case =='other-cases' %}£503{% endif %}{% if case =='other-cases-2' %}£15 per hour, total cost £10,800{% endif %}" aria-describedby="sign-in-item-hint" {{ checked("chosen-quote-"+ phase, "503") }}>
+<label class="govuk-label govuk-radios__label" for="chosen-quote-sw-3">
+
+£15 per hour, total cost £10,800
+</label>
+<div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+
+Agency Three – Thomas King has worked with this provider before
+
+</div>
+</div>
+
+
+            </div>
+
+          </fieldset>
+        </div>
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+        Why did you choose this quote?
+          </h1>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-justification" name="chosen-quote-justification" type="radio" value="It was the most cost-effective" >
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification">
+              Most cost-effective
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-justification-2" name="chosen-quote-justification" type="radio" value="It was the most suitable support for Sonya Corkery" >
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-2">
+            Best support for
+             Thomas King
+            </label>
+          </div>
+
+          <!-- <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chosen-quote-justification-4" name="chosen-quote-justification" type="radio" value="northern-ireland">
+            <label class="govuk-label govuk-radios__label" for="chosen-quote-justification-4">
+              Other
+            </label>
+          </div> -->
+        </div>
+
+      </fieldset>
+    </div>
+
+   <button class="govuk-button" data-module="govuk-button">
+     Save and continue
+   </button>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

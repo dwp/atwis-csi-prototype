@@ -13,6 +13,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list-new";
 @import "patterns/related-items";
 @import "components/nav";
+@import "components/new-nav";
 @import "components/masthead";
 @import "components/update-panel";
 @import "components/sub-tabs";
@@ -174,7 +175,6 @@ $govuk-assets-path: '/govuk/assets/';
     padding-top: 0;
 }
 }
-}
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
@@ -253,4 +253,11 @@ padding-left: 10px;
 			color: white;
 		}
 	}
+
+
+
+
+
+
+
 }

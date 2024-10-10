@@ -1,0 +1,102 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+{% if not number or (number == 'undefined') %}
+{% set number = 1 %}
+{% endif %}
+{% block csi %}
+<br>
+
+
+
+
+<form action="javascript:history.go(-1)" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="80">
+  <div class="govuk-form-group">
+    <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="job-detail-note1">
+Telephone call recived on <script>
+  // Get the current date and time
+       var now = new Date();
+       var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+       var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+       // Write the date and time to the HTML page
+       document.write(date + ' at ');
+     </script> at 10:14am
+
+
+    </label>
+    </h2>
+
+
+<p>By John Goldsmith to {% if phase == "thomas" %}Thomas King{% endif %}{% if phase == "sonya"  %}Sonya {% endif %}{% if not phase %}Dereck Smith{% endif %}</p>
+
+<p>Verify Thomas Kings identity.</p>
+
+<p>About: </p>
+<ul class="govuk-list govuk-list--bullet">
+
+    <li>Personal details</li>
+    <li>Application status</li>
+
+<!-- <li>Workplace assessment </li> -->
+</ul>
+</div>
+<!-- <p>{{data['other-discussion-1']}}</p> -->
+<!-- <p> Return to <strong>your tasks</strong> to update Dereck Smith‘s personal details. </p> -->
+<!-- {% include  "live-atwis/0/claim/notification-contact.html" %} -->
+     <br>
+     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+                    Summarise
+
+                          </label>
+                          </h2>
+                          <p> About change of address.</p>
+     <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="other-note1">
+
+    Additional details
+
+                          </label>
+                          </h2>
+
+                          <p>Thomas King phone to inform that they have recently moved house. Changed to 16 Blum Street. </p>
+
+
+           <button class="govuk-button" data-module="govuk-button" name="contact-phone" value="completed">
+             Return
+          </button>
+
+
+          </form>
+
+
+          </div>
+          </div>
+
+
+</div>
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

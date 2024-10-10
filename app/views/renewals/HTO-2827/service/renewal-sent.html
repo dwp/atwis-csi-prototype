@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Renewal application sent
+{% endblock %}
+
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Renewal application sent
+          </h1>
+        </div>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p class="govuk-body">
+          The Access to Work team will contact you or your representative to discuss your renewal.
+        </p>
+        <p class="govuk-body">
+         You'll need to tell them if any of the following have changed:
+        </p>
+
+         <ul class="govuk-list govuk-list--bullet">
+          <li>your condition or disabilities</li>
+          <li>how your condition or disabilities affect your work</li>
+          <li>how your condition or disabilities affect your journey to work</li>
+          <li>your job role, place of work or working hours</li>
+          <li>your personal details</li>
+        </ul>
+
+        <p class="govuk-body">
+          <a href="https://getinvolved.dwp.gov.uk/digital/cdc1a144/" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <hr class="govuk-section-break govuk-section-break--visible">
+      <aside id="journey-sidebar" role="region">
+      <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+      <h3 class="govuk-heading-s">Telephone</h3>
+      <p class="govuk-body">0800 169 0154</p>
+      <p class="govuk-body">Monday to Friday, 8am to 6pm</p>
+      <p class="govuk-body">Closed public holidays</p>
+      <h3 class="govuk-heading-s">Email</h3>
+      <p class="govuk-body"><a rel="external" href="mailto:dwponline.helpdesk@dwp.gov.uk"> dwponline.helpdesk@dwp.gov.uk</a></p>
+  </aside>
+
+    </div> </div>
+
+
+{% endblock %}

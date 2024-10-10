@@ -1,0 +1,71 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% extends folder + "/claim/_CSIBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+<form action="" method="post" novalidate>
+
+
+  <div class="govuk-width-container">
+
+
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-form-group">
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h2 class="govuk-fieldset__heading">
+                  Does Dereck Smith have an appointee?
+                 </h2>
+               </legend>
+
+                   <p class="govuk-body">
+                     <a href="#" class="govuk-link">Check Searchlight (opens in a new tab)</a>
+                   </p>
+
+
+               <div class="govuk-radios">
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="appointee" name="appointee" type="radio" value="Yes, I need to add an appointee~/live-atwis/0/cases/searchlight/appointee/appointee-details.html" {{ checked("appointee", "Yes, I need to add an appointee") }}>
+                   <label class="govuk-label govuk-radios__label" for="appointee">
+                     Yes, I need to add an appointee
+                   </label>
+                 </div>
+
+                 <div class="govuk-radios__item">
+                   <input class="govuk-radios__input" id="appointee-2" name="appointee" type="radio" value="No~{% if data['appointee']%}check{% else %}/live-atwis/0/cases/claim#checks{% endif %}" {{ checked("appointee", "No") }}>
+                   <label class="govuk-label govuk-radios__label" for="appointee-2">
+                     No
+                   </label>
+                 </div>
+
+
+               </div>
+
+             </fieldset>
+           </div>
+
+           <button class="govuk-button" data-module="govuk-button">
+             Save and continue
+           </button>
+         </form>
+       </div>
+     </div>
+
+
+        </main>
+        </div>
+
+
+
+{% endblock %}

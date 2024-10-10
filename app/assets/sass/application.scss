@@ -13,6 +13,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list-new";
 @import "patterns/related-items";
 @import "components/nav";
+@import "components/new-nav";
 @import "components/masthead";
 @import "components/update-panel";
 @import "components/sub-tabs";
@@ -252,4 +253,11 @@ padding-left: 10px;
 			color: white;
 		}
 	}
+
+
+
+
+
+
+
 }
