@@ -1,0 +1,86 @@
+{% extends "layout.html" %} {% set serviceName = "Communication Support at Interview" %}
+
+{% block pageTitle %}
+ Do you know the support cost?
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="/orange/https://getinvolved.dwp.gov.uk/digital/cdc1a144">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="clinically-extremely-vulnerable" method="post">
+
+      <form action="/form-handler" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+
+                  Is the job interview for a paid job?
+
+                </h1>
+              </legend>
+
+              <div id="dob-hint" class="govuk-hint">
+The interview must be for a paid job or apprenticeship in England, Scotland or Wales, or a Department for Education supported internship. You cannot apply if the interview is for a volunteer role, or if you’re attending a job induction or job review.
+
+              </div>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="yes~role-date.html">
+                  <label class="govuk-label govuk-radios__label" for="paid">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="paid-2" name="paid" type="radio" value="no~role-not-paid.html">
+                  <label class="govuk-label govuk-radios__label" for="paid-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
+
+
+        <p class="govuk-body">You can contact us for free by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+    <li>Telephone: 0800 121 7479</li>
+    <li>Textphone: 0800 121 7579</li>
+    <li><a href="/orange/https://www.relayuk.bt.com/">Relay UK</a>, if you cannot hear or speak on the phone: 18001 then 0800 121 7479</li>
+<li><a href="/orange/https://portal.starleaf.com/webrtc?name=DWP&target=DWP@interpreterslive.call.sl">Video Relay Service</a> for British Sign Language – <a href="/orange/https://www.dalanguages.co.uk/dwp-bsl/">find out how to use the service</a></li>
+    </ul>
+
+        <p class="govuk-body">Opening times: Monday to Friday, 9am to 5pm (except public holidays)</p>
+
+
+      </div> </div>
+
+{% endblock %}
