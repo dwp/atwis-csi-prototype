@@ -3,7 +3,17 @@
   color: #0b0c0c;
   font-family: Helvetica, Arial, sans-serif;
   word-break: break-word;
+  width: 100vm;
+  padding: 20px 0;
+
 }
+
+.dwp-quick-reference__content {
+  max-width: 66.67%
+  margin: 0 auto;
+
+}
+
 .dwp-quick-reference:first-child {
   margin-top: 0;
 }
@@ -21,6 +31,7 @@
 .dwp-quick-reference__block {
   margin: 0;
   padding: 0;
+  max-width: 66.67%
 }
 .dwp-quick-reference__label {
   font-family: Helvetica, Arial, sans-serif;
