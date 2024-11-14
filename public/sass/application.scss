@@ -23,7 +23,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
-@import "components/key-details";
+
 @import "components/timeline-moj";
 @import "components/smart-cards";
 
@@ -32,6 +32,13 @@ $govuk-assets-path: '/govuk/assets/';
   color: #0b0c0c;
   font-family: Helvetica, Arial, sans-serif;
   word-break: break-word;
+  width: 100vw;
+  padding: 20px 0;
+}
+
+.dwp-quick-reference__content {
+  max-width: 66.67%;
+  margin: 0 auto;
 }
 .dwp-quick-reference:first-child {
   margin-top: 0;
@@ -50,6 +57,8 @@ $govuk-assets-path: '/govuk/assets/';
 .dwp-quick-reference__block {
   margin: 0;
   padding: 0;
+  max-width: 87.67%;
+  margin: 0 auto;
 }
 .dwp-quick-reference__label {
   font-family: Helvetica, Arial, sans-serif;
