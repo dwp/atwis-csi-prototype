@@ -35,11 +35,7 @@
 
 
 
-{% if data['live-nino']=='Yes'%}
 
-{% else %}
-  {% include  "./notifications/_important.html" %}
-{% endif %}
 <script>
   window.onload = function() {
     sessionStorage.removeItem('live-nino');
@@ -54,19 +50,6 @@
 
 
 
-
-{% if ['live-nino']=='Yes'%}
-                  <dt class="govuk-summary-list__key">
-                National Insurance number
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-{{data['enter-nino']}}
-
-                   </dd>
-                   <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden">   National Insurance number</span></a>
-    </dd>
-                </div>{% endif %}
 
 
 
@@ -128,7 +111,8 @@
       Condition
       </dt>
       <dd class="govuk-summary-list__value">
-Test
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
       </dd>
     </div>
 
@@ -258,11 +242,6 @@ Test
 
 
             <div>
-              {% if data['live-nino']=='Yes'%}
-
-              {% else %}
-            {% include  "./notifications/_important.html" %}
-{% endif %}
 
 
 
@@ -279,16 +258,14 @@ Test
       {% include  "live-atwis/current/cases/harold/cases/application.html" %}{% endif%}
 
 
-      {% if data['live-nino']%}
+
 
 
               <form action="">
                 <input type="hidden" name="evidenceView" value="copyToDisc">
                 <input class="govuk-button margin-top-90" id="submitButtonDetailsEvidence" type="submit" value="Application copied">
               </form>
-{% else %}
-<p>You must enter the applicant's National Insurance number before entering the URN for this application.</p>
-{% endif %}
+
 
   </div>
 
