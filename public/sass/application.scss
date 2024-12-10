@@ -19,7 +19,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/sub-tabs";
 @import "components/hmrc-add-to-list";
 
-
+@import "components/key-details";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -32,7 +32,7 @@ $govuk-assets-path: '/govuk/assets/';
   color: #0b0c0c;
   font-family: Helvetica, Arial, sans-serif;
   word-break: break-word;
-  width: 100vw;
+  width: 100%;
   padding: 20px 0;
 }
 

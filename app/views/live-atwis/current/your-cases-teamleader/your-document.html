@@ -18,8 +18,33 @@
 
 
 </div> -->
-{% include "./cases-inprogress.html" %}
+<nav class="navigation-secondary" style="max-width: 1280px">
+      <ul style="max-width: 1280px">
+          <li>
+            <a href="/live-atwis/current/your-cases-teamleader/index" aria-current="page">Your other cases (0)</a>
 
+</li>
+
+<li >
+  <a href="/live-atwis/current/your-cases-teamleader/your-cases-priority" aria-current="page">Your priority cases (0)</a>
+
+</li>
+
+<li >
+  <a href="/live-atwis/current/your-cases-teamleader/your-cases-csi" aria-current="page">Your CSI cases (0)</a>
+
+</li>
+
+<li {% if yourCases %} class="active"{% endif %} >
+  <a href="/live-atwis/current/your-cases-teamleader/your-document" aria-current="page">Your documents (0)</a>
+
+</li>
+        </ul>
+
+        </nav>
+<div class="govuk-tabs__panel">
+{% include "./cases-document.html" %}
+</div>
 {% endblock %}
 
 
