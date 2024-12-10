@@ -166,7 +166,7 @@ data['wpa'+ phase]  %}
 
 
 
-          <br> <form class="" action="/live-atwis/current/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
+          <br> <form class="" action="/live-atwis/1/cases/arlo/cases/workplace-assesment/wpa-report/support" method="post" >
            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
            Add new elements
            </button></form>
@@ -239,7 +239,7 @@ data['wpa'+ phase]  %}
       {% if data['wpa'+ phase]=='No'%}
     {% if totalcomplete > 2 and
     data['award'+ phase]%}
-<form action="/live-atwis/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+<form action="/live-atwis/1/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
        <button class="govuk-button" data-module="govuk-button">
       Confirm award
       </button>{% endif %}
@@ -248,7 +248,7 @@ data['wpa'+ phase]  %}
 {% if data['wpa'+ phase]=='Yes'%}
 {% if totalcomplete == 4 and
 data['award'+ phase]%}
-<form action="/live-atwis/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+<form action="/live-atwis/1/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
   Confirm award
 </button>{% endif %}

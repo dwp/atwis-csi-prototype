@@ -108,7 +108,7 @@
                {% if phase == "allocator"  %}
                <div class="update-panel">
                     <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
-                    <form action="/cases/apply/RMPX3current/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+                    <form action="/cases/apply/RMPX31/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
                       <div class="govuk-form-group form-group-compound">
                         <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
                           <option value="" data-name=""></option>
@@ -152,7 +152,7 @@
 
                <h2 class="govuk-heading-l">Case history</h2>
 
-               <p><a href="/live-atwis/current/cases/{%if phase %}{{phase}}/cases/{% endif %}close/reject-case"> Close the case</a></p>
+               <p><a href="/live-atwis/1/cases/{%if phase %}{{phase}}/cases/{% endif %}close/reject-case"> Close the case</a></p>
 
                <br>
                {% if phase == "george"  %}{% include  "../claim/timelines/timeline-john.html" %}{% endif %}

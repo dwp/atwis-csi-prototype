@@ -68,7 +68,7 @@
 
 {% if data['Searchligh']=='No'%}
 <p >
-<a href="{% if not data['_do_1']%}/live-atwis/current/cases/contact/1/how-do-you-want-to-contact{% else %}/live-atwis/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+<a href="{% if not data['_do_1']%}/live-atwis/1/cases/contact/1/how-do-you-want-to-contact{% else %}/live-atwis/1/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
 
 </a>
@@ -246,7 +246,7 @@ data['wpa'+ phase]  %}
       {% if data['wpa'+ phase]=='No'%}
     {% if totalcomplete > 2 and
     data['award'+ phase]%}
-<form action="/live-atwis/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+<form action="/live-atwis/1/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
        <button class="govuk-button" data-module="govuk-button">
       Confirm award
       </button>{% endif %}
@@ -255,7 +255,7 @@ data['wpa'+ phase]  %}
 {% if data['wpa'+ phase]=='Yes'%}
 {% if totalcomplete == 4 and
 data['award'+ phase]%}
-<form action="/live-atwis/current/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
+<form action="/live-atwis/1/cases/{% if phase %}{{phase}}/cases/{% endif %}complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
   Confirm award
 </button>{% endif %}

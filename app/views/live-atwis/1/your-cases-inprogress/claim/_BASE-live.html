@@ -75,7 +75,7 @@
           <li{% if yourCases %} class="active"{% endif %}>
 
 {% if (not contactCentre)  %}
-          <a href="/live-atwis/current/your-cases{% if phase == "inprogress"%}-inprogress{% endif %}" aria-current="page">Your cases</a>
+          <a href="/live-atwis/1/your-cases{% if phase == "inprogress"%}-inprogress{% endif %}" aria-current="page">Your cases</a>
 
         </li>
 {% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}

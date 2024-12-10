@@ -68,7 +68,7 @@
 
 {% if data['Searchligh']=='No'%}
 <!-- <p >
-<a href="{% if not data['_do_1']%}/live-atwis/current/cases/contact/1/how-do-you-want-to-contact{% else %}/live-atwis/current/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
+<a href="{% if not data['_do_1']%}/live-atwis/1/cases/contact/1/how-do-you-want-to-contact{% else %}/live-atwis/1/cases/contact/contact-log{% endif %}" aria-describedby="contact-status">
 
 Log contact with {% if data['appointee']=='Yes, I need to add an appointee'%}{{data['appointee-name']}}{% else %}Dereck Smith{% endif %}
 </a>
@@ -130,7 +130,7 @@ data ['appointee']
 
 
 
-<form class="" action="/live-atwis/current/cases/workplace-assesment/wpa-report/support" method="post" >
+<form class="" action="/live-atwis/1/cases/workplace-assesment/wpa-report/support" method="post" >
   <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Add new elements
   </button>
@@ -242,7 +242,7 @@ data ['appointee']
 
 
 {% if data['award']%}
-<form action="/live-atwis/current/cases/complete/ons" method="post" novalidate>
+<form action="/live-atwis/1/cases/complete/ons" method="post" novalidate>
  <button class="govuk-button" data-module="govuk-button">
   Confirm award
 </button>{% endif %}
