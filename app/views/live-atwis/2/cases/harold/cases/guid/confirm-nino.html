@@ -1,0 +1,91 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% set phase = "inprogress" %}
+{% set name = "harold" %}
+{% set case = 'other-cases-fill-1'%}
+
+
+
+{% extends   "live-atwis/2/claim/_MAINBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+        Confirm {{data['enter-nino']}} matches Harold Lzhdrjrr Allen details
+        </h1>
+        <p class="govuk-body">
+          Before you add the National Insurance number to this application, check that the number you've entered from Searchlight matches the following details.
+  </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Applicant name
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Harold Lzhdrjrr Allen
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+            28 August 1972
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              THE COTTAGE<br>
+ST. MARYS ISLAND<br>
+WHITLEY BAY<br>
+NORTH TYNESIDE<br>
+NE26 4RS
+            </dd>
+          </div>
+
+        </dl>
+
+
+        <form action="../summary_success" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          Do these details match what is in Searchlight?
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="live-nino" name="live-nino" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="live-nino">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="live-nino-2" name="live-nino" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="live-nino-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
