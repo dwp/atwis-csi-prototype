@@ -1,0 +1,78 @@
+{% set hideBanner = true %}
+{% set yourCases = true %}
+{% extends "./claim/_BASE.html" %}
+{% set phase = "case-manger-view" %}
+
+
+
+
+
+
+{% block content %}
+
+<!-- <div class="govuk-panel govuk-panel--confirmation" style="background-color: #ec580d;">
+
+
+  <h2 class="govuk-!-font-size-36">
+      <span class="status-message-warning__icon" aria-hidden="true">!</span>There are no new documents available to request right now.</h2>
+
+
+</div> -->
+<nav class="navigation-secondary" style="max-width: 1280px">
+      <ul style="max-width: 1280px">
+          <li>
+            <a href="/live-atwis/2/your-cases-teamleader/index" aria-current="page">Your other cases (0)</a>
+
+</li>
+
+<li >
+  <a href="/live-atwis/2/your-cases-teamleader/your-cases-priority" aria-current="page">Your priority cases (0)</a>
+
+</li>
+
+<li >
+  <a href="/live-atwis/2/your-cases-teamleader/your-cases-csi" aria-current="page">Your CSI cases (0)</a>
+
+</li>
+
+<li {% if yourCases %} class="active"{% endif %} >
+  <a href="/live-atwis/2/your-cases-teamleader/your-document" aria-current="page">Your documents (0)</a>
+
+</li>
+        </ul>
+
+        </nav>
+<div class="govuk-tabs__panel">
+{% include "./cases-document.html" %}
+</div>
+{% endblock %}
+
+
+
+<!-------------- footer -->
+{% block footer %}
+
+
+  {{ govukFooter({
+    meta: {
+      html: urFooterLink ,
+
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+
+      ]
+    }
+  }) }}
+
+
+
+
+
+{% endblock %}

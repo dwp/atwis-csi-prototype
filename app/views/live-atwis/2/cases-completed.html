@@ -1,0 +1,326 @@
+
+
+
+<!-------------- csi tables -->
+{% macro statusTable(payment="") %}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+
+            <th class="govuk-table__header">Date submitted</th>
+            <th class="govuk-table__header">Interview date</th>
+            <th class="govuk-table__header">Status</th>
+            <th class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</th>
+
+              <td class="govuk-table__cell">{{data['csi-info'][3]['submission-date']}}</td>
+              <td class="govuk-table__cell">{{ data['csi-info'][3]['interview-date-day'] }} {{ data['csi-info'][3]['interview-date-month'] | toMonth }} {{ data['csi-info'][3]['interview-date-year'] }}</td>
+              <td class="govuk-table__cell">{% if phase == 'waiting' %}No action needed{% elif not phase and not data['searchlight'] %}New{% else %}Action needed{% endif %}
+              <td class="govuk-table__cell"><a href="csi/index{% if payment %}-payment{% else %}{% if phase == "interview" %}-interview{% elif phase == "waiting" %}-waiting{% elif phase == "same-day" %}-same-day{% elif phase == "payment-adviser" %}-payment-adviser{% endif %}{% endif %}">Go to case</a></td>
+            </tr>
+      </tbody>
+    </table>
+  {%- endmacro %}
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+{% if taskUpdated %}
+<div class="container status-message">
+<div class="govuk-panel govuk-panel--confirmation">
+
+  <h2 class="govuk-!-font-size-36"><img class="icon" style="height: 1em;
+    margin: 0 15px;
+    vertical-align: top;
+}" src="{{asset_path}}images/icon-tick@2x.png" alt="">Case allocated</h2>
+
+
+</div></div>
+{% endif %}
+
+
+
+
+    {% set csi %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Your CSI cases (0)</h2>
+      </div>
+    </div>
+
+<form action="/live-atwis/2/your-cases#csi" method="post" novalidate for="submitButtonRequestcsi">
+
+
+  <div class="govuk-grid-column-one-quaters">
+
+
+    <p class="govuk-body govuk-!-margin-bottom-6"></p>
+          <input type="submit" class="govuk-button" id="submitButtonRequestcsi" name="csi-button" value="Request a new CSI case"></form>
+      </div>
+
+
+
+{% include "./claim/_notification-csi-type-case.html" %}
+
+{% if (phase == "empty" or phase == "allocator")  %}
+<br></br></br></br></br></br>
+<p>There are currently no CSI Cases.</P>
+
+{% else %}
+
+<table class="govuk-table">
+      <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+
+            <th class="govuk-table__header">Date submitted</th>
+            <th class="govuk-table__header">Interview date</th>
+            <th class="govuk-table__header">Status</th>
+            <th class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Thomas Brown</th>
+
+              <td class="govuk-table__cell">2 November 2021 13:23</td>
+              <td class="govuk-table__cell">9 March 2021</td>
+              <td class="govuk-table__cell">New
+              </td><td class="govuk-table__cell"><a href="/sprint-13/agreed/csi/index">Go to case</a></td>
+            </tr>
+      </tbody>
+    </table>
+
+
+{% endif %}
+
+      {% endset -%}
+
+
+
+
+<!-------------- Your priority cases -->
+
+{% set priority %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-l">Your priority cases (0) </h1>
+
+
+
+<form action="/live-atwis/2/your-cases#priority" method="post" novalidate for="submitButtonRequestPriority">
+  <div class="govuk-grid-column-one-quaters">
+
+
+
+      <label class="govuk-label" for="sort">
+        Type of case
+      </label>
+      <select class="govuk-select" id="priority" name="priority">
+        <option value="Job"
+      {% if 'Job' in data['priority']%}selected{% endif %}>Job start</option>
+        <option value="cev"
+      {% if 'cev' in data['priority']%}selected{% endif %}> Clinically extremely vulnerable (CEV)</option>
+        <option value="Kickstart"
+      {% if 'Kickstart' in data['priority']%}selected{% endif %}>Kickstart</option>
+        <option value="YPGS"
+        {% if 'YPGS' in data['priority']%}selected{% endif %}>Young Person Guarantee Scotland (YPGS)</option>
+      </select>
+
+
+</div>
+<br>
+
+      <input type="submit" class="govuk-button" id="submitButtonRequestPriority" value="Request a new priority case">
+
+
+
+
+  </div></div>
+
+
+
+    {% endset -%}
+
+
+<!-------------- Your other cases -->
+      {% set other %}
+
+
+      <div class="govuk-width-container">
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Success
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+                  <h3 class="govuk-notification-banner__heading">
+                Task completed
+                  </h3>
+
+                </div>
+              </div>
+              <h1 class="govuk-heading-l">Your other cases (0)</h1>
+            </div>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <label class="govuk-label" for="sort">
+                Type of case
+              </label>
+              <select class="govuk-select" id="other" name="other">
+                <option value="any"
+                  {% if 'any' in data['other']%}selected{% endif %}>Any</option>
+                <option value="new"
+                {% if 'new' in data['other']%}selected{% endif %} >New application</option>
+                <option value="renewal"
+                {% if 'renewal' in data['other']%}selected{% endif %}>Renewal</option>
+
+              </select>
+              <br> <button type="submit" class="govuk-button" data-module="govuk-button" id="submitButtonRequestother" value="Request a new other case">Request a new other case</button></form>
+
+            </div>
+
+          </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+        {% endset -%}
+
+
+<!-------------- Your documents -->
+  {% set doc %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-l">Your documents (0)</h2>
+
+
+
+
+
+        <label class="govuk-label" for="sort">
+          Type of document
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="published" selected >Generic</option>
+          <option value="updated" >Complex</option>
+          <option value="views">TESG</option>
+          <option value="comments">CSI</option>
+        </select>
+
+<br>
+
+
+
+        <input type="submit" class="govuk-button" id="submitButtonRequestNewDocument" value="Request a document" style="float: left">
+
+  </div>
+
+{% endset -%}
+
+
+
+<!-------------- tabs -->
+{% if phase == "allocator" %}
+{{ govukTabs({
+  items: [
+
+    {
+      label: "Your other cases (0)",
+      id: "other",
+      panel: {
+        html: other
+      }
+    },
+    {
+      label: "Your priority cases (0)",
+      id: "priority",
+      panel: {
+        html: priority
+      }
+    },
+    {
+      label: "Your CSI cases (0)",
+      id: "csi",
+      panel: {
+        html: csi
+      }
+    },
+    {
+
+      label: "Your documents (0)",
+      id: "in-disc",
+      panel: {
+        html: doc
+      }
+    }
+  ]
+}) }}
+{% else %}
+
+    {{ govukTabs({
+      items: [
+
+        {
+          label: "Your other cases (0)",
+          id: "other",
+          panel: {
+            html: other
+          }
+        },
+        {
+          label: "Your priority cases (0)",
+          id: "priority",
+          panel: {
+            html: priority
+          }
+        },
+        {
+          label: "Your CSI cases (1)",
+          id: "csi",
+          panel: {
+            html: csi
+          }
+        },
+        {
+
+          label: "Your documents (0)",
+          id: "in-disc",
+          panel: {
+            html: doc
+          }
+        }
+      ]
+    }) }}
+{% endif %}
+
+
+  </div>
+</div>
