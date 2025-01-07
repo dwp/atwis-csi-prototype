@@ -73,34 +73,8 @@
                   </div>
               </details>
 
-                    <div class="govuk-summary-list__row">
 
 
-                          <dt class="govuk-summary-list__key">
-                          Data kept until
-                          </dt>
-                          <dd class="govuk-summary-list__value">
-
-
-                            <script>// Get date
-                                var now = new Date();
-                                var pastDate = new Date(now);
-                                pastDate.setDate(now.getDate() + 730);
-
-                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                                day: 'numeric',
-                                month: 'long',
-                                year: 'numeric'
-                                });
-
-                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                                hour: 'numeric',
-                                minute: 'numeric',
-                                hour12: true
-                                });
-
-                                document.write(formattedDate);</script>     </dd>
-                        </div>
       <div class="govuk-summary-list__row">
 
 
