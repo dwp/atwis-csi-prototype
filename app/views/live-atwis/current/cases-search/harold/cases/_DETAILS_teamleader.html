@@ -2,40 +2,35 @@
 {% set changeHide = 'true '%}
 
 {% if claim %}
-<div class="govuk-tabs" data-module="govuk-tabs">
-  <h2 class="govuk-tabs__title">
-    Contents
-  </h2>
-  <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#application-summary">
-      Application summary
-      </a>
-    </li>
+<nav class="navigation-secondary" style="max-width: 1280px">
+      <ul style="max-width: 1280px">
+          <li>
+            <a href="summary-teamlead" aria-current="page" class="active" >Application summary</a>
 
+</li>
 
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#checks">
-      Application details
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#data">
-      Data
-      </a>
-    </li>
+<li >
+  <a href="summary-application_teamlead" aria-current="page">Application details</a>
+
+</li>
+<li >
+  <a href="summary-data" aria-current="page">Data</a>
+
+</li>
 
 
 
-  </ul>
+        </ul>
 
-  <div class="govuk-tabs__panel" id="application-summary">
+        </nav>
+
+        <div class="govuk-tabs__panel" id="application-summary">
 
 
 
 
- <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
+       <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
 
 
@@ -66,7 +61,16 @@
     </span>
   </summary>
   <div class="govuk-details__text">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="event-name">
+      URN
+      </label>
+      <input class="govuk-input govuk-input--width-10" id="URN" name="URN" type="text" value="123456789">
+    </div>
 
+    <div>
+      <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+    </div>
   </div>
 </details>
 

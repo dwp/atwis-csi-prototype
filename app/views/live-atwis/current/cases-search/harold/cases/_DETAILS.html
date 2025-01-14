@@ -2,36 +2,34 @@
 {% set changeHide = 'true '%}
 
 {% if claim %}
-<div class="govuk-tabs" data-module="govuk-tabs">
-  <h2 class="govuk-tabs__title">
-    Contents
-  </h2>
-  <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#application-summary">
-      Application summary
-      </a>
-    </li>
+<nav class="navigation-secondary" style="max-width: 1280px">
+      <ul style="max-width: 1280px">
+          <li>
+            <a href="summary" aria-current="page" class="active" >Application summary</a>
+
+</li>
+
+<li >
+  <a href="summary-application" aria-current="page">Application details</a>
+
+</li>
 
 
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#checks">
-      Application details
-      </a>
-    </li>
+        </ul>
 
+        </nav>
 
-
-
-  </ul>
-
-  <div class="govuk-tabs__panel" id="application-summary">
+        <div class="govuk-tabs__panel" id="application-summary">
 
 
 
 
- <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
+       <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+
 
 
 
@@ -69,6 +67,15 @@
                 </summary>
                 <div class="govuk-details__text">
 
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="event-name">
+                    URN
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="URN" name="URN" type="text" value="123456789">
+                  </div>
+                  <div>
+                             <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+                           </div>
 
                   </div>
               </details>
@@ -238,53 +245,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
      }
    </script>
 
-</div></div>
+
+ </div></div>
 
 
-</div>
-
-
-
-
-
-
-
-
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="checks">
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
-
-
-            <div>
+ </div>
 
 
 
 
 
-              <h1 class="govuk-heading-l">Copy this case over to DISC</h1>
-              <p class="govuk-body">
-                <span class="bold">Version of questions:</span>
-
-                  1.20.0-rc
-                <br>
-              </p>
-            </div>
-  {% if case =='other-cases-fill-1' %}
-      {% include  "live-atwis/current/cases/harold/cases/application.html" %}{% endif%}
 
 
-      {% if data['live-nino']%}
 
-
-              <form action="">
-                <input type="hidden" name="evidenceView" value="copyToDisc">
-                <input class="govuk-button margin-top-90" id="submitButtonDetailsEvidence" type="submit" value="Application copied">
-              </form>
-{% else %}
-<p>You must enter the applicant's National Insurance number before entering the URN for this application.</p>
-{% endif %}
-
-  </div>
 
 
 
