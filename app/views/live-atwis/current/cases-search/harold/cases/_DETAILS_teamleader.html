@@ -115,7 +115,7 @@
               <script>// Get date
                   var now = new Date();
                   var pastDate = new Date(now);
-                  pastDate.setDate(now.getDate() - 60);
+                  pastDate.setDate(now.getDate() - 100);
 
                   var formattedDate = pastDate.toLocaleDateString('en-GB', {
                   day: 'numeric',
@@ -160,10 +160,153 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
   </dl>
 
+<h2 class="govuk-heading-l">Case history</h2>
 
 
+<div class="moj-timeline">
 
+  {% if data['data-delete-hold-off']=='yes'%}
+    <div class="moj-timeline__item">
+      <span class="govuk-body">
+        <time datetime="2023-06-06T09:12:00.000Z"><script>
+          // Get the current date and time
+               var now = new Date();
+               var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+               var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+               // Write the date and time to the HTML page
+               document.write(date + ' at 11:13 am');
+             </script></time>
+      </span>
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Data retention taken off hold   </h2>
+
+      <p>by Al Ó Catháin </p>
     </div>
+  </div>
+
+  {% endif %}
+
+{% if data['data-delete-hold']=='yes' %}
+  <div class="moj-timeline__item">
+    <span class="govuk-body">
+      <time datetime="2023-06-06T09:12:00.000Z"><script>
+        // Get the current date and time
+             var now = new Date();
+             var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+             var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+             // Write the date and time to the HTML page
+             document.write(date + ' at 11:13 am');
+           </script></time>
+    </span>
+  <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Data deletion for this application is on hold in ATWIS.    </h2>
+
+    <p>by Al Ó Catháin </p>
+  </div>
+</div>
+
+{% endif %}
+            <div class="moj-timeline__item">
+              <span class="govuk-body">
+                <time datetime="2023-06-06T09:12:00.000Z"><script>
+                  // Get the current date and time
+                  var now = new Date();
+                  var pastDate = new Date(now);
+                  pastDate.setDate(now.getDate() - 20);
+
+                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                  });
+
+                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  hour12: true
+                  });
+
+                  document.write(formattedDate + ' at 9:15 am');
+
+                     </script></time>
+              </span>
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Application copied to DiSC  </h2>
+              <p>by John Goldsmith </p>
+            </div>
+    </div>
+
+          <div class="moj-timeline__item">
+            <span class="govuk-body">
+              <time datetime="2023-06-06T09:12:00.000Z"><script>
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 30);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate + ' at 9:18 am');
+                   </script></time>
+            </span>
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Application allocated to John Goldsmith  </h2>
+            <p>by Al O'Cator </p>
+          </div>
+  </div>
+
+
+          <div class="moj-timeline__item">
+            <span class="govuk-body">
+              <time datetime="2023-05-28T10:15:00.000Z"><script>
+                // Get date
+                    var now = new Date();
+                    var pastDate = new Date(now);
+                    pastDate.setDate(now.getDate() - 100);
+
+                    var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                    });
+
+                    var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true
+                    });
+
+                    document.write(formattedDate + ' at 3:00 pm');
+                   </script></time>
+            </span>
+            <div class="moj-timeline__header">
+
+              <h2 class="moj-timeline__title">Application received</h2>
+              <p></p>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+</div>
+
+
+
+
 
 
  <div class="govuk-grid-column-one-third">
