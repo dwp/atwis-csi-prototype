@@ -47,7 +47,7 @@
 
 <h1 class="govuk-heading-l">Take data deletion off hold</h1>
 
-<p>Data deletion for this application is currently on hold. If the investigation for [applicant name]'s application is complete, you must <a href="data/hold">take data deletion off hold</a>.</p>
+<p>Data deletion for this application is currently on hold. If the investigation for Harold Lzhdrjrr Allen's application is complete, you must <a href="data/hold">take data deletion off hold</a>.</p>
 <div class="govuk-warning-text">
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
@@ -69,7 +69,7 @@
           hour12: true
           });
 
-          document.write(formattedDate);</script>. After this date, [applicant name]'s data will be permanently deleted from ATWIS. If this date has already passed, data will be deleted immediately.
+          document.write(formattedDate);</script>. After this date, Harold Lzhdrjrr Allen's data will be permanently deleted from ATWIS.
 
 
   </strong>
@@ -78,6 +78,11 @@
 {% endif %}
 
 {% if not data['data-delete-hold-off'] and not data['data-delete-hold']%}
+
+
+
+
+
 <h1 class="govuk-heading-l">Put data deletion on hold</h1>
 
 
@@ -102,7 +107,7 @@
         hour12: true
         });
 
-        document.write(formattedDate);</script>. After this date, [applicant name]'s data will be permanently deleted from ATWIS.
+        document.write(formattedDate);</script>. After this date, Harold Lzhdrjrr Allen's data will be permanently deleted from ATWIS.
   </strong>
 </div>
 
@@ -116,6 +121,38 @@
 
 
 {% if data['data-delete-hold']=='yes' and data['data-delete-hold-off']=='yes'%}
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+  <p class="govuk-notification-banner__heading">
+    Data deletion has been taken off hold. This application and its data will be permanently deleted in 24 months on <script>// Get date
+          var now = new Date();
+          var pastDate = new Date(now);
+          pastDate.setDate(now.getDate() + 730);
+
+          var formattedDate = pastDate.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+          });
+
+          var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true
+          });
+
+          document.write(formattedDate);</script>.
+    </p>
+    </div>
+</div>
+
 <h1 class="govuk-heading-l">Put data deletion on hold</h1>
 
 
@@ -140,7 +177,7 @@
         hour12: true
         });
 
-        document.write(formattedDate);</script>. After this date, [applicant name]'s data will be permanently deleted from ATWIS.
+        document.write(formattedDate);</script>. After this date, Harold Lzhdrjrr Allen's data will be permanently deleted from ATWIS.
   </strong>
 </div>
 

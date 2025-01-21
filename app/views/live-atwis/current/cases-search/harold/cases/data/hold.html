@@ -21,26 +21,26 @@
                 Take data deletion off hold
                 </h1>
                 <p class="govuk-body">
-                  If the investigation for this application is complete, you can take data deletion off hold and resume the 24 month data retention period, until <script>// Get date
-                        var now = new Date();
-                        var pastDate = new Date(now);
-                        pastDate.setDate(now.getDate() + 730);
+                  If the investigation for this application is complete, you must take data deletion off hold and a new 24 month data retention period will start.</p>
 
-                        var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric'
-                        });
+  <p class="govuk-body">Once <script>// Get date
+        var now = new Date();
+        var pastDate = new Date(now);
+        pastDate.setDate(now.getDate() + 730);
 
-                        var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                        hour: 'numeric',
-                        minute: 'numeric',
-                        hour12: true
-                        });
+        var formattedDate = pastDate.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+        });
 
-                        document.write(formattedDate);</script>.</p>
+        var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+        });
 
-  <p class="govuk-body">After this date, [applicant name]'s data will be permanently deleted from ATWIS. If this date has already passed, data will be deleted immediately.  </p>
+        document.write(formattedDate);</script> has passed, [applicant name]'s data will be permanently deleted from ATWIS.   </p>
 
 
 
