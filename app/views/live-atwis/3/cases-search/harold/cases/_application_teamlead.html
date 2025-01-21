@@ -1,0 +1,79 @@
+
+{% set changeHide = 'true '%}
+{% if claim %}
+<nav class="navigation-secondary" style="max-width: 1280px">
+      <ul style="max-width: 1280px">
+          <li>
+            <a href="summary_teamleader" aria-current="page"  >Application summary</a>
+
+</li>
+
+<li >
+  <a href="summary-application_teamlead" aria-current="page"class="active">Application details</a>
+
+</li>
+<li >
+  <a href="summary-data" aria-current="page">Data</a>
+
+</li>
+
+
+
+        </ul>
+
+        </nav>
+
+        <div class="govuk-tabs__panel" id="application-summary">
+
+
+
+
+       <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+
+
+              <h1 class="govuk-heading-l">Copy this case over to DISC</h1>
+              <p class="govuk-body">
+                <span class="bold">Version of questions:</span>
+
+                  1.20.0-rc
+                <br>
+              </p>
+
+  {% if case =='other-cases-fill-1' %}
+      {% include  "live-atwis/3/cases/harold/cases/application.html" %}{% endif%}
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endif %}

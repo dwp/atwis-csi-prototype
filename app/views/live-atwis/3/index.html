@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+
+      <span class="govuk-caption-xl"></span>
+
+</h1>
+
+<p>Jump to page:</p>
+<ul class="govuk-list">
+  <p class="govuk-body-l">Case manager view (John Goldsmith)</p>
+  <li>
+    <a class="govuk-link" href="your-cases.html">Your cases (0 cases)</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="your-cases-inprogress.html">Your cases (Cases)</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="/live-atwis/3/cases/harold/cases/summary.html">Example cases - New application (Harold)</a>
+  </li>
+</ul>
+
+
+<br>
+<ul class="govuk-list">
+  <p class="govuk-body-l">Team leader view (Al Ó Catháin)</p>
+  <li>
+    <a class="govuk-link" href="your-cases-teamleader.html">Your cases (0 cases)</a>
+  </li>
+  <!-- <li>
+    <a class="govuk-link" href="your-cases-inprogress-teamleader.html">Your cases (Cases)</a>
+  </li> -->
+  <!-- <li>
+    <a class="govuk-link" href="/live-atwis/3/cases/harold/cases/summary.html">Example cases - New application (Harold)</a>
+  </li> -->
+</ul>
+
+
+<br>
+<ul class="govuk-list">
+    <p class="govuk-body-l">Search</p>
+  <li>
+    <a class="govuk-link" href="search.html">Search</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="cases-search/harold/cases/summary.html">Search example case - User type: Case manager </a>
+  </li>
+  <li>
+    <a class="govuk-link" href="cases-search/harold/cases/summary_teamleader.html">Search cases - User type: Team Leader</a>
+  </li>
+</ul>
+
+<ul class="govuk-list">
+    <p class="govuk-body-l">Data retetion (team leader)</p>
+  <li>
+    <a class="govuk-link" href="cases-search/harold/cases/summary-data">Data tab</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="cases-search/harold/cases/data">Trigger data retetion</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="cases-search/harold/cases/data/hold">data deletion off hold </a>
+  </li>
+  <li>
+    <a class="govuk-link" href="cases-search/harold/cases/summary_teamleader">Case history</a>
+  </li>
+</ul>
+
+{% endblock %}
