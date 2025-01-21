@@ -48,21 +48,21 @@ router.post('/cases/check-application/sae/details/2/other-answer', function(requ
     }
 })
 
-router.post('/cases/check-application/sae/details/3/other-answer', function(request, response) {
+router.post('/cases/check-application/sae/details/current/other-answer', function(request, response) {
 
     var startdate3 = request.session.data['sae-start-date3']
     var fromsae3 = request.session.data['from-sae3']
 
 
     if (startdate3 == "Another date" && fromsae2 == "Other"){
-        response.redirect("/live-atwis/current/cases/check-application/sae/details/3/other")
+        response.redirect("/live-atwis/current/cases/check-application/sae/details/current/other")
 
     } if (startdate3 == "Another date"){
-          response.redirect("/live-atwis/current/cases/check-application/sae/details/3/other")
+          response.redirect("/live-atwis/current/cases/check-application/sae/details/current/other")
     } else if (fromsae3 == "Other"){
-          response.redirect("/live-atwis/current/cases/check-application/sae/details/3/other")
+          response.redirect("/live-atwis/current/cases/check-application/sae/details/current/other")
     } else {
-        response.redirect("/live-atwis/current/cases/check-application/sae/details/3/sd-adding-1")
+        response.redirect("/live-atwis/current/cases/check-application/sae/details/current/sd-adding-1")
     }
 })
 
