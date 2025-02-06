@@ -44,23 +44,28 @@
 
 
 {% if data['nationalInsuranceNumber-refferral']%}
-
+<div class="govuk-form-group">  <div class="govuk-grid-column-two-thirds">
         <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Send referral</caption>
+  <caption class="govuk-table__caption govuk-table__caption--m">Sent referral</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Date sent</th>
+        <th scope="col" class="govuk-table__header">Days</th>
       <th scope="col" class="govuk-table__header">Name</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">6 Febuary 2025</th>
+        <td class="govuk-table__cell">1</td>
       <td class="govuk-table__cell">John Smith</td>
     </tr>
 
   </tbody>
-</table>{% endif %}
+</table>
+
+</div></div>
+{% endif %}
 {% endblock %}
 
 
