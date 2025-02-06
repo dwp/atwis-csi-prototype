@@ -40,6 +40,27 @@
             Continue
           </button>
         </form>
+
+
+
+{% if data['nationalInsuranceNumber-refferral']%}
+
+        <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Send referral</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Date sent</th>
+      <th scope="col" class="govuk-table__header">Name</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">6 Febuary 2025</th>
+      <td class="govuk-table__cell">John Smith</td>
+    </tr>
+
+  </tbody>
+</table>{% endif %}
 {% endblock %}
 
 

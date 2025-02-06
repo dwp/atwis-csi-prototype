@@ -19,63 +19,53 @@
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Provider details </h1>
+        <!-- <h1 class="govuk-heading-l">Provider details </h1>
 <p>Based on   {{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s National Insurance number, a [type] referral will be sent to <strong>[provider name]</strong>.</p>
 
 
         <form action="check-your-answers" method="post" novalidate>
 
 
+ -->
 
+    <form action="check-your-answers" method="post" novalidate>
 
-
-
-
+    <form action="provider" method="post" novalidate>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-              Site
+              Provider details
                 </h1>
               </legend>
+              <p>{{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral']}}</strong>. Select an office location and provider to send the referral to.</p>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="site" name="site" type="radio" value="1">
                   <label class="govuk-label govuk-radios__label" for="site">
-                    1
+                    Halifax, HLF/2183 for Reed In Partnership
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="2">
                   <label class="govuk-label govuk-radios__label" for="site-2">
-                    2
+                      Halifax, HLF/2184 for Maximus
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="3">
                   <label class="govuk-label govuk-radios__label" for="site-3">
-                    3
+                  Harrow, HKH/19414 for Reed In Partnership
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="4">
                   <label class="govuk-label govuk-radios__label" for="site-4">
-                    4
+                    Harrow, HKH/19414 for Maximus
                   </label>
                 </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="5">
-                  <label class="govuk-label govuk-radios__label" for="site-4">
-                    5
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="6">
-                  <label class="govuk-label govuk-radios__label" for="site-4">
-                  6
-                  </label>
-                </div>
+
               </div>
             </fieldset>
           </div>
