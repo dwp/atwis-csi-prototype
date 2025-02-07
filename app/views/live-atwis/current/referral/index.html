@@ -14,12 +14,12 @@
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-      New referral
+    Send a new referral
       </h1>
     </legend>
-    <!-- <div id="changedName-hint" class="govuk-hint">
-      This includes changing your last name or spelling your name differently
-    </div> -->
+    <div id="changedName-hint" class="govuk-hint">
+  Select the type of referral you want to send.
+    </div>
     <div class="govuk-radios " data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
@@ -30,7 +30,7 @@
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
         <label class="govuk-label govuk-radios__label" for="changedName-2">
-          MHSS
+        Mental health support service (MHSS)
         </label>
       </div>
     </div>
@@ -45,20 +45,31 @@
 
 {% if data['nationalInsuranceNumber-refferral']%}
 <div class="govuk-form-group">  <div class="govuk-grid-column-two-thirds">
+
+  <h2>Referral history </h2>
+    <p>The following table includes referrals sent over the last 30 days.</p>
         <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Sent referral</caption>
+
+
+
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Type of referral
+</th>
       <th scope="col" class="govuk-table__header">Date sent</th>
-        <th scope="col" class="govuk-table__header">Days</th>
-      <th scope="col" class="govuk-table__header">Name</th>
+        <!-- <th scope="col" class="govuk-table__header">Days</th> -->
+
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">6 Febuary 2025</th>
-        <td class="govuk-table__cell">1</td>
-      <td class="govuk-table__cell">John Smith</td>
+        <td scope="row" class="govuk-table__header">John Smith</td>
+          <td class="govuk-table__cell">Workplace assessment</td>
+          <td class="govuk-table__cell">6 Febuary 2025</td>
+
+        <!-- <td class="govuk-table__cell">1</td> -->
+
     </tr>
 
   </tbody>
