@@ -78,10 +78,10 @@
 
   <nav class="navigation-secondary" style="max-width: 1280px">
         <ul style="max-width: 1280px">
-          <li{% if yourCases %} class="active"{% endif %} >
+          <li>
 
 {% if (not contactCentre)  %}
-          <a href="/live-atwis/current/your-cases-inprogress/index" aria-current="page">Your cases</a>
+          <a href="/live-atwis/4/your-cases-inprogress/index" aria-current="page">Your cases</a>
 
         </li>
 {% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
@@ -90,8 +90,8 @@
 
 {% endif %}
 
-          <li{% if Search %} class="active"{% endif %}><a href="/live-atwis/current/your-cases-inprogress/search">Search</a></li>
-          <li{% if Search %} class="active"{% endif %}><a href="/live-atwis/current/referral">Referrals</a></li>
+          <li><a href="/live-atwis/4/your-cases-inprogress/search">Search</a></li>
+          <li class="active"><a href="/live-atwis/4/referral">Referrals</a></li>
         </ul>
       </div>
 

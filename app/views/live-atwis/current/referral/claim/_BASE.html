@@ -78,7 +78,7 @@
 
   <nav class="navigation-secondary" style="max-width: 1280px">
         <ul style="max-width: 1280px">
-          <li{% if yourCases %} class="active"{% endif %} >
+          <li>
 
 {% if (not contactCentre)  %}
           <a href="/live-atwis/current/your-cases-inprogress/index" aria-current="page">Your cases</a>
@@ -90,8 +90,8 @@
 
 {% endif %}
 
-          <li{% if Search %} class="active"{% endif %}><a href="/live-atwis/current/your-cases-inprogress/search">Search</a></li>
-          <li{% if Search %} class="active"{% endif %}><a href="/live-atwis/current/referral">Referrals</a></li>
+          <li><a href="/live-atwis/current/your-cases-inprogress/search">Search</a></li>
+          <li class="active"><a href="/live-atwis/current/referral">Referrals</a></li>
         </ul>
       </div>
 
