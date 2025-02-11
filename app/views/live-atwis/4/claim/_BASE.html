@@ -81,17 +81,16 @@
           <li{% if yourCases %} class="active"{% endif %} >
 
 {% if (not contactCentre)  %}
-          <a href="/live-atwis/current/your-cases-inprogress/index" aria-current="page">Your cases</a>
+          <a href="/live-atwis/4/no-cases/your-cases" aria-current="page">Your cases</a>
 
         </li>
-{% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/{{folder}}/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
-{% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if advisers %} class="active"{% endif %}><a href="/{{folder}}/all-advisers{% if payments %}-payments{% endif %}">All advisers</a></li> {% endif %}
+{% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if Unallocated %} class="active"{% endif %}><a href="/live-atwis/4/unallocated{% if payments %}-payments{% endif %}">Unallocated</a></li> {% endif %}
+{% if (phase == "case-manger-view" or phase == "allocator") or Unallocated or payments %}<li{% if advisers %} class="active"{% endif %}><a href="/live-atwis/4/all-advisers{% if payments %}-payments{% endif %}">All advisers</a></li> {% endif %}
 
 
 {% endif %}
 
-          <li{% if Search %} class="active"{% endif %}><a href="/live-atwis/current/your-cases-inprogress/search">Search</a></li>
-          <li{% if Search %} class="active"{% endif %}><a href="/live-atwis/current/referral">Referrals</a></li>
+          <li{% if Search %} class="active"{% endif %}><a href="/live-atwis/4/search">Search</a></li>
         </ul>
       </div>
 

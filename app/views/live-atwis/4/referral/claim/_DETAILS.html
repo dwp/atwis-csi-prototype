@@ -1,0 +1,295 @@
+
+{% set changeHide = 'true '%}
+
+{% if claim %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#application-summary">
+      Application summary
+      </a>
+    </li>
+
+
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#checks">
+      Application details
+      </a>
+    </li>
+
+
+
+
+  </ul>
+
+  <div class="govuk-tabs__panel" id="application-summary">
+
+  {% if data['exceptions']=='No'  %}
+{% include  "../claim/notification.html" %}
+{% endif %}
+
+
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<script>
+  window.onload = function() {
+    sessionStorage.removeItem('nino-live')
+  }
+  </script>
+
+{% if data['nino-live']%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Training outcome recorded and trainee withdrawn
+    </h3>
+    <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p>
+  </div>
+</div>
+{% else %}
+  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">
+    <a class="govuk-notification-banner__link" href="#">Enter applicant's National Insurance number</a> to check that it matches the application details.
+
+      </p>
+    </div>
+  </div>
+{% endif %}
+
+
+<h2 class="govuk-heading-l">Application summary</h2>
+  <dl class="govuk-summary-list govuk-summary-list--no-border">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Date submitted
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+
+              <script>// Get date
+                  var now = new Date();
+                  var pastDate = new Date(now);
+                  pastDate.setDate(now.getDate() - 60);
+
+                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                  });
+
+                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  hour12: true
+                  });
+
+                  document.write(formattedDate + ' at 3:00 pm');</script>     </dd>
+          </div>
+  <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+      Harold Lzhdrjrr Allen       </dd>
+      </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Employer
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Smith PLC
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Condition
+      </dt>
+      <dd class="govuk-summary-list__value">
+Test
+      </dd>
+    </div>
+
+  </dl>
+
+
+
+
+    </div>
+
+
+ <div class="govuk-grid-column-one-third">
+
+
+  {% if phase == "allocator"  %}
+  <div class="update-panel">
+       <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
+       <form action="/cases/apply/RMPX34/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
+         <div class="govuk-form-group form-group-compound">
+           <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
+             <option value="" data-name=""></option>
+
+                   <option value="4" data-name="Aaron">Aaron</option>
+
+                   <option value="36" data-name="Adviser">Adviser</option>
+
+                   <option value="37" data-name="Case Team Lead">Case Team Lead</option>
+
+                   <option value="35" data-name="FRM">FRM</option>
+
+                   <option value="38" data-name="Payment Officer">Payment Officer</option>
+
+                   <option value="39" data-name="Payment Team Lead" selected="selected"> John Goldsmith</option>
+
+                   <option value="40" data-name="Quality">Quality</option>
+
+                   <option value="42" data-name="Quality1">Quality1</option>
+
+                   <option value="5" data-name="Shannon White">Shannon White</option>
+
+                   <option value="34" data-name="Telephony Agent">Telephony Agent</option>
+
+
+
+           </select>
+         </div>
+         <div>
+           <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
+         </div>
+       </form>
+     </div> {% endif %}
+
+
+     <div class="govuk-form-group">
+             <h2 id="update-specialism-heading" class="govuk-heading-m">Update specialism</h2>
+             <form action="/atw/ui-agent_f-7909_atw/cases/apply/GOVGL5YM/update-specialism" method="post" class="form" id="form-update-specialism" autocomplete="off" data-submitonce="">
+                 <div class="govuk-form-group form-group-compound">
+                 <select class="govuk-select" id="specialismId" name="specialism" aria-labelledby="update-specialism-heading">
+
+                     <option value="" data-name=""></option>
+
+
+                         <option value="self_employed" data-name="Self-employed">
+                     Self-employed
+                     </option>
+
+                         <option value="director" data-name="Director">
+                     Director
+                     </option>
+
+                         <option value="hidden" data-name="Hidden impairments">
+                     Hidden impairments
+                     </option>
+
+                         <option value="large_employer" data-name="Large employer">
+                     Large employer
+                     </option>
+
+                         <option value="deaf" data-name="Deaf">
+                     Deaf
+                     </option>
+
+                         <option value="visual" data-name="Visually impaired">
+                     Visually impaired
+                     </option>
+
+                         <option value="unknown" data-name="Pan disability">
+                     Pan disability
+                     </option>
+
+                 </select>
+                 </div>
+                 <div>
+                   <input type="hidden" name="caseVersion" value="v2">
+                   <input type="submit" class="govuk-button" id="submitButtonSpecialism" value="Update">
+                 </div>
+             </form>
+         </div>
+
+
+
+
+
+
+
+     <script>
+     window.onload = function() {
+       document.getElementById("timeline-date").innerHTML=moment().format("DD MM YYYY");
+     }
+   </script>
+
+</div></div>
+
+
+</div>
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="checks">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+            <div>
+              <h1 class="govuk-heading-l">Copy this case over to DISC</h1>
+              <p class="govuk-body">
+                <span class="bold">Version of questions:</span>
+
+                  1.20.0-rc
+                <br>
+              </p>
+            </div>
+  {% if case =='other-cases-fill-1' %}
+      {% include  "live-atwis/4/cases/harold/cases/application.html" %}{% endif%}
+              <form action="">
+                <input type="hidden" name="evidenceView" value="copyToDisc">
+                <input class="govuk-button margin-top-90" id="submitButtonDetailsEvidence" type="submit" value="Application copied">
+              </form>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endif %}
