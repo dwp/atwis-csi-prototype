@@ -24,6 +24,23 @@
         href: "javascript:history.go(-1)"
         }) }}
         <h1 class="govuk-heading-l">Check answers before sending referral</h1>
+
+        <h2 class="govuk-heading-m">Referral type</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Type of referral
+            </dt>
+            <dd class="govuk-summary-list__value">
+      {{data["typeReferral"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="personal-details#national-insurance-number">Change<span class="govuk-visually-hidden"> </span></a>
+            </dd>
+            </div>
+                </dl>
+
         <h2 class="govuk-heading-m">Personal details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -35,7 +52,7 @@
 {{data["nationalInsuranceNumber-refferral"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="personal-details#national-insurance-number">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+              <a class="govuk-link" href="personal-details#national-insurance-number">Change<span class="govuk-visually-hidden"> </span></a>
             </dd>
             </div>
           <div class="govuk-summary-list__row">
@@ -100,7 +117,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Site
+              Location and provider
             </dt>
             <dd class="govuk-summary-list__value">
   {{data["site"]}}

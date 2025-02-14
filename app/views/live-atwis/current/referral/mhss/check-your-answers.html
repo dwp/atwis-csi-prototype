@@ -19,11 +19,36 @@
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        {{ govukBackLink({
+        <!-- {{ govukBackLink({
         text: "Back",
         href: "javascript:history.go(-1)"
-        }) }}
+        }) }} -->
         <h1 class="govuk-heading-l">Check answers before sending referral</h1>
+
+
+                <h2 class="govuk-heading-m">Type</h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+          {{data["referralType"]}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="Provider">Change<span class="govuk-visually-hidden"> Provider</span></a>
+                    </dd>
+                  </div>
+
+
+                </dl>
+
+
+
+
+
         <h2 class="govuk-heading-m">Personal details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -61,19 +86,17 @@
             </dd>
           </div>
 
-          <!-- <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date of birth
+            Source
             </dt>
             <dd class="govuk-summary-list__value">
-            {{data["birth-day-refferral"]}}
 
-              {{data["birth-year-refferral"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="personal-details#birth-day">Change<span class="govuk-visually-hidden"> date of birth</span></a>
             </dd>
-          </div> -->
+          </div>
 
 
           <!--
