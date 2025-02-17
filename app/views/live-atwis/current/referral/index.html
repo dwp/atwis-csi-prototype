@@ -22,13 +22,21 @@
     </div>
     <div class="govuk-radios " data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="typeReferral" name="typeReferral" type="radio" value="Workplace assessment~wpa/personal-details">
+
+        <input class="govuk-radios__input" id="typeReferral" name="typeReferral" type="radio" value="Workplace assessment">
+
+        <input class="govuk-radios__input" id="typeReferral" name="typeReferral" type="radio" value="Workplace assessment~/live-atwis/current/referral/wpa/personal-details">
+
         <label class="govuk-label govuk-radios__label" for="typeReferral">
           Workplace assessment
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="typeReferral-2" name="typeReferral" type="radio" value="Mental health support service (MHSS)~mhss/personal-details">
+
+        <input class="govuk-radios__input" id="typeReferral-2" name="typeReferral" type="radio" value="Mental health support service (MHSS)">
+
+        <input class="govuk-radios__input" id="typeReferral-2" name="typeReferral" type="radio" value="Mental health support service (MHSS)~/live-atwis/current/referral/mhss/personal-details">
+
         <label class="govuk-label govuk-radios__label" for="typeReferral-2">
         Mental health support service (MHSS)
         </label>
@@ -43,7 +51,7 @@
 
 
 
-{% if data['nationalInsuranceNumber-refferral']%}
+{% if data['answers-checked-refferal']=='true' or data['answers-checked-refferal-mhss']=='true'%}
 <div class="govuk-form-group">  <div class="govuk-grid-column-two-thirds">
 
   <h2>Referral history </h2>
@@ -63,12 +71,18 @@
     </tr>
   </thead>
   <tbody class="govuk-table__body">
+    {% if data['answers-checked-refferal']=='true' %}
     <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__header">John Smith</td>
-          <td class="govuk-table__cell">{{data['typeReferral']}}</td>
+          <td class="govuk-table__cell">Workplace assessment</td>
           <td class="govuk-table__cell">20 Febuary 2025</td>
-
-        <!-- <td class="govuk-table__cell">1</td> -->
+{% endif %}
+{% if data['answers-checked-refferal-mhss']=='true' %}
+<tr class="govuk-table__row">
+    <td scope="row" class="govuk-table__header">John Smith</td>
+      <td class="govuk-table__cell">MHSS</td>
+      <td class="govuk-table__cell">20 Febuary 2025</td>
+{% endif %}
 
     </tr>
 
