@@ -20,11 +20,7 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <!-- <h1 class="govuk-heading-l">Provider details </h1>
-<<<<<<< Updated upstream
 <p>Based on   {{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s National Insurance number, a [type] referral will be sent to <strong>[provider name]</strong>.</p>
-=======
-<p>Based on   {{data["firstName-refferral-mhss"]}} {{data["lastName-refferral-mhss"]}}'s National Insurance number, a [type] referral will be sent to <strong>[provider name]</strong>.</p>
->>>>>>> Stashed changes
 
 
         <form action="check-your-answers" method="post" novalidate>
@@ -41,13 +37,8 @@
               </h1>
 
 
-<<<<<<< Updated upstream
               <p>{{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral']}}</strong>. Select an office location and provider to send the referral to.</p>
 <p>If the applicant works for a provider, you can <a href="">select an override code</a>.</p>
-=======
-              <p>{{data["firstName-refferral-mhss"]}} {{data["lastName-refferral-mhss"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral-mhss']}}</strong>. Select an office location and provider to send the referral to.</p>
-<p>If the applicant works for a provider, you can <a href="override">select an override code</a>.</p>
->>>>>>> Stashed changes
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -60,92 +51,52 @@
 
                       {% if not data['referralSource']%}
                                       <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                                         <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19424 for Maximus">
                                         <label class="govuk-label govuk-radios__label" for="site">
-=======
-                                        <input class="govuk-radios__input" id="site-mhss" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19424 for Maximus">
-                                        <label class="govuk-label govuk-radios__label" for="site-mhss">
->>>>>>> Stashed changes
                                           Harrow Kings House, HKH/19424 for Maximus
                                         </label>
                                       </div>
                                       <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                                         <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19427 for Ingeus">
                                         <label class="govuk-label govuk-radios__label" for="site-2">
-=======
-                                        <input class="govuk-radios__input" id="site-mhss-2" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19427 for Ingeus">
-                                        <label class="govuk-label govuk-radios__label" for="site-mhss-2">
->>>>>>> Stashed changes
                                           Harrow Kings House, HKH/19427 for Ingeus
                                         </label>
                                       </div>
                                       <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                                         <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2193 for Maximus">
                                         <label class="govuk-label govuk-radios__label" for="site-3">
-=======
-                                        <input class="govuk-radios__input" id="site-mhss-3" name="site-mhss" type="radio" value="Halifax Crossfield House, HLF/2193 for Maximus">
-                                        <label class="govuk-label govuk-radios__label" for="site-mhss-3">
->>>>>>> Stashed changes
                                         Halifax Crossfield House, HLF/2193 for Maximus
                                         </label>
                                       </div>
                                       <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                                         <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Halifax Crossfield House, HLF/2196 for Ingeus">
                                         <label class="govuk-label govuk-radios__label" for="site-4">
-=======
-                                        <input class="govuk-radios__input" id="site-mhss-4" name="site-mhss" type="radio" value="Halifax Crossfield House, HLF/2196 for Ingeus">
-                                        <label class="govuk-label govuk-radios__label" for="site-mhss-4">
->>>>>>> Stashed changes
                                       Halifax Crossfield House, HLF/2196 for Ingeus
                                         </label>
                                       </div>
                       {% endif %}
 {% if data['referralSource']=='Authority referrals'%}
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19424 for Maximus">
                   <label class="govuk-label govuk-radios__label" for="site">
-=======
-                  <input class="govuk-radios__input" id="site-mhss" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19424 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss">
->>>>>>> Stashed changes
                     Harrow Kings House, HKH/19424 for Maximus
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19427 for Ingeus">
                   <label class="govuk-label govuk-radios__label" for="site-2">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-2" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19427 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-2">
->>>>>>> Stashed changes
                     Harrow Kings House, HKH/19427 for Ingeus
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2193 for Maximus">
                   <label class="govuk-label govuk-radios__label" for="site-3">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-3" name="site-mhss" type="radio" value="Halifax Crossfield House, HLF/2193 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-3">
->>>>>>> Stashed changes
                   Halifax Crossfield House, HLF/2193 for Maximus
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Halifax Crossfield House, HLF/2196 for Ingeus">
                   <label class="govuk-label govuk-radios__label" for="site-4">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-4" name="site-mhss" type="radio" value="Halifax Crossfield House, HLF/2196 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-4">
->>>>>>> Stashed changes
                 Halifax Crossfield House, HLF/2196 for Ingeus
                   </label>
                 </div>
@@ -153,48 +104,28 @@
 
 {% if data['referralSource']=='Supplier Generated Candidate referrals'%}
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19423 for Maximus">
                   <label class="govuk-label govuk-radios__label" for="site">
-=======
-                  <input class="govuk-radios__input" id="site-mhss" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19423 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss">
->>>>>>> Stashed changes
                     Harrow Kings House, HKH/19423 for Maximus
 
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19425 for Ingeus">
                   <label class="govuk-label govuk-radios__label" for="site-2">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-2" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19425 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-2">
->>>>>>> Stashed changes
                   Harrow Kings House, HKH/19425 for Ingeus
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2192 for Maximus">
                   <label class="govuk-label govuk-radios__label" for="site-3">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-3" name="site-mhss" type="radio" value="Halifax Crossfield House, HLF/2192 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-3">
->>>>>>> Stashed changes
                     Halifax Crossfield House, HLF/2192 for Maximus
 
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Halifax Crossfield House, HLF/2194 for Ingeus">
                   <label class="govuk-label govuk-radios__label" for="site-4">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-4" name="site-mhss" type="radio" value="Halifax Crossfield House, HLF/2194 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-4">
->>>>>>> Stashed changes
                   Halifax Crossfield House, HLF/2194 for Ingeus
                   </label>
                 </div>
@@ -202,36 +133,21 @@
 
 {% if data['referralSource']=='Override codes'%}
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19426 for Ingeus">
                   <label class="govuk-label govuk-radios__label" for="site">
-=======
-                  <input class="govuk-radios__input" id="site-mhss" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19426 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss">
->>>>>>> Stashed changes
                     Harrow Kings House, HKH/19426 for Ingeus
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19428 for Maximus">
                   <label class="govuk-label govuk-radios__label" for="site-2">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-2" name="site-mhss" type="radio" value="Harrow Kings House, HKH/19428 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-2">
->>>>>>> Stashed changes
                     Harrow Kings House, HKH/19428 for Maximus
 
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2195 for Ingeus">
                   <label class="govuk-label govuk-radios__label" for="site-3">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-3" name="site-mhss" type="radio" value="Halifax Crossfield House, HLF/2195 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-3">
->>>>>>> Stashed changes
                     Halifax Crossfield House, HLF/2195 for Ingeus
 
 
@@ -239,13 +155,8 @@
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-<<<<<<< Updated upstream
                   <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Harrow, HKH/19414 for Maximus">
                   <label class="govuk-label govuk-radios__label" for="site-4">
-=======
-                  <input class="govuk-radios__input" id="site-mhss-4" name="site-mhss" type="radio" value="Harrow, HKH/19414 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-mhss-4">
->>>>>>> Stashed changes
                   Halifax Crossfield House, HLF/2197 for Maximus
 
 
@@ -264,11 +175,7 @@
 
           <!-- <div class="govuk-form-group">
             <label class="govuk-label" for="sort">
-<<<<<<< Updated upstream
               Site code
-=======
-              site-mhss code
->>>>>>> Stashed changes
             </label>
             <select class="govuk-select" id="sort" name="sort">
               <option value="published" selected>None</option>
@@ -283,20 +190,12 @@
 <!--
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m"  for="national-insurance-number">
-<<<<<<< Updated upstream
             Enter site code
-=======
-            Enter site-mhss code
->>>>>>> Stashed changes
             </label>
             <!-- <div id="national-insurance-number-hint" class="govuk-hint">
             It’s a number that is 2 letters, 6 numbers, then A, B, C or D, like 'QQ 12 34 56 C'.
             </div> -->
-<<<<<<< Updated upstream
             <!-- <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral"]}}>
-=======
-            <!-- <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral-mhss" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral-mhss"]}}>
->>>>>>> Stashed changes
           </div> -->
 
 
