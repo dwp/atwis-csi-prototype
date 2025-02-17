@@ -26,6 +26,7 @@
         <h1 class="govuk-heading-l">Check answers before sending referral</h1>
 
 
+<<<<<<< Updated upstream
                 <h2 class="govuk-heading-m">Type</h2>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -43,6 +44,22 @@
                   </div>
 
 
+=======
+        <h2 class="govuk-heading-m">Referral type</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Type of referral
+            </dt>
+            <dd class="govuk-summary-list__value">
+      {{data["typeReferral"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../index">Change<span class="govuk-visually-hidden"> type of referral</span></a>
+            </dd>
+            </div>
+>>>>>>> Stashed changes
                 </dl>
 
 
@@ -57,7 +74,11 @@
             National insurance number
             </dt>
             <dd class="govuk-summary-list__value">
+<<<<<<< Updated upstream
 {{data["nationalInsuranceNumber-refferral"]}}
+=======
+{{data["nationalInsuranceNumber-refferral-mhss"]}}
+>>>>>>> Stashed changes
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="personal-details#national-insurance-number">Change<span class="govuk-visually-hidden"> customer reference</span></a>
@@ -68,7 +89,11 @@
               First name
             </dt>
             <dd class="govuk-summary-list__value">
+<<<<<<< Updated upstream
             {{data["firstName-refferral"]}}
+=======
+            {{data["firstName-refferral-mhss"]}}
+>>>>>>> Stashed changes
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="personal-details#f-firstName">Change<span class="govuk-visually-hidden"> first name</span></a>
@@ -79,13 +104,18 @@
               Last name
             </dt>
             <dd class="govuk-summary-list__value">
+<<<<<<< Updated upstream
           {{data["lastName-refferral"]}}
+=======
+          {{data["lastName-refferral-mhss"]}}
+>>>>>>> Stashed changes
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="personal-details#f-lastName">Change<span class="govuk-visually-hidden"> last name</span></a>
             </dd>
           </div>
 
+<<<<<<< Updated upstream
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
             Source
@@ -97,6 +127,9 @@
               <a class="govuk-link" href="personal-details#birth-day">Change<span class="govuk-visually-hidden"> date of birth</span></a>
             </dd>
           </div>
+=======
+
+>>>>>>> Stashed changes
 
 
           <!--
@@ -116,17 +149,27 @@
         </dl>
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         <h2 class="govuk-heading-m">Provider details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+<<<<<<< Updated upstream
               Site
             </dt>
             <dd class="govuk-summary-list__value">
   {{data["site"]}}
+=======
+              Location and provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+  {{data["site-mhss"]}}
+>>>>>>> Stashed changes
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="Provider">Change<span class="govuk-visually-hidden"> Provider</span></a>
@@ -141,10 +184,17 @@
 
 
 
+<<<<<<< Updated upstream
         <h2 class="govuk-heading-m">Now send {{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s referral</h2>
         <p class="govuk-body">By submitting this referral you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
         <form action="confim" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
+=======
+        <h2 class="govuk-heading-m">Now send {{data["firstName-refferral-mhss"]}} {{data["lastName-refferral-mhss"]}}'s referral</h2>
+        <p class="govuk-body">By submitting this referral you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+        <form action="confim" method="post" novalidate>
+          <input type="hidden" name="answers-checked-refferal-mhss" value="true">
+>>>>>>> Stashed changes
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Accept and send
           </button>
