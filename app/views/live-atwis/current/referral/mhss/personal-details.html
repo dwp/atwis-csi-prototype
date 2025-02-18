@@ -1,0 +1,219 @@
+{% set hideBanner = true %}
+{% set yourCases = true %}
+{% extends "../claim/_BASE.html" %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+        }) }}
+        <h1 class="govuk-heading-l">Personal details</h1>
+<p>Enter the applicant's personal details to make a mental health support service (MHSS) referral.</p>
+        <form action="typeprovider" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m"  for="national-insurance-number">
+              National Insurance number
+            </label>
+            <div id="national-insurance-number-hint" class="govuk-hint">
+            It’s a number that is 2 letters, 6 numbers, then A, B, C or D, like 'QQ 12 34 56 C'.
+            </div>
+            <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral"]}}>
+          </div>
+          <!-- <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m"  for="national-insurance-number">
+            URN
+            </label> -->
+            <!-- <div id="national-insurance-number-hint" class="govuk-hint">
+            It’s a number that is 2 letters, 6 numbers, then A, B, C or D, like 'QQ 12 34 56 C'.
+            </div> -->
+            <!-- <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral"]}}>
+          </div> -->
+
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Full name
+              </h1>
+            </legend>
+
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="f-firstName">
+              First name
+            </label>
+            <input class="govuk-input govuk-input--width-10 " id="f-firstName" name="firstName-refferral" type="text" autocomplete="given-name" value="{{data["firstName-refferral"]}}">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="f-lastName">
+              Last name
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="f-lastName" name="lastName-refferral" type="text" autocomplete="family-name" value="{{data["lastName-refferral"]}}">
+
+          </div>
+
+          </fieldset>
+
+
+
+
+          <!-- <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="birth-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Date of birth
+              </legend>
+              <div id="birth-hint" class="govuk-hint">
+                For example, 31 3 1980.
+              </div>
+              <div class="govuk-date-input" id="birth">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="birth-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="birth-day" name="birth-day-refferral" type="text" inputmode="numeric" value="{{data["birth-day-refferral"]}}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="birth-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="birth-month" name="birth-month-refferral" type="text" inputmode="numeric" value="{{data["birth-month-refferral"]}}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="birth-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="birth-year" name="birth-year-refferral" type="text" inputmode="numeric" value="{{data["birth-year-refferral"]}}">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div> -->
+          <form action="/apply/your-details/address" method="post" autocomplete="off" novalidate="" class="casa-journey-form">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div class="govuk-width-container">
+      <h2 class="govuk-heading-m">Find an address</h2>
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="postcode">
+        Postcode
+      </label>
+      <div id="postcode-hint" class="govuk-hint">
+        For example, AA3 1AB.
+      </div>
+      <input
+        class="govuk-input govuk-!-width-one-quarter" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+      </div>
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="searchString">
+        Building number or name
+      </label>
+      <div id="searchString-hint" class="govuk-hint">
+        For example, 15 or Prospect Cottage.
+      </div>
+      <input
+        class="govuk-input govuk-!-width-one-quarter" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint">
+      </div>
+
+
+      </div> -->
+
+
+
+
+
+
+
+
+    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="continue-button" data-govuk-button-init="">
+    Continue
+    </button>
+
+
+
+
+
+
+    </form>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-------------- footer -->
+{% block footer %}
+
+
+  {{ govukFooter({
+    meta: {
+      html: urFooterLink ,
+
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+
+      ]
+    }
+  }) }}
+
+
+
+
+
+{% endblock %}

@@ -1,6 +1,6 @@
 {% set hideBanner = true %}
 {% set yourCases = true %}
-{% extends "./claim/_BASE.html" %}
+{% extends "../claim/_BASE.html" %}
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-        <form action="index" method="post" novalidate>
+        <form action="../index" method="post" novalidate>
 
           <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
@@ -33,9 +33,10 @@
             </div> -->
           </div>
 
-<p>We’ve sent your referral to [provider].</p>
+<p>We’ve sent [applicant's name] referral to [provider].</p>
 
-<p>[Provider] will contact you [xxx].</p>
+<h2 class="govuk-heading-m">What happens next</h2>
+<p>[Provider] will contact [applicant name] to arrange a support plan discussion. </p>
     <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="continue-button" data-govuk-button-init="">
     Return to new referral
     </button>
