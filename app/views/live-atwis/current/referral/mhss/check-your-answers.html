@@ -32,18 +32,19 @@
 
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                    Type
+                    Type of referral
                     </dt>
                     <dd class="govuk-summary-list__value">
-          {{data["referralType"]}}
+              {{data["typeReferral"]}}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="Provider">Change<span class="govuk-visually-hidden"> Provider</span></a>
+                      <a class="govuk-link" href="personal-details#national-insurance-number">Change<span class="govuk-visually-hidden"> </span></a>
                     </dd>
-                  </div>
+                    </div>
+                        </dl>
 
 
-                </dl>
+
 
 
 
@@ -54,7 +55,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            National insurance number
+            National Insurance number
             </dt>
             <dd class="govuk-summary-list__value">
 {{data["nationalInsuranceNumber-refferral"]}}
@@ -86,17 +87,7 @@
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Source
-            </dt>
-            <dd class="govuk-summary-list__value">
 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="personal-details#birth-day">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-            </dd>
-          </div>
 
 
           <!--
@@ -120,13 +111,24 @@
         <h2 class="govuk-heading-m">Provider details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Where referral was made
+            </dt>
+            <dd class="govuk-summary-list__value">
+        {{data["type-mhss"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="Provider">Change<span class="govuk-visually-hidden"> Provider</span></a>
+            </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Site
+            Provider, code and office
             </dt>
             <dd class="govuk-summary-list__value">
-  {{data["site"]}}
+  {{data["site-mhss"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="Provider">Change<span class="govuk-visually-hidden"> Provider</span></a>

@@ -37,172 +37,55 @@
               </h1>
 
 
-              <p>{{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral']}}</strong>. Select an office location and provider to send the referral to.</p>
-<p>If the applicant works for a provider, you can <a href="">select an override code</a>.</p>
+              <p>{{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral']}}</strong>.
+If the applicant works for a provider, you can <a href="override">select an override code</a>.</p>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                Providers and locations
+          Provider, code and office
 
               <!-- for {{data['referralSource'] | lower}} -->
 
               </legend>
+              <div id="type-mhss-hint" class="govuk-hint">
+            Select a provider, code and office to send the referral to.
+              </div>
                     <div class="govuk-radios" data-module="govuk-radios">
 
-                      {% if not data['referralSource']%}
+
                                       <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19424 for Maximus">
-                                        <label class="govuk-label govuk-radios__label" for="site">
-                                          Harrow Kings House, HKH/19424 for Maximus
+                                        <input class="govuk-radios__input" id="site-mhss" name="site-mhss" type="radio" value="Maximus, HKH/19424, Harrow Kings House">
+                                        <label class="govuk-label govuk-radios__label" for="site-mhss">
+                                        Maximus, HKH/19424, Harrow Kings House
                                         </label>
                                       </div>
                                       <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19427 for Ingeus">
-                                        <label class="govuk-label govuk-radios__label" for="site-2">
-                                          Harrow Kings House, HKH/19427 for Ingeus
+                                        <input class="govuk-radios__input" id="site-mhss-2" name="site-mhss" type="radio" value="Ingeus, HKH/19427, Harrow Kings House">
+                                        <label class="govuk-label govuk-radios__label" for="site-mhss-2">
+                                        Ingeus, HKH/19427, Harrow Kings House
                                         </label>
                                       </div>
                                       <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2193 for Maximus">
-                                        <label class="govuk-label govuk-radios__label" for="site-3">
-                                        Halifax Crossfield House, HLF/2193 for Maximus
+                                        <input class="govuk-radios__input" id="site-mhss-3" name="site-mhss" type="radio" value="Maximus, HLF/2193, Halifax Crossfield House">
+                                        <label class="govuk-label govuk-radios__label" for="site-mhss-3">
+                                      Maximus, HLF/2193, Halifax Crossfield House
                                         </label>
                                       </div>
                                       <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Halifax Crossfield House, HLF/2196 for Ingeus">
-                                        <label class="govuk-label govuk-radios__label" for="site-4">
-                                      Halifax Crossfield House, HLF/2196 for Ingeus
+                                        <input class="govuk-radios__input" id="site-mhss-4" name="site-mhss" type="radio" value="Ingeus, HLF/2196,  Halifax Crossfield House">
+                                        <label class="govuk-label govuk-radios__label" for="site-mhss-4">
+                                    Ingeus, HLF/2196,  Halifax Crossfield House
                                         </label>
-                                      </div>
-                      {% endif %}
-{% if data['referralSource']=='Authority referrals'%}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19424 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site">
-                    Harrow Kings House, HKH/19424 for Maximus
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19427 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-2">
-                    Harrow Kings House, HKH/19427 for Ingeus
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2193 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-3">
-                  Halifax Crossfield House, HLF/2193 for Maximus
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Halifax Crossfield House, HLF/2196 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-4">
-                Halifax Crossfield House, HLF/2196 for Ingeus
-                  </label>
-                </div>
-{% endif %}
 
-{% if data['referralSource']=='Supplier Generated Candidate referrals'%}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19423 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site">
-                    Harrow Kings House, HKH/19423 for Maximus
-
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19425 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-2">
-                  Harrow Kings House, HKH/19425 for Ingeus
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2192 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-3">
-                    Halifax Crossfield House, HLF/2192 for Maximus
-
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Halifax Crossfield House, HLF/2194 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-4">
-                  Halifax Crossfield House, HLF/2194 for Ingeus
-                  </label>
-                </div>
-{% endif %}
-
-{% if data['referralSource']=='Override codes'%}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site" name="site" type="radio" value="Harrow Kings House, HKH/19426 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site">
-                    Harrow Kings House, HKH/19426 for Ingeus
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-2" name="site" type="radio" value="Harrow Kings House, HKH/19428 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-2">
-                    Harrow Kings House, HKH/19428 for Maximus
-
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-3" name="site" type="radio" value="Halifax Crossfield House, HLF/2195 for Ingeus">
-                  <label class="govuk-label govuk-radios__label" for="site-3">
-                    Halifax Crossfield House, HLF/2195 for Ingeus
-
-
-
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="site-4" name="site" type="radio" value="Harrow, HKH/19414 for Maximus">
-                  <label class="govuk-label govuk-radios__label" for="site-4">
-                  Halifax Crossfield House, HLF/2197 for Maximus
-
-
-
-                  </label>
-                </div>
-{% endif %}
-
-              </div>
-            </fieldset>
-          </div>
-
-
-
-
-
-          <!-- <div class="govuk-form-group">
-            <label class="govuk-label" for="sort">
-              Site code
-            </label>
-            <select class="govuk-select" id="sort" name="sort">
-              <option value="published" selected>None</option>
-              <option value="updated" >1</option>
-              <option value="views"> 2</option>
-              <option value="comments"> 3</option>
-                  <option value="comments"> 4</option>
-            </select>
-          </div> -->
-
-
-<!--
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m"  for="national-insurance-number">
-            Enter site code
-            </label>
-            <!-- <div id="national-insurance-number-hint" class="govuk-hint">
-            It’s a number that is 2 letters, 6 numbers, then A, B, C or D, like 'QQ 12 34 56 C'.
-            </div> -->
-            <!-- <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral"]}}>
-          </div> -->
-
+                                    </div>
+                                  </div>
+                                </fieldset>
+                              </div>
 
 
 
     <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="continue-button" data-govuk-button-init="">
-    Save and continue
+  Continue
     </button>
 
 
