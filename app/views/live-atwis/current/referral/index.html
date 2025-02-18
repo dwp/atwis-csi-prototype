@@ -51,7 +51,7 @@
 
 
 
-{% if data['answers-checked-refferal']=='true' or data['answers-checked-refferal-mhss']=='true'%}
+{% if (data['answers-checked-wpa']=='true' or data['answers-checked-mhss']=='true')%}
 <div class="govuk-form-group">  <div class="govuk-grid-column-two-thirds">
 
   <h2>Referral history </h2>
@@ -71,13 +71,13 @@
     </tr>
   </thead>
   <tbody class="govuk-table__body">
-    {% if data['answers-checked-refferal']=='true' %}
+    {% if data['answers-checked-wpa']=='true' %}
     <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__header">John Smith</td>
           <td class="govuk-table__cell">Workplace assessment</td>
           <td class="govuk-table__cell">20 Febuary 2025</td>
 {% endif %}
-{% if data['answers-checked-refferal-mhss']=='true' %}
+{% if data['answers-checked-mhss']=='true' %}
 <tr class="govuk-table__row">
     <td scope="row" class="govuk-table__header">John Smith</td>
       <td class="govuk-table__cell">MHSS</td>

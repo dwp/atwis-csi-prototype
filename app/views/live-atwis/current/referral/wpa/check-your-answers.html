@@ -49,7 +49,7 @@
             National insurance number
             </dt>
             <dd class="govuk-summary-list__value">
-{{data["nationalInsuranceNumber-refferral"]}}
+{{data["nationalInsuranceNumber-refferral-wpa"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="personal-details#national-insurance-number">Change<span class="govuk-visually-hidden"> </span></a>
@@ -60,7 +60,7 @@
               First name
             </dt>
             <dd class="govuk-summary-list__value">
-            {{data["firstName-refferral"]}}
+            {{data["firstName-refferral-wpa"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="personal-details#f-firstName">Change<span class="govuk-visually-hidden"> first name</span></a>
@@ -71,7 +71,7 @@
               Last name
             </dt>
             <dd class="govuk-summary-list__value">
-          {{data["lastName-refferral"]}}
+          {{data["lastName-refferral-wpa"]}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="personal-details#f-lastName">Change<span class="govuk-visually-hidden"> last name</span></a>
@@ -135,10 +135,10 @@
 
 
 
-        <h2 class="govuk-heading-m">Now send {{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s referral</h2>
+        <h2 class="govuk-heading-m">Now send {{data["firstName-refferral-wpa"]}} {{data["lastName-refferral-wpa"]}}'s referral</h2>
         <p class="govuk-body">By submitting this referral you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
         <form action="confim" method="post" novalidate>
-          <input type="hidden" name="answers-checked" value="true">
+          <input type="hidden" name="answers-checked-wpa" value="true">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Accept and send
           </button>
