@@ -34,15 +34,23 @@
     <form action="check-your-answers" method="post" novalidate>
 
     <form action="provider" method="post" novalidate>
+<h1 class="govuk-heading-l">
+    Provider details</h1>
+
+
+<p>{{data["firstName-refferral-wpa"]}} {{data["lastName-refferral-wpa"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral-wpa']}}</strong>. </p>
+
+
+
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-              Provider details
-                </h1>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+            Provider, code and office
+                </h2>
               </legend>
-            <div id="site-mhss-mhss-hint" class="govuk-hint">{data["firstName-refferral-wpa"]}} {{data["lastName-refferral-wpa"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral-wpa']}}</strong>. Select a provider, code and office to send the referral to.</div>
+            <div id="site-mhss-mhss-hint" class="govuk-hint">Select a provider, code and office to send the referral to.</div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="site" name="site" type="radio" value="Reed In Partnership, HLF/2183, Halifax">
