@@ -74,7 +74,7 @@
   <tbody class="govuk-table__body">
     {% if data['answers-checked-wpa']=='true' %}
     <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__header">John Smith</td>
+        <td scope="row" class="govuk-table__header">{{data['firstName-refferral']}} {{data['lastName-refferral']}}</td>
           <td class="govuk-table__cell">Workplace assessment</td>
           <td class="govuk-table__cell"><time datetime="2023-06-06T09:12:00.000Z"><script>
             // Get the current date and time
@@ -91,7 +91,7 @@
 {% endif %}
 {% if data['answers-checked-mhss']=='true' %}
 <tr class="govuk-table__row">
-    <td scope="row" class="govuk-table__header">John Smith</td>
+    <td scope="row" class="govuk-table__header">{{data['firstName-refferral-wpa']}} {{data['lastName-refferral-wpa']}}</td>
       <td class="govuk-table__cell">MHSS</td>
       <td class="govuk-table__cell"><time datetime="2023-06-06T09:12:00.000Z"><script>
         // Get the current date and time
