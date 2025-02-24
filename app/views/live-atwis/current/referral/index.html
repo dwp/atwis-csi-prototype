@@ -66,6 +66,7 @@
           <th scope="col" class="govuk-table__header">Type of referral
 </th>
       <th scope="col" class="govuk-table__header">Date sent</th>
+        <th scope="col" class="govuk-table__header">Status</th>
         <!-- <th scope="col" class="govuk-table__header">Days</th> -->
 
     </tr>
@@ -84,6 +85,9 @@
                  // Write the date and time to the HTML page
                  document.write(date);
                </script></time></td>
+                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey" style="text-transform: none;">
+          Pending
+        </strong></td>
 {% endif %}
 {% if data['answers-checked-mhss']=='true' %}
 <tr class="govuk-table__row">
@@ -98,6 +102,9 @@
              // Write the date and time to the HTML page
              document.write(date);
            </script></time></td>
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey" style="text-transform: none;">
+          Pending
+        </strong></td>
 {% endif %}
 
     </tr>
