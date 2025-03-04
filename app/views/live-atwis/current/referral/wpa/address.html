@@ -1,0 +1,155 @@
+{% set hideBanner = true %}
+{% set yourCases = true %}
+{% extends "../claim/_BASE.html" %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+        }) }}
+        <div class="govuk-width-container">
+    <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Select an address
+        </h1>
+      </legend>
+          <form action="/live-atwis/current/referral/wpa/provider" method="post" autocomplete="off" novalidate="" class="casa-journey-form">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <p>6 addresses found for <b>wr11nl</b> and <b>1</b>. <a href='address_lookup'>Search again</a></p>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="1 Washington Street, Worcester, WR1 1NL"
+            data-ga-question="Select an address" data-ga-answer="Answer 1">
+          <label class="govuk-label govuk-radios__label" for="select-an-address">
+            1 Washington Street, Worcester, WR1 1NL
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="select-an-address-2" name="select-an-address" type="radio" value="10 Washington Street, Worcester, WR1 1NL"
+            data-ga-question="Select an address" data-ga-answer="Answer 2">
+          <label class="govuk-label govuk-radios__label" for="select-an-address-2">
+            10 Washington Street, Worcester, WR1 1NL
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="select-an-address-3" name="select-an-address" type="radio" value="11 Washington Street, Worcester, WR1 1NL"
+            data-ga-question="Select an address" data-ga-answer="Answer 2">
+          <label class="govuk-label govuk-radios__label" for="select-an-address-3">
+            11 Washington Street, Worcester, WR1 1NL
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="select-an-address-4" name="select-an-address" type="radio" value="101 Washington Street, Worcester, WR1 1NL"
+            data-ga-question="Select an address" data-ga-answer="Answer 3">
+          <label class="govuk-label govuk-radios__label" for="select-an-address-4">
+            101 Washington Street, Worcester, WR1 1NL
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="select-an-address-5" name="select-an-address" type="radio" value="110 Washington Street, Worcester, WR1 1NL"
+            data-ga-question="Select an address" data-ga-answer="Answer 4">
+          <label class="govuk-label govuk-radios__label" for="select-an-address-5">
+            110 Washington Street, Worcester, WR1 1NL
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="select-an-address-6" name="select-an-address" type="radio" value="111 Washington Street, Worcester, WR1 1NL"
+            data-ga-question="Select an address" data-ga-answer="Answer 5">
+          <label class="govuk-label govuk-radios__label" for="select-an-address-6">
+            111 Washington Street, Worcester, WR1 1NL
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    </div>
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+    Use this address
+    </button>
+    <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-------------- footer -->
+{% block footer %}
+
+
+  {{ govukFooter({
+    meta: {
+      html: urFooterLink ,
+
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+
+      ]
+    }
+  }) }}
+
+
+
+
+
+{% endblock %}
