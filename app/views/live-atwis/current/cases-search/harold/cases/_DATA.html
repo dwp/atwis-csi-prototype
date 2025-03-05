@@ -76,10 +76,11 @@
 
 
 
-{% if data['data-delete-hold']=='Customer feedback or complaint' or
-data['data-delete-hold']=='Fraud investigation' or
-data['data-delete-hold']=='Performance management' or
-data['data-delete-hold']=='Performance management'=='no'%}
+{% if "Customer feedback or complaint" in data['data-delete-hold'] or
+"Fraud investigation" in data['data-delete-hold'] or
+"Criminal" in data['data-delete-hold'] or
+"Performance management" in data['data-delete-hold'] or
+ data['data-delete-hold']=='no'%}
 
 
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -125,6 +126,14 @@ data['data-delete-hold']=='Performance management'=='no'%}
 
   </strong>
 </div>
+
+
+
+
+
+
+
+
 
 {% else %}
 
