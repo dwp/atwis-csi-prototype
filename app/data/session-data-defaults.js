@@ -35,7 +35,7 @@ module.exports = {
 'whitemail-type' : "",
 'benefits' : "",
 
-
+'data-delete-hold' : "",
 
 'claims' : "",
 'found-nino' : "Yes",

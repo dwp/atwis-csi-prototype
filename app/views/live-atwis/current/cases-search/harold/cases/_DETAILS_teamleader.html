@@ -169,7 +169,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <div class="moj-timeline">
 
-  {% if data['data-delete-hold-off']=='yes'%}
+  {% if data['data-delete-hold']=='yes'%}
     <div class="moj-timeline__item">
       <span class="govuk-body">
         <time datetime="2023-06-06T09:12:00.000Z"><script>
@@ -191,7 +191,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
   {% endif %}
 
-{% if data['data-delete-hold']=='yes' %}
+{% if data['data-delete-hold']%}
   <div class="moj-timeline__item">
     <span class="govuk-body">
       <time datetime="2023-06-06T09:12:00.000Z"><script>
