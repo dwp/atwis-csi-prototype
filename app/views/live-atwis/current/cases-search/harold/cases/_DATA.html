@@ -14,7 +14,7 @@
 
 </li>
 <li >
-  <a href="summary-data" aria-current="page" class="active">Data</a>
+  <a href="summary-data" aria-current="page" class="active">Manage data</a>
 
 </li>
 
@@ -43,24 +43,7 @@
        </div>
        <div class="govuk-notification-banner__content">
        <p class="govuk-notification-banner__heading">
-         Data deletion has been taken off hold. This application and its data will be permanently deleted in 24 months on <script>// Get date
-               var now = new Date();
-               var pastDate = new Date(now);
-               pastDate.setDate(now.getDate() + 730);
-
-               var formattedDate = pastDate.toLocaleDateString('en-GB', {
-               day: 'numeric',
-               month: 'long',
-               year: 'numeric'
-               });
-
-               var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-               hour: 'numeric',
-               minute: 'numeric',
-               hour12: true
-               });
-
-               document.write(formattedDate);</script>.
+        You have reset the deletion of this application data. .
          </p>
          </div>
      </div>
@@ -91,23 +74,10 @@
   </div>
   <div class="govuk-notification-banner__content">
   <p class="govuk-notification-banner__heading">
-      Data deletion for this application is on hold. Data will not be deleted from ATWIS until the hold is lifted.
-    </p>
-    </div>
-</div>
-
-
-<h1 class="govuk-heading-l">Take data deletion off hold</h1>
-
-<p>Data deletion for this application is currently on hold. If the investigation for Harold Lzhdrjrr Allen's application is complete, you must <a href="data/hold">take data deletion off hold</a>.</p>
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    In line with General Data Protection Regulation (GDPR), this application and its data will be kept for 24 months in ATWIS, until <script>// Get date
+    You have stopped this data from being deleted on <script>// Get date
           var now = new Date();
           var pastDate = new Date(now);
-          pastDate.setDate(now.getDate() + 730);
+          pastDate.setDate(now.getDate() );
 
           var formattedDate = pastDate.toLocaleDateString('en-GB', {
           day: 'numeric',
@@ -121,11 +91,16 @@
           hour12: true
           });
 
-          document.write(formattedDate);</script>. After this date, Harold Lzhdrjrr Allen's data will be permanently deleted from ATWIS.
-
-
-  </strong>
+          document.write(formattedDate);</script>.
+    </p>
+    </div>
 </div>
+
+
+<h1 class="govuk-heading-l">This application is being investigated</h1>
+
+<p>If the investigation of Harold Allen's application data is complete, you must  <a href="data/hold">reset the deletion of this data in AtWIS,</a>.</p>
+
 
 
 
