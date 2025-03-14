@@ -17,13 +17,8 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">
-                Take data deletion off hold
-                </h1>
-                <p class="govuk-body">
-                  If the investigation for this application is complete, you must take data deletion off hold and a new 24 month data retention period will start.</p>
 
-  <p class="govuk-body">Once <script>// Get date
+  <!-- <p class="govuk-body">Once <script>// Get date
         var now = new Date();
         var pastDate = new Date(now);
         pastDate.setDate(now.getDate() + 730);
@@ -41,15 +36,39 @@
         });
 
         document.write(formattedDate);</script> has passed, Harold Lzhdrjrr Allen's data will be permanently deleted from ATWIS.   </p>
-
+ -->
 
 
         <form action="/live-atwis/current/cases-search/harold/cases/summary-data" method="post" novalidate>
+
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        Are you sure you want to take data deletion off hold for Harold Lzhdrjrr Allen's application in ATWIS?
-              </legend>
+             <fieldset class="govuk-fieldset">
+               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <h1 class="govuk-fieldset__heading">
+                Is the investigation of this application data complete?
+                  </h1>
+                   </legend >
+          <div id="dob-hint" class="govuk-hint">
+                  If the investigation is complete and you reset data deletion, Harold Allen's application data will be permanently deleted from AtWIS on
+                  <script>// Get date
+                        var now = new Date();
+                        var pastDate = new Date(now);
+                        pastDate.setDate(now.getDate() + 730);
+
+                        var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                        });
+
+                        var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        hour12: true
+                        });
+
+                        document.write(formattedDate);</script>.
+                </div>
 
 
 
@@ -57,16 +76,16 @@
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="data-delete-hold-off" name="data-delete-hold-off" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="data-delete-hold" name="data-delete-hold" type="radio" value="yes">
                   <label class="govuk-label govuk-radios__label" for="data-delete-hold-off">
-              Yes, take data retention off hold
+            Yes it's complete, reset data deletion
 
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="data-delete-hold-off-2" name="data-delete-hold-off" type="radio" value="no">
+                  <input class="govuk-radios__input" id="data-delete-hold-off-2" name="data-delete-hold" type="radio" value="no">
                   <label class="govuk-label govuk-radios__label" for="data-delete-hold-off-2">
-                  No, keep data deletion on hold
+                  No, it's still being investigated
                   </label>
                 </div>
               </div>
