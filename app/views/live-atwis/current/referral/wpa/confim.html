@@ -33,10 +33,20 @@
             </div> -->
           </div>
 
-          <p>We’ve sent [applicant's name] referral to [provider].</p>
+          <p>We’ve sent {{data["firstName-refferral-wpa"]}} {{data["lastName-refferral-wpa"]}} referral to {% if data['site']=='Reed In Partnership, HLF/2183, Halifax Crossfield House'%}Reed In Partnership{% endif %}
+          {% if data['site']=='Reed In Partnership, HKH/19414, Harrow Kings House'%}Reed In Partnership{% endif %}
+          {% if data['site']=='Maximus, HLF/2184, Halifax Crossfield House'%}Maximus{% endif %}
+          {% if data['site']=='Maximus, HKH/19415, Harrow Kings House'%}Maximus{% endif %}
+          {% if not data['site']%}Maximus{% endif %}.</p>
 
           <h2 class="govuk-heading-m">What happens next</h2>
-          <p>[Provider] will contact [applicant name] to arrange the workplace assessment. </p>
+          <p>
+{% if data['site']=='Reed In Partnership, HLF/2183, Halifax Crossfield House'%}Reed In Partnership{% endif %}
+{% if data['site']=='Reed In Partnership, HKH/19414, Harrow Kings House'%}Reed In Partnership{% endif %}
+{% if data['site']=='Maximus, HLF/2184, Halifax Crossfield House'%}Maximus{% endif %}
+{% if data['site']=='Maximus, HKH/19415, Harrow Kings House'%}Maximus{% endif %}
+{% if not data['site']%}Maximus{% endif %}
+             will contact {{data["firstName-refferral-wpa"]}} {{data["lastName-refferral-wpa"]}} to arrange the workplace assessment. </p>
 
     <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="continue-button" data-govuk-button-init="">
     Return to referrals

@@ -52,7 +52,7 @@
               For example, AA3 1AB.
             </div>
             <input
-              class="govuk-input govuk-input--width-5" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
+              class="govuk-input govuk-input--width-5" id="postcode" name="postcode-wpa" type="text" aria-describedby="postcode-hint" value="{{data['postcode-wpa']}}">
             </div>
             <div class="govuk-form-group">
             <label class="govuk-label" for="searchString">
@@ -62,7 +62,7 @@
               For example, 15 or Prospect Cottage.
             </div>
             <input
-              class="govuk-input govuk-input--width-20" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint">
+              class="govuk-input govuk-input--width-20" id="searchString" name="searchString-wpa" type="text" aria-describedby="searchString-hint" value="{{data['searchString-wpa']}}">
             </div>
             <button type="submit" class="govuk-button" data-module="govuk-button">
             Find address
