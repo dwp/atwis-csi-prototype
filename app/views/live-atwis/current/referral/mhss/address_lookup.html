@@ -44,33 +44,31 @@
 
 
 
-            <div class="govuk-form-group">
-            <label class="govuk-label" for="postcode">
-              Postcode
-            </label>
-            <div id="postcode-hint" class="govuk-hint">
-              For example, AA3 1AB.
-            </div>
-            <input
-              class="govuk-input govuk-input--width-5" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint">
-            </div>
-            <div class="govuk-form-group">
-            <label class="govuk-label" for="searchString">
-              Building number or name
-            </label>
-            <div id="searchString-hint" class="govuk-hint">
-              For example, 15 or Prospect Cottage.
-            </div>
-            <input
-              class="govuk-input govuk-input--width-20" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint">
-            </div>
-            <button type="submit" class="govuk-button" data-module="govuk-button">
-            Find address
-            </button>
-            <p class="govuk-body govuk-!-margin-bottom-0"><a href="address_manual" class="govuk-link">Enter address manually</a></p>
-            </div>
-
-
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="postcode">
+                          Postcode
+                        </label>
+                        <div id="postcode-hint" class="govuk-hint">
+                          For example, AA3 1AB.
+                        </div>
+                        <input
+                          class="govuk-input govuk-input--width-5" id="postcode" name="postcode-mhss" type="text" aria-describedby="postcode-hint" value="{{data['postcode-mhss']}}">
+                        </div>
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="searchString">
+                          Building number or name
+                        </label>
+                        <div id="searchString-hint" class="govuk-hint">
+                          For example, 15 or Prospect Cottage.
+                        </div>
+                        <input
+                          class="govuk-input govuk-input--width-20" id="searchString" name="searchString-mhss" type="text" aria-describedby="searchString-hint" value="{{data['searchString-mhss']}}">
+                        </div>
+                        <button type="submit" class="govuk-button" data-module="govuk-button">
+                        Find address
+                        </button>
+                        <p class="govuk-body govuk-!-margin-bottom-0"><a href="address_manual" class="govuk-link">Enter address manually</a></p>
+                        </div>
 
 
 
