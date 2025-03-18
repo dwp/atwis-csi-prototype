@@ -33,10 +33,16 @@
             </div> -->
           </div>
 
-<p>We’ve sent [applicant's name] referral to [provider].</p>
+<p>We’ve sent   {{data["firstName-refferral"]}}   {{data["lastName-refferral"]}} referral to     {% if data['site-mhss']=='Ingeus, HKH/19427, Harrow Kings House'%}Ingeus{% endif %}
+    {% if data['site-mhss']=='Maximus, HKH/19424, Harrow Kings House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Maximus, HLF/2193, Halifax Crossfield House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Ingeus, HLF/2196, Halifax Crossfield House'%}Ingeus{% endif %}.</p>
 
 <h2 class="govuk-heading-m">What happens next</h2>
-<p>[Provider] will contact [applicant name] to arrange a support plan discussion. </p>
+<p>    {% if data['site-mhss']=='Ingeus, HKH/19427, Harrow Kings House'%}Ingeus{% endif %}
+    {% if data['site-mhss']=='Maximus, HKH/19424, Harrow Kings House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Maximus, HLF/2193, Halifax Crossfield House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Ingeus, HLF/2196, Halifax Crossfield House'%}Ingeus{% endif %} will contact  {{data["firstName-refferral"]}}   {{data["lastName-refferral"]}} to arrange a support plan discussion. </p>
     <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="continue-button" data-govuk-button-init="">
       Return to referrals
     </button>

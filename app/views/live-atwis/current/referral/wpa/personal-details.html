@@ -25,7 +25,7 @@
         }) }}
         <h1 class="govuk-heading-l">Personal details</h1>
 <p>Enter the applicant's personal details to make a {{data["typeReferral"] | lower}} referral.</p>
-        <form action="provider" method="post" novalidate>
+        <form action="address_lookup" method="post" novalidate>
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m"  for="national-insurance-number">
@@ -50,9 +50,9 @@
           <fieldset class="govuk-fieldset">
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">
+              <h2 class="govuk-fieldset__heading">
                 Full name
-              </h1>
+              </h2>
             </legend>
 
 
@@ -74,6 +74,14 @@
           </fieldset>
 
 
+          <div class="govuk-form-group">
+                      <h2 class="govuk-label-wrapper">
+                        <label class="govuk-label govuk-label--m" for="postcode">
+                          UK phone number
+                        </label>
+                      </h2>
+                      <input class="govuk-input govuk-input--width-10" id="tele" name="telephone-wpa" type="text" autocomplete="postal-code" value="{{data["telephone-wpa"]}}">
+                    </div>
 
 
           <!-- <div class="govuk-form-group">

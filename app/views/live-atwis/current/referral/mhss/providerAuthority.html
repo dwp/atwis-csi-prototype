@@ -39,17 +39,35 @@
 
               <p>{{data["firstName-refferral"]}} {{data["lastName-refferral"]}}'s National Insurance number is <strong>{{data['nationalInsuranceNumber-refferral']}}</strong>.
 If the applicant works for a provider, you can <a href="override">select an override code</a>.</p>
+
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text"> What is the National Insurance number split?</span>
+  </summary>
+  <div class="govuk-details__text">
+Applicants are referred to providers based on the last 2 digits of their National Insurance number:
+<ul class="govuk-list">
+  <li>
+00 - 49 refer to Maximus</li>
+  <li>50 - 99 refer to Ingeus</li>
+  </ul> 
+</div>
+</details>
+
+
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          Provider, code and office
+        Select a provider, code and office to send the referral to
 
               <!-- for {{data['referralSource'] | lower}} -->
 
               </legend>
-              <div id="type-mhss-hint" class="govuk-hint">
+              <!-- <div id="type-mhss-hint" class="govuk-hint">
             Select a provider, code and office to send the referral to.
-              </div>
+              </div> -->
                     <div class="govuk-radios" data-module="govuk-radios">
 
 
