@@ -25,7 +25,7 @@
         }) }}
         <h1 class="govuk-heading-l">Personal details</h1>
 <p>Enter the applicant's personal details to make a mental health support service (MHSS) referral.</p>
-        <form action="typeprovider" method="post" novalidate>
+        <form action="/live-atwis/current/referral/mhss/address_lookup" method="post" novalidate>
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m"  for="national-insurance-number">
@@ -74,7 +74,14 @@
           </fieldset>
 
 
-
+          <div class="govuk-form-group">
+                      <h2 class="govuk-label-wrapper">
+                        <label class="govuk-label govuk-label--m" for="postcode">
+                          UK phone number
+                        </label>
+                      </h2>
+                      <input class="govuk-input govuk-input--width-10" id="telephone-mhss" name="telephone-mhss" type="text" autocomplete="code">
+                    </div>
 
           <!-- <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="birth-hint">

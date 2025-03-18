@@ -18,6 +18,7 @@ Example usage:
 */
 
 module.exports = {
+
 'allocator': "Approved",
 'others-wpa-2': "",
 'report': "",
