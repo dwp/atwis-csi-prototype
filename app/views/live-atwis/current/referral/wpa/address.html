@@ -31,7 +31,7 @@
           Select an address
         </h1>
       </legend>
-          <form action="/live-atwis/current/referral/wpa/provider" method="post" autocomplete="off" novalidate="" class="casa-journey-form">
+          <form action="/live-atwis/current/referral/wpa/address_confirm" method="post" autocomplete="off" novalidate="" class="casa-journey-form">
       <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <p>6 addresses found for <b>{% if data['postcode-wpa']%}{{data['postcode-wpa']}}{% else %}WR1 1NL{% endif %}</b> and <b>{% if data['searchString-wpa']%}{{data['searchString-wpa']}}{% else %}1{% endif %}</b>. <a href='address_lookup'>Search again</a></p>
         <div class="govuk-radios__item">
@@ -82,7 +82,7 @@
     <button type="submit" class="govuk-button" data-module="govuk-button">
     Use this address
     </button>
-    <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+    <p class="govuk-body govuk-!-margin-bottom-0"><a href="address_manual" class="govuk-link">Enter address manually</a></p>
     </div>
 
 

@@ -33,11 +33,7 @@
             </div> -->
           </div>
 
-          <p>We’ve sent {{data["firstName-refferral-wpa"]}} {{data["lastName-refferral-wpa"]}} referral to {% if data['site']=='Reed In Partnership, HLF/2183, Halifax Crossfield House'%}Reed In Partnership{% endif %}
-          {% if data['site']=='Reed In Partnership, HKH/19414, Harrow Kings House'%}Reed In Partnership{% endif %}
-          {% if data['site']=='Maximus, HLF/2184, Halifax Crossfield House'%}Maximus{% endif %}
-          {% if data['site']=='Maximus, HKH/19415, Harrow Kings House'%}Maximus{% endif %}
-          {% if not data['site']%}Maximus{% endif %}.</p>
+          <p>We’ve sent {{data["firstName-refferral-wpa"]}} {{data["lastName-refferral-wpa"]}} referral to {% if data['site']=='Reed In Partnership, HLF/2183, Halifax Crossfield House'%}Reed In Partnership{% endif %}{% if data['site']=='Reed In Partnership, HKH/19414, Harrow Kings House'%}Reed In Partnership{% endif %}{% if data['site']=='Maximus, HLF/2184, Halifax Crossfield House'%}Maximus{% endif %}{% if data['site']=='Maximus, HKH/19415, Harrow Kings House'%}Maximus{% endif %}{% if not data['site']%}Maximus{% endif %}.</p>
 
           <h2 class="govuk-heading-m">What happens next</h2>
           <p>
