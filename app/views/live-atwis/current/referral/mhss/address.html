@@ -31,7 +31,7 @@
           Select an address
         </h1>
       </legend>
-          <form action="/live-atwis/current/referral/mhss/typeprovider" method="post" autocomplete="off" novalidate="" class="casa-journey-form">
+          <form action="/live-atwis/current/referral/mhss/address_confirm" method="post" autocomplete="off" novalidate="" class="casa-journey-form">
             <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
               <p>6 addresses found for <b>{% if data['postcode-mhss']%}{{data['postcode-mhss']}}{% else %}WR1 1NL{% endif %}</b> and <b>{% if data['searchString-mhss']%}{{data['searchString-mhss']}}{% else %}1{% endif %}</b>. <a href='address_lookup'>Search again</a></p>
               <div class="govuk-radios__item">
