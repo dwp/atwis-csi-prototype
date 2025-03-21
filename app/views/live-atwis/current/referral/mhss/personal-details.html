@@ -27,24 +27,7 @@
 <p>Enter the applicant's personal details to make a mental health support service (MHSS) referral.</p>
         <form action="/live-atwis/current/referral/mhss/address_lookup" method="post" novalidate>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m"  for="national-insurance-number">
-              National Insurance number
-            </label>
-            <div id="national-insurance-number-hint" class="govuk-hint">
-            It’s a number that is 2 letters, 6 numbers, then A, B, C or D, like 'QQ 12 34 56 C'.
-            </div>
-            <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral"]}}>
-          </div>
-          <!-- <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m"  for="national-insurance-number">
-            URN
-            </label> -->
-            <!-- <div id="national-insurance-number-hint" class="govuk-hint">
-            It’s a number that is 2 letters, 6 numbers, then A, B, C or D, like 'QQ 12 34 56 C'.
-            </div> -->
-            <!-- <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral"]}}>
-          </div> -->
+
 
 
           <fieldset class="govuk-fieldset">
@@ -70,8 +53,25 @@
             <input class="govuk-input govuk-input--width-10" id="f-lastName" name="lastName-refferral" type="text" autocomplete="family-name" value="{{data["lastName-refferral"]}}">
 
           </div>
-
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m"  for="national-insurance-number">
+            Unique reference number (URN)
+            </label>
+           <div id="national-insurance-number-hint" class="govuk-hint">
+          It has 9 numbers and starts with a 1.
+            </div>
+            <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="mhss-urn-number" name="mhss-urn-number" type="text" spellcheck="false" aria-describedby="mhss-urn-number-hint" value={{data["mhss-urn-number"]}}>
+          </div>
           </fieldset>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m"  for="national-insurance-number">
+              National Insurance number
+            </label>
+            <div id="national-insurance-number-hint" class="govuk-hint">
+          It has 2 letters, 6 numbers, then A, B, C or D, like 'QQ 12 34 56 C'.
+            </div>
+            <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber-refferral" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint" value={{data["nationalInsuranceNumber-refferral"]}}>
+          </div>
 
 
           <div class="govuk-form-group">
