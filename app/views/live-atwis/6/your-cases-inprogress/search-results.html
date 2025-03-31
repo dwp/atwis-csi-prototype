@@ -1,0 +1,361 @@
+{% set link = "search-router" %}
+
+{% set Search = true %}
+{% if search == "complete" %}
+{% set title =  "Search results for" %}
+{% else %}
+{% set title =  "Find a case" %}
+{% endif %}
+
+{% set bodyClasses = "search" %}
+
+{% set hideBanner = true %}
+{% extends "./claim/_BASE.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+  <form action="" method="get" novalidate>
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h1 class="govuk-heading-l">{{title}}</h1> </legend>
+ <div id="waste-hint" class="govuk-hint">
+Enter or select information about the case. The more information you provide, the more specific your search will be.​</div>
+
+
+    {{ govukInput({
+      label: {
+        text: "Enter customer name, URN or application reference"
+      },
+      classes: 'govuk-!-width-one-half',
+      id: "caseID",
+      name: "caseID",
+      value: caseID
+    }) }}
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Select caseworker
+      </label>
+      <select class="govuk-select govuk-!-width-one-half" id="adviser" name="adviser">
+        <option value="" selected></option>
+
+
+
+
+     <option value="1">John Goldsmith</option>
+
+
+
+     <option value="2">Rick Gater</option>
+
+
+
+     <option value="3">Sandra Stewart</option>
+
+
+
+     <option value="4">Sarah Andrews</option>
+
+
+
+     <option value="4">Martin Armitage</option>
+
+
+
+     <option value="5">Clémence Fabre</option>
+
+
+
+     <option value="6">Elisse Farcens</option>
+
+
+
+     <option value="7">Christoph Fernandez</option>
+
+
+
+     <option value="8">Julie Guichard</option>
+
+
+
+     <option value="9">Colin Julien</option>
+
+
+
+     <option value="10">Théo Langlois</option>
+
+
+
+     <option value="11">Capucine Michel</option>
+
+
+
+     <option value="12">Sarah Micheals</option>
+
+
+
+     <option value="13">Celise Mutton</option>
+
+
+
+     <option value="14">Richard Oulton</option>
+
+
+
+     <option value="15">Ed Oxley</option>
+
+
+
+     <option value="16">Colin Partinigton</option>
+
+
+
+     <option value="17">Brigit Pardeux</option>
+
+
+
+     <option value="18">Lionel Phelps</option>
+
+
+
+     <option value="19">Anne Pinkton</option>
+
+
+
+     <option value="20">Lisa Punchton</option>
+
+
+
+     <option value="21">Paul Rice</option>
+
+
+
+     <option value="22">Keith Anderson</option>
+
+
+
+     <option value="23">Jakie Fern</option>
+
+
+
+     <option value="24">Ben Bright</option>
+
+
+
+     <option value="25">Carole King</option>
+
+
+
+     <option value="26">Elton Wisdom</option>
+
+
+
+     <option value="26">Barry McCann</option>
+
+
+
+     <option value="26">Lisa Thurlong</option>
+
+
+
+     <option value="27">Sue Johnson</option>
+
+
+
+     <option value="28">Phil Wise</option>
+
+
+
+     <option value="29">Judy Larry</option>
+
+      </select>
+    </div>
+
+
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+      Select allocation
+      </label>
+      <select class="govuk-select govuk-!-width-one-half" id="status" name="status">
+        <option value="" selected></option>
+
+
+
+
+            <option value="unallocated">Unallocated</option>
+
+
+
+            <option value="allocated">Allocated</option>
+
+
+
+            <option value="disc">In DiSC</option>
+
+
+
+
+
+
+      </select>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+    Select case type
+      </label>
+      <select class="govuk-select govuk-!-width-one-half" id="type" name="type">
+        <option value="" selected></option>
+
+
+
+              <option value="new">New application</option>
+
+
+
+              <option value="renewal">Renewal</option>
+
+
+
+              <option value="CSI">CSI</option>
+
+
+
+      </select>
+
+
+</div>
+</fieldset>
+         </div>
+
+
+    {{ govukButton({
+      id: 'search',
+      name: 'search',
+      value: 'complete',
+      text: "Search"
+    }) }}
+    </form>
+
+
+
+</div>
+</div>
+<!-- {% if data['adviser'] or  data['type'] or data['caseID'] or data['status'] %}<h2 class="govuk-heading-m">Communication Support at Interview cases</h2>
+
+      <p>There are no cases that match your search</p>
+
+      <h2 class="govuk-heading-m">Other cases</h2>
+      <p>There are no cases that match your search</p>{% endif%} -->
+
+
+
+
+
+      <h2 class="govuk-heading-m">Priority and other cases</h2>
+
+
+
+
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header" style="width: 20%">Name</th>
+                    <th class="govuk-table__header" style="width: 20%">Type of case</th>
+                    <th class="govuk-table__header" style="width: 30%">Date submitted</th>
+                    <th class="govuk-table__header">Allocated to</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><a href="a">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</a></td>
+                      <td class="govuk-table__cell">Renewal</td>
+                      <td class="govuk-table__cell">10 September 2019, 09:57am</td>
+                      <td class="govuk-table__cell">John Goldsmith</td>
+                    </tr>
+
+                     <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><a href="../cases-search/harold/cases/summary_teamleader">Harold Lzhdrjrr Allen </a></td>
+                      <td class="govuk-table__cell">New application</td>
+                      <td class="govuk-table__cell">  <script>// Get date
+                            var now = new Date();
+                            var pastDate = new Date(now);
+                            pastDate.setDate(now.getDate() - 60);
+
+                            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            });
+
+                            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                            });
+
+                            document.write(formattedDate + ' at 3:00 pm');</script>/td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+
+
+              </tbody>
+            </table>
+
+
+
+      <h2 class="govuk-heading-m">Documents</h2>
+
+
+
+
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header" style="width: 20%">Name</th>
+                    <th class="govuk-table__header" style="width: 20%">Type of document</th>
+                    <th class="govuk-table__header" style="width: 30%">Form reference</th>
+                    <th class="govuk-table__header">Date scanned</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><a href="a">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</a></td>
+                      <td class="govuk-table__cell">CSI</td>
+                      <td class="govuk-table__cell">DP221PG</td>
+                      <td class="govuk-table__cell">24 January 2025</td>
+                    </tr>
+
+                     <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><a href="a">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</a></td>
+                      <td class="govuk-table__cell">CSI</td>
+                      <td class="govuk-table__cell">DP221PG</td>
+                      <td class="govuk-table__cell">24 January 2025</td>
+                    </tr>
+
+                     <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><a href="a">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</a></td>
+                      <td class="govuk-table__cell">CSI</td>
+                      <td class="govuk-table__cell">DP221PG</td>
+                      <td class="govuk-table__cell">24 January 2025</td>
+                    </tr>
+              </tbody>
+            </table>
+
+  </div>
+</div>
+{% endblock %}
