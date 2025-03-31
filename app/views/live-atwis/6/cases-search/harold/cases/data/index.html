@@ -1,0 +1,115 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% set hidebanner = "true" %}
+
+{% set name = "harold" %}
+{% set case = 'other-cases-fill-1'%}
+
+{% set phase = "case-manger-view" %}
+
+{% extends   "live-atwis/6/claim/_MAINBASE.html" %}
+
+{% block csi %}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/live-atwis/6/cases-search/harold/cases/summary-data" method="post" novalidate>
+          <!-- <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          Why do you need to stop this data from being deleted in AtWIS?
+              </legend>
+
+
+
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="data-delete-hold" name="data-delete-hold" type="radio" value="Customer feedback or complaint">
+                  <label class="govuk-label govuk-radios__label" for="data-delete-hold">
+                Customer feedback or complaint
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="data-delete-hold-2" name="data-delete-hold" type="radio" value="Fraud investigation">
+                  <label class="govuk-label govuk-radios__label" for="data-delete-hold-2">
+                  Fraud investigation
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="data-delete-hold-2" name="data-delete-hold" type="radio" value="Criminal">
+                  <label class="govuk-label govuk-radios__label" for="data-delete-hold-2">
+                  Criminal
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="data-delete-hold-2" name="data-delete-hold" type="radio" value="Performance management">
+                  <label class="govuk-label govuk-radios__label" for="data-delete-hold-2">
+                  Performance management
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div> -->
+
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="data-delete-hold-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Why do you need to stop this data from being deleted?
+                </h1>
+              </legend>
+              <div id="data-delete-hold-hint" class="govuk-hint">
+                Select all that apply
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold-3" name="data-delete-hold" type="checkbox" value="Criminal case review">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold-3">
+                  Criminal case review
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold" name="data-delete-hold" type="checkbox" value="Customer feedback or complaint">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold">
+                  Customer feedback or complaint
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold-2" name="data-delete-hold" type="checkbox" value="Fraud investigation">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold-2">
+                    Fraud investigation
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold-3" name="data-delete-hold" type="checkbox" value="Performance management">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold-3">
+                      Performance management
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm and stop data deletion
+          </button>
+        </form>
+      </div>
+
+
+
+
+{% endblock %}
