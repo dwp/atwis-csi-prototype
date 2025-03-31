@@ -32,7 +32,7 @@ $govuk-assets-path: '/govuk/assets/';
   color: #0b0c0c;
   font-family: Helvetica, Arial, sans-serif;
   word-break: break-word;
-  width: 50%;
+  width: 100%;
   padding: 20px 0;
 }
 
@@ -57,7 +57,7 @@ $govuk-assets-path: '/govuk/assets/';
 .dwp-quick-reference__block {
   margin: 0;
   padding: 0;
-  max-width: 87.67%;
+  max-width: 1290px;
   margin: 0 auto;
 }
 .dwp-quick-reference__label {
