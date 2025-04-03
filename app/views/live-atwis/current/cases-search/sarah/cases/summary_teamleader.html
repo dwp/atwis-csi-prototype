@@ -1,0 +1,298 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+{% set hidebanner = "true" %}
+
+{% set name = "sarah" %}
+
+
+{% set phase = "case-manger-view" %}
+
+{% extends   "live-atwis/current/claim/_MAINBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+{% set changeHide = 'true '%}
+
+{% if claim %}
+<nav class="navigation-secondary" style="max-width: 1280px">
+      <ul style="max-width: 1280px">
+          <li>
+            <a href="summary-teamlead" aria-current="page" class="active" >Document summary</a>
+
+</li>
+
+
+<li >
+  <a href="summary-data" aria-current="page">Manage data</a>
+
+</li>
+
+
+
+        </ul>
+
+        </nav>
+
+        <div class="govuk-tabs__panel" id="application-summary">
+
+
+
+
+       <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+
+<script>
+  window.onload = function() {
+    sessionStorage.removeItem('live-nino');
+  };
+  </script>
+
+<h1 class="govuk-heading-l"> Documents scanned on 27 January 2025 </h1>
+
+
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+
+
+        <dt class="govuk-summary-list__key">
+      End date of data retention
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+          <script>// Get date
+              var now = new Date();
+              var pastDate = new Date(now);
+              pastDate.setDate(now.getDate() + 730);
+
+              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+              });
+
+              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+              hour: 'numeric',
+              minute: 'numeric',
+              hour12: true
+              });
+
+              document.write(formattedDate);</script>     </dd>
+              <dd class="govuk-summary-list__actions">
+
+              </dd>
+      </div>
+
+</dl>
+
+
+
+
+
+
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Document details</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Document type</th>
+      <th scope="col" class="govuk-table__header">Form reference</th>
+      <th scope="col" class="govuk-table__header">Document ID</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Support worker</th>
+      <td class="govuk-table__cell">DP222JP</td>
+          <td class="govuk-table__cell"><a href="#">View document</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"> Support worker</th>
+      <td class="govuk-table__cell">DP222JP</td>
+          <td class="govuk-table__cell"><a href="#">View document</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<h2 class="govuk-heading-m">DRS envelope ID</h2>
+
+
+<p>Use the envelope ID to find these document on DRS.</p>
+
+<p> Envelope ID: 123456789012445</p>
+
+<a href="#">Back to full list of documents</a>
+
+<br><br>
+<h2 class="govuk-heading-l">Document history</h2>
+
+
+<div class="moj-timeline">
+
+  {% if data['data-delete-hold-sarah']=='yes'%}
+    <div class="moj-timeline__item">
+      <span class="govuk-body">
+        <time datetime="2023-06-06T09:12:00.000Z"><script>
+          // Get the current date and time
+               var now = new Date();
+               var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+               var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+               // Write the date and time to the HTML page
+               document.write(date + ' at 11:13 am');
+             </script></time>
+      </span>
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Data retention has reset   </h2>
+
+      <p>by Al Ó Catháin </p>
+    </div>
+  </div>
+
+  {% endif %}
+
+{% if data['data-delete-hold-sarah']%}
+  <div class="moj-timeline__item">
+    <span class="govuk-body">
+      <time datetime="2023-06-06T09:12:00.000Z"><script>
+        // Get the current date and time
+             var now = new Date();
+             var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+             var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+             // Write the date and time to the HTML page
+             document.write(date + ' at 11:13 am');
+           </script></time>
+    </span>
+  <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Data deletion for this documents has stopped in ATWIS    </h2>
+
+    <p>by Al Ó Catháin </p>
+  </div>
+</div>
+
+{% endif %}
+            <div class="moj-timeline__item">
+              <span class="govuk-body">
+                <time datetime="2023-06-06T09:12:00.000Z"><script>
+                  // Get the current date and time
+                  var now = new Date();
+                  var pastDate = new Date(now);
+                  pastDate.setDate(now.getDate() - 20);
+
+                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                  });
+
+                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  hour12: true
+                  });
+
+                  document.write(formattedDate + ' at 9:15 am');
+
+                     </script></time>
+              </span>
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Documents copied to DiSC  </h2>
+              <p>by John Goldsmith </p>
+            </div>
+    </div>
+
+          <div class="moj-timeline__item">
+            <span class="govuk-body">
+              <time datetime="2023-06-06T09:12:00.000Z"><script>
+                var now = new Date();
+                var pastDate = new Date(now);
+                pastDate.setDate(now.getDate() - 30);
+
+                var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+                });
+
+                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+                });
+
+                document.write(formattedDate + ' at 9:18 am');
+                   </script></time>
+            </span>
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Documents allocated to John Goldsmith  </h2>
+            <p>by Al O'Cator </p>
+          </div>
+  </div>
+
+
+          <div class="moj-timeline__item">
+            <span class="govuk-body">
+
+              27 January 2025
+            </span>
+            <div class="moj-timeline__header">
+
+              <h2 class="moj-timeline__title">Documents scanned</h2>
+              <p></p>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endif %}
+
+
+{% endblock %}

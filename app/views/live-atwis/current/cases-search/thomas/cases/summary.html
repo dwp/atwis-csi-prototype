@@ -1,33 +1,25 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+{% set hidebanner = "true" %}
+
+{% set name = "thomas" %}
+
+
+{% extends   "live-atwis/current/claim/_MAINBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
 
 {% set changeHide = 'true '%}
 
 {% if claim %}
-<nav class="navigation-secondary" style="max-width: 1280px">
-      <ul style="max-width: 1280px">
-          <li>
-            <a href="summary-teamlead" aria-current="page" class="active" >Application summary</a>
 
-</li>
-
-<li >
-  <a href="summary-application_teamlead" aria-current="page">Application details</a>
-
-</li>
-<li >
-  <a href="summary-data" aria-current="page">Manage data</a>
-
-</li>
-
-
-
-        </ul>
-
-        </nav>
-
-        <div class="govuk-tabs__panel" id="application-summary">
-
-
-
+<!-- Case managers view  -->
 
        <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -41,177 +33,104 @@
   };
   </script>
 
-<h2 class="govuk-heading-l">Application summary</h2>
-  <dl class="govuk-summary-list govuk-summary-list--no-border">
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
+<h1 class="govuk-heading-l"> Renewal started in DiSC  </h1>
 
-            <div class="govuk-summary-list__row">
 
+<dl class="govuk-summary-list">
 
 
 
-
-
-
-<p>URN: 123456789</p>
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-  Edit URN
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="event-name">
-      URN
-      </label>
-      <input class="govuk-input govuk-input--width-10" id="URN" name="URN" type="text" value="123456789">
-    </div>
-
-    <div>
-      <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
-    </div>
-  </div>
-</details>
-
-
-
-
-
-
-                    <div class="govuk-summary-list__row">
-
-
-                          <dt class="govuk-summary-list__key">
-                        End date of data retention
-                          </dt>
-                          <dd class="govuk-summary-list__value">
-
-
-                            <script>// Get date
-                                var now = new Date();
-                                var pastDate = new Date(now);
-                                pastDate.setDate(now.getDate() + 730);
-
-                                var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                                day: 'numeric',
-                                month: 'long',
-                                year: 'numeric'
-                                });
-
-                                var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                                hour: 'numeric',
-                                minute: 'numeric',
-                                hour12: true
-                                });
-
-                                document.write(formattedDate);</script>     </dd>
-                        </div>
-      <div class="govuk-summary-list__row">
-
-
-            <dt class="govuk-summary-list__key">
-            Date submitted
-            </dt>
-            <dd class="govuk-summary-list__value">
-
-
-              <script>// Get date
-                  var now = new Date();
-                  var pastDate = new Date(now);
-                  pastDate.setDate(now.getDate() - 100);
-
-                  var formattedDate = pastDate.toLocaleDateString('en-GB', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric'
-                  });
-
-                  var formattedTime = pastDate.toLocaleTimeString('en-GB', {
-                  hour: 'numeric',
-                  minute: 'numeric',
-                  hour12: true
-                  });
-
-                  document.write(formattedDate + ' at 3:00 pm');</script>     </dd>
-          </div>
   <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Full name
-        </dt>
-        <dd class="govuk-summary-list__value">
+    <dt class="govuk-summary-list__key">
+      Date submitted
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 January 2025, 3.56pm
+    </dd>
+    <dd class="govuk-summary-list__actions">
+
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+    Thomas Brown
+    </dd>
+    <dd class="govuk-summary-list__actions">
+
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      5 January 1978
+    </dd>
+    <dd class="govuk-summary-list__actions">
+
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    URN
+    </dt>
+    <dd class="govuk-summary-list__value">
+    123456789
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> urn</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      72 Guild Street<br>London<br>SE23 6FH
+    </dd>
+    <dd class="govuk-summary-list__actions">
+
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Contact details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">07700 900457</p>
+      <p class="govuk-body">sarah.phillips@example.com</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+    Changes to support needed
+    </dt>
+    <dd class="govuk-summary-list__value">
+    No changes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+
+    </dd>
+  </div>
+</dl>
 
 
-      Harold Lzhdrjrr Allen       </dd>
-      </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-      Employer
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Smith PLC
-      </dd>
-    </div>
 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-      Condition
-      </dt>
-      <dd class="govuk-summary-list__value">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </dd>
-    </div>
 
-  </dl>
 
-<h2 class="govuk-heading-l">Case history</h2>
+
+<h2 class="govuk-heading-l">Renewal history</h2>
 
 
 <div class="moj-timeline">
 
-  {% if data['data-delete-hold']=='yes'%}
-    <div class="moj-timeline__item">
-      <span class="govuk-body">
-        <time datetime="2023-06-06T09:12:00.000Z"><script>
-          // Get the current date and time
-               var now = new Date();
-               var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-               var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-               // Write the date and time to the HTML page
-               document.write(date + ' at 11:13 am');
-             </script></time>
-      </span>
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Data retention has reset   </h2>
-
-      <p>by Al Ó Catháin </p>
-    </div>
-  </div>
-
-  {% endif %}
-
-{% if data['data-delete-hold']%}
-  <div class="moj-timeline__item">
-    <span class="govuk-body">
-      <time datetime="2023-06-06T09:12:00.000Z"><script>
-        // Get the current date and time
-             var now = new Date();
-             var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-             var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
-
-             // Write the date and time to the HTML page
-             document.write(date + ' at 11:13 am');
-           </script></time>
-    </span>
-  <div class="moj-timeline__header">
-    <h2 class="moj-timeline__title">Data deletion for this application has stopped    </h2>
-
-    <p>by Al Ó Catháin </p>
-  </div>
-</div>
-
-{% endif %}
             <div class="moj-timeline__item">
               <span class="govuk-body">
                 <time datetime="2023-06-06T09:12:00.000Z"><script>
@@ -237,7 +156,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                      </script></time>
               </span>
             <div class="moj-timeline__header">
-              <h2 class="moj-timeline__title">Application copied to DiSC  </h2>
+              <h2 class="moj-timeline__title">Renewal copied to DiSC  </h2>
               <p>by John Goldsmith </p>
             </div>
     </div>
@@ -265,7 +184,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                    </script></time>
             </span>
           <div class="moj-timeline__header">
-            <h2 class="moj-timeline__title">Application allocated to John Goldsmith  </h2>
+            <h2 class="moj-timeline__title">Renewal allocated to John Goldsmith  </h2>
             <p>by Al O'Cator </p>
           </div>
   </div>
@@ -296,7 +215,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </span>
             <div class="moj-timeline__header">
 
-              <h2 class="moj-timeline__title">Application received</h2>
+              <h2 class="moj-timeline__title">Renewal received</h2>
               <p></p>
             </div>
 
@@ -316,41 +235,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
  <div class="govuk-grid-column-one-third">
 
 
-
-       <h3 id="update-adviser-heading" class="govuk-heading-m">Update case manger</h3>
-       <form action="/cases/apply/RMPX3current/update-adviser" method="post" class="form" id="form-update-adviser" data-submitonce="data-submitonce">
-         <div class="govuk-form-group form-group-compound">
-           <select class="govuk-select" id="handlerId" name="handlerId" aria-labelledby="update-adviser-heading">
-             <option value="" data-name="" selected="selected"></option>
-
-                   <option value="4" data-name="Aaron">Aaron</option>
-
-                   <option value="36" data-name="Adviser">Adviser</option>
-
-                   <option value="37" data-name="Case Team Lead">Case Team Lead</option>
-
-                   <option value="35" data-name="FRM">FRM</option>
-
-                   <option value="38" data-name="Payment Officer">Payment Officer</option>
-
-                   <option value="39" data-name="Payment Team Lead"> John Goldsmith</option>
-
-                   <option value="40" data-name="Quality">Quality</option>
-
-                   <option value="42" data-name="Quality1">Quality1</option>
-
-                   <option value="5" data-name="Shannon White">Shannon White</option>
-
-                   <option value="34" data-name="Telephony Agent">Telephony Agent</option>
-
-
-
-           </select>
-         </div>
-         <div>
-           <input type="submit" class="govuk-button" id="submitButtonEditAdvisor" value="Save">
-         </div>
-       </form>
 
 
 
@@ -453,7 +337,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
     <div class="govuk-grid-row">
    <div class="govuk-grid-column-two-thirds">
-{% if data['data-delete-hold']=='yes' and not data['data-delete-hold-off']%}
+{% if data['data-delete-hold-renew']=='yes' and not data['data-delete-hold-renew-off']%}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -500,7 +384,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% endif %}
 
-{% if not data['data-delete-hold-off'] and not data['data-delete-hold']%}
+{% if not data['data-delete-hold-renew-off'] and not data['data-delete-hold-renew']%}
 <h1 class="govuk-heading-l">Put data deletion on hold</h1>
 
 
@@ -538,7 +422,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 
-{% if data['data-delete-hold']=='yes' and data['data-delete-hold-off']=='yes'%}
+{% if data['data-delete-hold-renew']=='yes' and data['data-delete-hold-renew-off']=='yes'%}
 <h1 class="govuk-heading-l">Put data deletion on hold</h1>
 
 
@@ -589,3 +473,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 {% endif %}
+
+
+{% endblock %}

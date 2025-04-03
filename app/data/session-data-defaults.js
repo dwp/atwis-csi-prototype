@@ -36,6 +36,11 @@ module.exports = {
 'whitemail-type' : "",
 'benefits' : "",
 
+'data-delete-hold-csi' : "",
+'data-delete-hold-renew' : "",
+'data-delete-hold-sonam' : "",
+'data-delete-hold-sarah' : "",
+'data-delete-hold-neil' : "",
 'data-delete-hold' : "",
 
 'claims' : "",
