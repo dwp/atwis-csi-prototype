@@ -4,28 +4,13 @@
 
 
 
-{% set appointeeDetails = {
-  name: "Mavis Brown",
-  contact:  ["phone" ] ,
-  address: "28 Cathedral Drive<br>Coventry<br>CV3 6JH",
-  telephone: "02475 554 223"
 
-} %}
 
 {% set count = 0 %}
 
-{% if (data['personal'] == 'no' or data['company'] == 'no' or data['interview'] == "no") and not (phase == "interview")  %}
-
-{% set array = [data['personal'], data['company'], data['interview'] ] %}
 
 
-{% for i in array %}
-  {% if i == "no" %}
-  {% set count = count + 1 %}
-  {% endif %}
-{% endfor %}
 
-{% endif  %}
 
 
 

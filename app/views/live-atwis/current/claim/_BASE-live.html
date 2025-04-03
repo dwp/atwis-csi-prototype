@@ -85,6 +85,7 @@
 {% endif %}
 
           <li{% if Search %} class="active"{% endif %}><a href="">Search</a></li>
+          <li{% if referral %} class="active"{% endif %}><a href="">Referral</a></li>
         </ul>
       </div>
     </div>
@@ -99,24 +100,104 @@
 
 
   <div class="govuk-grid-column-full">
+      {% if name =='desmond'%}
+    <div class="app-masthead">
+          <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+                  <h1 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-48">Desmond Park</h1>
+              </div>
+
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter">
+                <span class="govuk-body-s">Reference</span><br>
+                <span class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold" id="banner-condition">ATW34593DE</span>
+              </div>
+              <div class="govuk-grid-column-one-quarter">
+                <span class="govuk-body-s">Interview date</span><br>
+                <span class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold" id="banner-condition"><script>// Get date
+                      var now = new Date();
+                      var pastDate = new Date(now);
+                      pastDate.setDate(now.getDate() - 30);
+
+                      var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric'
+                      });
+
+                      var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                      hour: 'numeric',
+                      minute: 'numeric',
+                      hour12: true
+                      });
+
+                      document.write(formattedDate);</script></span>
+
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+                <span class="govuk-body-s">Allocated to</span><br>
+                <span class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold" id="banner-adviser"></span>
+              </div>
+
+              <div class="govuk-grid-column-one-quarter">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+{% else %}
 
     <section class="dwp-quick-reference dwp-quick-reference--alternative" aria-label="Case information">
   <div class="govuk-grid-column-two-third">
     <dl class="dwp-quick-reference__block">
     <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
-    <dd class="dwp-quick-reference__primary">      Harold Lzhdrjrr Allen
+    <dd class="dwp-quick-reference__primary">
+    {% if name =='harold'%}  Harold Lzhdrjrr Allen{% endif %}
+    {% if name == 'thomas'%}  Thomas Brown{% endif %}
+    {% if name == 'sonam'%}   Sonam Patel{% endif %}
+    {% if name == 'sarah'%}   Sarah Smith{% endif %}
+    {% if name == 'neil'%}   Neil Smith{% endif %}
 
 
 
     </dd>
-    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-app-ref-label">Case reference:</dt>
-    <dd class="dwp-quick-reference__secondary" id="quick-ref-app-ref">GOVGL5YM</dd>
+    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-app-ref-label">
+      {% if name == 'harold'%} Case reference:{% endif %}
+    {% if name == 'thomas'%} URN:{% endif %}
+    {% if name == 'sonam'%}URN: {% endif %}
+    {% if name == 'sarah'%}  URN:{% endif %}
+    {% if name == 'neil'%} URN:{% endif %}
+  </dt>
+    <dd class="dwp-quick-reference__secondary" id="quick-ref-app-ref">
+      {% if name == 'harold'%}  GOVGL5YM{% endif %}
+  {% if name == 'thomas'%}  123456789{% endif %}
+  {% if name == 'sonam'%}  123456789{% endif %}
+  {% if name == 'sarah'%}   123456789{% endif %}
+  {% if name == 'neil'%}   123456789{% endif %}
+    </dd>
 
+    {% if name == 'sonam' or 'neil' or 'sarah'%}
+    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-app-ref-label">
+Document status:
+  </dt>
+    <dd class="dwp-quick-reference__secondary" id="quick-ref-app-ref">
+      <strong class="govuk-tag govuk-tag--grey"  style="text-transform: none;">
+        Completed
+      </strong>
+    </dd>{% endif %}
 
-    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-case-type-label">Case type:</dt>
-    <dd class="dwp-quick-reference__secondary" id="quick-ref-case-type">New application</dd>
+    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-case-type-label">{% if name == 'sonam'  or 'neil' or 'sarah'%} {% else %}Case type:{% endif %}</dt>
+    <dd class="dwp-quick-reference__secondary" id="quick-ref-case-type">
+      {% if name == 'harold'%}New application{% endif %}
+  {% if name == 'thomas'%}  Renew{% endif %}
+{% if name == 'sonam'%}Unallocated{% endif %}
+{% if name == 'sarah'%}Unallocated{% endif %}
+{% if name == 'neil'%}Unallocated{% endif %}</dd>
 
-    </dl></div>
+    </dl></div>{% endif%}
     </section>
 </div>
 

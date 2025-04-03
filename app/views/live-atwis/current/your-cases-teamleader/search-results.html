@@ -278,7 +278,7 @@ Enter or select information about the case. The more information you provide, th
                 <tbody>
 
 
-                
+
 
                      <tr class="govuk-table__row">
                       <td class="govuk-table__cell"><a href="../cases-search/harold/cases/summary_teamleader">Harold Lzhdrjrr Allen </a></td>
@@ -300,10 +300,57 @@ Enter or select information about the case. The more information you provide, th
                             hour12: true
                             });
 
-                            document.write(formattedDate + ' at 3:00 pm');</script>/td>
+                            document.write(formattedDate + ' at 3:00 pm');</script></td>
                       <td class="govuk-table__cell"></td>
                     </tr>
 
+                    <tr class="govuk-table__row">
+                     <td class="govuk-table__cell"><a href="../cases-search/thomas/cases/summary_teamleader">Thomas Brown </a></td>
+                     <td class="govuk-table__cell">Renewal</td>
+                     <td class="govuk-table__cell">  <script>// Get date
+                           var now = new Date();
+                           var pastDate = new Date(now);
+                           pastDate.setDate(now.getDate() - 60);
+
+                           var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                           day: 'numeric',
+                           month: 'long',
+                           year: 'numeric'
+                           });
+
+                           var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                           hour: 'numeric',
+                           minute: 'numeric',
+                           hour12: true
+                           });
+
+                           document.write(formattedDate + ' at 3:00 pm');</script></td>
+                     <td class="govuk-table__cell"></td>
+                   </tr>
+
+                   <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="../cases-search/desmond/cases/summary_teamleader#case">Desmond Park </a></td>
+                    <td class="govuk-table__cell">CSI</td>
+                    <td class="govuk-table__cell">  <script>// Get date
+                          var now = new Date();
+                          var pastDate = new Date(now);
+                          pastDate.setDate(now.getDate() - 60);
+
+                          var formattedDate = pastDate.toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'long',
+                          year: 'numeric'
+                          });
+
+                          var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+                          hour: 'numeric',
+                          minute: 'numeric',
+                          hour12: true
+                          });
+
+                          document.write(formattedDate + ' at 3:00 pm');</script></td>
+                    <td class="govuk-table__cell"></td>
+                  </tr>
 
               </tbody>
             </table>
@@ -326,28 +373,28 @@ Enter or select information about the case. The more information you provide, th
                   </tr>
                 </thead>
                 <tbody>
-
+                  <tr class="govuk-table__row">
+                   <td class="govuk-table__cell"><a href="../cases-search/sonam/cases/summary_teamleader">Sonam Patel </a></td>
+                   <td class="govuk-table__cell">Documents</td>
+                   <td class="govuk-table__cell"> DP222PG</td>
+                   <td class="govuk-table__cell">24 January 2025</td>
+                 </tr>
 
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="a">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</a></td>
+                         <td class="govuk-table__cell"><a href="../cases-search/sarah/cases/summary_teamleader">Sarah Smith</a></td>
                       <td class="govuk-table__cell">CSI</td>
                       <td class="govuk-table__cell">DP221PG</td>
                       <td class="govuk-table__cell">24 January 2025</td>
                     </tr>
 
-                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="a">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</a></td>
+                    <tr class="govuk-table__row">
+                         <td class="govuk-table__cell"><a href="../cases-search/neil/cases/summary_teamleader">Neil Smith</a></td>
                       <td class="govuk-table__cell">CSI</td>
                       <td class="govuk-table__cell">DP221PG</td>
                       <td class="govuk-table__cell">24 January 2025</td>
                     </tr>
 
-                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="a">{{ data['csi-info'][3]['firstname'] }} {{ data['csi-info'][3]['surname'] }}</a></td>
-                      <td class="govuk-table__cell">CSI</td>
-                      <td class="govuk-table__cell">DP221PG</td>
-                      <td class="govuk-table__cell">24 January 2025</td>
-                    </tr>
+
               </tbody>
             </table>
 
