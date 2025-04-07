@@ -1,0 +1,83 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+
+{% set hidebanner = "true" %}
+
+{% set name = "neil" %}
+
+
+{% set phase = "case-manger-view" %}
+
+{% extends   "live-atwis/7/claim/_MAINBASE.html" %}
+
+{% block csi %}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/live-atwis/7/cases-search/neil/cases/summary-data" method="post" novalidate>
+
+
+
+
+
+
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="data-delete-hold-neil-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Why do you need to stop this data from being deleted?
+                </h1>
+              </legend>
+              <div id="data-delete-hold-neil-hint" class="govuk-hint">
+                Select all that apply
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold-neil-3" name="data-delete-hold-neil" type="checkbox" value="Criminal case review">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold-neil-3">
+                  Criminal case review
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold-neil" name="data-delete-hold-neil" type="checkbox" value="Customer feedback or complaint">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold-neil">
+                  Customer feedback or complaint
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold-neil-2" name="data-delete-hold-neil" type="checkbox" value="Fraud investigation">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold-neil-2">
+                    Fraud investigation
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="data-delete-hold-neil-3" name="data-delete-hold-neil" type="checkbox" value="Performance management">
+                  <label class="govuk-label govuk-checkboxes__label" for="data-delete-hold-neil-3">
+                      Audit (Performance management)
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm and stop data deletion
+          </button>
+        </form>
+      </div>
+
+
+
+
+{% endblock %}
