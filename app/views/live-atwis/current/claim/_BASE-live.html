@@ -179,7 +179,16 @@
   {% if name == 'neil'%}   123456789{% endif %}
     </dd>
 
-    {% if name == 'sonam' or 'neil' or 'sarah'%}
+    {% if not name == 'thomas'  %}
+    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-app-ref-label">
+Document status:
+  </dt>
+    <dd class="dwp-quick-reference__secondary" id="quick-ref-app-ref">
+      <strong class="govuk-tag govuk-tag--grey"  style="text-transform: none;">
+        Completed
+      </strong>
+    </dd>{% endif %}
+    {% if not name == 'harold' %}
     <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-app-ref-label">
 Document status:
   </dt>
@@ -189,7 +198,9 @@ Document status:
       </strong>
     </dd>{% endif %}
 
-    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-case-type-label">{% if name == 'sonam'  or 'neil' or 'sarah'%} {% else %}Case type:{% endif %}</dt>
+    <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary" id="quick-ref-case-type-label">
+      {% if name == 'harold'  %} Case type:{% endif %}
+      {% if name == 'thomas'  %} Case type:{% endif %}</dt>
     <dd class="dwp-quick-reference__secondary" id="quick-ref-case-type">
       {% if name == 'harold'%}New application{% endif %}
   {% if name == 'thomas'%}  Renew{% endif %}
