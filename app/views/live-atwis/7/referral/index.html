@@ -1,0 +1,173 @@
+{% set hideBanner = true %}
+{% set yourCases = true %}
+{% extends "./claim/_BASE.html" %}
+
+
+
+
+
+
+
+{% block content %}
+<form action="" method="post" novalidate>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="typeReferral-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+    Send a new referral
+      </h1>
+    </legend>
+    <div id="typeReferral-hint" class="govuk-hint">
+  Select the type of referral you want to send.
+    </div>
+    <div class="govuk-radios " data-module="govuk-radios">
+      <div class="govuk-radios__item">
+
+        <input class="govuk-radios__input" id="typeReferral" name="typeReferral" type="radio" value="Workplace assessment">
+
+        <input class="govuk-radios__input" id="typeReferral" name="typeReferral" type="radio" value="Workplace assessment~/live-atwis/7/referral/wpa/personal-details">
+
+        <label class="govuk-label govuk-radios__label" for="typeReferral">
+          Workplace assessment
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+
+        <input class="govuk-radios__input" id="typeReferral-2" name="typeReferral" type="radio" value="Mental health support service (MHSS)">
+
+        <input class="govuk-radios__input" id="typeReferral-2" name="typeReferral" type="radio" value="Mental health support service (MHSS)~/live-atwis/7/referral/mhss/personal-details">
+
+        <label class="govuk-label govuk-radios__label" for="typeReferral-2">
+        Mental health support service (MHSS)
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+
+
+
+{% if (data['answers-checked-wpa']=='true' or data['answers-checked-mhss']=='true')%}
+<div class="govuk-form-group">  <div class="govuk-grid-column-two-thirds">
+
+  <h2>Your referral history </h2>
+    <p>The following table includes referrals sent over the last 30 days.</p>
+        <table class="govuk-table">
+
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Type of referral
+</th>
+      <th scope="col" class="govuk-table__header">Provider </th>
+        <th scope="col" class="govuk-table__header">Code</th>
+      <th scope="col" class="govuk-table__header">Date sent</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <!-- <th scope="col" class="govuk-table__header">Days</th> -->
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% if data['answers-checked-wpa']=='true' %}
+    <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">{{data['firstName-refferral-wpa']}} {{data['lastName-refferral-wpa']}}</td>
+          <td class="govuk-table__cell">Workplace assessment</td>
+          <td class="govuk-table__cell">
+{% if data['site']=='Reed In Partnership, HLF/2183, Halifax Crossfield House'%}Reed In Partnership{% endif %}
+{% if data['site']=='Maximus, HLF/2184, Halifax Crossfield House'%}Maximus{% endif %}
+{% if data['site']=='Reed In Partnership, HKH/19414, Harrow Kings House'%}Reed In Partnership{% endif %}
+{% if data['site']=='Maximus, HKH/19414, Harrow Kings House'%}Maximus{% endif %}
+          </td>
+            <td class="govuk-table__cell">
+              {% if data['site']=='Reed In Partnership, HLF/2183, Halifax Crossfield House'%}HLF/2183{% endif %}
+              {% if data['site']=='Maximus, HLF/2184, Halifax Crossfield House'%}HLF/2184{% endif %}
+              {% if data['site']=='Reed In Partnership, HKH/19414, Harrow Kings House'%}HKH/19414{% endif %}
+              {% if data['site']=='Maximus, HKH/19414, Harrow Kings House'%}HKH/19414{% endif %}
+            </td>
+          <td class="govuk-table__cell"><time datetime="2023-06-06T09:12:00.000Z"><script>
+            // Get the current date and time
+                 var now = new Date();
+                 var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                 var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                 // Write the date and time to the HTML page
+                 document.write(date);
+               </script></time></td>
+                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey" style="text-transform: none;">
+          Pending
+        </strong></td>
+{% endif %}
+{% if data['answers-checked-mhss']=='true' %}
+<tr class="govuk-table__row">
+    <td scope="row" class="govuk-table__header">{{data['firstName-refferral']}} {{data['lastName-refferral']}}</td>
+      <td class="govuk-table__cell">MHSS</td>
+        <td class="govuk-table__cell">
+          {% if data['site-mhss']=='Ingeus, HKH/19427, Harrow Kings House'%}Ingeus{% endif %}
+          {% if data['site-mhss']=='Maximus, HKH/19424, Harrow Kings House'%}Maximus{% endif %}
+          {% if data['site-mhss']=='Maximus, HLF/2193, Halifax Crossfield House'%}Maximus{% endif %}
+          {% if data['site-mhss']=='Ingeus, HLF/2196, Halifax Crossfield House'%}Ingeus{% endif %}
+        </td>
+            <td class="govuk-table__cell">
+              {% if data['site-mhss']=='Ingeus, HKH/19427, Harrow Kings House'%}HKH/19427{% endif %}
+              {% if data['site-mhss']=='Maximus, HKH/19424, Harrow Kings House'%}HKH/19424{% endif %}
+              {% if data['site-mhss']=='Maximus, HLF/2193, Halifax Crossfield House'%}HLF/2193{% endif %}
+              {% if data['site-mhss']=='Ingeus, HLF/2196, Halifax Crossfield House'%}HLF/2196{% endif %}
+            </td>
+      <td class="govuk-table__cell"><time datetime="2023-06-06T09:12:00.000Z"><script>
+        // Get the current date and time
+             var now = new Date();
+             var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+             var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+             // Write the date and time to the HTML page
+             document.write(date);
+           </script></time></td>
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey" style="text-transform: none;">
+          Pending
+        </strong></td>
+{% endif %}
+
+    </tr>
+
+  </tbody>
+</table>
+
+</div></div>
+{% endif %}
+{% endblock %}
+
+
+
+<!-------------- footer -->
+{% block footer %}
+
+
+  {{ govukFooter({
+    meta: {
+      html: urFooterLink ,
+
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+
+      ]
+    }
+  }) }}
+
+
+
+
+
+{% endblock %}

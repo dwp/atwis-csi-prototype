@@ -1,0 +1,95 @@
+{% set hideBanner = true %}
+{% set yourCases = true %}
+{% extends "../claim/_BASE.html" %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+        <form action="../index" method="post" novalidate>
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Referral complete
+            </h1>
+            <!-- <div class="govuk-panel__body">
+              Your reference number<br><strong>HDJ2123F</strong>
+            </div> -->
+          </div>
+
+<p>We’ve sent   {{data["firstName-refferral"]}}   {{data["lastName-refferral"]}} referral to     {% if data['site-mhss']=='Ingeus, HKH/19427, Harrow Kings House'%}Ingeus{% endif %}
+    {% if data['site-mhss']=='Maximus, HKH/19424, Harrow Kings House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Maximus, HLF/2193, Halifax Crossfield House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Ingeus, HLF/2196, Halifax Crossfield House'%}Ingeus{% endif %}.</p>
+
+<h2 class="govuk-heading-m">What happens next</h2>
+<p>    {% if data['site-mhss']=='Ingeus, HKH/19427, Harrow Kings House'%}Ingeus{% endif %}
+    {% if data['site-mhss']=='Maximus, HKH/19424, Harrow Kings House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Maximus, HLF/2193, Halifax Crossfield House'%}Maximus{% endif %}
+    {% if data['site-mhss']=='Ingeus, HLF/2196, Halifax Crossfield House'%}Ingeus{% endif %} will contact  {{data["firstName-refferral"]}}   {{data["lastName-refferral"]}} to arrange a support plan discussion. </p>
+    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="continue-button" data-govuk-button-init="">
+      Return to referrals
+    </button>
+
+
+
+
+
+
+    </form>
+
+      </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-------------- footer -->
+{% block footer %}
+
+
+  {{ govukFooter({
+    meta: {
+      html: urFooterLink ,
+
+      items: [
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+
+      ]
+    }
+  }) }}
+
+
+
+
+
+{% endblock %}

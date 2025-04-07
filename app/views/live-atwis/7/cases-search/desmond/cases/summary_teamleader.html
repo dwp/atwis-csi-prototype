@@ -1,0 +1,887 @@
+{% set page = "claim" %}
+{% set claim = "true" %}
+{% set title = "Case details" %}
+{% set hideback = "true" %}
+{% set hidebanner = "true" %}
+
+{% set name = "desmond" %}
+
+
+{% set phase = "case-manger-view" %}
+
+{% extends   "live-atwis/7/claim/_MAINBASE.html" %}
+
+{% block csi %}
+<br>
+
+
+
+
+{% set changeHide = 'true '%}
+
+{% if claim %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Your tasks
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+      Your tasks
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#case">
+      Case details
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Invoice details
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#data">
+        Manage data
+      </a>
+    </li>
+
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">Your tasks</h2>
+
+
+
+
+
+  </div>
+  <div class="govuk-tabs__panel" id="case">
+    <h2 class="govuk-heading-l">Personal details</h2>
+
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+     <!-- only show on claim screen -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>ATW34593DE</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+
+
+      </div>
+
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key ">
+        National Insurance number
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p>QQ123456C</p>
+      </dd>
+
+
+      <dd class="govuk-summary-list__actions">
+
+
+        <a class="govuk-link" href="personal-details-change#name">
+
+          <span class="govuk-visually-hidden"></span>
+        </a>
+
+      </dd>
+
+
+    </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Desmond</p>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="personal-details-change#name">
+
+            <span class="govuk-visually-hidden"></span>
+          </a>
+
+        </dd>
+
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key ">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>Park</p>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="personal-details-change#name">
+
+            <span class="govuk-visually-hidden"></span>
+          </a>
+
+
+      </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>12 June 1995</p>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="personal-details-change#dob-day">
+
+            <span class="govuk-visually-hidden"></span>
+          </a>
+
+        </dd>
+
+
+     </div>
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+    <p>14 Kings Road
+       <br>
+      Birmingham <br>
+      Midlands <br>
+      B1 1EQ <br>
+      </p>
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="personal-details-change#address-line-1">
+
+            <span class="govuk-visually-hidden"></span>
+          </a>
+     <!-- end change -->
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Desmond@gmail.com
+        </dd>
+
+
+        <dd class="govuk-summary-list__actions">
+          <!-- show for contact centre -->
+          <a class="govuk-link" href="personal-details-change#personal-contact-preference">
+
+            <span class="govuk-visually-hidden"></span>
+          </a>
+             <!-- end change -->
+        </dd>
+
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Telephone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          07192 838 482
+        </dd>
+
+
+        <dd class="govuk-summary-list__actions">
+          <!-- show for contact centre -->
+
+          <a class="govuk-link" href="personal-details-change#personal-contact-preference">
+
+            <span class="govuk-visually-hidden"></span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+    </dl>
+<h2 id="appointee" class="govuk-heading-m govuk-!-margin-top-6">Appointee details</h2>
+<p>No appointee</p>
+<h2 id="company" class="govuk-heading-m govuk-!-margin-top-6">Company details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Company name
+      </dt>
+          <dd class="govuk-summary-list__value">
+          Tesco
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="company-details-change#company-name">
+
+          <span class="govuk-visually-hidden"></span>
+          </a>
+          </dd>
+
+  </div>
+
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Company address
+      </dt>
+          <dd class="govuk-summary-list__value">
+
+     <p>101 Kent Way <br>
+        Birmingham <br>
+        Midlands <br>
+        B4 8RT <br>
+        </p>
+
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="company-details-change#address-line-1">
+
+          <span class="govuk-visually-hidden"></span>
+          </a>
+          </dd>
+
+  </div>
+
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Company contact
+      </dt>
+          <dd class="govuk-summary-list__value">
+          Terry Gibson
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="company-details-change#company-contact">
+
+          <span class="govuk-visually-hidden"></span>
+          </a>
+          </dd>
+
+  </div>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      Email
+    </dt>
+    <dd class="govuk-summary-list__value">
+      terry@tesco.co.uk
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="company-details-change#email">
+
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+
+  </div>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      Telephone
+    </dt>
+    <dd class="govuk-summary-list__value">
+      07987 654 678
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="company-details-change#Telephone">
+
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+
+  </div>
+
+
+
+</dl>
+<h2 id="interview" class="govuk-heading-m govuk-!-margin-top-6">Job interview details</h2>
+
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+        Interview date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p><script>// Get date
+            var now = new Date();
+            var pastDate = new Date(now);
+            pastDate.setDate(now.getDate() - 15);
+
+            var formattedDate = pastDate.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+            });
+
+            var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+            });
+
+            document.write(formattedDate);</script></p>
+    </dd>
+
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="job-details-change#dob-day">
+
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      Condition
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p>Deaf</p>
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="job-details-change#condition">
+
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Interview length
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p>1 hour
+      </p>
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="job-details-change#interview-length">
+
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Support cost
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">
+        £200
+      </p>
+    </dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="job-details-change#support-cost">
+
+        <span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+
+  </div>
+
+</dl>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Invoice details</h2>
+
+
+
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="data">
+
+
+
+
+    {% if data['data-delete-hold-csi']=='yes'%}
+         <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+           <div class="govuk-notification-banner__header">
+             <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+               Success
+             </h2>
+           </div>
+           <div class="govuk-notification-banner__content">
+           <p class="govuk-notification-banner__heading">
+            You have reset the deletion of this case data.
+             </p>
+             </div>
+         </div>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+    {% if "Customer feedback or complaint" in data['data-delete-hold-csi'] or
+    "Fraud investigation" in data['data-delete-hold-csi'] or
+    "Criminal case review" in data['data-delete-hold-csi'] or
+    "Performance management" in data['data-delete-hold-csi'] or
+     data['data-delete-hold-csi']=='no'%}
+
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">
+        You have stopped this data from being deleted on <script>// Get date
+              var now = new Date();
+              var pastDate = new Date(now);
+              pastDate.setDate(now.getDate() );
+
+              var formattedDate = pastDate.toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+              });
+
+              var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+              hour: 'numeric',
+              minute: 'numeric',
+              hour12: true
+              });
+
+              case.write(formattedDate);</script>.
+        </p>
+        </div>
+    </div>
+
+
+    <h1 class="govuk-heading-l">This case is being investigated</h1>
+
+    <p>If the investigation of Desmond Park's case data is complete, you must  <a href="data/hold">reset the deletion of this data in AtWIS</a>.</p>
+
+
+
+
+
+
+
+
+
+
+    {% else %}
+
+
+         <h1 class="govuk-heading-l">This case data will be deleted in AtWIS on <script>// Get date
+               var now = new Date();
+               var pastDate = new Date(now);
+               pastDate.setDate(now.getDate() + 730);
+
+               var formattedDate = pastDate.toLocaleDateString('en-GB', {
+               day: 'numeric',
+               month: 'long',
+               year: 'numeric'
+               });
+
+               var formattedTime = pastDate.toLocaleTimeString('en-GB', {
+               hour: 'numeric',
+               minute: 'numeric',
+               hour12: true
+               });
+
+               document.write(formattedDate);</script></h1>
+
+
+
+
+
+
+         <p>You can <a href="./data">stop this data from being deleted</a> if the case is being investigated.</p>
+
+
+    {% endif %}
+
+
+  </div>
+
+</div>
+
+</div>
+     <div class="govuk-grid-column-one-third">
+<a href="#">Print and save a claim again</a>
+<br><br>
+<div class="govuk-form-group">
+<h2 class="govuk-heading-m">Who do you want to allocate this to?</h2>
+<select class="govuk-select" id="sort" name="sort">
+      <option value="a" selected></option>
+    <option value="published">John Goldsmith</option>
+    <option value="updated" >Recently updated</option>
+    <option value="views">Most views</option>
+    <option value="comments">Most comments</option>
+  </select>
+</div>
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Allocate
+</button>
+
+
+<h2 class="govuk-heading-m">Case history</h2>
+
+
+<ol class="dwp-timeline">
+
+  {% if data['data-delete-hold-csi']=='yes'%}
+
+  <li class="dwp-timeline__entry">
+      <span class="govuk-body">
+        <time datetime="2023-06-06T09:12:00.000Z"><script>
+          // Get the current date and time
+               var now = new Date();
+               var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+               var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+               // Write the date and time to the HTML page
+               case.write(date + ' at 11:13 am');
+             </script></time>
+      </span>
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Data retention taken off hold   </h2>
+
+      <p>by Al Ó Catháin </p>
+    </div>
+  </li>
+
+  {% endif %}
+
+{% if data['data-delete-hold-csi']%}
+
+<li class="dwp-timeline__entry">
+    <span class="govuk-body">
+      <time datetime="2023-06-06T09:12:00.000Z"><script>
+        // Get the current date and time
+             var now = new Date();
+             var date = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+             var time = now.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+             // Write the date and time to the HTML page
+             case.write(date + ' at 11:13 am');
+           </script></time>
+    </span>
+  <div class="moj-timeline__header">
+    <h2 class="moj-timeline__title">Data deletion for this cases is on hold in ATWIS.    </h2>
+
+    <p>by Al Ó Catháin </p>
+  </div>
+</li>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Payment ready to send   </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">Rich Silver </span>
+<span class="dwp-timeline__date">16 November 2021 at 10:24am</span>
+  </p>
+</li>
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Payment approved   </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">Rich Silver </span>
+<span class="dwp-timeline__date">16 November 2021 at 10:24am</span>
+  </p>
+</li>
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">SOP supplier number added  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">Rich Silver </span>
+<span class="dwp-timeline__date">16 November 2021 at 10:24am</span>
+  </p>
+</li>
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Evidence received  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">Rich Silver </span>
+<span class="dwp-timeline__date">16 November 2021 at 10:24am</span>
+  </p>
+</li>
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Case unallocated  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date"> </span>
+<span class="dwp-timeline__date">10 November 2021 at 10:20am</span>
+  </p>
+</li>
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Interview confirmed  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">John Goldsmith </span>
+<span class="dwp-timeline__date">10 November 2021 at 10:20am</span>
+  </p>
+</li>
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Attempted to contact employer  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">John Goldsmith </span>
+<span class="dwp-timeline__date">10 November 2021 at 10:15am</span>
+  </p>
+</li>
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Email sent to employer  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">John Goldsmith </span>
+<span class="dwp-timeline__date">10 November 2021 at 10.00am</span>
+  </p>
+</li>
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Claim form sent  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">John Goldsmith </span>
+<span class="dwp-timeline__date">2 November 2021 at 3:15pm</span>
+  </p>
+</li>
+
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Confirmation sent  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">John Goldsmith </span>
+<span class="dwp-timeline__date">2 November 2021 at 3:05pm</span>
+  </p>
+</li>
+
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Application checked  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">John Goldsmith </span>
+<span class="dwp-timeline__date">2 November 2021 at 3:00pm</span>
+  </p>
+</li>
+
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Telephoned applicant</h3>
+  <p class="dwp-timeline__info">
+    <span class="dwp-timeline__date">John Goldsmith</span>
+    <span class="dwp-timeline__date">2  November 2021 at 11:05am</span>
+  </p>
+</li>
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Email sent for further information</h3>
+  <p class="dwp-timeline__info">
+                  <span class="dwp-timeline__date">John Goldsmith</span>
+    <span class="dwp-timeline__date">2 November 2021 at 3:45pm</span>
+  </p>
+</li>
+
+
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">National Insurance number added	  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">John Goldsmith </span>
+<span class="dwp-timeline__date">2 November 2021 at 3:00pm</span>
+  </p>
+</li>
+
+
+
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Application allocated  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date">Al O'Cator to John Goldsmith</span>
+<span class="dwp-timeline__date">2 November 2021 at 3:35pm</span>
+  </p>
+</li>
+
+
+
+
+<li class="dwp-timeline__entry">
+  <h3 style="margin-bottom: 0" class="govuk-heading-s dwp-timeline__title">Application received  </h3>
+
+  <p class="dwp-timeline__info">
+<span class="dwp-timeline__date"> </span>
+<span class="dwp-timeline__date">2 November 2021 at 11:05am</span>
+  </p>
+</li>
+
+
+</ol>
+          </div>
+
+
+        </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endif %}
+
+
+{% endblock %}
