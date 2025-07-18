@@ -1,0 +1,149 @@
+default_install_hook_types:
+  - pre-commit
+  - prepare-commit-msg
+  - commit-msg
+  - post-commit
+  - pre-push
+
+default_stages:
+  - pre-commit
+
+fail_fast: true
+
+repos:
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+        stages:
+          - manual
+      - id: check-useless-excludes
+        stages:
+          - manual
+      - id: identity
+        stages:
+          - manual
+
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.22.0
+    hooks:
+      - id: commitlint
+        args:
+          - --extends="@dwp/commitlint-config-base"
+        stages:
+          - commit-msg
+        additional_dependencies:
+          - "@dwp/commitlint-config-base@4.0.10"
+
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v9.0.1
+    hooks:
+      - id: cspell
+        args:
+          - --dot
+          - --gitignore
+          - --no-must-find-files
+          - --no-progress
+          - --no-summary
+        additional_dependencies:
+          - "@cspell/dict-en-gb@5.0.5"
+        stages:
+          - pre-commit
+          - commit-msg
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.26.0
+    hooks:
+      - id: gitleaks
+        stages:
+          - pre-commit
+        args:
+          - --max-decode-depth=9
+      - id: gitleaks
+        stages:
+          - manual
+        entry: gitleaks git .
+        args:
+          - --max-decode-depth=99
+
+  - repo: https://github.com/sirosen/texthooks
+    rev: 0.6.8
+    hooks:
+      - id: alphabetize-codeowners
+        args:
+          - --dialect=gitlab
+      - id: fix-spaces
+      - id: fix-ligatures
+      - id: fix-smartquotes
+      - id: forbid-bidi-controls
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2/
+    rev: v0.18.1
+    hooks:
+      - id: markdownlint-cli2
+        additional_dependencies:
+          - markdownlint-rule-titlecase@0.1.0
+          - markdownlint-cli2-formatter-codequality@0.0.5
+
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: v3.5.3
+    hooks:
+      - id: prettier
+        additional_dependencies:
+          - prettier@3.5.3
+          - prettier-plugin-sh@0.17.4
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.31.2
+    hooks:
+      - id: check-gitlab-ci
+      - id: check-renovate
+
+  - repo: https://gitlab.com/dwp/secure-development/dwp-cli
+    rev: v3.15.3
+    hooks:
+      - id: check-catalog-info
+      - id: check-pre-commit-config
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        stages:
+          - pre-commit
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+        stages:
+          - pre-commit
+      - id: check-shebang-scripts-are-executable
+        stages:
+          - pre-commit
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+        args:
+          - --unsafe
+      - id: fix-byte-order-marker
+      - id: file-contents-sorter
+        args:
+          - --unique
+        files: ^\.cspell\/project\-words\.txt$
+      - id: forbid-new-submodules
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: no-commit-to-branch
+        args:
+          - --branch=main
+      - id: trailing-whitespace
+        stages:
+          - pre-commit
+        args:
+          - --markdown-linebreak-ext=md
+
+  - repo: https://gitlab.com/adam-moss/pre-commit-trailer
+    rev: v1.1.0
+    hooks:
+      - id: add-pre-commit-config-trailer
+      - id: add-pre-commit-user-skipped-trailer
