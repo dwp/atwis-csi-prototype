@@ -1,0 +1,5 @@
+# add project specific words here, one word per line
+# e.g.:
+#   myproject
+#   myproject-feature
+myproject
