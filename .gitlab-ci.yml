@@ -1,0 +1,32 @@
+default:
+  interruptible: true
+  retry:
+    max: 2
+    when:
+      - unknown_failure
+      - script_failure
+      - api_failure
+      - stuck_or_timeout_failure
+      - runner_system_failure
+      - job_execution_timeout
+      - scheduler_failure
+      - data_integrity_failure
+  tags:
+    - docker
+
+workflow:
+  auto_cancel:
+    on_new_commit: interruptible
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: always
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE != "scheduled"
+      when: never
+    - if: $CI_COMMIT_BRANCH
+      when: always
+
+include:
+  - project: dwp/engineering/pipeline-solutions/gitlab/functions
+    ref: 6.0.7
+    file:
+      - functions/base-mr.gitlab-ci.yml
