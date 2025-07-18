@@ -1,0 +1,82 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: prototype.interface.atwis-csi-prototype
+  title: atwis-csi-prototype
+  description: |
+    TODO: add description for atwis-csi-prototype.
+
+  annotations:
+    gitlab.com/project-slug: dwp/user-centred-design/atwis-csi-prototype
+
+  labels:
+    dwp.gov.uk/version: unknown
+    dwp.gov.uk/license: unknown
+
+    dwp.gov.uk/last-verified.by: unknown
+    dwp.gov.uk/last-verified.on: unknown
+
+    dwp.gov.uk/open-source.approved: "false"
+    dwp.gov.uk/open-source.location: none
+
+    dwp.gov.uk/impacts.audit: "false"
+    dwp.gov.uk/impacts.authentication: "false"
+    dwp.gov.uk/impacts.authorisation: "false"
+    dwp.gov.uk/impacts.access-control: "false"
+    dwp.gov.uk/impacts.encryption: "false"
+    dwp.gov.uk/impacts.decryption: "false"
+    dwp.gov.uk/impacts.payments: "false"
+    dwp.gov.uk/impacts.personally-identifying-information: "false"
+
+  links:
+    - icon: externalLink
+      title: Repository
+      url: https://gitlab.com/dwp/user-centred-design/atwis-csi-prototype
+
+spec:
+  owner: group:default/backstage.group.user-centred-design
+  system: system:default/unallocated
+  type: prototype
+  lifecycle: experimental
+
+  dependsOn:
+    - component:default/pipeline-solutions.gitlab.functions.base-mr
+    - component:default/external.adam-moss.git-trailer.add-pre-commit-trailer
+    - component:default/external.adam-moss.git-trailer.add-user-skipped-trailer
+    - component:default/external.alessandrojcm.commitlint-pre-commit-hook.commitlint
+    - component:default/external.davidanson.markdownlint-cli2.markdownlint-cli2
+    - component:default/external.gitleaks.gitleaks.gitleaks
+    - component:default/external.pre-commit.pre-commit-hooks.check-added-large-files
+    - component:default/external.pre-commit.pre-commit-hooks.check-ast
+    - component:default/external.pre-commit.pre-commit-hooks.check-builtin-literals
+    - component:default/external.pre-commit.pre-commit-hooks.check-case-conflict
+    - component:default/external.pre-commit.pre-commit-hooks.check-docstring-first
+    - component:default/external.pre-commit.pre-commit-hooks.check-executables
+    - component:default/external.pre-commit.pre-commit-hooks.check-merge-conflict
+    - component:default/external.pre-commit.pre-commit-hooks.check-shebangs
+    - component:default/external.pre-commit.pre-commit-hooks.check-symlinks
+    - component:default/external.pre-commit.pre-commit-hooks.check-toml
+    - component:default/external.pre-commit.pre-commit-hooks.check-xml
+    - component:default/external.pre-commit.pre-commit-hooks.check-yaml
+    - component:default/external.pre-commit.pre-commit-hooks.debug-statements
+    - component:default/external.pre-commit.pre-commit-hooks.file-contents-sorter
+    - component:default/external.pre-commit.pre-commit-hooks.fix-byte-order-marker
+    - component:default/external.pre-commit.pre-commit-hooks.forbid-new-submodules
+    - component:default/external.pre-commit.pre-commit-hooks.mixed-line-ending
+    - component:default/external.pre-commit.pre-commit-hooks.name-tests-test
+    - component:default/external.pre-commit.pre-commit-hooks.no-commit-to-branch
+    - component:default/external.pre-commit.pre-commit-hooks.trailing-whitespace
+    - component:default/external.pre-commit.pre-commit.check-hooks-apply
+    - component:default/external.pre-commit.pre-commit.check-useless-excludes
+    - component:default/external.pre-commit.pre-commit.identity
+    - component:default/external.python-jsonschema.check-jsonschema.check-gitlab-ci
+    - component:default/external.python-jsonschema.check-jsonschema.check-renovate
+    - component:default/external.rbubley.mirrors-prettier.prettier
+    - component:default/external.sirosen.texthooks.alphabetize-codeowners
+    - component:default/external.sirosen.texthooks.fix-ligatures
+    - component:default/external.sirosen.texthooks.fix-smartquotes
+    - component:default/external.sirosen.texthooks.fix-spaces
+    - component:default/external.sirosen.texthooks.forbid-bidi-controls
+    - component:default/external.streetsidesoftware.cspell-cli.cspell
+    - component:default/sec-dev.tool.dwp-cli.check-catalog-info
+    - component:default/sec-dev.tool.dwp-cli.check-pre-commit-config
