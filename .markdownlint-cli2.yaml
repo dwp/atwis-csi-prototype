@@ -1,0 +1,18 @@
+#      THIS FILE IS MANAGED BY GITLAB-CONFIGURATION
+# DIRECT MODIFICATIONS WILL BE AUTOMATICALLY OVERWRITTEN
+
+config:
+  default: true
+
+  MD013: false
+  MD024:
+    siblings_only: true
+
+customRules:
+  - markdownlint-rule-titlecase
+
+fix: true
+
+outputFormatters:
+  - - markdownlint-cli2-formatter-default
+  - - markdownlint-cli2-formatter-codequality
