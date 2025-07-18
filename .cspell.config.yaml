@@ -1,0 +1,27 @@
+#      THIS FILE IS MANAGED BY GITLAB-CONFIGURATION
+# DIRECT MODIFICATIONS WILL BE AUTOMATICALLY OVERWRITTEN
+
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+
+version: "0.2"
+
+name: atwis-csi-prototype
+
+failFast: true
+noConfigSearch: true
+readonly: true
+useGitignore: true
+
+language: en-GB
+
+languageSettings:
+  - languageId: "*"
+    allowCompoundWords: false
+
+dictionaries:
+  - project-words
+
+dictionaryDefinitions:
+  - name: project-words
+    path: ./.cspell/project-words.txt
+    addWords: true
