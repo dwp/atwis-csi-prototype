@@ -82,7 +82,7 @@ repos:
           - prettier-plugin-sh@0.17.4
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.31.2
+    rev: 0.33.2
     hooks:
       - id: check-gitlab-ci
       - id: check-renovate
