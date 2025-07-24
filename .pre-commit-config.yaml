@@ -23,17 +23,6 @@ repos:
         stages:
           - manual
 
-  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-    rev: v9.22.0
-    hooks:
-      - id: commitlint
-        args:
-          - --extends="@dwp/commitlint-config-base"
-        stages:
-          - commit-msg
-        additional_dependencies:
-          - "@dwp/commitlint-config-base@4.0.10"
-
   - repo: https://github.com/streetsidesoftware/cspell-cli
     rev: v9.0.1
     hooks:
@@ -51,7 +40,7 @@ repos:
           - commit-msg
 
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.28.0
+    rev: v8.26.0
     hooks:
       - id: gitleaks
         stages:
@@ -99,7 +88,7 @@ repos:
       - id: check-renovate
 
   - repo: https://gitlab.com/dwp/secure-development/dwp-cli
-    rev: v3.18.2
+    rev: v3.15.3
     hooks:
       - id: check-catalog-info
       - id: check-pre-commit-config
