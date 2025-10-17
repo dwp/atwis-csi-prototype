@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: prototype.interface.atwis-csi-prototype
-  title: atwis-csi-prototype
+  name: dwp.atwis.csi.prototype
+  title:  Dwp.Atwis.Csi.Prototype
   description: |
     TODO: add description for atwis-csi-prototype.
 
@@ -10,11 +10,11 @@ metadata:
     gitlab.com/project-slug: dwp/user-centred-design/atwis-csi-prototype
 
   labels:
-    dwp.gov.uk/version: unknown
+    dwp.gov.uk/version: 1.0.0
     dwp.gov.uk/license: unknown
 
-    dwp.gov.uk/last-verified.by: unknown
-    dwp.gov.uk/last-verified.on: unknown
+    dwp.gov.uk/last-verified.by: Ben Raine
+    dwp.gov.uk/last-verified.on: 2025-10-17
 
     dwp.gov.uk/open-source.approved: "false"
     dwp.gov.uk/open-source.location: none
